@@ -1,0 +1,50 @@
+ESTRADA A DOIS - MANUAL DE PUBLICAÇÃO DE ARTIGOS
+===================================================
+
+Você não precisa de conhecimentos avançados em programação para criar novos artigos no blog. O sistema usa um formato universal chamado "Markdown" (.md).
+
+Você pode escrever os seus textos no Microsoft Word, Google Docs ou Notion. Depois de finalizado, você só precisa transformá-lo para o formato padrão e salvar na pasta do projeto.
+
+PASSO A PASSO:
+1. Escolha a imagem de capa do seu artigo e salve ela na pasta: 
+   C:\Users\Note\.gemini\antigravity\scratch\estrada-a-dois-blog\public\images\blog\
+   (Dica: salve sem espaços no nome, ex: "viagem-atacama.jpg")
+
+2. Crie um novo arquivo de texto dentro da pasta:
+   C:\Users\Note\.gemini\antigravity\scratch\estrada-a-dois-blog\content\posts\
+   (O nome desse arquivo será a URL do post. Ex: "minha-viagem.md" vai virar estradaadois.com/blog/minha-viagem)
+
+3. O arquivo OBRIGATORIAMENTE deve começar com o cabeçalho abaixo (chamado de Frontmatter). É ele que o blog usa para montar a capa na Home.
+
+---
+title: "Título chamativo da sua viagem ou dica"
+date: "2026-08-30"
+category: "Roteiros"
+image: "/images/blog/nome-da-sua-imagem.jpg"
+excerpt: "Um pequeno resumo de 2 a 3 linhas que vai aparecer na página inicial para atrair o clique do leitor."
+---
+
+Aqui começa o seu texto. Para colocar palavras em negrito, coloque dois asteriscos em volta da palavra, assim: **texto em negrito**.
+Para itálico, use um asterisco: *texto em itálico*.
+
+## Como criar Subtítulos (Coloque dois jogos-da-velha na frente)
+
+Para colocar imagens no meio do texto, use esse código abaixo:
+![Legenda da foto para o Google](/images/blog/outra-foto-sua.jpg)
+
+Para criar listas:
+- Item 1
+- Item 2
+- Item 3
+
+> Para criar uma frase de destaque (citação), use o sinal de maior que no início da linha!
+
+---------------------------------------------------
+PROMPT DE INTELIGÊNCIA ARTIFICIAL PARA TE AJUDAR:
+Se você escreveu o texto no Word e está com preguiça de formatar, copie e cole o texto abaixo no ChatGPT ou Gemini junto com o seu texto:
+
+"Aja como meu assistente de formatação. Eu vou te enviar um texto que escrevi para o meu blog de viagens de moto. Quero que você converta esse texto inteiro para a formatação MARKDOWN. 
+1. Adicione um Frontmatter YAML no topo com os campos: title, date (data de hoje no formato YYYY-MM-DD), category (escolha entre Roteiros, Dicas, Equipamentos ou Manutenção), image (deixe como /images/blog/sua-imagem.jpg) e um excerpt de 2 linhas.
+2. Formate os títulos com ## e ###.
+3. Se houver listas no meu texto, converta para listas markdown (-).
+4. Me entregue apenas o código cru (plain text) para que eu possa copiar e colar."
