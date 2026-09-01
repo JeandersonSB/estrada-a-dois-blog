@@ -76,6 +76,9 @@ async function gerarNoticia() {
     markdownContent = markdownContent.replace(/^```markdown\n?/m, '').replace(/```$/m, '').trim();
 
     // 3. Salvar o arquivo
+    if (!fs.existsSync(POSTS_DIR)) {
+      fs.mkdirSync(POSTS_DIR, { recursive: true });
+    }
     const filePath = path.join(POSTS_DIR, `${slugTarget}.md`);
     fs.writeFileSync(filePath, markdownContent, 'utf8');
     
