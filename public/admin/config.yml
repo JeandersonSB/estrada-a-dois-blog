@@ -12,7 +12,7 @@ public_folder: "/images/blog"
 # Configuração da identidade da interface
 site_url: "https://estrada-a-dois-blog.vercel.app"
 display_url: "https://estrada-a-dois-blog.vercel.app"
-logo_url: "https://estrada-a-dois-blog.vercel.app/images/logo-estrada-a-dois-principal.png"
+logo_url: "https://estrada-a-dois-blog.vercel.app/images/logo-admin.png"
 
 collections:
   - name: "posts"
