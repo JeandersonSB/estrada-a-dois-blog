@@ -2,7 +2,7 @@
 title: 'Pé na Estrada com Segurança: 5 Dicas Fundamentais para Sua Próxima Viagem de Moto'
 date: 2026-09-01
 category: Notícias
-draft: true
+draft: false
 image: /images/blog/preview-estrada.jpg
 excerpt: Vai pegar a estrada sobre duas rodas? Confira conselhos valiosos para garantir uma pilotagem tranquila, proteger seu passageiro e aproveitar cada quilômetro do trajeto.
 ---
