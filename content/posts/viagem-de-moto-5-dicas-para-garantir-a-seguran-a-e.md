@@ -1,6 +1,6 @@
 ---
 title: 'Pé na Estrada com Segurança: 5 Dicas Fundamentais para Sua Próxima Viagem de Moto'
-date: 2026-09-01
+date: 2026-08-31
 category: Notícias
 draft: false
 image: /images/blog/preview-estrada.jpg
