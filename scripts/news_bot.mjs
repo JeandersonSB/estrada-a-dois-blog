@@ -41,18 +41,27 @@ async function gerarNoticia() {
     return;
   }
   
-  // Pega a primeira notícia mais recente e relevante
-  const item = itensRecentes[0];
-  console.log(`Notícia base escolhida: ${item.title} (Publicada em: ${item.pubDate})`);
+  // Pega a primeira notícia mais recente que AINDA NÃO foi processada
+  let itemEscolhido = null;
+  let slugTarget = '';
   
-  // Verifica se já criamos post sobre isso
-  const today = new Date().toISOString().split('T')[0];
-  const slugTarget = item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '').substring(0, 50);
-  
-  if (fs.existsSync(path.join(POSTS_DIR, `${slugTarget}.md`))) {
-    console.log("Notícia já processada anteriormente. Pulando...");
+  for (const item of itensRecentes) {
+    const tempSlug = item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '').substring(0, 50);
+    if (!fs.existsSync(path.join(POSTS_DIR, `${tempSlug}.md`))) {
+      itemEscolhido = item;
+      slugTarget = tempSlug;
+      break; // Achou uma notícia inédita!
+    }
+  }
+
+  if (!itemEscolhido) {
+    console.log("Todas as notícias recentes já foram processadas. Pulando...");
     return;
   }
+  
+  const item = itemEscolhido;
+  console.log(`Notícia base inédita escolhida: ${item.title} (Publicada em: ${item.pubDate})`);
+  const today = new Date().toISOString().split('T')[0];
 
   // 2. Aciona o Gemini para reescrever
   console.log("Enviando para o Gemini...");
