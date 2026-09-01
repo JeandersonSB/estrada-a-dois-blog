@@ -41,7 +41,7 @@ async function gerarNoticia() {
 
   // 2. Aciona o Gemini para reescrever
   console.log("Enviando para o Gemini Pro...");
-  const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+  const model = genAI.getGenerativeModel({ model: "gemini-3.6-flash" });
   
   const prompt = `
   Atue como um redator jornalista do blog "Estrada a Dois" (focado em mototurismo, motociclismo, rotas e estilo de vida).
