@@ -2,7 +2,7 @@ backend:
   name: github
   repo: JeandersonSB/estrada-a-dois-blog
   branch: main
-  base_url: https://estrada-a-dois-blog.vercel.app
+  base_url: https://estrada-a-dois-blog.vercel.app/api
 
 # Habilita testes no seu próprio computador
 local_backend: true
