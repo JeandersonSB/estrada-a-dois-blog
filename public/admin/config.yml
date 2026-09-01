@@ -2,6 +2,7 @@ backend:
   name: github
   repo: JeandersonSB/estrada-a-dois-blog
   branch: main
+  app_id: Ov23licEwZ20MvtXLQZs
 
 # Habilita testes no seu próprio computador
 local_backend: true
