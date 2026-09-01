@@ -1,0 +1,29 @@
+backend:
+  name: github
+  repo: JeandersonSB/estrada-a-dois-blog
+  branch: main
+
+# Habilita testes no seu próprio computador
+local_backend: true
+
+media_folder: "public/images/blog"
+public_folder: "/images/blog"
+
+# Configuração da identidade da interface
+site_url: "https://estrada-a-dois-blog.vercel.app"
+display_url: "https://estrada-a-dois-blog.vercel.app"
+logo_url: "https://estrada-a-dois-blog.vercel.app/images/logo-estrada-a-dois-principal.png"
+
+collections:
+  - name: "posts"
+    label: "Artigos do Blog"
+    folder: "content/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título do Artigo", name: "title", widget: "string" }
+      - { label: "Data de Publicação", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Categoria", name: "category", widget: "select", options: ["Roteiros", "Dicas", "Manutenção", "Equipamentos"] }
+      - { label: "Imagem de Capa (Horizontal)", name: "image", widget: "image" }
+      - { label: "Resumo para a Home (Até 3 linhas)", name: "excerpt", widget: "text" }
+      - { label: "Conteúdo do Artigo", name: "body", widget: "markdown" }
