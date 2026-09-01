@@ -3,6 +3,7 @@ backend:
   repo: JeandersonSB/estrada-a-dois-blog
   branch: main
   app_id: Ov23licEwZ20MvtXLQZs
+  auth_type: pkce
 
 # Habilita testes no seu próprio computador
 local_backend: true
