@@ -24,7 +24,8 @@ collections:
     fields:
       - { label: "Título do Artigo", name: "title", widget: "string" }
       - { label: "Data de Publicação", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
-      - { label: "Categoria", name: "category", widget: "select", options: ["Roteiros", "Dicas", "Manutenção", "Equipamentos"] }
+      - { label: "Categoria", name: "category", widget: "select", options: ["Roteiros", "Dicas", "Manutenção", "Equipamentos", "Notícias"] }
+      - { label: "Rascunho (Ocultar do site)", name: "draft", widget: "boolean", default: false, required: false }
       - { label: "Imagem de Capa (Horizontal)", name: "image", widget: "image" }
       - { label: "Resumo para a Home (Até 3 linhas)", name: "excerpt", widget: "text" }
       - { label: "Conteúdo do Artigo", name: "body", widget: "markdown" }

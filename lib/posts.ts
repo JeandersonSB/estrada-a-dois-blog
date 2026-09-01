@@ -44,13 +44,16 @@ export function getSortedPostsData(): PostData[] {
 
       // Combine the data with the slug
       return {
-        slug,
-        ...(matterResult.data as Omit<PostData, 'slug'>),
-      };
-    });
+      slug,
+      ...(matterResult.data as { date: string; title: string; category: string; image: string; excerpt: string; draft?: boolean }),
+    };
+  });
+  
+  // Filter out drafts
+  const publishedPosts = allPostsData.filter(post => post.draft !== true);
 
   // Sort posts by date
-  return allPostsData.sort((a, b) => {
+  return publishedPosts.sort((a, b) => {
     if (a.date < b.date) {
       return 1;
     } else {

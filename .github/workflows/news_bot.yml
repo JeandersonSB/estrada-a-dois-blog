@@ -1,0 +1,36 @@
+name: Robô Jornalista (Auto-Post)
+
+on:
+  schedule:
+    # Roda todos os dias às 10:00 e às 16:00 (UTC)
+    - cron: '0 10,16 * * *'
+  workflow_dispatch:
+    # Permite rodar manualmente pelo GitHub se quiser testar
+
+jobs:
+  gerar-noticia:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v4
+        
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Instalar Dependências
+        run: npm install
+        
+      - name: Rodar a Inteligência Artificial
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node scripts/news_bot.mjs
+        
+      - name: Salvar e Publicar no Painel (Rascunho)
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Notícia Automática (Rascunho gerado pela IA)"
+          branch: main
+          file_pattern: 'content/posts/*.md'
