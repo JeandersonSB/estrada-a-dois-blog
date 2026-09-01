@@ -2,8 +2,8 @@ name: Robô Jornalista (Auto-Post)
 
 on:
   schedule:
-    # Roda todos os dias às 10:00 e às 16:00 (UTC)
-    - cron: '0 10,16 * * *'
+    # Horários de Brasília: 06h, 10h, 12h, 15h, 16h, 20h (Convertidos para UTC +3: 09, 13, 15, 18, 19, 23)
+    - cron: '0 9,13,15,18,19,23 * * *'
   workflow_dispatch:
     # Permite rodar manualmente pelo GitHub se quiser testar
 

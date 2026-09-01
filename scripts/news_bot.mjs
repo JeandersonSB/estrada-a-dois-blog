@@ -5,7 +5,8 @@ import path from 'path';
 
 // Configurações
 const API_KEY = process.env.GEMINI_API_KEY;
-const RSS_URL = 'https://news.google.com/rss/search?q=motociclismo+OR+moto+viagem&hl=pt-BR&gl=BR&ceid=BR:pt-419';
+// Busca global no Google News (em inglês e focada em motos, lançamentos, equipamentos, tech. Exclui viagens)
+const RSS_URL = 'https://news.google.com/rss/search?q=(motorcycle+OR+motorcycles+OR+motociclismo)+AND+(launch+OR+gear+OR+brands+OR+models+OR+innovation+OR+technology+OR+parts)+-travel+-viagem&hl=en-US&gl=US';
 const POSTS_DIR = path.join(process.cwd(), 'content', 'posts');
 
 if (!API_KEY) {
@@ -17,7 +18,7 @@ const parser = new Parser();
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 async function gerarNoticia() {
-  console.log("Iniciando busca de notícias...");
+  console.log("Iniciando busca de notícias globais...");
   
   // 1. Busca a notícia do RSS
   const feed = await parser.parseURL(RSS_URL);
@@ -26,11 +27,25 @@ async function gerarNoticia() {
     return;
   }
   
-  // Pega a primeira notícia
-  const item = feed.items[0];
-  console.log(`Notícia base escolhida: ${item.title}`);
+  // Filtra notícias das últimas 36 horas
+  const trintaEseisHoras = 36 * 60 * 60 * 1000;
+  const agora = new Date();
   
-  // Verifica se já criamos post sobre isso hoje para evitar repetição (simplificado checando data atual)
+  const itensRecentes = feed.items.filter(item => {
+    const pubDate = new Date(item.pubDate);
+    return (agora - pubDate) <= trintaEseisHoras;
+  });
+
+  if (itensRecentes.length === 0) {
+    console.log("Nenhuma notícia nas últimas 36 horas encontrada.");
+    return;
+  }
+  
+  // Pega a primeira notícia mais recente e relevante
+  const item = itensRecentes[0];
+  console.log(`Notícia base escolhida: ${item.title} (Publicada em: ${item.pubDate})`);
+  
+  // Verifica se já criamos post sobre isso
   const today = new Date().toISOString().split('T')[0];
   const slugTarget = item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '').substring(0, 50);
   
@@ -40,42 +55,44 @@ async function gerarNoticia() {
   }
 
   // 2. Aciona o Gemini para reescrever
-  console.log("Enviando para o Gemini Pro...");
+  console.log("Enviando para o Gemini...");
   const model = genAI.getGenerativeModel({ model: "gemini-3.6-flash" });
   
-  const prompt = `
-  Atue como um redator jornalista do blog "Estrada a Dois" (focado em mototurismo, motociclismo, rotas e estilo de vida).
+  // Usamos uma imagem aleatória de motos livre de direitos autorais como placeholder temporário
+  const imagemGenerica = "https://loremflickr.com/1200/600/motorcycle,gear/all";
   
-  Aqui está uma notícia crua que acabou de sair:
+  const prompt = `
+  Atue como um redator jornalista automotivo expert do blog "Estrada a Dois" (focado no mundo do motociclismo, lançamentos, marcas, modelos e tecnologia).
+  
+  Aqui está uma notícia crua internacional que acabou de sair:
   Título: ${item.title}
+  Resumo/Conteúdo Original: ${item.contentSnippet || item.content}
   Link da fonte: ${item.link}
   
-  Sua tarefa é reescrever essa notícia criando um artigo incrível, focado em SEO, com tom empolgante para apaixonados por motos.
-  Não invente fatos, apenas reescreva com autoridade e adicione contexto relevante.
+  Sua tarefa é traduzir (se necessário) e reescrever essa notícia criando um artigo completo e aprofundado em Português do Brasil (pt-BR), focado em SEO.
+  Não adicione tópicos de "viagem" ou "mototurismo", o foco é na MÁQUINA, TECNOLOGIA, MERCADO ou EQUIPAMENTO.
+  Não invente fatos, mas explique os termos técnicos.
   
-  Retorne EXATAMENTE e SOMENTE o código Markdown abaixo, preenchendo os dados (na linguagem pt-BR). 
-  Não adicione as aspas de bloco de código (\`\`\`).
+  Retorne EXATAMENTE e SOMENTE o código Markdown abaixo:
   
   ---
-  title: "[Seu Título SEO Atraente Aqui]"
+  title: "[Seu Título SEO Atraente e Jornalístico em pt-BR]"
   date: "${today}"
   category: "Notícias"
   draft: true
-  image: "/images/blog/preview-estrada.jpg"
-  excerpt: "[Resumo de 2 linhas chamativo para a capa]"
+  image: "${imagemGenerica}"
+  excerpt: "[Resumo impactante de 2 a 3 linhas]"
   ---
   
-  [Seu texto completo aqui, usando ## para subtítulos e listas quando aplicável. No final, adicione uma linha sutil referenciando a fonte original através de um link.]
+  [Seu texto completo em pt-BR aqui, usando ## para subtítulos. No final, adicione "Fonte: [Nome do Site](${item.link})"]
   `;
 
   try {
     const result = await model.generateContent(prompt);
     let markdownContent = result.response.text();
     
-    // Limpeza caso o modelo retorne com as tags markdown
     markdownContent = markdownContent.replace(/^```markdown\n?/m, '').replace(/```$/m, '').trim();
 
-    // 3. Salvar o arquivo
     if (!fs.existsSync(POSTS_DIR)) {
       fs.mkdirSync(POSTS_DIR, { recursive: true });
     }
