@@ -54,11 +54,11 @@ export function Header() {
 
   const navLinks = [
     { name: 'NOTÍCIAS', href: '/categoria/noticias', id: 'noticias' },
-    { name: 'SOBRE', href: '/sobre', id: 'sobre' },
     { name: 'ROTEIROS', href: '/categoria/roteiros', id: 'roteiros' },
     { name: 'DICAS', href: '/categoria/dicas', id: 'dicas' },
-    { name: 'MANUTENÇÃO', href: '/categoria/manutencao', id: 'manutencao' },
     { name: 'EQUIPAMENTOS', href: '/categoria/equipamentos', id: 'equipamentos' },
+    { name: 'MANUTENÇÃO', href: '/categoria/manutencao', id: 'manutencao' },
+    { name: 'SOBRE', href: '/sobre', id: 'sobre' },
     { name: 'CONTATO', href: '/contato', id: 'contato' },
   ];
 

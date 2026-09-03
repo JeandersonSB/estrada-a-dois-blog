@@ -21,6 +21,20 @@ collections:
     folder: "content/posts"
     create: true
     slug: "{{slug}}"
+    summary: "{{#draft}}⏳ [RASCUNHO]{{/draft}}{{^draft}}🟢 [PUBLICADO]{{/draft}} {{title}}"
+    sortable_fields: ["date", "title", "category", "draft"]
+    view_filters:
+      - label: "Apenas Rascunhos"
+        field: draft
+        pattern: true
+      - label: "Apenas Publicados"
+        field: draft
+        pattern: false
+    view_groups:
+      - label: "Status (Rascunho / Publicado)"
+        field: draft
+      - label: "Categoria"
+        field: category
     fields:
       - { label: "Título do Artigo", name: "title", widget: "string" }
       - { label: "Data de Publicação", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }

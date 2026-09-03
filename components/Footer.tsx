@@ -63,11 +63,23 @@ export function Footer() {
 
         </div>
 
-        <div className="flex flex-col items-center gap-2 mt-4">
+        <div className="flex flex-col items-center gap-2 mt-4 text-center">
+          <p className="text-xs text-[#888888]">
+            Contato & Parcerias:{' '}
+            <a href="mailto:jeandeerson@gmail.com" className="text-[#B6D200] hover:underline font-medium">
+              jeandeerson@gmail.com
+            </a>
+          </p>
           <p className="text-xs text-[#555555] tracking-widest uppercase">&copy; {new Date().getFullYear()} Estrada a Dois. Todos os direitos reservados.</p>
-          <a href="/politica-de-privacidade" className="text-xs text-[#555555] hover:text-white transition-colors underline decoration-[#555555] hover:decoration-white">
-            Política de Privacidade
-          </a>
+          <div className="flex items-center gap-3">
+            <a href="/politica-de-privacidade" className="text-xs text-[#555555] hover:text-white transition-colors underline decoration-[#555555] hover:decoration-white">
+              Política de Privacidade
+            </a>
+            <span className="text-[#333333] text-xs">•</span>
+            <a href="/contato" className="text-xs text-[#555555] hover:text-white transition-colors underline decoration-[#555555] hover:decoration-white">
+              Contato
+            </a>
+          </div>
         </div>
       </div>
     </footer>
