@@ -1,10 +1,10 @@
 ---
-title: "Zero Motorcycles Adotará Carregamento Rápido DC: O Recurso que Faltava nas Motos Elétricas"
-date: "2026-09-03"
-category: "Notícias"
-draft: true
-image: "https://loremflickr.com/1200/600/motorcycle,gear/all"
-excerpt: "A Zero Motorcycles prepara a inclusão do carregamento rápido em corrente contínua (DC Fast Charging), eliminando o maior gargalo técnico de suas motocicletas elétricas de alta performance."
+title: 'Zero Motorcycles Adotará Carregamento Rápido DC: O Recurso que Faltava nas Motos Elétricas'
+date: 2026-09-03
+category: Notícias
+draft: false
+image: https://loremflickr.com/1200/600/motorcycle,gear/all
+excerpt: A Zero Motorcycles prepara a inclusão do carregamento rápido em corrente contínua (DC Fast Charging), eliminando o maior gargalo técnico de suas motocicletas elétricas de alta performance.
 ---
 
 A indústria das duas rodas elétricas atinge um novo patamar de maturidade tecnológica. A **Zero Motorcycles**, referência global no desenvolvimento de motocicletas elétricas de alto desempenho, prepara-se para implementar nativamente o recurso mais cobrado por entusiastas e especialistas do setor: a tecnologia de **carregamento rápido em corrente contínua (DC Fast Charging / CCS)**.
@@ -15,12 +15,12 @@ A ausência desse sistema era tida como a principal limitação técnica dos mod
 
 Até então, a maioria dos modelos da Zero utilizava sistemas de carregamento em **Corrente Alternada (AC)** — conhecidos como Nível 1 (tomada doméstica comum) e Nível 2 (estações de recarga do tipo Wallbox ou J1772/Tipo 2). 
 
-No carregamento AC, a eletricidade da rede precisa ser convertida em Corrente Contínua (DC) pelo próprio inversor de bordo (*onboard charger*) da motocicleta antes de alimentar as células do pacote de baterias de íon de lítio. Devido às restrições severas de espaço e peso em uma moto, esse conversor interno possui capacidade limitada (geralmente entre 3 kW e 6 kW, expansível com módulos opcionais), o que resultava em tempos de recarga que variavam de 1 a 4 horas para uma carga completa.
+No carregamento AC, a eletricidade da rede precisa ser convertida em Corrente Contínua (DC) pelo próprio inversor de bordo (_onboard charger_) da motocicleta antes de alimentar as células do pacote de baterias de íon de lítio. Devido às restrições severas de espaço e peso em uma moto, esse conversor interno possui capacidade limitada (geralmente entre 3 kW e 6 kW, expansível com módulos opcionais), o que resultava em tempos de recarga que variavam de 1 a 4 horas para uma carga completa.
 
 Com a adoção do **DC Fast Charging (Nível 3 / CCS - Combined Charging System)**, o processo muda radicalmente:
 
 * **Bypassing do Conversor Interno:** A estação de recarga externa fornece energia em corrente contínua de alta voltagem diretamente para a bateria.
-* **Eficiência Térmica:** O gerenciamento do fluxo de carga fica a cargo da infraestrutura externa em constante comunicação com o **BMS (*Battery Management System*)** da motocicleta.
+* **Eficiência Térmica:** O gerenciamento do fluxo de carga fica a cargo da infraestrutura externa em constante comunicação com o **BMS (_Battery Management System_)** da motocicleta.
 * **Tempo de Recarga:** Redução drástica do tempo de espera, permitindo carregar de 20% a 80% da capacidade em cerca de 15 a 30 minutos.
 
 ## Desafios de Engenharia: Gerenciamento Térmico e Arquitetura Elétrica
