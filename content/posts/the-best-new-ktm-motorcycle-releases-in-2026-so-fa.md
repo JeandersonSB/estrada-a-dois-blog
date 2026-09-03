@@ -1,23 +1,23 @@
 ---
-title: "Lançamentos KTM 2026: Conheça os Principais Modelos, Tecnologias e Novidades da Marca"
-date: "2026-09-02"
-category: "Notícias"
-draft: true
-image: "https://loremflickr.com/1200/600/motorcycle,gear/all"
-excerpt: "A KTM acelera forte para 2026 com atualizações de alto desempenho, novas opções de transmissão e pacotes eletrônicos de ponta. Confira os destaques da fabricante austríaca."
+title: 'Lançamentos KTM 2026: Conheça os Principais Modelos, Tecnologias e Novidades da Marca'
+date: 2026-09-02
+category: Notícias
+draft: false
+image: https://loremflickr.com/1200/600/motorcycle,gear/all
+excerpt: A KTM acelera forte para 2026 com atualizações de alto desempenho, novas opções de transmissão e pacotes eletrônicos de ponta. Confira os destaques da fabricante austríaca.
 ---
 
-A fabricante austríaca KTM continua a empurrar os limites do desempenho e da engenharia no universo das duas rodas. Com a consolidação da sua linha para 2026, a marca reafirma seu compromisso com o lema *"Ready to Race"*, apresentando atualizações significativas em suas plataformas de alta cilindrada, avanços em transmissões automatizadas e pacotes eletrônicos cada vez mais refinados.
+A fabricante austríaca KTM continua a empurrar os limites do desempenho e da engenharia no universo das duas rodas. Com a consolidação da sua linha para 2026, a marca reafirma seu compromisso com o lema _"Ready to Race"_, apresentando atualizações significativas em suas plataformas de alta cilindrada, avanços em transmissões automatizadas e pacotes eletrônicos cada vez mais refinados.
 
 Um panorama publicado recentemente pela imprensa internacional destaca como a KTM conseguiu reorganizar seu portfólio para entregar motos mais leves, brutais em potência e com um nível de controle eletrônico sem precedentes.
 
 ## Evolução Mecânica: As Plataformas LC8 e LC8c
 
-O coração da gama de alta performance da KTM permanece ancorado em suas consagradas arquiteturas de motor: os bicilíndricos em V (*V-Twin*) da família **LC8** e os bicilíndricos em linha da série **LC8c**.
+O coração da gama de alta performance da KTM permanece ancorado em suas consagradas arquiteturas de motor: os bicilíndricos em V (_V-Twin_) da família **LC8** e os bicilíndricos em linha da série **LC8c**.
 
 Para a linha 2026, a engenharia de Mattighofen focou em otimizar a entrega de torque em baixas e médias rotações sem comprometer a potência de topo. O ganho de capacidade volumétrica visto em modelos recentes da linha naked e supermoto reflete o uso de novos componentes internos leves, como pistões forjados de alta resistência e comandos de válvula otimizados. 
 
-Essas modificações garantem que os motores cumpram as rigorosas normas de emissões globais mantendo a resposta agressiva do acelerador *Ride-by-Wire* (sistema eletrônico de aceleração que dispensa cabos mecânicos).
+Essas modificações garantem que os motores cumpram as rigorosas normas de emissões globais mantendo a resposta agressiva do acelerador _Ride-by-Wire_ (sistema eletrônico de aceleração que dispensa cabos mecânicos).
 
 ## Transmissão AMT: O Próximo Passo na Pilotagem
 
@@ -37,7 +37,7 @@ A interface com o piloto é feita por meio dos novos painéis coloridos de TFT d
 
 ## Ciclística e Suspensão WP APEX
 
-A estrutura ciclística continua sendo um dos maiores trunfos da KTM. O clássico chassi tubular em aço cromo-molibdênio recebeu ajustes na rigidez torcional para oferecer maior *feedback* (sensação de aderência) ao piloto em entradas de curva agressivas.
+A estrutura ciclística continua sendo um dos maiores trunfos da KTM. O clássico chassi tubular em aço cromo-molibdênio recebeu ajustes na rigidez torcional para oferecer maior _feedback_ (sensação de aderência) ao piloto em entradas de curva agressivas.
 
 Nas suspensões, a submarca **WP Suspensions** fornece os conjuntos da linha **WP APEX**, incluindo versões semi-ativas nos modelos de topo de linha. Esse sistema ajusta o amortecimento hidráulico em milissegundos com base no modo de pilotagem selecionado e nas condições do piso, mantendo a estabilidade dinâmica do conjunto.
 
