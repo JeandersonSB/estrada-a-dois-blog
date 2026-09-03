@@ -1,11 +1,11 @@
 ---
-title: "Motom 48: O Lendário Ciclomotor Italiano de 4 Tempos que Marcou Época"
-date: "2026-09-03"
-category: "Notícias"
-status: "⏳ Rascunho"
-draft: true
-image: "https://loremflickr.com/1200/600/motom%2C48%2Cmoped/all"
-excerpt: "Descubra a história e a engenharia do Motom 48, o icônico ciclomotor milanês que desafiou a lógica dos motores de dois tempos com uma mecânica eficiente e durável de quatro tempos."
+title: 'Motom 48: O Lendário Ciclomotor Italiano de 4 Tempos que Marcou Época'
+status: 🟢 Publicado
+date: 2026-09-03
+category: Notícias
+draft: false
+image: https://loremflickr.com/1200/600/motom%2C48%2Cmoped/all
+excerpt: Descubra a história e a engenharia do Motom 48, o icônico ciclomotor milanês que desafiou a lógica dos motores de dois tempos com uma mecânica eficiente e durável de quatro tempos.
 ---
 
 No cenário pós-Segunda Guerra Mundial, a Itália precisava urgentemente de soluções de mobilidade que fossem baratas, confiáveis e extremamente eficientes no consumo de combustível. Foi nesse contexto que nasceu a **Motom**, uma fabricante de motocicletas sediada em Milão que operou entre as décadas de 1940 e 1970. Entre as suas criações mais célebres, o ciclomotor **Motom 48** destaca-se como uma verdadeira obra-prima da engenharia de época.
@@ -14,7 +14,7 @@ Ao contrário da grande maioria dos ciclomotores de sua era, que utilizavam moto
 
 ## A Engenharia por Trás do Motor de 4 Tempos da Motom
 
-Para compreender o impacto do Motom 48, é preciso olhar de perto para o seu coração mecânico. O motor de 48 cc contava com válvulas no cabeçote (OHV - *Overhead Valves*) operadas por varetas e balancins, uma arquitetura surpreendentemente sofisticada para um veículo de proposta popular naquele período.
+Para compreender o impacto do Motom 48, é preciso olhar de perto para o seu coração mecânico. O motor de 48 cc contava com válvulas no cabeçote (OHV - _Overhead Valves_) operadas por varetas e balancins, uma arquitetura surpreendentemente sofisticada para um veículo de proposta popular naquele período.
 
 A escolha pelo ciclo de **quatro tempos** (admissão, compressão, expansão e exaustão) trouxe vantagens técnicas fundamentais sobre os concorrentes de dois tempos:
 
