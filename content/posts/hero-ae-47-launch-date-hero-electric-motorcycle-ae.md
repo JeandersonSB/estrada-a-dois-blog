@@ -1,11 +1,11 @@
 ---
-title: "Hero AE-47: Os Detalhes e Expectativas para a Inovadora Moto Elétrica da Gigante Indiana"
-date: "2026-09-03"
-category: "Notícias"
-status: "⏳ Rascunho"
-draft: true
-image: "https://loremflickr.com/1200/600/hero%2Celectric%2Cae%2C47/all"
-excerpt: "A aguardada motocicleta elétrica Hero AE-47 teve seu cronograma de lançamento ajustado. Conheça as especificações técnicas, a tecnologia embarcada e o impacto desse modelo no mercado global de duas rodas."
+title: 'Hero AE-47: Os Detalhes e Expectativas para a Inovadora Moto Elétrica da Gigante Indiana'
+status: 🟢 Publicado
+date: 2026-09-03
+category: Notícias
+draft: false
+image: https://loremflickr.com/1200/600/hero%2Celectric%2Cae%2C47/all
+excerpt: A aguardada motocicleta elétrica Hero AE-47 teve seu cronograma de lançamento ajustado. Conheça as especificações técnicas, a tecnologia embarcada e o impacto desse modelo no mercado global de duas rodas.
 ---
 
 O mercado global de duas rodas elétricas está em constante ebulição, e uma das marcas que mais desperta a curiosidade dos entusiastas e especialistas do setor é a indiana Hero Electric. O aguardado lançamento da **Hero AE-47**, a primeira motocicleta elétrica premium da fabricante, passou por ajustes em seu cronograma oficial, gerando grande expectativa para sua chegada definitiva às ruas.
@@ -27,17 +27,18 @@ O coração de qualquer veículo elétrico é o seu conjunto de baterias, e a He
 
 * **Bateria de Íons de Lítio:** A AE-47 conta com uma bateria de íons de lítio leve e removível de **48V e 3.5 kWh**. A portabilidade da bateria é um grande trunfo para usuários que moram em apartamentos ou locais sem infraestrutura de recarga direta na garagem, permitindo que a célula seja recarregada em tomadas domésticas comuns de três pinos.
 * **Modos de Pilotagem e Alcance:** A motocicleta oferece dois modos de condução bem definidos:
-  * **Modo Power:** Prioriza a entrega máxima de torque e potência, limitando a autonomia para cerca de **85 km** por carga completa.
-  * **Modo Eco:** Otimiza o consumo de energia para máxima eficiência de regeneração, estendendo o alcance para até **160 km** com uma única carga.
-* **Tempo de Recarga:** O sistema de gerenciamento de bateria (BMS - *Battery Management System*) suporta recarga rápida, permitindo reabastecer completamente o pacote de energia em aproximadamente **4 horas**.
+    - **Modo Power:** Prioriza a entrega máxima de torque e potência, limitando a autonomia para cerca de **85 km** por carga completa.
+    - **Modo Eco:** Otimiza o consumo de energia para máxima eficiência de regeneração, estendendo o alcance para até **160 km** com uma única carga.
+* **Tempo de Recarga:** O sistema de gerenciamento de bateria (BMS - _Battery Management System_) suporta recarga rápida, permitindo reabastecer completamente o pacote de energia em aproximadamente **4 horas**.
 
 ## Ciclística e Conectividade Avançada
 
-Visualmente, a Hero AE-47 adota uma estética *neo-retro* que mescla linhas clássicas de motocicletas naked com elementos futuristas. No entanto, sua ciclística e os recursos eletrônicos revelam uma moto de última geração.
+Visualmente, a Hero AE-47 adota uma estética _neo-retro_ que mescla linhas clássicas de motocicletas naked com elementos futuristas. No entanto, sua ciclística e os recursos eletrônicos revelam uma moto de última geração.
 
-A suspensão dianteira utiliza garfos telescópicos invertidos (USD - *Upside Down*), que oferecem maior rigidez torcional e melhor feedback para o piloto em curvas rápidas. Na traseira, um sistema de monoamortecimento garante o conforto e a estabilidade. O sistema de frenagem é composto por freios a disco em ambas as rodas, auxiliados por um sistema de frenagem combinada (CBS - *Combined Braking System*) e tecnologia de **frenagem regenerativa**, que recupera parte da energia cinética dissipada durante as desacelerações para recarregar a bateria.
+A suspensão dianteira utiliza garfos telescópicos invertidos (USD - _Upside Down_), que oferecem maior rigidez torcional e melhor feedback para o piloto em curvas rápidas. Na traseira, um sistema de monoamortecimento garante o conforto e a estabilidade. O sistema de frenagem é composto por freios a disco em ambas as rodas, auxiliados por um sistema de frenagem combinada (CBS - _Combined Braking System_) e tecnologia de **frenagem regenerativa**, que recupera parte da energia cinética dissipada durante as desacelerações para recarregar a bateria.
 
 No painel de instrumentos, o piloto encontra uma tela totalmente digital que se conecta diretamente a smartphones via Bluetooth. Através de um aplicativo dedicado, é possível acessar recursos como:
+
 * **Navegação GPS em tempo real**;
 * **Cerca virtual (Geofencing):** Um recurso de segurança que alerta o proprietário caso a moto saia de um perímetro predeterminado;
 * **Rastreamento via satélite** e telemetria completa da moto;
