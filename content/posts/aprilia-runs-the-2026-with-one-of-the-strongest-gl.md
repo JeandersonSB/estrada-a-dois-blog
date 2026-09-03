@@ -1,14 +1,14 @@
 ---
-title: "Aprilia Registra Forte Crescimento em Vendas Globais e se Destaca entre Fabricantes Europeias"
-date: "2026-09-03"
-category: "Notícias"
-status: "⏳ Rascunho"
-draft: true
-image: "https://upload.wikimedia.org/wikipedia/commons/9/99/Aprilia-logo.svg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original"
-excerpt: "Impulsionada pela renovação de sua linha de média cilindrada e forte presença nas pistas, a fabricante italiana Aprilia consolida um dos desempenhos de vendas mais sólidos do mercado mundial de duas rodas."
+title: Aprilia Registra Forte Crescimento em Vendas Globais e se Destaca entre Fabricantes Europeias
+status: 🟢 Publicado
+date: 2026-09-03
+category: Notícias
+draft: false
+image: https://upload.wikimedia.org/wikipedia/commons/9/99/Aprilia-logo.svg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original
+excerpt: Impulsionada pela renovação de sua linha de média cilindrada e forte presença nas pistas, a fabricante italiana Aprilia consolida um dos desempenhos de vendas mais sólidos do mercado mundial de duas rodas.
 ---
 
-A fabricante italiana **Aprilia**, pertencente ao Grupo Piaggio, desponta no cenário internacional com uma das trajetórias de crescimento de vendas mais robustas entre as marcas europeias tradicionais de motocicletas. De acordo com dados recentes de mercado compilados pela consultoria especializada *Motorcycles Data*, a montadora de Noale consolidou um ritmo expressivo de emplacamentos globais, superando oscilações enfrentadas por concorrentes diretos do continente europeu.
+A fabricante italiana **Aprilia**, pertencente ao Grupo Piaggio, desponta no cenário internacional com uma das trajetórias de crescimento de vendas mais robustas entre as marcas europeias tradicionais de motocicletas. De acordo com dados recentes de mercado compilados pela consultoria especializada _Motorcycles Data_, a montadora de Noale consolidou um ritmo expressivo de emplacamentos globais, superando oscilações enfrentadas por concorrentes diretos do continente europeu.
 
 Esse avanço mercadológico é reflexo direto de uma reestruturação estratégica no portfólio da marca, que soube preencher lacunas cruciais de mercado com projetos acessíveis, sem abrir mão do DNA esportivo e da tecnologia eletrônica avançada.
 
