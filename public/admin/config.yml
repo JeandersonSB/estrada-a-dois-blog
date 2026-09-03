@@ -21,22 +21,23 @@ collections:
     folder: "content/posts"
     create: true
     slug: "{{slug}}"
-    summary: "{{#draft}}⏳ [RASCUNHO]{{/draft}}{{^draft}}🟢 [PUBLICADO]{{/draft}} {{title}}"
-    sortable_fields: ["date", "title", "category", "draft"]
+    summary: "{{status}} {{title}}"
+    sortable_fields: ["date", "title", "category", "status"]
     view_filters:
       - label: "Apenas Rascunhos"
-        field: draft
-        pattern: true
+        field: status
+        pattern: "Rascunho"
       - label: "Apenas Publicados"
-        field: draft
-        pattern: false
+        field: status
+        pattern: "Publicado"
     view_groups:
       - label: "Status (Rascunho / Publicado)"
-        field: draft
+        field: status
       - label: "Categoria"
         field: category
     fields:
       - { label: "Título do Artigo", name: "title", widget: "string" }
+      - { label: "Status de Publicação", name: "status", widget: "select", options: ["⏳ Rascunho", "🟢 Publicado"], default: "⏳ Rascunho" }
       - { label: "Data de Publicação", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
       - { label: "Categoria", name: "category", widget: "select", options: ["Roteiros", "Dicas", "Manutenção", "Equipamentos", "Notícias"] }
       - { label: "Rascunho (Ocultar do site)", name: "draft", widget: "boolean", default: false, required: false }

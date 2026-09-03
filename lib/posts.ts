@@ -46,7 +46,7 @@ export function getSortedPostsData(): PostData[] {
       };
   });
   
-  const publishedPosts = allPostsData.filter(post => post.draft !== true);
+  const publishedPosts = allPostsData.filter(post => post.draft !== true && post.status !== '⏳ Rascunho');
 
   return publishedPosts.sort((a, b) => {
     if (a.date < b.date) {

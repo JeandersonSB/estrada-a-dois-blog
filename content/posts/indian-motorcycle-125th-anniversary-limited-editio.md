@@ -1,10 +1,16 @@
 ---
-title: 'Indian Motorcycle Celebra 125 Anos com Edição Limitada Exclusiva: Tradição e Exclusividade no Mercado Custom'
-date: 2026-09-03
+title: >-
+  Indian Motorcycle Celebra 125 Anos com Edição Limitada Exclusiva: Tradição e
+  Exclusividade no Mercado Custom
+date: 2026-09-03T00:00:00.000Z
 category: Notícias
 draft: false
-image: https://loremflickr.com/1200/600/motorcycle,gear/all
-excerpt: A lendária marca americana Indian Motorcycle celebra seu marco de 125 anos com o anúncio de uma série limitada exclusiva. Entenda o impacto do legado e a relevância de mercado dessa grande celebração.
+image: 'https://loremflickr.com/1200/600/motorcycle,gear/all'
+excerpt: >-
+  A lendária marca americana Indian Motorcycle celebra seu marco de 125 anos com
+  o anúncio de uma série limitada exclusiva. Entenda o impacto do legado e a
+  relevância de mercado dessa grande celebração.
+status: "\U0001F7E2 Publicado"
 ---
 
 A Indian Motorcycle, a primeira empresa de motocicletas dos Estados Unidos, alcança um dos marcos mais impressionantes da história da indústria de duas rodas: seus 125 anos de fundação. Para celebrar a data histora, a fabricante revelou o lançamento de uma Edição Limitada de Aniversário de 125 Anos, apresentada em um evento exclusivo na Owl Shop.

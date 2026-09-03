@@ -1,10 +1,16 @@
 ---
-title: 'As Melhores Motocicletas da Royal Enfield em 2026: Tecnologia, Engenharia e Consolidação no Mercado Global'
-date: 2026-09-01
+title: >-
+  As Melhores Motocicletas da Royal Enfield em 2026: Tecnologia, Engenharia e
+  Consolidação no Mercado Global
+date: 2026-09-01T00:00:00.000Z
 category: Notícias
 draft: false
-image: https://loremflickr.com/1200/600/motorcycle,gear/all
-excerpt: A Royal Enfield amplia sua presença internacional em 2026 com avanços técnicos significativos, novas plataformas de motorização e uma linha diversificada que une estética clássica à engenharia moderna.
+image: 'https://loremflickr.com/1200/600/motorcycle,gear/all'
+excerpt: >-
+  A Royal Enfield amplia sua presença internacional em 2026 com avanços técnicos
+  significativos, novas plataformas de motorização e uma linha diversificada que
+  une estética clássica à engenharia moderna.
+status: "\U0001F7E2 Publicado"
 ---
 
 A Royal Enfield continua a sua trajetória de expansão agressiva e consolidação global no segmento de motocicletas de média cilindrada. Em 2026, a fabricante indiana reafirma seu compromisso de modernização sem perder a identidade clássica que a consagrou. A marca apresenta um portfólio reforçado por melhorias mecânicas, evolução em eletrônica embarcada e o amadurecimento de suas plataformas de motorização.

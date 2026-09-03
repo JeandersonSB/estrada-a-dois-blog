@@ -1,10 +1,16 @@
 ---
-title: Mercado Internacional Abre Temporada de Descontos de até 50% em Equipamentos e Acessórios Testados
-date: 2026-09-02
+title: >-
+  Mercado Internacional Abre Temporada de Descontos de até 50% em Equipamentos e
+  Acessórios Testados
+date: 2026-09-02T00:00:00.000Z
 category: Notícias
 draft: false
-image: https://loremflickr.com/1200/600/motorcycle,gear/all
-excerpt: A tradicional temporada de ofertas do Labor Day movimenta o mercado internacional de duas rodas com descontos expressivos em itens de proteção, vestuário técnico e acessórios aprovados em testes rigorosos de especialista.
+image: 'https://loremflickr.com/1200/600/motorcycle,gear/all'
+excerpt: >-
+  A tradicional temporada de ofertas do Labor Day movimenta o mercado
+  internacional de duas rodas com descontos expressivos em itens de proteção,
+  vestuário técnico e acessórios aprovados em testes rigorosos de especialista.
+status: "\U0001F7E2 Publicado"
 ---
 
 O mercado internacional de equipamentos para duas rodas acaba de entrar em um dos períodos mais movimentados do ano para o setor de acessórios e vestuário técnico. Em virtude do feriado de _Labor Day_ (Dia do Trabalho nos Estados Unidos e Canadá), grandes varejistas e fabricantes especializados iniciaram campanhas promocionais que oferecem até 50% de desconto em uma ampla gama de itens indispensáveis para quem busca alto rendimento e segurança sobre duas rodas.

@@ -8,6 +8,7 @@ const API_KEY = process.env.GEMINI_API_KEY;
 // Busca global no Google News focada em motos, lançamentos, equipamentos e tech (exclui viagens)
 const RSS_URL = 'https://news.google.com/rss/search?q=(motorcycle+OR+motorcycles+OR+motociclismo)+AND+(launch+OR+gear+OR+brands+OR+models+OR+innovation+OR+technology+OR+parts)+-travel+-viagem&hl=en-US&gl=US';
 const POSTS_DIR = path.join(process.cwd(), 'content', 'posts');
+const TARGET_COUNT = parseInt(process.env.NEWS_COUNT || '1', 10);
 
 if (!API_KEY) {
   console.error("ERRO: GEMINI_API_KEY não encontrada.");
@@ -64,7 +65,6 @@ async function extrairImagemSiteOrigem(url) {
       let img = ogMatch[1].trim();
       if (img.startsWith('//')) img = 'https:' + img;
       if (img.startsWith('http://') || img.startsWith('https://')) {
-        // Ignora logos genéricos, tracking pixels ou ícones minúsculos
         if (!img.includes('googleusercontent.com') && !img.includes('favicon') && !img.includes('logo_small')) {
           console.log(`Imagem original extraída da matéria: ${img}`);
           return img;
@@ -85,7 +85,6 @@ async function buscarImagemPorPalavrasChave(termoBusca) {
     const cleanKw = termoBusca.replace(/[^a-zA-Z0-9\s]/g, '').trim();
     console.log(`Buscando imagem fotográfica relacionada para: "${cleanKw}"...`);
     
-    // Consulta Wikimedia Commons / Wikipedia para foto real da moto ou modelo
     const url = `https://en.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(cleanKw)}&gsrlimit=1&prop=pageimages&piprop=original&format=json`;
     const res = await fetch(url, { headers: { 'User-Agent': 'EstradaADoisBot/1.0' } });
     
@@ -106,75 +105,21 @@ async function buscarImagemPorPalavrasChave(termoBusca) {
     console.log(`Aviso na busca por termo: ${e.message}`);
   }
   
-  // Imagem fotográfica com tags específicas da marca/modelo
   const tags = encodeURIComponent(termoBusca.toLowerCase().replace(/[^a-z0-9]+/g, ','));
   return `https://loremflickr.com/1200/600/${tags}/all`;
 }
 
-async function gerarNoticia() {
-  console.log("Iniciando busca de notícias globais...");
-  
-  // Busca a notícia do RSS
-  const feed = await parser.parseURL(RSS_URL);
-  if (!feed.items || feed.items.length === 0) {
-    console.error("Nenhuma notícia encontrada no feed.");
-    return;
-  }
-  
-  // Filtra notícias das últimas 36 horas
-  const trintaEseisHoras = 36 * 60 * 60 * 1000;
-  const agora = new Date();
-  
-  const itensRecentes = feed.items.filter(item => {
-    const pubDate = new Date(item.pubDate);
-    return (agora - pubDate) <= trintaEseisHoras;
-  });
-
-  if (itensRecentes.length === 0) {
-    console.log("Nenhuma notícia nas últimas 36 horas encontrada.");
-    return;
-  }
-  
-  // Procura uma notícia inédita E com link de fonte ativo
-  let itemEscolhido = null;
-  let slugTarget = '';
-  
-  for (const item of itensRecentes) {
-    const tempSlug = item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '').substring(0, 50);
-    
-    if (fs.existsSync(path.join(POSTS_DIR, `${tempSlug}.md`))) {
-      continue; // Já temos esse post
-    }
-    
-    // Validação obrigatória do link da fonte:
-    console.log(`Verificando se o link da matéria está ativo: ${item.link}`);
-    const linkAtivo = await testarLinkAtivo(item.link);
-    if (!linkAtivo) {
-      console.log(`Link da matéria falhou no teste de integridade. Pulando para a próxima...`);
-      continue;
-    }
-    
-    itemEscolhido = item;
-    slugTarget = tempSlug;
-    break; // Encontrou artigo inédito e com link 100% funcional!
-  }
-
-  if (!itemEscolhido) {
-    console.log("Todas as notícias recentes já foram processadas ou os links estão inativos. Pulando...");
-    return;
-  }
-  
-  const item = itemEscolhido;
-  console.log(`Notícia aprovada: "${item.title}" (Publicada em: ${item.pubDate})`);
+async function processarItem(item, model) {
+  const tempSlug = item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '').substring(0, 50);
   const today = new Date().toISOString().split('T')[0];
 
+  console.log(`\n-----------------------------------------`);
+  console.log(`Processando notícia: "${item.title}"`);
+  console.log(`Data original: ${item.pubDate}`);
+  
   // 1. Tentar extrair a imagem do site original
   let imagemFinal = await extrairImagemSiteOrigem(item.link);
 
-  // 2. Aciona o Gemini para reescrever e extrair palavras-chave visuais da matéria
-  console.log("Enviando para o Gemini...");
-  const model = genAI.getGenerativeModel({ model: "gemini-3.6-flash" });
-  
   const prompt = `
   Atue como um redator jornalista automotivo expert do blog "Estrada a Dois" (focado no mundo do motociclismo, lançamentos, marcas, modelos e tecnologia).
   
@@ -195,6 +140,7 @@ async function gerarNoticia() {
   title: "[Seu Título SEO Atraente e Jornalístico em pt-BR]"
   date: "${today}"
   category: "Notícias"
+  status: "⏳ Rascunho"
   draft: true
   image: "IMAGE_PLACEHOLDER"
   keywords_image: "[2 a 3 palavras da moto/marca em inglês]"
@@ -205,8 +151,18 @@ async function gerarNoticia() {
   `;
 
   try {
-    const result = await model.generateContent(prompt);
-    let markdownContent = result.response.text();
+    let markdownContent = null;
+    for (let tentativa = 1; tentativa <= 4; tentativa++) {
+      try {
+        const result = await model.generateContent(prompt);
+        markdownContent = result.response.text();
+        break;
+      } catch (err) {
+        console.log(`Tentativa ${tentativa}/4 falhou (${err.message}). Aguardando 4s...`);
+        if (tentativa === 4) throw err;
+        await new Promise(r => setTimeout(r, 4000));
+      }
+    }
     
     markdownContent = markdownContent.replace(/^```markdown\n?/m, '').replace(/```$/m, '').trim();
 
@@ -214,13 +170,11 @@ async function gerarNoticia() {
     const kwMatch = markdownContent.match(/keywords_image:\s*["']?([^"'\n\r]+)["']?/i);
     const termoImagem = kwMatch ? kwMatch[1].trim() : item.title;
     
-    // Se não encontrou imagem no site original, busca imagem relacionada por palavra-chave
     if (!imagemFinal) {
-      console.log(`Buscando imagem fotográfica relacionada para o tema: "${termoImagem}"...`);
+      console.log(`Buscando imagem contextual para: "${termoImagem}"...`);
       imagemFinal = await buscarImagemPorPalavrasChave(termoImagem);
     }
 
-    // Injeta a imagem final e remove a linha temporária de keywords
     markdownContent = markdownContent
       .replace('IMAGE_PLACEHOLDER', imagemFinal)
       .replace(/keywords_image:\s*["']?[^"'\n\r]+["']?\r?\n?/i, '');
@@ -228,15 +182,76 @@ async function gerarNoticia() {
     if (!fs.existsSync(POSTS_DIR)) {
       fs.mkdirSync(POSTS_DIR, { recursive: true });
     }
-    const filePath = path.join(POSTS_DIR, `${slugTarget}.md`);
+    const filePath = path.join(POSTS_DIR, `${tempSlug}.md`);
     fs.writeFileSync(filePath, markdownContent, 'utf8');
     
-    console.log(`Sucesso! Artigo rascunho salvo em: ${filePath}`);
-    console.log(`Imagem vinculada ao artigo: ${imagemFinal}`);
-    
+    console.log(`✅ Artigo rascunho salvo em: ${filePath}`);
+    console.log(`🖼️ Imagem vinculada: ${imagemFinal}`);
+    return true;
   } catch (error) {
     console.error("Erro ao gerar artigo com a API:", error);
+    return false;
   }
 }
 
-gerarNoticia();
+async function gerarNoticias() {
+  console.log(`Iniciando busca de notícias globais (Meta: ${TARGET_COUNT} notícia(s))...`);
+  
+  const feed = await parser.parseURL(RSS_URL);
+  if (!feed.items || feed.items.length === 0) {
+    console.error("Nenhuma notícia encontrada no feed.");
+    return;
+  }
+  
+  // Filtra notícias recentes (padrão 36h, ou configurável via MAX_HOURS)
+  const maxHoras = parseInt(process.env.MAX_HOURS || '36', 10);
+  const janelaTempo = maxHoras * 60 * 60 * 1000;
+  const agora = new Date();
+  
+  let itensCandidatos = feed.items.filter(item => {
+    const pubDate = new Date(item.pubDate);
+    return (agora - pubDate) <= janelaTempo;
+  });
+
+  // Se o filtro estrito tiver menos itens que a meta pedida no teste, usa os mais recentes disponíveis no feed
+  if (itensCandidatos.length < TARGET_COUNT) {
+    console.log(`Janela de ${maxHoras}h continha apenas ${itensCandidatos.length} notícia(s). Usando os itens mais recentes do feed para atingir a meta de ${TARGET_COUNT}...`);
+    itensCandidatos = feed.items;
+  }
+
+  if (itensCandidatos.length === 0) {
+    console.log("Nenhuma notícia encontrada.");
+    return;
+  }
+
+  // 2. Aciona o Gemini para reescrever e extrair palavras-chave visuais da matéria
+  console.log("Enviando para o Gemini...");
+  const model = genAI.getGenerativeModel({ model: "gemini-3.5-flash" });
+  let geradasCount = 0;
+
+  for (const item of itensCandidatos) {
+    if (geradasCount >= TARGET_COUNT) break;
+
+    const tempSlug = item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '').substring(0, 50);
+    
+    if (fs.existsSync(path.join(POSTS_DIR, `${tempSlug}.md`))) {
+      continue; // Já processada
+    }
+
+    console.log(`Verificando link: ${item.link}`);
+    const linkAtivo = await testarLinkAtivo(item.link);
+    if (!linkAtivo) {
+      console.log(`Link inativo. Pulando para o próximo...`);
+      continue;
+    }
+
+    const sucesso = await processarItem(item, model);
+    if (sucesso) {
+      geradasCount++;
+    }
+  }
+
+  console.log(`\nProcesso concluído: ${geradasCount} nova(s) notícia(s) gerada(s).`);
+}
+
+gerarNoticias();

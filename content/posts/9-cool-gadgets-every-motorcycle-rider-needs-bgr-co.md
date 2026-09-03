@@ -1,10 +1,16 @@
 ---
-title: 'Tecnologia sobre Duas Rodas: 9 Gadgets Essenciais que Revolucionam a Pilotagem e a Segurança'
-date: 2026-09-02
+title: >-
+  Tecnologia sobre Duas Rodas: 9 Gadgets Essenciais que Revolucionam a Pilotagem
+  e a Segurança
+date: 2026-09-02T00:00:00.000Z
 category: Notícias
 draft: false
-image: https://loremflickr.com/1200/600/motorcycle,gear/all
-excerpt: A convergência entre eletrônica embarcada e equipamentos de proteção transformou o universo das motocicletas. Confira os dispositivos tecnológicos mais avançados do mercado para potencializar sua máquina.
+image: 'https://loremflickr.com/1200/600/motorcycle,gear/all'
+excerpt: >-
+  A convergência entre eletrônica embarcada e equipamentos de proteção
+  transformou o universo das motocicletas. Confira os dispositivos tecnológicos
+  mais avançados do mercado para potencializar sua máquina.
+status: "\U0001F7E2 Publicado"
 ---
 
 A indústria das motocicletas vive uma de suas eras mais inovadoras. Se no passado a experiência de pilotar dependia exclusivamente da mecânica bruta e do feeling do piloto, hoje a eletrônica embarcada e os acessórios tecnológicos desempenham um papel fundamental no desempenho, na segurança e na eficiência do conjunto homem-máquina.

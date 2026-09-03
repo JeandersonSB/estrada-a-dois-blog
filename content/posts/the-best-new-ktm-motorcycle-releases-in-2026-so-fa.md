@@ -1,10 +1,16 @@
 ---
-title: 'Lançamentos KTM 2026: Conheça os Principais Modelos, Tecnologias e Novidades da Marca'
-date: 2026-09-02
+title: >-
+  Lançamentos KTM 2026: Conheça os Principais Modelos, Tecnologias e Novidades
+  da Marca
+date: 2026-09-02T00:00:00.000Z
 category: Notícias
 draft: false
-image: https://loremflickr.com/1200/600/motorcycle,gear/all
-excerpt: A KTM acelera forte para 2026 com atualizações de alto desempenho, novas opções de transmissão e pacotes eletrônicos de ponta. Confira os destaques da fabricante austríaca.
+image: 'https://loremflickr.com/1200/600/motorcycle,gear/all'
+excerpt: >-
+  A KTM acelera forte para 2026 com atualizações de alto desempenho, novas
+  opções de transmissão e pacotes eletrônicos de ponta. Confira os destaques da
+  fabricante austríaca.
+status: "\U0001F7E2 Publicado"
 ---
 
 A fabricante austríaca KTM continua a empurrar os limites do desempenho e da engenharia no universo das duas rodas. Com a consolidação da sua linha para 2026, a marca reafirma seu compromisso com o lema _"Ready to Race"_, apresentando atualizações significativas em suas plataformas de alta cilindrada, avanços em transmissões automatizadas e pacotes eletrônicos cada vez mais refinados.

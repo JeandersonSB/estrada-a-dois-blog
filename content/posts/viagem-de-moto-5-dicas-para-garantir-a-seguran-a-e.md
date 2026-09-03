@@ -1,10 +1,16 @@
 ---
-title: 'Pé na Estrada com Segurança: 5 Dicas Fundamentais para Sua Próxima Viagem de Moto'
-date: 2026-08-31
+title: >-
+  Pé na Estrada com Segurança: 5 Dicas Fundamentais para Sua Próxima Viagem de
+  Moto
+date: 2026-08-31T00:00:00.000Z
 category: Notícias
 draft: false
 image: /images/blog/preview-estrada.jpg
-excerpt: Vai pegar a estrada sobre duas rodas? Confira conselhos valiosos para garantir uma pilotagem tranquila, proteger seu passageiro e aproveitar cada quilômetro do trajeto.
+excerpt: >-
+  Vai pegar a estrada sobre duas rodas? Confira conselhos valiosos para garantir
+  uma pilotagem tranquila, proteger seu passageiro e aproveitar cada quilômetro
+  do trajeto.
+status: "\U0001F7E2 Publicado"
 ---
 
 Não há sensação comparável à de ligar o motor, sentir o vento no rosto e ver a linha do horizonte se abrir na rodovia. O mototurismo é uma das formas mais fascinantes de explorar o mundo, seja pilotando solo ou compartilhando o assento no melhor estilo _Estrada a Dois_. No entanto, transformar a viagem dos sonhos em uma experiência memorável exige mais do que apenas acelerar: o planejamento e a prevenção são os melhores companheiros de viagem de qualquer motociclista.

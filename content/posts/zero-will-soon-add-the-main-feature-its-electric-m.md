@@ -1,10 +1,16 @@
 ---
-title: 'Zero Motorcycles Adotará Carregamento Rápido DC: O Recurso que Faltava nas Motos Elétricas'
-date: 2026-09-03
+title: >-
+  Zero Motorcycles Adotará Carregamento Rápido DC: O Recurso que Faltava nas
+  Motos Elétricas
+date: 2026-09-03T00:00:00.000Z
 category: Notícias
 draft: false
-image: https://loremflickr.com/1200/600/motorcycle,gear/all
-excerpt: A Zero Motorcycles prepara a inclusão do carregamento rápido em corrente contínua (DC Fast Charging), eliminando o maior gargalo técnico de suas motocicletas elétricas de alta performance.
+image: 'https://loremflickr.com/1200/600/motorcycle,gear/all'
+excerpt: >-
+  A Zero Motorcycles prepara a inclusão do carregamento rápido em corrente
+  contínua (DC Fast Charging), eliminando o maior gargalo técnico de suas
+  motocicletas elétricas de alta performance.
+status: "\U0001F7E2 Publicado"
 ---
 
 A indústria das duas rodas elétricas atinge um novo patamar de maturidade tecnológica. A **Zero Motorcycles**, referência global no desenvolvimento de motocicletas elétricas de alto desempenho, prepara-se para implementar nativamente o recurso mais cobrado por entusiastas e especialistas do setor: a tecnologia de **carregamento rápido em corrente contínua (DC Fast Charging / CCS)**.
