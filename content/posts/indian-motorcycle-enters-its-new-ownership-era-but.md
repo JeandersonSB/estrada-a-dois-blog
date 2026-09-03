@@ -1,22 +1,22 @@
 ---
-title: "Tempos Difíceis: Indian Motorcycle Registra Queda de 41,8% nas Vendas em 2026"
-date: "2026-09-03"
-category: "Notícias"
-status: "⏳ Rascunho"
-draft: true
-image: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Indian_Motorcycle_logo.svg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original"
-excerpt: "Apesar de iniciar uma nova fase estratégica e corporativa, a icônica fabricante americana de motocicletas amarga um tombo expressivo de 41,8% no acumulado de vendas até julho de 2026."
+title: 'Tempos Difíceis: Indian Motorcycle Registra Queda de 41,8% nas Vendas em 2026'
+status: 🟢 Publicado
+date: 2026-09-03
+category: Notícias
+draft: false
+image: https://upload.wikimedia.org/wikipedia/commons/c/c3/Indian_Motorcycle_logo.svg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original
+excerpt: Apesar de iniciar uma nova fase estratégica e corporativa, a icônica fabricante americana de motocicletas amarga um tombo expressivo de 41,8% no acumulado de vendas até julho de 2026.
 ---
 
 A lendária **Indian Motorcycle**, uma das marcas mais antigas e respeitadas do motociclismo mundial, está atravessando um período de forte turbulência financeira e comercial. Mesmo ao iniciar o que o mercado vem chamando de sua "nova era de controle acionário e gestão", a fabricante norte-americana registrou um recuo drástico em seus emplacamentos globais. 
 
-De acordo com dados consolidados até julho de 2026, as vendas da marca despencaram **41,8% no acumulado do ano (YTD - Year To Date)**. O número acende um sinal de alerta vermelho tanto para a sua controladora quanto para os concessionários e entusiastas das consagradas *cruisers* e *baggers* americanas.
+De acordo com dados consolidados até julho de 2026, as vendas da marca despencaram **41,8% no acumulado do ano (YTD - Year To Date)**. O número acende um sinal de alerta vermelho tanto para a sua controladora quanto para os concessionários e entusiastas das consagradas _cruisers_ e _baggers_ americanas.
 
----
+***
 
 ## O que é o YTD e o tamanho do impacto para a Indian
 
-No jargão do mercado financeiro e automotivo, a sigla **YTD** significa *Year-To-Date* (Acumulado do Ano). Trata-se de uma métrica que compara o desempenho acumulado de vendas do primeiro dia de janeiro até o mês corrente (neste caso, julho de 2026) com o mesmo período do ano anterior. 
+No jargão do mercado financeiro e automotivo, a sigla **YTD** significa _Year-To-Date_ (Acumulado do Ano). Trata-se de uma métrica que compara o desempenho acumulado de vendas do primeiro dia de janeiro até o mês corrente (neste caso, julho de 2026) com o mesmo período do ano anterior. 
 
 Uma queda de quase 42% no YTD é um indicador severo. Significa que a Indian Motorcycle vendeu quase metade do volume de motocicletas que havia comercializado nos primeiros sete meses do ano anterior. Esse recuo impacta diretamente o fluxo de caixa, a capacidade de investimento em Pesquisa e Desenvolvimento (P&D) e a sustentabilidade da rede de distribuição global.
 
@@ -36,7 +36,7 @@ A grande questão técnica que intriga os entusiastas e jornalistas do setor é 
 
 *   **Linha Scout:** Equipada com motores V-Twin arrefecidos a líquido, historicamente a porta de entrada da marca e o maior volume de vendas.
 *   **Linha Chief e Springfield:** Modelos cruiser puros que entregam o torque brutal do motor Thunderstroke.
-*   **Challenger e Roadmaster:** As imponentes *baggers* e *tourings* equipadas com o moderno motor PowerPlus de 108 polegadas cúbicas, referência em tecnologia embarcada e performance na categoria.
+*   **Challenger e Roadmaster:** As imponentes _baggers_ e _tourings_ equipadas com o moderno motor PowerPlus de 108 polegadas cúbicas, referência em tecnologia embarcada e performance na categoria.
 
 Mesmo com motores tecnologicamente muito avançados e elogiados pela crítica especializada por entregarem mais desempenho e menor vibração do que as arquiteturas tradicionais arrefecidas a ar da concorrência, o preço final elevado dessas máquinas tem afastado os compradores das concessionárias neste período de retração econômica.
 
