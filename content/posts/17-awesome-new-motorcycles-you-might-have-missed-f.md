@@ -1,11 +1,11 @@
 ---
-title: "Lançamentos de Motos: As Novidades de Harley, Honda e Kawasaki que Você Precisa Conhecer"
-date: "2026-09-03"
-category: "Notícias"
-status: "⏳ Rascunho"
-draft: true
-image: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Honda_VTX_in_Walkerville%2C_Windsor%2C_Ontario%2C_2025-08-29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original"
-excerpt: "Fique por dentro das principais novidades do mercado de duas rodas. Analisamos as tendências, tecnologias e os novos modelos de gigantes como Harley-Davidson, Honda e Kawasaki."
+title: 'Lançamentos de Motos: As Novidades de Harley, Honda e Kawasaki que Você Precisa Conhecer'
+status: 🟢 Publicado
+date: 2026-09-03
+category: Notícias
+draft: false
+image: https://upload.wikimedia.org/wikipedia/commons/d/dd/Honda_VTX_in_Walkerville%2C_Windsor%2C_Ontario%2C_2025-08-29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original
+excerpt: Fique por dentro das principais novidades do mercado de duas rodas. Analisamos as tendências, tecnologias e os novos modelos de gigantes como Harley-Davidson, Honda e Kawasaki.
 ---
 
 O mercado global de motocicletas está passando por um momento de intensa ebulição, com as principais fabricantes do mundo revelando modelos que redefinem os conceitos de performance, design e tecnologia. Gigantes como Harley-Davidson, Honda e Kawasaki têm apresentado novidades que muitas vezes passam despercebidas pelo grande público, mas que trazem inovações técnicas cruciais para o futuro do motociclismo.
@@ -18,7 +18,7 @@ A Harley-Davidson continua a sua transição para uma era mais tecnológica sem 
 
 Diferente do passado, onde a mecânica analógica predominava, as novas custom e cruisers agora contam com:
 
-*   **Modos de Pilotagem Selecionáveis:** Sistemas que alteram a entrega de torque, a resposta do acelerador eletrônico (*Ride-by-Wire*) e a atuação do freio motor.
+*   **Modos de Pilotagem Selecionáveis:** Sistemas que alteram a entrega de torque, a resposta do acelerador eletrônico (_Ride-by-Wire_) e a atuação do freio motor.
 *   **Controle de Tração Otimizado para Curvas (C-TCS):** Uma tecnologia que utiliza uma Unidade de Medição Inercial (IMU) para monitorar a inclinação da moto e evitar a perda de aderência em curvas.
 *   **Sistemas de Infotainment de Última Geração:** Painéis TFT coloridos que substituem os antigos mostradores analógicos, integrando navegação GPS nativa e conectividade total com smartphones.
 
