@@ -1,11 +1,11 @@
 ---
-title: "Review Kriega US-Drypack: A Linha de Malas Traseiras Impermeáveis que é Referência no Motociclismo"
-date: "2026-09-03"
-category: "Notícias"
-status: "⏳ Rascunho"
-draft: true
-image: "https://loremflickr.com/1200/600/kriega%2Cus%2Cdrypack/all"
-excerpt: "Analisamos em detalhes a renomada linha de malas traseiras Kriega US-Drypack, famosa por sua impermeabilidade absoluta, materiais balísticos e sistema de fixação modular inovador."
+title: 'Review Kriega US-Drypack: A Linha de Malas Traseiras Impermeáveis que é Referência no Motociclismo'
+status: 🟢 Publicado
+date: 2026-09-03
+category: Notícias
+draft: false
+image: https://loremflickr.com/1200/600/kriega%2Cus%2Cdrypack/all
+excerpt: Analisamos em detalhes a renomada linha de malas traseiras Kriega US-Drypack, famosa por sua impermeabilidade absoluta, materiais balísticos e sistema de fixação modular inovador.
 ---
 
 No mercado de acessórios para motocicletas, a marca britânica **Kriega** é amplamente reconhecida como o padrão ouro em termos de bagagem técnica. Entre os seus produtos mais célebres está a linha **Kriega US-Drypack**, uma série de malas traseiras (tail bags) impermeáveis que conquistaram motociclistas de diversos segmentos, desde proprietários de esportivas até entusiastas de big trails. 
@@ -33,6 +33,7 @@ Um dos maiores desafios de instalar malas traseiras em motocicletas é garantir 
 O kit de montagem acompanha fitas que são fixadas de forma semi-permanente sob o assento ou nas alças do chassi da moto. Uma vez instaladas, as malas US-Drypack são presas por meio de fivelas de liberação rápida. Isso significa que colocar ou retirar a mala leva menos de um minuto.
 
 Além disso, a linha é totalmente modular. O motociclista pode combinar diferentes tamanhos da gama para expandir sua capacidade de carga:
+
 * **US-5 (5 Litros):** Ideal para ferramentas, carteira e pequenos eletrônicos.
 * **US-10 (10 Litros):** Excelente para o uso diário urbano.
 * **US-20 (20 Litros):** O tamanho intermediário perfeito.
