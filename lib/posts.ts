@@ -57,10 +57,19 @@ export function getSortedPostsData(): PostData[] {
   });
 }
 
+export function slugifyCategory(cat: string): string {
+  return cat
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/\s+/g, '-');
+}
+
 export function getPostsByCategory(categorySlug: string): PostData[] {
   const allPosts = getSortedPostsData();
+  const target = categorySlug.toLowerCase();
   return allPosts.filter(
-    (post) => post.category.toLowerCase().replace(/\s+/g, '-') === categorySlug.toLowerCase()
+    (post) => post.category && slugifyCategory(post.category) === target
   );
 }
 

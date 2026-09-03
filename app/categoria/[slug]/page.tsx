@@ -1,11 +1,19 @@
 import { getSortedPostsData } from '@/lib/posts';
 
+function slugifyCategory(cat: string) {
+  return cat
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/\s+/g, '-');
+}
+
 // Generate static params for categories
 export async function generateStaticParams() {
   const posts = getSortedPostsData();
-  const categories = Array.from(new Set(posts.map(p => p.category?.toLowerCase() || '')));
+  const categories = Array.from(new Set(posts.map(p => p.category || '')));
   return categories.filter(Boolean).map((cat) => ({
-    slug: cat.replace(/\s+/g, '-'),
+    slug: slugifyCategory(cat),
   }));
 }
 
@@ -17,7 +25,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
   
   // Filter posts
   const allPosts = getSortedPostsData();
-  const posts = allPosts.filter(p => p.category?.toLowerCase().replace(/\s+/g, '-') === decodedSlug);
+  const posts = allPosts.filter(p => p.category && slugifyCategory(p.category) === decodedSlug);
   
   // Format title for display
   const title = posts.length > 0 ? posts[0].category : decodedSlug.charAt(0).toUpperCase() + decodedSlug.slice(1);
