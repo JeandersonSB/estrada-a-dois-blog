@@ -40,7 +40,6 @@ collections:
       - { label: "Status de Publicação", name: "status", widget: "select", options: ["⏳ Rascunho", "🟢 Publicado"], default: "⏳ Rascunho" }
       - { label: "Data de Publicação", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
       - { label: "Categoria", name: "category", widget: "select", options: ["Roteiros", "Dicas", "Manutenção", "Equipamentos", "Notícias"] }
-      - { label: "Rascunho (Ocultar do site)", name: "draft", widget: "boolean", default: false, required: false }
       - { label: "Imagem de Capa (Horizontal)", name: "image", widget: "image" }
       - { label: "Resumo para a Home (Até 3 linhas)", name: "excerpt", widget: "text" }
       - { label: "Conteúdo do Artigo", name: "body", widget: "markdown" }

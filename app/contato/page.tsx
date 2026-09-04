@@ -121,17 +121,17 @@ export default function Contato() {
                 <div>
                   <p className="text-sm text-gray-400 uppercase tracking-wider mb-1">Redes Sociais</p>
                   <div className="flex flex-col space-y-4 mt-4">
-                    <a href="#" className="font-bold text-gray-300 hover:text-[#E1306C] transition-colors flex items-center group">
+                    <a href="https://www.instagram.com/estrada.a.dois/" target="_blank" rel="noopener noreferrer" className="font-bold text-gray-300 hover:text-[#E1306C] transition-colors flex items-center group">
                       <InstagramIcon className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
                       @estrada.a.dois
                     </a>
-                    <a href="#" className="font-bold text-gray-300 hover:text-[#FF0000] transition-colors flex items-center group">
+                    <a href="https://www.youtube.com/@estradaadois2" target="_blank" rel="noopener noreferrer" className="font-bold text-gray-300 hover:text-[#FF0000] transition-colors flex items-center group">
                       <YouTubeIcon className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
-                      Estrada a Dois
+                      @estradaadois2
                     </a>
-                    <a href="#" className="font-bold text-gray-300 hover:text-[#00f2fe] transition-colors flex items-center group">
+                    <a href="https://www.tiktok.com/@estrada.a.dois2" target="_blank" rel="noopener noreferrer" className="font-bold text-gray-300 hover:text-[#00f2fe] transition-colors flex items-center group">
                       <TikTokIcon className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
-                      @estradaadois
+                      @estrada.a.dois2
                     </a>
                   </div>
                 </div>

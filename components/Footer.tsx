@@ -34,7 +34,7 @@ export function Footer() {
         {/* Social Buttons - Horizontal */}
         <div className="flex flex-row flex-wrap justify-center w-full gap-4 mb-8">
           
-          <a href="#" className="group relative flex items-center w-auto px-5 py-3 bg-[#121212] border border-[#333333] rounded-lg text-[#D9D9D9] font-medium text-[13px] tracking-wide overflow-hidden transition-all duration-300 hover:bg-[#1a1a1a] hover:border-[#555555] hover:text-white hover:-translate-y-[2px] hover:shadow-[0_10px_30px_rgba(0,0,0,0.4)]">
+          <a href="https://www.instagram.com/estrada.a.dois/" target="_blank" rel="noopener noreferrer" className="group relative flex items-center w-auto px-5 py-3 bg-[#121212] border border-[#333333] rounded-lg text-[#D9D9D9] font-medium text-[13px] tracking-wide overflow-hidden transition-all duration-300 hover:bg-[#1a1a1a] hover:border-[#555555] hover:text-white hover:-translate-y-[2px] hover:shadow-[0_10px_30px_rgba(0,0,0,0.4)]">
             <div className="absolute left-0 top-0 h-full w-[3px] bg-transparent transition-colors duration-300 group-hover:bg-[#E1306C]"></div>
             <div className="flex items-center justify-center w-[18px] h-[18px] mr-3">
               <InstagramIcon />
@@ -43,7 +43,7 @@ export function Footer() {
             <span className="font-sans text-[1.1em] font-light text-white/20 transition-all duration-300 group-hover:text-white group-hover:translate-x-[2px] group-hover:-translate-y-[2px]">↗</span>
           </a>
 
-          <a href="#" className="group relative flex items-center w-auto px-5 py-3 bg-[#121212] border border-[#333333] rounded-lg text-[#D9D9D9] font-medium text-[13px] tracking-wide overflow-hidden transition-all duration-300 hover:bg-[#1a1a1a] hover:border-[#555555] hover:text-white hover:-translate-y-[2px] hover:shadow-[0_10px_30px_rgba(0,0,0,0.4)]">
+          <a href="https://www.youtube.com/@estradaadois2" target="_blank" rel="noopener noreferrer" className="group relative flex items-center w-auto px-5 py-3 bg-[#121212] border border-[#333333] rounded-lg text-[#D9D9D9] font-medium text-[13px] tracking-wide overflow-hidden transition-all duration-300 hover:bg-[#1a1a1a] hover:border-[#555555] hover:text-white hover:-translate-y-[2px] hover:shadow-[0_10px_30px_rgba(0,0,0,0.4)]">
             <div className="absolute left-0 top-0 h-full w-[3px] bg-transparent transition-colors duration-300 group-hover:bg-[#FF0000]"></div>
             <div className="flex items-center justify-center w-[18px] h-[18px] mr-3">
               <YouTubeIcon />
@@ -52,7 +52,7 @@ export function Footer() {
             <span className="font-sans text-[1.1em] font-light text-white/20 transition-all duration-300 group-hover:text-white group-hover:translate-x-[2px] group-hover:-translate-y-[2px]">↗</span>
           </a>
 
-          <a href="#" className="group relative flex items-center w-auto px-5 py-3 bg-[#121212] border border-[#333333] rounded-lg text-[#D9D9D9] font-medium text-[13px] tracking-wide overflow-hidden transition-all duration-300 hover:bg-[#1a1a1a] hover:border-[#555555] hover:text-white hover:-translate-y-[2px] hover:shadow-[0_10px_30px_rgba(0,0,0,0.4)]">
+          <a href="https://www.tiktok.com/@estrada.a.dois2" target="_blank" rel="noopener noreferrer" className="group relative flex items-center w-auto px-5 py-3 bg-[#121212] border border-[#333333] rounded-lg text-[#D9D9D9] font-medium text-[13px] tracking-wide overflow-hidden transition-all duration-300 hover:bg-[#1a1a1a] hover:border-[#555555] hover:text-white hover:-translate-y-[2px] hover:shadow-[0_10px_30px_rgba(0,0,0,0.4)]">
             <div className="absolute left-0 top-0 h-full w-[3px] bg-transparent transition-colors duration-300 group-hover:bg-[#00f2fe]"></div>
             <div className="flex items-center justify-center w-[18px] h-[18px] mr-3">
               <TikTokIcon />

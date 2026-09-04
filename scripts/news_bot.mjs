@@ -141,7 +141,6 @@ async function processarItem(item, model) {
   date: "${today}"
   category: "Notícias"
   status: "⏳ Rascunho"
-  draft: true
   image: "IMAGE_PLACEHOLDER"
   keywords_image: "[2 a 3 palavras da moto/marca em inglês]"
   excerpt: "[Resumo impactante de 2 a 3 linhas]"
