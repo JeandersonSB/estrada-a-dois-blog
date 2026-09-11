@@ -1,10 +1,10 @@
 ---
-title: "De R15 para as Cataratas: Roteiro de 2 Dias em Foz do Iguaçu"
-date: "2025-10-17"
-category: "Roteiros"
-status: "⏳ Rascunho"
-image: "/images/blog/de-r15-nas-cataratas/20250110_063932.jpg"
-excerpt: "Descubra nosso roteiro completo de 2 dias em Foz do Iguaçu! Uma viagem de moto para comemorar nosso aniversário de namoro, com dicas sobre o que fazer, custos e a dica de ouro para visitar as Cataratas do Iguaçu sem multidão. Clique e veja nosso guia para uma escapada perfeita!"
+title: 'De R15 para as Cataratas: Roteiro de 2 Dias em Foz do Iguaçu'
+status: 🟢 Publicado
+date: 2025-10-17
+category: Roteiros
+image: /images/blog/de-r15-nas-cataratas/20250110_063932.jpg
+excerpt: Descubra nosso roteiro completo de 2 dias em Foz do Iguaçu! Uma viagem de moto para comemorar nosso aniversário de namoro, com dicas sobre o que fazer, custos e a dica de ouro para visitar as Cataratas do Iguaçu sem multidão. Clique e veja nosso guia para uma escapada perfeita!
 ---
 
 E aí, viajantes! Aqui no **Estrada a Dois** , estamos sempre em busca de uma nova aventura sobre duas rodas. E qual foi o desafio da vez? Comemorar nossos 2 anos de namoro em um dos destinos mais espetaculares do Brasil e do mundo: **Foz do Iguaçu**.
@@ -33,7 +33,7 @@ Chegamos à tarde na cidade e fomos direto para o nosso Airbnb deixar as coisas.
 
 Nossa primeira parada foi para buscar um pouco de tranquilidade. O Templo Budista é um lugar incrível, com mais de 120 estátuas espalhadas por um jardim sereno, incluindo um Buda de 7 metros de altura. É um passeio gratuito, ideal para o fim de tarde, que oferece um contraste fascinante com a força e a agitação das Cataratas.
 
-  * **Dica:** Reserve cerca de 1 a 2 horas para caminhar com calma e apreciar a energia do local.
+    * **Dica:** Reserve cerca de 1 a 2 horas para caminhar com calma e apreciar a energia do local.
 
 ![20250110 133154](/images/blog/de-r15-nas-cataratas/20250110_133154-768x1366.jpg)
 
@@ -77,12 +77,10 @@ Nosso último dia foi mais curto. Antes de pegar a estrada, voltamos rapidamente
 
 ## **Guia Prático Para Sua Viagem (Resumo de Custos e Dicas)**
 
-  * **Hospedagem:** Optamos por um **Airbnb**. Foi prático, confortável e teve um ótimo custo-benefício para a nossa viagem rápida.
-  * **Transporte:** Fizemos absolutamente **tudo com a nossa moto**. A R15 nos deu total liberdade, e foi fácil estacionar em todas as atrações.
-  * **Gastronomia:** Mesclamos de tudo! Desde um almoço simples e saboroso na chegada até a experiência do **277 Craft Beer**. O destaque foi o café da manhã completíssimo já incluso no passeio do **Amanhecer nas Cataratas**.
-  * **Orçamento Total da Viagem:** Nossa viagem de fim de semana (sexta a domingo) para duas pessoas, incluindo gasolina, hospedagem, passeios e alimentação, ficou em aproximadamente **R$ 1.650,00**. Um excelente custo-benefício pela experiência vivida.
-
-
+    * **Hospedagem:** Optamos por um **Airbnb**. Foi prático, confortável e teve um ótimo custo-benefício para a nossa viagem rápida.
+    * **Transporte:** Fizemos absolutamente **tudo com a nossa moto**. A R15 nos deu total liberdade, e foi fácil estacionar em todas as atrações.
+    * **Gastronomia:** Mesclamos de tudo! Desde um almoço simples e saboroso na chegada até a experiência do **277 Craft Beer**. O destaque foi o café da manhã completíssimo já incluso no passeio do **Amanhecer nas Cataratas**.
+    * **Orçamento Total da Viagem:** Nossa viagem de fim de semana (sexta a domingo) para duas pessoas, incluindo gasolina, hospedagem, passeios e alimentação, ficou em aproximadamente **R$ 1.650,00**. Um excelente custo-benefício pela experiência vivida.
 
 ## 
 
