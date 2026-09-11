@@ -1,10 +1,10 @@
 ---
-title: "5 serras e 831 km de moto em um fim de semana: nosso roteiro pelo Rastro da Serpente, Graciosa e Morretes"
-date: "2026-03-24"
-category: "Roteiros"
-status: "⏳ Rascunho"
-image: "/images/blog/rastro-da-serpente-de-moto/05.webp"
-excerpt: "Roteiro de moto pelo Rastro da Serpente e Serra da Graciosa. Veja como rodamos 831 km em um fim de semana saindo de Guarapuava."
+title: '5 serras e 831 km de moto em um fim de semana: nosso roteiro pelo Rastro da Serpente, Graciosa e Morretes'
+status: 🟢 Publicado
+date: 2026-03-24
+category: Roteiros
+image: /images/blog/rastro-da-serpente-de-moto/05.webp
+excerpt: Roteiro de moto pelo Rastro da Serpente e Serra da Graciosa. Veja como rodamos 831 km em um fim de semana saindo de Guarapuava.
 ---
 
 Viajar de moto sempre reserva surpresas. Às vezes você sai de casa com um plano simples e, quando percebe, está vivendo uma das viagens mais marcantes da estrada.
@@ -127,11 +127,9 @@ Depois disso seguimos rumo a **Guarapuava** , encerrando oficialmente o nosso fi
 
 No final da viagem, os números ficaram assim:
 
-  * **Distância total:** 831,7 km
-  * **Gasolina consumida:** 22 litros (2 tanques)
-  * **Preço médio da gasolina:** R$ 6,58
-
-
+    * **Distância total:** 831,7 km
+    * **Gasolina consumida:** 22 litros (2 tanques)
+    * **Preço médio da gasolina:** R$ 6,58
 
 Para uma viagem de fim de semana, foi uma distância considerável, mas totalmente possível de ser feita com planejamento e disposição para rodar.
 
@@ -145,13 +143,11 @@ Esse roteiro reúne algumas das estradas mais bonitas do Paraná em uma única v
 
 Em apenas dois dias é possível rodar por:
 
-  * Serra da Esperança
-  * Rastro da Serpente
-  * Serra da Graciosa
-  * Serra do Mar
-  * Serra do Cerro do Leão
-
-
+    * Serra da Esperança
+    * Rastro da Serpente
+    * Serra da Graciosa
+    * Serra do Mar
+    * Serra do Cerro do Leão
 
 Cada uma delas tem características diferentes, o que torna a viagem ainda mais interessante.
 
@@ -163,11 +159,9 @@ Se você gosta de acompanhar roteiros de viagem de moto, também já exploramos 
 
 Confira alguns deles:
 
-  * 👉 [Rota 513, Letts Road e o Túnel de Bambus, um dia de moto com a galera](https://estradaadois.com/r15-em-ponta-grossa/)
-  * 👉 [De R15 para as Cataratas: Roteiro de 2 Dias em Foz do Iguaçu](https://estradaadois.com/de-r15-nas-cataratas/)
-  * 👉 [De R15 à Serra do Rio do Rastro: Um Sonho em Duas Rodas e 1.773 km](https://estradaadois.com/r15-na-serra-do-rio-do-rastro/)
-
-
+    * 👉 [Rota 513, Letts Road e o Túnel de Bambus, um dia de moto com a galera](https://estradaadois.com/r15-em-ponta-grossa/)
+    * 👉 [De R15 para as Cataratas: Roteiro de 2 Dias em Foz do Iguaçu](https://estradaadois.com/de-r15-nas-cataratas/)
+    * 👉 [De R15 à Serra do Rio do Rastro: Um Sonho em Duas Rodas e 1.773 km](https://estradaadois.com/r15-na-serra-do-rio-do-rastro/)
 
 Essas viagens mostram que não é preciso uma moto de grande cilindrada para viver grandes aventuras na estrada.
 
