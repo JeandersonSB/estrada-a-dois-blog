@@ -5,13 +5,26 @@ import path from 'path';
 
 // Configurações
 const API_KEY = process.env.GEMINI_API_KEY;
-// Busca global no Google News focada estritamente em notícias da indústria, lançamentos e tecnologia de motos
-// Bloqueia termos comerciais, ofertas, vendas, lojas, cupons, e-commerces e viagens
-const RSS_URL = 'https://news.google.com/rss/search?q=(motorcycle+OR+motorcycles+OR+motociclismo)+AND+(launch+OR+unveil+OR+unveiled+OR+reveal+OR+revealed+OR+models+OR+manufacturer+OR+industry+OR+innovation+OR+technology)+-travel+-viagem+-deal+-deals+-sale+-sales+-discount+-price+-prices+-buy+-shop+-shopping+-store+-coupon+-coupons+-promo+-promotion+-offer+-offers+-wholesale+-dropship+-amazon+-aliexpress+-ebay+-shopee+-walmart+-dropshipping&hl=en-US&gl=US';
 const POSTS_DIR = path.join(process.cwd(), 'content', 'posts');
 const TARGET_COUNT = parseInt(process.env.NEWS_COUNT || '1', 10);
 
-// Lista de bloqueio para links e títulos comerciais/e-commerce
+if (!API_KEY) {
+  console.error("ERRO: GEMINI_API_KEY não encontrada.");
+  process.exit(1);
+}
+
+// 1. FEED PRINCIPAL: Mercado Brasileiro (gl=BR, hl=pt-BR)
+// Foco total em lançamentos, novos modelos e novidades de montadoras no Brasil
+const RSS_URL_BR = 'https://news.google.com/rss/search?q=(moto+OR+motos+OR+motociclismo+OR+motocicleta)+AND+(lan%C3%A7amento+OR+lan%C3%A7a+OR+lan%C3%A7ou+OR+chega+ao+brasil+OR+novo+modelo+OR+nova+linha+OR+montadora+OR+tecnologia)+-acidente+-acidentes+-colisao+-batida+-morte+-morre+-morreu+-morto+-mortos+-fatal+-ferido+-feridos+-tiro+-tiros+-baleado+-assalto+-roubo+-furto+-apreensao+-preso+-policia+-policial+-crime+-trafico+-tragedia+-viagem+-passeio+-dicas+-deal+-desconto+-promocao+-cupom+-preco+-comprar+-loja&hl=pt-BR&gl=BR&ceid=BR:pt-419';
+
+// 2. FEED SECUNDÁRIO: Mercado Global (apenas como fallback se não houver matéria nacional no período)
+const RSS_URL_GLOBAL = 'https://news.google.com/rss/search?q=(motorcycle+OR+motorcycles+OR+motociclismo)+AND+(launch+OR+unveil+OR+unveiled+OR+reveal+OR+revealed+OR+debut+OR+concept+OR+manufacturer+OR+technology)+-crash+-accident+-fatal+-killed+-death+-dies+-dead+-shooting+-shot+-arrest+-police+-crime+-boko+-terrorist+-theft+-stolen+-robbery+-drug+-deal+-deals+-sale+-sales+-discount+-price+-buy+-shop+-store+-coupon+-promo+-wholesale+-amazon+-aliexpress+-ebay+-shopee+-walmart&hl=en-US&gl=US';
+
+// FILTRO DE SEGURANÇA NACIONAL E POLICIAL (AMBOS OS MERCADOS)
+// Impede acidentes, mortes, crimes, apreensões, assaltos e tragédias
+const CRIME_POLICE_KEYWORDS_REGEX = /\b(acidente|acidentes|colisão|colisao|batida|morte|mortes|morre|morreu|morto|mortos|fatal|fatídico|ferido|feridos|tiro|tiros|baleado|baleada|assalto|assaltante|roubo|roubada|roubado|furto|furtada|apreensão|apreensao|apreendido|apreendida|preso|presos|prisão|prisao|polícia|policia|policial|policiais|criminoso|criminosos|crime|crimes|tráfico|trafico|drogas|suspeito|suspeitos|tragédia|tragedia|homicídio|homicidio|corpo|chacina|atropelado|atropelamento|boko\s+haram|terrorist|terrorism|troops\s+arrest|militant|killed|death|fatal\s+crash|stolen|robbery|suspects?|homicide)\b/i;
+
+// FILTRO ANTI-VENDA E ANTI-ECOMMERCE (AMBOS OS MERCADOS)
 const SALES_DOMAINS_AND_KEYWORDS = [
   'amazon.', 'ebay.', 'aliexpress.', 'shopee.', 'walmart.', 'bestbuy.', 'target.',
   'mercadolivre.', 'alibaba.', 'etsy.', 'rakuten.', 'wish.', 'shein.', 'temu.',
@@ -19,12 +32,7 @@ const SALES_DOMAINS_AND_KEYWORDS = [
   'umlconnector', 'gearbest', 'banggood'
 ];
 
-const SALES_TITLE_REGEX = /\b(deal|deals|sale|sales|discount|discounts|save\s+\$|save\s+up\s+to|\$\d+|\d+%\s+off|coupon|coupons|buy\s+now|promo|promotion|promotional|best\s+price|cheap|under\s+\$|free\s+shipping|size\s+\d+|helmet\s+with|for\s+sale|clearance|outlet|order\s+now|cashback|wholesale|affiliate)\b/i;
-
-if (!API_KEY) {
-  console.error("ERRO: GEMINI_API_KEY não encontrada.");
-  process.exit(1);
-}
+const SALES_TITLE_REGEX = /\b(deal|deals|sale|sales|discount|discounts|save\s+\$|save\s+up\s+to|\$\d+|\d+%\s+off|coupon|coupons|buy\s+now|promo|promotion|promotional|best\s+price|cheap|under\s+\$|free\s+shipping|size\s+\d+|helmet\s+with|for\s+sale|clearance|outlet|order\s+now|cashback|wholesale|affiliate|compre\s+já|desconto|liquidação|liquidacao|oferta|ofertas)\b/i;
 
 const parser = new Parser();
 const genAI = new GoogleGenerativeAI(API_KEY);
@@ -120,11 +128,12 @@ async function buscarImagemPorPalavrasChave(termoBusca) {
   return `https://loremflickr.com/1200/600/${tags}/all`;
 }
 
-async function processarItem(item, model) {
+async function processarItem(item, model, isBrazilianSource = true) {
   const tempSlug = item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '').substring(0, 50);
   const today = new Date().toISOString().split('T')[0];
 
   console.log(`\n-----------------------------------------`);
+  console.log(`[Origem: ${isBrazilianSource ? '🇧🇷 Brasil (Principal)' : '🌐 Global (Secundário)'}]`);
   console.log(`Processando notícia: "${item.title}"`);
   console.log(`Data original: ${item.pubDate}`);
   
@@ -132,26 +141,26 @@ async function processarItem(item, model) {
   let imagemFinal = await extrairImagemSiteOrigem(item.link);
 
   const prompt = `
-  Atue como um redator jornalista automotivo expert do blog "Estrada a Dois" (focado no mundo do motociclismo, lançamentos, marcas, modelos e tecnologia).
+  Atue como um redator jornalista automotivo expert do blog "Estrada a Dois".
+  O MERCADO PRINCIPAL DO BLOG É O MERCADO BRASILEIRO DE MOTOCICLISMO (lançamentos de motos no Brasil, montadoras nacionais, tecnologia e novidades de mercado), seguido por lançamentos mundiais de grande impacto.
   
-  Aqui está uma notícia crua internacional que acabou de sair:
+  Aqui está uma notícia crua:
   Título: ${item.title}
   Resumo/Conteúdo Original: ${item.contentSnippet || item.content}
   Link da fonte: ${item.link}
+  Origem: ${isBrazilianSource ? 'Mercado Brasileiro' : 'Mercado Internacional'}
   
   Sua tarefa:
-  1. Identifique a moto, marca ou tecnologia PRINCIPAL da notícia em 2 ou 3 palavras em inglês (Exemplo: "KTM 1390 Super Duke", "Royal Enfield Classic 350", "Zero Motorcycles Electric", "Honda E-Clutch").
-  2. Traduza e reescreva a notícia criando um artigo jornalístico completo e aprofundado em Português do Brasil (pt-BR), focado em SEO.
-  Não adicione tópicos de "viagem" ou "mototurismo", o foco é na MÁQUINA, TECNOLOGIA, MERCADO ou INDÚSTRIA.
-  Não invente fatos, explique os termos técnicos.
+  1. Identifique a moto, marca ou modelo PRINCIPAL da notícia em 2 ou 3 palavras em inglês/geral (Exemplo: "Honda Sahara 300", "Yamaha MT-09", "Royal Enfield Guerrilla 450", "Triumph Speed 400", "BMW R1300 GS").
+  2. Redija um artigo jornalístico completo e aprofundado em Português do Brasil (pt-BR), focado em SEO, explicando especificações, motor, proposta e impacto para o motociclista.
+  3. Não adicione tópicos de "viagem" ou "mototurismo", o foco é na MÁQUINA, TECNOLOGIA, MERCADO ou INDÚSTRIA.
+  4. Não invente fatos, explique os termos técnicos.
   
-  REGRA CRÍTICA INEGOCIÁVEL (ANTI-VENDA E ANTI-ECOMMERCE):
-  - Você é estritamente um portal de NOTÍCIAS e JORNALISMO AUTOMOTIVO.
-  - É TOTALMENTE PROIBIDO criar conteúdo de venda, propaganda de produto, catálogo de loja, anúncio de e-commerce, preços, cupons de desconto, liquidações ou chamadas para comprar ("compre agora", "frete grátis", etc.).
-  - NUNCA inclua links de afiliados ou lojas.
-  - SE A NOTÍCIA FOR UM ANÚNCIO DE PRODUTO À VENDA (ex: capacetes à venda na Amazon/AliExpress, jaquetas com desconto, peças de reposição em liquidação), NÃO gere o artigo. Responda APENAS: "IGNORAR_CONTEUDO_COMERCIAL".
+  REGRAS INEGOCIÁVEIS DE SEGURANÇA E CONTEÚDO:
+  - REGRA 1 (ANTI-CRIME / SEGURANÇA): É TERMINANTEMENTE PROIBIDO gerar matérias sobre crimes, acidentes, mortes, colisões, roubos, furtos, apreensões policiais ou tragédias. Se a notícia for policial ou sobre acidente de trânsito, NÃO gere o artigo. Responda APENAS: "IGNORAR_CONTEUDO_INVALIDO".
+  - REGRA 2 (ANTI-VENDA): É TERMINANTEMENTE PROIBIDO gerar conteúdo de catálogo de compras, links de lojas, preços promocionais, cupons ou chamadas de venda ("compre agora", "frete grátis"). Se a notícia for anúncio de e-commerce/produto, NÃO gere o artigo. Responda APENAS: "IGNORAR_CONTEUDO_INVALIDO".
   
-  Retorne EXATAMENTE e SOMENTE o código Markdown no formato abaixo (ou "IGNORAR_CONTEUDO_COMERCIAL" caso seja anúncio de produto):
+  Retorne EXATAMENTE e SOMENTE o código Markdown no formato abaixo (ou "IGNORAR_CONTEUDO_INVALIDO" caso infrinja as regras):
   
   ---
   title: "[Seu Título SEO Atraente e Jornalístico em pt-BR]"
@@ -159,11 +168,11 @@ async function processarItem(item, model) {
   category: "Notícias"
   status: "⏳ Rascunho"
   image: "IMAGE_PLACEHOLDER"
-  keywords_image: "[2 a 3 palavras da moto/marca em inglês]"
+  keywords_image: "[2 a 3 palavras da moto/marca]"
   excerpt: "[Resumo impactante de 2 a 3 linhas]"
   ---
   
-  [Seu texto completo em pt-BR aqui, usando ## para subtítulos. No final, adicione "Fonte: [Nome do Veículo Jornalístico Original](${item.link})"]
+  [Seu texto completo em pt-BR aqui, usando ## para subtítulos. No final, adicione "Fonte: [Nome do Veículo Original](${item.link})"]
   `;
 
   try {
@@ -182,8 +191,8 @@ async function processarItem(item, model) {
     
     markdownContent = markdownContent.replace(/^```markdown\n?/m, '').replace(/```$/m, '').trim();
 
-    if (markdownContent.includes('IGNORAR_CONTEUDO_COMERCIAL')) {
-      console.log(`[Filtro Anti-Venda] Gemini identificou conteúdo puramente comercial/venda. Descartando: "${item.title}"`);
+    if (markdownContent.includes('IGNORAR_CONTEUDO_INVALIDO') || markdownContent.includes('IGNORAR_CONTEUDO_COMERCIAL')) {
+      console.log(`[Filtro de Segurança] Gemini descartou conteúdo inválido (policial, acidente ou venda): "${item.title}"`);
       return false;
     }
 
@@ -215,57 +224,93 @@ async function processarItem(item, model) {
   }
 }
 
+async function coletarItens(url, maxHoras) {
+  try {
+    const feed = await parser.parseURL(url);
+    if (!feed.items || feed.items.length === 0) return [];
+
+    const janelaTempo = maxHoras * 60 * 60 * 1000;
+    const agora = new Date();
+
+    const itensFiltrados = feed.items.filter(item => {
+      const pubDate = new Date(item.pubDate);
+      return (agora - pubDate) <= janelaTempo;
+    });
+
+    return itensFiltrados.length > 0 ? itensFiltrados : feed.items;
+  } catch (e) {
+    console.error(`Erro ao ler feed RSS (${url}):`, e.message);
+    return [];
+  }
+}
+
+function itemValido(item) {
+  const fullText = `${item.title} ${item.contentSnippet || ''} ${item.content || ''}`;
+
+  // 1. Filtro de Segurança Nacional (Anti-Policial / Acidentes / Crimes)
+  if (CRIME_POLICE_KEYWORDS_REGEX.test(fullText)) {
+    console.log(`[Filtro Segurança/Polícia] Ignorando notícia policial/acidente: "${item.title}"`);
+    return false;
+  }
+
+  // 2. Filtro Anti-Venda / E-commerce
+  if (SALES_TITLE_REGEX.test(item.title)) {
+    console.log(`[Filtro Anti-Venda] Ignorando produto comercial: "${item.title}"`);
+    return false;
+  }
+
+  const isSalesDomain = SALES_DOMAINS_AND_KEYWORDS.some(k => item.link.toLowerCase().includes(k.toLowerCase()));
+  if (isSalesDomain) {
+    console.log(`[Filtro Anti-Venda] Ignorando link de e-commerce: "${item.link}"`);
+    return false;
+  }
+
+  return true;
+}
+
 async function gerarNoticias() {
-  console.log(`Iniciando busca de notícias globais (Meta: ${TARGET_COUNT} notícia(s))...`);
-  
-  const feed = await parser.parseURL(RSS_URL);
-  if (!feed.items || feed.items.length === 0) {
-    console.error("Nenhuma notícia encontrada no feed.");
-    return;
-  }
-  
-  // Filtra notícias recentes (padrão 36h, ou configurável via MAX_HOURS)
+  console.log(`\n======================================================`);
+  console.log(`Iniciando Robô Jornalista Estrada a Dois`);
+  console.log(`Prioridade 1: Mercado Brasileiro (gl=BR, hl=pt-BR)`);
+  console.log(`Prioridade 2: Mercado Global (apenas fallback)`);
+  console.log(`Meta: ${TARGET_COUNT} notícia(s)`);
+  console.log(`======================================================\n`);
+
   const maxHoras = parseInt(process.env.MAX_HOURS || '36', 10);
-  const janelaTempo = maxHoras * 60 * 60 * 1000;
-  const agora = new Date();
   
-  let itensCandidatos = feed.items.filter(item => {
-    const pubDate = new Date(item.pubDate);
-    return (agora - pubDate) <= janelaTempo;
-  });
+  // 1. Busca primeiro no mercado brasileiro (Prioridade Máxima)
+  console.log("Coletando notícias do mercado brasileiro...");
+  const itensBR = await coletarItens(RSS_URL_BR, maxHoras);
+  const candidatosBR = itensBR.filter(itemValido).map(item => ({ ...item, isBR: true }));
 
-  // Se o filtro estrito tiver menos itens que a meta pedida no teste, usa os mais recentes disponíveis no feed
-  if (itensCandidatos.length < TARGET_COUNT) {
-    console.log(`Janela de ${maxHoras}h continha apenas ${itensCandidatos.length} notícia(s). Usando os itens mais recentes do feed para atingir a meta de ${TARGET_COUNT}...`);
-    itensCandidatos = feed.items;
+  console.log(`Encontradas ${candidatosBR.length} notícias válidas do Brasil.`);
+
+  // 2. Se a meta não for atingida só com o Brasil, busca notícias globais como fallback
+  let candidatos = [...candidatosBR];
+  if (candidatos.length < TARGET_COUNT) {
+    console.log("Buscando notícias globais complementares...");
+    const itensGlobal = await coletarItens(RSS_URL_GLOBAL, maxHoras);
+    const candidatosGlobal = itensGlobal.filter(itemValido).map(item => ({ ...item, isBR: false }));
+    console.log(`Encontradas ${candidatosGlobal.length} notícias válidas globais.`);
+    candidatos = [...candidatos, ...candidatosGlobal];
   }
 
-  if (itensCandidatos.length === 0) {
-    console.log("Nenhuma notícia encontrada.");
+  if (candidatos.length === 0) {
+    console.log("Nenhuma notícia qualificada encontrada nos filtros.");
     return;
   }
 
-  // 2. Aciona o Gemini para reescrever e extrair palavras-chave visuais da matéria
-  console.log("Enviando para o Gemini...");
+  console.log("\nEnviando para o Gemini...");
   const model = genAI.getGenerativeModel({ model: "gemini-3.5-flash" });
   let geradasCount = 0;
 
-  for (const item of itensCandidatos) {
+  for (const item of candidatos) {
     if (geradasCount >= TARGET_COUNT) break;
 
     const tempSlug = item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '').substring(0, 50);
     
     if (fs.existsSync(path.join(POSTS_DIR, `${tempSlug}.md`))) {
       continue; // Já processada
-    }
-
-    // Filtro Prévio Anti-Venda: ignora produtos, links de e-commerce e promoções
-    const isSalesTitle = SALES_TITLE_REGEX.test(item.title);
-    const isSalesLink = SALES_DOMAINS_AND_KEYWORDS.some(k => item.link.toLowerCase().includes(k.toLowerCase()));
-
-    if (isSalesTitle || isSalesLink) {
-      console.log(`[Filtro Anti-Venda] Pulando produto/comercial: "${item.title}"`);
-      continue;
     }
 
     console.log(`Verificando link: ${item.link}`);
@@ -275,7 +320,7 @@ async function gerarNoticias() {
       continue;
     }
 
-    const sucesso = await processarItem(item, model);
+    const sucesso = await processarItem(item, model, item.isBR);
     if (sucesso) {
       geradasCount++;
     }
