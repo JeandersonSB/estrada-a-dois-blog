@@ -5,10 +5,21 @@ import path from 'path';
 
 // Configurações
 const API_KEY = process.env.GEMINI_API_KEY;
-// Busca global no Google News focada em motos, lançamentos, equipamentos e tech (exclui viagens)
-const RSS_URL = 'https://news.google.com/rss/search?q=(motorcycle+OR+motorcycles+OR+motociclismo)+AND+(launch+OR+gear+OR+brands+OR+models+OR+innovation+OR+technology+OR+parts)+-travel+-viagem&hl=en-US&gl=US';
+// Busca global no Google News focada estritamente em notícias da indústria, lançamentos e tecnologia de motos
+// Bloqueia termos comerciais, ofertas, vendas, lojas, cupons, e-commerces e viagens
+const RSS_URL = 'https://news.google.com/rss/search?q=(motorcycle+OR+motorcycles+OR+motociclismo)+AND+(launch+OR+unveil+OR+unveiled+OR+reveal+OR+revealed+OR+models+OR+manufacturer+OR+industry+OR+innovation+OR+technology)+-travel+-viagem+-deal+-deals+-sale+-sales+-discount+-price+-prices+-buy+-shop+-shopping+-store+-coupon+-coupons+-promo+-promotion+-offer+-offers+-wholesale+-dropship+-amazon+-aliexpress+-ebay+-shopee+-walmart+-dropshipping&hl=en-US&gl=US';
 const POSTS_DIR = path.join(process.cwd(), 'content', 'posts');
 const TARGET_COUNT = parseInt(process.env.NEWS_COUNT || '1', 10);
+
+// Lista de bloqueio para links e títulos comerciais/e-commerce
+const SALES_DOMAINS_AND_KEYWORDS = [
+  'amazon.', 'ebay.', 'aliexpress.', 'shopee.', 'walmart.', 'bestbuy.', 'target.',
+  'mercadolivre.', 'alibaba.', 'etsy.', 'rakuten.', 'wish.', 'shein.', 'temu.',
+  'shop.', 'store.', 'deals.', 'coupons.', 'discount.', 'cart.', 'checkout.',
+  'umlconnector', 'gearbest', 'banggood'
+];
+
+const SALES_TITLE_REGEX = /\b(deal|deals|sale|sales|discount|discounts|save\s+\$|save\s+up\s+to|\$\d+|\d+%\s+off|coupon|coupons|buy\s+now|promo|promotion|promotional|best\s+price|cheap|under\s+\$|free\s+shipping|size\s+\d+|helmet\s+with|for\s+sale|clearance|outlet|order\s+now|cashback|wholesale|affiliate)\b/i;
 
 if (!API_KEY) {
   console.error("ERRO: GEMINI_API_KEY não encontrada.");
@@ -129,12 +140,18 @@ async function processarItem(item, model) {
   Link da fonte: ${item.link}
   
   Sua tarefa:
-  1. Identifique a moto, marca ou equipamento PRINCIPAL da notícia em 2 ou 3 palavras em inglês (Exemplo: "KTM 1390 Super Duke", "Royal Enfield Classic 350", "Zero Motorcycles Electric", "Alpinestars Motorcycle Jacket").
-  2. Traduza e reescreva a notícia criando um artigo completo e aprofundado em Português do Brasil (pt-BR), focado em SEO.
-  Não adicione tópicos de "viagem" ou "mototurismo", o foco é na MÁQUINA, TECNOLOGIA, MERCADO ou EQUIPAMENTO.
+  1. Identifique a moto, marca ou tecnologia PRINCIPAL da notícia em 2 ou 3 palavras em inglês (Exemplo: "KTM 1390 Super Duke", "Royal Enfield Classic 350", "Zero Motorcycles Electric", "Honda E-Clutch").
+  2. Traduza e reescreva a notícia criando um artigo jornalístico completo e aprofundado em Português do Brasil (pt-BR), focado em SEO.
+  Não adicione tópicos de "viagem" ou "mototurismo", o foco é na MÁQUINA, TECNOLOGIA, MERCADO ou INDÚSTRIA.
   Não invente fatos, explique os termos técnicos.
   
-  Retorne EXATAMENTE e SOMENTE o código Markdown no formato abaixo:
+  REGRA CRÍTICA INEGOCIÁVEL (ANTI-VENDA E ANTI-ECOMMERCE):
+  - Você é estritamente um portal de NOTÍCIAS e JORNALISMO AUTOMOTIVO.
+  - É TOTALMENTE PROIBIDO criar conteúdo de venda, propaganda de produto, catálogo de loja, anúncio de e-commerce, preços, cupons de desconto, liquidações ou chamadas para comprar ("compre agora", "frete grátis", etc.).
+  - NUNCA inclua links de afiliados ou lojas.
+  - SE A NOTÍCIA FOR UM ANÚNCIO DE PRODUTO À VENDA (ex: capacetes à venda na Amazon/AliExpress, jaquetas com desconto, peças de reposição em liquidação), NÃO gere o artigo. Responda APENAS: "IGNORAR_CONTEUDO_COMERCIAL".
+  
+  Retorne EXATAMENTE e SOMENTE o código Markdown no formato abaixo (ou "IGNORAR_CONTEUDO_COMERCIAL" caso seja anúncio de produto):
   
   ---
   title: "[Seu Título SEO Atraente e Jornalístico em pt-BR]"
@@ -146,7 +163,7 @@ async function processarItem(item, model) {
   excerpt: "[Resumo impactante de 2 a 3 linhas]"
   ---
   
-  [Seu texto completo em pt-BR aqui, usando ## para subtítulos. No final, adicione "Fonte: [Nome do Site ou Notícia Original](${item.link})"]
+  [Seu texto completo em pt-BR aqui, usando ## para subtítulos. No final, adicione "Fonte: [Nome do Veículo Jornalístico Original](${item.link})"]
   `;
 
   try {
@@ -164,6 +181,11 @@ async function processarItem(item, model) {
     }
     
     markdownContent = markdownContent.replace(/^```markdown\n?/m, '').replace(/```$/m, '').trim();
+
+    if (markdownContent.includes('IGNORAR_CONTEUDO_COMERCIAL')) {
+      console.log(`[Filtro Anti-Venda] Gemini identificou conteúdo puramente comercial/venda. Descartando: "${item.title}"`);
+      return false;
+    }
 
     // Extrair as palavras-chave sugeridas pelo Gemini para a imagem
     const kwMatch = markdownContent.match(/keywords_image:\s*["']?([^"'\n\r]+)["']?/i);
@@ -235,6 +257,15 @@ async function gerarNoticias() {
     
     if (fs.existsSync(path.join(POSTS_DIR, `${tempSlug}.md`))) {
       continue; // Já processada
+    }
+
+    // Filtro Prévio Anti-Venda: ignora produtos, links de e-commerce e promoções
+    const isSalesTitle = SALES_TITLE_REGEX.test(item.title);
+    const isSalesLink = SALES_DOMAINS_AND_KEYWORDS.some(k => item.link.toLowerCase().includes(k.toLowerCase()));
+
+    if (isSalesTitle || isSalesLink) {
+      console.log(`[Filtro Anti-Venda] Pulando produto/comercial: "${item.title}"`);
+      continue;
     }
 
     console.log(`Verificando link: ${item.link}`);
