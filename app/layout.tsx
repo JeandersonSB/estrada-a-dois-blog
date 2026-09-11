@@ -15,8 +15,33 @@ const queraBrand = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Estrada a Dois | Blog',
-  description: 'Blog de mototurismo e viagens',
+  metadataBase: new URL('https://estrada-a-dois-blog.vercel.app'),
+  title: {
+    default: 'Estrada a Dois | Portal de Notícias e Motociclismo',
+    template: '%s | Estrada a Dois',
+  },
+  description: 'O portal definitivo sobre motociclismo: notícias, lançamentos de motos, modelos, tecnologia e equipamentos.',
+  keywords: ['motos', 'motociclismo', 'lançamentos de motos', 'motos elétricas', 'equipamentos para motociclistas', 'estrada a dois'],
+  authors: [{ name: 'Estrada a Dois' }],
+  creator: 'Estrada a Dois',
+  publisher: 'Estrada a Dois',
+  openGraph: {
+    title: 'Estrada a Dois | Portal de Notícias e Motociclismo',
+    description: 'O portal definitivo sobre motociclismo: notícias, lançamentos de motos, modelos, tecnologia e equipamentos.',
+    url: 'https://estrada-a-dois-blog.vercel.app',
+    siteName: 'Estrada a Dois',
+    locale: 'pt_BR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Estrada a Dois | Portal de Notícias e Motociclismo',
+    description: 'O portal definitivo sobre motociclismo: notícias, lançamentos de motos, modelos, tecnologia e equipamentos.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

@@ -1,5 +1,5 @@
+import type { Metadata } from 'next';
 import { getPostData, getSortedPostsData } from '@/lib/posts';
-import Head from 'next/head';
 
 // Generate static routes for all posts at build time
 export async function generateStaticParams() {
@@ -9,12 +9,98 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  try {
+    const postData = await getPostData(slug);
+    const excerpt = postData.excerpt || `${postData.title} - Acompanhe no Estrada a Dois.`;
+    const canonicalUrl = `https://estrada-a-dois-blog.vercel.app/blog/${slug}`;
+
+    return {
+      title: postData.title,
+      description: excerpt,
+      alternates: {
+        canonical: canonicalUrl,
+      },
+      openGraph: {
+        title: postData.title,
+        description: excerpt,
+        url: canonicalUrl,
+        siteName: 'Estrada a Dois',
+        locale: 'pt_BR',
+        type: 'article',
+        publishedTime: postData.date,
+        authors: ['Estrada a Dois'],
+        images: postData.image
+          ? [
+              {
+                url: postData.image,
+                width: 1200,
+                height: 630,
+                alt: postData.title,
+              },
+            ]
+          : [],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: postData.title,
+        description: excerpt,
+        images: postData.image ? [postData.image] : [],
+      },
+    };
+  } catch {
+    return {
+      title: 'Artigo | Estrada a Dois',
+      description: 'Artigos, notícias e novidades do motociclismo no Estrada a Dois.',
+    };
+  }
+}
+
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const postData = await getPostData(slug);
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'NewsArticle',
+    headline: postData.title,
+    description: postData.excerpt || postData.title,
+    image: postData.image ? [postData.image] : [],
+    datePublished: postData.date,
+    dateModified: postData.date,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://estrada-a-dois-blog.vercel.app/blog/${slug}`,
+    },
+    author: {
+      '@type': 'Organization',
+      name: 'Estrada a Dois',
+      url: 'https://estrada-a-dois-blog.vercel.app',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Estrada a Dois',
+      url: 'https://estrada-a-dois-blog.vercel.app',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://estrada-a-dois-blog.vercel.app/logo.png',
+      },
+    },
+  };
+
   return (
     <div className="bg-[#f8f9fa] min-h-screen">
+      {/* Schema.org Structured Data for Google Rich Snippets */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <article className="max-w-4xl mx-auto px-4 py-12">
         {/* Post Header */}
         <header className="mb-10 text-center">

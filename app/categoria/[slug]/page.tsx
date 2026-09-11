@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { getSortedPostsData } from '@/lib/posts';
 
 function slugifyCategory(cat: string) {
@@ -15,6 +16,34 @@ export async function generateStaticParams() {
   return categories.filter(Boolean).map((cat) => ({
     slug: slugifyCategory(cat),
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const decodedSlug = decodeURIComponent(slug).toLowerCase();
+  const allPosts = getSortedPostsData();
+  const posts = allPosts.filter(p => p.category && slugifyCategory(p.category) === decodedSlug);
+  const title = posts.length > 0 ? posts[0].category : decodedSlug.charAt(0).toUpperCase() + decodedSlug.slice(1);
+
+  return {
+    title: `${title} | Estrada a Dois`,
+    description: `Encontre os melhores artigos, novidades e notícias sobre ${title.toLowerCase()} no portal Estrada a Dois.`,
+    alternates: {
+      canonical: `https://estrada-a-dois-blog.vercel.app/categoria/${slug}`,
+    },
+    openGraph: {
+      title: `${title} | Estrada a Dois`,
+      description: `Encontre os melhores artigos, novidades e notícias sobre ${title.toLowerCase()} no portal Estrada a Dois.`,
+      url: `https://estrada-a-dois-blog.vercel.app/categoria/${slug}`,
+      siteName: 'Estrada a Dois',
+      locale: 'pt_BR',
+      type: 'website',
+    },
+  };
 }
 
 export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
