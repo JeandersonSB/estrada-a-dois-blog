@@ -1,10 +1,10 @@
 ---
-title: "Rota 513, Letts Road e o Túnel de Bambus, um dia de moto com a galera"
-date: "2025-10-20"
-category: "Roteiros"
-status: "⏳ Rascunho"
-image: "/images/blog/r15-em-ponta-grossa/20250209_104535-2.jpg"
-excerpt: "Roteiro de 1 dia de moto (Guarapuava → Ponta Grossa) com Rota 513, Letts Road e Túnel de Árvores Entrelaçadas. Dicas, fotos e comparação R15 vs Teneré 250."
+title: Rota 513, Letts Road e o Túnel de Bambus, um dia de moto com a galera
+status: 🟢 Publicado
+date: 2025-10-20
+category: Roteiros
+image: /images/blog/r15-em-ponta-grossa/20250209_104535-2.jpg
+excerpt: Roteiro de 1 dia de moto (Guarapuava → Ponta Grossa) com Rota 513, Letts Road e Túnel de Árvores Entrelaçadas. Dicas, fotos e comparação R15 vs Teneré 250.
 ---
 
 Eu, Jeanderson, minha esposa Ana Paula, meu primo Alex com a esposa Keila e meu cunhado Rhafael com a Patricia. Dia 09 de fevereiro de 2025 foi dia de viagem de moto. Saímos de Guarapuava às 09:15 e chegamos em Ponta Grossa por volta das 11:30. Eu e o Alex na R15, o Rhafael na Teneré 250, já vou adiantando, na estrada a R15 se mostrou superior à Teneré 250 no quesito aerodinâmica e desempenho.
@@ -35,23 +35,11 @@ Fizemos uma pausa na Parada Benedita pra esticar as pernas, já estávamos muito
 
 ## Impressões finais - R15 vs Teneré 250 e recomendações 
 
-  * **R15 x Teneré 250:** mesmo com menor cilindrada, a R15 se destacou na estrada pela aerodinâmica e desempenho.  
-  
-
-  * **Rota 513:** perfeito pra quem curte motociclismo, chalés, monumento biker e visual perto do Buraco do Padre.  
-  
-
-  * **Letts Road (Colônia Witmarsun):** ambiente temático, ótima comida, a porção de batata com cheddar e bacon é parada obrigatória.  
-  
-
-  * **Túnel de bambus:** cenário top pra fotos, super procurado por quem faz passeios de moto.  
-  
-
-  * Foi um dia muito proveitoso: sol, calor, estrada boa e muita risada com a galera.  
-  
-
-
-
+    * **R15 x Teneré 250:** mesmo com menor cilindrada, a R15 se destacou na estrada pela aerodinâmica e desempenho.  
+    * **Rota 513:** perfeito pra quem curte motociclismo, chalés, monumento biker e visual perto do Buraco do Padre.  
+    * **Letts Road (Colônia Witmarsun):** ambiente temático, ótima comida, a porção de batata com cheddar e bacon é parada obrigatória.  
+    * **Túnel de bambus:** cenário top pra fotos, super procurado por quem faz passeios de moto.  
+    * Foi um dia muito proveitoso: sol, calor, estrada boa e muita risada com a galera.  
 
 Se você curte **roteiro de moto no Paraná** , esse bate-volta **Guarapuava → Ponta Grossa** com Rota 513 e Letts Road é uma ótima pedida.
 
