@@ -13,36 +13,51 @@ if (!API_KEY) {
   process.exit(1);
 }
 
-// 1. FEED PRINCIPAL: Mercado Brasileiro (gl=BR, hl=pt-BR)
-// Consultas diretas e eficazes que trazem os portais e lançamentos do Brasil
+// 1. FEED PRINCIPAL: Mercado Brasileiro (gl=BR, hl=pt-BR) - Janela dos últimos 7 dias
 const QUERIES_BR = [
-  'motos lancamento',
-  'motos brasil lancamento',
-  'motociclismo brasil',
-  'honda motos brasil',
-  'yamaha motos brasil',
-  'royal enfield brasil'
+  'motos lancamento when:7d',
+  'motos brasil lancamento when:7d',
+  'motos brasil when:7d',
+  'motociclismo brasil when:7d',
+  'honda motos brasil when:7d',
+  'yamaha motos brasil when:7d',
+  'royal enfield brasil when:7d',
+  'shineray motos brasil when:7d',
+  'bmw motorrad brasil when:7d',
+  'triumph motos brasil when:7d',
+  'kawasaki motos brasil when:7d',
+  'duas rodas motos brasil when:7d'
 ];
 
 // 2. FEED SECUNDÁRIO: Mercado Global (apenas fallback se faltar notícia do Brasil)
 const QUERIES_GLOBAL = [
-  'motorcycle launch',
-  'motorcycle unveiled',
-  'new motorcycle model'
+  'motorcycle launch when:7d',
+  'motorcycle unveiled when:7d',
+  'new motorcycle model when:7d'
 ];
 
-// FILTRO DE SEGURANÇA NACIONAL E POLICIAL (AMBOS OS MERCADOS)
-const CRIME_POLICE_KEYWORDS_REGEX = /\b(acidente|acidentes|colisão|colisao|batida|morte|mortes|morre|morreu|morto|mortos|fatal|fatídico|ferido|feridos|tiro|tiros|baleado|baleada|assalto|assaltante|roubo|roubada|roubado|furto|furtada|apreensão|apreensao|apreendido|apreendida|preso|presos|prisão|prisao|polícia|policia|policial|policiais|criminoso|criminosos|crime|crimes|tráfico|trafico|drogas|suspeito|suspeitos|tragédia|tragedia|homicídio|homicidio|corpo|chacina|atropelado|atropelamento|leilão|leilao|leilões|leiloes|boko\s+haram|terrorist|terrorism|troops\s+arrest|militant|killed|death|fatal\s+crash|stolen|robbery|suspects?|homicide|thief|thieves)\b/i;
+// LIMITE MÁXIMO DE IDADE DA NOTÍCIA: 7 DIAS (168 HORAS)
+const MAX_AGE_HOURS = 168;
 
-// FILTRO ANTI-VENDA E ANTI-ECOMMERCE (AMBOS OS MERCADOS)
+// PORTAIS DE REFERÊNCIA PARA PRIORIZAÇÃO DE MELHORES RESULTADOS
+const TOP_PORTALS = ['autoesporte', 'motor1', 'webmotors', 'motonline', 'motoo', 'estadao', 'uol', 'cnn', 'r7', 'noticiasautomotivas', 'garagem360', 'motociclismo', 'mobiauto'];
+
+// FILTRO DE SEGURANÇA NACIONAL, POLICIAL E ACIDENTES (AMBOS OS MERCADOS)
+const CRIME_POLICE_KEYWORDS_REGEX = /\b(acidente|acidentes|colisão|colisao|batida|morte|mortes|morre|morreu|morto|mortos|fatal|fatídico|ferido|feridos|tiro|tiros|baleado|baleada|assalto|assaltante|assalta|roubo|roubada|roubado|furto|furtam|furtada|apreensão|apreensao|apreendido|apreendida|preso|presos|prisão|prisao|detido|detida|polícia|policia|policial|policiais|criminoso|criminosos|crime|crimes|tráfico|trafico|drogas|suspeito|suspeitos|tragédia|tragedia|homicídio|homicidio|corpo|chacina|atropelado|atropelamento|leilão|leilao|leilões|leiloes|queda|caiu|cai\b|esborracha|capotar|capotamento|letreiro|resgate|vítima|vitima|vítimas|vitimas|perde\s+a\s+vida|amputada|amputado|sangue|feminicídio|feminicidio|arma|cadeira\s+de\s+rodas|bicicleta|ciclista|boko\s+haram|terrorist|terrorism|troops\s+arrest|militant|killed|death|fatal\s+crash|stolen|robbery|suspects?|homicide|thief|thieves|rolezinho|operacao|operação)\b/i;
+
+// FILTRO ANTI-VENDA, GADGETS, CARROS, POLÍTICA E OFF-TOPIC (AMBOS OS MERCADOS)
 const SALES_DOMAINS_AND_KEYWORDS = [
   'amazon.', 'ebay.', 'aliexpress.', 'shopee.', 'walmart.', 'bestbuy.', 'target.',
   'mercadolivre.', 'alibaba.', 'etsy.', 'rakuten.', 'wish.', 'shein.', 'temu.',
   'shop.', 'store.', 'deals.', 'coupons.', 'discount.', 'cart.', 'checkout.',
-  'umlconnector', 'gearbest', 'banggood'
+  'umlconnector', 'gearbest', 'banggood',
+  'oficinadanet.com.br', 'tudocelular.com', 'tecmundo.com.br', 'canaltech.com.br'
 ];
 
-const SALES_TITLE_REGEX = /\b(deal|deals|sale|sales|discount|discounts|save\s+\$|save\s+up\s+to|\$\d+|\d+%\s+off|coupon|coupons|buy\s+now|promo|promotion|promotional|best\s+price|cheap|under\s+\$|free\s+shipping|iphone|celular|smartphone|smartwatch|moto\s+360|motorola|mounjaro|geladeira|geladeiras|compre\s+já|desconto|liquidação|liquidacao|oferta|ofertas|for\s+sale|clearance|outlet|order\s+now|cashback|wholesale|affiliate)\b/i;
+const SALES_TITLE_REGEX = /\b(deal|deals|sale|sales|discount|discounts|save\s+\$|save\s+up\s+to|\$\d+|\d+%\s+off|coupon|coupons|buy\s+now|promo|promotion|promotional|best\s+price|cheap|under\s+\$|free\s+shipping|iphone|celular|smartphone|smartwatch|motorola|moto\s+g\d*|moto\s+e\d*|moto\s+edge|moto\s+snaps?|moto\s+360|mounjaro|geladeira|geladeiras|compre\s+já|desconto|liquidação|liquidacao|oferta|ofertas|for\s+sale|clearance|outlet|order\s+now|cashback|wholesale|affiliate|gta\s+online|chevrolet|carro|carros|suv|híbrido|hibrido|picape|caminhão|caminhao|ônibus|onibus|volvo|hyundai|changan|elantra|cs55|ram\s+cresce|nissan|renault|dolphin|s10|m2|m4|i5|vôlei|volei|basquete|dark\s+horse|investigado|candidatura|governo\s+do\s+estado|bolsonaro|lula|congresso\s+de\s+missões|tv\s+brasil|programação\s+semanal|banco|fatura|futebol|chile|ancelotti|willis)\b/i;
+
+// RECONHECIMENTO POSITIVO DE CONTEÚDO DE MOTOCICLISMO
+const MOTORCYCLE_POSITIVE_REGEX = /\b(moto|motos|motocicleta|motocicletas|motociclismo|motociclista|motociclistas|scooter|scooters|ciclomotor|honda|yamaha|royal\s+enfield|shineray|bmw\s+motorrad|triumph|kawasaki|suzuki|ducati|bajaj|cfmoto|voge|dafra|harley|kymco|trail|custom|naked|carenada|big\s+trail|pilotagem|duas\s+rodas|piloto|motovelocidade)\b/i;
 
 const parser = new Parser();
 const genAI = new GoogleGenerativeAI(API_KEY);
@@ -143,7 +158,7 @@ async function buscarImagemPorPalavrasChave(termoBusca) {
   return `https://loremflickr.com/1200/600/${tags}/all`;
 }
 
-async function processarItem(item, model, isBrazilianSource = true) {
+async function processarItem(item, genAI, isBrazilianSource = true) {
   const tempSlug = item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '').substring(0, 50);
   const today = new Date().toISOString().split('T')[0];
 
@@ -174,6 +189,7 @@ async function processarItem(item, model, isBrazilianSource = true) {
   REGRAS INEGOCIÁVEIS DE SEGURANÇA E CONTEÚDO:
   - REGRA 1 (ANTI-CRIME / SEGURANÇA): É TERMINANTEMENTE PROIBIDO gerar matérias sobre crimes, acidentes, mortes, colisões, roubos, furtos, apreensões policiais, leilões ou tragédias. Se a notícia for policial ou sobre acidente de trânsito, NÃO gere o artigo. Responda APENAS: "IGNORAR_CONTEUDO_INVALIDO".
   - REGRA 2 (ANTI-VENDA): É TERMINANTEMENTE PROIBIDO gerar conteúdo de catálogo de compras, links de lojas, preços promocionais, cupons ou chamadas de venda ("compre agora", "frete grátis"). Se a notícia for anúncio de e-commerce/produto (ou gadgets como celulares/relógios), NÃO gere o artigo. Responda APENAS: "IGNORAR_CONTEUDO_INVALIDO".
+  - REGRA 3 (TEMPO E ATUALIDADE - ÚLTIMOS 7 DIAS): Esta notícia é recente (últimos 7 dias). É TERMINANTEMENTE PROIBIDO citar o ano de 2025 ou anos anteriores como lançamentos futuros. O conteúdo deve ser estritamente atual e condizente com a data da matéria.
   
   Retorne EXATAMENTE e SOMENTE o código Markdown no formato abaixo (ou "IGNORAR_CONTEUDO_INVALIDO" caso infrinja as regras):
   
@@ -192,17 +208,25 @@ async function processarItem(item, model, isBrazilianSource = true) {
 
   try {
     let markdownContent = null;
-    for (let tentativa = 1; tentativa <= 4; tentativa++) {
+    const modelCandidates = ['gemini-flash-latest', 'gemini-3.6-flash'];
+    let lastError = null;
+
+    for (const modelName of modelCandidates) {
       try {
-        const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout de 45s na API do Gemini')), 45000));
+        const model = genAI.getGenerativeModel({ model: modelName });
+        const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error(`Timeout de 45s na API do Gemini (${modelName})`)), 45000));
         const result = await Promise.race([model.generateContent(prompt), timeoutPromise]);
         markdownContent = result.response.text();
-        break;
+        if (markdownContent) break;
       } catch (err) {
-        console.log(`Tentativa ${tentativa}/4 falhou (${err.message}). Aguardando 3s...`);
-        if (tentativa === 4) throw err;
-        await new Promise(r => setTimeout(r, 3000));
+        console.log(`Tentativa com ${modelName} falhou (${err.message}).`);
+        lastError = err;
+        await new Promise(r => setTimeout(r, 2000));
       }
+    }
+
+    if (!markdownContent) {
+      throw lastError || new Error("Falha ao gerar conteúdo com todos os modelos disponíveis.");
     }
     
     markdownContent = markdownContent.replace(/^```markdown\n?/m, '').replace(/```$/m, '').trim();
@@ -243,15 +267,44 @@ async function processarItem(item, model, isBrazilianSource = true) {
 function itemValido(item) {
   const fullText = `${item.title} ${item.contentSnippet || ''} ${item.content || ''}`;
 
-  // 1. Filtro de Segurança Nacional (Anti-Policial / Acidentes / Crimes)
+  // 1. Horário: janela estrita dos últimos 7 dias (168 horas)
+  const pubTime = new Date(item.pubDate || item.isoDate).getTime();
+  if (isNaN(pubTime)) {
+    console.log(`[Filtro 7d] Ignorando (sem data válida): "${item.title}"`);
+    return false;
+  }
+  const diffHours = (Date.now() - pubTime) / (1000 * 60 * 60);
+  if (diffHours > MAX_AGE_HOURS || diffHours < -2) {
+    console.log(`[Filtro 7d] Ignorando notícia antiga (${(diffHours / 24).toFixed(1)}d): "${item.title}"`);
+    return false;
+  }
+
+  // 2. Filtro de ano antigo no título (evita notícias requentadas sobre 2025 ou anos anteriores)
+  if (/\b(19\d\d|200\d|201\d|202[0-5])\b/.test(item.title)) {
+    console.log(`[Filtro Ano Antigo] Ignorando notícia com ano passado no título: "${item.title}"`);
+    return false;
+  }
+
+  // 3. Ignorar relatos de viagens pessoais
+  if (/\bvolta\s+ao\s+mundo\b/i.test(item.title)) {
+    return false;
+  }
+
+  // 4. Validação positiva: conteúdo DEVE ser expressamente sobre motocicletas
+  if (!MOTORCYCLE_POSITIVE_REGEX.test(fullText)) {
+    console.log(`[Filtro Temático] Ignorando notícia que não é sobre motocicletas: "${item.title}"`);
+    return false;
+  }
+
+  // 5. Filtro de Segurança Nacional (Anti-Policial / Acidentes / Crimes)
   if (CRIME_POLICE_KEYWORDS_REGEX.test(fullText)) {
     console.log(`[Filtro Segurança/Polícia] Ignorando: "${item.title}"`);
     return false;
   }
 
-  // 2. Filtro Anti-Venda / E-commerce / Gadgets
+  // 6. Filtro Anti-Venda / E-commerce / Gadgets / Carros / Off-topic
   if (SALES_TITLE_REGEX.test(fullText)) {
-    console.log(`[Filtro Anti-Venda] Ignorando produto comercial/gadget: "${item.title}"`);
+    console.log(`[Filtro Anti-Venda/Off-topic] Ignorando: "${item.title}"`);
     return false;
   }
 
@@ -279,31 +332,73 @@ async function coletarItensQuery(query, isBR = true) {
 async function gerarNoticias() {
   console.log(`\n======================================================`);
   console.log(`Iniciando Robô Jornalista Estrada a Dois`);
+  console.log(`Janela Temporal: Últimos 7 dias (máxima relevância e melhores buscas)`);
   console.log(`Prioridade 1 Absoluta: Mercado Brasileiro (gl=BR, hl=pt-BR)`);
   console.log(`Prioridade 2: Mercado Global (apenas fallback)`);
   console.log(`Meta: ${TARGET_COUNT} notícia(s)`);
   console.log(`======================================================\n`);
 
   // 1. Coleta e consolidação de notícias brasileiras
-  console.log("Coletando notícias de múltiplos termos do mercado brasileiro...");
-  let rawItensBR = [];
+  console.log("Coletando e ranqueando notícias dos melhores portais do Brasil nos últimos 7 dias...");
+  const seenTitles = new Set();
+  const rawCandidatosBR = [];
+
   for (const q of QUERIES_BR) {
     const items = await coletarItensQuery(q, true);
-    rawItensBR = rawItensBR.concat(items);
+    items.forEach((item, index) => {
+      if (seenTitles.has(item.title)) return;
+      seenTitles.add(item.title);
+
+      if (itemValido(item)) {
+        // Cálculo de Score de Relevância
+        let score = 100 - index;
+        const fullSource = `${item.source || ''} ${item.title || ''} ${item.link || ''}`.toLowerCase();
+        if (TOP_PORTALS.some(p => fullSource.includes(p))) score += 35;
+        if (/\b(lançamento|lancamento|nova|novo|novidade|inédita|inedita|chega\s+ao\s+brasil|revelada|apresenta|esgota|recorde|flagrada)\b/i.test(item.title)) score += 25;
+
+        // Identificação de Marca
+        const textToAnalyze = `${item.title} ${item.contentSnippet || ''}`.toLowerCase();
+        let brand = 'Outras';
+        if (/honda/i.test(textToAnalyze)) brand = 'Honda';
+        else if (/yamaha/i.test(textToAnalyze)) brand = 'Yamaha';
+        else if (/royal\s+enfield/i.test(textToAnalyze)) brand = 'Royal Enfield';
+        else if (/bmw/i.test(textToAnalyze)) brand = 'BMW';
+        else if (/kawasaki/i.test(textToAnalyze)) brand = 'Kawasaki';
+        else if (/shineray/i.test(textToAnalyze)) brand = 'Shineray';
+        else if (/bajaj/i.test(textToAnalyze)) brand = 'Bajaj';
+        else if (/cfmoto/i.test(textToAnalyze)) brand = 'CFMoto';
+        else if (/triumph/i.test(textToAnalyze)) brand = 'Triumph';
+        else if (/suzuki/i.test(textToAnalyze)) brand = 'Suzuki';
+        else if (/dafra/i.test(textToAnalyze)) brand = 'Dafra';
+        else if (/aston\s+martin/i.test(textToAnalyze)) brand = 'Aston Martin';
+
+        // Detecção de modelo para evitar artigos duplicados sobre o mesmo assunto
+        const modelMatch = textToAnalyze.match(/\b(crosser|twister|himalayan|denver|enduro\s+park|chetak|klx\s*230|m\s*1000|amb\s*002|voge\s*800|hayabusa|sahara|hornet|cb1000|tiger|speed\s+400|scrambler)\b/);
+        const modelKey = modelMatch ? modelMatch[1].replace(/\s+/g, '') : null;
+
+        rawCandidatosBR.push({ ...item, isBR: true, score, brand, modelKey });
+      }
+    });
   }
 
-  // Deduplicação por título
-  const seenTitles = new Set();
+  // Ordenar decrescente por relevância / melhores buscas
+  rawCandidatosBR.sort((a, b) => b.score - a.score);
+
+  // Seleção com diversidade editorial de marcas (máx. 2 por marca e sem repetir modelo)
   const candidatosBR = [];
-  for (const item of rawItensBR) {
-    if (seenTitles.has(item.title)) continue;
-    seenTitles.add(item.title);
-    if (itemValido(item)) {
-      candidatosBR.push({ ...item, isBR: true });
-    }
+  const brandCount = {};
+  const modelKeysSeen = new Set();
+
+  for (const c of rawCandidatosBR) {
+    if (c.modelKey && modelKeysSeen.has(c.modelKey)) continue;
+    if ((brandCount[c.brand] || 0) >= 2 && c.brand !== 'Outras') continue;
+
+    brandCount[c.brand] = (brandCount[c.brand] || 0) + 1;
+    if (c.modelKey) modelKeysSeen.add(c.modelKey);
+    candidatosBR.push(c);
   }
 
-  console.log(`Encontradas ${candidatosBR.length} notícias válidas e filtradas do Brasil.`);
+  console.log(`Encontradas ${candidatosBR.length} notícias de alto impacto selecionadas do Brasil.`);
 
   // 2. Se a meta não for atingida com o Brasil, busca fallback global
   let candidatos = [...candidatosBR];
@@ -329,7 +424,6 @@ async function gerarNoticias() {
   }
 
   console.log(`Total de candidatos selecionados: ${candidatos.length}. Iniciando geração com Gemini...`);
-  const model = genAI.getGenerativeModel({ model: "gemini-3.6-flash" });
   let geradasCount = 0;
 
   for (const item of candidatos) {
@@ -348,7 +442,7 @@ async function gerarNoticias() {
       continue;
     }
 
-    const sucesso = await processarItem(item, model, item.isBR);
+    const sucesso = await processarItem(item, genAI, item.isBR);
     if (sucesso) {
       geradasCount++;
       console.log(`Progresso: ${geradasCount}/${TARGET_COUNT} notícia(s) gerada(s).`);
