@@ -1,10 +1,10 @@
 ---
-title: "Honda Atinge Marco Histórico e Supera 1 Milhão de Motos Emplacadas em Oito Meses de 2026"
-date: "2026-09-15"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Honda_CR-V_e-HEV_Elegance_AWD_%28VI%29_%E2%80%93_f_14072024.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original"
-excerpt: "A fabricante japonesa reafirma sua hegemonia no mercado brasileiro de duas rodas ao ultrapassar a marca de um milhão de unidades registradas em apenas oito meses, impulsionada pelo Polo Industrial de Manaus e pelo sucesso de vendas da linha de entrada e média cilindrada."
+title: Honda Atinge Marco Histórico e Supera 1 Milhão de Motos Emplacadas em Oito Meses de 2026
+status: 🟢 Publicado
+date: 2026-09-15
+category: Notícias
+image: /images/blog/Honda-CB300F-Twister-2026.avif
+excerpt: A fabricante japonesa reafirma sua hegemonia no mercado brasileiro de duas rodas ao ultrapassar a marca de um milhão de unidades registradas em apenas oito meses, impulsionada pelo Polo Industrial de Manaus e pelo sucesso de vendas da linha de entrada e média cilindrada.
 ---
 
 A Honda Motos voltou a fazer história no setor automotivo nacional. Em apenas oito meses do ano de 2026, a fabricante japonesa registrou o expressivo volume de mais de 1 milhão de motocicletas emplacadas no Brasil. O resultado consolida a liderança absoluta da marca no país e reforça a constante expansão da demanda por veículos de duas rodas como transporte pessoal, ferramenta de trabalho e opção de mobilidade eficiente.
