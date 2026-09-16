@@ -64,21 +64,35 @@ export default function Home() {
             {/* Side Featured (Stacked 2 rows) */}
             <div className="flex flex-col gap-6 h-[400px] md:h-[520px]">
               {featuredSide1 && (
-                <div className="flex-1 relative rounded-2xl overflow-hidden group">
+                <div className="flex-1 relative rounded-2xl overflow-hidden group border border-white/10 hover:border-[#B6D200]/50 transition-all duration-300">
                   <a href={`/blog/${featuredSide1.slug}`} className="block w-full h-full">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 transition-opacity duration-300 group-hover:from-black/80"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-10 transition-opacity duration-300 group-hover:from-black/85"></div>
                     <img 
                       src={featuredSide1.image} 
                       alt={featuredSide1.title} 
                       className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" 
                     />
-                    <div className="absolute bottom-0 left-0 p-6 z-20 w-full">
-                      <span className="inline-block text-[#B6D200] text-[11px] font-black uppercase tracking-widest mb-2 drop-shadow-md">
-                        {featuredSide1.category}
-                      </span>
-                      <h3 className="text-xl md:text-2xl font-bold text-white leading-tight group-hover:text-[#B6D200] transition-colors line-clamp-2">
+                    <div className="absolute bottom-0 left-0 p-5 md:p-6 z-20 w-full">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="inline-flex items-center gap-1.5 bg-[#B6D200] text-[#0F0F0F] text-[10px] md:text-[11px] font-black uppercase px-2.5 py-1 tracking-wider rounded-sm shadow-md">
+                          <svg className="w-3.5 h-3.5 text-[#0F0F0F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                          </svg>
+                          ROTEIRO EM DESTAQUE
+                        </span>
+                        <span className="text-white/90 text-[10px] font-bold uppercase tracking-wider hidden sm:inline-flex items-center gap-1 bg-white/15 backdrop-blur-md px-2 py-0.5 rounded-sm">
+                          🧭 Expedição
+                        </span>
+                      </div>
+                      <h3 className="text-lg md:text-xl font-bold text-white leading-tight group-hover:text-[#B6D200] transition-colors line-clamp-2 mb-1">
                         {featuredSide1.title}
                       </h3>
+                      <div className="text-gray-300 text-xs font-semibold flex items-center gap-1 opacity-0 group-hover:opacity-100 transform translate-y-1 group-hover:translate-y-0 transition-all duration-300">
+                        <span>Ver diário da rota</span>
+                        <svg className="w-3.5 h-3.5 text-[#B6D200]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </div>
                     </div>
                   </a>
                 </div>
