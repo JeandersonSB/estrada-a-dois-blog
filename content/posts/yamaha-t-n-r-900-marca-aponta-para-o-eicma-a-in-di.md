@@ -1,19 +1,19 @@
 ---
-title: "Yamaha Ténéré 900: Marca Prepara Inédita Bigtrail Tricilíndrica para o EICMA"
-date: "2026-09-15"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "https://loremflickr.com/1200/600/yamaha%2Ct%2Cn%2Cr%2C900/all"
-excerpt: "A Yamaha aponta para o EICMA a chegada de um dos modelos mais aguardados do segmento aventureiro: a Ténéré 900, bigtrail equipada com o aclamado motor tricilíndrico CP3."
+title: 'Yamaha Ténéré 900: Marca Prepara Inédita Bigtrail Tricilíndrica para o EICMA'
+status: 🟢 Publicado
+date: 2026-09-15
+category: Notícias
+image: /images/blog/imagem-teaser-Yamaha-Tenere-900-azul-motociclismoonline.avif
+excerpt: 'A Yamaha aponta para o EICMA a chegada de um dos modelos mais aguardados do segmento aventureiro: a Ténéré 900, bigtrail equipada com o aclamado motor tricilíndrico CP3.'
 ---
 
- O segmento de motos aventureiras de alta cilindrada está prestes a passar por uma de suas transformações mais significativas. A Yamaha indica que apresentará no EICMA (Salão de Milão) a inédita **Yamaha Ténéré 900**, modelo que deve preencher uma lacuna estratégica na linha da marca japonesa ao unir o legado off-road da família Ténéré à forte entrega de desempenho da motorização tricilíndrica.
+O segmento de motos aventureiras de alta cilindrada está prestes a passar por uma de suas transformações mais significativas. A Yamaha indica que apresentará no EICMA (Salão de Milão) a inédita **Yamaha Ténéré 900**, modelo que deve preencher uma lacuna estratégica na linha da marca japonesa ao unir o legado off-road da família Ténéré à forte entrega de desempenho da motorização tricilíndrica.
 
 A movimentação reflete a busca da fabricante por uma resposta direta às concorrentes consolidadas no mercado global e nacional na faixa das bigtrails de média-alta cilindrada.
 
 ## Motor CP3: A Arquitetura Tricilíndrica Chega à Família Ténéré
 
-O grande destaque mecânico apontado para a nova Ténéré 900 é a adoção do motor CP3 (Crossplane 3), propulsor de três cilindros em linha que já equipa consagrados modelos da marca, como a *hyper naked* MT-09 e a *crossover* Tracer 9 GT. 
+O grande destaque mecânico apontado para a nova Ténéré 900 é a adoção do motor CP3 (Crossplane 3), propulsor de três cilindros em linha que já equipa consagrados modelos da marca, como a _hyper naked_ MT-09 e a _crossover_ Tracer 9 GT. 
 
 Essa arquitetura conta com a tecnologia de virabrequim Crossplane, projetada para otimizar o torque em baixas e médias rotações e oferecer uma entrega de potência linear e imediata. Com cilindrada na casa dos 890 cm³, o motor combina o torque encorpado característico dos propulsores bicilíndricos com a elasticidade e rotação elevada dos motores de quatro cilindros.
 
