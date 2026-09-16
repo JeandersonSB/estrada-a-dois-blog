@@ -1,10 +1,10 @@
 ---
-title: "Triumph detalha desenvolvimento de sua linha off-road em série documental"
-date: "2026-09-15"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "https://upload.wikimedia.org/wikipedia/commons/5/51/Triumph_Motorcycle_works_-_geograph.org.uk_-_244674.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original"
-excerpt: "A fabricante britânica revela em série documental os bastidores da criação de suas motocicletas de motocross e enduro, destacando a engenharia de alto nível e a estratégia global da marca."
+title: Triumph detalha desenvolvimento de sua linha off-road em série documental
+status: 🟢 Publicado
+date: 2026-09-15
+category: Notícias
+image: /images/blog/TF_250X_MY26_3530.avif
+excerpt: A fabricante britânica revela em série documental os bastidores da criação de suas motocicletas de motocross e enduro, destacando a engenharia de alto nível e a estratégia global da marca.
 ---
 
 A Triumph Motorcycles deu um passo marcante ao abrir os bastidores de um dos seus projetos mais ambiciosos com o lançamento de uma série documental dedicada ao desenvolvimento de sua nova linha de motocicletas off-road. A produção em vídeo apresenta ao público a trajetória e o desafio técnico de criar, a partir do zero, modelos focados no motocross e enduro de alta performance, segmento historicamente dominado por tradicionais fabricantes japoneses e europeus.
