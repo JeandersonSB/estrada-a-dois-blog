@@ -33,7 +33,7 @@ Chegamos à tarde na cidade e fomos direto para o nosso Airbnb deixar as coisas.
 
 Nossa primeira parada foi para buscar um pouco de tranquilidade. O Templo Budista é um lugar incrível, com mais de 120 estátuas espalhadas por um jardim sereno, incluindo um Buda de 7 metros de altura. É um passeio gratuito, ideal para o fim de tarde, que oferece um contraste fascinante com a força e a agitação das Cataratas.
 
-    * **Dica:** Reserve cerca de 1 a 2 horas para caminhar com calma e apreciar a energia do local.
+* **Dica:** Reserve cerca de 1 a 2 horas para caminhar com calma e apreciar a energia do local.
 
 ![20250110 133154](/images/blog/de-r15-nas-cataratas/20250110_133154-768x1366.jpg)
 
@@ -77,12 +77,10 @@ Nosso último dia foi mais curto. Antes de pegar a estrada, voltamos rapidamente
 
 ## **Guia Prático Para Sua Viagem (Resumo de Custos e Dicas)**
 
-    * **Hospedagem:** Optamos por um **Airbnb**. Foi prático, confortável e teve um ótimo custo-benefício para a nossa viagem rápida.
-    * **Transporte:** Fizemos absolutamente **tudo com a nossa moto**. A R15 nos deu total liberdade, e foi fácil estacionar em todas as atrações.
-    * **Gastronomia:** Mesclamos de tudo! Desde um almoço simples e saboroso na chegada até a experiência do **277 Craft Beer**. O destaque foi o café da manhã completíssimo já incluso no passeio do **Amanhecer nas Cataratas**.
-    * **Orçamento Total da Viagem:** Nossa viagem de fim de semana (sexta a domingo) para duas pessoas, incluindo gasolina, hospedagem, passeios e alimentação, ficou em aproximadamente **R$ 1.650,00**. Um excelente custo-benefício pela experiência vivida.
-
-## 
+* **Hospedagem:** Optamos por um **Airbnb**. Foi prático, confortável e teve um ótimo custo-benefício para a nossa viagem rápida.
+* **Transporte:** Fizemos absolutamente **tudo com a nossa moto**. A R15 nos deu total liberdade, e foi fácil estacionar em todas as atrações.
+* **Gastronomia:** Mesclamos de tudo! Desde um almoço simples e saboroso na chegada até a experiência do **277 Craft Beer**. O destaque foi o café da manhã completíssimo já incluso no passeio do **Amanhecer nas Cataratas**.
+* **Orçamento Total da Viagem:** Nossa viagem de fim de semana (sexta a domingo) para duas pessoas, incluindo gasolina, hospedagem, passeios e alimentação, ficou em aproximadamente **R$ 1.650,00**. Um excelente custo-benefício pela experiência vivida.
 
 ## **Nossa Impressão Final: Foz do Iguaçu Vale a Pena?**
 
@@ -91,5 +89,3 @@ Nossa impressão final de Foz do Iguaçu pode ser resumida em uma dica: **façam
 Foz é um destino que impressiona pela grandiosidade, mas que ganha um toque mágico e romântico quando você consegue apreciá-lo com tranquilidade.
 
 E vocês, já fizeram essa aventura? Têm alguma outra dica sobre o que fazer em Foz do Iguaçu? Contem pra gente nos comentários!
-
-![](/images/blog/de-r15-nas-cataratas/20250110_063859-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250110_063932-scaled-e1760747156298.jpg) ![](/images/blog/de-r15-nas-cataratas/20250110_133140-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250110_133154-1-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250110_133543-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250110_193320-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250110_195023-1-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250111_062012-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250111_063506-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250111_063751-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250111_063850-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250111_0638520-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250111_064719-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250111_065244-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250111_070017-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250111_073607-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250111_084152-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250111_084313-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250111_104711-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250111_172204-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250111_173850-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250111_174305-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250111_1820130-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250111_184830-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250111_185516-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250111_190953-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250111_191055-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250111_203837-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250112_104253-scaled.jpg) ![](/images/blog/de-r15-nas-cataratas/20250112_105215-scaled.jpg)
