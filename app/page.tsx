@@ -6,13 +6,27 @@ export default function Home() {
   // If there are no posts yet, fallback to an empty array
   const posts = allPosts.length > 0 ? allPosts : [];
 
-  // Split posts for the new Hero grid layout
-  const featuredMain = posts.length > 0 ? posts[0] : null;
-  const featuredSide1 = posts.length > 1 ? posts[1] : null;
-  const featuredSide2 = posts.length > 2 ? posts[2] : null;
+  // Split posts for the Hero grid:
+  // Top side card (featuredSide1) is always a Roteiro post.
+  // Main card (featuredMain) and bottom side card (featuredSide2) show the latest posts without duplicate.
+  const roteiroPost = posts.find(
+    (p) => p.category && slugifyCategory(p.category) === 'roteiros'
+  );
 
-  // The rest of the posts go to the grid below
-  const recentPosts = posts.length > 3 ? posts.slice(3) : [];
+  let featuredMain = null;
+  let featuredSide1 = null;
+  let featuredSide2 = null;
+
+  if (roteiroPost) {
+    featuredSide1 = roteiroPost;
+    const remainingPosts = posts.filter((p) => p.slug !== roteiroPost.slug);
+    featuredMain = remainingPosts.length > 0 ? remainingPosts[0] : null;
+    featuredSide2 = remainingPosts.length > 1 ? remainingPosts[1] : null;
+  } else {
+    featuredMain = posts.length > 0 ? posts[0] : null;
+    featuredSide1 = posts.length > 1 ? posts[1] : null;
+    featuredSide2 = posts.length > 2 ? posts[2] : null;
+  }
 
   return (
     <div className="bg-[#f8f9fa] min-h-screen">
