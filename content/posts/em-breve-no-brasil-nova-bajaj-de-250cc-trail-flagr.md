@@ -1,10 +1,10 @@
 ---
-title: "Nova Bajaj Trail de 250cc é Flagrada em Testes e Promete Agitar o Mercado Brasileiro"
-date: "2026-09-14"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "https://upload.wikimedia.org/wikipedia/commons/1/18/Arvind_Kejriwal_September_02%2C_2017_crop.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original"
-excerpt: "A Bajaj foi flagrada testando uma inédita motocicleta trail de 250cc na Índia. O modelo está cotado para chegar ao Brasil e promete acirrar a disputa em um dos segmentos mais populares do país."
+title: Nova Bajaj Trail de 250cc é Flagrada em Testes e Promete Agitar o Mercado Brasileiro
+status: ⏳ Rascunho
+date: 2026-09-14
+category: Notícias
+image: /images/blog/WhatsApp-Image-2026-09-08-at-07.39.27-1500x600.jpeg
+excerpt: A Bajaj foi flagrada testando uma inédita motocicleta trail de 250cc na Índia. O modelo está cotado para chegar ao Brasil e promete acirrar a disputa em um dos segmentos mais populares do país.
 ---
 
 A fabricante indiana Bajaj continua sua expansão global acelerada, com atenção especial voltada para o mercado brasileiro. Recentemente, um protótipo totalmente camuflado de uma nova motocicleta no estilo trail/on-off road de 250cc foi flagrado rodando em testes em vias públicas na Índia. O flagra acendeu o alerta do setor automotivo, sinalizando que a marca prepara um movimento estratégico para disputar um dos segmentos de maior volume de vendas no Brasil.
@@ -25,6 +25,6 @@ O segmento on-off road de cilindrada média é extremamente relevante no Brasil,
 
 A chegada de uma opção da Bajaj na faixa de 250cc representa uma concorrência direta e de forte apelo custo-benefício. A estratégia da marca indiana no Brasil tem se pautado por entregar pacotes tecnológicos completos — como iluminação Full LED, painel digital e freios ABS — a preços altamente competitivos.
 
- Com a estrutura fabril em Manaus apta a absorver a montagem em regime CKD (*Completely Knocked Down*), a homologação e o lançamento da nova trail no Brasil devem seguir um cronograma ágil após a revelação oficial no mercado indiano. 
+ Com a estrutura fabril em Manaus apta a absorver a montagem em regime CKD (_Completely Knocked Down_), a homologação e o lançamento da nova trail no Brasil devem seguir um cronograma ágil após a revelação oficial no mercado indiano. 
 
 Fonte: [Motonline](https://news.google.com/rss/articles/CBMif0FVX3lxTE9YSDZCcDItOUhBcjlBeDRWc2xwMmFpekNERURUbXpxaHFDdTM3dXEyMEhHcTlkbHhTVEZZMmtCUTh3LU9WWjBTeThvVDU2ZHhER2VzaFE3NzJHR2Nrem12Wkg4RnBKZjJySm85ZTlETTFzNVlvdlNubVo3N3RFc3c?oc=5)
