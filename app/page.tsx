@@ -28,11 +28,15 @@ export default function Home() {
     featuredSide2 = posts.length > 2 ? posts[2] : null;
   }
 
+  const roteiroStories = posts
+    .filter((p) => p.category && slugifyCategory(p.category) === 'roteiros')
+    .slice(0, 4);
+
   return (
     <div className="bg-[#f8f9fa] min-h-screen">
       
       {/* FEATURED POSTS BANNER (Editorial Style) */}
-      <section className="bg-[#0F0F0F] pt-10 pb-16 px-4 border-b-[8px] border-[#B6D200]">
+      <section className="bg-[#0F0F0F] pt-10 pb-10 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             
@@ -63,33 +67,31 @@ export default function Home() {
 
             {/* Side Featured (Stacked 2 rows) */}
             <div className="flex flex-col gap-6 h-[400px] md:h-[520px]">
+              {/* Option B: Diário de Bordo with top signature border & visible CTA */}
               {featuredSide1 && (
-                <div className="flex-1 relative rounded-2xl overflow-hidden group border border-white/10 hover:border-[#B6D200]/50 transition-all duration-300">
+                <div className="flex-1 relative rounded-2xl overflow-hidden group border-t-4 border-t-[#B6D200] border-x border-b border-white/10 hover:border-[#B6D200]/70 transition-all duration-300 shadow-xl">
                   <a href={`/blog/${featuredSide1.slug}`} className="block w-full h-full">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-10 transition-opacity duration-300 group-hover:from-black/85"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent z-10 transition-opacity duration-300 group-hover:from-black/85"></div>
                     <img 
                       src={featuredSide1.image} 
                       alt={featuredSide1.title} 
                       className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" 
                     />
-                    <div className="absolute bottom-0 left-0 p-5 md:p-6 z-20 w-full">
+                    <div className="absolute bottom-0 left-0 p-4 md:p-6 z-20 w-full">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="inline-flex items-center gap-1.5 bg-[#B6D200] text-[#0F0F0F] text-[10px] md:text-[11px] font-black uppercase px-2.5 py-1 tracking-wider rounded-sm shadow-md">
-                          <svg className="w-3.5 h-3.5 text-[#0F0F0F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                          </svg>
-                          ROTEIRO EM DESTAQUE
+                        <span className="inline-flex items-center gap-1.5 bg-[#B6D200] text-[#0F0F0F] text-[10px] md:text-[11px] font-black uppercase px-2.5 py-1 tracking-wider rounded shadow-md">
+                          🧭 DIÁRIO DE BORDO
                         </span>
-                        <span className="text-white/90 text-[10px] font-bold uppercase tracking-wider hidden sm:inline-flex items-center gap-1 bg-white/15 backdrop-blur-md px-2 py-0.5 rounded-sm">
-                          🧭 Expedição
+                        <span className="text-white/90 text-[10px] font-bold uppercase tracking-wider hidden sm:inline-flex items-center gap-1 bg-white/15 backdrop-blur-md px-2 py-0.5 rounded border border-white/10">
+                          Viagem a Dois
                         </span>
                       </div>
-                      <h3 className="text-lg md:text-xl font-bold text-white leading-tight group-hover:text-[#B6D200] transition-colors line-clamp-2 mb-1">
+                      <h3 className="text-base md:text-xl font-bold text-white leading-tight group-hover:text-[#B6D200] transition-colors line-clamp-2 mb-2.5">
                         {featuredSide1.title}
                       </h3>
-                      <div className="text-gray-300 text-xs font-semibold flex items-center gap-1 opacity-0 group-hover:opacity-100 transform translate-y-1 group-hover:translate-y-0 transition-all duration-300">
-                        <span>Ver diário da rota</span>
-                        <svg className="w-3.5 h-3.5 text-[#B6D200]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-md text-[#B6D200] group-hover:bg-[#B6D200] group-hover:text-[#0F0F0F] text-[11px] md:text-xs font-black uppercase tracking-wider px-3 py-1 rounded transition-all duration-300 border border-[#B6D200]/40 group-hover:border-[#B6D200]">
+                        <span>Ver Roteiro Completo</span>
+                        <svg className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                       </div>
@@ -98,7 +100,7 @@ export default function Home() {
                 </div>
               )}
               {featuredSide2 && (
-                <div className="flex-1 relative rounded-2xl overflow-hidden group">
+                <div className="flex-1 relative rounded-2xl overflow-hidden group border border-white/10 hover:border-white/30 transition-all duration-300">
                   <a href={`/blog/${featuredSide2.slug}`} className="block w-full h-full">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 transition-opacity duration-300 group-hover:from-black/80"></div>
                     <img 
@@ -122,6 +124,88 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* PANORAMIC TRAVEL STRIP: DIÁRIO DE BORDO */}
+      {roteiroStories.length > 0 && (
+        <section className="bg-[#141414] text-white py-12 px-4 border-t border-white/10 border-b-[8px] border-[#B6D200]">
+          <div className="max-w-6xl mx-auto">
+            
+            {/* Header */}
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="w-2.5 h-2.5 bg-[#B6D200] rounded-full animate-pulse"></span>
+                  <span className="text-[#B6D200] text-xs font-black uppercase tracking-widest">
+                    Experiência Real &bull; Estrada a Dois
+                  </span>
+                </div>
+                <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight flex items-center gap-2">
+                  <span>🧭 Diário de Bordo: Nossas Viagens a Dois</span>
+                </h2>
+                <p className="text-gray-400 text-sm md:text-base mt-1 max-w-2xl font-medium">
+                  Relatos autênticos de quem vive a estrada: roteiros detalhados, paradas estratégicas, fotos e a experiência real de viajar a dois de Yamaha R15.
+                </p>
+              </div>
+
+              <a
+                href="/categoria/roteiros"
+                className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#B6D200] hover:text-white transition-colors group self-start md:self-auto shrink-0 bg-white/5 hover:bg-white/10 px-4 py-2.5 rounded-lg border border-white/10"
+              >
+                <span>Ver todos os roteiros</span>
+                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+
+            {/* 4 Cards Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {roteiroStories.map((story) => (
+                <article
+                  key={story.slug}
+                  className="group bg-[#1c1c1c] rounded-2xl overflow-hidden border border-white/10 hover:border-[#B6D200]/70 transition-all duration-300 flex flex-col shadow-lg hover:-translate-y-1 hover:shadow-2xl"
+                >
+                  <a href={`/blog/${story.slug}`} className="block relative aspect-[16/10] overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1c1c1c] via-transparent to-black/30 z-10"></div>
+                    <img
+                      src={story.image}
+                      alt={story.title}
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute top-3 left-3 z-20 inline-flex items-center gap-1 bg-[#0F0F0F]/85 backdrop-blur-md text-[#B6D200] text-[10px] font-black uppercase px-2.5 py-1 rounded border border-[#B6D200]/30 shadow-sm">
+                      🧭 Roteiro Real
+                    </span>
+                  </a>
+                  <div className="p-5 flex flex-col flex-grow">
+                    <div className="text-[11px] text-gray-400 font-bold uppercase tracking-wider mb-2 flex items-center">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#B6D200] mr-1.5"></span>
+                      {story.date}
+                    </div>
+                    <a href={`/blog/${story.slug}`} className="block mb-3">
+                      <h3 className="text-white font-bold text-base leading-snug group-hover:text-[#B6D200] transition-colors line-clamp-2">
+                        {story.title}
+                      </h3>
+                    </a>
+                    <p className="text-gray-400 text-xs leading-relaxed line-clamp-2 mb-4 flex-grow">
+                      {story.excerpt}
+                    </p>
+                    <a
+                      href={`/blog/${story.slug}`}
+                      className="mt-auto pt-3 border-t border-white/10 inline-flex items-center justify-between text-xs font-black uppercase tracking-wider text-[#B6D200] group-hover:text-white transition-colors"
+                    >
+                      <span>Conferir Roteiro</span>
+                      <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+          </div>
+        </section>
+      )}
 
       {/* CATEGORY SECTIONS */}
       <main className="max-w-6xl mx-auto px-4 py-16 space-y-20">
