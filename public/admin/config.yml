@@ -14,6 +14,11 @@ public_folder: "/images/blog"
 site_url: "https://estrada-a-dois-blog.vercel.app"
 display_url: "https://estrada-a-dois-blog.vercel.app"
 logo_url: "https://estrada-a-dois-blog.vercel.app/images/logo-admin.png"
+# Configuração de URLs e Slugs limpos (SEO-friendly sem acentos)
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
 
 collections:
   - name: "posts"
