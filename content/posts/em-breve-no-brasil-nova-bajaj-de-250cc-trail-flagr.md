@@ -1,6 +1,6 @@
 ---
 title: Nova Bajaj Trail de 250cc é Flagrada em Testes e Promete Agitar o Mercado Brasileiro
-status: ⏳ Rascunho
+status: 🟢 Publicado
 date: 2026-09-14
 category: Notícias
 image: /images/blog/WhatsApp-Image-2026-09-08-at-07.39.27-1500x600.jpeg
