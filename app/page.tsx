@@ -125,81 +125,58 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PANORAMIC TRAVEL STRIP: DIÁRIO DE BORDO */}
+      {/* COMPACT TRAVEL STRIP: DIÁRIO DE BORDO */}
       {roteiroStories.length > 0 && (
-        <section className="bg-[#141414] text-white py-12 px-4 border-t border-white/10 border-b-[8px] border-[#B6D200]">
+        <section className="bg-[#121212] text-white py-5 px-4 border-t border-white/10 border-b-[6px] border-[#B6D200]">
           <div className="max-w-6xl mx-auto">
             
-            {/* Header */}
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-              <div>
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="w-2.5 h-2.5 bg-[#B6D200] rounded-full animate-pulse"></span>
-                  <span className="text-[#B6D200] text-xs font-black uppercase tracking-widest">
-                    Experiência Real &bull; Estrada a Dois
-                  </span>
-                </div>
-                <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight flex items-center gap-2">
-                  <span>🧭 Diário de Bordo: Nossas Viagens a Dois</span>
-                </h2>
-                <p className="text-gray-400 text-sm md:text-base mt-1 max-w-2xl font-medium">
-                  Relatos autênticos de quem vive a estrada: roteiros detalhados, paradas estratégicas, fotos e a experiência real de viajar a dois de Yamaha R15.
-                </p>
+            {/* Slim Header */}
+            <div className="flex items-center justify-between mb-3 px-1">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#B6D200] animate-pulse"></span>
+                <span className="text-[#B6D200] text-[11px] md:text-xs font-black uppercase tracking-widest flex items-center gap-1.5">
+                  🧭 Diário de Bordo &bull; Nossas Viagens a Dois
+                </span>
               </div>
 
               <a
                 href="/categoria/roteiros"
-                className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#B6D200] hover:text-white transition-colors group self-start md:self-auto shrink-0 bg-white/5 hover:bg-white/10 px-4 py-2.5 rounded-lg border border-white/10"
+                className="text-[11px] md:text-xs font-bold text-gray-400 hover:text-[#B6D200] uppercase tracking-wider flex items-center gap-1 transition-colors"
               >
                 <span>Ver todos os roteiros</span>
-                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
                 </svg>
               </a>
             </div>
 
-            {/* 4 Cards Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Compact Cards (Horizontal scroll on mobile, 4-col grid on desktop) */}
+            <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-3 overflow-x-auto pb-1 lg:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {roteiroStories.map((story) => (
-                <article
+                <a
                   key={story.slug}
-                  className="group bg-[#1c1c1c] rounded-2xl overflow-hidden border border-white/10 hover:border-[#B6D200]/70 transition-all duration-300 flex flex-col shadow-lg hover:-translate-y-1 hover:shadow-2xl"
+                  href={`/blog/${story.slug}`}
+                  className="group shrink-0 w-[270px] sm:w-auto flex items-center gap-3 bg-[#1c1c1c] hover:bg-[#242424] p-2.5 rounded-xl border border-white/10 hover:border-[#B6D200]/70 transition-all duration-200 shadow-sm"
                 >
-                  <a href={`/blog/${story.slug}`} className="block relative aspect-[16/10] overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1c1c1c] via-transparent to-black/30 z-10"></div>
+                  <div className="w-14 h-14 rounded-lg overflow-hidden shrink-0 relative bg-black/40">
                     <img
                       src={story.image}
                       alt={story.title}
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
-                    <span className="absolute top-3 left-3 z-20 inline-flex items-center gap-1 bg-[#0F0F0F]/85 backdrop-blur-md text-[#B6D200] text-[10px] font-black uppercase px-2.5 py-1 rounded border border-[#B6D200]/30 shadow-sm">
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <span className="text-[10px] font-bold text-[#B6D200] uppercase tracking-wider block">
                       🧭 Roteiro Real
                     </span>
-                  </a>
-                  <div className="p-5 flex flex-col flex-grow">
-                    <div className="text-[11px] text-gray-400 font-bold uppercase tracking-wider mb-2 flex items-center">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#B6D200] mr-1.5"></span>
-                      {story.date}
-                    </div>
-                    <a href={`/blog/${story.slug}`} className="block mb-3">
-                      <h3 className="text-white font-bold text-base leading-snug group-hover:text-[#B6D200] transition-colors line-clamp-2">
-                        {story.title}
-                      </h3>
-                    </a>
-                    <p className="text-gray-400 text-xs leading-relaxed line-clamp-2 mb-4 flex-grow">
-                      {story.excerpt}
-                    </p>
-                    <a
-                      href={`/blog/${story.slug}`}
-                      className="mt-auto pt-3 border-t border-white/10 inline-flex items-center justify-between text-xs font-black uppercase tracking-wider text-[#B6D200] group-hover:text-white transition-colors"
-                    >
-                      <span>Conferir Roteiro</span>
-                      <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </a>
+                    <h4 className="text-white text-xs md:text-[13px] font-bold leading-snug line-clamp-2 group-hover:text-[#B6D200] transition-colors">
+                      {story.title}
+                    </h4>
                   </div>
-                </article>
+                  <svg className="w-4 h-4 text-gray-500 group-hover:text-[#B6D200] group-hover:translate-x-0.5 transition-all shrink-0 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
               ))}
             </div>
 
