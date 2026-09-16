@@ -1,10 +1,10 @@
 ---
-title: "Motos Custom Até R$ 35 Mil: Do Acessível ao Neoclássico no Mercado Brasileiro"
-date: "2026-09-14"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "https://upload.wikimedia.org/wikipedia/commons/7/7a/4th_International_Auto_Show%2C_Bangalore_%282025%29_190.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original"
-excerpt: "O segmento de motos custom e cruiser ganha força no Brasil com opções que vão desde modelos urbanos de baixa cilindrada até estradeiras neoclássicas com ótimo custo-benefício."
+title: 'Motos Custom Até R$ 35 Mil: Do Acessível ao Neoclássico no Mercado Brasileiro'
+status: 🟢 Publicado
+date: 2026-09-14
+category: Notícias
+image: https://upload.wikimedia.org/wikipedia/commons/7/7a/4th_International_Auto_Show%2C_Bangalore_%282025%29_190.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original
+excerpt: O segmento de motos custom e cruiser ganha força no Brasil com opções que vão desde modelos urbanos de baixa cilindrada até estradeiras neoclássicas com ótimo custo-benefício.
 ---
 
 O segmento de motocicletas custom e cruiser no Brasil vive um período de clara expansão e diversificação. Historicamente associadas a modelos de alta cilindrada e valores elevados, as motocicletas com posição de pilotagem relaxada, pedaleiras avançadas e visual clássico agora ocupam patamares de preço muito mais acessíveis, atendendo desde o motociclista iniciante até aquele que busca uma máquina para o uso diário com estilo diferenciado.
@@ -37,7 +37,7 @@ A escolha de uma moto custom abaixo dos R$ 35 mil envolve analisar o compromisso
 
 ## O Impacto no Mercado Automotivo Nacional
 
-A ampliação da oferta de motos custom nessa faixa de preço pressiona as fabricantes tradicionais a olharem com mais atenção para o segmento de estilo de vida (*lifestyle*). O motociclista brasileiro não busca apenas um meio de transporte funcional; há uma demanda crescente por veículos que expressem identidade visual e proporcionem prazer ao pilotar.
+A ampliação da oferta de motos custom nessa faixa de preço pressiona as fabricantes tradicionais a olharem com mais atenção para o segmento de estilo de vida (_lifestyle_). O motociclista brasileiro não busca apenas um meio de transporte funcional; há uma demanda crescente por veículos que expressem identidade visual e proporcionem prazer ao pilotar.
 
 Com opções que começam em modelos leves de entrada e chegam a cruisers de 350 cc a 650 cc no mercado de seminovas ou zero-km de entrada, o orçamento de até R$ 35 mil prova ser o ponto ideal para a consolidação da categoria no país.
 
