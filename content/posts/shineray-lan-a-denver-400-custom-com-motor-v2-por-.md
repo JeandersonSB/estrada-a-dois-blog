@@ -1,10 +1,10 @@
 ---
-title: "Shineray Denver 400 Chega ao Brasil: Custom com Motor V2 Estreia por R$ 32.890"
-date: "2026-09-13"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "https://loremflickr.com/1200/600/shineray%2Cdenver%2C400/all"
-excerpt: "A Shineray amplia sua ofensiva no mercado brasileiro de média cilindrada com o lançamento da Denver 400, motocicleta custom equipada com motor bicilíndrico em V e preço competitivo."
+title: 'Shineray Denver 400 Chega ao Brasil: Custom com Motor V2 Estreia por R$ 32.890'
+status: 🟢 Publicado
+date: 2026-09-13
+category: Notícias
+image: /images/blog/shineray-denver-400-v2.webp
+excerpt: A Shineray amplia sua ofensiva no mercado brasileiro de média cilindrada com o lançamento da Denver 400, motocicleta custom equipada com motor bicilíndrico em V e preço competitivo.
 ---
 
 A Shineray oficializou a chegada da **Denver 400** ao mercado brasileiro, reforçando sua estratégia de diversificação para além das motos utilitárias e ciclomotores de baixa cilindrada. Com visual clássico de cruiser e proposta voltada a entusiastas do estilo tradicional, a novidade chega às concessionárias com preço sugerido de R$ 32.890.
