@@ -3,7 +3,7 @@ title: 'Nível do óleo da moto: como verificar sem erro'
 status: 🟢 Publicado
 date: 2026-09-15
 category: Manutenção
-image: /images/blog/liquido-de-arrefecimento-da-moto.png
+image: /images/blog/nivel-do-oleo-da-moto.png
 excerpt: Nível do óleo da moto não deve ser avaliado por memória ou por comparação com outro modelo. Posição da motocicleta, temperatura do motor, tempo de espera e forma de usar a vareta ou o visor alteram a leitura.
 ---
 
