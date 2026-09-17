@@ -1,10 +1,10 @@
 ---
-title: "Royal Enfield Flying Flea C6 ganha nova opção de cor branca; veja os detalhes do modelo elétrico"
-date: "2026-09-17"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "https://upload.wikimedia.org/wikipedia/commons/7/74/RE_%22Flying_Flea%22_%281943%29_-_15297706043.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original"
-excerpt: "A divisão de mobilidade elétrica da Royal Enfield revelou uma nova pintura branca para a Flying Flea C6. A motocicleta urbana une design retrô com tecnologia de ponta e arquitetura em alumínio."
+title: Royal Enfield Flying Flea C6 ganha nova opção de cor branca; veja os detalhes do modelo elétrico
+status: 🟢 Publicado
+date: 2026-09-17
+category: Notícias
+image: https://www.motoo.com.br//fotos/2026/9/960_720/royal-enfield_flying-flea-c6_2026_8_17092026_72691_960_720.jpg
+excerpt: A divisão de mobilidade elétrica da Royal Enfield revelou uma nova pintura branca para a Flying Flea C6. A motocicleta urbana une design retrô com tecnologia de ponta e arquitetura em alumínio.
 ---
 
 A Royal Enfield expandiu as opções visuais da **Flying Flea C6**, a primeira motocicleta 100% elétrica de sua nova submarca dedicada à mobilidade urbana sustentável. O modelo, que resgata a identidade histórica da lendária Flying Flea da Segunda Guerra Mundial sob uma perspectiva futurista, passa a contar com uma nova opção de pintura em tom branco, destacando suas linhas elegantes e componentes estruturais em alumínio.
@@ -23,7 +23,7 @@ A Flying Flea C6 foi desenvolvida a partir de uma plataforma dedicada exclusivam
 
 * **Involucro de magnésio para o motor:** O motor elétrico central e a bateria utilizam carcaças com aletas de refrigeração usinadas em magnésio, material de alta dissipação térmica que reduz significativamente o peso do conjunto.
 * **Unidade de Controle do Veículo (VCU):** O cérebro eletrônico da moto monitora continuamente os parâmetros de rodagem, gerencia a entrega de torque e ajusta a regeneração de energia nas frenagens.
-* **Conectividade e Modos de Pilotagem:** O painel TFT circular oferece integração completa com smartphones, navegação curva a curva, atualizações remotas via software (*Over-The-Air* - OTA) e modos de pilotagem personalizáveis que alteram a resposta do acelerador eletrônico (*ride-by-wire*).
+* **Conectividade e Modos de Pilotagem:** O painel TFT circular oferece integração completa com smartphones, navegação curva a curva, atualizações remotas via software (_Over-The-Air_ - OTA) e modos de pilotagem personalizáveis que alteram a resposta do acelerador eletrônico (_ride-by-wire_).
 
 ## Impacto no mercado e perspectiva para o Brasil
 
