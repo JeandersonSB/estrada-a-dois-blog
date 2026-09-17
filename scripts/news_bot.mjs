@@ -202,7 +202,8 @@ async function enviarNotificacaoTelegram({ title, excerpt, date, slug, image }) 
 
 async function processarItem(item, genAI, isBrazilianSource = true) {
   const tempSlug = item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '').substring(0, 50);
-  const today = new Date().toISOString().split('T')[0];
+  const now = new Date();
+  const today = now.toISOString().slice(0, 19);
 
   console.log(`\n-----------------------------------------`);
   console.log(`[Origem: ${isBrazilianSource ? '🇧🇷 Brasil (Principal)' : '🌐 Global (Secundário)'}]`);

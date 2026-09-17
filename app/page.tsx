@@ -6,27 +6,21 @@ export default function Home() {
   // If there are no posts yet, fallback to an empty array
   const posts = allPosts.length > 0 ? allPosts : [];
 
-  // Split posts for the Hero grid:
-  // Top side card (featuredSide1) is always a Roteiro post.
-  // Main card (featuredMain) and bottom side card (featuredSide2) show the latest posts without duplicate.
+  // 1. O Card Principal (maior) é SEMPRE o último artigo adicionado no site, independente da categoria.
+  const featuredMain = posts.length > 0 ? posts[0] : null;
+
+  // 2. O Card Superior Direito (featuredSide1) é sempre um Roteiro em destaque (Diário de Bordo),
+  // sem duplicar com o card principal caso o post mais recente já seja um roteiro.
   const roteiroPost = posts.find(
-    (p) => p.category && slugifyCategory(p.category) === 'roteiros'
-  );
+    (p) => p.category && slugifyCategory(p.category) === 'roteiros' && p.slug !== featuredMain?.slug
+  ) || posts.find((p) => p.category && slugifyCategory(p.category) === 'roteiros');
 
-  let featuredMain = null;
-  let featuredSide1 = null;
-  let featuredSide2 = null;
+  const featuredSide1 = roteiroPost;
 
-  if (roteiroPost) {
-    featuredSide1 = roteiroPost;
-    const remainingPosts = posts.filter((p) => p.slug !== roteiroPost.slug);
-    featuredMain = remainingPosts.length > 0 ? remainingPosts[0] : null;
-    featuredSide2 = remainingPosts.length > 1 ? remainingPosts[1] : null;
-  } else {
-    featuredMain = posts.length > 0 ? posts[0] : null;
-    featuredSide1 = posts.length > 1 ? posts[1] : null;
-    featuredSide2 = posts.length > 2 ? posts[2] : null;
-  }
+  // 3. O Card Inferior Direito (featuredSide2) é o próximo post mais recente, sem duplicar o principal nem o side1
+  const featuredSide2 = posts.find(
+    (p) => p.slug !== featuredMain?.slug && p.slug !== featuredSide1?.slug
+  ) || null;
 
   const roteiroStories = posts
     .filter((p) => p.category && slugifyCategory(p.category) === 'roteiros')

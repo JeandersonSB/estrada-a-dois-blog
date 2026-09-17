@@ -1,7 +1,7 @@
 ---
 title: Royal Enfield Anuncia One Ride 2026 e Reforça Estratégia de Expansão no Mercado Brasileiro
 status: 🟢 Publicado
-date: 2026-09-17
+date: 2026-09-17T12:00:00
 category: Notícias
 image: https://motociclismoonline.com.br/wp-content/uploads/2026/09/image-23.avif
 excerpt: A Royal Enfield aquece o cenário motociclístico com a confirmação do One Ride 2026. O movimento consolida a presença da marca indiana no Brasil, impulsionada pelo fortalecimento da montagem CKD e consolidação de suas plataformas técnicas.

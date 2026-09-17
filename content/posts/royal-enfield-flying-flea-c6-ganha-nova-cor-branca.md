@@ -1,7 +1,7 @@
 ---
 title: Royal Enfield Flying Flea C6 ganha nova opção de cor branca; veja os detalhes do modelo elétrico
 status: 🟢 Publicado
-date: 2026-09-17
+date: 2026-09-17T15:00:00
 category: Notícias
 image: https://www.motoo.com.br//fotos/2026/9/960_720/royal-enfield_flying-flea-c6_2026_8_17092026_72691_960_720.jpg
 excerpt: A divisão de mobilidade elétrica da Royal Enfield revelou uma nova pintura branca para a Flying Flea C6. A motocicleta urbana une design retrô com tecnologia de ponta e arquitetura em alumínio.

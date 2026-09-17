@@ -35,14 +35,34 @@ export function getSortedPostsData(): PostData[] {
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const matterResult = matter(fileContents);
       
-      const dateStr = matterResult.data.date instanceof Date 
-        ? matterResult.data.date.toISOString().split('T')[0] 
-        : String(matterResult.data.date || '');
+      const rawDate = matterResult.data.date;
+      let timestamp = 0;
+      if (rawDate instanceof Date) {
+        timestamp = rawDate.getTime();
+      } else if (rawDate) {
+        const parsed = new Date(String(rawDate)).getTime();
+        timestamp = !isNaN(parsed) ? parsed : 0;
+      }
+
+      let dateStr = '';
+      if (rawDate instanceof Date) {
+        dateStr = rawDate.toISOString().split('T')[0];
+      } else if (rawDate) {
+        dateStr = String(rawDate).split('T')[0].split(' ')[0];
+      }
+
+      let fileMtime = 0;
+      try {
+        const stats = fs.statSync(fullPath);
+        fileMtime = stats.mtimeMs || stats.ctimeMs || 0;
+      } catch {}
 
       return {
         slug,
         ...(matterResult.data as any),
         date: dateStr,
+        _timestamp: timestamp,
+        _fileMtime: fileMtime,
       };
   });
   
@@ -54,11 +74,14 @@ export function getSortedPostsData(): PostData[] {
   });
 
   return publishedPosts.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1;
-    } else {
-      return -1;
+    const timeA = (a as any)._timestamp || 0;
+    const timeB = (b as any)._timestamp || 0;
+    if (timeB !== timeA) {
+      return timeB - timeA;
     }
+    const mtimeA = (a as any)._fileMtime || 0;
+    const mtimeB = (b as any)._fileMtime || 0;
+    return mtimeB - mtimeA;
   });
 }
 
