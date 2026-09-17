@@ -1,10 +1,10 @@
 ---
-title: "Royal Enfield Flying Flea C6 surge em nova cor branca e destaca proposta urbana retrô-futurista"
-date: "2026-09-17"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "https://upload.wikimedia.org/wikipedia/commons/7/74/RE_%22Flying_Flea%22_%281943%29_-_15297706043.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original"
-excerpt: "A divisão elétrica da Royal Enfield apresenta uma nova opção de pintura branca para a Flying Flea C6, destacando suas linhas estruturais e a suspensão dianteira tipo Girder."
+title: Royal Enfield Flying Flea C6 surge em nova cor branca e destaca proposta urbana retrô-futurista
+status: 🟢 Publicado
+date: 2026-09-17
+category: Notícias
+image: https://www.motoo.com.br//fotos/2026/9/960_720/royal-enfield_flying-flea-c6_2026_8_17092026_72691_960_720.jpg
+excerpt: A divisão elétrica da Royal Enfield apresenta uma nova opção de pintura branca para a Flying Flea C6, destacando suas linhas estruturais e a suspensão dianteira tipo Girder.
 ---
 
 A Royal Enfield segue movimentando o cenário global de duas rodas ao revelar novos detalhes visuais de sua divisão de mobilidade elétrica. A **Royal Enfield Flying Flea C6**, primeiro fruto oficial dessa nova submarca dedicada exclusivamente a modelos a bateria, apareceu recentemente exibindo uma nova pintura branca, trazendo um visual mais limpo que ressalta o desenho técnico e as formas esculturais do modelo.
