@@ -1,10 +1,10 @@
 ---
-title: "Marcas Históricas de Volta: Grupos Chineses Adquirem Marcas Europeias para Lançar Novas Motos Rally"
-date: "2026-09-16"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Voge_RR500S.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original"
-excerpt: "A expansão da indústria chinesa no segmento de duas rodas ganha um novo capítulo com a aquisição de marcas europeias tradicionais para o lançamento de modelos focados no segmento Rally e Big Trail."
+title: 'Marcas Históricas de Volta: Grupos Chineses Adquirem Marcas Europeias para Lançar Novas Motos Rally'
+status: 🟢 Publicado
+date: 2026-09-16
+category: Notícias
+image: https://motonline.com.br/noticia/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-08-at-08.02.38.jpeg
+excerpt: A expansão da indústria chinesa no segmento de duas rodas ganha um novo capítulo com a aquisição de marcas europeias tradicionais para o lançamento de modelos focados no segmento Rally e Big Trail.
 ---
 
 A indústria global de motocicletas vive uma transformação profunda impulsionada por movimentações estratégicas de grandes conglomerados asiáticos. O movimento mais recente envolve a aquisição de marcas europeias históricas — muitas vezes esquecidas ou inativas no mercado — por grupos industriais chineses. O objetivo principal dessa união de forças é relançar esses nomes tradicionais acompanhados de uma nova safra de motocicletas, com destaque para o aquecido segmento **Rally e Adventure**.
