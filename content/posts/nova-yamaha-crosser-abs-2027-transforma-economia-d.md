@@ -1,10 +1,10 @@
 ---
-title: "Nova Yamaha Crosser ABS: Como a Trail de Entrada Transforma Economia de Combustível em Gamificação"
-date: "2026-09-16"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Yamaha_R15_V3.0.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original"
-excerpt: "A Yamaha eleva a disputa no segmento on/off-road de entrada com a Crosser ABS, apostando em conectividade, indicadores de pilotagem e foco total na máxima eficiência energética."
+title: 'Nova Yamaha Crosser ABS: Como a Trail de Entrada Transforma Economia de Combustível em Gamificação'
+status: 🟢 Publicado
+date: 2026-09-16
+category: Notícias
+image: https://image1.mobiauto.com.br/images/api/images/v1.0/718539463/transform/fl_progressive,f_webp,w_592
+excerpt: A Yamaha eleva a disputa no segmento on/off-road de entrada com a Crosser ABS, apostando em conectividade, indicadores de pilotagem e foco total na máxima eficiência energética.
 ---
 
 O mercado brasileiro de motocicletas de baixa cilindrada vive uma constante evolução tecnológica, impulsionada tanto pelas exigências de emissões quanto pela busca do consumidor por menor custo por quilômetro rodado. Nesse cenário, a nova **Yamaha Crosser ABS** surge reforçando uma estratégia que une funcionalidade urbana, capacidade para terrenos acidentados e um apelo direto à eficiência de combustível — transformando o consumo racional em uma verdadeira "competição" positiva para o piloto.
