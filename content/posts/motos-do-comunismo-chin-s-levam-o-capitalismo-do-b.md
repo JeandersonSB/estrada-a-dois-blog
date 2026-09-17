@@ -1,10 +1,10 @@
 ---
-title: "A Invasão das Motos Chinesas: Como as Novas Marcas Estão Transformando o Mercado Brasileiro"
-date: "2026-09-17"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "https://loremflickr.com/1200/600/chinese%2Cmotorcycles%2Cbrazil/all"
-excerpt: "A forte presença das fabricantes chinesas de motocicletas no Brasil redefine a competitividade no setor, apostando em alta tecnologia embarcada, design moderno e forte relação custo-benefício."
+title: 'A Invasão das Motos Chinesas: Como as Novas Marcas Estão Transformando o Mercado Brasileiro'
+status: ⏳ Rascunho
+date: 2026-09-17
+category: Notícias
+image: https://newr7-r7-prod.web.arc-cdn.net/resizer/v2/L5S4NKUBU5G4XCVTKJJCPA5I6M.jpeg?auth=a07dd19c1c1632048da85080afe2327f0dd40b3596aa2631c592bf52929bf687&width=1600&height=1065
+excerpt: A forte presença das fabricantes chinesas de motocicletas no Brasil redefine a competitividade no setor, apostando em alta tecnologia embarcada, design moderno e forte relação custo-benefício.
 ---
 
 O cenário do mercado brasileiro de duas rodas passa por uma das transformações mais profundas de sua história recente. Com a consolidação e expansão de marcas de origem chinesa — como Shineray, Zontes, CFMoto, QJ Motor, além de parcerias estratégicas com montadoras locais —, o ecossistema motociclístico do país vive uma reconfiguração na dinâmica de consumo e na oferta de produtos.
