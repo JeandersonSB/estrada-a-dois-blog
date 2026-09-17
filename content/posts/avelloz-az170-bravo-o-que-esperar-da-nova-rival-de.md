@@ -1,13 +1,13 @@
 ---
-title: "Avelloz AZ170 Bravo: Conheça a Nova Aposta para Desafiar CG 160 e Factor"
-date: "2026-09-17"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "https://loremflickr.com/1200/600/avelloz%2Caz170%2Cbravo/all"
-excerpt: "A Avelloz eleva o nível da sua gama no Brasil com a AZ170 Bravo, modelo street que promete agitar o disputado segmento utilitário dominado por Honda CG 160 e Yamaha Factor."
+title: 'Avelloz AZ170 Bravo: Conheça a Nova Aposta para Desafiar CG 160 e Factor'
+status: 🟢 Publicado
+date: 2026-09-17
+category: Notícias
+image: https://motociclismoonline.com.br/wp-content/uploads/2026/09/Avelloz-bravo-detalhe-farol.avif
+excerpt: A Avelloz eleva o nível da sua gama no Brasil com a AZ170 Bravo, modelo street que promete agitar o disputado segmento utilitário dominado por Honda CG 160 e Yamaha Factor.
 ---
 
-O segmento de motocicletas utilitárias e *street* de entrada é o verdadeiro motor das vendas no mercado brasileiro. Dominado há décadas por gigantes como Honda CG 160 e Yamaha Factor, a categoria acaba de ganhar mais um concorrente disposto a brigar pelo comprador que busca economia, praticidade e um conjunto mecânico mais encorpado: a nova **Avelloz AZ170 Bravo**.
+O segmento de motocicletas utilitárias e _street_ de entrada é o verdadeiro motor das vendas no mercado brasileiro. Dominado há décadas por gigantes como Honda CG 160 e Yamaha Factor, a categoria acaba de ganhar mais um concorrente disposto a brigar pelo comprador que busca economia, praticidade e um conjunto mecânico mais encorpado: a nova **Avelloz AZ170 Bravo**.
 
 A marca, que ganhou forte presença no país com ciclomotores e modelos de baixa cilindrada focados em mobilidade urbana e entregas, dá um passo estratégico importante ao entrar na faixa dos 170 cm³, oferecendo uma opção direta para o deslocamento diário e trabalho.
 
@@ -25,7 +25,7 @@ Na prática, a maior capacidade volumétrica do motor auxilia nas arrancadas de 
 
 ## Tecnologia e Segurança
 
-Para cumprir a legislação vigente e garantir a segurança do piloto no uso diário, a AZ170 Bravo é equipada com sistema de **freios CBS** (*Combined Braking System* ou Freios Combinados). Essa tecnologia distribui a força de frenagem entre a roda traseira e a dianteira ao acionar o pedal do freio, reduzindo a distância de parada e evitando o travamento repentino da roda para condutores menos experientes.
+Para cumprir a legislação vigente e garantir a segurança do piloto no uso diário, a AZ170 Bravo é equipada com sistema de **freios CBS** (_Combined Braking System_ ou Freios Combinados). Essa tecnologia distribui a força de frenagem entre a roda traseira e a dianteira ao acionar o pedal do freio, reduzindo a distância de parada e evitando o travamento repentino da roda para condutores menos experientes.
 
 No painel de instrumentos, a motocicleta traz exibição digital das informações essenciais para a pilotagem, como velocímetro, marcador de combustível, odômetro e indicador de marchas, facilitando a visualização rápida durante o percurso.
 
