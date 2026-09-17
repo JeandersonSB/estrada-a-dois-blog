@@ -158,6 +158,48 @@ async function buscarImagemPorPalavrasChave(termoBusca) {
   return `https://loremflickr.com/1200/600/${tags}/all`;
 }
 
+// 4. Envia notificação instantânea para o Telegram pessoal
+async function enviarNotificacaoTelegram({ title, excerpt, date, slug, image }) {
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
+
+  if (!token || !chatId) {
+    console.log("ℹ️ TELEGRAM_BOT_TOKEN ou TELEGRAM_CHAT_ID não definidos. Alerta no Telegram ignorado.");
+    return;
+  }
+
+  const escapeHtml = (str) => String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+  const mensagem = `🔔 <b>NOVO RASCUNHO GERADO PELO ROBÔ!</b>\n\n` +
+    `📰 <b>Título:</b>\n${escapeHtml(title)}\n\n` +
+    `🏷️ <b>Categoria:</b> Notícias (⏳ Rascunho)\n` +
+    `📅 <b>Data:</b> ${escapeHtml(date)}\n\n` +
+    (excerpt ? `📝 <b>Resumo:</b>\n<i>${escapeHtml(excerpt)}</i>\n\n` : '') +
+    `👉 <a href="https://estrada-a-dois-blog.vercel.app/admin/"><b>Clique aqui para revisar e publicar no Painel</b></a>`;
+
+  try {
+    const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: mensagem,
+        parse_mode: 'HTML',
+        disable_web_page_preview: false,
+      }),
+    });
+
+    const data = await res.json();
+    if (data.ok) {
+      console.log("📱 Notificação enviada para o Telegram com sucesso!");
+    } else {
+      console.warn("⚠️ Aviso da API do Telegram:", data.description);
+    }
+  } catch (err) {
+    console.warn("⚠️ Erro ao enviar notificação para o Telegram:", err.message);
+  }
+}
+
 async function processarItem(item, genAI, isBrazilianSource = true) {
   const tempSlug = item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '').substring(0, 50);
   const today = new Date().toISOString().split('T')[0];
@@ -257,6 +299,21 @@ async function processarItem(item, genAI, isBrazilianSource = true) {
     
     console.log(`✅ Artigo rascunho salvo em: ${filePath}`);
     console.log(`🖼️ Imagem vinculada: ${imagemFinal}`);
+
+    // Extrair título e resumo para o alerta do Telegram
+    const titleMatch = markdownContent.match(/title:\s*["']?([^"'\n\r]+)["']?/i);
+    const excerptMatch = markdownContent.match(/excerpt:\s*["']?([^"'\n\r]+)["']?/i);
+    const postTitle = titleMatch ? titleMatch[1].trim() : item.title;
+    const postExcerpt = excerptMatch ? excerptMatch[1].trim() : '';
+
+    await enviarNotificacaoTelegram({
+      title: postTitle,
+      excerpt: postExcerpt,
+      date: today,
+      slug: tempSlug,
+      image: imagemFinal
+    });
+
     return true;
   } catch (error) {
     console.error("Erro ao gerar artigo com a API:", error);
