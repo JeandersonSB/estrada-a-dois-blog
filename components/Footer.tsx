@@ -66,8 +66,8 @@ export function Footer() {
         <div className="flex flex-col items-center gap-2 mt-4 text-center">
           <p className="text-xs text-[#888888]">
             Contato & Parcerias:{' '}
-            <a href="mailto:jeandeerson@gmail.com" className="text-[#B6D200] hover:underline font-medium">
-              jeandeerson@gmail.com
+            <a href="mailto:contato@estradaadois.com" className="text-[#B6D200] hover:underline font-medium">
+              contato@estradaadois.com
             </a>
           </p>
           <p className="text-xs text-[#555555] tracking-widest uppercase">&copy; {new Date().getFullYear()} Estrada a Dois. Todos os direitos reservados.</p>

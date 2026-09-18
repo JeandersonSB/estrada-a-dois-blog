@@ -113,8 +113,8 @@ export default function Contato() {
               <div className="space-y-6">
                 <div>
                   <p className="text-sm text-gray-400 uppercase tracking-wider mb-1">E-mail Comercial</p>
-                  <a href="mailto:jeandeerson@gmail.com" className="text-lg font-bold hover:text-[#B6D200] transition-colors">
-                    jeandeerson@gmail.com
+                  <a href="mailto:contato@estradaadois.com" className="text-lg font-bold hover:text-[#B6D200] transition-colors">
+                    contato@estradaadois.com
                   </a>
                 </div>
                 

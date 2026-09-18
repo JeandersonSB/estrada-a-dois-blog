@@ -71,7 +71,7 @@ export default function PoliticaPrivacidade() {
               Esta política é efetiva a partir de {new Date().toLocaleDateString('pt-BR')}.
             </p>
             <p>
-              Para dúvidas adicionais, entre em contato através do e-mail: <strong>jeandeerson@gmail.com</strong>
+              Para dúvidas adicionais, entre em contato através do e-mail: <strong>contato@estradaadois.com</strong>
             </p>
 
           </div>
