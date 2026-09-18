@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { ContactForm } from '@/components/ContactForm';
 
 export const metadata: Metadata = {
   title: 'Contato | Estrada a Dois',
@@ -46,62 +47,8 @@ export default function Contato() {
       <section className="max-w-6xl mx-auto px-4 mt-[-40px] relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           
-          {/* CONTACT FORM (UI Only) */}
-          <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-gray-100">
-            <h2 className="text-2xl font-black text-[#0F0F0F] uppercase mb-6">Envie uma mensagem</h2>
-            
-            <form className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Nome</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#B6D200] focus:ring-2 focus:ring-[#B6D200] focus:outline-none transition-colors"
-                  placeholder="Como você se chama?"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="whatsapp" className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">WhatsApp</label>
-                <input 
-                  type="tel" 
-                  id="whatsapp" 
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#B6D200] focus:ring-2 focus:ring-[#B6D200] focus:outline-none transition-colors"
-                  placeholder="(00) 00000-0000"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="subject" className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Assunto</label>
-                <select 
-                  id="subject" 
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#B6D200] focus:ring-2 focus:ring-[#B6D200] focus:outline-none transition-colors bg-white"
-                >
-                  <option>Dúvida sobre roteiro / viagem</option>
-                  <option>Parceria Comercial (Marcas)</option>
-                  <option>Mídia Kit / Imprensa</option>
-                  <option>Outro</option>
-                </select>
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Mensagem</label>
-                <textarea 
-                  id="message" 
-                  rows={5}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#B6D200] focus:ring-2 focus:ring-[#B6D200] focus:outline-none transition-colors resize-none"
-                  placeholder="Escreva sua mensagem aqui..."
-                ></textarea>
-              </div>
-              
-              <button 
-                type="button" 
-                className="w-full bg-[#0F0F0F] hover:bg-[#B6D200] hover:text-black text-white font-black uppercase tracking-widest py-4 rounded-lg transition-colors"
-              >
-                Enviar Mensagem
-              </button>
-            </form>
-          </div>
+          {/* INTERACTIVE CONTACT FORM */}
+          <ContactForm />
 
           {/* CONTACT INFO DIRECT */}
           <div className="flex flex-col space-y-8">
