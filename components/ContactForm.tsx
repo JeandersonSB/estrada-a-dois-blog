@@ -104,7 +104,7 @@ export function ContactForm() {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#B6D200] focus:ring-2 focus:ring-[#B6D200] focus:outline-none transition-colors"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#0F0F0F] bg-white placeholder:text-gray-400 font-medium focus:border-[#B6D200] focus:ring-2 focus:ring-[#B6D200] focus:outline-none transition-colors"
             placeholder="Como você se chama?"
           />
         </div>
@@ -120,7 +120,7 @@ export function ContactForm() {
               name="whatsapp"
               value={formData.whatsapp}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#B6D200] focus:ring-2 focus:ring-[#B6D200] focus:outline-none transition-colors"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#0F0F0F] bg-white placeholder:text-gray-400 font-medium focus:border-[#B6D200] focus:ring-2 focus:ring-[#B6D200] focus:outline-none transition-colors"
               placeholder="(00) 00000-0000"
             />
           </div>
@@ -135,7 +135,7 @@ export function ContactForm() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#B6D200] focus:ring-2 focus:ring-[#B6D200] focus:outline-none transition-colors"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#0F0F0F] bg-white placeholder:text-gray-400 font-medium focus:border-[#B6D200] focus:ring-2 focus:ring-[#B6D200] focus:outline-none transition-colors"
               placeholder="seuemail@exemplo.com"
             />
           </div>
@@ -150,7 +150,7 @@ export function ContactForm() {
             name="subject"
             value={formData.subject}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#B6D200] focus:ring-2 focus:ring-[#B6D200] focus:outline-none transition-colors bg-white"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#0F0F0F] bg-white font-medium focus:border-[#B6D200] focus:ring-2 focus:ring-[#B6D200] focus:outline-none transition-colors"
           >
             <option>Dúvida sobre roteiro / viagem</option>
             <option>Parceria Comercial (Marcas)</option>
@@ -170,7 +170,7 @@ export function ContactForm() {
             rows={5}
             value={formData.message}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#B6D200] focus:ring-2 focus:ring-[#B6D200] focus:outline-none transition-colors resize-none"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#0F0F0F] bg-white placeholder:text-gray-400 font-medium focus:border-[#B6D200] focus:ring-2 focus:ring-[#B6D200] focus:outline-none transition-colors resize-none"
             placeholder="Escreva sua mensagem aqui..."
           ></textarea>
         </div>
