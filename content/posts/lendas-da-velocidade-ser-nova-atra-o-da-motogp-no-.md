@@ -1,10 +1,10 @@
 ---
-title: "MotoGP Confirma Atração 'Lendas da Velocidade' no EICMA com Foco em História e Tecnologia"
-date: "2026-09-18T01:07:33"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Despedida_Jorge_Lorenzo_2019_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original"
-excerpt: "A MotoGP prepara uma atração especial para o EICMA intitulada 'Lendas da Velocidade', aproximando o público das máquinas lendárias e das inovações tecnológicas do mundial."
+title: MotoGP Confirma Atração 'Lendas da Velocidade' no EICMA com Foco em História e Tecnologia
+status: 🟢 Publicado
+date: 2026-09-17T22:46:00
+category: Notícias
+image: https://motociclismoonline.com.br/wp-content/uploads/2026/09/imagem-Museo-Moto-honda-Repsol-doohan-motociclismoonline.avif
+excerpt: A MotoGP prepara uma atração especial para o EICMA intitulada 'Lendas da Velocidade', aproximando o público das máquinas lendárias e das inovações tecnológicas do mundial.
 ---
 
 O universo das duas rodas ganha mais um grande capítulo de exaltação à engenharia de alta performance. A MotoGP anunciou a presença do espaço exclusivo **"Lendas da Velocidade"** no EICMA (Salão de Milão), considerado o evento de maior relevância mundial para o setor motociclístico. A iniciativa busca reunir protótipos icônicos, pilotos lendários e os conceitos de ponta que moldaram e continuam a moldar a indústria global de motos.
@@ -19,11 +19,11 @@ Além da exposição física de máquinas históricas e contemporâneas, o espa�
 
 ## Da Pista para a Rua: Transferência Tecnológica em Pauta
 
-Um dos pilares da presença da MotoGP no salão é explicitar o processo de transferência de tecnologia (*tech transfer*) para motocicletas de produção em série. Soluções que hoje são comuns em superesportivas e até em modelos *naked* e *touring* de média e alta cilindrada nasceram nas pistas de corrida.
+Um dos pilares da presença da MotoGP no salão é explicitar o processo de transferência de tecnologia (_tech transfer_) para motocicletas de produção em série. Soluções que hoje são comuns em superesportivas e até em modelos _naked_ e _touring_ de média e alta cilindrada nasceram nas pistas de corrida.
 
 Entre os principais avanços destacados pela categoria e pelas fabricantes no evento estão:
 
-*   **Aerodinâmica Avançada:** O uso de asas e difusores integrados à carenagem para gerar sustentação negativa (*downforce*), aumentando a estabilidade em altas velocidades e reduzindo a tendência de empinamento (*anti-wheelie*).
+*   **Aerodinâmica Avançada:** O uso de asas e difusores integrados à carenagem para gerar sustentação negativa (_downforce_), aumentando a estabilidade em altas velocidades e reduzindo a tendência de empinamento (_anti-wheelie_).
 *   **Eletrônica de Precisão:** Sistemas de Unidade de Medição Inercial (IMU) de seis eixos, que gerenciam controle de tração atuante em curvas, freios ABS de alta sensibilidade e modos de pilotagem customizáveis.
 *   **Construção Leve e Materiais Nobres:** Utilização extensiva de fibra de carbono, titânio e ligas de alumínio de especificação aeronáutica no chassi e subchassi para maximizar a rigidez torcional mantendo o menor peso possível.
 
