@@ -101,6 +101,31 @@ export function getPostsByCategory(categorySlug: string): PostData[] {
   );
 }
 
+export function addTargetBlankToExternalLinks(htmlContent: string): string {
+  return htmlContent.replace(/<a\b([^>]*)>/gi, (match, attrs) => {
+    const hrefMatch = attrs.match(/\bhref\s*=\s*(?:(["'])(.*?)\1|([^\s>]+))/i);
+    if (!hrefMatch) return match;
+    const href = (hrefMatch[2] || hrefMatch[3] || '').trim();
+
+    // Determina se o link é externo (começa com http://, https:// ou // e não aponta para o próprio domínio)
+    const isExternal = /^(https?:)?\/\//i.test(href) &&
+      !href.includes('estrada-a-dois-blog.vercel.app') &&
+      !href.includes('estradaadois.com.br') &&
+      !href.includes('estradaadois.com') &&
+      !href.includes('localhost');
+
+    if (!isExternal) return match;
+
+    // Remove atributos target e rel pré-existentes para evitar duplicações
+    const cleanAttrs = attrs
+      .replace(/\s*\btarget\s*=\s*(?:(["']).*?\1|[^\s>]+)/gi, '')
+      .replace(/\s*\brel\s*=\s*(?:(["']).*?\1|[^\s>]+)/gi, '')
+      .trim();
+
+    return `<a ${cleanAttrs ? cleanAttrs + ' ' : ''}target="_blank" rel="noopener noreferrer">`;
+  });
+}
+
 export async function getPostData(slug: string): Promise<PostDataWithContent> {
   const decodedSlug = decodeURIComponent(slug);
   let fullPath = path.join(postsDirectory, `${decodedSlug}.md`);
@@ -113,7 +138,8 @@ export async function getPostData(slug: string): Promise<PostDataWithContent> {
   const processedContent = await remark()
     .use(html)
     .process(matterResult.content);
-  const contentHtml = processedContent.toString();
+  const rawContentHtml = processedContent.toString();
+  const contentHtml = addTargetBlankToExternalLinks(rawContentHtml);
   
   const dateStr = matterResult.data.date instanceof Date 
     ? matterResult.data.date.toISOString().split('T')[0] 
