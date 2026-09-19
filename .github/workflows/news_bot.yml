@@ -2,11 +2,27 @@ name: Robô Jornalista (Auto-Post)
 
 on:
   schedule:
-    # Horários de Brasília: 05:47, 09:47, 11:47, 14:47, 17:47, 19:47 (Convertidos para UTC +3: 08, 12, 14, 17, 20, 22)
-    # O minuto 47 evita o congestionamento global de minutos cheios no GitHub Actions
-    - cron: '47 8,12,14,17,20,22 * * *'
+    # Horários de Brasília: 05:47, 09:47, 11:47, 14:47, 17:47, 19:47 (UTC +3h)
+    # Cada horário em linha independente garante registro e disparo autônomo no scheduler do GitHub
+    - cron: '47 8 * * *'   # 05:47 BRT
+    - cron: '47 12 * * *'  # 09:47 BRT
+    - cron: '47 14 * * *'  # 11:47 BRT
+    - cron: '47 17 * * *'  # 14:47 BRT
+    - cron: '47 20 * * *'  # 17:47 BRT
+    - cron: '47 22 * * *'  # 19:47 BRT
+
   workflow_dispatch:
-    # Permite rodar manualmente pelo GitHub se quiser testar
+    # Permite disparar manualmente escolhendo a quantidade de notícias
+    inputs:
+      count:
+        description: 'Quantidade de notícias a gerar'
+        required: true
+        default: '1'
+        type: choice
+        options:
+          - '1'
+          - '2'
+          - '3'
 
 jobs:
   gerar-noticia:
@@ -29,6 +45,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          NEWS_COUNT: ${{ github.event.inputs.count || '' }}
         run: node scripts/news_bot.mjs
         
       - name: Salvar e Publicar no Painel (Rascunho)

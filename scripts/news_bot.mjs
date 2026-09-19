@@ -6,7 +6,41 @@ import path from 'path';
 // Configurações
 const API_KEY = process.env.GEMINI_API_KEY;
 const POSTS_DIR = path.join(process.cwd(), 'content', 'posts');
-const TARGET_COUNT = parseInt(process.env.NEWS_COUNT || '1', 10);
+function calcularMetaNoticias() {
+  const envVal = process.env.NEWS_COUNT ? parseInt(process.env.NEWS_COUNT, 10) : null;
+  if (envVal && !isNaN(envVal) && envVal > 0) {
+    return envVal;
+  }
+
+  // Se não foi fixado manualmente, checar a última notícia postada no blog
+  try {
+    if (fs.existsSync(POSTS_DIR)) {
+      const files = fs.readdirSync(POSTS_DIR).filter(f => f.endsWith('.md'));
+      let ultimaData = 0;
+      for (const f of files) {
+        const c = fs.readFileSync(path.join(POSTS_DIR, f), 'utf8');
+        if (c.includes('Notícias')) {
+          const d = c.match(/date:\s*["']?([^"'\r\n]+)["']?/);
+          if (d && d[1]) {
+            const time = new Date(d[1]).getTime();
+            if (time > ultimaData) ultimaData = time;
+          }
+        }
+      }
+      if (ultimaData > 0) {
+        const diffHoras = (Date.now() - ultimaData) / (1000 * 60 * 60);
+        // Se a última notícia foi postada há mais de 3.5h, compensa o pulo de horário do GitHub Actions gerando 2 notícias
+        if (diffHoras >= 3.5) {
+          console.log(`⏰ Última notícia gerada há ${diffHoras.toFixed(1)}h (possível atraso/pulo do GitHub Actions). Meta ajustada para 2 notícias.`);
+          return 2;
+        }
+      }
+    }
+  } catch (e) {
+    console.log('Aviso ao checar compensação de notícias:', e.message);
+  }
+  return 1;
+}
 
 if (!API_KEY) {
   console.error("ERRO: GEMINI_API_KEY não encontrada.");
@@ -398,12 +432,14 @@ async function coletarItensQuery(query, isBR = true) {
 }
 
 async function gerarNoticias() {
+  const targetCount = calcularMetaNoticias();
+
   console.log(`\n======================================================`);
   console.log(`Iniciando Robô Jornalista Estrada a Dois`);
   console.log(`Janela Temporal: Últimos 7 dias (máxima relevância e melhores buscas)`);
   console.log(`Prioridade 1 Absoluta: Mercado Brasileiro (gl=BR, hl=pt-BR)`);
   console.log(`Prioridade 2: Mercado Global (apenas fallback)`);
-  console.log(`Meta: ${TARGET_COUNT} notícia(s)`);
+  console.log(`Meta: ${targetCount} notícia(s)`);
   console.log(`======================================================\n`);
 
   // 1. Coleta e consolidação de notícias brasileiras
@@ -470,8 +506,8 @@ async function gerarNoticias() {
 
   // 2. Se a meta não for atingida com o Brasil, busca fallback global
   let candidatos = [...candidatosBR];
-  if (candidatos.length < TARGET_COUNT) {
-    console.log(`Meta não atingida (${candidatos.length}/${TARGET_COUNT}). Buscando notícias globais complementares...`);
+  if (candidatos.length < targetCount) {
+    console.log(`Meta não atingida (${candidatos.length}/${targetCount}). Buscando notícias globais complementares...`);
     let rawItensGlobal = [];
     for (const q of QUERIES_GLOBAL) {
       const items = await coletarItensQuery(q, false);
@@ -495,7 +531,7 @@ async function gerarNoticias() {
   let geradasCount = 0;
 
   for (const item of candidatos) {
-    if (geradasCount >= TARGET_COUNT) break;
+    if (geradasCount >= targetCount) break;
 
     const tempSlug = item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '').substring(0, 50);
     
@@ -513,7 +549,11 @@ async function gerarNoticias() {
     const sucesso = await processarItem(item, genAI, item.isBR);
     if (sucesso) {
       geradasCount++;
-      console.log(`Progresso: ${geradasCount}/${TARGET_COUNT} notícia(s) gerada(s).`);
+      console.log(`Progresso: ${geradasCount}/${targetCount} notícia(s) gerada(s).`);
+      if (geradasCount < targetCount) {
+        console.log(`Aguardando 3s antes da próxima notícia...`);
+        await new Promise(r => setTimeout(r, 3000));
+      }
     }
   }
 
