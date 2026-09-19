@@ -51,6 +51,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <head>
+        <link rel="preconnect" href="https://motociclismoonline.com.br" />
+        <link rel="dns-prefetch" href="https://motociclismoonline.com.br" />
+      </head>
       <body className={`${inter.className} ${queraBrand.variable} min-h-screen flex flex-col`}>
         <Header />
         <main className="flex-grow">
