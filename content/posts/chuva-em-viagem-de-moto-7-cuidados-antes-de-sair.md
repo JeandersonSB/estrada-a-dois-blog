@@ -1,17 +1,17 @@
 ---
-title: "Chuva em viagem de moto: 7 cuidados antes de sair"
-date: "2026-09-16"
-category: "Dicas"
-status: "⏳ Rascunho"
-image: "/images/blog/chuva-em-viagem-de-moto.png"
-excerpt: "Chuva em viagem de moto pede planejamento: veja como consultar alertas, preparar os equipamentos e combinar pausas para viajar a dois com mais tranquilidade."
+title: 'Chuva em viagem de moto: 7 cuidados antes de sair'
+status: 🟢 Publicado
+date: 2026-09-16
+category: Dicas
+image: /images/blog/20260905_143608-EDIT.webp
+excerpt: 'Chuva em viagem de moto pede planejamento: veja como consultar alertas, preparar os equipamentos e combinar pausas para viajar a dois com mais tranquilidade.'
 ---
 
 # Chuva em viagem de moto: 7 cuidados antes de sair
 
 ![Ilustração de um casal com roupas de motociclismo esperando a chuva passar sob uma cobertura, com a moto estacionada](/images/blog/chuva-em-viagem-de-moto.png)
 
-*Ilustração editorial criada com IA para o Estrada a Dois.*
+_Ilustração editorial criada com IA para o Estrada a Dois._
 
 Chuva em viagem de moto exige decisões conscientes antes mesmo de fechar o portão da garagem. Consultar a previsão do tempo detalhada, preparar a vestimenta impermeável e saber antecipadamente onde parar para esperar o temporal passar evitam que uma viagem agradável vire uma sequência de sustos e desconforto.
 
@@ -54,6 +54,7 @@ A visibilidade é o fator mais crítico da pilotagem na chuva. Viseiras sujas ou
 ## 5. Faça a inspeção mecânica prévia da moto
 
 Com o piso molhado, a aderência diminui e qualquer falha mecânica é amplificada:
+
 - **Pneus:** Confira a profundidade dos sulcos (o TWI não pode estar no limite) para garantir a drenagem da lâmina d'água.
 - **Freios:** Pastilhas em bom estado garantem mordida precisa sem travamento prematuro da roda.
 - **Iluminação:** Farol baixo, lanterna traseira e piscas devem estar 100% operacionais para você ser visto por outros veículos sob a névoa.
@@ -96,10 +97,11 @@ Pilotar na chuva exige respeito, suavidade nos comandos e uma dose extra de prud
 
 Como você e seu parceiro(a) lidam com a chuva na estrada? Quais truques vocês usam para manter a calma e a segurança? Deixe seu comentário no Estrada a Dois!
 
----
+***
 
-*Fontes e consultas:*
-* *INMET (Instituto Nacional de Meteorologia) — Avisos e previsões meteorológicas oficiais.*
-* *Polícia Rodoviária Federal (PRF) — Orientações para tráfego seguro sob chuva e neblina.*
-* *Honda Motos — Cuidados e técnicas de condução em dias chuvosos.*
-* *HJC Helmets — Manual de manutenção e preservação de viseiras.*
+_Fontes e consultas:_
+
+* _INMET (Instituto Nacional de Meteorologia) — Avisos e previsões meteorológicas oficiais._
+* _Polícia Rodoviária Federal (PRF) — Orientações para tráfego seguro sob chuva e neblina._
+* _Honda Motos — Cuidados e técnicas de condução em dias chuvosos._
+* _HJC Helmets — Manual de manutenção e preservação de viseiras._
