@@ -71,9 +71,17 @@ export function Footer() {
             </a>
           </p>
           <p className="text-xs text-[#555555] tracking-widest uppercase">&copy; {new Date().getFullYear()} Estrada a Dois. Todos os direitos reservados.</p>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-1">
+            <a href="/sobre" className="text-xs text-[#555555] hover:text-white transition-colors underline decoration-[#555555] hover:decoration-white">
+              Sobre Nós
+            </a>
+            <span className="text-[#333333] text-xs">•</span>
             <a href="/politica-de-privacidade" className="text-xs text-[#555555] hover:text-white transition-colors underline decoration-[#555555] hover:decoration-white">
               Política de Privacidade
+            </a>
+            <span className="text-[#333333] text-xs">•</span>
+            <a href="/termos-de-uso" className="text-xs text-[#555555] hover:text-white transition-colors underline decoration-[#555555] hover:decoration-white">
+              Termos de Uso
             </a>
             <span className="text-[#333333] text-xs">•</span>
             <a href="/contato" className="text-xs text-[#555555] hover:text-white transition-colors underline decoration-[#555555] hover:decoration-white">

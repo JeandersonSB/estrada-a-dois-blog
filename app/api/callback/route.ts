@@ -33,18 +33,28 @@ export async function GET(request: NextRequest) {
       return new NextResponse('Failed to get access token', { status: 400 });
     }
 
-    // Return the token to the CMS window using postMessage
+    // Return the token to the CMS window using postMessage with strict origin validation
     const script = `
       <script>
-        const receiveMessage = (message) => {
-          window.opener.postMessage(
-            'authorization:github:success:{"token":"${accessToken}","provider":"github"}',
-            message.origin
-          );
-          window.removeEventListener("message", receiveMessage, false);
-        }
-        window.addEventListener("message", receiveMessage, false);
-        window.opener.postMessage("authorizing:github", "*");
+        (function() {
+          if (!window.opener) return;
+          const trustedOrigin = window.location.origin;
+
+          const receiveMessage = (event) => {
+            // Apenas aceita mensagens vindas exatamente da mesma origem (nosso próprio site)
+            if (event.origin !== trustedOrigin) return;
+
+            window.opener.postMessage(
+              'authorization:github:success:{"token":"${accessToken}","provider":"github"}',
+              trustedOrigin
+            );
+            window.removeEventListener("message", receiveMessage, false);
+            window.close();
+          };
+
+          window.addEventListener("message", receiveMessage, false);
+          window.opener.postMessage("authorizing:github", trustedOrigin);
+        })();
       </script>
     `;
 

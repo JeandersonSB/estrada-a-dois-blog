@@ -27,7 +27,7 @@ export function CookieBanner() {
           <p className="font-bold text-white mb-1">Nós usamos cookies para melhorar sua experiência.</p>
           <p className="text-gray-400">
             Utilizamos cookies essenciais e tecnologias semelhantes para personalizar conteúdo, anúncios (via Google AdSense) e analisar nosso tráfego. 
-            Ao continuar navegando, você concorda com a nossa <a href="/politica-de-privacidade" className="text-[#B6D200] hover:underline whitespace-nowrap">Política de Privacidade</a>.
+            Ao continuar navegando, você concorda com a nossa <a href="/politica-de-privacidade" className="text-[#B6D200] hover:underline whitespace-nowrap">Política de Privacidade</a> e nossos <a href="/termos-de-uso" className="text-[#B6D200] hover:underline whitespace-nowrap">Termos de Uso</a>.
           </p>
         </div>
 

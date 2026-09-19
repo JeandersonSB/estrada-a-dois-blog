@@ -9,6 +9,7 @@ export function ContactForm() {
     email: '',
     subject: 'Dúvida sobre roteiro / viagem',
     message: '',
+    _bot_honey: '',
   });
 
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -48,6 +49,7 @@ export function ContactForm() {
         email: '',
         subject: 'Dúvida sobre roteiro / viagem',
         message: '',
+        _bot_honey: '',
       });
     } catch (err: any) {
       console.error(err);
@@ -93,6 +95,18 @@ export function ContactForm() {
       )}
 
       <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Honeypot invisível para enganar e bloquear robôs spammers */}
+        <input
+          type="text"
+          name="_bot_honey"
+          value={formData._bot_honey}
+          onChange={handleChange}
+          tabIndex={-1}
+          autoComplete="off"
+          className="hidden opacity-0 pointer-events-none absolute w-0 h-0"
+          aria-hidden="true"
+        />
+
         <div>
           <label htmlFor="name" className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">
             Nome <span className="text-rose-500">*</span>
