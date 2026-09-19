@@ -90,6 +90,8 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
                   <img 
                     src={post.image} 
                     alt={post.title} 
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                   />
                   <span className="absolute top-4 left-4 bg-[#B6D200] text-[#0F0F0F] text-[11px] font-black uppercase px-3 py-1 tracking-widest z-20 shadow-md">
@@ -97,7 +99,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
                   </span>
                 </a>
                 <div className="p-6 flex flex-col flex-grow">
-                  <div className="text-[12px] text-gray-400 font-bold uppercase tracking-wider mb-2 flex items-center">
+                  <div className="text-[12px] text-gray-600 font-bold uppercase tracking-wider mb-2 flex items-center">
                     <span className="w-2 h-2 rounded-full bg-[#B6D200] mr-2"></span>
                     {post.date}
                   </div>
@@ -106,7 +108,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
                       {post.title}
                     </h2>
                   </a>
-                  <p className="text-[#555555] text-sm leading-relaxed line-clamp-3 mb-6 flex-grow">
+                  <p className="text-[#444444] text-sm leading-relaxed line-clamp-3 mb-6 flex-grow">
                     {post.excerpt}
                   </p>
                   

@@ -133,6 +133,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           <img 
             src={postData.image} 
             alt={postData.title} 
+            fetchPriority="high"
+            decoding="async"
             className="w-full h-full object-cover"
           />
         </div>
@@ -155,7 +157,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
               </div>
               <a
                 href="/"
-                className="text-xs md:text-sm font-bold text-gray-400 hover:text-[#0F0F0F] uppercase tracking-wider hidden sm:inline-flex items-center gap-1 transition-colors"
+                className="text-xs md:text-sm font-bold text-gray-500 hover:text-[#0F0F0F] uppercase tracking-wider hidden sm:inline-flex items-center gap-1 transition-colors"
               >
                 Ver todos
                 <svg className="w-4 h-4 text-[#B6D200]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -175,6 +177,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                     <img
                       src={related.image}
                       alt={related.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <span className="absolute top-3 left-3 bg-[#B6D200] text-[#0F0F0F] text-[10px] font-black uppercase px-2.5 py-1 tracking-wider rounded shadow-md z-10">
@@ -182,7 +186,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                     </span>
                   </div>
                   <div className="p-5 flex flex-col flex-1">
-                    <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">
+                    <span className="text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-2">
                       {related.date}
                     </span>
                     <h4 className="text-base font-bold text-[#0F0F0F] leading-snug line-clamp-2 group-hover:text-[#8ac200] transition-colors mb-2">

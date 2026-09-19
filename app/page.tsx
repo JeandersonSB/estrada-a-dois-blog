@@ -42,6 +42,8 @@ export default function Home() {
                   <img 
                     src={featuredMain.image} 
                     alt={featuredMain.title} 
+                    fetchPriority="high"
+                    decoding="async"
                     className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" 
                   />
                   <div className="absolute bottom-0 left-0 p-6 md:p-10 z-20 w-full">
@@ -69,6 +71,8 @@ export default function Home() {
                     <img 
                       src={featuredSide1.image} 
                       alt={featuredSide1.title} 
+                      loading="lazy"
+                      decoding="async"
                       className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" 
                     />
                     <div className="absolute bottom-0 left-0 p-4 md:p-6 z-20 w-full">
@@ -100,6 +104,8 @@ export default function Home() {
                     <img 
                       src={featuredSide2.image} 
                       alt={featuredSide2.title} 
+                      loading="lazy"
+                      decoding="async"
                       className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" 
                     />
                     <div className="absolute bottom-0 left-0 p-6 z-20 w-full">
@@ -156,6 +162,8 @@ export default function Home() {
                     <img
                       src={story.image}
                       alt={story.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                   </div>
@@ -167,7 +175,7 @@ export default function Home() {
                       {story.title}
                     </h4>
                   </div>
-                  <svg className="w-4 h-4 text-gray-500 group-hover:text-[#B6D200] group-hover:translate-x-0.5 transition-all shrink-0 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-gray-400 group-hover:text-[#B6D200] group-hover:translate-x-0.5 transition-all shrink-0 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
                   </svg>
                 </a>
@@ -224,7 +232,7 @@ export default function Home() {
                       {cat.name}
                     </h2>
                   </div>
-                  <p className="text-gray-500 text-sm md:text-base font-medium">
+                  <p className="text-gray-600 text-sm md:text-base font-medium">
                     {cat.subtitle}
                   </p>
                 </div>
@@ -251,6 +259,8 @@ export default function Home() {
                           <img 
                             src={post.image} 
                             alt={post.title} 
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                           />
                           <span className="absolute top-4 left-4 bg-[#B6D200] text-[#0F0F0F] text-[11px] font-black uppercase px-3 py-1 tracking-widest z-20 shadow-md">
@@ -258,7 +268,7 @@ export default function Home() {
                           </span>
                         </a>
                         <div className="p-6 flex flex-col flex-grow">
-                          <div className="text-[12px] text-gray-400 font-bold uppercase tracking-wider mb-2 flex items-center">
+                          <div className="text-[12px] text-gray-600 font-bold uppercase tracking-wider mb-2 flex items-center">
                             <span className="w-2 h-2 rounded-full bg-[#B6D200] mr-2"></span>
                             {post.date}
                           </div>
@@ -267,7 +277,7 @@ export default function Home() {
                               {post.title}
                             </h3>
                           </a>
-                          <p className="text-[#555555] text-sm leading-relaxed line-clamp-3 mb-6 flex-grow">
+                          <p className="text-[#444444] text-sm leading-relaxed line-clamp-3 mb-6 flex-grow">
                             {post.excerpt}
                           </p>
                           

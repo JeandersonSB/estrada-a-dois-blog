@@ -28,6 +28,10 @@ export function Footer() {
         <img 
           src="/images/logo-estrada-a-dois-principal.png" 
           alt="Estrada a Dois Logo" 
+          width={128}
+          height={128}
+          loading="lazy"
+          decoding="async"
           className="h-32 w-32 mb-6 object-contain drop-shadow-lg"
         />
         
@@ -64,27 +68,27 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col items-center gap-2 mt-4 text-center">
-          <p className="text-xs text-[#888888]">
+          <p className="text-xs text-[#AAAAAA]">
             Contato & Parcerias:{' '}
             <a href="mailto:contato@estradaadois.com" className="text-[#B6D200] hover:underline font-medium">
               contato@estradaadois.com
             </a>
           </p>
-          <p className="text-xs text-[#555555] tracking-widest uppercase">&copy; {new Date().getFullYear()} Estrada a Dois. Todos os direitos reservados.</p>
+          <p className="text-xs text-[#999999] tracking-widest uppercase">&copy; {new Date().getFullYear()} Estrada a Dois. Todos os direitos reservados.</p>
           <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-1">
-            <a href="/sobre" className="text-xs text-[#555555] hover:text-white transition-colors underline decoration-[#555555] hover:decoration-white">
+            <a href="/sobre" className="text-xs text-[#AAAAAA] hover:text-white transition-colors underline decoration-[#555555] hover:decoration-white">
               Sobre Nós
             </a>
-            <span className="text-[#333333] text-xs">•</span>
-            <a href="/politica-de-privacidade" className="text-xs text-[#555555] hover:text-white transition-colors underline decoration-[#555555] hover:decoration-white">
+            <span className="text-[#555555] text-xs">•</span>
+            <a href="/politica-de-privacidade" className="text-xs text-[#AAAAAA] hover:text-white transition-colors underline decoration-[#555555] hover:decoration-white">
               Política de Privacidade
             </a>
-            <span className="text-[#333333] text-xs">•</span>
-            <a href="/termos-de-uso" className="text-xs text-[#555555] hover:text-white transition-colors underline decoration-[#555555] hover:decoration-white">
+            <span className="text-[#555555] text-xs">•</span>
+            <a href="/termos-de-uso" className="text-xs text-[#AAAAAA] hover:text-white transition-colors underline decoration-[#555555] hover:decoration-white">
               Termos de Uso
             </a>
-            <span className="text-[#333333] text-xs">•</span>
-            <a href="/contato" className="text-xs text-[#555555] hover:text-white transition-colors underline decoration-[#555555] hover:decoration-white">
+            <span className="text-[#555555] text-xs">•</span>
+            <a href="/contato" className="text-xs text-[#AAAAAA] hover:text-white transition-colors underline decoration-[#555555] hover:decoration-white">
               Contato
             </a>
           </div>
