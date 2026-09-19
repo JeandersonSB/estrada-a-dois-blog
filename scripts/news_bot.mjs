@@ -295,21 +295,35 @@ async function processarItem(item, genAI, isBrazilianSource = true) {
 
   try {
     let markdownContent = null;
-    const modelCandidates = ['gemini-flash-latest', 'gemini-3.6-flash'];
+    const modelCandidates = [
+      'gemini-3.6-flash',
+      'gemini-flash-latest',
+      'gemini-3.7-flash',
+      'gemini-3.8-flash'
+    ];
     let lastError = null;
 
     for (const modelName of modelCandidates) {
-      try {
-        const model = genAI.getGenerativeModel({ model: modelName });
-        const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error(`Timeout de 45s na API do Gemini (${modelName})`)), 45000));
-        const result = await Promise.race([model.generateContent(prompt), timeoutPromise]);
-        markdownContent = result.response.text();
-        if (markdownContent) break;
-      } catch (err) {
-        console.log(`Tentativa com ${modelName} falhou (${err.message}).`);
-        lastError = err;
-        await new Promise(r => setTimeout(r, 2000));
+      for (let attempt = 1; attempt <= 3; attempt++) {
+        try {
+          console.log(`🧠 Solicitando redação ao modelo: ${modelName} (tentativa ${attempt}/3)...`);
+          const model = genAI.getGenerativeModel({ model: modelName });
+          const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error(`Timeout de 45s na API do Gemini (${modelName})`)), 45000));
+          const result = await Promise.race([model.generateContent(prompt), timeoutPromise]);
+          markdownContent = result.response.text();
+          if (markdownContent) break;
+        } catch (err) {
+          console.log(`⚠️ Tentativa ${attempt} com ${modelName} falhou: ${err.message}`);
+          lastError = err;
+          if (err.message && err.message.includes('404')) {
+            break;
+          }
+          const waitTime = attempt * 3000;
+          console.log(`⏳ Aguardando ${waitTime / 1000}s antes da próxima tentativa...`);
+          await new Promise(r => setTimeout(r, waitTime));
+        }
       }
+      if (markdownContent) break;
     }
 
     if (!markdownContent) {
