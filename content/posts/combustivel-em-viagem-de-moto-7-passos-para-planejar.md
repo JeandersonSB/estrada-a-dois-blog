@@ -1,17 +1,13 @@
 ---
-title: "Combustível em viagem de moto: 7 passos para planejar"
-date: "2026-09-14"
-category: "Dicas"
-status: "⏳ Rascunho"
-image: "/images/blog/combustivel-em-viagem-de-moto.png"
-excerpt: "Combustível em viagem de moto exige margem, consumo real e postos confiáveis. Aprenda a planejar abastecimentos tranquilos para viajar a dois."
+title: 'Combustível em viagem de moto: 7 passos para planejar'
+status: 🟢 Publicado
+date: 2026-09-14
+category: Dicas
+image: /images/blog/20260227_174507-EDIT.webp
+excerpt: Combustível em viagem de moto exige margem, consumo real e postos confiáveis. Aprenda a planejar abastecimentos tranquilos para viajar a dois.
 ---
 
 # Combustível em viagem de moto: 7 passos para planejar
-
-![Ilustração de uma moto preta estacionada em um posto na estrada, com dois capacetes, mapa e caderno sobre uma mesa.](/images/blog/combustivel-em-viagem-de-moto.png)
-
-*Ilustração editorial criada com IA.*
 
 Combustível em viagem de moto merece ser planejado com critério antes mesmo de ligar a ignição. Tanques de menor capacidade, rodovias do interior com postos espaçados e variações bruscas de consumo causadas pelo vento ou pelo peso podem transformar um cálculo otimista em pane seca no acostamento.
 
@@ -38,6 +34,7 @@ Além disso, a capacidade total do tanque informada pela montadora inclui o volu
 ## 1. Consulte o manual e entenda o sistema da sua moto
 
 Comece pelo Manual do Proprietário do ano e modelo exatos da sua motocicleta. Confira:
+
 - A capacidade volumétrica total do tanque (em litros).
 - Quantos litros correspondem ao início do aviso da reserva no painel.
 - O tipo de combustível recomendado pela fabricante (gasolina comum ou aditivada).
@@ -45,28 +42,37 @@ Comece pelo Manual do Proprietário do ano e modelo exatos da sua motocicleta. C
 
 ## 2. Calcule o consumo usando registros reais de viagem
 
-O consumo real da sua moto rodando na estrada com bagagem e duas pessoas é o único dado confiável. Não se fie em números de fóruns ou testes com piloto sozinho sem vento.
+O único dado confiável é como a moto se comporta com o peso real da viagem, ou seja, levando piloto, garupa e bagagem. Esqueça as médias de fóruns ou testes de fábrica feitos com apenas uma pessoa e sem vento.
 
-A fórmula é simples e deve ser feita nas primeiras paradas:
+O cálculo é simples e o ideal é fazê-lo logo nas primeiras paradas:
 
-$$\text{Consumo Médio} = \frac{\text{Quilômetros percorridos}}{\text{Litros abastecidos}}$$
+**Consumo Médio = Quilômetros Rodados ÷ Litros Abastecidos**
 
-Abasteça até o nível padrão da trava da bomba, zere o trip parcial ($A$ ou $B$) e, no próximo abastecimento, divida os quilômetros rodados pela quantidade exata de litros que entraram. Repita o cálculo para ter uma média estável.
+**Como medir na prática:**
+
+1. **Complete o tanque** até a trava automática da bomba e zere o hodômetro parcial (Trip A ou B) no painel.
+2. **Pegue a estrada** e rode normalmente até a próxima parada.
+3. **Complete o tanque novamente** (sempre até a trava da bomba) e anote a quantidade exata de litros que entraram.
+4. **Faça a conta:** divida os quilômetros que estão no painel pela quantidade de litros que você acabou de colocar.
+
+_Dica: repita esse processo em dois ou três abastecimentos seguidos. Assim, você compensa pequenas diferenças na inclinação da moto no posto e encontra uma média bem estável para o resto do roteiro._
 
 ## 3. Defina uma autonomia de planejamento com margem de segurança
 
 Se a sua moto tem um tanque de 11 litros e faz uma média de 30 km/l na rodovia, sua autonomia teórica seria de 330 km. Porém, a sua **autonomia de planejamento jamais deve passar de 220 km a 240 km**.
 
 Essa margem de segurança de 20% a 30% é o seu seguro de vida contra:
+
 - Um posto desativado ou sem energia elétrica no trecho.
 - Um desvio inesperado por obras na pista.
 - Consumo mais alto causado por vento contra ou subidas íngremes.
 
 ## 4. Marque um posto principal e pelo menos uma alternativa
 
-Abra o aplicativo de rotas (Google Maps, Waze ou o aplicativo *ANP com VC – Postos*) e identifique postos de bandeiras conhecidas ao longo da rodovia.
+Abra o aplicativo de rotas (Google Maps, Waze ou o aplicativo _ANP com VC – Postos_) e identifique postos de bandeiras conhecidas ao longo da rodovia.
 
 Para cada trecho longo:
+
 - Escolha o **posto principal** (ex: no km 180).
 - Tenha uma **alternativa anterior** (ex: no km 140, se vocês decidirem parar mais cedo para comer ou se o marcador descer rápido).
 - Tenha uma **alternativa posterior** dentro da sua margem segura (ex: no km 210).
@@ -83,9 +89,10 @@ Combinem um sinal simples ou usem o intercomunicador para alinhar a parada. Essa
 
 ## 6. Una o abastecimento a uma pausa bem planejada
 
-Conforme as diretrizes de segurança da *NHTSA*, pausas frequentes reduzem a fadiga mental e muscular em viagens de longa distância. Aproveitar o abastecimento a cada 150 km a 200 km é a desculpa perfeita para esticar as pernas, beber água, ir ao banheiro e relaxar por 15 minutos.
+Conforme as diretrizes de segurança da _NHTSA_, pausas frequentes reduzem a fadiga mental e muscular em viagens de longa distância. Aproveitar o abastecimento a cada 150 km a 200 km é a desculpa perfeita para esticar as pernas, beber água, ir ao banheiro e relaxar por 15 minutos.
 
 Durante a parada:
+
 - Desça da moto para abastecer (procedimento obrigatório de segurança em postos).
 - Verifique visualmente a fixação dos baús e a tensão da corrente de transmissão.
 - Hidrate-se e confira as condições do clima para os próximos quilômetros.
@@ -96,7 +103,7 @@ Se você pegou um trecho de serra travada, asfalto esburacado que exigiu marchas
 
 ## O erro mais comum que você deve evitar
 
-O erro mais comum do motociclista é a autoconfiança de achar que *"a moto ainda aguenta mais 40 km até a próxima cidade"*. Na estrada, o posto seguinte pode estar sem combustível, com a bomba quebrada ou fechado após as 18h. Nunca recuse uma oportunidade de abastecer quando o tanque já passou da metade em trechos desconhecidos.
+O erro mais comum do motociclista é a autoconfiança de achar que _"a moto ainda aguenta mais 40 km até a próxima cidade"_. Na estrada, o posto seguinte pode estar sem combustível, com a bomba quebrada ou fechado após as 18h. Nunca recuse uma oportunidade de abastecer quando o tanque já passou da metade em trechos desconhecidos.
 
 ## Checklist rápido para salvar no celular
 
@@ -116,9 +123,10 @@ Planejar o combustível em viagem de moto é trocar a ansiedade da "luzinha da r
 
 Qual é a autonomia média da sua moto na estrada e com quantos quilômetros você costuma parar para abastecer? Deixe seu comentário no Estrada a Dois!
 
----
+***
 
-*Fontes e consultas:*
-* *ANP (Agência Nacional do Petróleo, Gás Natural e Biocombustíveis) — Aplicativo ANP com VC e dados de postos.*
-* *NHTSA (National Highway Traffic Safety Administration) — Diretrizes de segurança e combate à fadiga em motociclismo.*
-* *Manuais de Serviço e Manuais do Proprietário de Motocicletas (Yamaha / Honda).*
+_Fontes e consultas:_
+
+* _ANP (Agência Nacional do Petróleo, Gás Natural e Biocombustíveis) — Aplicativo ANP com VC e dados de postos._
+* _NHTSA (National Highway Traffic Safety Administration) — Diretrizes de segurança e combate à fadiga em motociclismo._
+* _Manuais de Serviço e Manuais do Proprietário de Motocicletas (Yamaha / Honda)._
