@@ -228,6 +228,12 @@ async function processarItem(item, genAI, isBrazilianSource = true) {
   2. Redija um artigo jornalístico completo e aprofundado em Português do Brasil (pt-BR), focado em SEO, explicando especificações, motor, proposta e impacto para o motociclista no mercado brasileiro.
   3. Não adicione tópicos de "viagem" ou "mototurismo", o foco é na MÁQUINA, TECNOLOGIA, MERCADO ou INDÚSTRIA.
   4. Não invente fatos, explique os termos técnicos.
+  5. LINKAGEM INTERNA DE SEO (OBRIGATÓRIO): No final do texto, exatamente antes da linha da "Fonte:", insira SEMPRE um destaque em blockquote com uma recomendação de leitura interna para o leitor conhecer nossos roteiros reais de viagem (escolha UMA das opções abaixo que melhor se contextualizar):
+     - > 💡 **Leia também:** [De R15 à Serra do Rio do Rastro: Um Sonho em Duas Rodas](/blog/de-r15-a-serra-do-rio-do-rastro-um-sonho-em)
+     - > 💡 **Veja nosso diário de bordo:** [5 serras e 831 km de moto em um fim de semana](/blog/5-serras-e-831-km-de-moto-em-um-fim-de)
+     - > 💡 **Confira esse roteiro:** [De R15 para as Cataratas: Roteiro de 2.012 km a Dois](/blog/de-r15-para-as-cataratas-roteiro-de)
+     - > 💡 **Inspire-se na estrada:** [Rota 513, Letts Road e o Túnel de Bambus de moto](/blog/rota-513-letts-road-e-o-t-nel-de-bambus-um)
+     - > 💡 **Conheça o casal:** [Sobre o projeto Estrada a Dois e nossas viagens](/sobre)
   
   REGRAS INEGOCIÁVEIS DE SEGURANÇA E CONTEÚDO:
   - REGRA 1 (ANTI-CRIME / SEGURANÇA): É TERMINANTEMENTE PROIBIDO gerar matérias sobre crimes, acidentes, mortes, colisões, roubos, furtos, apreensões policiais, leilões ou tragédias. Se a notícia for policial ou sobre acidente de trânsito, NÃO gere o artigo. Responda APENAS: "IGNORAR_CONTEUDO_INVALIDO".
@@ -246,7 +252,11 @@ async function processarItem(item, genAI, isBrazilianSource = true) {
   excerpt: "[Resumo impactante de 2 a 3 linhas]"
   ---
   
-  [Seu texto completo em pt-BR aqui, usando ## para subtítulos. No final, adicione "Fonte: [Nome do Veículo Original](${item.link})"]
+  [Seu texto completo em pt-BR aqui, usando ## para subtítulos]
+
+  > 💡 **Leia também:** [Roteiro Recomendado](/blog/slug-do-roteiro)
+
+  Fonte: [Nome do Veículo Original](${item.link})
   `;
 
   try {
