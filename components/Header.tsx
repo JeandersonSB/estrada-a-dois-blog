@@ -87,16 +87,16 @@ export function Header() {
           }}
         />
 
-        {/* Logo Text - Contraste WCAG AAA (12.5:1) com badge escura */}
+        {/* Logo Text */}
         <a 
           href="/" 
-          className="font-brand text-[30px] md:text-[36px] hover:opacity-85 transition-opacity z-10 relative flex items-center gap-[6px] md:gap-[8px] md:ml-6"
+          className="font-brand text-[30px] md:text-[36px] hover:opacity-80 transition-opacity z-10 relative flex gap-[6px] md:gap-[8px] md:ml-6"
           ref={(el) => { targetsRef.current['logo'] = el; }}
           onMouseEnter={() => setHoveredTarget('logo')}
           style={{ letterSpacing: '0.01em', lineHeight: 1 }}
         >
           <span className="text-[#0F0F0F] font-black italic">Estrada</span> 
-          <span className="bg-[#0F0F0F] text-[#B6D200] px-2.5 py-0.5 rounded-lg text-[22px] md:text-[26px] font-black italic shadow-sm tracking-wide">a Dois</span>
+          <span className="text-[#B6D200] font-black italic">a Dois</span>
         </a>
         
         {/* Desktop Navigation */}
