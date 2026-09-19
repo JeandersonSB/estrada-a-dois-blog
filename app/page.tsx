@@ -281,7 +281,11 @@ export default function Home() {
                             {post.excerpt}
                           </p>
                           
-                          <a href={`/blog/${post.slug}`} className="inline-flex items-center text-[13px] font-black uppercase tracking-widest text-[#0F0F0F] group-hover:text-[#B6D200] transition-colors mt-auto">
+                          <a 
+                            href={`/blog/${post.slug}`} 
+                            aria-label={`Ler artigo completo: ${post.title}`}
+                            className="inline-flex items-center text-[13px] font-black uppercase tracking-widest text-[#0F0F0F] group-hover:text-[#B6D200] transition-colors mt-auto"
+                          >
                             Ler Artigo
                             <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>

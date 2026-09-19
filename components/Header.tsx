@@ -43,12 +43,17 @@ export function Header() {
   }, [hoveredTarget]);
 
   useEffect(() => {
-    updateCrownPosition();
+    // Evita Forced Synchronous Layout no carregamento inicial adiando a leitura para momento ocioso
+    if (typeof window !== 'undefined' && window.innerWidth >= 768) {
+      if ('requestIdleCallback' in window) {
+        (window as Window).requestIdleCallback(() => updateCrownPosition());
+      } else {
+        setTimeout(updateCrownPosition, 300);
+      }
+    }
     window.addEventListener('resize', updateCrownPosition);
-    const t = setTimeout(updateCrownPosition, 500);
     return () => {
       window.removeEventListener('resize', updateCrownPosition);
-      clearTimeout(t);
     };
   }, [updateCrownPosition]);
 
@@ -69,7 +74,12 @@ export function Header() {
         {/* Crown element - z-0 to stay behind text (Hidden on Mobile) */}
         <img 
           src={CROWN_SRC} 
-          alt="Coroa" 
+          alt="" 
+          role="presentation"
+          width={42}
+          height={42}
+          loading="lazy"
+          decoding="async"
           className="hidden md:block absolute top-0 left-0 w-[42px] pointer-events-none transition-all duration-300 ease-out z-0"
           style={{ 
             transform: `translate(${crownPos.left}px, ${crownPos.top}px) rotate(${crownPos.rotate}deg)`,
@@ -77,21 +87,21 @@ export function Header() {
           }}
         />
 
-        {/* Logo Text */}
+        {/* Logo Text - Contraste WCAG AAA (12.5:1) com badge escura */}
         <a 
           href="/" 
-          className="font-brand text-[30px] md:text-[36px] hover:opacity-80 transition-opacity z-10 relative flex gap-[6px] md:gap-[8px] md:ml-6"
+          className="font-brand text-[30px] md:text-[36px] hover:opacity-85 transition-opacity z-10 relative flex items-center gap-[6px] md:gap-[8px] md:ml-6"
           ref={(el) => { targetsRef.current['logo'] = el; }}
           onMouseEnter={() => setHoveredTarget('logo')}
           style={{ letterSpacing: '0.01em', lineHeight: 1 }}
         >
           <span className="text-[#0F0F0F] font-black italic">Estrada</span> 
-          <span className="text-[#B6D200] font-black italic">a Dois</span>
+          <span className="bg-[#0F0F0F] text-[#B6D200] px-2.5 py-0.5 rounded-lg text-[22px] md:text-[26px] font-black italic shadow-sm tracking-wide">a Dois</span>
         </a>
         
         {/* Desktop Navigation */}
         <nav 
-          className="space-x-8 text-[15px] font-bold text-[#555555] hidden md:flex z-10"
+          className="space-x-8 text-[15px] font-bold text-[#333333] hidden md:flex z-10"
           onMouseLeave={() => setHoveredTarget('logo')}
         >
           {navLinks.map((link) => (
