@@ -221,7 +221,7 @@ async function gerarArtigo(categoria) {
 
   try {
     let markdownContent = null;
-    const modelCandidates = ['gemini-flash-latest', 'gemini-3.6-flash'];
+    const modelCandidates = ['gemini-flash-latest', 'gemini-3.6-flash', 'gemini-2.5-flash'];
     let lastError = null;
 
     for (const modelName of modelCandidates) {
@@ -286,7 +286,7 @@ async function gerarArtigo(categoria) {
     // Enviar alerta no Telegram
     await enviarNotificacaoTelegram({
       title,
-      category,
+      category: categoria,
       excerpt,
       date: today,
     });

@@ -32,10 +32,10 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
 
-      - name: Instalar Dependências Mínimas
-        run: npm install @google/generative-ai
+      - name: Instalar Dependências
+        run: npm install
 
       - name: Redigir Artigo Especialista com IA
         env:
