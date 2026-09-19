@@ -11,9 +11,9 @@ media_folder: "public/images/blog"
 public_folder: "/images/blog"
 
 # Configuração da identidade da interface
-site_url: "https://estrada-a-dois-blog.vercel.app"
-display_url: "https://estrada-a-dois-blog.vercel.app"
-logo_url: "https://estrada-a-dois-blog.vercel.app/images/logo-admin.png"
+site_url: "https://www.estradaadois.com"
+display_url: "https://www.estradaadois.com"
+logo_url: "https://www.estradaadois.com/images/logo-admin.png"
 # Configuração de URLs e Slugs limpos (SEO-friendly sem acentos)
 slug:
   encoding: "ascii"

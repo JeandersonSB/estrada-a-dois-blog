@@ -38,22 +38,69 @@ export async function GET(request: NextRequest) {
       <script>
         (function() {
           if (!window.opener) return;
-          const trustedOrigin = window.location.origin;
+
+          const allowedOrigins = [
+            'https://www.estradaadois.com',
+            'https://estradaadois.com',
+            'https://estrada-a-dois-blog.vercel.app',
+            'http://localhost:3000'
+          ];
+
+          function isAllowed(origin) {
+            if (!origin) return false;
+            return allowedOrigins.includes(origin) || origin.endsWith('.vercel.app');
+          }
+
+          let delivered = false;
+          function deliver(targetOrigin) {
+            if (delivered) return;
+            delivered = true;
+            try {
+              window.opener.postMessage(
+                'authorization:github:success:{"token":"${accessToken}","provider":"github"}',
+                targetOrigin
+              );
+            } catch (err) {}
+            setTimeout(function() {
+              window.close();
+            }, 150);
+          }
 
           const receiveMessage = (event) => {
-            // Apenas aceita mensagens vindas exatamente da mesma origem (nosso próprio site)
-            if (event.origin !== trustedOrigin) return;
-
-            window.opener.postMessage(
-              'authorization:github:success:{"token":"${accessToken}","provider":"github"}',
-              trustedOrigin
-            );
+            if (!isAllowed(event.origin)) return;
             window.removeEventListener("message", receiveMessage, false);
-            window.close();
+            deliver(event.origin);
           };
 
           window.addEventListener("message", receiveMessage, false);
-          window.opener.postMessage("authorizing:github", trustedOrigin);
+
+          // 1. Handshake padrão Sveltia / Decap CMS
+          try {
+            window.opener.postMessage("authorizing:github", "*");
+          } catch (e) {}
+
+          allowedOrigins.forEach(function(orig) {
+            try {
+              window.opener.postMessage("authorizing:github", orig);
+            } catch (e) {}
+          });
+
+          // 2. Fallback de envio direto caso o handshake não responda
+          setTimeout(function() {
+            if (!delivered) {
+              allowedOrigins.forEach(function(orig) {
+                try {
+                  window.opener.postMessage(
+                    'authorization:github:success:{"token":"${accessToken}","provider":"github"}',
+                    orig
+                  );
+                } catch (e) {}
+              });
+              setTimeout(function() {
+                window.close();
+              }, 200);
+            }
+          }, 600);
         })();
       </script>
     `;
