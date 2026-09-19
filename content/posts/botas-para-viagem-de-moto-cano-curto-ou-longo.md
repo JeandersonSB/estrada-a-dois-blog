@@ -1,17 +1,13 @@
 ---
-title: "Botas para viagem de moto: cano curto ou longo?"
-date: "2026-09-17"
-category: "Equipamentos"
-status: "⏳ Rascunho"
-image: "/images/blog/botas-para-viagem-de-moto.png"
-excerpt: "Botas para viagem de moto: cano curto ou longo? Analise proteção contra torção, impermeabilidade, conforto ao caminhar e controle dos pedais na estrada."
+title: 'Botas para viagem de moto: cano curto ou longo?'
+status: 🟢 Publicado
+date: 2026-09-17
+category: Equipamentos
+image: /images/blog/ChatGPT-Image-18-de-set.-de-2026_-23_03_23.webp
+excerpt: 'Botas para viagem de moto: cano curto ou longo? Analise proteção contra torção, impermeabilidade, conforto ao caminhar e controle dos pedais na estrada.'
 ---
 
 # Botas para viagem de moto: cano curto ou longo?
-
-![Botas para motociclistas de cano curto e cano longo lado a lado em uma oficina de motos.](/images/blog/botas-para-viagem-de-moto.png)
-
-*Ilustração editorial criada com IA.*
 
 Botas para viagem de moto precisam proteger pés e tornozelos contra impactos, torções e queimaduras de escapamento, sem travar a sensibilidade necessária para acionar os pedais de câmbio e freio traseiro.
 
@@ -29,13 +25,15 @@ Materiais, solados antiderrapantes com alma de aço e membranas impermeáveis va
 ## 1. Proteção e normas técnicas: a EN 13634
 
 A norma europeia que regulamenta calçados de proteção para motociclistas é a **EN 13634:2017**. Segundo o laboratório técnico internacional SATRA, os testes avaliam quatro requisitos obrigatórios gravados na etiqueta:
+
 1. **Altura do cano:** Nível 1 (cano curto) ou Nível 2 (cano alto).
 2. **Resistência à abrasão por impacto:** Tempo que o material suporta o atrito contra o asfalto sem romper.
 3. **Resistência ao corte por impacto:** Proteção contra lâminas de metal ou pedras pontiagudas.
 4. **Rigidez transversal da sola:** A capacidade do solado de não ser esmagado lateralmente caso a moto caia sobre o pé do piloto.
 
 Além dos quatro níveis principais (classificados em 1 ou 2), a etiqueta pode trazer siglas de testes opcionais valiosos para viagens:
-* **WR:** *Water Resistant* (impermeabilidade comprovada em teste de submersão e flexão).
+
+* **WR:** _Water Resistant_ (impermeabilidade comprovada em teste de submersão e flexão).
 * **IPA / IPS:** Proteção contra impacto nos maléolos (tornozelo) e na tíbia (canela).
 * **WAD:** Absorção de água pelo cabedal.
 
@@ -54,6 +52,7 @@ Para casais, a compra deve ser sempre individualizada: garupa e piloto têm anat
 Ao experimentar as botas na loja, vista exatamente as meias de viagem que pretende usar (preferencialmente meias técnicas respiráveis de cano longo).
 
 Faça o teste prático na moto desligada:
+
 * Sente-se na posição normal de pilotagem e apoie a ponta dos pés nas pedaleiras.
 * Verifique se a biqueira da bota entra com facilidade embaixo do pedal de câmbio sem exigir que você torça a perna para passar as marchas.
 * Sinta se a sola oferece tração imediata na borracha da pedaleira, sem escorregar.
@@ -80,7 +79,7 @@ Em dias de chuva com bota de cano longo, **a barra da calça impermeável deve f
 ## Tabela comparativa resumida
 
 | Critério | Bota de Cano Curto | Bota de Cano Longo (Touring) |
-| :--- | :--- | :--- |
+| --- | --- | --- |
 | **Área Coberta** | Pés e maléolos (tornozelo) | Pés, tornozelos e canela inteira |
 | **Proteção contra Torção** | Média/Alta (depende do modelo) | Máxima (estrutura rígida e canela) |
 | **Conforto para Caminhar** | Excelente (flexível e leve) | Moderado a rígido |
@@ -93,9 +92,10 @@ Em dias de chuva com bota de cano longo, **a barra da calça impermeável deve f
 * **Fique com a Bota de Cano Curto:** Se o seu perfil de viagem envolve muitos passeios a pé nas paradas, clima predominantemente quente e deslocamentos de fim de semana com paradas em cidades turísticas.
 * **Fique com a Bota de Cano Longo:** Se você encara centenas de quilômetros de rodovia aberta em qualquer clima — como na nossa rota de [2.012 km a dois até as Cataratas do Iguaçu](/blog/de-r15-para-as-cataratas-roteiro-de) —, onde a proteção contra o vento frio, pedriscos de caminhões e tempestades exige uma barreira intransponível na canela.
 
----
+***
 
-*Fontes e normas consultadas:*
-* *SATRA Technology — Requisitos e ensaios da norma EN 13634:2017 para calçados de motociclistas.*
-* *Motorcycle Safety Foundation (MSF) — Equipamentos essenciais de pilotagem.*
-* *Código de Trânsito Brasileiro (CTB), Artigo 252.*
+_Fontes e normas consultadas:_
+
+* _SATRA Technology — Requisitos e ensaios da norma EN 13634:2017 para calçados de motociclistas._
+* _Motorcycle Safety Foundation (MSF) — Equipamentos essenciais de pilotagem._
+* _Código de Trânsito Brasileiro (CTB), Artigo 252._
