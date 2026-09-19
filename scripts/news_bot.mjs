@@ -209,7 +209,7 @@ async function enviarNotificacaoTelegram({ title, excerpt, date, slug, image }) 
     `🏷️ <b>Categoria:</b> Notícias (⏳ Rascunho)\n` +
     `📅 <b>Data:</b> ${escapeHtml(date)}\n\n` +
     (excerpt ? `📝 <b>Resumo:</b>\n<i>${escapeHtml(excerpt)}</i>\n\n` : '') +
-    `👉 <a href="https://estrada-a-dois-blog.vercel.app/admin/"><b>Clique aqui para revisar e publicar no Painel</b></a>`;
+    `👉 <a href="https://www.estradaadois.com/admin/"><b>Clique aqui para revisar e publicar no Painel</b></a>`;
 
   try {
     const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {

@@ -15,7 +15,7 @@ const queraBrand = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://estrada-a-dois-blog.vercel.app'),
+  metadataBase: new URL('https://www.estradaadois.com'),
   title: {
     default: 'Estrada a Dois | Portal de Notícias e Motociclismo',
     template: '%s | Estrada a Dois',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Estrada a Dois | Portal de Notícias e Motociclismo',
     description: 'O portal definitivo sobre motociclismo: notícias, lançamentos de motos, modelos, tecnologia e equipamentos.',
-    url: 'https://estrada-a-dois-blog.vercel.app',
+    url: 'https://www.estradaadois.com',
     siteName: 'Estrada a Dois',
     locale: 'pt_BR',
     type: 'website',

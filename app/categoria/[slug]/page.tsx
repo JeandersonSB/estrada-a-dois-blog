@@ -33,12 +33,12 @@ export async function generateMetadata({
     title: `${title} | Estrada a Dois`,
     description: `Encontre os melhores artigos, novidades e notícias sobre ${title.toLowerCase()} no portal Estrada a Dois.`,
     alternates: {
-      canonical: `https://estrada-a-dois-blog.vercel.app/categoria/${slug}`,
+      canonical: `https://www.estradaadois.com/categoria/${slug}`,
     },
     openGraph: {
       title: `${title} | Estrada a Dois`,
       description: `Encontre os melhores artigos, novidades e notícias sobre ${title.toLowerCase()} no portal Estrada a Dois.`,
-      url: `https://estrada-a-dois-blog.vercel.app/categoria/${slug}`,
+      url: `https://www.estradaadois.com/categoria/${slug}`,
       siteName: 'Estrada a Dois',
       locale: 'pt_BR',
       type: 'website',

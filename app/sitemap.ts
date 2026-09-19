@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { getSortedPostsData, slugifyCategory } from '@/lib/posts';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://estrada-a-dois-blog.vercel.app';
+  const baseUrl = 'https://www.estradaadois.com';
   const posts = getSortedPostsData();
 
   // Static core routes

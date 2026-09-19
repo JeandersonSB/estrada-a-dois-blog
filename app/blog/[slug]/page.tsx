@@ -18,7 +18,7 @@ export async function generateMetadata({
   try {
     const postData = await getPostData(slug);
     const excerpt = postData.excerpt || `${postData.title} - Acompanhe no Estrada a Dois.`;
-    const canonicalUrl = `https://estrada-a-dois-blog.vercel.app/blog/${slug}`;
+    const canonicalUrl = `https://www.estradaadois.com/blog/${slug}`;
 
     return {
       title: postData.title,
@@ -86,20 +86,20 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     dateModified: postData.date,
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://estrada-a-dois-blog.vercel.app/blog/${slug}`,
+      '@id': `https://www.estradaadois.com/blog/${slug}`,
     },
     author: {
       '@type': 'Organization',
       name: 'Estrada a Dois',
-      url: 'https://estrada-a-dois-blog.vercel.app',
+      url: 'https://www.estradaadois.com',
     },
     publisher: {
       '@type': 'Organization',
       name: 'Estrada a Dois',
-      url: 'https://estrada-a-dois-blog.vercel.app',
+      url: 'https://www.estradaadois.com',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://estrada-a-dois-blog.vercel.app/logo.png',
+        url: 'https://www.estradaadois.com/logo.png',
       },
     },
   };
