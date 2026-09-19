@@ -1,13 +1,13 @@
 ---
-title: "Royal Enfield Flying Flea C6 Ganha Nova Cor e Reforça Estratégia de Mobilidade Elétrica"
-date: "2026-09-19T12:42:38"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "https://upload.wikimedia.org/wikipedia/commons/7/74/RE_%22Flying_Flea%22_%281943%29_-_15297706043.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original"
-excerpt: "A Royal Enfield amplia a paleta de cores da Flying Flea C6, sua inovadora motocicleta elétrica retrô. Veja as especificações técnicas, tecnologias de ponta e o impacto do modelo no mercado."
+title: Royal Enfield Flying Flea C6 Ganha Nova Cor e Reforça Estratégia de Mobilidade Elétrica
+status: 🟢 Publicado
+date: 2026-09-19T12:42:00
+category: Notícias
+image: https://motociclismoonline.com.br/wp-content/uploads/2026/09/royal-enfield-flying-flea-branco.avif
+excerpt: A Royal Enfield amplia a paleta de cores da Flying Flea C6, sua inovadora motocicleta elétrica retrô. Veja as especificações técnicas, tecnologias de ponta e o impacto do modelo no mercado.
 ---
 
-A Royal Enfield segue em ritmo acelerado na expansão de sua divisão de mobilidade urbana e sustentável. A marca revelou recentemente uma nova opção de cor para a **Flying Flea C6**, o primeiro modelo 100% elétrico apresentado sob a nova submarca *Flying Flea*. A novidade reforça a proposta do fabricante em aliar o visual clássico e nostálgico a uma arquitetura tecnológica moderna voltada para os grandes centros urbanos.
+A Royal Enfield segue em ritmo acelerado na expansão de sua divisão de mobilidade urbana e sustentável. A marca revelou recentemente uma nova opção de cor para a **Flying Flea C6**, o primeiro modelo 100% elétrico apresentado sob a nova submarca _Flying Flea_. A novidade reforça a proposta do fabricante em aliar o visual clássico e nostálgico a uma arquitetura tecnológica moderna voltada para os grandes centros urbanos.
 
 Inspirada no lendário modelo leve desenvolvido pela empresa durante a Segunda Guerra Mundial para ser lançado de paraquedas, a Flying Flea C6 reinventa essa herança histórica sob o conceito de emissão zero de poluentes.
 
@@ -23,7 +23,7 @@ Sob o visual clássico, a Royal Enfield Flying Flea C6 carrega uma plataforma de
 
 * **Unidade de Controle do Veículo (VCU):** O cérebro da motocicleta integra todos os sistemas eletrônicos e de propulsão. A VCU processa continuamente milhares de dados para otimizar o consumo de energia, a entrega de torque e a regeneração de carga nas frenagens.
 * **Modos de Condução Customizáveis:** A C6 permite ao piloto ajustar a entrega de potência e a resposta do acelerador conforme o tráfego urbano ou a preferência pessoal.
-* **Painel Digital Circular TFT:** Mantendo o formato arredondado clássico, a tela colorida oferece conectividade total com smartphones, navegação curva a curva (*turn-by-turn*) e atualização de software por ar (OTA - *Over-The-Air*).
+* **Painel Digital Circular TFT:** Mantendo o formato arredondado clássico, a tela colorida oferece conectividade total com smartphones, navegação curva a curva (_turn-by-turn_) e atualização de software por ar (OTA - _Over-The-Air_).
 * **Frenagem e Segurança:** O modelo conta com sistema de freios a disco com ABS atuante em curvas, garantindo desacelerações seguras em pisos molhados ou com baixa aderência.
 
 A carcaça de alumínio que envolve as células da bateria possui aletas de refrigeração integradas, atuando tanto como elemento estrutural do chassi quanto como sistema passivo de dissipação de calor, eliminando a necessidade de radiadores complexos e reduzindo o peso total do conjunto.
