@@ -1,17 +1,13 @@
 ---
-title: "Luvas de moto para viagem: couro ou tecido técnico?"
-date: "2026-09-18"
-category: "Equipamentos"
-status: "⏳ Rascunho"
-image: "/images/blog/luvas-de-moto-para-viagem.png"
-excerpt: "Luvas de moto para viagem: compare couro e tecido técnico em sensibilidade nos comandos, ventilação, proteção contra chuva e normas técnicas."
+title: 'Luvas de moto para viagem: couro ou tecido técnico?'
+status: 🟢 Publicado
+date: 2026-09-18
+category: Equipamentos
+image: /images/blog/ChatGPT-Image-18-de-set.-de-2026_-23_04_14.webp
+excerpt: 'Luvas de moto para viagem: compare couro e tecido técnico em sensibilidade nos comandos, ventilação, proteção contra chuva e normas técnicas.'
 ---
 
 # Luvas de moto para viagem: couro ou tecido técnico?
-
-![Quatro pares de luvas de motociclismo em couro preto e tecido técnico sobre bancada de oficina.](/images/blog/luvas-de-moto-para-viagem.png)
-
-*Ilustração editorial criada com IA.*
 
 As luvas de moto para viagem precisam garantir precisão milimétrica no controle dos manetes de freio e embreagem, absorver as vibrações contínuas do guidão e proteger as mãos contra abrasão e impacto em caso de queda.
 
@@ -22,7 +18,7 @@ Nenhum material, isoladamente, resolve todas as situações. Uma comparação ú
 ## As principais diferenças estruturais
 
 * **Luvas predominantemente de couro (bovino ou caprino):** oferecem a mais alta resistência natural ao atrito contra o asfalto e moldam-se com perfeição ao formato das mãos com o tempo de uso. Podem conter perfurações para ventilação ou painéis elásticos entre os dedos.
-* **Luvas de tecido técnico ou construção mista:** combinam malhas ventiladas respiráveis (*mesh*), fibras sintéticas de alta resistência (como poliamida e aramida) e membranas impermeáveis seladas. Na maioria das vezes, utilizam reforços de couro na palma para garantir boa aderência e durabilidade.
+* **Luvas de tecido técnico ou construção mista:** combinam malhas ventiladas respiráveis (_mesh_), fibras sintéticas de alta resistência (como poliamida e aramida) e membranas impermeáveis seladas. Na maioria das vezes, utilizam reforços de couro na palma para garantir boa aderência e durabilidade.
 
 A expressão "têxtil" abrange uma variedade imensa de produtos. Um dorso com tecido respirável não informa a resistência da palma, da mesma forma que protetores plásticos nos nós dos dedos não garantem que as costuras aguentarão o arrasto no asfalto.
 
@@ -31,13 +27,14 @@ A expressão "têxtil" abrange uma variedade imensa de produtos. Um dorso com te
 A norma europeia que regulamenta luvas de proteção para motociclistas é a **EN 13594:2015**. Os ensaios do laboratório SATRA medem resistência da costura ao rasgamento, abrasão por impacto, retenção no punho e ergonomia:
 
 * **Nível 1 (Level 1):** Nível de proteção padrão, com foco em flexibilidade, leveza e conforto para uso diário e passeios.
-* **Nível 2 (Level 2):** Nível reforçado para turismo pesado e alta velocidade, com maior tempo de resistência à abrasão, punhos mais longos e protetores rígidos obrigatórios nos nós dos dedos com absorção de impacto comprovada (indicado pela sigla **KP** - *Knuckle Protection*).
+* **Nível 2 (Level 2):** Nível reforçado para turismo pesado e alta velocidade, com maior tempo de resistência à abrasão, punhos mais longos e protetores rígidos obrigatórios nos nós dos dedos com absorção de impacto comprovada (indicado pela sigla **KP** - _Knuckle Protection_).
 
 Ao escolher um modelo, confira a etiqueta interna com o pictograma do motociclista e a indicação `1 KP` ou `2 KP`. Evite produtos genéricos sem identificação de conformidade.
 
 ## 2. Ajuste e sensibilidade nos comandos
 
 Experimente sempre as luvas nas duas mãos (as mãos humanas têm pequenas assimetrias). Feche os dedos como se estivesse segurando a manopla da moto e observe:
+
 * **Palma:** o tecido não deve criar dobras volumosas que apertem a palma contra a manopla, causando calos ou dormência.
 * **Pontas dos dedos:** não deve sobrar tecido excessivo nas pontas (o que atrapalha acionar os botões do pisca e buzina) nem esticar a ponto de pressionar dolorosamente a ponta das unhas.
 * **Costuras:** luvas de alta performance costumam ter costuras externas nos dedos para não irritar a pele por dentro em viagens de muitas horas.
@@ -54,6 +51,7 @@ Experimente sempre as luvas nas duas mãos (as mãos humanas têm pequenas assim
 ## 4. Praticidade nas paradas e encontro com a manga da jaqueta
 
 Um detalhe importantíssimo de ergonomia é o fechamento do punho e sua interação com a jaqueta de viagem:
+
 * **Punho Curto:** Mais rápido de calçar e tirar nas paradas para fotos ou pagamento de pedágio. Fica encaixado por dentro do punho da jaqueta.
 * **Punho Longo:** Cobre a ponta da manga da jaqueta, oferecendo proteção extra ao osso do punho (rádio e ulna) e impedindo que o vento frio entre pelo braço.
 
@@ -67,7 +65,7 @@ Um detalhe importantíssimo de ergonomia é o fechamento do punho e sua interaç
 ## Tabela comparativa resumida
 
 | Critério | Predominantemente Couro | Tecido Técnico / Misto |
-| :--- | :--- | :--- |
+| --- | --- | --- |
 | **Resistência à Abrasão** | Máxima e imbatível | Muito alta com reforços na palma |
 | **Sensibilidade na Manopla** | Molda-se com perfeição à mão | Boa, mas depende da espessura |
 | **Comportamento na Chuva** | Encharca e demora para secar | Excelente se tiver membrana técnica |
@@ -82,9 +80,10 @@ Um detalhe importantíssimo de ergonomia é o fechamento do punho e sua interaç
 
 > 💡 **Equipamento completo:** Confira também [capacete integral ou modular: qual escolher para viajar?](/blog/capacete-integral-ou-modular-qual-escolher-para-viajar).
 
----
+***
 
-*Fontes e normas consultadas:*
-* *SATRA Technology — Ensaios e requisitos da norma EN 13594:2015 para luvas de motociclistas.*
-* *Motorcycle Safety Foundation (MSF) — Manual de proteção pessoal e equipamentos.*
-* *GORE-TEX — Diretrizes de manutenção e secagem de luvas técnicas impermeáveis.*
+_Fontes e normas consultadas:_
+
+* _SATRA Technology — Ensaios e requisitos da norma EN 13594:2015 para luvas de motociclistas._
+* _Motorcycle Safety Foundation (MSF) — Manual de proteção pessoal e equipamentos._
+* _GORE-TEX — Diretrizes de manutenção e secagem de luvas técnicas impermeáveis._
