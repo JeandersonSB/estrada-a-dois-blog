@@ -1,10 +1,10 @@
 ---
-title: "Triumph Originals 2026: Concurso de Customização Reúne Sete Projetos Exclusivos no Brasil"
-date: "2026-09-18T21:31:12"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "https://upload.wikimedia.org/wikipedia/commons/5/51/Triumph_Motorcycle_works_-_geograph.org.uk_-_244674.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original"
-excerpt: "A Triumph Motorcycles Brasil promove a nova edição do Triumph Originals, colocando em disputa sete projetos de customização baseados na cultuada linha Modern Classics da fabricante britânica."
+title: 'Triumph Originals 2026: Concurso de Customização Reúne Sete Projetos Exclusivos no Brasil'
+status: 🟢 Publicado
+date: 2026-09-18T21:11:00
+category: Notícias
+image: https://media.triumphmotorcycles.co.uk/image/upload/t_triumph_landscape/c_limit,w_640/f_auto/q_auto:eco/v1773936242/Triumph_Originals_2026_01_lxkryp?_a=BAVMn6ID0
+excerpt: A Triumph Motorcycles Brasil promove a nova edição do Triumph Originals, colocando em disputa sete projetos de customização baseados na cultuada linha Modern Classics da fabricante britânica.
 ---
 
 A cultura da customização de motocicletas segue como um dos pilares mais fortes da identidade da Triumph no Brasil. A marca britânica deu início à edição 2026 do **Triumph Originals**, concurso que mobiliza concessionárias e oficinas parceiras de todo o território nacional para transformar modelos clássicos de série em exemplares únicos de engenharia e estilo.
