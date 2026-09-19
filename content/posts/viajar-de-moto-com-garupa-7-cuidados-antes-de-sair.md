@@ -1,17 +1,13 @@
 ---
-title: "Viajar de moto com garupa: 7 cuidados antes de sair"
-date: "2026-09-12"
-category: "Dicas"
-status: "⏳ Rascunho"
-image: "/images/blog/viajar-de-moto-com-garupa.png"
-excerpt: "Viajar de moto com garupa começa antes de colocar os capacetes. Veja 7 cuidados essenciais de carga, suspensão e postura para viajar a dois com segurança."
+title: 'Viajar de moto com garupa: 7 cuidados antes de sair'
+status: ⏳ Rascunho
+date: 2026-09-12
+category: Dicas
+image: /images/blog/02.webp
+excerpt: Viajar de moto com garupa começa antes de colocar os capacetes. Veja 7 cuidados essenciais de carga, suspensão e postura para viajar a dois com segurança.
 ---
 
 # Viajar de moto com garupa: 7 cuidados antes de sair
-
-![Ilustração de um casal com equipamentos de proteção ao lado de uma moto esportiva estacionada.](/images/blog/viajar-de-moto-com-garupa.png)
-
-*Ilustração editorial criada com IA.*
 
 Viajar de moto com garupa começa antes de colocar os capacetes. A bagagem precisa caber sem tirar o espaço do passageiro, a moto deve estar preparada para a carga e os dois precisam combinar como será o deslocamento.
 
@@ -23,7 +19,7 @@ A presença de outra pessoa altera a distribuição de peso e o comportamento da
 
 Também muda a experiência de viagem. Um banco confortável para um deslocamento curto pode incomodar depois de mais tempo sentado. O planejamento precisa considerar o ritmo dos dois, inclusive quando cada um começa a sentir frio, sede ou cansaço.
 
-A orientação geral da *Motorcycle Safety Foundation (MSF)* é preparar a moto e instruir o passageiro antes de transportar alguém. Isso inclui conferir o manual do proprietário e explicar como participar do deslocamento de maneira coordenada.
+A orientação geral da _Motorcycle Safety Foundation (MSF)_ é preparar a moto e instruir o passageiro antes de transportar alguém. Isso inclui conferir o manual do proprietário e explicar como participar do deslocamento de maneira coordenada.
 
 ## 1. Confira a carga e a pré-carga da suspensão
 
@@ -107,8 +103,9 @@ Viajar de moto com garupa se torna uma das experiências mais marcantes da vida 
 
 Qual desses cuidados fez mais diferença nas primeiras viagens de vocês? Compartilhe suas experiências e dúvidas nos comentários do Estrada a Dois!
 
----
+***
 
-*Fontes e referências:*
-* *Motorcycle Safety Foundation (MSF) — Manual de condução segura com passageiros.*
-* *NHTSA (National Highway Traffic Safety Administration) — Ajuste e certificação de capacetes para motociclistas.*
+_Fontes e referências:_
+
+* _Motorcycle Safety Foundation (MSF) — Manual de condução segura com passageiros._
+* _NHTSA (National Highway Traffic Safety Administration) — Ajuste e certificação de capacetes para motociclistas._
