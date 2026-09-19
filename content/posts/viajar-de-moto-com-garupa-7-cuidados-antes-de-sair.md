@@ -1,7 +1,7 @@
 ---
 title: 'Viajar de moto com garupa: 7 cuidados antes de sair'
-status: ⏳ Rascunho
-date: 2026-09-12
+status: 🟢 Publicado
+date: 2026-09-12T12:15:00
 category: Dicas
 image: /images/blog/02.webp
 excerpt: Viajar de moto com garupa começa antes de colocar os capacetes. Veja 7 cuidados essenciais de carga, suspensão e postura para viajar a dois com segurança.
