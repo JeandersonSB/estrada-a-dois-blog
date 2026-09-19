@@ -1,17 +1,13 @@
 ---
-title: "Bagagem para viagem de moto: 7 passos para o casal"
-date: "2026-09-13"
-category: "Dicas"
-status: "⏳ Rascunho"
-image: "/images/blog/bagagem-para-viagem-de-moto-casal.png"
-excerpt: "Bagagem para viagem de moto fica mais prática com uma lista compartilhada. Veja como selecionar itens, distribuir o peso e facilitar as paradas do casal."
+title: 'Bagagem para viagem de moto: 7 passos para o casal'
+status: 🟢 Publicado
+date: 2026-09-13T16:00:00
+category: Dicas
+image: /images/blog/01.webp
+excerpt: Bagagem para viagem de moto fica mais prática com uma lista compartilhada. Veja como selecionar itens, distribuir o peso e facilitar as paradas do casal.
 ---
 
 # Bagagem para viagem de moto: 7 passos para o casal
-
-![Ilustração de alforjes e roupas organizadas no chão de uma garagem, com uma moto estacionada ao fundo.](/images/blog/bagagem-para-viagem-de-moto-casal.png)
-
-*Ilustração editorial criada com IA.*
 
 Bagagem para viagem de moto começa pela seleção rigorosa do que realmente será útil na estrada. Para o casal, montar uma lista compartilhada evita levar itens repetidos e permite aproveitar cada centímetro disponível nos baús sem roubar o espaço vital de quem vai na garupa.
 
@@ -21,7 +17,7 @@ O segredo de viajar leve não é tentar preencher todas as malas até a tampa. �
 
 Piloto, garupa, equipamentos de segurança e bagagem somam-se à carga total transportada. O espaço útil para bagagem não depende do tamanho visual do baú, mas sim da capacidade de carga útil especificada pelo fabricante no manual da motocicleta.
 
-A posição onde o peso fica concentrado transforma completamente a dinâmica da moto. Colocar peso excessivo muito atrás do eixo traseiro ou em posições elevadas alivia a roda dianteira e prejudica a direção. A *Motorcycle Safety Foundation (MSF)* orienta manter os volumes pesados sempre baixos e centralizados.
+A posição onde o peso fica concentrado transforma completamente a dinâmica da moto. Colocar peso excessivo muito atrás do eixo traseiro ou em posições elevadas alivia a roda dianteira e prejudica a direção. A _Motorcycle Safety Foundation (MSF)_ orienta manter os volumes pesados sempre baixos e centralizados.
 
 > 💡 **Veja também:** Antes de arrumar as malas, confira [viajar de moto com garupa: 7 cuidados essenciais antes de sair](/blog/viajar-de-moto-com-garupa-7-cuidados-antes-de-sair) para ajustar a suspensão e a postura do passageiro.
 
@@ -64,8 +60,9 @@ Esse sistema permite que, ao chegar na pousada à noite, vocês retirem apenas u
 ## 4. Distribua o peso e preserve o espaço da garupa
 
 Siga a regra áurea do carregamento de motocicletas:
-- **Itens mais pesados** (ferramentas, calçados extras, cadeados): devem ficar no fundo dos baús laterais ou na bolsa de tanque (*tankbag*).
-- **Itens leves e volumosos** (jaquetas impermeáveis, roupas de dormir): no baú traseiro superior (*top case*).
+
+- **Itens mais pesados** (ferramentas, calçados extras, cadeados): devem ficar no fundo dos baús laterais ou na bolsa de tanque (_tankbag_).
+- **Itens leves e volumosos** (jaquetas impermeáveis, roupas de dormir): no baú traseiro superior (_top case_).
 - **Equilíbrio bilateral:** certifique-se de que o alforge esquerdo tenha peso muito próximo ao do alforge direito para não desequilibrar a moto nas retas e curvas.
 
 Com a moto montada e estacionada com segurança, peça para a garupa subir e testar a postura. As pernas devem ficar confortáveis nas pedaleiras, sem encostar em presilhas metálicas ou quinas de baús.
@@ -112,8 +109,9 @@ Viajar de moto em casal com a bagagem certa transforma a viagem em uma experiên
 
 Quais itens você e seu parceiro(a) descobriram que não precisavam levar na estrada? Conte para a gente nos comentários do Estrada a Dois!
 
----
+***
 
-*Fontes e referências:*
-* *Motorcycle Safety Foundation (MSF) — Manual de condução e carregamento seguro de motocicletas.*
-* *T-CLOCS Pre-Ride Inspection Checklist (MSF).*
+_Fontes e referências:_
+
+* _Motorcycle Safety Foundation (MSF) — Manual de condução e carregamento seguro de motocicletas._
+* _T-CLOCS Pre-Ride Inspection Checklist (MSF)._
