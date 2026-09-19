@@ -1,10 +1,10 @@
 ---
-title: "Yamaha TT-R 230: Por que a clássica off-road de R$ 20.590 ainda resiste no Brasil?"
-date: "2026-09-19T15:48:22"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "https://loremflickr.com/1200/600/yamaha%2Ctt%2Cr%2C230/all"
-excerpt: "Com mecânica robusta e receita mantida por quase duas décadas, a Yamaha TT-R 230 segue como pilar do off-road nacional com preço público sugerido de R$ 20.590. Entenda sua proposta."
+title: 'Yamaha TT-R 230: Por que a clássica off-road de R$ 20.590 ainda resiste no Brasil?'
+status: 🟢 Publicado
+date: 2026-09-19T13:29:00
+category: Notícias
+image: /images/blog/WhatsApp-Image-2026-09-04-at-11.52.04.webp
+excerpt: Com mecânica robusta e receita mantida por quase duas décadas, a Yamaha TT-R 230 segue como pilar do off-road nacional com preço público sugerido de R$ 20.590. Entenda sua proposta.
 ---
 
 A **Yamaha TT-R 230** é uma das motocicletas mais longevas e tradicionais do segmento off-road no mercado brasileiro. Comercializada por **R$ 20.590,00** (preço público sugerido, sem frete), a máquina mantém uma receita técnica que dura quase duas décadas, consolidando-se como uma das opções mais procuradas por praticantes de trilha, do iniciante ao piloto recreativo.
@@ -24,6 +24,7 @@ O acionamento da partida é exclusivamente elétrico, garantindo praticidade no 
 Projetada exclusivamente para uso fora de estrada (não homologada para emplacamento ou circulação em vias públicas), a TT-R 230 utiliza um chassi do tipo diamante em aço, que alia rigidez torcional a uma estrutura leve e resistente a impactos severos.
 
 As suspensões foram dimensionadas para absorver as imperfeições do terreno com eficiência:
+
 * **Dianteira:** Garfo telescópico com 240 mm de curso.
 * **Traseira:** Suspensão monoamortecida do tipo Monocross com link, oferecendo 220 mm de curso e regulagem na pré-carga da mola.
 
