@@ -1,19 +1,19 @@
 ---
-title: "Paraguai de moto: nossa viagem de 3 dias pela Rota Biker"
-date: "2026-09-15"
-category: "Roteiros"
-status: "⏳ Rascunho"
-image: "/images/blog/paraguai-de-moto-rota-biker-capa.jpg"
-excerpt: "Paraguai de moto em casal: acompanhe nossa viagem de 3 dias, de Guarapuava a Katueté e Foz, com chuva, encontros, paradas e aprendizados na estrada."
+title: 'Paraguai de moto: nossa viagem de 3 dias pela Rota Biker'
+status: ⏳ Rascunho
+date: 2026-09-19T11:26:00
+category: Roteiros
+image: /images/blog/Paraguai 03.webp
+excerpt: 'Paraguai de moto em casal: acompanhe nossa viagem de 3 dias, de Guarapuava a Katueté e Foz, com chuva, encontros, paradas e aprendizados na estrada.'
 ---
 
 # Paraguai de moto: nossa viagem de 3 dias pela Rota Biker
 
-![Jeanderson e Ana Paula com a Yamaha R15 diante do monumento da Rota Biker em Foz do Iguaçu](/images/blog/paraguai-de-moto-rota-biker-capa.jpg)
+![Jeanderson e Ana Paula com a Yamaha R15 diante do monumento da Rota Biker em Foz do Iguaçu](/images/blog/Paraguai%2001.webp)
 
-*Do Paraguai a Foz do Iguaçu, cada parada trouxe uma história. Foto: acervo Estrada a Dois.*
+_Do Paraguai a Foz do Iguaçu, cada parada trouxe uma história. Foto: acervo Estrada a Dois._
 
-Nossa primeira viagem de moto ao Paraguai começou com chuva em Guarapuava, capas por cima das jaquetas e uma estrada mais silenciosa do que gostaríamos. O intercomunicador ficou em casa. Pela frente, tínhamos três dias, uma fronteira internacional e a vontade de conhecer o monumento da Rota Biker em Katueté.
+Nossa primeira viagem de moto ao Paraguai começou com chuva em Guarapuava, capas por cima das jaquetas e uma estrada mais silenciosa do que gostaríamos. O intercomunicador ficou na mochila. Pela frente, tínhamos três dias, uma fronteira internacional e a vontade de conhecer o monumento da Rota Biker em Katueté.
 
 O plano ligava Guaíra, Salto del Guairá, o interior paraguaio e Foz do Iguaçu. Mas o que ficou na memória foi além dos carimbos: conversas em paradas, um café improvisado, o cansaço dividido e a alegria de encontrar acolhimento longe de casa.
 
@@ -25,9 +25,9 @@ Somos Jeanderson e Ana Paula, do Estrada a Dois. Este é o nosso relato de **Par
 * **Período:** de 5 de setembro de 2026 a 7 de setembro de 2026.
 * **Duração:** 3 dias e 2 noites, com pernoites em Guaíra e Foz do Iguaçu.
 * **Trajeto percorrido:** Guarapuava → Laranjeiras do Sul → Cascavel → Guaíra → Salto del Guairá → Katueté → Ciudad del Este → Foz do Iguaçu → Guarapuava.
-* **Principais vias:** BR-277 e BR-163 no lado brasileiro; Ruta PY07 no trecho paraguaio, além dos acessos urbanos e de fronteira.
-* **Distância aproximada:** Cerca de 127 km até a primeira parada, aproximadamente 257 km acumulados em Cascavel e cerca de 400 km para o retorno de Foz a Guarapuava.
-* **Gastos do casal:** R$ 2.263,86 no total (incluindo compras e R$ 240,76 em combustível). O detalhamento completo está na tabela adiante.
+* **Principais vias:** BR-277 e BR-163 no lado brasileiro; Ruta PY03, Ruta PY07 no trecho paraguaio, além dos acessos urbanos e de fronteira.
+* **Distância aproximada:** Totalizando cerca de 1.100km rodados nos 3 dias entre estrada e trechos urbanos.
+* **Gastos do casal:** R$ 2.263,86 no total. O detalhamento completo está na tabela adiante.
 
 ## 🎬 Assista ao vídeo completo da nossa viagem
 
@@ -44,7 +44,7 @@ Se você prefere viver a emoção dessa aventura em vídeo, assista ao nosso epi
   </iframe>
 </div>
 
-👉 **Assista também direto no nosso canal:** [Fomos de Moto ao Paraguai \| Nossa primeira viagem internacional de Yamaha R15 (YouTube)](https://youtu.be/_Jr7UGNnztc?si=XI05sjdQglVjXAgF)
+👉 **Assista também direto no nosso canal:** [Fomos de Moto ao Paraguai | Nossa primeira viagem internacional de Yamaha R15 (YouTube)](https://youtu.be/_Jr7UGNnztc?si=XI05sjdQglVjXAgF)
 
 ## O planejamento: bagagem pequena e espaço para a chuva
 
@@ -54,9 +54,9 @@ Saímos usando as capas de chuva. Em Cascavel, quando pensamos em tirá-las, apa
 
 Na manhã seguinte, colocamos as duas calças e as duas jaquetas de chuva no saco de reserva. O volume diminuiu o suficiente para caber na mala de tanque junto das roupas. Foi uma solução simples que fez toda a diferença para nós.
 
-![Yamaha R15 estacionada em Guaíra com mala de tanque e bagagem para a viagem do casal](/images/blog/paraguai-de-moto-bagagem-guaira.jpg)
+![Yamaha R15 estacionada em Guaíra com mala de tanque e bagagem para a viagem do casal](/images/blog/Paraguai%2002.webp)
 
-*Bagagem compacta na chegada a Guaíra. Foto: acervo Estrada a Dois.*
+_Bagagem compacta. Foto: acervo Estrada a Dois._
 
 Para quem pretende repetir o roteiro em casal, recomendamos testar a arrumação completa com antecedência. Vale conferir nosso guia de [bagagem para viagem de moto: 7 passos para o casal](/blog/bagagem-para-viagem-de-moto-casal) para prever o espaço das capas quando estiverem fora do corpo, limites de carga dos suportes e liberdade de movimento do guidão.
 
@@ -66,7 +66,7 @@ Na preparação da moto, a referência deve ser sempre o manual do proprietário
 
 ### A primeira pausa em Laranjeiras do Sul
 
-Normalmente preferimos sair com tempo bom. Dessa vez, começamos sob chuva, com as capas sobre os equipamentos de proteção. O intercomunicador já apresentava mau contato desde uma viagem anterior a Morretes e acabou ficando em casa. Sentimos falta das conversas que costumam acompanhar o caminho.
+Normalmente preferimos sair com tempo bom. Dessa vez, começamos sob chuva, com as capas sobre os equipamentos de proteção. O intercomunicador já apresentava mau contato desde uma viagem anterior a Morretes e acabou ficando na bagagem. Sentimos falta das conversas que costumam acompanhar o caminho.
 
 > 💡 **Dica de estrada:** Em viagens sem comunicação eletrônica no capacete, combinar sinais corporais prévios faz toda a diferença. Veja nossas dicas sobre [viajar de moto com garupa: 7 cuidados essenciais](/blog/viajar-de-moto-com-garupa-7-cuidados-antes-de-sair).
 
@@ -100,21 +100,17 @@ Nossa primeira providência em Salto del Guairá foi registrar a entrada oficial
 
 ### Katueté e o monumento 30 da Rota Biker
 
-No caminho até Katueté pela Ruta PY07, chamaram nossa atenção as bandeiras paraguaias em azul, branco e vermelho decorando diferentes pontos das cidades. Vimos famílias reunidas na calçada em frente de casa, crianças acompanhando o movimento da rodovia e churrascos de domingo ao ar livre. Conhecer a rotina do interior paraguaio foi uma das experiências mais ricas de toda a viagem.
+No caminho até Katueté pela Ruta PY03, chamaram nossa atenção as bandeiras paraguaias em azul, branco e vermelho decorando diferentes pontos das cidades. Vimos famílias reunidas na calçada em frente de casa, crianças acompanhando o movimento da rodovia e churrascos de domingo ao ar livre. Conhecer a rotina do interior paraguaio foi uma das experiências mais ricas de toda a viagem.
 
 Depois de longas retas sob vento constante, alcançamos o nosso objetivo principal: o **monumento 30 da Rota Biker**, localizado no Drei Schritte Restô Bar, em Katueté (confira a [relação oficial de monumentos da Rota Biker](https://monumentobikers.com.br/monumentos/)).
 
 Nossa primeira reação foi entrar, pedir um lanche quente e nos aquecer. O espaço nos acolheu de imediato. Conhecemos o guardião do monumento, conversamos demoradamente e vimos outros grupos de motociclistas chegando.
 
-![Café e lanche sobre a mesa durante uma parada da viagem de moto pelo Paraguai](/images/blog/paraguai-de-moto-cafe-lanche.jpg)
+![Café e lanche sobre a mesa durante uma parada da viagem de moto pelo Paraguai](/images/blog/Paraguai%2003.webp)
 
-*Café e lanche também fazem parte das melhores lembranças da estrada. Foto: acervo Estrada a Dois.*
+_Foto: acervo Estrada a Dois._
 
 O monumento era o motivo inicial de estarmos ali, mas a pausa ganhou vida própria. Tiramos muitas fotos, carimbamos nosso passaporte de motociclista e curtimos cada minuto. Era a nossa primeira viagem internacional de moto acontecendo de verdade, uma meta que antes existia apenas no papel.
-
-![Ana Paula com a Yamaha R15 estacionada diante do monumento 30 da Rota Biker em Katueté](/images/blog/paraguai-de-moto-monumento-30-katuete.jpg)
-
-*Em Katueté, o monumento 30 marcou nossa primeira viagem internacional sobre duas rodas. Foto: acervo Estrada a Dois.*
 
 ### As retas da Ruta PY07 e os 80 mil guaranis
 
@@ -122,9 +118,9 @@ Na hora de pegar a estrada novamente, a garoa fina voltou e o termômetro caiu m
 
 Em uma parada para abastecimento no interior paraguaio, fomos atendidos por um frentista muito simpático que já havia morado e trabalhado no Brasil. A conversa em português fluiu fácil, ele ficou admirado com a proposta de estarmos viajando a dois em uma Yamaha R15 e a parada rendeu mais uma conexão humana inesquecível.
 
-![Jeanderson e Ana Paula de capacete durante uma pausa, com a estrada e a paisagem rural ao fundo](/images/blog/paraguai-de-moto-pausa-na-estrada.jpg)
+![Jeanderson e Ana Paula de capacete durante uma pausa, com a estrada e a paisagem rural ao fundo](/images/blog/Paraguai%2004.webp)
 
-*Uma pausa no caminho, entre retas e paisagens abertas. Foto: acervo Estrada a Dois.*
+_Uma pausa no caminho, entre retas e paisagens abertas. Foto: acervo Estrada a Dois._
 
 Foi ali também que nasceu uma brincadeira interna que repetimos dezenas de vezes durante os dias seguintes: “80 mil guaranis”. A coincidência de valores virou o nosso bordão oficial da viagem e garantia de risadas toda vez que parávamos.
 
@@ -136,9 +132,9 @@ Fizemos check-in no hotel ibis e tivemos uma surpresa emocionante no quarto: uma
 
 Depois de um banho quente e com as baterias recarregadas, fomos visitar o segundo monumento do roteiro: o **monumento 32 da Rota Biker**, localizado no animado Hell's Dogs Motorcycle Bar, em Foz.
 
-![Passaporte da Rota Biker com o registro do monumento 32 diante do monumento em Foz do Iguaçu](/images/blog/paraguai-de-moto-carimbo-32-foz.jpg)
+![Passaporte da Rota Biker com o registro do monumento 32 diante do monumento em Foz do Iguaçu](/images/blog/Paraguai%2005.webp)
 
-*Mais um carimbo registrado e memórias que ficam guardadas para sempre. Foto: acervo Estrada a Dois.*
+_Mais um carimbo registrado e memórias que ficam guardadas para sempre. Foto: acervo Estrada a Dois._
 
 Enquanto esperávamos a nossa vez para fotografar com a moto, conhecemos outro casal que estava realizando sua primeiríssima viagem de moto e ainda aprendia timidamente como funcionavam as visitas aos monumentos. Trocamos experiências, demos dicas com calma e celebramos a conquista deles.
 
@@ -148,9 +144,9 @@ Essa conversa nos reforçou um valor que levamos para a vida: ninguém começa s
 
 Na segunda-feira pela manhã, a R15 estava pronta e carregada mais uma vez. Ao sair de Foz do Iguaçu, sabíamos que tínhamos cerca de 400 km de asfalto pela BR-277 até voltar para casa em Guarapuava. Era o momento de encarar o trecho final, com o corpo sentindo o acúmulo dos dias de pilotagem, mas com o coração transbordando de histórias.
 
-![Yamaha R15 estacionada à sombra de uma árvore durante uma pausa no retorno da viagem](/images/blog/paraguai-de-moto-pausa-no-retorno.jpg)
+![Yamaha R15 estacionada à sombra de uma árvore durante uma pausa no retorno da viagem](/images/blog/Paraguai%2006.webp)
 
-*A R15 em uma pausa revigorante na volta para casa. Foto: acervo Estrada a Dois.*
+_A R15 em uma pausa revigorante na volta para casa. Foto: acervo Estrada a Dois._
 
 Ao cruzar a entrada de Guarapuava, fomos recebidos pelo frio característico da nossa terra. A viagem exigira foco, resistência e companheirismo, mas a sensação de dever cumprido foi indescritível. Tínhamos desbravado outro país em uma moto de 155 cilindradas, conhecido estradas desafiadoras e vivido momentos inesquecíveis a dois.
 
@@ -160,7 +156,7 @@ A experiência da garupa precisa entrar no planejamento com a mesma importância
 
 Nossas principais lições para as próximas viagens:
 
-1. **Planejar pausas e antecipá-las sem hesitar:** Os intervalos planejados ficaram próximos de 130 km, mas o cansaço e o frio sempre devem ditar o momento exato de parar.
+1. **Planejar pausas e antecipá-las sem hesitar:** Os intervalos planejados ficaram próximos de 100 km, mas o cansaço e o frio sempre devem ditar o momento exato de parar.
 2. **Testar os equipamentos de comunicação com antecedência:** Sem o intercomunicador funcional, os sinais corporais precisam ser alinhados antes de subir na moto.
 3. **Reservar espaço dedicado para as roupas de chuva:** A mala precisa comportar as capas tanto quando estão no corpo quanto quando precisam ser guardadas molhadas. Veja também nossas dicas sobre [jaqueta ventilada ou impermeável para viagens](/blog/jaqueta-de-moto-para-viagem-ventilada-ou-impermeavel).
 4. **Deixar folga no cronograma:** Trâmites aduaneiros, imigração, chuva e conversas enriquecedoras nas paradas não são atrasos; são parte integrante da viagem.
@@ -170,7 +166,7 @@ Nossas principais lições para as próximas viagens:
 
 * **Laranjeiras do Sul (PR):** Restaurante Palmeiras na BR-277, ponto tradicional de parada com amplo estacionamento e ponto de encontro clássico de motociclistas.
 * **Katueté (Paraguai):** Drei Schritte Restô Bar, sede do monumento 30 da Rota Biker. Ambiente acolhedor, comida excelente e receptividade ímpar para viajantes em duas rodas.
-* **Guaíra (PR):** Hospedagem aconchegante reservada via Airbnb, ideal para descansar antes de atravessar a fronteira mato-grossense e paraguaia.
+* **Guaíra (PR):** Hospedagem aconchegante reservada via Airbnb, ideal para descansar antes de atravessar a fronteira mato-grossense e paraguaia. [(Veja exatamente onde ficamos, clique aqui)](https://www.airbnb.com.br/rooms/1724679136754322632?guests=1&c=.pi129.pkpast_trip_share_virality&s=67&unique_share_id=ab1a173c-7c90-4991-a323-e46c32d8c7c7)
 * **Foz do Iguaçu (PR):** Hotel ibis Foz do Iguaçu, com ótima localização central e facilidade de acesso aos monumentos e atrativos turísticos da tríplice fronteira.
 
 ## Quanto gastamos nos três dias de viagem
@@ -178,7 +174,7 @@ Nossas principais lições para as próximas viagens:
 Nosso gasto total foi de **R$ 2.263,86 para o casal**, incluindo as compras pessoais realizadas em Salto del Guairá e Ciudad del Este.
 
 | Categoria de Despesa | Valor Total (Casal) |
-| :--- | ---: |
+| --- | --- |
 | Compras no Paraguai | R$ 766,15 |
 | Alimentação e mercado | R$ 675,80 |
 | Hospedagens (Guaíra e Foz) | R$ 517,45 |
@@ -201,12 +197,11 @@ Quem sonha em fazer uma viagem internacional de moto não precisa esperar ter um
 > - [5 serras e 831 km de moto em um fim de semana](/blog/5-serras-e-831-km-de-moto-em-um-fim-de)
 > - [De R15 para as Cataratas: Roteiro de 2.012 km a Dois](/blog/de-r15-para-as-cataratas-roteiro-de)
 
-E você, já viajou para fora do Brasil sobre duas rodas? Qual seria o seu primeiro destino internacional dos sonhos? Deixe seu comentário abaixo e não se esqueça de mandar o nosso bordão: **80 mil guaranis!**
+***
 
----
+_Fontes e links de referência:_
 
-*Fontes e links de referência:*
-* *Rota Biker — Relação oficial de monumentos homologados no Brasil e exterior.*
-* *Dirección Nacional de Migraciones (Paraguai) — Requisitos migratórios de ingresso e saída.*
-* *Yamaha Motor do Brasil — Ficha técnica e especificações da Yamaha YZF-R15.*
-* *Gov.br — Orientações sobre o Certificado Internacional de Vacinação e Profilaxia (CIVP).*
+* _Rota Biker — Relação oficial de monumentos homologados no Brasil e exterior._
+* _Dirección Nacional de Migraciones (Paraguai) — Requisitos migratórios de ingresso e saída._
+* _Yamaha Motor do Brasil — Ficha técnica e especificações da Yamaha YZF-R15._
+* _Gov.br — Orientações sobre o Certificado Internacional de Vacinação e Profilaxia (CIVP)._
