@@ -1,17 +1,13 @@
 ---
-title: "Protetor de coluna para moto: integrado ou avulso?"
-date: "2026-09-16"
-category: "Equipamentos"
-status: "⏳ Rascunho"
-image: "/images/blog/protetor-de-coluna-para-moto.png"
-excerpt: "Protetor de coluna para moto integrado à jaqueta ou avulso com alças? Compare certificação EN 1621-2, cobertura, ventilação e conforto na estrada."
+title: 'Protetor de coluna para moto: integrado ou avulso?'
+status: 🟢 Publicado
+date: 2026-09-16
+category: Equipamentos
+image: /images/blog/ChatGPT-Image-18-de-set.-de-2026_-23_01_05.webp
+excerpt: Protetor de coluna para moto integrado à jaqueta ou avulso com alças? Compare certificação EN 1621-2, cobertura, ventilação e conforto na estrada.
 ---
 
 # Protetor de coluna para moto: integrado ou avulso?
-
-![Protetores de coluna para motociclistas: modelo avulso com alças e colete ao lado de modelo flexível de inserção.](/images/blog/protetor-de-coluna-para-moto.png)
-
-*Ilustração editorial criada com IA.*
 
 O protetor de coluna para moto é um dos itens de segurança passiva mais negligenciados pelos motociclistas de estrada. Ele precisa permanecer firmemente na posição anatômica correta durante a pilotagem e possuir certificação técnica real para absorver e dispersar a energia de impactos.
 
@@ -34,8 +30,9 @@ A norma europeia de referência mundial para protetores dorsais e lombares de mo
 * **Nível 2 (Level 2):** Exige que a força média transmitida seja inferior a 9 kN (metade do impacto do Nível 1!). Oferece o dobro de capacidade de atenuação de choque e é a recomendação indicada para viagens em rodovia.
 
 Antes de adquirir um protetor, confira a etiqueta interna gravada no material:
+
 - O ícone do motociclista acompanhado da sigla **EN 1621-2**.
-- A indicação de cobertura: **FB** (*Full Back* - costas inteiras), **CB** (*Central Back* - coluna central) ou **LB** (*Lower Back* - apenas lombar).
+- A indicação de cobertura: **FB** (_Full Back_ - costas inteiras), **CB** (_Central Back_ - coluna central) ou **LB** (_Lower Back_ - apenas lombar).
 - A indicação do nível: **Level 1** ou **Level 2**.
 
 > ⚠️ **Aviso essencial:** Nunca confunda a espuma de EVA de transporte que vem nas jaquetas novas com um protetor de coluna certificado. A maioria das jaquetas de fábrica vem com um pedaço de espuma sem certificação que serve apenas de molde.
@@ -57,6 +54,7 @@ O protetor integrado depende de uma jaqueta bem ajustada ao tronco para não gir
 > 💡 **Guia completo:** Veja como escolher o caimento ideal da sua peça em [jaqueta de moto para viagem: ventilada ou impermeável?](/blog/jaqueta-de-moto-para-viagem-ventilada-ou-impermeavel).
 
 Já o protetor avulso precisa caber confortavelmente por baixo da jaqueta sem comprimir a caixa torácica nem limitar a respiração. Faça o teste estático sobre a moto:
+
 1. Vista o protetor avulso e feche a cinta na altura do umbigo.
 2. Coloque a jaqueta de moto e feche todos os zíperes.
 3. Suba na moto e alcance o guidão: sinta se você consegue respirar profundamente e movimentar a cabeça para os lados sem que a placa empurre o capacete para a frente.
@@ -77,7 +75,7 @@ Materiais viscoelásticos inteligentes acompanham as curvas do corpo com o calor
 ## Tabela comparativa resumida
 
 | Critério | Protetor Integrado (de Bolso) | Protetor Avulso (com Alças) |
-| :--- | :--- | :--- |
+| --- | --- | --- |
 | **Fixação** | Depende do bolso da jaqueta | Própria (alças e cinta abdominal) |
 | **Área de Cobertura** | Média (limitada pelo corte da jaqueta) | Ampla (abrange lombar, dorsal e cóccix) |
 | **Certificação Típica** | Nível 1 ou Nível 2 | Quase sempre Nível 2 (*Full Back*) |
@@ -92,8 +90,9 @@ Materiais viscoelásticos inteligentes acompanham as curvas do corpo com o calor
 
 Nenhum equipamento elimina todos os riscos, mas rodar protegido com uma coluna preservada é o que garante que você continue pilotando por muitos e muitos anos!
 
----
+***
 
-*Fontes e normas consultadas:*
-* *SATRA Technology — Requisitos e métodos de ensaio da norma EN 1621-2:2014 para protetores dorsais.*
-* *Motorcycle Safety Foundation (MSF) — Equipamentos essenciais para mototurismo.*
+_Fontes e normas consultadas:_
+
+* _SATRA Technology — Requisitos e métodos de ensaio da norma EN 1621-2:2014 para protetores dorsais._
+* _Motorcycle Safety Foundation (MSF) — Equipamentos essenciais para mototurismo._
