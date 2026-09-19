@@ -1,10 +1,10 @@
 ---
-title: "Curvas de Serra com Garupa: Guia Prático de Pilotagem Segura"
-date: "2026-09-19"
-category: "Dicas"
-status: "⏳ Rascunho"
-image: "https://upload.wikimedia.org/wikipedia/commons/8/8f/BikeModel.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original"
-excerpt: "Aprenda técnicas práticas para encarar curvas fechadas de serra com garupa e bagagem. Garanta segurança, conforto e fluidez na sua próxima viagem de moto."
+title: 'Curvas de Serra com Garupa: Guia Prático de Pilotagem Segura'
+status: 🟢 Publicado
+date: 2026-09-19T13:51:00
+category: Dicas
+image: /images/blog/Serra-curvas.webp
+excerpt: Aprenda técnicas práticas para encarar curvas fechadas de serra com garupa e bagagem. Garanta segurança, conforto e fluidez na sua próxima viagem de moto.
 ---
 
 # Curvas de Serra com Garupa: Guia Prático de Pilotagem Segura
@@ -17,7 +17,7 @@ Se você já sentiu aquela tensão nas mãos ao se aproximar de uma curva fechad
 
 Abaixo, reunimos as melhores práticas de pilotagem, ergonomia e sintonia de casal para você dominar as curvas de serra com total controle e segurança.
 
----
+***
 
 ## 1. Ajuste a Moto Antes de Pegar a Serra
 
@@ -31,7 +31,7 @@ O primeiro ponto de atenção é a pré-carga da mola traseira. Quando carregamo
 
 Se você ainda tem dúvidas sobre como organizar o peso nos baús, vale a pena conferir nosso guia sobre [Bagagem para viagem de moto: 7 passos para o casal](/blog/bagagem-para-viagem-de-moto-casal) antes de pé na estrada.
 
----
+***
 
 ## 2. A Postura e a Sintonia do Garupa na Curva
 
@@ -46,7 +46,7 @@ Para que a entrada e a saída de curva sejam suaves, a sincronia entre o casal p
 
 Para aprofundar a preparação do seu par, leia também o artigo [Viajar de moto com garupa: 7 cuidados antes de sair](/blog/viajar-de-moto-com-garupa-7-cuidados-antes-de-sair) e garanta uma experiência tranquila.
 
----
+***
 
 ## 3. Técnica de Olhar e Leitura de Trajetória
 
@@ -60,7 +60,7 @@ Ao se aproximar da curva, não olhe para o asfalto logo à frente da roda diante
 
 Essa leitura correta evita que você precise corrigir a trajetória no meio da curva, algo extremamente perigoso quando a moto está pesada.
 
----
+***
 
 ## 4. Gestão de Marchas, Freio Traseiro e Aceleração
 
@@ -69,12 +69,14 @@ A gestão de energia da moto em trechos de serra é crucial para manter a estabi
 O segredo para uma condução fluida e confortável para a garupa é fazer todo o trabalho de frenagem e redução de marcha **com a moto em linha reta**, antes de iniciar a inclinação.
 
 ### Use o freio traseiro a seu favor
+
 Em curvas muito fechadas (como os famosos grampos de serra em subida), o freio traseiro atua como um excelente estabilizador. Manter o pé levemente encostado no freio traseiro enquanto aplica um pouco de acelerador mantém a corrente tracionada e impede que a moto "caia" para o lado interno.
 
 ### Mantenha o motor na faixa de torque
+
 Subir a serra com uma marcha muito alta faz o motor "engasgar", exigindo reduções de emergência no meio do declive ou aclive. Mantenha a rotação em uma faixa onde o motor responda prontamente ao acelerador.
 
----
+***
 
 ## 5. Ritmo Confortável e Paradas de Descanso
 
@@ -84,7 +86,7 @@ Não tente acompanhar o ritmo de motociclistas solo ou locais que conhecem cada 
 
 Planeje paradas a cada 1 hora ou 1,5 hora em mirantes e pontos de apoio na serra. Aproveite para se hidratar, tirar fotos e esticar as pernas. Uma mente descansada toma decisões muito mais rápidas na estrada.
 
----
+***
 
 ## Checklist Rápido para Salvar no Celular
 
@@ -98,7 +100,7 @@ Antes de iniciar qualquer trecho de serra carregado a dois, passe por este check
 *   [ ] **Equipamentos:** Jaqueta, luvas, botas e capacete bem ajustados e fechados?
 *   [ ] **Planejamento:** Pontos de parada e descanso definidos no trajeto da serra?
 
----
+***
 
 Dominar as curvas de serra a dois é uma das habilidades mais gratificantes do mototurismo. Quando piloto e garupa se movem como um só conjunto, a viagem se torna leve, segura e inesquecível.
 
