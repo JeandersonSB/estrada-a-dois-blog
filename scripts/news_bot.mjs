@@ -1,4 +1,4 @@
-import Parser from 'rss-parser';
+﻿import Parser from 'rss-parser';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import fs from 'fs';
 import path from 'path';
@@ -290,7 +290,7 @@ async function processarItem(item, genAI, isBrazilianSource = true) {
 
   > 💡 **Leia também:** [Roteiro Recomendado](/blog/slug-do-roteiro)
 
-  Fonte: [Nome do Veículo Original](${item.link})
+  Fonte: Nome do Veiculo/Portal Original (ATENCAO OBRIGATORIA: Insira APENAS o nome do portal em texto puro, NUNCA inclua links markdown nem URLs)
   `;
 
   try {
@@ -348,6 +348,8 @@ async function processarItem(item, genAI, isBrazilianSource = true) {
 
     markdownContent = markdownContent
       .replace('IMAGE_PLACEHOLDER', imagemFinal)
+      .replace(/Fonte:\s*\[([^\]]+)\]\([^)]+\)/gi, 'Fonte: $1')
+      .replace(/Fonte:\s*https?:\/\/[^\s\r\n]+/gi, 'Fonte: Portal Noticioso')
       .replace(/keywords_image:\s*["']?[^"'\n\r]+["']?\r?\n?/i, '');
 
     if (!fs.existsSync(POSTS_DIR)) {
@@ -445,8 +447,156 @@ async function coletarItensQuery(query, isBR = true) {
   }
 }
 
+
+// =========================================================================
+// SISTEMA EDITORIAL ANTI-DUPLICIDADE DE TEMAS
+// =========================================================================
+
+// Carrega os posts dos ultimos 30 dias para controle anti-duplicidade
+function carregarPostsRecentes(dias = 30) {
+  if (!fs.existsSync(POSTS_DIR)) return [];
+  try {
+    const files = fs.readdirSync(POSTS_DIR).filter(f => f.endsWith('.md'));
+    const posts = [];
+    const limiteMs = Date.now() - (dias * 24 * 60 * 60 * 1000);
+
+    for (const f of files) {
+      try {
+        const content = fs.readFileSync(path.join(POSTS_DIR, f), 'utf8');
+        const titleMatch = content.match(/title:\s*["']?([^"'\r\n]+)["']?/i);
+        const dateMatch = content.match(/date:\s*["']?([^"'\r\n]+)["']?/i);
+        const title = titleMatch ? titleMatch[1].trim() : '';
+        const dateStr = dateMatch ? dateMatch[1].trim() : '';
+        const postTime = dateStr ? new Date(dateStr).getTime() : 0;
+
+        if (title) {
+          posts.push({
+            slug: f.replace('.md', ''),
+            title,
+            date: dateStr,
+            time: postTime
+          });
+        }
+      } catch (err) {}
+    }
+
+    // Ordenar do mais recente para o mais antigo
+    posts.sort((a, b) => b.time - a.time);
+    return posts;
+  } catch (e) {
+    console.warn("Aviso ao carregar posts recentes:", e.message);
+    return [];
+  }
+}
+
+// Normaliza texto para comparacoes
+function normalizarTexto(txt) {
+  return String(txt || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+// Extrai palavras significativas (ignora stop words)
+function extrairPalavrasChave(txt) {
+  const stopWords = new Set([
+    'de', 'da', 'do', 'dos', 'das', 'em', 'no', 'na', 'nos', 'nas', 'por', 'para', 'com', 'sem',
+    'um', 'uma', 'uns', 'umas', 'o', 'a', 'os', 'as', 'e', 'ou', 'que', 'se', 'mas', 'como',
+    'mais', 'menos', 'novo', 'nova', 'novos', 'novas', 'moto', 'motos', 'brasil', 'brasileiro',
+    'chega', 'lanca', 'lancamento', 'revela', 'apresenta', 'veja', 'confira', 'saiba', 'tudo'
+  ]);
+  const words = normalizarTexto(txt).split(' ');
+  return new Set(words.filter(w => w.length > 2 && !stopWords.has(w)));
+}
+
+// Calcula indice de sobreposicao de termos-chave
+function calcularSobreposicao(setA, setB) {
+  if (setA.size === 0 || setB.size === 0) return 0;
+  let intersec = 0;
+  for (const w of setA) {
+    if (setB.has(w)) intersec++;
+  }
+  return intersec / Math.min(setA.size, setB.size);
+}
+
+// Triagem editorial inteligente com a IA Gemini como Editor-Chefe
+async function verificarDuplicidadeEditorial(item, postsRecentes, genAI) {
+  if (!postsRecentes || postsRecentes.length === 0) return false;
+
+  const itemWords = extrairPalavrasChave(item.title);
+
+  // 1. Checagem heuristica rapida de sobreposicao forte (>= 75%)
+  for (const post of postsRecentes) {
+    const postWords = extrairPalavrasChave(post.title);
+    const sobreposicao = calcularSobreposicao(itemWords, postWords);
+    if (sobreposicao >= 0.75) {
+      console.log(`[Anti-Duplicidade Rapida] Alta sobreposicao (${Math.round(sobreposicao * 100)}%) com post recente: "${post.title}"`);
+      return true;
+    }
+  }
+
+  // 2. Triagem Editorial com IA (Gemini como Editor-Chefe)
+  const listaRecentes = postsRecentes.slice(0, 25).map((p, i) => `${i + 1}. "${p.title}"`).join('\n');
+  const promptTriagem = `
+Voce e o Editor-Chefe de um portal especializado em motociclismo.
+Sua missao e avaliar se uma NOVA NOTICIA CANDIDATA trata EXATAMENTE DO MESMO FATO/ACONTECIMENTO que ja foi publicado no nosso blog recentemente.
+
+DIRETRIZES FUNDAMENTAIS DE DECISAO:
+1. MESMA MARCA COM MODELOS/VERSOES DIFERENTES = INEDITO (ex: Honda CG Titan vs Honda CG Fan, ou Yamaha MT-03 vs MT-07, ou Triumph Tiger 900 vs Tiger 1200). NUNCA bloqueie apenas porque a marca e a mesma!
+2. FATOS OU ANGULOS DIFERENTES DA MESMA MOTO = INEDITO (ex: Recall de seguranca vs Lancamento comercial, ou Preco oficial vs Teste de autonomia).
+3. MESMO EVENTO NOTICIADO POR OUTRO VEICULO = DUPLICADO (ex: "Avelloz lanca AZ170" vs "Nova Avelloz AZ170 chega as concessionarias", ou "CFMoto esgota 3 lote" vs "3 lote de motos CFMoto e anunciado", ou "Kawasaki Ninja ZX-6R 2027 ganha novas cores" vs "As 3 novas cores da Ninja ZX-6R 2027", ou "Royal Enfield One Ride mobiliza Brasil" vs "Tentativa de recorde no One Ride da Royal Enfield").
+
+NOVA NOTICIA CANDIDATA:
+Titulo: "${item.title}"
+Resumo/Trecho: "${item.contentSnippet || item.title}"
+
+ARTIGOS RECENTES JA PUBLICADOS NO BLOG:
+${listaRecentes}
+
+Responda ESTRITAMENTE com UMA UNICA PALAVRA:
+DUPLICADO (se for o mesmo acontecimento ja coberto)
+ou
+INEDITO (se for um modelo diferente, fato novo ou tema inedito)
+`;
+
+  const modelCandidates = [
+    'gemini-3.6-flash',
+    'gemini-flash-latest',
+    'gemini-3.7-flash',
+    'gemini-3.8-flash'
+  ];
+
+  for (const modelName of modelCandidates) {
+    try {
+      const model = genAI.getGenerativeModel({ model: modelName });
+      const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout na triagem')), 15000));
+      const res = await Promise.race([model.generateContent(promptTriagem), timeoutPromise]);
+      const resposta = res.response.text().trim().toUpperCase();
+
+      if (resposta.includes('DUPLICADO')) {
+        console.log(`[Editor-Chefe IA] DUPLICATA DETECTADA! Noticia ignorada: "${item.title}"`);
+        return true;
+      }
+      if (resposta.includes('INEDITO')) {
+        console.log(`[Editor-Chefe IA] APROVADA (Fato/Modelo Inedito): "${item.title}"`);
+        return false;
+      }
+      break;
+    } catch (err) {
+      // Tenta o proximo modelo caso ocorra erro
+    }
+  }
+
+  return false;
+}
+
 async function gerarNoticias() {
   const targetCount = calcularMetaNoticias();
+  const postsRecentes = carregarPostsRecentes(30);
+  console.log(`Carregados ${postsRecentes.length} artigos recentes do blog para controle anti-duplicidade.`);
 
   console.log(`\n======================================================`);
   console.log(`Iniciando Robô Jornalista Estrada a Dois`);
@@ -553,6 +703,12 @@ async function gerarNoticias() {
       continue; // Já processada
     }
 
+    // Checagem inteligente de duplicidade editorial (evita requentar o mesmo fato/modelo)
+    const ehDuplicado = await verificarDuplicidadeEditorial(item, postsRecentes, genAI);
+    if (ehDuplicado) {
+      continue;
+    }
+
     console.log(`Verificando link: ${item.link}`);
     const linkAtivo = await testarLinkAtivo(item.link);
     if (!linkAtivo) {
@@ -562,6 +718,11 @@ async function gerarNoticias() {
 
     const sucesso = await processarItem(item, genAI, item.isBR);
     if (sucesso) {
+      postsRecentes.unshift({
+        slug: tempSlug,
+        title: item.title,
+        time: Date.now()
+      });
       geradasCount++;
       console.log(`Progresso: ${geradasCount}/${targetCount} notícia(s) gerada(s).`);
       if (geradasCount < targetCount) {
