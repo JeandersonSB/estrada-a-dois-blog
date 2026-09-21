@@ -30,6 +30,9 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
+  images: {
+    contentDispositionType: "inline",
+  },
   async headers() {
     return [
       {
