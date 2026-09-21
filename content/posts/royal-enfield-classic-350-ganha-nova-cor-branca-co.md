@@ -1,10 +1,10 @@
 ---
-title: "Royal Enfield Classic 350 Ganha Nova Opção de Cor Branca com Assinatura Exclusiva"
-date: "2026-09-21T16:27:09"
-category: "Notícias"
-status: "📝 Rascunho"
-image: "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
-excerpt: "A consagrada Royal Enfield Classic 350 amplia sua gama estética ao introduzir uma nova pintura branca com detalhes de assinatura, reforçando seu apelo vintage na consagrada plataforma J."
+title: Royal Enfield Classic 350 Ganha Nova Opção de Cor Branca com Assinatura Exclusiva
+status: 🟢 Publicado
+date: 2026-09-21T13:51:00
+category: Notícias
+image: /images/blog/royal-enfield_classic-350_2026_19_21092026_72737_960_720.avif
+excerpt: A consagrada Royal Enfield Classic 350 amplia sua gama estética ao introduzir uma nova pintura branca com detalhes de assinatura, reforçando seu apelo vintage na consagrada plataforma J.
 ---
 
 A Royal Enfield segue movimentando a sua linha de motocicletas de estilo neoclássico. Um dos modelos mais vendidos da fabricante indiana no Brasil e no mundo, a Classic 350, passa a contar com uma nova opção de acabamento na cor branca com elementos gráficos de "assinatura", trazendo um visual refinado que destaca as linhas atemporais do tanque e das carenagens de metal.
