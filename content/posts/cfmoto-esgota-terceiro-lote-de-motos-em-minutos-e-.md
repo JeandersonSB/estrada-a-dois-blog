@@ -1,10 +1,10 @@
 ---
-title: "CFMoto consolida sucesso no Brasil: 3º lote esgota em minutos e marca expande rede concessionária"
-date: "2026-03-30T10:00:00"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Mercedes-Benz_Brazil_Central_Office_%282012%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original"
-excerpt: "A CFMoto volta a impressionar o mercado nacional de duas rodas com demanda recorde. Com o terceiro lote esgotado em poucos minutos, a fabricante acelera a abertura de novas concessionárias no país."
+title: 'CFMoto consolida sucesso no Brasil: 3º lote esgota em minutos e marca expande rede concessionária'
+status: 🟢 Publicado
+date: 2026-09-21T13:46:00
+category: Notícias
+image: /images/blog/images.webp
+excerpt: A CFMoto volta a impressionar o mercado nacional de duas rodas com demanda recorde. Com o terceiro lote esgotado em poucos minutos, a fabricante acelera a abertura de novas concessionárias no país.
 ---
 
 O mercado brasileiro de motocicletas vive um momento de forte movimentação com a consolidação de novas marcas de peso no país. Em um feito que evidencia a alta demanda por modelos de média e alta cilindrada recheados de tecnologia, a **CFMoto** esgotou seu terceiro lote de motocicletas comercializado no Brasil em questão de minutos. A resposta imediata dos consumidores levou a fabricante a anunciar a ampliação acelerada de sua rede física de concessionárias.
@@ -13,7 +13,7 @@ A rápida aceitação da marca asiática reflete uma transformação no perfil d
 
 ## Estratégia de produto e tecnologia de ponta
 
-A CFMoto tem construído sua reputação global por meio de parcerias estratégicas na indústria e pelo emprego de componentes de fornecedores renomados mundialmente. No lineup oferecido ao mercado nacional, destacam-se modelos que atendem desde os entusiastas de esportivas e nakeds até os adeptos do segmento *touring* e *trail*.
+A CFMoto tem construído sua reputação global por meio de parcerias estratégicas na indústria e pelo emprego de componentes de fornecedores renomados mundialmente. No lineup oferecido ao mercado nacional, destacam-se modelos que atendem desde os entusiastas de esportivas e nakeds até os adeptos do segmento _touring_ e _trail_.
 
 Entre os diferenciais técnicos das motocicletas da marca, destacam-se:
 
