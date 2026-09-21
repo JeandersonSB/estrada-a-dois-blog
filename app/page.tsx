@@ -1,4 +1,6 @@
-import { getSortedPostsData, slugifyCategory } from '@/lib/posts';
+﻿import { getSortedPostsData, slugifyCategory } from '@/lib/posts';
+
+export const revalidate = 60;
 
 export default function Home() {
   const allPosts = getSortedPostsData();
@@ -334,3 +336,4 @@ export default function Home() {
     </div>
   );
 }
+
