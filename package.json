@@ -6,10 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "social": "node scripts/social_bot.mjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
+    "@napi-rs/canvas": "^1.0.9",
     "@tailwindcss/typography": "^0.5.20",
     "date-fns": "^4.4.0",
     "gray-matter": "^4.0.3",

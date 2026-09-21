@@ -1,0 +1,60 @@
+name: Gerador de Cards para Redes Sociais (Instagram & TikTok)
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'content/posts/**'
+
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: 'Slug do artigo específico (deixe vazio para rodar automáticos)'
+        required: false
+        default: ''
+        type: string
+      force:
+        description: 'Forçar reenvio mesmo que já tenha sido divulgado'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  gerar-cards-sociais:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Instalar Dependências
+        run: npm install
+
+      - name: Gerar Cards e Enviar no Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          INPUT_SLUG: ${{ github.event.inputs.slug }}
+          INPUT_FORCE: ${{ github.event.inputs.force }}
+        run: |
+          ARGS=""
+          if [ -n "$INPUT_SLUG" ]; then
+            ARGS="$ARGS --slug=$INPUT_SLUG"
+          fi
+          if [ "$INPUT_FORCE" = "true" ]; then
+            ARGS="$ARGS --force"
+          fi
+          node scripts/social_bot.mjs $ARGS
+
+      - name: Atualizar Histórico no Repositório (Git Auto-Commit)
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: atualizar historico de cards sociais divulgados"
+          branch: main
+          file_pattern: '.social_history.json'
