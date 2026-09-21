@@ -1,4 +1,4 @@
-﻿name: Robô Jornalista (Auto-Post)
+name: Robô Jornalista (Auto-Post)
 
 on:
   schedule:
@@ -23,6 +23,12 @@ on:
           - '1'
           - '2'
           - '3'
+
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/news_bot.yml'
 
 jobs:
   gerar-noticia:
