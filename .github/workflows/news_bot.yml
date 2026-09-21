@@ -1,4 +1,4 @@
-name: Robô Jornalista (Auto-Post)
+﻿name: Robô Jornalista (Auto-Post)
 
 on:
   schedule:
@@ -53,4 +53,5 @@ jobs:
         with:
           commit_message: "Notícia Automática (Rascunho gerado pela IA)"
           branch: main
-          file_pattern: 'content/posts/*.md'
+          file_pattern: 'content/posts/*.md public/images/blog/*'
+
