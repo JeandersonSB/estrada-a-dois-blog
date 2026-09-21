@@ -19,8 +19,24 @@ export async function generateMetadata({
     const postData = await getPostData(slug);
     const excerpt = postData.excerpt || `${postData.title} - Acompanhe no Estrada a Dois.`;
     const canonicalUrl = `https://www.estradaadois.com/blog/${slug}`;
+    const baseUrl = 'https://www.estradaadois.com';
+
+    let imageUrl = postData.image;
+    if (imageUrl && imageUrl.startsWith('/')) {
+      imageUrl = `${baseUrl}${imageUrl}`;
+    }
+
+    let mimeType = 'image/jpeg';
+    if (imageUrl) {
+      const cleanUrl = imageUrl.split('?')[0].toLowerCase();
+      if (cleanUrl.endsWith('.webp')) mimeType = 'image/webp';
+      else if (cleanUrl.endsWith('.png')) mimeType = 'image/png';
+      else if (cleanUrl.endsWith('.gif')) mimeType = 'image/gif';
+      else if (cleanUrl.endsWith('.avif')) mimeType = 'image/avif';
+    }
 
     return {
+      metadataBase: new URL(baseUrl),
       title: postData.title,
       description: excerpt,
       alternates: {
@@ -35,12 +51,14 @@ export async function generateMetadata({
         type: 'article',
         publishedTime: postData.date,
         authors: ['Estrada a Dois'],
-        images: postData.image
+        images: imageUrl
           ? [
               {
-                url: postData.image,
+                url: imageUrl,
+                secureUrl: imageUrl,
                 width: 1200,
                 height: 630,
+                type: mimeType,
                 alt: postData.title,
               },
             ]
@@ -50,7 +68,7 @@ export async function generateMetadata({
         card: 'summary_large_image',
         title: postData.title,
         description: excerpt,
-        images: postData.image ? [postData.image] : [],
+        images: imageUrl ? [imageUrl] : [],
       },
     };
   } catch {
