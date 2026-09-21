@@ -1,7 +1,8 @@
-﻿import Parser from 'rss-parser';
+import Parser from 'rss-parser';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import fs from 'fs';
 import path from 'path';
+import sharp from 'sharp';
 
 // Configuracoes
 const API_KEY = process.env.GEMINI_API_KEY;
@@ -175,6 +176,42 @@ async function buscarImagemPorPalavrasChave(termoBusca) {
   return `https://loremflickr.com/1200/600/${tags}/all`;
 }
 
+
+// 3.1 Baixa e otimiza a imagem localmente (Vercel CDN, evita 403 e garante < 200 KB para WhatsApp)
+async function salvarEOtimizarImagemLocal(imageUrl, slug) {
+  try {
+    const res = await fetch(imageUrl, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+      },
+      signal: AbortSignal.timeout(12000)
+    });
+    if (!res.ok) return imageUrl;
+    const arrayBuffer = await res.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+
+    const imagesDir = path.join(process.cwd(), 'public', 'images', 'blog');
+    if (!fs.existsSync(imagesDir)) {
+      fs.mkdirSync(imagesDir, { recursive: true });
+    }
+
+    const fileName = `${slug}.webp`;
+    const targetPath = path.join(imagesDir, fileName);
+
+    const optimizedBuffer = await sharp(buffer)
+      .rotate()
+      .resize(1200, null, { withoutEnlargement: true })
+      .webp({ quality: 78, effort: 4 })
+      .toBuffer();
+
+    fs.writeFileSync(targetPath, optimizedBuffer);
+    console.log(`🖼️ Imagem baixada e otimizada localmente: /images/blog/${fileName} (${(optimizedBuffer.length / 1024).toFixed(0)} KB)`);
+    return `/images/blog/${fileName}`;
+  } catch (err) {
+    console.warn(`Aviso ao salvar imagem local (${err.message}). Mantendo URL externa.`);
+    return imageUrl;
+  }
+}
 // 4. Envia notificacao instantanea para o Telegram
 async function enviarNotificacaoTelegram({ title, excerpt, date, slug, image }) {
   const token = process.env.TELEGRAM_BOT_TOKEN;
@@ -436,6 +473,11 @@ async function processarItem(item, genAI, isBrazilianSource = true) {
       imagemFinal = await buscarImagemPorPalavrasChave(termoImagem);
     }
 
+    if (imagemFinal && imagemFinal.startsWith('http')) {
+      console.log(`Otimizando imagem para o blog e WhatsApp: ${imagemFinal}`);
+      imagemFinal = await salvarEOtimizarImagemLocal(imagemFinal, tempSlug);
+    }
+
     // Limpeza da Fonte: remove qualquer link markdown ou URL
     markdownContent = markdownContent
       .replace('IMAGE_PLACEHOLDER', imagemFinal)
@@ -603,3 +645,4 @@ async function gerarNoticias() {
 }
 
 gerarNoticias();
+
