@@ -256,6 +256,63 @@ async function enviarNotificacaoTelegram({ title, excerpt, date, slug, image }) 
 }
 
 // =========================================================================
+// GERADOR INTELIGENTE DE SLUGS (SEM CORTAR PALAVRAS, SEM STOPWORDS, TRANSLITERADO)
+// =========================================================================
+
+function gerarSlugInteligente(texto, maxLen = 65) {
+  if (!texto) return '';
+
+  // 1. TransliteraÃ§Ã£o e remoÃ§Ã£o de acentos/cedilhas (Ã§ -> c, Ã£ -> a, etc.)
+  let s = String(texto)
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/[\s_]+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
+  // 2. Se jÃ¡ couber no limite, apenas limpa palavras soltas no fim
+  if (s.length <= maxLen) {
+    return limparFimSlug(s);
+  }
+
+  // 3. Corte respeitando fronteira de palavras (nunca corta uma palavra ao meio)
+  let sub = s.substring(0, maxLen);
+  const lastHyphen = sub.lastIndexOf('-');
+  if (lastHyphen > 25) {
+    sub = sub.substring(0, lastHyphen);
+  }
+
+  return limparFimSlug(sub);
+}
+
+function limparFimSlug(slug) {
+  let res = slug.replace(/^-+|-+$/g, '');
+
+  const danglingWords = [
+    'de', 'da', 'do', 'das', 'dos',
+    'em', 'no', 'na', 'nos', 'nas',
+    'com', 'para', 'por', 'sem',
+    'e', 'a', 'o', 'as', 'os', 'um', 'uma',
+    'se', 'que', 'qual', 'veja', 'como', 'ao', 'aos', 'sobre'
+  ];
+
+  let changed = true;
+  while (changed) {
+    changed = false;
+    res = res.replace(/^-+|-+$/g, '');
+    for (const w of danglingWords) {
+      if (res.endsWith(`-${w}`)) {
+        res = res.substring(0, res.length - (w.length + 1));
+        changed = true;
+      }
+    }
+  }
+
+  return res.replace(/^-+|-+$/g, '');
+}
+// =========================================================================
 // SISTEMA EDITORIAL INTELIGENTE ANTI-DUPLICIDADE DE TEMAS
 // =========================================================================
 
@@ -364,7 +421,7 @@ SELECAO: [numeros separados por virgula, ex: 1, 3] ou SELECAO: NENHUM
 
 // 5. Redige e publica o artigo
 async function processarItem(item, genAI, isBrazilianSource = true) {
-  const tempSlug = item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '').substring(0, 50);
+  const initialSlug = gerarSlugInteligente(item.title, 65);
   const now = new Date();
   const today = now.toISOString().slice(0, 19);
 
@@ -407,6 +464,7 @@ async function processarItem(item, genAI, isBrazilianSource = true) {
   
   ---
   title: "[Seu Titulo SEO Atraente e Jornalistico em pt-BR]"
+  slug: "[slug-curto-e-objetivo-focado-na-moto-e-acao-ex-royal-enfield-classic-350-nova-cor-branca]"
   date: "${today}"
   category: "Notícias"
   status: "📝 Rascunho"
@@ -465,8 +523,20 @@ async function processarItem(item, genAI, isBrazilianSource = true) {
       return false;
     }
 
+    const titleMatch = markdownContent.match(/title:\s*["']?([^"'\n\r]+)["']?/i);
+    const excerptMatch = markdownContent.match(/excerpt:\s*["']?([^"'\n\r]+)["']?/i);
+    const slugMatch = markdownContent.match(/slug:\s*["']?([^"'\n\r]+)["']?/i);
     const kwMatch = markdownContent.match(/keywords_image:\s*["']?([^"'\n\r]+)["']?/i);
+
+    const postTitle = titleMatch ? titleMatch[1].trim() : item.title;
+    const postExcerpt = excerptMatch ? excerptMatch[1].trim() : '';
     const termoImagem = kwMatch ? kwMatch[1].trim() : item.title;
+
+    // Determina o slug inteligente: usa o sugerido pelo Gemini ou gera do título SEO final aprovado
+    let finalSlug = slugMatch && slugMatch[1].trim() ? gerarSlugInteligente(slugMatch[1].trim(), 65) : '';
+    if (!finalSlug || finalSlug.length < 8) {
+      finalSlug = gerarSlugInteligente(postTitle, 65) || initialSlug;
+    }
 
     if (!imagemFinal) {
       console.log(`Buscando imagem contextual para: "${termoImagem}"...`);
@@ -475,12 +545,13 @@ async function processarItem(item, genAI, isBrazilianSource = true) {
 
     if (imagemFinal && imagemFinal.startsWith('http')) {
       console.log(`Otimizando imagem para o blog e WhatsApp: ${imagemFinal}`);
-      imagemFinal = await salvarEOtimizarImagemLocal(imagemFinal, tempSlug);
+      imagemFinal = await salvarEOtimizarImagemLocal(imagemFinal, finalSlug);
     }
 
-    // Limpeza da Fonte: remove qualquer link markdown ou URL
+    // Limpeza da Fonte e campos temporários do frontmatter
     markdownContent = markdownContent
       .replace('IMAGE_PLACEHOLDER', imagemFinal)
+      .replace(/slug:\s*["']?[^"'\n\r]+["']?\r?\n?/i, '')
       .replace(/Fonte:\s*\[([^\]]+)\]\([^)]+\)/gi, 'Fonte: $1')
       .replace(/Fonte:\s*https?:\/\/[^\s\r\n]+/gi, 'Fonte: Portal Noticioso')
       .replace(/keywords_image:\s*["']?[^"'\n\r]+["']?\r?\n?/i, '');
@@ -488,22 +559,18 @@ async function processarItem(item, genAI, isBrazilianSource = true) {
     if (!fs.existsSync(POSTS_DIR)) {
       fs.mkdirSync(POSTS_DIR, { recursive: true });
     }
-    const filePath = path.join(POSTS_DIR, `${tempSlug}.md`);
+    const filePath = path.join(POSTS_DIR, `${finalSlug}.md`);
     fs.writeFileSync(filePath, markdownContent, 'utf8');
 
     console.log(`✅ Artigo rascunho salvo em: ${filePath}`);
     console.log(`🖼️ Imagem vinculada: ${imagemFinal}`);
-
-    const titleMatch = markdownContent.match(/title:\s*["']?([^"'\n\r]+)["']?/i);
-    const excerptMatch = markdownContent.match(/excerpt:\s*["']?([^"'\n\r]+)["']?/i);
-    const postTitle = titleMatch ? titleMatch[1].trim() : item.title;
-    const postExcerpt = excerptMatch ? excerptMatch[1].trim() : '';
+    console.log(`🔗 Slug final inteligente: ${finalSlug}`);
 
     await enviarNotificacaoTelegram({
       title: postTitle,
       excerpt: postExcerpt,
       date: today,
-      slug: tempSlug,
+      slug: finalSlug,
       image: imagemFinal
     });
 
@@ -606,7 +673,7 @@ async function gerarNoticias() {
   for (const item of rawCandidatosBR) {
     if (candidatosValidos.length >= 10) break; // Avalia ate os 10 melhores
 
-    const tempSlug = item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '').substring(0, 50);
+    const initialSlug = gerarSlugInteligente(item.title, 65);
     if (fs.existsSync(path.join(POSTS_DIR, `${tempSlug}.md`))) continue;
 
     const linkAtivo = await testarLinkAtivo(item.link);
@@ -645,4 +712,5 @@ async function gerarNoticias() {
 }
 
 gerarNoticias();
+
 
