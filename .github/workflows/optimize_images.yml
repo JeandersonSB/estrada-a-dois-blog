@@ -1,0 +1,33 @@
+name: Otimizar Imagens do Blog
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'public/images/**'
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar Dependências
+        run: npm install
+
+      - name: Executar Otimização de Imagens
+        run: node scripts/optimize_images.mjs
+
+      - name: Salvar Imagens Otimizadas no Repositório
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "perf(images): otimização automática de imagens para WhatsApp e web (< 200KB)"
+          branch: main
+          file_pattern: 'public/images/**'
