@@ -51,7 +51,7 @@ jobs:
           INPUT_SAMPLE: ${{ github.event.inputs.sample }}
           INPUT_FORCE: ${{ github.event.inputs.force }}
         run: |
-          ARGS=""
+          ARGS="--slug=kawasaki-ninja-h2-2027-oficialmente-lan-ada-detalh --force"
           if [ -n "$INPUT_SAMPLE" ]; then
             ARGS="--sample=$INPUT_SAMPLE"
           fi

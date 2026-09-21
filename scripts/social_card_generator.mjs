@@ -17,40 +17,35 @@ try {
   console.warn('Fonte Quera não registrada, usando fallback nativo:', err.message);
 }
 
-// 2. Estilos e Metadados por Categoria
+// 2. Metadados e Hashtags por Categoria
 export const CATEGORY_STYLES = {
   noticias: {
     name: 'Notícias',
-    badge: 'NOTÍCIA EXCLUSIVA',
     color: '#B6D200',
     colorDark: '#0F0F0F',
     defaultHashtags: ['#motociclismo', '#noticiasdemoto', '#motosbrasil', '#duasrodas', '#estradaadois']
   },
   roteiros: {
     name: 'Roteiros',
-    badge: 'ROTEIRO DE ESTRADA',
-    color: '#F59E0B',
+    color: '#B6D200',
     colorDark: '#0F0F0F',
     defaultHashtags: ['#mototurismo', '#viagemdemoto', '#roteirodemoto', '#estradaadois', '#viagemdecasal']
   },
   dicas: {
     name: 'Dicas',
-    badge: 'DICA DE PILOTAGEM',
-    color: '#06B6D4',
+    color: '#B6D200',
     colorDark: '#0F0F0F',
     defaultHashtags: ['#dicasdemoto', '#pilotagemsegura', '#motociclista', '#segurancaemduasrodas', '#estradaadois']
   },
   equipamentos: {
     name: 'Equipamentos',
-    badge: 'GUIA DE EQUIPAMENTOS',
-    color: '#EC4899',
+    color: '#B6D200',
     colorDark: '#0F0F0F',
     defaultHashtags: ['#equipamentodemoto', '#capacetes', '#intercomunicador', '#motosbrasil', '#estradaadois']
   },
   manutencao: {
     name: 'Manutenção',
-    badge: 'MANUTENÇÃO PRÁTICA',
-    color: '#84CC16',
+    color: '#B6D200',
     colorDark: '#0F0F0F',
     defaultHashtags: ['#mecanicademoto', '#manutencaodemoto', '#oficinademoto', '#estradaadois', '#duasrodas']
   }
@@ -66,7 +61,31 @@ export function getCategoryConfig(categoryName = '') {
   return CATEGORY_STYLES[normalized] || CATEGORY_STYLES.noticias;
 }
 
-// 3. Helper para quebra inteligente de linha de texto
+// 3. Helper para formatação de data em PT-BR ("set. 19")
+export function formatDatePtBr(dateInput) {
+  if (!dateInput) return 'set. 19';
+  const months = ['jan.', 'fev.', 'mar.', 'abr.', 'mai.', 'jun.', 'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.'];
+  let d;
+  if (typeof dateInput === 'string') {
+    const match = dateInput.match(/(\d{4})-(\d{2})-(\d{2})/);
+    if (match) {
+      const monthIdx = parseInt(match[2], 10) - 1;
+      const day = parseInt(match[3], 10);
+      return `${months[monthIdx]} ${day}`;
+    }
+    d = new Date(dateInput);
+  } else if (dateInput instanceof Date) {
+    d = dateInput;
+  }
+  if (d && !isNaN(d.getTime())) {
+    const month = months[d.getUTCMonth()];
+    const day = d.getUTCDate();
+    return `${month} ${day}`;
+  }
+  return 'set. 19';
+}
+
+// 4. Helper para quebra inteligente de linha de texto
 function wrapText(ctx, text, maxWidth, maxLines = 3) {
   const words = String(text || '').trim().split(/\s+/);
   const lines = [];
@@ -81,7 +100,6 @@ function wrapText(ctx, text, maxWidth, maxLines = 3) {
       lines.push(currentLine);
       currentLine = word;
       if (lines.length === maxLines - 1) {
-        // Na última linha, agrupa as palavras restantes
         const remainingWords = words.slice(i).join(' ');
         let lastLine = remainingWords;
         while (ctx.measureText(`${lastLine}...`).width > maxWidth && lastLine.includes(' ')) {
@@ -102,10 +120,9 @@ function wrapText(ctx, text, maxWidth, maxLines = 3) {
   return lines;
 }
 
-// 4. Helper para carregar imagens com fallback
+// 5. Helper para carregar imagens com fallback
 async function resolveImage(imageInput) {
   if (!imageInput) {
-    // Imagem padrão
     const defaultImgPath = path.join(rootDir, 'public', 'images', 'logo-admin.png');
     return await loadImage(defaultImgPath);
   }
@@ -117,7 +134,6 @@ async function resolveImage(imageInput) {
       return await loadImage(Buffer.from(arrayBuffer));
     }
 
-    // Caminho local
     const localPath = imageInput.startsWith('/')
       ? path.join(rootDir, 'public', imageInput.replace(/^\//, ''))
       : path.join(rootDir, imageInput);
@@ -127,19 +143,96 @@ async function resolveImage(imageInput) {
     }
   }
 
-  // Fallback
   const fallbackPath = path.join(rootDir, 'public', 'images', 'logo-admin.png');
   return await loadImage(fallbackPath);
 }
 
-// 5. GERADOR DO CARD FEED (1080 x 1350 px - Proporção 4:5)
-export async function generateFeedCard({ title, category, imagePath, excerpt, date = 'Hoje' }) {
+// 6. Helper para desenhar a pílula do logo com alinhamento e proporções perfeitas
+async function drawBrandLogo(ctx, startX, startY, pillHeight = 56) {
+  ctx.save();
+  ctx.font = 'italic 900 24px Quera, "Montserrat", Arial, sans-serif';
+  ctx.letterSpacing = '0px';
+  const wEstrada = ctx.measureText('Estrada').width;
+  const wADois = ctx.measureText('a Dois').width;
+
+  const crownSize = 28;
+  const padLeft = 14;
+  const gapCrownToEstrada = 10;
+  const gapWords = 7;
+  const padRight = 18;
+
+  const totalWidth = Math.round(padLeft + crownSize + gapCrownToEstrada + wEstrada + gapWords + wADois + padRight);
+  const pillRadius = pillHeight / 2;
+
+  // Fundo com borda suave
+  ctx.fillStyle = 'rgba(15, 15, 15, 0.85)';
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.18)';
+  ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  ctx.roundRect(startX, startY, totalWidth, pillHeight, pillRadius);
+  ctx.fill();
+  ctx.stroke();
+
+  // Coroa inclinada e alinhada ao centro vertical da pílula
+  try {
+    const crownPath = path.join(rootDir, 'public', 'images', 'coroa-estrada-a-dois.png');
+    if (fs.existsSync(crownPath)) {
+      const crownImg = await loadImage(crownPath);
+      ctx.save();
+      const crownCenterX = startX + padLeft + crownSize / 2;
+      const crownCenterY = startY + pillHeight / 2;
+      ctx.translate(crownCenterX, crownCenterY);
+      ctx.rotate((-12 * Math.PI) / 180);
+      ctx.drawImage(crownImg, -crownSize / 2, -crownSize / 2, crownSize, crownSize);
+      ctx.restore();
+    }
+  } catch (e) {}
+
+  // Texto "Estrada a Dois"
+  const textBaselineY = startY + (pillHeight / 2) + 8;
+  const estradaX = startX + padLeft + crownSize + gapCrownToEstrada;
+  ctx.fillStyle = '#FFFFFF';
+  ctx.fillText('Estrada', estradaX, textBaselineY);
+
+  const aDoisX = estradaX + wEstrada + gapWords;
+  ctx.fillStyle = '#B6D200';
+  ctx.fillText('a Dois', aDoisX, textBaselineY);
+
+  ctx.restore();
+  return totalWidth;
+}
+
+// 7. Helper para desenhar a badge da categoria em verde neon com padding dinâmico
+function drawCategoryBadge(ctx, category, canvasWidth, marginX, startY, pillHeight = 56) {
+  ctx.save();
+  const catText = (category || 'Notícias').toUpperCase();
+  ctx.font = '900 18px "Montserrat", Arial, sans-serif';
+  ctx.letterSpacing = '0.5px';
+  const textWidth = ctx.measureText(catText).width;
+  const padX = 22;
+  const badgeWidth = Math.round(textWidth + padX * 2);
+  const badgeX = canvasWidth - marginX - badgeWidth;
+
+  // Fundo Verde Neon da identidade visual para todas as categorias
+  ctx.fillStyle = '#B6D200';
+  ctx.beginPath();
+  ctx.roundRect(badgeX, startY, badgeWidth, pillHeight, 16);
+  ctx.fill();
+
+  // Texto preto profundo para máximo contraste
+  ctx.fillStyle = '#0A0A0A';
+  ctx.textAlign = 'center';
+  ctx.fillText(catText, badgeX + badgeWidth / 2, startY + (pillHeight / 2) + 6);
+
+  ctx.restore();
+}
+
+// 8. GERADOR DO CARD FEED (1080 x 1350 px - Proporção 4:5)
+export async function generateFeedCard({ title, category, imagePath, excerpt, date }) {
   const width = 1080;
   const height = 1350;
   const canvas = createCanvas(width, height);
   const ctx = canvas.getContext('2d');
-
-  const catConfig = getCategoryConfig(category);
 
   // Fundo base
   ctx.fillStyle = '#0F0F0F';
@@ -148,8 +241,6 @@ export async function generateFeedCard({ title, category, imagePath, excerpt, da
   // Imagem de capa (Ocupa os 65% superiores)
   const coverImg = await resolveImage(imagePath);
   const imgHeight = 900;
-  
-  // Desenha imagem centralizada com aspect cover
   const imgAspect = coverImg.width / coverImg.height;
   const targetAspect = width / imgHeight;
   let sWidth = coverImg.width;
@@ -167,7 +258,7 @@ export async function generateFeedCard({ title, category, imagePath, excerpt, da
 
   ctx.drawImage(coverImg, sx, sy, sWidth, sHeight, 0, 0, width, imgHeight);
 
-  // Gradiente escuro superior para o cabeçalho
+  // Gradiente superior para o cabeçalho
   const topGrad = ctx.createLinearGradient(0, 0, 0, 220);
   topGrad.addColorStop(0, 'rgba(0, 0, 0, 0.9)');
   topGrad.addColorStop(0.6, 'rgba(0, 0, 0, 0.4)');
@@ -178,83 +269,41 @@ export async function generateFeedCard({ title, category, imagePath, excerpt, da
   // Gradiente cinematográfico inferior para o texto da matéria
   const bottomGrad = ctx.createLinearGradient(0, 480, 0, 930);
   bottomGrad.addColorStop(0, 'transparent');
-  bottomGrad.addColorStop(0.4, 'rgba(15, 15, 15, 0.7)');
+  bottomGrad.addColorStop(0.4, 'rgba(15, 15, 15, 0.75)');
   bottomGrad.addColorStop(0.8, '#0F0F0F');
   bottomGrad.addColorStop(1, '#0F0F0F');
   ctx.fillStyle = bottomGrad;
   ctx.fillRect(0, 480, width, 450);
 
-  // --- CABEÇALHO ---
+  // Cabeçalho (Topo)
   const headerY = 60;
-  
-  // Pílula do Logo
-  ctx.save();
-  ctx.fillStyle = 'rgba(15, 15, 15, 0.75)';
-  ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
-  ctx.lineWidth = 2;
-  ctx.beginPath();
-  ctx.roundRect(50, headerY, 280, 60, 30);
-  ctx.fill();
-  ctx.stroke();
+  await drawBrandLogo(ctx, 50, headerY, 56);
+  drawCategoryBadge(ctx, category, width, 50, headerY, 56);
 
-  // Coroa do logo
-  try {
-    const crownPath = path.join(rootDir, 'public', 'images', 'coroa-estrada-a-dois.png');
-    if (fs.existsSync(crownPath)) {
-      const crownImg = await loadImage(crownPath);
-      ctx.save();
-      ctx.translate(72, headerY + 30);
-      ctx.rotate((-12 * Math.PI) / 180);
-      ctx.drawImage(crownImg, -16, -16, 32, 32);
-      ctx.restore();
-    }
-  } catch (e) {}
-
-  // Texto do Logo
-  ctx.font = 'italic 900 24px Quera, "Montserrat", Arial, sans-serif';
-  ctx.fillStyle = '#FFFFFF';
-  ctx.fillText('Estrada', 105, headerY + 41);
-  ctx.fillStyle = '#B6D200';
-  ctx.fillText('a Dois', 205, headerY + 41);
-  ctx.restore();
-
-  // Badge da Categoria
-  ctx.save();
-  ctx.fillStyle = catConfig.color;
-  ctx.beginPath();
-  const badgeWidth = 260;
-  ctx.roundRect(width - 50 - badgeWidth, headerY, badgeWidth, 60, 16);
-  ctx.fill();
-
-  ctx.fillStyle = '#0F0F0F';
-  ctx.font = '900 19px "Montserrat", Arial, sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillText(catConfig.badge, width - 50 - (badgeWidth / 2), headerY + 38);
-  ctx.restore();
-
-  // --- CORPO DO TEXTO (ÁREA CENTRAL) ---
+  // Textos (Área Central Inferior)
   const textX = 55;
   let currentY = 910;
 
-  // Data / Tag de leitura
+  // Data em PT-BR ("set. 19")
   ctx.fillStyle = '#9CA3AF';
   ctx.font = '700 18px "Montserrat", Arial, sans-serif';
-  ctx.fillText(String(date).toUpperCase(), textX, currentY);
+  ctx.letterSpacing = '0.5px';
+  ctx.fillText(formatDatePtBr(date), textX, currentY);
   currentY += 45;
 
-  // Manchete Principal
+  // Manchete Principal com letterSpacing ajustado para leitura agradável
   ctx.save();
   ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
   ctx.shadowBlur = 15;
-  ctx.shadowOffsetX = 0;
   ctx.shadowOffsetY = 4;
   ctx.fillStyle = '#FFFFFF';
   ctx.font = '900 48px Quera, "Montserrat", Arial, sans-serif';
-  
+  ctx.letterSpacing = '2px';
+
   const titleLines = wrapText(ctx, title, width - 110, 3);
   for (const line of titleLines) {
     ctx.fillText(line, textX, currentY);
-    currentY += 58;
+    currentY += 60;
   }
   ctx.restore();
 
@@ -263,6 +312,7 @@ export async function generateFeedCard({ title, category, imagePath, excerpt, da
     currentY += 10;
     ctx.fillStyle = '#D1D5DB';
     ctx.font = '500 24px "Montserrat", Arial, sans-serif';
+    ctx.letterSpacing = '0px';
     const excerptLines = wrapText(ctx, excerpt, width - 110, 2);
     for (const line of excerptLines) {
       ctx.fillText(line, textX, currentY);
@@ -270,11 +320,11 @@ export async function generateFeedCard({ title, category, imagePath, excerpt, da
     }
   }
 
-  // --- RODAPÉ INFERIOR (CTA) ---
+  // Rodapé Inferior
   const footerY = height - 90;
   ctx.fillStyle = '#161616';
   ctx.fillRect(0, footerY, width, 90);
-  
+
   ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
   ctx.lineWidth = 1.5;
   ctx.beginPath();
@@ -282,46 +332,46 @@ export async function generateFeedCard({ title, category, imagePath, excerpt, da
   ctx.lineTo(width, footerY);
   ctx.stroke();
 
-  // Link do site no rodapé
+  // Esquerda: Ponto verde neon + estradaadois.com com fonte maior (24px)
   ctx.fillStyle = '#B6D200';
   ctx.beginPath();
   ctx.arc(65, footerY + 45, 6, 0, Math.PI * 2);
   ctx.fill();
 
   ctx.fillStyle = '#E5E7EB';
-  ctx.font = '700 22px "Montserrat", Arial, sans-serif';
+  ctx.font = '700 24px "Montserrat", Arial, sans-serif';
+  ctx.letterSpacing = '0px';
+  ctx.textAlign = 'left';
   ctx.fillText('estradaadois.com', 85, footerY + 53);
 
-  // Chamada de ação na direita
+  // Direita: Artigo completo com link na bio com fonte aumentada (24px)
   ctx.fillStyle = '#B6D200';
-  ctx.font = 'bold 22px "Montserrat", Arial, sans-serif';
+  ctx.font = 'bold 24px "Montserrat", Arial, sans-serif';
   ctx.textAlign = 'right';
-  ctx.fillText('Leia no link da bio ➔', width - 55, footerY + 53);
+  ctx.fillText('Artigo completo com link na bio', width - 55, footerY + 53);
 
   return canvas.toBuffer('image/png');
 }
 
-// 6. GERADOR DO CARD STORY & TIKTOK (1080 x 1920 px - Proporção 9:16)
-export async function generateStoryCard({ title, category, imagePath, excerpt, date = 'Exclusivo' }) {
+// 9. GERADOR DO CARD STORY & TIKTOK (1080 x 1920 px - Proporção 9:16)
+export async function generateStoryCard({ title, category, imagePath, excerpt, date }) {
   const width = 1080;
   const height = 1920;
   const canvas = createCanvas(width, height);
   const ctx = canvas.getContext('2d');
 
-  const catConfig = getCategoryConfig(category);
-
-  // Fundo base
+  // Fundo base escuro
   ctx.fillStyle = '#0A0A0A';
   ctx.fillRect(0, 0, width, height);
 
-  // Imagem de fundo ampliada e com overlay escuro atmosférico
+  // Foto de fundo difusa
   const coverImg = await resolveImage(imagePath);
   ctx.save();
   ctx.globalAlpha = 0.35;
   ctx.drawImage(coverImg, -200, -100, width + 400, height + 200);
   ctx.restore();
 
-  // Gradiente vertical cinematográfico
+  // Gradiente vertical
   const fullGrad = ctx.createLinearGradient(0, 0, 0, height);
   fullGrad.addColorStop(0, 'rgba(10, 10, 10, 0.95)');
   fullGrad.addColorStop(0.3, 'rgba(10, 10, 10, 0.5)');
@@ -330,55 +380,14 @@ export async function generateStoryCard({ title, category, imagePath, excerpt, d
   ctx.fillStyle = fullGrad;
   ctx.fillRect(0, 0, width, height);
 
-  // --- TOPO: SAFE ZONE DOS STORIES (y: 130) ---
+  // Cabeçalho (Topo - safe zone de stories)
   const headerY = 130;
+  await drawBrandLogo(ctx, 60, headerY, 56);
+  drawCategoryBadge(ctx, category, width, 60, headerY, 56);
 
-  // Logo Estrada a Dois
-  ctx.save();
-  ctx.fillStyle = 'rgba(15, 15, 15, 0.8)';
-  ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
-  ctx.lineWidth = 2;
-  ctx.beginPath();
-  ctx.roundRect(60, headerY, 290, 64, 32);
-  ctx.fill();
-  ctx.stroke();
-
-  try {
-    const crownPath = path.join(rootDir, 'public', 'images', 'coroa-estrada-a-dois.png');
-    if (fs.existsSync(crownPath)) {
-      const crownImg = await loadImage(crownPath);
-      ctx.save();
-      ctx.translate(85, headerY + 32);
-      ctx.rotate((-12 * Math.PI) / 180);
-      ctx.drawImage(crownImg, -18, -18, 36, 36);
-      ctx.restore();
-    }
-  } catch (e) {}
-
-  ctx.font = 'italic 900 26px Quera, "Montserrat", Arial, sans-serif';
-  ctx.fillStyle = '#FFFFFF';
-  ctx.fillText('Estrada', 120, headerY + 44);
-  ctx.fillStyle = '#B6D200';
-  ctx.fillText('a Dois', 225, headerY + 44);
-  ctx.restore();
-
-  // Badge no topo direito
-  ctx.save();
-  ctx.fillStyle = catConfig.color;
-  ctx.beginPath();
-  const badgeWidth = 240;
-  ctx.roundRect(width - 60 - badgeWidth, headerY, badgeWidth, 64, 32);
-  ctx.fill();
-
-  ctx.fillStyle = '#0F0F0F';
-  ctx.font = '900 20px "Montserrat", Arial, sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillText(catConfig.name.toUpperCase(), width - 60 - (badgeWidth / 2), headerY + 41);
-  ctx.restore();
-
-  // --- MOLDURA CENTRAL DE FOTO (y: 280 a 960) ---
+  // Moldura central de foto
   const boxX = 60;
-  const boxY = 280;
+  const boxY = 270;
   const boxW = width - 120;
   const boxH = 680;
   const cornerRadius = 32;
@@ -388,7 +397,6 @@ export async function generateStoryCard({ title, category, imagePath, excerpt, d
   ctx.roundRect(boxX, boxY, boxW, boxH, cornerRadius);
   ctx.clip();
 
-  // Desenha a imagem na proporção dentro da moldura
   const imgAspect = coverImg.width / coverImg.height;
   const boxAspect = boxW / boxH;
   let sw = coverImg.width;
@@ -406,80 +414,72 @@ export async function generateStoryCard({ title, category, imagePath, excerpt, d
 
   ctx.drawImage(coverImg, sx, sy, sw, sh, boxX, boxY, boxW, boxH);
 
-  // Etiqueta no cantinho da foto
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.75)';
+  // Etiqueta no cantinho da foto: "www.estradaadois.com"
+  const siteTag = 'www.estradaadois.com';
+  ctx.font = 'bold 18px "Montserrat", Arial, sans-serif';
+  ctx.letterSpacing = '0.5px';
+  const tagTextWidth = ctx.measureText(siteTag).width;
+  const tagPadX = 18;
+  const tagW = Math.round(tagTextWidth + tagPadX * 2);
+  const tagH = 38;
+
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
   ctx.beginPath();
-  ctx.roundRect(boxX + 20, boxY + boxH - 55, 230, 36, 12);
+  ctx.roundRect(boxX + 20, boxY + boxH - 58, tagW, tagH, 12);
   ctx.fill();
 
   ctx.fillStyle = '#B6D200';
-  ctx.font = 'bold 16px "Montserrat", Arial, sans-serif';
   ctx.textAlign = 'left';
-  ctx.fillText('Portal Estrada a Dois', boxX + 35, boxY + boxH - 31);
+  ctx.fillText(siteTag, boxX + 20 + tagPadX, boxY + boxH - 33);
   ctx.restore();
 
-  // Borda suave ao redor da moldura
+  // Borda ao redor da foto
   ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
   ctx.lineWidth = 3;
   ctx.beginPath();
   ctx.roundRect(boxX, boxY, boxW, boxH, cornerRadius);
   ctx.stroke();
 
-  // --- TEXTO / MANCHETE (y: 1040) ---
-  let textY = 1040;
+  // Manchete e textos
+  let textY = 1030;
 
+  // Data em PT-BR ("set. 19")
   ctx.fillStyle = '#9CA3AF';
   ctx.font = '700 20px "Montserrat", Arial, sans-serif';
-  ctx.fillText(`HOJE • ${String(date).toUpperCase()}`, boxX, textY);
+  ctx.letterSpacing = '0.5px';
+  ctx.fillText(formatDatePtBr(date), boxX, textY);
   textY += 55;
 
+  // Título com letterSpacing
   ctx.fillStyle = '#FFFFFF';
   ctx.font = '900 52px Quera, "Montserrat", Arial, sans-serif';
+  ctx.letterSpacing = '2px';
   const titleLines = wrapText(ctx, title, boxW, 4);
   for (const line of titleLines) {
     ctx.fillText(line, boxX, textY);
-    textY += 66;
+    textY += 68;
   }
 
+  // Resumo
   if (excerpt) {
     textY += 15;
     ctx.fillStyle = '#D1D5DB';
     ctx.font = '500 26px "Montserrat", Arial, sans-serif';
+    ctx.letterSpacing = '0px';
     const excerptLines = wrapText(ctx, excerpt, boxW, 3);
     for (const line of excerptLines) {
       ctx.fillText(line, boxX, textY);
-      textY += 38;
+      textY += 40;
     }
   }
 
-  // --- BOTÃO INFERIOR (SAFE ZONE y: 1600 a 1700 - Deixa 220px livres na base) ---
-  const btnY = 1620;
-  const btnH = 95;
-  const btnW = boxW;
-
-  ctx.save();
-  ctx.fillStyle = '#B6D200';
-  ctx.shadowColor = 'rgba(182, 210, 0, 0.4)';
-  ctx.shadowBlur = 30;
-  ctx.beginPath();
-  ctx.roundRect(boxX, btnY, btnW, btnH, 24);
-  ctx.fill();
-
-  ctx.fillStyle = '#0F0F0F';
-  ctx.font = '900 28px "Montserrat", Arial, sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillText('🔗 TOQUE NO LINK DO STORY', width / 2, btnY + 58);
-  ctx.restore();
-
-  ctx.fillStyle = '#9CA3AF';
-  ctx.font = '600 20px "Montserrat", Arial, sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillText('www.estradaadois.com', width / 2, btnY + 135);
+  // O botão de link e o site de rodapé foram removidos para deixar a área inferior
+  // 100% limpa para a inserção da figurinha interativa de link do Instagram Stories.
 
   return canvas.toBuffer('image/png');
 }
 
-// 7. GERADOR DE LEGENDA PARA TELEGRAM & REDES
+// 10. GERADOR DE LEGENDA PARA TELEGRAM & REDES
 export function generateSocialCaption({ title, category, excerpt, slug }) {
   const catConfig = getCategoryConfig(category);
   const articleUrl = `https://www.estradaadois.com/blog/${slug}`;
