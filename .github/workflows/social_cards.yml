@@ -16,6 +16,11 @@ on:
         required: false
         default: ''
         type: string
+      sample:
+        description: 'Número de artigos de amostra por categoria (ex: 2)'
+        required: false
+        default: ''
+        type: string
       force:
         description: 'Forçar reenvio mesmo que já tenha sido divulgado'
         required: false
@@ -43,11 +48,15 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           INPUT_SLUG: ${{ github.event.inputs.slug }}
+          INPUT_SAMPLE: ${{ github.event.inputs.sample }}
           INPUT_FORCE: ${{ github.event.inputs.force }}
         run: |
-          ARGS="--sample=2"
+          ARGS=""
+          if [ -n "$INPUT_SAMPLE" ]; then
+            ARGS="--sample=$INPUT_SAMPLE"
+          fi
           if [ -n "$INPUT_SLUG" ]; then
-            ARGS="--slug=$INPUT_SLUG"
+            ARGS="$ARGS --slug=$INPUT_SLUG"
           fi
           if [ "$INPUT_FORCE" = "true" ]; then
             ARGS="$ARGS --force"
