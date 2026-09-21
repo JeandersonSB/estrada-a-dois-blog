@@ -26,6 +26,18 @@ export const metadata: Metadata = {
   authors: [{ name: 'Estrada a Dois' }],
   creator: 'Estrada a Dois',
   publisher: 'Estrada a Dois',
+  icons: {
+    icon: [
+      { url: '/icon.png', sizes: '64x64', type: 'image/png' },
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/images/favicon.png', sizes: '64x64', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/images/favicon.png', sizes: '64x64', type: 'image/png' },
+    ],
+  },
   openGraph: {
     title: 'Estrada a Dois | Portal de Notícias e Motociclismo',
     description: 'O portal definitivo sobre motociclismo: notícias, lançamentos de motos, modelos, tecnologia e equipamentos.',
@@ -53,6 +65,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
+        <link rel="icon" href="/images/favicon.png" type="image/png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/images/favicon.png" />
         <link rel="preconnect" href="https://motociclismoonline.com.br" />
         <link rel="dns-prefetch" href="https://motociclismoonline.com.br" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
