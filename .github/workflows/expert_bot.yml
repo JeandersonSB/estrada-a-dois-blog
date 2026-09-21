@@ -1,4 +1,4 @@
-name: Robô Especialista (Dicas, Equipamentos e Manutenção)
+﻿name: Robô Especialista (Dicas, Equipamentos e Manutenção)
 
 on:
   schedule:
@@ -50,4 +50,5 @@ jobs:
         with:
           commit_message: "Novo Artigo Especialista (Rascunho gerado pela IA)"
           branch: main
-          file_pattern: 'content/posts/*.md'
+          file_pattern: 'content/posts/*.md public/images/blog/*'
+
