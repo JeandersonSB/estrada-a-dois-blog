@@ -1,6 +1,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import fs from 'fs';
 import path from 'path';
+import sharp from 'sharp';
 
 // Configurações e variáveis de ambiente
 const API_KEY = process.env.GEMINI_API_KEY;
@@ -12,6 +13,97 @@ if (!API_KEY) {
 }
 
 const genAI = new GoogleGenerativeAI(API_KEY);
+
+// =========================================================================
+// GERADOR INTELIGENTE DE SLUGS (SEM CORTAR PALAVRAS, SEM STOPWORDS, TRANSLITERADO)
+// =========================================================================
+
+function gerarSlugInteligente(texto, maxLen = 65) {
+  if (!texto) return '';
+
+  let s = String(texto)
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/[\s_]+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
+  if (s.length <= maxLen) {
+    return limparFimSlug(s);
+  }
+
+  let sub = s.substring(0, maxLen);
+  const lastHyphen = sub.lastIndexOf('-');
+  if (lastHyphen > 25) {
+    sub = sub.substring(0, lastHyphen);
+  }
+
+  return limparFimSlug(sub);
+}
+
+function limparFimSlug(slug) {
+  let res = slug.replace(/^-+|-+$/g, '');
+
+  const danglingWords = [
+    'de', 'da', 'do', 'das', 'dos',
+    'em', 'no', 'na', 'nos', 'nas',
+    'com', 'para', 'por', 'sem',
+    'e', 'a', 'o', 'as', 'os', 'um', 'uma',
+    'se', 'que', 'qual', 'veja', 'como', 'ao', 'aos', 'sobre'
+  ];
+
+  let changed = true;
+  while (changed) {
+    changed = false;
+    res = res.replace(/^-+|-+$/g, '');
+    for (const w of danglingWords) {
+      if (res.endsWith(`-${w}`)) {
+        res = res.substring(0, res.length - (w.length + 1));
+        changed = true;
+      }
+    }
+  }
+
+  return res.replace(/^-+|-+$/g, '');
+}
+
+// Baixa e otimiza a imagem localmente (Vercel CDN, garante < 200 KB para WhatsApp)
+async function salvarEOtimizarImagemLocal(imageUrl, slug) {
+  try {
+    const res = await fetch(imageUrl, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+      },
+      signal: AbortSignal.timeout(12000)
+    });
+    if (!res.ok) return imageUrl;
+    const arrayBuffer = await res.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+
+    const imagesDir = path.join(process.cwd(), 'public', 'images', 'blog');
+    if (!fs.existsSync(imagesDir)) {
+      fs.mkdirSync(imagesDir, { recursive: true });
+    }
+
+    const fileName = `${slug}.webp`;
+    const targetPath = path.join(imagesDir, fileName);
+
+    const optimizedBuffer = await sharp(buffer)
+      .rotate()
+      .resize(1200, null, { withoutEnlargement: true })
+      .webp({ quality: 78, effort: 4 })
+      .toBuffer();
+
+    fs.writeFileSync(targetPath, optimizedBuffer);
+    console.log(`🖼️ Imagem baixada e otimizada localmente: /images/blog/${fileName} (${(optimizedBuffer.length / 1024).toFixed(0)} KB)`);
+    return `/images/blog/${fileName}`;
+  } catch (err) {
+    console.warn(`Aviso ao salvar imagem local (${err.message}). Mantendo URL original.`);
+    return imageUrl;
+  }
+}
 
 // 1. Determina a categoria a ser gerada
 function determinarCategoria() {
@@ -270,17 +362,15 @@ async function gerarArtigo(categoria) {
     const kwMatch = markdownContent.match(/keywords_image:\s*["']?([^"'\r\n]+)["']?/i);
     const termoImagem = kwMatch ? kwMatch[1].trim() : `motorcycle ${categoria.toLowerCase()}`;
 
-    // Buscar imagem fotográfica
-    const imagemFinal = await buscarImagemPorPalavrasChave(termoImagem);
+    // Gerar slug amigável e inteligente (palavras completas, sem stopwords no fim)
+    const slug = gerarSlugInteligente(title, 65);
 
-    // Gerar slug amigável
-    const slug = title
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/(^-|-$)+/g, '')
-      .substring(0, 60);
+    // Buscar e otimizar imagem fotográfica para o blog (< 200 KB para WhatsApp)
+    let imagemFinal = await buscarImagemPorPalavrasChave(termoImagem);
+    if (imagemFinal && imagemFinal.startsWith('http')) {
+      console.log(`Otimizando imagem para o blog e WhatsApp: ${imagemFinal}`);
+      imagemFinal = await salvarEOtimizarImagemLocal(imagemFinal, slug);
+    }
 
     // Substituir placeholder de imagem e limpar campo temporário
     markdownContent = markdownContent
@@ -330,3 +420,4 @@ async function main() {
 }
 
 main();
+
