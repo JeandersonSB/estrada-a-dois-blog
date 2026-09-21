@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - 'content/posts/**'
+      - '.github/workflows/social_cards.yml'
+      - 'scripts/social_*.mjs'
 
   workflow_dispatch:
     inputs:
