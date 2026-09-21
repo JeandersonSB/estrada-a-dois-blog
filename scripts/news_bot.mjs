@@ -380,10 +380,9 @@ SELECAO: [numeros separados por virgula, ex: 1, 3] ou SELECAO: NENHUM
 `;
 
   const modelCandidates = [
-    'gemini-2.5-flash',
     'gemini-1.5-flash',
-    'gemini-3.6-flash',
-    'gemini-flash-latest'
+    'gemini-2.0-flash',
+    'gemini-1.5-pro'
   ];
 
   for (const modelName of modelCandidates) {
@@ -483,10 +482,9 @@ async function processarItem(item, genAI, isBrazilianSource = true) {
   try {
     let markdownContent = null;
     const modelCandidates = [
-      'gemini-2.5-flash',
       'gemini-1.5-flash',
-      'gemini-3.6-flash',
-      'gemini-flash-latest'
+      'gemini-2.0-flash',
+      'gemini-1.5-pro'
     ];
     let lastError = null;
 
@@ -674,11 +672,34 @@ async function gerarNoticias() {
     if (candidatosValidos.length >= 10) break; // Avalia ate os 10 melhores
 
     const initialSlug = gerarSlugInteligente(item.title, 65);
-    if (fs.existsSync(path.join(POSTS_DIR, `${tempSlug}.md`))) continue;
+    if (fs.existsSync(path.join(POSTS_DIR, `${initialSlug}.md`))) continue;
 
     const linkAtivo = await testarLinkAtivo(item.link);
     if (linkAtivo) {
       candidatosValidos.push(item);
+    }
+  }
+
+  // Fallback complementar com notícias globais se o Brasil estiver com poucos candidatos
+  if (candidatosValidos.length < targetCount) {
+    console.log(`Poucos candidatos no Brasil (${candidatosValidos.length}/${targetCount}). Buscando notícias globais complementares...`);
+    let rawItensGlobal = [];
+    for (const q of QUERIES_GLOBAL) {
+      const items = await coletarItensQuery(q, false);
+      rawItensGlobal = rawItensGlobal.concat(items);
+    }
+    for (const item of rawItensGlobal) {
+      if (seenTitles.has(item.title)) continue;
+      seenTitles.add(item.title);
+      if (itemValido(item)) {
+        const initialSlug = gerarSlugInteligente(item.title, 65);
+        if (fs.existsSync(path.join(POSTS_DIR, `${initialSlug}.md`))) continue;
+        const linkAtivo = await testarLinkAtivo(item.link);
+        if (linkAtivo) {
+          candidatosValidos.push({ ...item, isBR: false });
+        }
+      }
+      if (candidatosValidos.length >= 10) break;
     }
   }
 
