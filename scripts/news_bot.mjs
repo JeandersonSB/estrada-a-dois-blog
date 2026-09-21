@@ -351,32 +351,33 @@ function carregarPostsRecentes(dias = 30) {
   }
 }
 
-// Triagem editorial com IA em 1 UNICA chamada: escolhe quais candidatos sao fatos realmente ineditos
+// Triagem editorial com IA em 1 UNICA chamada: escolhe quais candidatos sao mais promissores
 async function selecionarCandidatosIneditos(candidatosDisponiveis, postsRecentes, targetCount, genAI) {
   if (!candidatosDisponiveis || candidatosDisponiveis.length === 0) return [];
   if (!postsRecentes || postsRecentes.length === 0) return candidatosDisponiveis.slice(0, targetCount);
 
-  const listaRecentes = postsRecentes.slice(0, 30).map((p, i) => `${i + 1}. "${p.title}"`).join('\n');
+  const listaRecentes = postsRecentes.slice(0, 25).map((p, i) => `${i + 1}. "${p.title}"`).join('\n');
   const listaCandidatos = candidatosDisponiveis.slice(0, 10).map((c, i) => `[${i + 1}] "${c.title}"`).join('\n');
 
   const promptTriagem = `
-Voce e o Editor-Chefe do blog automotivo "Estrada a Dois".
-Abaixo estao as ultimas noticias ja publicadas no blog e uma lista de novas noticias candidatas coletadas dos portais.
+Voce e o Editor-Chefe do portal de motociclismo "Estrada a Dois".
+Abaixo estao as ultimas materias publicadas no portal e a lista de novas noticias candidatas coletadas dos portais do setor.
 
-DIRETRIZES DE DECISAO:
-1. MESMA MARCA, MODELOS/VERSOES DIFERENTES = INEDITO E PERMITIDO (ex: Honda CG Titan vs Honda CG Fan, ou Yamaha MT-03 vs MT-07). NUNCA descarte apenas porque a montadora e a mesma!
-2. MESMO FATO/LANCAMENTO/RECORD JA COBERTO POR OUTRO PORTAL = DUPLICADO (ex: "Avelloz lanca AZ170" vs "Nova Avelloz AZ170 chega as lojas", "CFMoto 3 lote esgota" vs "3 lote de motos CFMoto anunciado", "Kawasaki ZX-6R 2027 novas cores" vs "Cores da ZX-6R 2027 reveladas", "Royal Enfield One Ride").
-3. FATOS OU ANGULOS REALMENTE NOVOS DA MESMA MOTO = INEDITO (ex: Recall vs Lancamento comercial).
+DIRETRIZES DE DECISAO EDITORIAL:
+1. O portal deve ser dinâmico e trazer sempre conteudos novos e interessantes para os motociclistas.
+2. MESMA MARCA/MONTADORA COM NOVO MODELO, NOVO FATO OU NOVO RECORDE = TOTALMENTE PERMITIDO E DESEJAVEL (ex: Honda CG vs Honda Sahara vs Recorde de vendas da Honda, ou Yamaha MT-03 vs Tenere 900). NUNCA descarte apenas porque a montadora ja apareceu no blog!
+3. REJEITE APENAS SE FOR COPIA IDENTICA DO MESMO FATO JA PUBLICADO (ex: exatamente o mesmo modelo lançado no mesmo dia com a mesma materia).
+4. Se a materia trouxer novidade tecnica, novo lote, novo recorde, flagra ou lancamento, SELECIONE O(S) MELHORE(S).
 
-ARTIGOS RECENTES JA PUBLICADOS NO BLOG:
+MATERIAS RECENTES JA PUBLICADAS NO BLOG:
 ${listaRecentes}
 
 CANDIDATOS COLETADOS:
 ${listaCandidatos}
 
-Sua missao: Selecione ate ${targetCount} numero(s) de candidatos que sejam FATOS/NOTICIAS INEDITAS (que ainda nao foram cobertas no blog).
+Sua missao: Selecione ${targetCount} numero(s) dos candidatos mais promissores e interessantes para publicar agora.
 Responda ESTRITAMENTE no formato:
-SELECAO: [numeros separados por virgula, ex: 1, 3] ou SELECAO: NENHUM
+SELECAO: [numeros separados por virgula, ex: 1, 3]
 `;
 
   const modelCandidates = [
@@ -393,17 +394,12 @@ SELECAO: [numeros separados por virgula, ex: 1, 3] ou SELECAO: NENHUM
       const texto = res.response.text().trim();
       console.log(`[Editor-Chefe IA] Resposta da triagem: ${texto}`);
 
-      if (texto.includes('NENHUM')) {
-        console.log(`[Editor-Chefe IA] Todos os candidatos analisados sao repeticoes de temas recentes.`);
-        return [];
-      }
-
       const match = texto.match(/SELECAO:\s*([0-9,\s]+)/i);
       if (match && match[1]) {
         const indexes = match[1].split(',').map(n => parseInt(n.trim(), 10) - 1).filter(n => !isNaN(n) && n >= 0 && n < candidatosDisponiveis.length);
         if (indexes.length > 0) {
           const selecionados = indexes.slice(0, targetCount).map(idx => candidatosDisponiveis[idx]);
-          console.log(`[Editor-Chefe IA] Selecionado(s) ${selecionados.length} candidato(s) inedito(s):`);
+          console.log(`[Editor-Chefe IA] Selecionado(s) ${selecionados.length} candidato(s):`);
           selecionados.forEach(s => console.log(`  - "${s.title}"`));
           return selecionados;
         }
@@ -414,7 +410,8 @@ SELECAO: [numeros separados por virgula, ex: 1, 3] ou SELECAO: NENHUM
     }
   }
 
-  // Fallback seguro caso a IA de triagem falhe: retorna o primeiro candidato
+  // Fallback garantido caso a IA retorne formato inesperado: seleciona os melhores candidatos da lista
+  console.log('[Editor-Chefe IA] Usando selecao dos candidatos de maior pontuacao como fallback garantido...');
   return candidatosDisponiveis.slice(0, targetCount);
 }
 
@@ -706,10 +703,14 @@ async function gerarNoticias() {
   console.log(`Candidatos com links ativos selecionados para triagem: ${candidatosValidos.length}`);
 
   // Triagem editorial inteligente com Gemini em 1 chamada batch
-  const selecionados = await selecionarCandidatosIneditos(candidatosValidos, postsRecentes, targetCount, genAI);
+  let selecionados = await selecionarCandidatosIneditos(candidatosValidos, postsRecentes, targetCount, genAI);
 
   if (!selecionados || selecionados.length === 0) {
-    console.log("Nenhuma notícia inédita aprovada para publicação hoje.");
+    selecionados = candidatosValidos.slice(0, targetCount);
+  }
+
+  if (!selecionados || selecionados.length === 0) {
+    console.log("Nenhum candidato com link ativo disponível no momento.");
     return;
   }
 

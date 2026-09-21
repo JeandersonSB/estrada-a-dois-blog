@@ -29,6 +29,7 @@ on:
       - main
     paths:
       - '.github/workflows/news_bot.yml'
+      - 'scripts/news_bot.mjs'
 
 jobs:
   gerar-noticia:
