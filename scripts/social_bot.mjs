@@ -109,26 +109,51 @@ async function main() {
   const args = process.argv.slice(2);
   const targetSlugArg = args.find((a) => a.startsWith('--slug='))?.replace('--slug=', '');
   const force = args.includes('--force');
+  const sampleArg = args.find((a) => a.startsWith('--sample'));
+  const isSample = Boolean(sampleArg);
+  const sampleCount = isSample ? parseInt(sampleArg.split('=')[1] || '2', 10) : 0;
 
   const history = loadHistory();
   const files = fs.readdirSync(postsDir).filter((f) => f.endsWith('.md'));
 
   let publishedPosts = [];
 
-  for (const file of files) {
-    const slug = file.replace(/\.md$/, '');
-    const content = fs.readFileSync(path.join(postsDir, file), 'utf8');
-    const { data } = matter(content);
+  if (isSample) {
+    // Modo Amostra: Seleciona os N últimos de cada categoria
+    const byCategory = {};
+    for (const file of files) {
+      const slug = file.replace(/\.md$/, '');
+      const content = fs.readFileSync(path.join(postsDir, file), 'utf8');
+      const { data } = matter(content);
 
-    const isPublished = String(data.status || '').includes('Publicado');
-
-    if (targetSlugArg) {
-      if (slug === targetSlugArg) {
-        publishedPosts.push({ slug, ...data });
+      if (String(data.status || '').includes('Publicado')) {
+        const cat = (data.category || 'Notícias').trim();
+        if (!byCategory[cat]) byCategory[cat] = [];
+        byCategory[cat].push({ slug, ...data });
       }
-    } else if (isPublished) {
-      if (force || !history.includes(slug)) {
-        publishedPosts.push({ slug, ...data });
+    }
+
+    for (const cat of Object.keys(byCategory)) {
+      byCategory[cat].sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+      publishedPosts.push(...byCategory[cat].slice(0, sampleCount));
+    }
+    console.log(`📦 Modo Amostra ativo: selecionados ${publishedPosts.length} posts (${sampleCount} de cada categoria).`);
+  } else {
+    for (const file of files) {
+      const slug = file.replace(/\.md$/, '');
+      const content = fs.readFileSync(path.join(postsDir, file), 'utf8');
+      const { data } = matter(content);
+
+      const isPublished = String(data.status || '').includes('Publicado');
+
+      if (targetSlugArg) {
+        if (slug === targetSlugArg) {
+          publishedPosts.push({ slug, ...data });
+        }
+      } else if (isPublished) {
+        if (force || !history.includes(slug)) {
+          publishedPosts.push({ slug, ...data });
+        }
       }
     }
   }
@@ -176,13 +201,18 @@ async function main() {
       captionText: caption
     });
 
-    // Registra no histórico para não reenviar
-    if (!history.includes(post.slug)) {
+    // Registra no histórico para não reenviar (se não for modo amostra)
+    if (!isSample && !history.includes(post.slug)) {
       history.push(post.slug);
     }
+
+    // Pausa de 2 segundos entre envios para o Telegram processar perfeitamente
+    await new Promise((r) => setTimeout(r, 2000));
   }
 
-  saveHistory(history);
+  if (!isSample) {
+    saveHistory(history);
+  }
   console.log('\n🎉 Todos os cards sociais foram processados com sucesso!');
 }
 

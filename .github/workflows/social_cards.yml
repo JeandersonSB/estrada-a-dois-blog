@@ -43,9 +43,9 @@ jobs:
           INPUT_SLUG: ${{ github.event.inputs.slug }}
           INPUT_FORCE: ${{ github.event.inputs.force }}
         run: |
-          ARGS=""
+          ARGS="--sample=2"
           if [ -n "$INPUT_SLUG" ]; then
-            ARGS="$ARGS --slug=$INPUT_SLUG"
+            ARGS="--slug=$INPUT_SLUG"
           fi
           if [ "$INPUT_FORCE" = "true" ]; then
             ARGS="$ARGS --force"
