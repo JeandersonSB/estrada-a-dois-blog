@@ -1,5 +1,7 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import { getPostData, getSortedPostsData } from '@/lib/posts';
+
+export const revalidate = 60;
 
 // Generate static routes for all posts at build time
 export async function generateStaticParams() {
