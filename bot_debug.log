@@ -1,4 +1,4 @@
-⏱️ Última notícia gerada há 10.3h (compensando intervalo). Meta ajustada para 2 notícias.
+⏱️ Última notícia gerada há 10.4h (compensando intervalo). Meta ajustada para 2 notícias.
 
 ======================================================
 Iniciando Robô Jornalista Estrada a Dois
@@ -11,110 +11,10 @@ Artigos recentes carregados no controle anti-duplicidade: 51
 
 Coletando notícias dos melhores portais do Brasil...
 Candidatos com links ativos selecionados para triagem: 10
-Tentativa de triagem com gemini-1.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-Tentativa de triagem com gemini-2.0-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
-Tentativa de triagem com gemini-1.5-pro falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-[Editor-Chefe IA] Usando candidatos disponíveis como lista de prioridade...
-
-📰 Processando candidato: "Royal Enfield Flying Flea C6 ganha nova cor - Motociclismo Online"...
-
------------------------------------------
-[Origem: 🇧🇷 Brasil (Principal)]
-Processando notícia: "Royal Enfield Flying Flea C6 ganha nova cor - Motociclismo Online"
-Data original: Fri, 18 Sep 2026 10:53:51 GMT
-🤖 Solicitando redação ao modelo: gemini-1.5-flash (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-1.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-🤖 Solicitando redação ao modelo: gemini-2.0-flash (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-2.0-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
-🤖 Solicitando redação ao modelo: gemini-1.5-pro (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-1.5-pro falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-    at handleResponseNotOk (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:432:11)
-    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
-    at async makeRequest (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:401:9)
-    at async generateContent (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:865:22)
-    at async processarItem (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:494:26)
-    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:725:21) {
-  status: 404,
-  statusText: 'Not Found',
-  errorDetails: undefined
-}
-⚠️ Candidato não aprovado ou descartado. Prosseguindo para a próxima opção...
-
-📰 Processando candidato: "Royal Enfield Classic 350 ganha nova cor branca com 'assinatura' - MOTOO"...
-
------------------------------------------
-[Origem: 🇧🇷 Brasil (Principal)]
-Processando notícia: "Royal Enfield Classic 350 ganha nova cor branca com 'assinatura' - MOTOO"
-Data original: Mon, 21 Sep 2026 13:02:00 GMT
-🤖 Solicitando redação ao modelo: gemini-1.5-flash (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-1.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-🤖 Solicitando redação ao modelo: gemini-2.0-flash (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-2.0-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
-🤖 Solicitando redação ao modelo: gemini-1.5-pro (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-1.5-pro falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-    at handleResponseNotOk (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:432:11)
-    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
-    at async makeRequest (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:401:9)
-    at async generateContent (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:865:22)
-    at async processarItem (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:494:26)
-    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:725:21) {
-  status: 404,
-  statusText: 'Not Found',
-  errorDetails: undefined
-}
-⚠️ Candidato não aprovado ou descartado. Prosseguindo para a próxima opção...
-
-📰 Processando candidato: "Royal Enfield Flying Flea C6 ganha nova cor branca - MOTOO"...
-
------------------------------------------
-[Origem: 🇧🇷 Brasil (Principal)]
-Processando notícia: "Royal Enfield Flying Flea C6 ganha nova cor branca - MOTOO"
-Data original: Thu, 17 Sep 2026 12:46:00 GMT
-🤖 Solicitando redação ao modelo: gemini-1.5-flash (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-1.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-🤖 Solicitando redação ao modelo: gemini-2.0-flash (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-2.0-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
-🤖 Solicitando redação ao modelo: gemini-1.5-pro (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-1.5-pro falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-    at handleResponseNotOk (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:432:11)
-    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
-    at async makeRequest (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:401:9)
-    at async generateContent (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:865:22)
-    at async processarItem (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:494:26)
-    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:725:21) {
-  status: 404,
-  statusText: 'Not Found',
-  errorDetails: undefined
-}
-⚠️ Candidato não aprovado ou descartado. Prosseguindo para a próxima opção...
-
-📰 Processando candidato: "Galeria de fotos: Royal Enfield Flying Flea C6 ganha nova cor branca - MOTOO"...
-
------------------------------------------
-[Origem: 🇧🇷 Brasil (Principal)]
-Processando notícia: "Galeria de fotos: Royal Enfield Flying Flea C6 ganha nova cor branca - MOTOO"
-Data original: Thu, 17 Sep 2026 14:55:50 GMT
-🤖 Solicitando redação ao modelo: gemini-1.5-flash (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-1.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-🤖 Solicitando redação ao modelo: gemini-2.0-flash (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-2.0-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
-🤖 Solicitando redação ao modelo: gemini-1.5-pro (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-1.5-pro falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-    at handleResponseNotOk (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:432:11)
-    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
-    at async makeRequest (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:401:9)
-    at async generateContent (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:865:22)
-    at async processarItem (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:494:26)
-    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:725:21) {
-  status: 404,
-  statusText: 'Not Found',
-  errorDetails: undefined
-}
-⚠️ Candidato não aprovado ou descartado. Prosseguindo para a próxima opção...
+[Editor-Chefe IA] Resposta da triagem: SELECAO: 5, 7
+[Editor-Chefe IA] Selecionado(s) 2 candidato(s) em ordem de prioridade:
+  - "Yamaha R9 2027 mantém mecânica e estreia nova opção visual - Mobiauto"
+  - "Royal Enfield One Ride 2026 terá tentativa de recorde com motos no Brasil - MOTOO"
 
 📰 Processando candidato: "Yamaha R9 2027 mantém mecânica e estreia nova opção visual - Mobiauto"...
 
@@ -122,38 +22,29 @@ Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeA
 [Origem: 🇧🇷 Brasil (Principal)]
 Processando notícia: "Yamaha R9 2027 mantém mecânica e estreia nova opção visual - Mobiauto"
 Data original: Tue, 15 Sep 2026 22:08:37 GMT
-🤖 Solicitando redação ao modelo: gemini-1.5-flash (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-1.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-🤖 Solicitando redação ao modelo: gemini-2.0-flash (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-2.0-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
-🤖 Solicitando redação ao modelo: gemini-1.5-pro (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-1.5-pro falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-    at handleResponseNotOk (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:432:11)
-    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
-    at async makeRequest (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:401:9)
-    at async generateContent (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:865:22)
-    at async processarItem (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:494:26)
-    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:725:21) {
-  status: 404,
-  statusText: 'Not Found',
-  errorDetails: undefined
-}
-⚠️ Candidato não aprovado ou descartado. Prosseguindo para a próxima opção...
-
-📰 Processando candidato: "Avelloz AZ170 Bravo: o que esperar da nova rival de CG 160 e Factor? - Motociclismo Online"...
-
------------------------------------------
-[Origem: 🇧🇷 Brasil (Principal)]
-Processando notícia: "Avelloz AZ170 Bravo: o que esperar da nova rival de CG 160 e Factor? - Motociclismo Online"
-Data original: Wed, 16 Sep 2026 14:38:25 GMT
-🤖 Solicitando redação ao modelo: gemini-1.5-flash (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-1.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-🤖 Solicitando redação ao modelo: gemini-2.0-flash (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-2.0-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
-🤖 Solicitando redação ao modelo: gemini-1.5-pro (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-1.5-pro falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+🤖 Solicitando redação ao modelo: gemini-3.6-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-3.6-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash
+Please retry in 41.790536356s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.6-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"41s"}]
+🤖 Solicitando redação ao modelo: gemini-3.6-flash (tentativa 2/3)...
+⚠️ Tentativa 2 com gemini-3.6-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash
+Please retry in 38.669899674s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.6-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"38s"}]
+🤖 Solicitando redação ao modelo: gemini-3.6-flash (tentativa 3/3)...
+⚠️ Tentativa 3 com gemini-3.6-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash
+Please retry in 32.508089034s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.6-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"32s"}]
+🤖 Solicitando redação ao modelo: gemini-flash-latest (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-flash-latest falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+🤖 Solicitando redação ao modelo: gemini-flash-latest (tentativa 2/3)...
+⚠️ Tentativa 2 com gemini-flash-latest falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash
+Please retry in 16.853076379s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.8-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"16s"}]
+🤖 Solicitando redação ao modelo: gemini-flash-latest (tentativa 3/3)...
+⚠️ Tentativa 3 com gemini-flash-latest falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+🤖 Solicitando redação ao modelo: gemini-2.5-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-2.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [404 Not Found] This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
+Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [404 Not Found] This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
     at handleResponseNotOk (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:432:11)
     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
     at async makeRequest (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:401:9)
@@ -172,102 +63,220 @@ Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeA
 [Origem: 🇧🇷 Brasil (Principal)]
 Processando notícia: "Royal Enfield One Ride 2026 terá tentativa de recorde com motos no Brasil - MOTOO"
 Data original: Sun, 20 Sep 2026 05:33:51 GMT
-🤖 Solicitando redação ao modelo: gemini-1.5-flash (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-1.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-🤖 Solicitando redação ao modelo: gemini-2.0-flash (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-2.0-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
-🤖 Solicitando redação ao modelo: gemini-1.5-pro (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-1.5-pro falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-    at handleResponseNotOk (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:432:11)
-    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
-    at async makeRequest (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:401:9)
-    at async generateContent (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:865:22)
-    at async processarItem (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:494:26)
-    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:725:21) {
-  status: 404,
-  statusText: 'Not Found',
-  errorDetails: undefined
-}
-⚠️ Candidato não aprovado ou descartado. Prosseguindo para a próxima opção...
+🤖 Solicitando redação ao modelo: gemini-3.6-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-3.6-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash
+Please retry in 55.986820015s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.6-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"55s"}]
+🤖 Solicitando redação ao modelo: gemini-3.6-flash (tentativa 2/3)...
+⚠️ Tentativa 2 com gemini-3.6-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash
+Please retry in 52.883525575s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.6-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"52s"}]
+🤖 Solicitando redação ao modelo: gemini-3.6-flash (tentativa 3/3)...
+Otimizando imagem para o blog e WhatsApp: https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw
+🖼️ Imagem baixada e otimizada localmente: /images/blog/royal-enfield-one-ride-2026-recorde-brasil.webp (5 KB)
+✅ Artigo rascunho salvo em: /home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/content/posts/royal-enfield-one-ride-2026-recorde-brasil.md
+🖼️ Imagem vinculada: /images/blog/royal-enfield-one-ride-2026-recorde-brasil.webp
+🔗 Slug final inteligente: royal-enfield-one-ride-2026-recorde-brasil
+✅ Notificação enviada para o Telegram com sucesso!
+Progresso: 1/2 notícia(s) gerada(s).
+Meta não atingida (1/2). Tentando candidatos reservas...
 
-📰 Processando candidato: "Lendas da Velocidade será nova atração da MotoGP no EICMA - Motociclismo Online"...
-
------------------------------------------
-[Origem: 🇧🇷 Brasil (Principal)]
-Processando notícia: "Lendas da Velocidade será nova atração da MotoGP no EICMA - Motociclismo Online"
-Data original: Tue, 15 Sep 2026 11:32:19 GMT
-🤖 Solicitando redação ao modelo: gemini-1.5-flash (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-1.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-🤖 Solicitando redação ao modelo: gemini-2.0-flash (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-2.0-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
-🤖 Solicitando redação ao modelo: gemini-1.5-pro (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-1.5-pro falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-    at handleResponseNotOk (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:432:11)
-    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
-    at async makeRequest (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:401:9)
-    at async generateContent (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:865:22)
-    at async processarItem (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:494:26)
-    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:725:21) {
-  status: 404,
-  statusText: 'Not Found',
-  errorDetails: undefined
-}
-⚠️ Candidato não aprovado ou descartado. Prosseguindo para a próxima opção...
-
-📰 Processando candidato: "Avelloz quer lançar mais 4 motos no Brasil em 2027 - Motor1.com Brasil"...
+📰 Processando candidato reserva: "Royal Enfield Flying Flea C6 ganha nova cor - Motociclismo Online"...
 
 -----------------------------------------
 [Origem: 🇧🇷 Brasil (Principal)]
-Processando notícia: "Avelloz quer lançar mais 4 motos no Brasil em 2027 - Motor1.com Brasil"
-Data original: Sun, 20 Sep 2026 15:00:00 GMT
-🤖 Solicitando redação ao modelo: gemini-1.5-flash (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-1.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-🤖 Solicitando redação ao modelo: gemini-2.0-flash (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-2.0-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
-🤖 Solicitando redação ao modelo: gemini-1.5-pro (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-1.5-pro falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Processando notícia: "Royal Enfield Flying Flea C6 ganha nova cor - Motociclismo Online"
+Data original: Fri, 18 Sep 2026 10:53:51 GMT
+🤖 Solicitando redação ao modelo: gemini-3.6-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-3.6-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash
+Please retry in 32.177349205s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.6-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"32s"}]
+🤖 Solicitando redação ao modelo: gemini-3.6-flash (tentativa 2/3)...
+⚠️ Tentativa 2 com gemini-3.6-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash
+Please retry in 29.073384668s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.6-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"29s"}]
+🤖 Solicitando redação ao modelo: gemini-3.6-flash (tentativa 3/3)...
+⚠️ Tentativa 3 com gemini-3.6-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash
+Please retry in 22.941875848s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.6-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"22s"}]
+🤖 Solicitando redação ao modelo: gemini-flash-latest (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-flash-latest falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash
+Please retry in 13.791994093s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.8-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"13s"}]
+🤖 Solicitando redação ao modelo: gemini-flash-latest (tentativa 2/3)...
+⚠️ Tentativa 2 com gemini-flash-latest falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash
+Please retry in 10.683270732s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.8-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"10s"}]
+🤖 Solicitando redação ao modelo: gemini-flash-latest (tentativa 3/3)...
+⚠️ Tentativa 3 com gemini-flash-latest falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash
+Please retry in 4.502347279s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.8-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"4s"}]
+🤖 Solicitando redação ao modelo: gemini-2.5-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-2.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [404 Not Found] This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
+Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [404 Not Found] This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
     at handleResponseNotOk (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:432:11)
     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
     at async makeRequest (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:401:9)
     at async generateContent (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:865:22)
     at async processarItem (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:494:26)
-    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:725:21) {
+    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:745:23) {
   status: 404,
   statusText: 'Not Found',
   errorDetails: undefined
 }
-⚠️ Candidato não aprovado ou descartado. Prosseguindo para a próxima opção...
 
-📰 Processando candidato: "Triumph Originals 2026: conheça as sete motos que disputam o título - Motociclismo Online"...
+📰 Processando candidato reserva: "Royal Enfield Classic 350 ganha nova cor branca com 'assinatura' - MOTOO"...
 
 -----------------------------------------
 [Origem: 🇧🇷 Brasil (Principal)]
-Processando notícia: "Triumph Originals 2026: conheça as sete motos que disputam o título - Motociclismo Online"
-Data original: Fri, 18 Sep 2026 14:35:35 GMT
-🤖 Solicitando redação ao modelo: gemini-1.5-flash (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-1.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-🤖 Solicitando redação ao modelo: gemini-2.0-flash (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-2.0-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
-🤖 Solicitando redação ao modelo: gemini-1.5-pro (tentativa 1/3)...
-⚠️ Tentativa 1 com gemini-1.5-pro falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
-Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Processando notícia: "Royal Enfield Classic 350 ganha nova cor branca com 'assinatura' - MOTOO"
+Data original: Mon, 21 Sep 2026 13:02:00 GMT
+🤖 Solicitando redação ao modelo: gemini-3.6-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-3.6-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash
+Please retry in 55.02209337s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.6-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"55s"}]
+🤖 Solicitando redação ao modelo: gemini-3.6-flash (tentativa 2/3)...
+⚠️ Tentativa 2 com gemini-3.6-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash
+Please retry in 51.949374512s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.6-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"51s"}]
+🤖 Solicitando redação ao modelo: gemini-3.6-flash (tentativa 3/3)...
+⚠️ Tentativa 3 com gemini-3.6-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash
+Please retry in 45.802282932s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.6-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"45s"}]
+🤖 Solicitando redação ao modelo: gemini-flash-latest (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-flash-latest falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash
+Please retry in 36.675255995s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.8-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"36s"}]
+🤖 Solicitando redação ao modelo: gemini-flash-latest (tentativa 2/3)...
+⚠️ Tentativa 2 com gemini-flash-latest falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash
+Please retry in 33.574750992s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.8-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"33s"}]
+🤖 Solicitando redação ao modelo: gemini-flash-latest (tentativa 3/3)...
+⚠️ Tentativa 3 com gemini-flash-latest falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash
+Please retry in 27.434043228s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.8-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"27s"}]
+🤖 Solicitando redação ao modelo: gemini-2.5-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-2.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [404 Not Found] This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
+Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [404 Not Found] This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
     at handleResponseNotOk (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:432:11)
     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
     at async makeRequest (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:401:9)
     at async generateContent (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:865:22)
     at async processarItem (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:494:26)
-    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:725:21) {
+    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:745:23) {
   status: 404,
   statusText: 'Not Found',
   errorDetails: undefined
 }
-⚠️ Candidato não aprovado ou descartado. Prosseguindo para a próxima opção...
-Meta não atingida (0/2). Tentando candidatos reservas...
+
+📰 Processando candidato reserva: "Royal Enfield Flying Flea C6 ganha nova cor branca - MOTOO"...
+
+-----------------------------------------
+[Origem: 🇧🇷 Brasil (Principal)]
+Processando notícia: "Royal Enfield Flying Flea C6 ganha nova cor branca - MOTOO"
+Data original: Thu, 17 Sep 2026 12:46:00 GMT
+🤖 Solicitando redação ao modelo: gemini-3.6-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-3.6-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash
+Please retry in 26.991976748s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.6-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"26s"}]
+🤖 Solicitando redação ao modelo: gemini-3.6-flash (tentativa 2/3)...
+⚠️ Tentativa 2 com gemini-3.6-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash
+Please retry in 23.898093175s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.6-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"23s"}]
+🤖 Solicitando redação ao modelo: gemini-3.6-flash (tentativa 3/3)...
+⚠️ Tentativa 3 com gemini-3.6-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash
+Please retry in 17.759737903s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.6-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"17s"}]
+🤖 Solicitando redação ao modelo: gemini-flash-latest (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-flash-latest falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash
+Please retry in 8.60499424s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.8-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"8s"}]
+🤖 Solicitando redação ao modelo: gemini-flash-latest (tentativa 2/3)...
+⚠️ Tentativa 2 com gemini-flash-latest falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash
+Please retry in 5.512281723s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.8-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"5s"}]
+🤖 Solicitando redação ao modelo: gemini-flash-latest (tentativa 3/3)...
+⚠️ Tentativa 3 com gemini-flash-latest falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash
+Please retry in 59.360331964s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.8-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"59s"}]
+🤖 Solicitando redação ao modelo: gemini-2.5-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-2.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [404 Not Found] This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
+Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [404 Not Found] This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
+    at handleResponseNotOk (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:432:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:401:9)
+    at async generateContent (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:865:22)
+    at async processarItem (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:494:26)
+    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:745:23) {
+  status: 404,
+  statusText: 'Not Found',
+  errorDetails: undefined
+}
+
+📰 Processando candidato reserva: "Galeria de fotos: Royal Enfield Flying Flea C6 ganha nova cor branca - MOTOO"...
+
+-----------------------------------------
+[Origem: 🇧🇷 Brasil (Principal)]
+Processando notícia: "Galeria de fotos: Royal Enfield Flying Flea C6 ganha nova cor branca - MOTOO"
+Data original: Thu, 17 Sep 2026 14:55:50 GMT
+🤖 Solicitando redação ao modelo: gemini-3.6-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-3.6-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash
+Please retry in 49.865891186s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.6-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"49s"}]
+🤖 Solicitando redação ao modelo: gemini-3.6-flash (tentativa 2/3)...
+⚠️ Tentativa 2 com gemini-3.6-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash
+Please retry in 46.771983551s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.6-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"46s"}]
+🤖 Solicitando redação ao modelo: gemini-3.6-flash (tentativa 3/3)...
+⚠️ Tentativa 3 com gemini-3.6-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash
+Please retry in 40.622818759s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.6-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"40s"}]
+🤖 Solicitando redação ao modelo: gemini-flash-latest (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-flash-latest falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash
+Please retry in 31.489080984s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.8-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"31s"}]
+🤖 Solicitando redação ao modelo: gemini-flash-latest (tentativa 2/3)...
+⚠️ Tentativa 2 com gemini-flash-latest falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash
+Please retry in 28.378072015s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.8-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"28s"}]
+🤖 Solicitando redação ao modelo: gemini-flash-latest (tentativa 3/3)...
+⚠️ Tentativa 3 com gemini-flash-latest falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash
+Please retry in 22.248836549s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.8-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"22s"}]
+🤖 Solicitando redação ao modelo: gemini-2.5-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-2.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [404 Not Found] This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
+Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [404 Not Found] This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
+    at handleResponseNotOk (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:432:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:401:9)
+    at async generateContent (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:865:22)
+    at async processarItem (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:494:26)
+    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:745:23) {
+  status: 404,
+  statusText: 'Not Found',
+  errorDetails: undefined
+}
+
+📰 Processando candidato reserva: "Avelloz AZ170 Bravo: o que esperar da nova rival de CG 160 e Factor? - Motociclismo Online"...
+
+-----------------------------------------
+[Origem: 🇧🇷 Brasil (Principal)]
+Processando notícia: "Avelloz AZ170 Bravo: o que esperar da nova rival de CG 160 e Factor? - Motociclismo Online"
+Data original: Wed, 16 Sep 2026 14:38:25 GMT
+🤖 Solicitando redação ao modelo: gemini-3.6-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-3.6-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash
+Please retry in 12.659879709s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.6-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"12s"}]
+🤖 Solicitando redação ao modelo: gemini-3.6-flash (tentativa 2/3)...
+Otimizando imagem para o blog e WhatsApp: https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw
+🖼️ Imagem baixada e otimizada localmente: /images/blog/avelloz-az170-bravo-nova-rival-cg-160-factor.webp (5 KB)
+✅ Artigo rascunho salvo em: /home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/content/posts/avelloz-az170-bravo-nova-rival-cg-160-factor.md
+🖼️ Imagem vinculada: /images/blog/avelloz-az170-bravo-nova-rival-cg-160-factor.webp
+🔗 Slug final inteligente: avelloz-az170-bravo-nova-rival-cg-160-factor
+✅ Notificação enviada para o Telegram com sucesso!
+Progresso: 2/2 notícia(s) gerada(s).
 
 ======================================================
-Processo concluído: 0 nova(s) notícia(s) gerada(s).
+Processo concluído: 2 nova(s) notícia(s) gerada(s).
 ======================================================
 
