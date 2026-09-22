@@ -90,10 +90,15 @@ async function salvarEOtimizarImagemLocal(imageUrl, slug) {
     const fileName = `${slug}.webp`;
     const targetPath = path.join(imagesDir, fileName);
 
+    const meta = await sharp(buffer).metadata();
+    if (!meta.width || meta.width < 400 || !meta.height || meta.height < 250) {
+      throw new Error(`Imagem pequena demais (${meta.width}x${meta.height})`);
+    }
+
     const optimizedBuffer = await sharp(buffer)
       .rotate()
-      .resize(1200, null, { withoutEnlargement: true })
-      .webp({ quality: 78, effort: 4 })
+      .resize(1200, 675, { fit: 'cover' })
+      .webp({ quality: 80, effort: 4 })
       .toBuffer();
 
     fs.writeFileSync(targetPath, optimizedBuffer);
