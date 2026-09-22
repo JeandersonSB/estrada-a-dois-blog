@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from 'next';
 import { getPostData, getSortedPostsData } from '@/lib/posts';
+import { SmartImage } from '@/components/SmartImage';
 
 export const revalidate = 60;
 
@@ -149,13 +150,13 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         </header>
 
         {/* Featured Image */}
-        <div className="w-full h-auto md:h-[500px] mb-12 rounded-2xl overflow-hidden shadow-2xl">
-          <img 
-            src={postData.image} 
-            alt={postData.title} 
-            fetchPriority="high"
-            decoding="async"
-            className="w-full h-full object-cover"
+        <div className="relative w-full aspect-[16/9] md:h-[500px] mb-12 rounded-2xl overflow-hidden shadow-2xl">
+          <SmartImage
+            src={postData.image}
+            alt={postData.title}
+            priority
+            sizes="(min-width: 896px) 896px, 100vw"
+            className="object-cover"
           />
         </div>
 
@@ -194,12 +195,11 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                   className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 hover:border-[#B6D200]/70 transition-all duration-300 flex flex-col h-full"
                 >
                   <div className="aspect-[16/10] w-full overflow-hidden relative bg-black/10">
-                    <img
+                    <SmartImage
                       src={related.image}
                       alt={related.title}
-                      loading="lazy"
-                      decoding="async"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <span className="absolute top-3 left-3 bg-[#B6D200] text-[#0F0F0F] text-[10px] font-black uppercase px-2.5 py-1 tracking-wider rounded shadow-md z-10">
                       {related.category}
