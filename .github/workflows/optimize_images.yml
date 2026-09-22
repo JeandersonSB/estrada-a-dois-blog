@@ -4,9 +4,9 @@ permissions:
   contents: write
 
 concurrency:
-  group: estrada-main-write
+  group: optimize-images
   cancel-in-progress: false
-  queue: max
+
 
 on:
   workflow_dispatch:
