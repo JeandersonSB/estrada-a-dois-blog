@@ -98,12 +98,17 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     })
     .slice(0, 3);
 
+  const baseUrl = 'https://www.estradaadois.com';
+  const schemaImage = postData.image
+    ? (postData.image.startsWith('/') ? baseUrl + postData.image : postData.image)
+    : undefined;
+
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'NewsArticle',
+    '@type': postData.category === 'Notícias' ? 'NewsArticle' : 'BlogPosting',
     headline: postData.title,
     description: postData.excerpt || postData.title,
-    image: postData.image ? [postData.image] : [],
+    image: schemaImage ? [schemaImage] : [],
     datePublished: postData.date,
     dateModified: postData.date,
     mainEntityOfPage: {
@@ -121,7 +126,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       url: 'https://www.estradaadois.com',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.estradaadois.com/logo.png',
+        url: 'https://www.estradaadois.com/images/logo-publisher-512x512.png',
       },
     },
   };
