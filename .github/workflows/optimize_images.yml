@@ -1,33 +1,43 @@
 name: Otimizar Imagens do Blog
 
+permissions:
+  contents: write
+
+concurrency:
+  group: optimize-images
+  cancel-in-progress: false
+
+
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'public/images/**'
+  schedule:
+    # Manutenção semanal: domingo às 04:17 no horário de Brasília (07:17 UTC).
+    # Não roda mais a cada nova imagem para evitar commits e Actions redundantes.
+    - cron: '17 7 * * 0'
 
 jobs:
   optimize:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout do Código
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Configurar Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: '20'
+          node-version: '24'
+          package-manager-cache: false
 
       - name: Instalar Dependências
-        run: npm install
+        run: npm ci --no-audit --no-fund
 
       - name: Executar Otimização de Imagens
         run: node scripts/optimize_images.mjs
 
       - name: Salvar Imagens Otimizadas no Repositório
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "perf(images): otimização automática de imagens para WhatsApp e web (< 200KB)"
-          branch: main
-          file_pattern: 'public/images/**'
+        run: bash scripts/git_commit_retry.sh "perf(images): otimização inteligente de imagens do blog [skip vercel]" public/images

@@ -1,5 +1,13 @@
 name: Robô Jornalista (Auto-Post)
 
+permissions:
+  contents: write
+
+concurrency:
+  group: news-bot
+  cancel-in-progress: false
+
+
 on:
   schedule:
     # Horários de Brasília: 05:47, 09:47, 11:47, 14:47, 17:47, 19:47 (UTC +3h)
@@ -30,15 +38,19 @@ jobs:
     
     steps:
       - name: Checkout do Código
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
         
       - name: Configurar Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '24'
+          package-manager-cache: false
           
       - name: Instalar Dependências
-        run: npm install
+        run: npm ci --no-audit --no-fund
         
       - name: Rodar a Inteligência Artificial
         env:
@@ -49,9 +61,5 @@ jobs:
         run: node scripts/news_bot.mjs
         
       - name: Salvar e Publicar no Painel (Rascunho)
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Notícia Automática (Rascunho gerado pela IA) [skip vercel]"
-          branch: main
-          file_pattern: 'content/posts/*.md public/images/blog/*'
+        run: bash scripts/git_commit_retry.sh "Notícia Automática (Rascunho gerado pela IA) [skip vercel]" content/posts public/images/blog
 

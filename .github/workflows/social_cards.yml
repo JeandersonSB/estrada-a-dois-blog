@@ -1,5 +1,13 @@
 name: Gerador de Cards para Redes Sociais (Instagram & TikTok)
 
+permissions:
+  contents: write
+
+concurrency:
+  group: social-cards
+  cancel-in-progress: false
+
+
 on:
   push:
     branches:
@@ -29,19 +37,24 @@ on:
 
 jobs:
   gerar-cards-sociais:
+    if: ${{ github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip vercel]') }}
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout do Código
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Configurar Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '24'
+          package-manager-cache: false
 
       - name: Instalar Dependências
-        run: npm install
+        run: npm ci --no-audit --no-fund
 
       - name: Gerar Cards e Enviar no Telegram
         env:
@@ -63,9 +76,5 @@ jobs:
           fi
           node scripts/social_bot.mjs $ARGS
 
-      - name: Atualizar Histórico no Repositório (Git Auto-Commit)
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore: atualizar historico de cards sociais divulgados [skip vercel]"
-          branch: main
-          file_pattern: '.social_history.json'
+      - name: Atualizar Histórico no Repositório
+        run: bash scripts/git_commit_retry.sh "chore: atualizar historico de cards sociais divulgados [skip vercel]" .social_history.json

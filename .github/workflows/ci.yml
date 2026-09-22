@@ -1,0 +1,103 @@
+name: CI - Qualidade do Site
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+    paths:
+      - 'app/**'
+      - 'components/**'
+      - 'lib/**'
+      - 'scripts/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'next.config.ts'
+      - 'tsconfig.json'
+      - 'eslint.config.mjs'
+      - '.github/workflows/ci.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Instalar dependências de forma reproduzível
+        run: npm ci --no-audit --no-fund
+
+      - name: Validar scripts de automação
+        run: |
+          node --check scripts/normalize_published_images.mjs
+          bash -n scripts/git_commit_retry.sh
+
+      - name: Testar normalização de imagem na publicação
+        run: |
+          TEST_DIR="$(mktemp -d)"
+          git clone --quiet . "$TEST_DIR/repo"
+          cd "$TEST_DIR/repo"
+
+          git config user.name "ci-test"
+          git config user.email "ci-test@example.com"
+
+          mkdir -p content/posts public/images/blog
+          printf 'imagem-de-teste' > public/images/blog/IMG_1234.JPG
+
+          cat > content/posts/artigo-teste.md <<'EOF'
+          ---
+          title: "Artigo Teste"
+          status: "⏳ Rascunho"
+          image: "/images/blog/IMG_1234.JPG"
+          ---
+
+          Conteúdo de teste.
+          EOF
+
+          git add content/posts/artigo-teste.md public/images/blog/IMG_1234.JPG
+          git commit --quiet -m "fixture: rascunho"
+          BEFORE_SHA="$(git rev-parse HEAD)"
+
+          sed -i 's/⏳ Rascunho/🟢 Publicado/' content/posts/artigo-teste.md
+          git add content/posts/artigo-teste.md
+          git commit --quiet -m "fixture: publicar"
+          HEAD_SHA="$(git rev-parse HEAD)"
+
+          node scripts/normalize_published_images.mjs "$BEFORE_SHA" "$HEAD_SHA"
+
+          test -f public/images/blog/artigo-teste.jpg
+          test ! -f public/images/blog/IMG_1234.JPG
+          grep -F 'image: "/images/blog/artigo-teste.jpg"' content/posts/artigo-teste.md
+
+      - name: ESLint
+        run: npm run lint
+
+      - name: TypeScript
+        run: npx tsc --noEmit
+
+      - name: Build Next.js
+        run: npm run build
+
+      - name: Auditoria de dependências de produção
+        run: npm audit --omit=dev --audit-level=high
+
+      - name: Relatório completo de dependências
+        continue-on-error: true
+        run: npm audit --audit-level=low

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Head from 'next/head';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Sobre Nós | Estrada a Dois',
@@ -54,7 +54,7 @@ export default function SobreNos() {
               <h2 className="text-2xl font-black text-[#0F0F0F] uppercase">Jeanderson</h2>
               <p className="text-[#8ac200] font-bold text-sm uppercase tracking-widest mb-3">Publicitário • Produtor • Piloto</p>
               <p className="text-gray-600 text-sm">
-                A paixão pelas motos veio do meu pai. Estimo já ter percorrido mais de 200 mil km. Nas viagens, cuido da pilotagem, das rotas, da manutenção e do famoso "Tetris" da bagagem.
+                A paixão pelas motos veio do meu pai. Estimo já ter percorrido mais de 200 mil km. Nas viagens, cuido da pilotagem, das rotas, da manutenção e do famoso &quot;Tetris&quot; da bagagem.
               </p>
             </div>
           </div>
@@ -88,9 +88,9 @@ export default function SobreNos() {
             <p className="text-gray-400 text-lg mb-8 leading-relaxed">
               Compartilhamos rotas, custos, experiências e mostramos que grandes viagens não dependem apenas da moto, mas da sua vontade de viver o momento.
             </p>
-            <a href="/categoria/roteiros" className="inline-flex items-center justify-center bg-[#B6D200] hover:bg-[#8ac200] text-black font-black uppercase tracking-wider py-4 px-8 rounded-lg transition-colors w-max">
+            <Link href="/categoria/roteiros" className="inline-flex items-center justify-center bg-[#B6D200] hover:bg-[#8ac200] text-black font-black uppercase tracking-wider py-4 px-8 rounded-lg transition-colors w-max">
               Explorar Roteiros
-            </a>
+            </Link>
           </div>
           <div className="w-full md:w-1/2 h-64 md:h-full md:absolute md:right-0 md:top-0">
              <img 

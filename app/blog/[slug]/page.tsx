@@ -1,5 +1,7 @@
 ﻿import type { Metadata } from 'next';
 import { getPostData, getSortedPostsData } from '@/lib/posts';
+import { SmartImage } from '@/components/SmartImage';
+import Link from 'next/link';
 
 export const revalidate = 60;
 
@@ -149,13 +151,13 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         </header>
 
         {/* Featured Image */}
-        <div className="w-full h-auto md:h-[500px] mb-12 rounded-2xl overflow-hidden shadow-2xl">
-          <img 
-            src={postData.image} 
-            alt={postData.title} 
-            fetchPriority="high"
-            decoding="async"
-            className="w-full h-full object-cover"
+        <div className="relative w-full aspect-[16/9] md:h-[500px] mb-12 rounded-2xl overflow-hidden shadow-2xl">
+          <SmartImage
+            src={postData.image}
+            alt={postData.title}
+            priority
+            sizes="(min-width: 896px) 896px, 100vw"
+            className="object-cover"
           />
         </div>
 
@@ -175,7 +177,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                   Leia Também &bull; <span className="text-[#8ac200]">Artigos Recomendados</span>
                 </h3>
               </div>
-              <a
+              <Link
                 href="/"
                 className="text-xs md:text-sm font-bold text-gray-500 hover:text-[#0F0F0F] uppercase tracking-wider hidden sm:inline-flex items-center gap-1 transition-colors"
               >
@@ -183,7 +185,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                 <svg className="w-4 h-4 text-[#B6D200]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
                 </svg>
-              </a>
+              </Link>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -194,12 +196,11 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                   className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 hover:border-[#B6D200]/70 transition-all duration-300 flex flex-col h-full"
                 >
                   <div className="aspect-[16/10] w-full overflow-hidden relative bg-black/10">
-                    <img
+                    <SmartImage
                       src={related.image}
                       alt={related.title}
-                      loading="lazy"
-                      decoding="async"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <span className="absolute top-3 left-3 bg-[#B6D200] text-[#0F0F0F] text-[10px] font-black uppercase px-2.5 py-1 tracking-wider rounded shadow-md z-10">
                       {related.category}
@@ -225,10 +226,10 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         {/* Tags / Footer */}
         <footer className="mt-12 pt-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row items-center justify-between">
-             <a href="/" className="inline-flex items-center text-[#0F0F0F] font-black uppercase tracking-widest hover:text-[#B6D200] transition-colors">
+             <Link href="/" className="inline-flex items-center text-[#0F0F0F] font-black uppercase tracking-widest hover:text-[#B6D200] transition-colors">
                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                Voltar para Home
-             </a>
+             </Link>
           </div>
         </footer>
 

@@ -76,7 +76,7 @@ export async function POST(req: Request) {
     }
 
     return NextResponse.json({ success: true });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('Erro na rota /api/contato:', err);
     return NextResponse.json(
       { error: 'Ocorreu um erro interno ao enviar sua mensagem.' },

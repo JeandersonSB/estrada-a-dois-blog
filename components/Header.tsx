@@ -1,5 +1,6 @@
 'use client';
 import { useState, useRef, useEffect, useCallback } from 'react';
+import Link from 'next/link';
 
 const CROWN_SRC = '/images/coroa-estrada-a-dois.png';
 
@@ -88,7 +89,7 @@ export function Header() {
         />
 
         {/* Logo Text */}
-        <a 
+        <Link
           href="/" 
           className="font-brand text-[30px] md:text-[36px] hover:opacity-80 transition-opacity z-10 relative flex gap-[6px] md:gap-[8px] md:ml-6"
           ref={(el) => { targetsRef.current['logo'] = el; }}
@@ -97,7 +98,7 @@ export function Header() {
         >
           <span className="text-[#0F0F0F] font-black italic">Estrada</span> 
           <span className="text-[#B6D200] font-black italic">a Dois</span>
-        </a>
+        </Link>
         
         {/* Desktop Navigation */}
         <nav 
