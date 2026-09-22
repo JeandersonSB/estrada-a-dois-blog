@@ -2,7 +2,7 @@ name: Faxina Vercel (Limpeza de Deploys Antigos)
 
 on:
   schedule:
-    # Roda todos os dias às 00:47 de Brasília (03:47 UTC)
+    # Roda a cada 6 horas, sempre no minuto 47 (UTC)
     - cron: '47 */6 * * *'
   workflow_dispatch:
     # Permite disparar manualmente a qualquer momento pela aba Actions do GitHub
