@@ -4,7 +4,6 @@
 const VERCEL_TOKEN = process.env.VERCEL_TOKEN;
 const PROJECT_ID = process.env.VERCEL_PROJECT_ID || 'prj_VAkuyXkjskhBGAEkT7R5LyglgJAp';
 const TEAM_ID = process.env.VERCEL_TEAM_ID || 'team_aJBVPVcwGqAPDRsLQYhOBYRf';
-const KEEP_PRODUCTION = parseInt(process.env.KEEP_PRODUCTION || '3', 10);
 const KEEP_PREVIEW = parseInt(process.env.KEEP_PREVIEW || '2', 10);
 const MAX_DEPLOYMENTS = parseInt(process.env.MAX_DEPLOYMENTS || '500', 10);
 
@@ -69,7 +68,7 @@ async function deleteDeployment(dep) {
 async function run() {
   console.log('🧹 Faxina Vercel iniciada.');
   console.log(`Projeto: ${PROJECT_ID}`);
-  console.log(`Retenção: ${KEEP_PRODUCTION} produção + ${KEEP_PREVIEW} previews READY`);
+  console.log(`Retenção: produção preservada integralmente + ${KEEP_PREVIEW} previews READY`);
 
   const deployments = (await fetchDeployments()).sort(newestFirst);
 
@@ -92,23 +91,20 @@ async function run() {
       !previewReady.includes(d)
   );
 
-  const keepProduction = new Set(
-    production.slice(0, KEEP_PRODUCTION).map((d) => d.uid || d.id)
-  );
-
   const keepPreview = new Set(
     previewReady.slice(0, KEEP_PREVIEW).map((d) => d.uid || d.id)
   );
 
+  // Produção NUNCA é removida automaticamente.
+  // Isso protege rollbacks, aliases ativos e versões históricas úteis.
   const toDelete = [
-    ...production.filter((d) => !keepProduction.has(d.uid || d.id)),
     ...previewReady.filter((d) => !keepPreview.has(d.uid || d.id)),
     ...disposable,
   ];
 
   console.log(`📦 Encontrados: ${deployments.length}`);
   console.log(`🛡️ Em andamento preservados: ${inProgress.length}`);
-  console.log(`🛡️ Produção preservada: ${Math.min(production.length, KEEP_PRODUCTION)}`);
+  console.log(`🛡️ Produção preservada integralmente: ${production.length}`);
   console.log(`🛡️ Preview READY preservado: ${Math.min(previewReady.length, KEEP_PREVIEW)}`);
   console.log(`🗑️ A excluir: ${toDelete.length}`);
 
