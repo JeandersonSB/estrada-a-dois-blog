@@ -10,36 +10,14 @@ const POSTS_DIR = path.join(process.cwd(), 'content', 'posts');
 
 function calcularMetaNoticias() {
   const envVal = process.env.NEWS_COUNT ? parseInt(process.env.NEWS_COUNT, 10) : null;
+
   if (envVal && !isNaN(envVal) && envVal > 0) {
-    return envVal;
+    const manualCount = Math.min(Math.max(envVal, 1), 3);
+    console.log(`🎛️ Execução manual: meta definida em ${manualCount} notícia(s).`);
+    return manualCount;
   }
 
-  // Se nao foi fixado manualmente, checar a ultima noticia postada no blog
-  try {
-    if (fs.existsSync(POSTS_DIR)) {
-      const files = fs.readdirSync(POSTS_DIR).filter(f => f.endsWith('.md'));
-      let ultimaData = 0;
-      for (const f of files) {
-        const c = fs.readFileSync(path.join(POSTS_DIR, f), 'utf8');
-        if (c.includes('Notícias') || c.includes('Noticias')) {
-          const d = c.match(/date:\s*["']?([^"'\r\n]+)["']?/);
-          if (d && d[1]) {
-            const time = new Date(d[1]).getTime();
-            if (time > ultimaData) ultimaData = time;
-          }
-        }
-      }
-      if (ultimaData > 0) {
-        const diffHoras = (Date.now() - ultimaData) / (1000 * 60 * 60);
-        if (diffHoras >= 3.5) {
-          console.log(`⏱️ Última notícia gerada há ${diffHoras.toFixed(1)}h (compensando intervalo). Meta ajustada para 2 notícias.`);
-          return 2;
-        }
-      }
-    }
-  } catch (e) {
-    console.log('Aviso ao checar compensacao de noticias:', e.message);
-  }
+  // Execuções automáticas nunca compensam intervalos gerando conteúdo extra.
   return 1;
 }
 
@@ -48,30 +26,31 @@ if (!API_KEY) {
   process.exit(1);
 }
 
-// 1. FEED PRINCIPAL: Mercado Brasileiro (gl=BR, hl=pt-BR) - Janela dos ultimos 7 dias
+// 1. FEED PRINCIPAL: Mercado Brasileiro (gl=BR, hl=pt-BR) - Janela máxima de 72 horas
 const QUERIES_BR = [
-  'motos lancamento when:7d',
-  'motos brasil lancamento when:7d',
-  'motos brasil when:7d',
-  'motociclismo brasil when:7d',
-  'honda motos brasil when:7d',
-  'yamaha motos brasil when:7d',
-  'royal enfield brasil when:7d',
-  'shineray motos brasil when:7d',
-  'bmw motorrad brasil when:7d',
-  'triumph motos brasil when:7d',
-  'kawasaki motos brasil when:7d',
-  'duas rodas motos brasil when:7d'
+  'motos lancamento when:3d',
+  'motos brasil lancamento when:3d',
+  'motos brasil when:3d',
+  'motociclismo brasil when:3d',
+  'honda motos brasil when:3d',
+  'yamaha motos brasil when:3d',
+  'royal enfield brasil when:3d',
+  'shineray motos brasil when:3d',
+  'bmw motorrad brasil when:3d',
+  'triumph motos brasil when:3d',
+  'kawasaki motos brasil when:3d',
+  'duas rodas motos brasil when:3d'
 ];
 
 // 2. FEED SECUNDARIO: Mercado Global (apenas fallback)
 const QUERIES_GLOBAL = [
-  'motorcycle launch when:7d',
-  'motorcycle unveiled when:7d',
-  'new motorcycle model when:7d'
+  'motorcycle launch when:3d',
+  'motorcycle unveiled when:3d',
+  'new motorcycle model when:3d'
 ];
 
-const MAX_AGE_HOURS = 168;
+const MAX_AGE_HOURS = 72;
+const TOPIC_COOLDOWN_HOURS = 72;
 
 const TOP_PORTALS = ['autoesporte', 'motor1', 'webmotors', 'motonline', 'motoo', 'estadao', 'uol', 'cnn', 'r7', 'noticiasautomotivas', 'garagem360', 'motociclismo', 'mobiauto'];
 
@@ -435,16 +414,22 @@ function carregarTodosPostsExistentes() {
         const content = fs.readFileSync(path.join(POSTS_DIR, f), 'utf8');
         const titleMatch = content.match(/title:\s*["']?([^"'\r\n]+)["']?/i);
         const dateMatch = content.match(/date:\s*["']?([^"'\r\n]+)["']?/i);
+        const excerptMatch = content.match(/excerpt:\s*["']?([^"'\r\n]+)["']?/i);
+        const categoryMatch = content.match(/category:\s*["']?([^"'\r\n]+)["']?/i);
         const title = titleMatch ? titleMatch[1].trim() : '';
+        const excerpt = excerptMatch ? excerptMatch[1].trim() : '';
+        const category = categoryMatch ? categoryMatch[1].trim() : '';
         const dateStr = dateMatch ? dateMatch[1].trim() : '';
         const time = dateStr ? new Date(dateStr).getTime() : 0;
         if (title) {
           posts.push({
             slug: f.replace('.md', ''),
             title,
+            excerpt,
+            category,
             date: dateStr,
             time,
-            tokens: extrairTokensAntiDuplicidade(title)
+            tokens: extrairTokensAntiDuplicidade(`${title} ${excerpt}`)
           });
         }
       } catch (err) {}
@@ -457,54 +442,111 @@ function carregarTodosPostsExistentes() {
   }
 }
 
-function verificarDuplicidadeTematica(tituloCandidato, todosPosts) {
-  const candTokens = Array.from(extrairTokensAntiDuplicidade(tituloCandidato));
-  if (candTokens.length === 0) return null;
+function calcularSimilaridadeTematica(textoCandidato, post) {
+  const candTokens = Array.from(extrairTokensAntiDuplicidade(textoCandidato));
+  if (candTokens.length === 0) {
+    return { overlap: [], jaccard: 0 };
+  }
+
+  const overlap = candTokens.filter(t => post.tokens.has(t));
+  const unionSize = new Set([...candTokens, ...post.tokens]).size;
+  const jaccard = unionSize > 0 ? overlap.length / unionSize : 0;
+
+  return { overlap, jaccard };
+}
+
+function analisarConflitosTematicos(item, todosPosts) {
+  const textoCandidato = `${item.title || ''} ${item.contentSnippet || ''} ${item.content || ''}`;
+  const agora = Date.now();
+  const hardDuplicates = [];
+  const cooldownConflicts = [];
 
   for (const post of todosPosts) {
-    const overlap = candTokens.filter(t => post.tokens.has(t));
-    const unionSize = new Set([...candTokens, ...post.tokens]).size;
-    const jaccard = unionSize > 0 ? overlap.length / unionSize : 0;
+    const { overlap, jaccard } = calcularSimilaridadeTematica(textoCandidato, post);
+    if (overlap.length === 0) continue;
 
-    if (overlap.length >= 3 || (overlap.length >= 2 && jaccard >= 0.28)) {
-      return {
-        postExistente: post.title,
+    // Duplicidade forte: praticamente a mesma pauta, mesmo com título reescrito.
+    if (overlap.length >= 4 || (overlap.length >= 3 && jaccard >= 0.34) || jaccard >= 0.5) {
+      hardDuplicates.push({
+        title: post.title,
+        date: post.date,
         overlap,
         jaccard
-      };
+      });
+      continue;
+    }
+
+    const ageHours = post.time > 0 ? (agora - post.time) / (1000 * 60 * 60) : Infinity;
+
+    // Cooldown de 72h: mesmo modelo/assunto exige revisão editorial da IA.
+    if (
+      ageHours >= 0 &&
+      ageHours <= TOPIC_COOLDOWN_HOURS &&
+      (overlap.length >= 2 || jaccard >= 0.22)
+    ) {
+      cooldownConflicts.push({
+        title: post.title,
+        date: post.date,
+        ageHours,
+        overlap,
+        jaccard
+      });
     }
   }
-  return null;
+
+  return { hardDuplicates, cooldownConflicts };
 }
 
 // Triagem editorial com IA: escolhe candidatos estritamente inéditos
 async function selecionarCandidatosIneditos(candidatosDisponiveis, postsRecentes, targetCount, genAI) {
   if (!candidatosDisponiveis || candidatosDisponiveis.length === 0) return [];
-  if (!postsRecentes || postsRecentes.length === 0) return candidatosDisponiveis.slice(0, targetCount);
 
-  const listaRecentes = postsRecentes.slice(0, 35).map((p, i) => `${i + 1}. "${p.title}"`).join('\n');
-  const listaCandidatos = candidatosDisponiveis.slice(0, 10).map((c, i) => `[${i + 1}] "${c.title}"`).join('\n');
+  const listaRecentes = postsRecentes
+    .slice(0, 40)
+    .map((p, i) => `${i + 1}. [${p.date || 'sem data'}] "${p.title}"${p.excerpt ? ` — ${p.excerpt}` : ''}`)
+    .join('\n');
+
+  const listaCandidatos = candidatosDisponiveis
+    .slice(0, 10)
+    .map((c, i) => {
+      const resumo = String(c.contentSnippet || c.content || '').replace(/\s+/g, ' ').slice(0, 500);
+      const conflitos = (c._cooldownConflicts || [])
+        .slice(0, 3)
+        .map(x => `"${x.title}" (${x.ageHours.toFixed(1)}h atrás; termos em comum: ${x.overlap.join(', ')})`)
+        .join(' | ');
+
+      return [
+        `[${i + 1}] "${c.title}"`,
+        `Resumo: ${resumo || 'sem resumo disponível'}`,
+        conflitos ? `ALERTA DE COOLDOWN 72H: ${conflitos}` : 'Cooldown: sem conflito detectado'
+      ].join('\n');
+    })
+    .join('\n\n');
 
   const promptTriagem = `
 Voce e o Editor-Chefe do portal de motociclismo "Estrada a Dois".
-Abaixo estao as ultimas materias publicadas no portal e a lista de novas noticias candidatas coletadas dos portais do setor.
+Sua prioridade e QUALIDADE EDITORIAL, INEDITISMO e utilidade para o motociclista brasileiro — nunca preencher cota de publicacao.
 
-DIRETRIZES RIGIDAS DE DECISAO EDITORIAL:
-1. VARIABILIDADE E INEDITISMO: O leitor nao quer ver materias repetidas sobre o mesmo modelo, lancamento ou evento que ja cobrimos recentemente.
-2. SE UM CANDIDATO COBRE O MESMO FATO/MODELO/EVENTO JA PUBLICADO NO BLOG (mesmo que com palavras diferentes de outro portal): REJEITE O CANDIDATO!
-3. DIVERSIDADE DE MARCAS: Priorize modelos e marcas que nao foram abordados nos ultimos dias.
-4. Se NENHUM candidato for uma novidade real ou todos forem repeticoes de temas ja cobertos, responda ESTRITAMENTE:
-SELECAO: NENHUM
+REGRAS RIGIDAS:
+1. REJEITE candidato que trate do mesmo fato, modelo, lancamento ou evento ja coberto, mesmo com titulo diferente.
+2. COOLDOWN DE 72 HORAS: se houver alerta de cooldown para o mesmo modelo/assunto, REJEITE por padrao.
+3. EXCECAO AO COOLDOWN: so aceite se houver uma ATUALIZACAO MATERIAL NOVA e verificavel, como preco oficial novo, chegada confirmada ao Brasil, ficha tecnica oficial antes desconhecida, data oficial, recall, homologacao, nova versao formalmente apresentada ou outro fato concreto que altere substancialmente a materia anterior.
+4. Mudanca de titulo, nova fonte repetindo a mesma informacao, rumor equivalente, novas fotos sem fato novo ou simples repercussao NAO sao atualizacao material.
+5. DIVERSIDADE: nao selecione dois candidatos sobre o mesmo modelo/evento na mesma execucao.
+6. VALOR PROPRIO: selecione apenas noticias que permitam acrescentar contexto util ao leitor brasileiro (mercado, concorrentes, especificacoes, disponibilidade, posicionamento ou implicacao pratica).
+7. Se nenhuma pauta atingir esse nivel, responda ESTRITAMENTE: SELECAO: NENHUM.
 
-MATERIAS RECENTES JA PUBLICADAS NO BLOG:
-${listaRecentes}
+MATERIAS RECENTES/JÁ EXISTENTES:
+${listaRecentes || 'Nenhuma materia anterior carregada.'}
 
-CANDIDATOS COLETADOS:
+CANDIDATOS:
 ${listaCandidatos}
 
-Sua missao: Selecione ate ${targetCount} numero(s) dos candidatos que sao NOTICIAS REALMENTE INEDITAS para o blog.
-Responda ESTRITAMENTE no formato:
-SELECAO: [numeros separados por virgula, ex: 1, 3] ou SELECAO: NENHUM
+Selecione no maximo ${targetCount} candidato(s).
+Responda ESTRITAMENTE:
+SELECAO: [numeros separados por virgula]
+ou
+SELECAO: NENHUM
 `;
 
   const modelCandidates = [
@@ -515,33 +557,53 @@ SELECAO: [numeros separados por virgula, ex: 1, 3] ou SELECAO: NENHUM
   for (const modelName of modelCandidates) {
     try {
       const model = genAI.getGenerativeModel({ model: modelName });
-      const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout triagem')), 12000));
+      const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout triagem')), 15000));
       const res = await Promise.race([model.generateContent(promptTriagem), timeoutPromise]);
       const texto = res.response.text().trim();
       console.log(`[Editor-Chefe IA] Resposta da triagem: ${texto}`);
 
       if (texto.includes('NENHUM')) {
-        console.log(`[Editor-Chefe IA] Todos os candidatos analisados sao repeticoes de temas ja publicados.`);
+        console.log('[Editor-Chefe IA] Nenhuma pauta atingiu o nível editorial mínimo.');
         return [];
       }
 
       const match = texto.match(/SELECAO:\s*([0-9,\s]+)/i);
       if (match && match[1]) {
-        const indexes = match[1].split(',').map(n => parseInt(n.trim(), 10) - 1).filter(n => !isNaN(n) && n >= 0 && n < candidatosDisponiveis.length);
-        if (indexes.length > 0) {
-          const selecionados = indexes.slice(0, targetCount).map(idx => candidatosDisponiveis[idx]);
-          console.log(`[Editor-Chefe IA] Selecionado(s) ${selecionados.length} candidato(s) inédito(s):`);
-          selecionados.forEach(s => console.log(`  - "${s.title}"`));
+        const indexes = [...new Set(
+          match[1]
+            .split(',')
+            .map(n => parseInt(n.trim(), 10) - 1)
+            .filter(n => !isNaN(n) && n >= 0 && n < candidatosDisponiveis.length)
+        )];
+
+        const selecionados = [];
+        for (const idx of indexes) {
+          const item = candidatosDisponiveis[idx];
+          const textoItem = `${item.title || ''} ${item.contentSnippet || ''}`;
+
+          const conflitoInterno = selecionados.some(prev => {
+            const prevPost = {
+              tokens: extrairTokensAntiDuplicidade(`${prev.title || ''} ${prev.contentSnippet || ''}`)
+            };
+            const sim = calcularSimilaridadeTematica(textoItem, prevPost);
+            return sim.overlap.length >= 3 || sim.jaccard >= 0.35;
+          });
+
+          if (!conflitoInterno) selecionados.push(item);
+          if (selecionados.length >= targetCount) break;
+        }
+
+        if (selecionados.length > 0) {
+          console.log(`[Editor-Chefe IA] ${selecionados.length} pauta(s) aprovada(s) após controle semântico/cooldown.`);
           return selecionados;
         }
       }
-      break;
     } catch (err) {
       console.warn(`Tentativa de triagem com ${modelName} falhou: ${err.message}`);
     }
   }
 
-  // Se a IA respondeu NENHUM ou formato inválido, NÃO force candidatos duplicados
+  // Falha da triagem não deve virar publicação automática.
   return [];
 }
 
@@ -571,20 +633,22 @@ async function processarItem(item, genAI, isBrazilianSource = true) {
   Sua tarefa:
   1. Identifique a moto, marca ou modelo PRINCIPAL da noticia em 2 ou 3 palavras em ingles/geral (Exemplo: "Honda Sahara 300", "Yamaha MT-09", "Royal Enfield Guerrilla 450", "Triumph Speed 400", "BMW R1300 GS", "CFMoto Brasil").
   2. Redija um artigo jornalistico completo e aprofundado em Portugues do Brasil (pt-BR), focado em SEO, explicando especificacoes, motor, proposta e impacto para o motociclista no mercado brasileiro.
-  3. Nao adicione topicos de "viagem" ou "mototurismo", o foco e na MAQUINA, TECNOLOGIA, MERCADO ou INDUSTRIA.
-  4. Nao invente fatos, explique os termos tecnicos.
-  5. LINKAGEM INTERNA DE SEO (OBRIGATORIO): No final do texto, exatamente antes da linha da "Fonte:", insira SEMPRE um destaque em blockquote com uma recomendacao de leitura interna para o leitor conhecer nossos roteiros reais de viagem (escolha UMA das opcoes abaixo que melhor se contextualizar):
+  3. OBRIGATORIO: agregue valor alem de reescrever a fonte. Contextualize a noticia para o Brasil com pelo menos dois destes elementos, somente quando houver base factual: concorrentes diretos, posicionamento de mercado, diferencas para a geracao/versao anterior, disponibilidade no Brasil, faixa de cilindrada/categoria, tecnologias relevantes ou implicacao pratica para o motociclista.
+  4. OBRIGATORIO: inclua uma secao com o titulo exato "## O que isso significa para o motociclista brasileiro". Nessa secao, explique de forma objetiva por que a noticia importa; nao invente preco, data, disponibilidade ou especificacoes.
+  5. Nao adicione topicos de "viagem" ou "mototurismo", o foco e na MAQUINA, TECNOLOGIA, MERCADO ou INDUSTRIA.
+  6. Nao invente fatos, explique os termos tecnicos e diferencie claramente informacao oficial de expectativa/rumor.
+  7. LINKAGEM INTERNA DE SEO (OBRIGATORIO): No final do texto, exatamente antes da linha da "Fonte:", insira SEMPRE um destaque em blockquote com uma recomendacao de leitura interna para o leitor conhecer nossos roteiros reais de viagem (escolha UMA das opcoes abaixo que melhor se contextualizar):
      - > 🏍️ **Leia também:** [De R15 à Serra do Rio do Rastro: Um Sonho em Duas Rodas](/blog/de-r15-a-serra-do-rio-do-rastro-um-sonho-em)
      - > 🏍️ **Veja nosso diário de bordo:** [5 serras e 831 km de moto em um fim de semana](/blog/5-serras-e-831-km-de-moto-em-um-fim-de)
      - > 🏍️ **Confira esse roteiro:** [De R15 para as Cataratas: Roteiro de 2.012 km a Dois](/blog/de-r15-para-as-cataratas-roteiro-de)
      - > 🏍️ **Inspire-se na estrada:** [Rota 513, Letts Road e o Túnel de Bambus de moto](/blog/rota-513-letts-road-e-o-t-nel-de-bambus-um)
      - > 🏍️ **Conheça o casal:** [Sobre o projeto Estrada a Dois e nossas viagens](/sobre)
-  6. REGRA RIGIDA DA FONTE: No final do artigo, insira exatamente "Fonte: [Nome do Veiculo/Portal]" em texto puro. NUNCA adicione link markdown nem URLs na fonte! Exemplo correto: "Fonte: Autoesporte" ou "Fonte: Motor1 Brasil".
+  8. REGRA RIGIDA DA FONTE: No final do artigo, insira exatamente "Fonte: [Nome do Veiculo/Portal]" em texto puro. NUNCA adicione link markdown nem URLs na fonte! Exemplo correto: "Fonte: Autoesporte" ou "Fonte: Motor1 Brasil".
   
   REGRAS INEGOCIAVEIS DE SEGURANCA E CONTEUDO:
   - REGRA 1 (ANTI-CRIME / SEGURANCA): E TERMINANTEMENTE PROIBIDO gerar materias sobre crimes, acidentes, mortes, colisoes, roubos, furtos, apreensoes policiais, leiloes ou tragedias. Responda APENAS: "IGNORAR_CONTEUDO_INVALIDO".
   - REGRA 2 (ANTI-VENDA): E TERMINANTEMENTE PROIBIDO gerar conteudo de catalogo de compras, links de lojas, precos promocionais, cupons ou chamadas de venda. Responda APENAS: "IGNORAR_CONTEUDO_INVALIDO".
-  - REGRA 3 (TEMPO E ATUALIDADE - ULTIMOS 7 DIAS): Esta noticia e recente (ultimos 7 dias). E TERMINANTEMENTE PROIBIDO citar o ano de 2025 ou anos anteriores como lancamentos futuros.
+  - REGRA 3 (TEMPO E ATUALIDADE - ULTIMAS 72 HORAS): Esta noticia foi selecionada dentro de uma janela maxima de 72 horas. E TERMINANTEMENTE PROIBIDO citar o ano de 2025 ou anos anteriores como lancamentos futuros.
   
   Retorne EXATAMENTE e SOMENTE o codigo Markdown no formato abaixo (ou "IGNORAR_CONTEUDO_INVALIDO" caso infrinja as regras):
   
@@ -644,6 +708,11 @@ async function processarItem(item, genAI, isBrazilianSource = true) {
 
     if (markdownContent.includes('IGNORAR_CONTEUDO_INVALIDO') || markdownContent.includes('IGNORAR_CONTEUDO_COMERCIAL')) {
       console.log(`[Filtro de Seguranca] Gemini descartou conteudo invalido: "${item.title}"`);
+      return false;
+    }
+
+    if (!/##\s+O que isso significa para o motociclista brasileiro/i.test(markdownContent)) {
+      console.log(`[Filtro Editorial] Materia descartada por nao entregar contexto proprio para o leitor brasileiro: "${item.title}"`);
       return false;
     }
 
@@ -762,10 +831,11 @@ async function gerarNoticias() {
 
   console.log(`\n======================================================`);
   console.log(`Iniciando Robô Jornalista Estrada a Dois`);
-  console.log(`Janela Temporal: Últimos 7 dias`);
+  console.log(`Janela Temporal: Últimas 72 horas`);
   console.log(`Prioridade 1: Mercado Brasileiro (gl=BR, hl=pt-BR)`);
   console.log(`Prioridade 2: Mercado Global (fallback)`);
-  console.log(`Meta: ${targetCount} notícia(s)`);
+  console.log(`Meta: ${targetCount} notícia(s) — sem compensação automática`);
+  console.log(`Cooldown temático: ${TOPIC_COOLDOWN_HOURS} horas`);
   console.log(`Artigos existentes carregados no controle anti-duplicidade: ${todosPosts.length}`);
   console.log(`======================================================\n`);
 
@@ -780,11 +850,11 @@ async function gerarNoticias() {
       seenTitles.add(item.title);
 
       if (itemValido(item)) {
-        const dup = verificarDuplicidadeTematica(item.title, todosPosts);
-        if (dup) {
-          // Descarte silencioso de temas repetidos já abordados no blog
+        const conflitos = analisarConflitosTematicos(item, todosPosts);
+        if (conflitos.hardDuplicates.length > 0) {
           return;
         }
+        item._cooldownConflicts = conflitos.cooldownConflicts;
 
         let score = 100 - index;
         const fullSource = `${item.source || ''} ${item.title || ''} ${item.link || ''}`.toLowerCase();
@@ -824,8 +894,9 @@ async function gerarNoticias() {
       if (seenTitles.has(item.title)) continue;
       seenTitles.add(item.title);
       if (itemValido(item)) {
-        const dup = verificarDuplicidadeTematica(item.title, todosPosts);
-        if (dup) continue;
+        const conflitos = analisarConflitosTematicos(item, todosPosts);
+        if (conflitos.hardDuplicates.length > 0) continue;
+        item._cooldownConflicts = conflitos.cooldownConflicts;
 
         const initialSlug = gerarSlugInteligente(item.title, 65);
         if (fs.existsSync(path.join(POSTS_DIR, `${initialSlug}.md`))) continue;
@@ -849,8 +920,8 @@ async function gerarNoticias() {
   const selecionados = await selecionarCandidatosIneditos(candidatosValidos, todosPosts, targetCount, genAI);
 
   if (!selecionados || selecionados.length === 0) {
-    console.log("ℹ️ Todos os candidatos analisados foram classificados como repetições de temas já abordados.");
-    console.log("🛑 Nenhuma matéria duplicada será gerada para não acumular rascunhos no painel.");
+    console.log("ℹ️ Nenhuma pauta atingiu os critérios de ineditismo, cooldown e valor editorial.");
+    console.log("🛑 Nenhum artigo será criado apenas para cumprir frequência.");
     return;
   }
 
