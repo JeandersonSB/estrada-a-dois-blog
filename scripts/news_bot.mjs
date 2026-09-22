@@ -381,9 +381,9 @@ SELECAO: [numeros separados por virgula, ex: 1, 3]
 `;
 
   const modelCandidates = [
-    'gemini-1.5-flash',
-    'gemini-2.0-flash',
-    'gemini-1.5-pro'
+    'gemini-3.6-flash',
+    'gemini-flash-latest',
+    'gemini-2.5-flash'
   ];
 
   for (const modelName of modelCandidates) {
@@ -479,9 +479,9 @@ async function processarItem(item, genAI, isBrazilianSource = true) {
   try {
     let markdownContent = null;
     const modelCandidates = [
-      'gemini-1.5-flash',
-      'gemini-2.0-flash',
-      'gemini-1.5-pro'
+      'gemini-3.6-flash',
+      'gemini-flash-latest',
+      'gemini-2.5-flash'
     ];
     let lastError = null;
 
