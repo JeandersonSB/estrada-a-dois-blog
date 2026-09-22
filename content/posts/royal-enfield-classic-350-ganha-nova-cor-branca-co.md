@@ -3,7 +3,7 @@ title: Royal Enfield Classic 350 Ganha Nova Opção de Cor Branca com Assinatura
 status: 🟢 Publicado
 date: 2026-09-21T13:51:00
 category: Notícias
-image: "//images/blog/royal-enfield-classic-350-ganha-nova-cor-branca-co.webp"
+image: "/images/blog/royal-enfield-classic-350-ganha-nova-cor-branca-co.webp"
 excerpt: A consagrada Royal Enfield Classic 350 amplia sua gama estética ao introduzir uma nova pintura branca com detalhes de assinatura, reforçando seu apelo vintage na consagrada plataforma J.
 ---
 
