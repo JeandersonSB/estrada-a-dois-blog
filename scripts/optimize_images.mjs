@@ -2,19 +2,56 @@ import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
 
-// Desabilita cache de arquivos do libvips para evitar file lock
 sharp.cache(false);
 
 const pubDir = path.join(process.cwd(), 'public');
+const blogDir = path.join(pubDir, 'images', 'blog');
 
-let totalOriginalSize = 0;
-let totalNewSize = 0;
-let optimizedCount = 0;
+const KB = 1024;
+let scanned = 0;
+let optimized = 0;
+let originalBytes = 0;
+let finalBytes = 0;
+
+function targetFor(filePath) {
+  return filePath.startsWith(blogDir) ? 180 * KB : 240 * KB;
+}
+
+async function encodeAdaptive(inputBuffer, ext, maxWidth, targetBytes) {
+  const meta = await sharp(inputBuffer).metadata();
+  let pipeline = sharp(inputBuffer).rotate();
+
+  if (meta.width && meta.width > maxWidth) {
+    pipeline = pipeline.resize({ width: maxWidth, withoutEnlargement: true });
+  }
+
+  if (ext === '.png') {
+    const lossless = await pipeline.png({ compressionLevel: 9, effort: 10 }).toBuffer();
+    return lossless;
+  }
+
+  const qualities = [82, 78, 74, 70, 66, 62];
+  let best = inputBuffer;
+
+  for (const quality of qualities) {
+    let candidate;
+    if (ext === '.webp') {
+      candidate = await pipeline.webp({ quality, effort: 6 }).toBuffer();
+    } else if (ext === '.avif') {
+      candidate = await pipeline.avif({ quality: Math.max(quality - 5, 55), effort: 6 }).toBuffer();
+    } else {
+      candidate = await pipeline.jpeg({ quality, mozjpeg: true }).toBuffer();
+    }
+
+    if (candidate.length < best.length) best = candidate;
+    if (candidate.length <= targetBytes) return candidate;
+  }
+
+  return best;
+}
 
 async function processDirectory(dirPath) {
-  const items = fs.readdirSync(dirPath);
-
-  for (const item of items) {
+  for (const item of fs.readdirSync(dirPath)) {
     const fullPath = path.join(dirPath, item);
     const stats = fs.statSync(fullPath);
 
@@ -24,76 +61,62 @@ async function processDirectory(dirPath) {
     }
 
     const ext = path.extname(item).toLowerCase();
-    if (!['.jpg', '.jpeg', '.png', '.webp', '.avif'].includes(ext)) {
-      continue;
-    }
+    if (!['.jpg', '.jpeg', '.png', '.webp', '.avif'].includes(ext)) continue;
 
-    // Otimiza qualquer imagem com mais de 180 KB para garantir que fique bem abaixo do limite de 300 KB do WhatsApp
-    if (stats.size <= 180 * 1024) {
-      continue;
-    }
+    scanned++;
+    const targetBytes = targetFor(fullPath);
 
-    totalOriginalSize += stats.size;
+    // Evita recompressão contínua de arquivos que já estão dentro da meta.
+    if (stats.size <= targetBytes) continue;
+
+    originalBytes += stats.size;
     const relPath = path.relative(pubDir, fullPath);
 
     try {
       const inputBuffer = fs.readFileSync(fullPath);
-      const meta = await sharp(inputBuffer).metadata();
+      const maxWidth = fullPath.startsWith(blogDir) ? 1400 : 1600;
+      const outputBuffer = await encodeAdaptive(inputBuffer, ext, maxWidth, targetBytes);
 
-      let pipeline = sharp(inputBuffer).rotate();
+      const savingRatio = 1 - (outputBuffer.length / stats.size);
 
-      // Redimensionar para largura máxima de 1200px mantendo proporção
-      if (meta.width && meta.width > 1200) {
-        pipeline = pipeline.resize(1200, null, { withoutEnlargement: true });
-      }
-
-      let buffer;
-      if (ext === '.webp') {
-        buffer = await pipeline.webp({ quality: 78, effort: 5 }).toBuffer();
-      } else if (ext === '.avif') {
-        buffer = await pipeline.avif({ quality: 75, effort: 5 }).toBuffer();
-      } else if (ext === '.png') {
-        buffer = await pipeline.png({ quality: 80, compressionLevel: 9, effort: 8 }).toBuffer();
-        if (buffer.length > 220 * 1024) {
-          buffer = await pipeline.png({ quality: 75, palette: true }).toBuffer();
-        }
-      } else if (['.jpg', '.jpeg'].includes(ext)) {
-        buffer = await pipeline.jpeg({ quality: 78, mozjpeg: true }).toBuffer();
-      }
-
-      if (buffer && buffer.length < stats.size) {
-        fs.writeFileSync(fullPath, buffer);
-        totalNewSize += buffer.length;
-        optimizedCount++;
-        const savedPercent = (((stats.size - buffer.length) / stats.size) * 100).toFixed(1);
-        console.log(`✅ Otimizada: ${relPath} | ${(stats.size / 1024).toFixed(0)} KB -> ${(buffer.length / 1024).toFixed(0)} KB (-${savedPercent}%)`);
+      // Só reescreve quando há ganho real; isso evita perda cumulativa de qualidade.
+      if (outputBuffer.length < stats.size && savingRatio >= 0.05) {
+        fs.writeFileSync(fullPath, outputBuffer);
+        optimized++;
+        finalBytes += outputBuffer.length;
+        console.log(
+          `✅ ${relPath}: ${Math.round(stats.size / KB)} KB -> ${Math.round(outputBuffer.length / KB)} KB (-${(savingRatio * 100).toFixed(1)}%)`
+        );
       } else {
-        totalNewSize += stats.size;
-        console.log(`ℹ️ Mantida: ${relPath} (já no tamanho ideal)`);
+        finalBytes += stats.size;
+        console.log(`ℹ️ ${relPath}: mantida; ganho menor que 5% ou formato já eficiente.`);
       }
-    } catch (err) {
-      console.error(`❌ Erro ao otimizar ${relPath}:`, err.message);
-      totalNewSize += stats.size;
+
+      if (ext === '.png' && outputBuffer.length > targetBytes) {
+        console.log(`⚠️ ${relPath}: PNG ainda acima da meta. Converter manualmente para WebP tende a reduzir muito mais sem sacrificar a aparência.`);
+      }
+    } catch (error) {
+      finalBytes += stats.size;
+      console.error(`❌ ${relPath}: ${error.message}`);
     }
   }
 }
 
 async function run() {
-  console.log('🚀 Iniciando Otimização em Lote de Imagens em public/ (Alvo < 200 KB para WhatsApp)...\\n');
+  console.log('🚀 Otimização inteligente de imagens iniciada.');
   await processDirectory(pubDir);
 
-  const savedMB = ((totalOriginalSize - totalNewSize) / (1024 * 1024)).toFixed(2);
-  const origMB = (totalOriginalSize / (1024 * 1024)).toFixed(2);
-  const newMB = (totalNewSize / (1024 * 1024)).toFixed(2);
-
-  console.log('\\n======================================================');
-  console.log(`🎉 Total de imagens otimizadas: ${optimizedCount}`);
-  console.log(`📦 Tamanho anterior: ${origMB} MB`);
-  console.log(`✨ Tamanho otimizado: ${newMB} MB`);
-  if (totalOriginalSize > 0) {
-    console.log(`🔥 Economia de dados: ${savedMB} MB (${(((totalOriginalSize - totalNewSize) / totalOriginalSize) * 100).toFixed(1)}% menor!)`);
+  const saved = originalBytes - finalBytes;
+  console.log('\n======================================================');
+  console.log(`Imagens analisadas: ${scanned}`);
+  console.log(`Imagens regravadas: ${optimized}`);
+  if (originalBytes > 0) {
+    console.log(`Economia neste ciclo: ${(saved / (1024 * 1024)).toFixed(2)} MB`);
   }
-  console.log('======================================================\\n');
+  console.log('======================================================');
 }
 
-run();
+run().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
