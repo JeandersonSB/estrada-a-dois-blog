@@ -51,15 +51,23 @@ jobs:
 
       - name: Testar normalização de imagem na publicação
         run: |
-          TEST_DIR="$(mktemp -d)"
-          git clone --quiet . "$TEST_DIR/repo"
-          cd "$TEST_DIR/repo"
-
+          ORIGINAL_SHA="$(git rev-parse HEAD)"
           git config user.name "ci-test"
           git config user.email "ci-test@example.com"
 
           mkdir -p content/posts public/images/blog
-          printf 'imagem-de-teste' > public/images/blog/IMG_1234.JPG
+
+          node --input-type=module <<'NODE'
+          import sharp from 'sharp';
+          await sharp({
+            create: {
+              width: 800,
+              height: 600,
+              channels: 3,
+              background: { r: 30, g: 30, b: 30 }
+            }
+          }).jpeg({ quality: 85 }).toFile('public/images/blog/IMG_1234.JPG');
+          NODE
 
           cat > content/posts/artigo-teste.md <<'EOF'
           ---
@@ -85,6 +93,35 @@ jobs:
           test -f public/images/blog/artigo-teste.jpg
           test ! -f public/images/blog/IMG_1234.JPG
           grep -F 'image: "/images/blog/artigo-teste.jpg"' content/posts/artigo-teste.md
+
+          git reset --hard "$ORIGINAL_SHA"
+          git clean -fd content/posts public/images/blog
+
+      - name: Validar conversão do AVIF legado da Royal Enfield
+        run: |
+          node --input-type=module <<'NODE'
+          import sharp from 'sharp';
+
+          const source = 'public/images/blog/royal-enfield_classic-350_2026_19_21092026_72737_960_720.avif';
+          const output = '/tmp/royal-enfield-classic-350.webp';
+
+          const inputMeta = await sharp(source).metadata();
+          if (!inputMeta.width || !inputMeta.height) {
+            throw new Error('AVIF legado sem dimensões válidas');
+          }
+
+          await sharp(source)
+            .rotate()
+            .webp({ quality: 82, effort: 4 })
+            .toFile(output);
+
+          const outputMeta = await sharp(output).metadata();
+          if (outputMeta.format !== 'webp' || !outputMeta.width || !outputMeta.height) {
+            throw new Error('Falha ao converter AVIF legado para WebP');
+          }
+
+          console.log(`AVIF legado validado: ${inputMeta.width}x${inputMeta.height} -> WebP ${outputMeta.width}x${outputMeta.height}`);
+          NODE
 
       - name: ESLint
         run: npm run lint
