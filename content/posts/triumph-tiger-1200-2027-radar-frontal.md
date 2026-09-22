@@ -1,10 +1,10 @@
 ---
-title: "Triumph Tiger 1200 Deve Ganhar Radar Frontal e Piloto Automático Adaptativo para 2027"
-date: "2026-09-22T12:47:42"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "/images/blog/triumph-tiger-1200-2027-radar-frontal.webp"
-excerpt: "A Triumph prepara um salto tecnológico para a Tiger 1200, com a adição de radar frontal para piloto automático adaptativo, mirando a liderança entre as maxi-trails de alta cilindrada."
+title: Triumph Tiger 1200 Deve Ganhar Radar Frontal e Piloto Automático Adaptativo para 2027
+status: 🟢 Publicado
+date: 2026-09-22T09:57:00
+category: Notícias
+image: /images/blog/65970.jpg
+excerpt: A Triumph prepara um salto tecnológico para a Tiger 1200, com a adição de radar frontal para piloto automático adaptativo, mirando a liderança entre as maxi-trails de alta cilindrada.
 ---
 
 O segmento das grandes motocicletas aventureiras está passando por uma verdadeira revolução tecnológica baseada em sistemas avançados de assistência ao condutor (ARAS). Dentro dessa corrida por sofisticação e segurança ativa, novas patentes e informações de bastidores revelam que a Triumph prepara a introdução de um sistema de radar frontal para a linha Tiger 1200, com previsão de estreia global voltada para a linha 2027.
@@ -13,9 +13,9 @@ Atualmente, a big trail britânica já conta com tecnologia de ponta em suas ver
 
 ## Como funcionará o novo radar frontal
 
-A implementação do radar frontal na carenagem dianteira tem como principal finalidade habilitar o Piloto Automático Adaptativo (ACC - *Adaptive Cruise Control*). O sensor posicionado abaixo do conjunto óptico escaneia a pista à frente centenas de vezes por segundo, medindo a distância e a velocidade relativa do veículo à frente.
+A implementação do radar frontal na carenagem dianteira tem como principal finalidade habilitar o Piloto Automático Adaptativo (ACC - _Adaptive Cruise Control_). O sensor posicionado abaixo do conjunto óptico escaneia a pista à frente centenas de vezes por segundo, medindo a distância e a velocidade relativa do veículo à frente.
 
-Com esses parâmetros, a central eletrônica da motocicleta atua diretamente no acelerador eletrônico (*ride-by-wire*) e no sistema de freios ABS otimizado para curvas, mantendo automaticamente uma distância segura programada pelo piloto, sem necessidade de intervenção constante nos comandos. 
+Com esses parâmetros, a central eletrônica da motocicleta atua diretamente no acelerador eletrônico (_ride-by-wire_) e no sistema de freios ABS otimizado para curvas, mantendo automaticamente uma distância segura programada pelo piloto, sem necessidade de intervenção constante nos comandos. 
 
 Além do ACC, a tecnologia viabiliza o Alerta de Colisão Frontal (FCW). Caso o sistema detecte uma desaceleração brusca ou um obstáculo estático à frente, avisos visuais no painel TFT colorido de 7 polegadas e alertas táteis alertam o motociclista para aplicar a frenagem necessária, minimizando riscos em rodovias e trechos de visibilidade reduzida.
 
