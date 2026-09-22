@@ -41,7 +41,7 @@ jobs:
 
     steps:
       - name: Checkout do Código
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           ref: main
           fetch-depth: 0
@@ -75,9 +75,5 @@ jobs:
           fi
           node scripts/social_bot.mjs $ARGS
 
-      - name: Atualizar Histórico no Repositório (Git Auto-Commit)
-        uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          commit_message: "chore: atualizar historico de cards sociais divulgados [skip vercel]"
-          branch: main
-          file_pattern: '.social_history.json'
+      - name: Atualizar Histórico no Repositório
+        run: bash scripts/git_commit_retry.sh "chore: atualizar historico de cards sociais divulgados [skip vercel]" .social_history.json
