@@ -51,11 +51,13 @@ export function ContactForm() {
         message: '',
         _bot_honey: '',
       });
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(err);
       setStatus('error');
       setErrorMessage(
-        err.message || 'Ocorreu um erro ao enviar sua mensagem. Tente novamente ou use nosso e-mail direto.'
+        err instanceof Error
+          ? err.message
+          : 'Ocorreu um erro ao enviar sua mensagem. Tente novamente ou use nosso e-mail direto.'
       );
     }
   };
