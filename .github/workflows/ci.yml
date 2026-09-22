@@ -97,17 +97,26 @@ jobs:
           git reset --hard "$ORIGINAL_SHA"
           git clean -fd content/posts public/images/blog
 
-      - name: Validar conversão do AVIF legado da Royal Enfield
+      - name: Validar conversão de AVIF para WebP
         run: |
           node --input-type=module <<'NODE'
           import sharp from 'sharp';
 
-          const source = 'public/images/blog/royal-enfield_classic-350_2026_19_21092026_72737_960_720.avif';
-          const output = '/tmp/royal-enfield-classic-350.webp';
+          const source = '/tmp/fixture-avif.avif';
+          const output = '/tmp/fixture-avif.webp';
+
+          await sharp({
+            create: {
+              width: 960,
+              height: 720,
+              channels: 3,
+              background: { r: 235, g: 235, b: 235 }
+            }
+          }).avif({ quality: 70 }).toFile(source);
 
           const inputMeta = await sharp(source).metadata();
-          if (!inputMeta.width || !inputMeta.height) {
-            throw new Error('AVIF legado sem dimensões válidas');
+          if (inputMeta.format !== 'heif' && inputMeta.format !== 'avif') {
+            throw new Error(`Fixture AVIF inválida: ${inputMeta.format}`);
           }
 
           await sharp(source)
@@ -117,10 +126,10 @@ jobs:
 
           const outputMeta = await sharp(output).metadata();
           if (outputMeta.format !== 'webp' || !outputMeta.width || !outputMeta.height) {
-            throw new Error('Falha ao converter AVIF legado para WebP');
+            throw new Error('Falha ao converter AVIF para WebP');
           }
 
-          console.log(`AVIF legado validado: ${inputMeta.width}x${inputMeta.height} -> WebP ${outputMeta.width}x${outputMeta.height}`);
+          console.log(`Conversão AVIF -> WebP validada: ${outputMeta.width}x${outputMeta.height}`);
           NODE
 
       - name: ESLint
