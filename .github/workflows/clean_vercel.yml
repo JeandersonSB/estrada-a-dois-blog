@@ -13,12 +13,13 @@ jobs:
 
     steps:
       - name: Checkout do Código
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Configurar Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: '20'
+          node-version: '24'
+          package-manager-cache: false
 
       - name: Executar Faxina de Deploys Antigos
         env:
