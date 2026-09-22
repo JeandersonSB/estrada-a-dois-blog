@@ -34,6 +34,9 @@ jobs:
           node-version: '24'
           package-manager-cache: false
 
+      - name: Instalar dependências para validação de imagens
+        run: npm ci --no-audit --no-fund
+
       - name: Verificar publicação e normalizar imagem
         id: normalize
         env:
