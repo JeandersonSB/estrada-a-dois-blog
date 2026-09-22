@@ -62,8 +62,9 @@ jobs:
       - name: Criar commit final e liberar deploy
         if: steps.normalize.outputs.publish == 'true'
         env:
-          ALLOW_EMPTY_COMMIT: 'true'
+          SOURCE_SHA: ${{ github.sha }}
         run: |
+          printf '%s\n' "$SOURCE_SHA" > .publish-trigger
           bash scripts/git_commit_retry.sh \
             "chore(content): finalizar publicação e imagem [force vercel] [publish-finalized]" \
-            content/posts public/images/blog
+            content/posts public/images/blog .publish-trigger
