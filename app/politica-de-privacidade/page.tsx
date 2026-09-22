@@ -2,81 +2,114 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Política de Privacidade | Estrada a Dois',
-  description: 'Política de Privacidade e Termos de Uso do blog Estrada a Dois.',
+  description: 'Saiba como o Estrada a Dois trata dados pessoais, cookies, métricas de audiência e mensagens de contato.',
 };
 
 export default function PoliticaPrivacidade() {
   return (
     <div className="bg-[#f8f9fa] min-h-screen py-20">
       <div className="max-w-4xl mx-auto px-4">
-        
         <div className="bg-white p-8 md:p-16 rounded-2xl shadow-sm border border-gray-100">
           <h1 className="text-3xl md:text-4xl font-black text-[#0F0F0F] uppercase mb-8 border-b-4 border-[#B6D200] pb-4 inline-block">
             Política de Privacidade
           </h1>
-          
+
           <div className="prose prose-gray max-w-none text-[#555555] font-medium leading-relaxed space-y-6">
-            
             <p>
-              A sua privacidade é importante para nós. É política do <strong>Estrada a Dois</strong> respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site <a href="https://estradaadois.com" className="text-[#B6D200] hover:underline">estradaadois.com</a>, e outros sites que possuímos e operamos.
+              O <strong>Estrada a Dois</strong> respeita a privacidade de seus visitantes e trata dados pessoais de
+              forma compatível com a legislação aplicável, incluindo a Lei Geral de Proteção de Dados Pessoais
+              (LGPD — Lei nº 13.709/2018).
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">1. Informações que coletamos</h2>
+            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">1. Dados que podemos coletar</h2>
             <p>
-              Solicitamos informações pessoais (como nome e e-mail) apenas quando realmente precisamos delas para lhe fornecer um serviço, como ao assinar nossa newsletter ou preencher um formulário de contato. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento.
+              Ao navegar pelo site, alguns dados técnicos podem ser processados pela infraestrutura de hospedagem,
+              como endereço IP, data e hora de acesso, navegador, dispositivo e registros necessários para segurança
+              e funcionamento do serviço.
             </p>
             <p>
-              Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, os protegemos dentro de meios comercialmente aceitáveis para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.
+              Quando você utiliza o formulário de contato, podemos receber os dados que optar por informar, incluindo
+              <strong> nome, WhatsApp, e-mail, assunto e mensagem</strong>. Esses dados são usados exclusivamente para
+              receber, analisar e responder ao contato enviado.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">2. Compartilhamento de dados</h2>
+            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">2. Formulário de contato e Telegram</h2>
             <p>
-              Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.
+              As mensagens enviadas pelo formulário do site são encaminhadas para um canal privado da equipe por meio
+              da API do <strong>Telegram</strong>. Dessa forma, os dados informados no formulário podem ser processados
+              pelos serviços do Telegram para viabilizar a entrega da mensagem.
             </p>
             <p>
-              O nosso site pode ter links para sites externos que não são operados por nós. Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade por suas respectivas políticas de privacidade.
+              Evite incluir informações sensíveis ou dados desnecessários no formulário. Mantemos as informações
+              somente pelo período necessário para atendimento, organização de contatos e cumprimento de obrigações
+              aplicáveis.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">3. Uso de Cookies e Google AdSense</h2>
+            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">3. Cookies e armazenamento local</h2>
             <p>
-              Utilizamos cookies para armazenar informações, como as suas preferências pessoais quando visita o nosso website. Isto poderá incluir um simples popup, ou uma ligação a vários serviços que providenciamos.
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>
-                Fornecedores de terceiros, incluindo o Google, usam cookies para veicular anúncios com base em visitas anteriores do usuário ao nosso website ou a outros websites.
-              </li>
-              <li>
-                O uso de cookies de publicidade pelo Google permite que ele e seus parceiros veiculem anúncios para os usuários com base na visita a nossos sites e/ou a outros sites na Internet.
-              </li>
-              <li>
-                Os usuários podem desativar a publicidade personalizada visitando as <a href="https://myadcenter.google.com/" target="_blank" rel="noreferrer" className="text-[#B6D200] hover:underline">Configurações de anúncios do Google</a>.
-              </li>
-            </ul>
-
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">4. Compromisso do Usuário</h2>
-            <p>
-              O usuário se compromete a fazer uso adequado dos conteúdos e da informação que o <strong>Estrada a Dois</strong> oferece no site e com caráter enunciativo, mas não limitativo:
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Não se envolver em atividades que sejam ilegais ou contrárias à boa fé e à ordem pública;</li>
-              <li>Não difundir propaganda ou conteúdo de natureza racista, xenofóbica, jogos de sorte ou azar, qualquer tipo de pornografia ilegal, de apologia ao terrorismo ou contra os direitos humanos;</li>
-              <li>Não causar danos aos sistemas físicos (hardwares) e lógicos (softwares) do Estrada a Dois, de seus fornecedores ou terceiros.</li>
-            </ul>
-
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">5. Mais informações</h2>
-            <p>
-              Esperemos que esteja esclarecido e, como mencionado anteriormente, se houver algo que você não tem certeza se precisa ou não, geralmente é mais seguro deixar os cookies ativados, caso interaja com um dos recursos que você usa em nosso site.
-            </p>
-            <p className="font-bold">
-              Esta política é efetiva a partir de {new Date().toLocaleDateString('pt-BR')}.
+              O site utiliza armazenamento local do navegador para registrar sua escolha de privacidade. Esse recurso
+              é necessário para lembrar se você aceitou ou rejeitou recursos analíticos e evitar que a preferência
+              precise ser informada a cada visita.
             </p>
             <p>
-              Para dúvidas adicionais, entre em contato através do e-mail: <strong>contato@estradaadois.com</strong>
+              Recursos não essenciais de medição só são carregados depois de uma escolha positiva do visitante.
+              Você pode alterar sua decisão a qualquer momento pelo link <strong>Preferências de Cookies</strong> no
+              rodapé do site.
             </p>
 
+            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">4. Google Analytics 4</h2>
+            <p>
+              Com sua autorização, utilizamos o <strong>Google Analytics 4</strong> para compreender, de forma agregada,
+              como o portal é utilizado, quais páginas recebem mais visitas e como podemos melhorar conteúdo e
+              desempenho. O Google Analytics não é carregado quando você rejeita os recursos analíticos.
+            </p>
+            <p>
+              O tratamento realizado pelo Google segue os próprios termos e políticas de privacidade da empresa.
+              Você pode manter os recursos analíticos desativados sem impedir a navegação pelo Estrada a Dois.
+            </p>
+
+            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">5. Publicidade e Google AdSense</h2>
+            <p>
+              O Estrada a Dois poderá futuramente utilizar plataformas de publicidade, incluindo o Google AdSense.
+              Caso anúncios e tecnologias publicitárias sejam ativados, esta política e o mecanismo de consentimento
+              serão adequados às exigências aplicáveis antes da utilização desses recursos.
+            </p>
+
+            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">6. Serviços de terceiros</h2>
+            <p>
+              Para operar o portal, podemos utilizar serviços de terceiros, como infraestrutura de hospedagem e
+              distribuição de conteúdo da Vercel, serviços do Google e a API do Telegram. Esses fornecedores podem
+              processar dados técnicos estritamente necessários à prestação de seus serviços, segundo seus próprios
+              termos e políticas.
+            </p>
+
+            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">7. Links externos</h2>
+            <p>
+              Nossos artigos podem conter links para sites de terceiros. Não controlamos as práticas de privacidade,
+              segurança ou conteúdo desses endereços. Recomendamos consultar as políticas do site de destino.
+            </p>
+
+            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">8. Direitos do titular</h2>
+            <p>
+              Nos termos da LGPD, você pode solicitar, quando aplicável, confirmação de tratamento, acesso, correção,
+              atualização ou exclusão de dados, além de revogar consentimentos concedidos.
+            </p>
+            <p>
+              Solicitações podem ser encaminhadas para{' '}
+              <a href="mailto:contato@estradaadois.com" className="text-[#8ac200] hover:underline font-bold">
+                contato@estradaadois.com
+              </a>.
+            </p>
+
+            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">9. Segurança e alterações</h2>
+            <p>
+              Adotamos medidas razoáveis de segurança e minimização de dados. Esta política poderá ser atualizada
+              quando houver alterações relevantes nos serviços, tecnologias utilizadas ou requisitos legais.
+            </p>
+
+            <p className="font-bold text-[#0F0F0F]">Última atualização: 22 de setembro de 2026.</p>
           </div>
         </div>
-        
       </div>
     </div>
   );
