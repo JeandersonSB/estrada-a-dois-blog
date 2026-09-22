@@ -1,10 +1,10 @@
 ---
-title: "Moto Morini firma parceria com a Motul e acelera estrutura de atendimento no Brasil"
-date: "2026-09-22T20:47:38"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "/images/blog/moto-morini-parceria-motul-inicio-atendimento-brasil.webp"
-excerpt: "A marca italiana Moto Morini dá passo importante para sua operação nacional ao oficializar aliança estratégica com a Motul e estruturar os primeiros serviços de pós-venda no país."
+title: Moto Morini firma parceria com a Motul e acelera estrutura de atendimento no Brasil
+status: 🟢 Publicado
+date: 2026-09-22T17:50:00
+category: Notícias
+image: /images/blog/MM-x-Garagem-Motul-1-1024x743.avif
+excerpt: A marca italiana Moto Morini dá passo importante para sua operação nacional ao oficializar aliança estratégica com a Motul e estruturar os primeiros serviços de pós-venda no país.
 ---
 
 A fabricante italiana Moto Morini deu um passo estratégico essencial para consolidar a sua operação no mercado brasileiro de motocicletas. A marca oficializou uma aliança com a Motul, especialista global em lubrificantes e fluidos de alta performance, marcando o início estruturado de sua rede de suporte e atendimento ao cliente no país.
