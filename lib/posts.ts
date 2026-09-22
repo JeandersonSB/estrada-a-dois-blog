@@ -14,6 +14,8 @@ export interface PostData {
   category: string;
   excerpt: string;
   image: string;
+  status?: string;
+  draft?: boolean;
 }
 
 export interface PostDataWithContent extends PostData {
@@ -64,7 +66,7 @@ function _getSortedPostsDataInternal(): PostData[] {
 
       return {
         slug,
-        ...(matterResult.data as any),
+        ...(matterResult.data as Omit<PostData, 'slug' | 'date'>),
         date: dateStr,
         _timestamp: timestamp,
       };
@@ -78,8 +80,8 @@ function _getSortedPostsDataInternal(): PostData[] {
   });
 
   const sorted = publishedPosts.sort((a, b) => {
-    const timeA = (a as any)._timestamp || 0;
-    const timeB = (b as any)._timestamp || 0;
+    const timeA = a._timestamp || 0;
+    const timeB = b._timestamp || 0;
     return timeB - timeA;
   });
 
@@ -157,7 +159,7 @@ async function _getPostDataInternal(slug: string): Promise<PostDataWithContent> 
   const result: PostDataWithContent = {
     slug,
     contentHtml,
-    ...(matterResult.data as any),
+    ...(matterResult.data as Omit<PostDataWithContent, 'slug' | 'date' | 'contentHtml'>),
     date: dateStr,
   };
 
