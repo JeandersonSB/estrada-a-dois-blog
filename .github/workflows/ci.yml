@@ -49,6 +49,43 @@ jobs:
           node --check scripts/normalize_published_images.mjs
           bash -n scripts/git_commit_retry.sh
 
+      - name: Testar normalização de imagem na publicação
+        run: |
+          TEST_DIR="$(mktemp -d)"
+          git clone --quiet . "$TEST_DIR/repo"
+          cd "$TEST_DIR/repo"
+
+          git config user.name "ci-test"
+          git config user.email "ci-test@example.com"
+
+          mkdir -p content/posts public/images/blog
+          printf 'imagem-de-teste' > public/images/blog/IMG_1234.JPG
+
+          cat > content/posts/artigo-teste.md <<'EOF'
+          ---
+          title: "Artigo Teste"
+          status: "⏳ Rascunho"
+          image: "/images/blog/IMG_1234.JPG"
+          ---
+
+          Conteúdo de teste.
+          EOF
+
+          git add content/posts/artigo-teste.md public/images/blog/IMG_1234.JPG
+          git commit --quiet -m "fixture: rascunho"
+          BEFORE_SHA="$(git rev-parse HEAD)"
+
+          sed -i 's/⏳ Rascunho/🟢 Publicado/' content/posts/artigo-teste.md
+          git add content/posts/artigo-teste.md
+          git commit --quiet -m "fixture: publicar"
+          HEAD_SHA="$(git rev-parse HEAD)"
+
+          node scripts/normalize_published_images.mjs "$BEFORE_SHA" "$HEAD_SHA"
+
+          test -f public/images/blog/artigo-teste.jpg
+          test ! -f public/images/blog/IMG_1234.JPG
+          grep -F 'image: "/images/blog/artigo-teste.jpg"' content/posts/artigo-teste.md
+
       - name: ESLint
         run: npm run lint
 
