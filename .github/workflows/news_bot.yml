@@ -4,9 +4,9 @@ permissions:
   contents: write
 
 concurrency:
-  group: estrada-main-write
+  group: news-bot
   cancel-in-progress: false
-  queue: max
+
 
 on:
   schedule:
