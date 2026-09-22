@@ -10,13 +10,15 @@ concurrency:
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'public/images/**'
+  schedule:
+    # Manutenção semanal: domingo às 04:17 no horário de Brasília (07:17 UTC).
+    # Não roda mais a cada nova imagem para evitar commits e Actions redundantes.
+    - cron: '17 7 * * 0'
 
 jobs:
   optimize:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout do Código
