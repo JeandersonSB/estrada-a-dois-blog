@@ -1,0 +1,273 @@
+⏱️ Última notícia gerada há 10.3h (compensando intervalo). Meta ajustada para 2 notícias.
+
+======================================================
+Iniciando Robô Jornalista Estrada a Dois
+Janela Temporal: Últimos 7 dias
+Prioridade 1: Mercado Brasileiro (gl=BR, hl=pt-BR)
+Prioridade 2: Mercado Global (fallback)
+Meta: 2 notícia(s)
+Artigos recentes carregados no controle anti-duplicidade: 51
+======================================================
+
+Coletando notícias dos melhores portais do Brasil...
+Candidatos com links ativos selecionados para triagem: 10
+Tentativa de triagem com gemini-1.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Tentativa de triagem com gemini-2.0-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
+Tentativa de triagem com gemini-1.5-pro falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+[Editor-Chefe IA] Usando candidatos disponíveis como lista de prioridade...
+
+📰 Processando candidato: "Royal Enfield Flying Flea C6 ganha nova cor - Motociclismo Online"...
+
+-----------------------------------------
+[Origem: 🇧🇷 Brasil (Principal)]
+Processando notícia: "Royal Enfield Flying Flea C6 ganha nova cor - Motociclismo Online"
+Data original: Fri, 18 Sep 2026 10:53:51 GMT
+🤖 Solicitando redação ao modelo: gemini-1.5-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-1.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+🤖 Solicitando redação ao modelo: gemini-2.0-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-2.0-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
+🤖 Solicitando redação ao modelo: gemini-1.5-pro (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-1.5-pro falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:432:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:401:9)
+    at async generateContent (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:865:22)
+    at async processarItem (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:494:26)
+    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:725:21) {
+  status: 404,
+  statusText: 'Not Found',
+  errorDetails: undefined
+}
+⚠️ Candidato não aprovado ou descartado. Prosseguindo para a próxima opção...
+
+📰 Processando candidato: "Royal Enfield Classic 350 ganha nova cor branca com 'assinatura' - MOTOO"...
+
+-----------------------------------------
+[Origem: 🇧🇷 Brasil (Principal)]
+Processando notícia: "Royal Enfield Classic 350 ganha nova cor branca com 'assinatura' - MOTOO"
+Data original: Mon, 21 Sep 2026 13:02:00 GMT
+🤖 Solicitando redação ao modelo: gemini-1.5-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-1.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+🤖 Solicitando redação ao modelo: gemini-2.0-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-2.0-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
+🤖 Solicitando redação ao modelo: gemini-1.5-pro (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-1.5-pro falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:432:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:401:9)
+    at async generateContent (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:865:22)
+    at async processarItem (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:494:26)
+    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:725:21) {
+  status: 404,
+  statusText: 'Not Found',
+  errorDetails: undefined
+}
+⚠️ Candidato não aprovado ou descartado. Prosseguindo para a próxima opção...
+
+📰 Processando candidato: "Royal Enfield Flying Flea C6 ganha nova cor branca - MOTOO"...
+
+-----------------------------------------
+[Origem: 🇧🇷 Brasil (Principal)]
+Processando notícia: "Royal Enfield Flying Flea C6 ganha nova cor branca - MOTOO"
+Data original: Thu, 17 Sep 2026 12:46:00 GMT
+🤖 Solicitando redação ao modelo: gemini-1.5-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-1.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+🤖 Solicitando redação ao modelo: gemini-2.0-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-2.0-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
+🤖 Solicitando redação ao modelo: gemini-1.5-pro (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-1.5-pro falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:432:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:401:9)
+    at async generateContent (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:865:22)
+    at async processarItem (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:494:26)
+    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:725:21) {
+  status: 404,
+  statusText: 'Not Found',
+  errorDetails: undefined
+}
+⚠️ Candidato não aprovado ou descartado. Prosseguindo para a próxima opção...
+
+📰 Processando candidato: "Galeria de fotos: Royal Enfield Flying Flea C6 ganha nova cor branca - MOTOO"...
+
+-----------------------------------------
+[Origem: 🇧🇷 Brasil (Principal)]
+Processando notícia: "Galeria de fotos: Royal Enfield Flying Flea C6 ganha nova cor branca - MOTOO"
+Data original: Thu, 17 Sep 2026 14:55:50 GMT
+🤖 Solicitando redação ao modelo: gemini-1.5-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-1.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+🤖 Solicitando redação ao modelo: gemini-2.0-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-2.0-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
+🤖 Solicitando redação ao modelo: gemini-1.5-pro (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-1.5-pro falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:432:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:401:9)
+    at async generateContent (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:865:22)
+    at async processarItem (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:494:26)
+    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:725:21) {
+  status: 404,
+  statusText: 'Not Found',
+  errorDetails: undefined
+}
+⚠️ Candidato não aprovado ou descartado. Prosseguindo para a próxima opção...
+
+📰 Processando candidato: "Yamaha R9 2027 mantém mecânica e estreia nova opção visual - Mobiauto"...
+
+-----------------------------------------
+[Origem: 🇧🇷 Brasil (Principal)]
+Processando notícia: "Yamaha R9 2027 mantém mecânica e estreia nova opção visual - Mobiauto"
+Data original: Tue, 15 Sep 2026 22:08:37 GMT
+🤖 Solicitando redação ao modelo: gemini-1.5-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-1.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+🤖 Solicitando redação ao modelo: gemini-2.0-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-2.0-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
+🤖 Solicitando redação ao modelo: gemini-1.5-pro (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-1.5-pro falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:432:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:401:9)
+    at async generateContent (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:865:22)
+    at async processarItem (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:494:26)
+    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:725:21) {
+  status: 404,
+  statusText: 'Not Found',
+  errorDetails: undefined
+}
+⚠️ Candidato não aprovado ou descartado. Prosseguindo para a próxima opção...
+
+📰 Processando candidato: "Avelloz AZ170 Bravo: o que esperar da nova rival de CG 160 e Factor? - Motociclismo Online"...
+
+-----------------------------------------
+[Origem: 🇧🇷 Brasil (Principal)]
+Processando notícia: "Avelloz AZ170 Bravo: o que esperar da nova rival de CG 160 e Factor? - Motociclismo Online"
+Data original: Wed, 16 Sep 2026 14:38:25 GMT
+🤖 Solicitando redação ao modelo: gemini-1.5-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-1.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+🤖 Solicitando redação ao modelo: gemini-2.0-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-2.0-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
+🤖 Solicitando redação ao modelo: gemini-1.5-pro (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-1.5-pro falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:432:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:401:9)
+    at async generateContent (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:865:22)
+    at async processarItem (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:494:26)
+    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:725:21) {
+  status: 404,
+  statusText: 'Not Found',
+  errorDetails: undefined
+}
+⚠️ Candidato não aprovado ou descartado. Prosseguindo para a próxima opção...
+
+📰 Processando candidato: "Royal Enfield One Ride 2026 terá tentativa de recorde com motos no Brasil - MOTOO"...
+
+-----------------------------------------
+[Origem: 🇧🇷 Brasil (Principal)]
+Processando notícia: "Royal Enfield One Ride 2026 terá tentativa de recorde com motos no Brasil - MOTOO"
+Data original: Sun, 20 Sep 2026 05:33:51 GMT
+🤖 Solicitando redação ao modelo: gemini-1.5-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-1.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+🤖 Solicitando redação ao modelo: gemini-2.0-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-2.0-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
+🤖 Solicitando redação ao modelo: gemini-1.5-pro (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-1.5-pro falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:432:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:401:9)
+    at async generateContent (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:865:22)
+    at async processarItem (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:494:26)
+    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:725:21) {
+  status: 404,
+  statusText: 'Not Found',
+  errorDetails: undefined
+}
+⚠️ Candidato não aprovado ou descartado. Prosseguindo para a próxima opção...
+
+📰 Processando candidato: "Lendas da Velocidade será nova atração da MotoGP no EICMA - Motociclismo Online"...
+
+-----------------------------------------
+[Origem: 🇧🇷 Brasil (Principal)]
+Processando notícia: "Lendas da Velocidade será nova atração da MotoGP no EICMA - Motociclismo Online"
+Data original: Tue, 15 Sep 2026 11:32:19 GMT
+🤖 Solicitando redação ao modelo: gemini-1.5-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-1.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+🤖 Solicitando redação ao modelo: gemini-2.0-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-2.0-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
+🤖 Solicitando redação ao modelo: gemini-1.5-pro (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-1.5-pro falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:432:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:401:9)
+    at async generateContent (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:865:22)
+    at async processarItem (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:494:26)
+    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:725:21) {
+  status: 404,
+  statusText: 'Not Found',
+  errorDetails: undefined
+}
+⚠️ Candidato não aprovado ou descartado. Prosseguindo para a próxima opção...
+
+📰 Processando candidato: "Avelloz quer lançar mais 4 motos no Brasil em 2027 - Motor1.com Brasil"...
+
+-----------------------------------------
+[Origem: 🇧🇷 Brasil (Principal)]
+Processando notícia: "Avelloz quer lançar mais 4 motos no Brasil em 2027 - Motor1.com Brasil"
+Data original: Sun, 20 Sep 2026 15:00:00 GMT
+🤖 Solicitando redação ao modelo: gemini-1.5-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-1.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+🤖 Solicitando redação ao modelo: gemini-2.0-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-2.0-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
+🤖 Solicitando redação ao modelo: gemini-1.5-pro (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-1.5-pro falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:432:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:401:9)
+    at async generateContent (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:865:22)
+    at async processarItem (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:494:26)
+    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:725:21) {
+  status: 404,
+  statusText: 'Not Found',
+  errorDetails: undefined
+}
+⚠️ Candidato não aprovado ou descartado. Prosseguindo para a próxima opção...
+
+📰 Processando candidato: "Triumph Originals 2026: conheça as sete motos que disputam o título - Motociclismo Online"...
+
+-----------------------------------------
+[Origem: 🇧🇷 Brasil (Principal)]
+Processando notícia: "Triumph Originals 2026: conheça as sete motos que disputam o título - Motociclismo Online"
+Data original: Fri, 18 Sep 2026 14:35:35 GMT
+🤖 Solicitando redação ao modelo: gemini-1.5-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-1.5-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+🤖 Solicitando redação ao modelo: gemini-2.0-flash (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-2.0-flash falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [404 Not Found] This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
+🤖 Solicitando redação ao modelo: gemini-1.5-pro (tentativa 1/3)...
+⚠️ Tentativa 1 com gemini-1.5-pro falhou: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Erro ao gerar artigo com a API: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:432:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:401:9)
+    at async generateContent (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/node_modules/@google/generative-ai/dist/index.mjs:865:22)
+    at async processarItem (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:494:26)
+    at async gerarNoticias (file:///home/runner/work/estrada-a-dois-blog/estrada-a-dois-blog/scripts/news_bot.mjs:725:21) {
+  status: 404,
+  statusText: 'Not Found',
+  errorDetails: undefined
+}
+⚠️ Candidato não aprovado ou descartado. Prosseguindo para a próxima opção...
+Meta não atingida (0/2). Tentando candidatos reservas...
+
+======================================================
+Processo concluído: 0 nova(s) notícia(s) gerada(s).
+======================================================
+
