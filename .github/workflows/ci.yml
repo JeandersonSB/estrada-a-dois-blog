@@ -182,6 +182,33 @@ jobs:
           console.log(`Conversão AVIF -> WebP validada: ${outputMeta.width}x${outputMeta.height}`);
           NODE
 
+      - name: Testar renderização de tabelas Markdown
+        run: |
+          node --input-type=module <<'NODE'
+          import { remark } from 'remark';
+          import remarkGfm from 'remark-gfm';
+          import html from 'remark-html';
+
+          const markdown = `| Categoria | Valor |
+          | --- | --- |
+          | Combustível | R$ 240,76 |
+          | **Total** | **R$ 240,76** |`;
+
+          const output = String(
+            await remark()
+              .use(remarkGfm)
+              .use(html)
+              .process(markdown)
+          );
+
+          if (!output.includes('<table>') || !output.includes('<th>Categoria</th>') || !output.includes('<td>Combustível</td>')) {
+            console.error(output);
+            throw new Error('Tabela Markdown não foi renderizada como HTML');
+          }
+
+          console.log('Tabela GFM renderizada corretamente.');
+          NODE
+
       - name: ESLint
         run: npm run lint
 
