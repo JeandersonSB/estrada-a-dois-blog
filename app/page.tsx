@@ -1,4 +1,5 @@
 ﻿import { getSortedPostsData, slugifyCategory } from '@/lib/posts';
+import { SmartImage } from '@/components/SmartImage';
 
 export const revalidate = 60;
 
@@ -41,12 +42,12 @@ export default function Home() {
               <div className="lg:col-span-2 h-[400px] md:h-[520px]">
                 <a href={`/blog/${featuredMain.slug}`} className="block relative w-full h-full rounded-2xl overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10 transition-opacity duration-300 group-hover:from-black/90"></div>
-                  <img 
-                    src={featuredMain.image} 
-                    alt={featuredMain.title} 
-                    fetchPriority="high"
-                    decoding="async"
-                    className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" 
+                  <SmartImage
+                    src={featuredMain.image}
+                    alt={featuredMain.title}
+                    priority
+                    sizes="(min-width: 1024px) 66vw, 100vw"
+                    className="object-cover transform group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute bottom-0 left-0 p-6 md:p-10 z-20 w-full">
                     <span className="inline-block bg-[#B6D200] text-[#0F0F0F] text-[10px] md:text-xs font-black uppercase px-3 py-1.5 tracking-widest mb-4 shadow-sm">
@@ -70,12 +71,11 @@ export default function Home() {
                 <div className="flex-1 relative rounded-2xl overflow-hidden group border-t-4 border-t-[#B6D200] border-x border-b border-white/10 hover:border-[#B6D200]/70 transition-all duration-300 shadow-xl">
                   <a href={`/blog/${featuredSide1.slug}`} className="block w-full h-full">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent z-10 transition-opacity duration-300 group-hover:from-black/85"></div>
-                    <img 
-                      src={featuredSide1.image} 
-                      alt={featuredSide1.title} 
-                      loading="lazy"
-                      decoding="async"
-                      className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" 
+                    <SmartImage
+                      src={featuredSide1.image}
+                      alt={featuredSide1.title}
+                      sizes="(min-width: 1024px) 33vw, 100vw"
+                      className="object-cover transform group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute bottom-0 left-0 p-4 md:p-6 z-20 w-full">
                       <div className="flex items-center gap-2 mb-2">
@@ -103,12 +103,11 @@ export default function Home() {
                 <div className="flex-1 relative rounded-2xl overflow-hidden group border border-white/10 hover:border-white/30 transition-all duration-300">
                   <a href={`/blog/${featuredSide2.slug}`} className="block w-full h-full">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 transition-opacity duration-300 group-hover:from-black/80"></div>
-                    <img 
-                      src={featuredSide2.image} 
-                      alt={featuredSide2.title} 
-                      loading="lazy"
-                      decoding="async"
-                      className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" 
+                    <SmartImage
+                      src={featuredSide2.image}
+                      alt={featuredSide2.title}
+                      sizes="(min-width: 1024px) 33vw, 100vw"
+                      className="object-cover transform group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute bottom-0 left-0 p-6 z-20 w-full">
                       <span className="inline-block text-[#B6D200] text-[11px] font-black uppercase tracking-widest mb-2 drop-shadow-md">
@@ -161,12 +160,11 @@ export default function Home() {
                   className="group shrink-0 w-[270px] sm:w-auto flex items-center gap-3 bg-[#1c1c1c] hover:bg-[#242424] p-2.5 rounded-xl border border-white/10 hover:border-[#B6D200]/70 transition-all duration-200 shadow-sm"
                 >
                   <div className="w-14 h-14 rounded-lg overflow-hidden shrink-0 relative bg-black/40">
-                    <img
+                    <SmartImage
                       src={story.image}
                       alt={story.title}
-                      loading="lazy"
-                      decoding="async"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      sizes="56px"
+                      className="object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                   </div>
                   <div className="flex-1 min-w-0">
@@ -258,12 +256,11 @@ export default function Home() {
                       <article key={post.slug} className="bg-[#ffffff] rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.1)] transition-all duration-300 group border border-gray-100 flex flex-col h-full">
                         <a href={`/blog/${post.slug}`} className="block relative overflow-hidden aspect-[4/3]">
                           <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
-                          <img 
-                            src={post.image} 
-                            alt={post.title} 
-                            loading="lazy"
-                            decoding="async"
-                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                          <SmartImage
+                            src={post.image}
+                            alt={post.title}
+                            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                            className="object-cover transform group-hover:scale-105 transition-transform duration-500"
                           />
                           <span className="absolute top-4 left-4 bg-[#B6D200] text-[#0F0F0F] text-[11px] font-black uppercase px-3 py-1 tracking-widest z-20 shadow-md">
                             {post.category}
