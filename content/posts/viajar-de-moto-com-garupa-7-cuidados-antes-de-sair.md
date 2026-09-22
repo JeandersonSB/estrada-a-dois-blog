@@ -33,7 +33,7 @@ Se a suspensão traseira permitir regulagem de pré-carga da mola, siga a config
 
 Procure no manual ou na etiqueta colada na balança da motocicleta as pressões recomendadas especificamente para carga total (piloto + garupa + bagagem). Faça sempre a medição com os pneus completamente frios e utilize um calibrador confiável.
 
-> 💡 **Dica de ouro:** Confira nosso guia prático sobre [como calibrar pneus de moto a frio corretamente](/blog/calibragem-de-pneus-de-moto-a-frio-o-guia-pr-tico) para entender como a temperatura do asfalto altera a pressão dos pneus na estrada.
+> 💡 **Dica de ouro:** Confira nosso guia prático sobre [como calibrar pneus de moto a frio corretamente](/blog/calibragem-de-pneus-de-moto-confira-a-pressao-a-frio) para entender como a temperatura do asfalto altera a pressão dos pneus na estrada.
 
 Nunca copie automaticamente a pressão usada por outro motociclista. Modelo, medidas do pneu e peso transportado exigem a especificação exata do fabricante da sua moto. Aproveite para inspecionar o estado geral da borracha, o desgaste dos sulcos e a vedação das válvulas.
 
@@ -59,7 +59,7 @@ Capa de chuva e água devem ficar em locais de fácil acesso. Pontas de cintas e
 
 Como ponto de partida para organizar o roteiro, programe paradas a cada 100 a 150 quilômetros. Esse intervalo deve ser encurtado conforme o cansaço do casal, o calor, a chuva ou a intensidade de curvas do trecho.
 
-Em trechos de serra sinuosa — como na descida da [Serra do Rio do Rastro](/blog/de-r15-a-serra-do-rio-do-rastro-um-sonho-em) —, a exigência física sobre a garupa é muito maior do que em uma reta de rodovia duplicada. 
+Em trechos de serra sinuosa — como na descida da [Serra do Rio do Rastro](/blog/r15-na-serra-do-rio-do-rastro) —, a exigência física sobre a garupa é muito maior do que em uma reta de rodovia duplicada. 
 
 Escolha sempre postos com boa estrutura, estacionamento plano e espaço com sombra para descansar. Na pausa, conversem sobre o trecho seguinte, hidratem-se e façam uma checagem visual rápida na fixação da bagagem. Evite montar cronogramas engessados que dependam de cumprir horários exatos.
 

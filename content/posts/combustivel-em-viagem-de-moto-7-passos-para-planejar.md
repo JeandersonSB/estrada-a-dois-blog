@@ -119,7 +119,7 @@ O erro mais comum do motociclista é a autoconfiança de achar que _"a moto aind
 
 Planejar o combustível em viagem de moto é trocar a ansiedade da "luzinha da reserva acesa" pela tranquilidade de curtir as melhores paisagens do Brasil sem sustos. Quando o abastecimento se torna parte da rotina de descanso do casal, a viagem flui leve do início ao fim.
 
-> 💡 **Inspire-se na estrada:** Veja como planejamos nossas paradas ao cruzar [5 serras e 831 km de moto em um fim de semana](/blog/5-serras-e-831-km-de-moto-em-um-fim-de)!
+> 💡 **Inspire-se na estrada:** Veja como planejamos nossas paradas ao cruzar [5 serras e 831 km de moto em um fim de semana](/blog/rastro-da-serpente-de-moto)!
 
 Qual é a autonomia média da sua moto na estrada e com quantos quilômetros você costuma parar para abastecer? Deixe seu comentário no Estrada a Dois!
 

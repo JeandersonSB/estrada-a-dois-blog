@@ -3,7 +3,8 @@ title: MotoGP Confirma Atração 'Lendas da Velocidade' no EICMA com Foco em His
 status: 🟢 Publicado
 date: 2026-09-17T22:46:00
 category: Notícias
-image: https://motociclismoonline.com.br/wp-content/uploads/2026/09/imagem-Museo-Moto-honda-Repsol-doohan-motociclismoonline.avif
+image: "/images/blog/lendas-da-velocidade-ser-nova-atra-o-da-motogp-no-.webp"
+imageSource: "https://motociclismoonline.com.br/wp-content/uploads/2026/09/imagem-Museo-Moto-honda-Repsol-doohan-motociclismoonline.avif"
 excerpt: A MotoGP prepara uma atração especial para o EICMA intitulada 'Lendas da Velocidade', aproximando o público das máquinas lendárias e das inovações tecnológicas do mundial.
 ---
 

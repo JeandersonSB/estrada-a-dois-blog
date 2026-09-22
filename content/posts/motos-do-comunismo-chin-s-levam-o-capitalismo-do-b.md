@@ -3,7 +3,8 @@ title: 'A Invasão das Motos Chinesas: Como as Novas Marcas Estão Transformando
 status: 🟢 Publicado
 date: 2026-09-17T18:00:00
 category: Notícias
-image: https://newr7-r7-prod.web.arc-cdn.net/resizer/v2/L5S4NKUBU5G4XCVTKJJCPA5I6M.jpeg?auth=a07dd19c1c1632048da85080afe2327f0dd40b3596aa2631c592bf52929bf687&width=1600&height=1065
+image: "/images/blog/motos-do-comunismo-chin-s-levam-o-capitalismo-do-b.webp"
+imageSource: "https://newr7-r7-prod.web.arc-cdn.net/resizer/v2/L5S4NKUBU5G4XCVTKJJCPA5I6M.jpeg?auth=a07dd19c1c1632048da85080afe2327f0dd40b3596aa2631c592bf52929bf687&width=1600&height=1065"
 excerpt: A forte presença das fabricantes chinesas de motocicletas no Brasil redefine a competitividade no setor, apostando em alta tecnologia embarcada, design moderno e forte relação custo-benefício.
 ---
 

@@ -31,6 +31,6 @@ O mercado brasileiro é estratégico para a Triumph, onde a Tiger 1200 possui fo
 
 A chegada do radar dianteiro na Tiger 1200 preenche a última lacuna de conveniência eletrônica da aventureira britânica. Para os motociclistas que encaram longos deslocamentos rodoviários pelas estradas brasileiras, a adição do controle de cruzeiro adaptativo representa menor fadiga muscular e maior margem de segurança contra imprevistos no fluxo viário.
 
-> 🏍️ **Veja nosso diário de bordo:** [5 serras e 831 km de moto em um fim de semana](/blog/5-serras-e-831-km-de-moto-em-um-fim-de)
+> 🏍️ **Veja nosso diário de bordo:** [5 serras e 831 km de moto em um fim de semana](/blog/rastro-da-serpente-de-moto)
 
 Fonte: Motonline

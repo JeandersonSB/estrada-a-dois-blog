@@ -34,6 +34,6 @@ A ciclística permanece amparada pelo chassi de berço duplo desenvolvido em par
 
 Com essa nova tonalidade, a Royal Enfield Classic 350 consolida sua presença no segmento de motos clássicas de média cilindrada, oferecendo mais uma alternativa estética para o motociclista que prioriza autenticidade visual e condução tranquila.
 
-> 🏍️ **Veja nosso diário de bordo:** [5 serras e 831 km de moto em um fim de semana](/blog/5-serras-e-831-km-de-moto-em-um-fim-de)
+> 🏍️ **Veja nosso diário de bordo:** [5 serras e 831 km de moto em um fim de semana](/blog/rastro-da-serpente-de-moto)
 
 Fonte: MOTOO

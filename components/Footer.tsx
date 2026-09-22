@@ -1,3 +1,5 @@
+import { CookieSettingsButton } from '@/components/CookieSettingsButton';
+
 const InstagramIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-[18px] h-[18px] transition-transform duration-300 group-hover:scale-110 group-hover:text-[#E1306C] text-[#D9D9D9]">
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -88,9 +90,15 @@ export function Footer() {
               Termos de Uso
             </a>
             <span className="text-[#555555] text-xs">•</span>
+            <a href="/politica-editorial" className="text-xs text-[#AAAAAA] hover:text-white transition-colors underline decoration-[#555555] hover:decoration-white">
+              Política Editorial
+            </a>
+            <span className="text-[#555555] text-xs">•</span>
             <a href="/contato" className="text-xs text-[#AAAAAA] hover:text-white transition-colors underline decoration-[#555555] hover:decoration-white">
               Contato
             </a>
+            <span className="text-[#555555] text-xs">•</span>
+            <CookieSettingsButton />
           </div>
         </div>
       </div>

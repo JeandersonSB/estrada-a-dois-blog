@@ -146,9 +146,13 @@ async function _getPostDataInternal(slug: string): Promise<PostDataWithContent> 
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const matterResult = matter(fileContents);
 
+  // O template do artigo já renderiza o título em <h1>. Remove um H1 inicial
+  // do Markdown para evitar dois H1 iguais na mesma página.
+  const articleBody = matterResult.content.replace(/^\s*#\s+[^\r\n]+\r?\n+/, '');
+
   const processedContent = await remark()
     .use(html)
-    .process(matterResult.content);
+    .process(articleBody);
   const rawContentHtml = processedContent.toString();
   const contentHtml = addTargetBlankToExternalLinks(rawContentHtml);
 

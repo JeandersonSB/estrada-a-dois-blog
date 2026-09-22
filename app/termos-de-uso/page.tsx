@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Termos de Uso | Estrada a Dois',
-  description: 'Termos e Condições de Uso do portal e blog Estrada a Dois.',
+  description: 'Termos e condições de uso do portal Estrada a Dois.',
 };
 
 export default function TermosDeUso() {
@@ -16,79 +16,100 @@ export default function TermosDeUso() {
 
           <div className="prose prose-gray max-w-none text-[#555555] font-medium leading-relaxed space-y-6">
             <p>
-              Seja bem-vindo ao <strong>Estrada a Dois</strong>. Ao acessar e utilizar o nosso site (<a href="https://estradaadois.com" className="text-[#B6D200] hover:underline font-bold">estradaadois.com</a> e seus subdomínios ou canais associados), você concorda expressamente em cumprir e estar vinculado aos seguintes Termos e Condições de Uso. Caso não concorde com qualquer disposição destes termos, recomendamos que não utilize este website.
+              Seja bem-vindo ao <strong>Estrada a Dois</strong>. Ao acessar e utilizar o site
+              <a href="https://www.estradaadois.com" className="text-[#8ac200] hover:underline font-bold"> estradaadois.com</a>,
+              você concorda com estes Termos de Uso.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">1. Objeto e Finalidade do Site</h2>
+            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">1. Finalidade do portal</h2>
             <p>
-              O <strong>Estrada a Dois</strong> é um portal e diário de bordo voltado ao mototurismo, viagens a dois, planejamento de rotas, avaliações de equipamentos, dicas de manutenção e notícias do universo automotivo e motociclístico. Nosso objetivo é inspirar, entreter e informar entusiastas da estrada com relatos autênticos e conteúdos educativos.
+              O Estrada a Dois é um portal editorial sobre mototurismo, viagens a dois, roteiros, planejamento,
+              equipamentos, manutenção preventiva e notícias do universo motociclístico. Nosso conteúdo tem finalidade
+              informativa, editorial e de entretenimento.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">2. Isenção de Responsabilidade (Roteiros, Pilotagem e Mecânica)</h2>
+            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">2. Roteiros, pilotagem e mecânica</h2>
             <p>
-              As rotas, relatos de viagem, condições de estradas, estimativas de tempo e custos, bem como dicas de manutenção mecânica e pilotagem compartilhadas neste portal baseiam-se em nossas experiências pessoais e levantamentos informativos no momento da apuração.
+              Relatos de viagem, condições de vias, estimativas de tempo, custos e orientações de manutenção ou
+              pilotagem refletem experiências, pesquisas e informações disponíveis no momento da publicação.
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                <strong>Responsabilidade Individual do Piloto:</strong> Cada condutor é o único e exclusivo responsável por avaliar suas condições físicas, psicológicas e habilidades de pilotagem, bem como a conformidade do seu veículo, equipamentos de proteção individual (EPIs) e documentos de trânsito antes de iniciar qualquer viagem.
+                <strong>Responsabilidade do condutor:</strong> cada piloto deve avaliar suas condições, experiência,
+                documentação, motocicleta e equipamentos antes de qualquer deslocamento.
               </li>
               <li>
-                <strong>Condições Dinâmicas de Vias e Clima:</strong> Condições climáticas, asfaltamento, pedágios, sinalização e bloqueios viários mudam constantemente. Recomendamos sempre checar órgãos oficiais (DNIT, Polícia Rodoviária e concessionárias locais) antes de pegar a estrada.
+                <strong>Condições variáveis:</strong> clima, pavimento, pedágios, regras de trânsito, preços,
+                horários e bloqueios podem mudar. Consulte fontes oficiais antes da viagem.
               </li>
               <li>
-                <strong>Procedimentos Mecânicos:</strong> Qualquer orientação preventiva deve ser conferida com o manual do proprietário da sua motocicleta e realizada preferencialmente por mecânicos profissionais capacitados.
-              </li>
-            </ul>
-            <p>
-              O <strong>Estrada a Dois</strong> e seus autores não se responsabilizam por quaisquer danos materiais, acidentes, imprevistos mecânicos, infrações de trânsito ou prejuízos diretos ou indiretos decorrentes da aplicação prática das informações disponibilizadas.
-            </p>
-
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">3. Propriedade Intelectual e Direitos Autorais</h2>
-            <p>
-              Todo o conteúdo publicado neste site — incluindo textos, relatos do Diário de Bordo, logotipos, marcas, fotografias autorais, vídeos e elementos visuais — é protegido pela legislação brasileira de direitos autorais (Lei nº 9.610/1998) e tratados internacionais.
-            </p>
-            <p>
-              É estritamente proibida a cópia, reprodução integral, redistribuição comercial ou modificação de qualquer conteúdo autoral sem a prévia autorização por escrito dos criadores. Citações breves são permitidas desde que acompanhadas de crédito claro e link direto para a postagem original.
-            </p>
-
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">4. Publicidade, Parceiros e Google AdSense</h2>
-            <p>
-              O site exibe anúncios e materiais promocionais veiculados por terceiros, nomeadamente através do programa <strong>Google AdSense</strong> e eventuais parcerias com marcas do setor.
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>
-                Não temos controle prévio nem nos responsabilizamos pela qualidade, entrega, garantia ou conformidade de produtos ou serviços oferecidos pelos anunciantes em banners ou links externos.
-              </li>
-              <li>
-                A relação de consumo eventualmente estabelecida pelo usuário com qualquer anunciante externo ocorre estritamente entre as partes envolvidas.
+                <strong>Manutenção:</strong> procedimentos técnicos devem respeitar o manual da motocicleta. Ajustes
+                críticos envolvendo freios, motor, suspensão ou segurança devem ser executados por profissional qualificado.
               </li>
             </ul>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">5. Conduta do Usuário e Mensagens de Contato</h2>
+            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">3. Conteúdo editorial e fontes</h2>
             <p>
-              Ao utilizar formulários de contato ou canais de comentários do site, o usuário se compromete a:
+              Notícias e informações técnicas podem utilizar dados de fabricantes, órgãos públicos, veículos
+              especializados, documentos técnicos e outras fontes identificadas. O portal realiza revisão editorial
+              antes da publicação e busca acrescentar contexto relevante para o motociclista brasileiro.
             </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Fornecer informações verdadeiras e não utilizar identidades falsas;</li>
-              <li>Não enviar spam, correntes, publicidade não solicitada ou mensagens com conteúdo ofensivo, discriminatório, difamatório ou ilegal;</li>
-              <li>Não tentar violar a segurança, sobrecarregar servidores ou interferir no bom funcionamento da plataforma.</li>
-            </ul>
-
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">6. Modificações destes Termos</h2>
             <p>
-              Reservamo-nos o direito de alterar ou atualizar estes Termos de Uso a qualquer momento, visando adequação legislativa ou aprimoramento dos serviços. As modificações entram em vigor imediatamente após sua publicação nesta página.
+              Informações podem ser corrigidas ou atualizadas quando surgirem dados novos ou quando identificarmos
+              alguma imprecisão. Saiba mais em nossa{' '}
+              <a href="/politica-editorial" className="text-[#8ac200] hover:underline font-bold">Política Editorial</a>.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">7. Legislação Aplicável e Foro</h2>
+            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">4. Propriedade intelectual</h2>
             <p>
-              Estes Termos de Uso são regidos e interpretados em conformidade com a legislação da República Federativa do Brasil.
+              Textos autorais, relatos, identidade visual, fotografias próprias, vídeos e demais materiais produzidos
+              pelo Estrada a Dois são protegidos pela legislação aplicável. Citações breves são permitidas com crédito
+              e referência ao conteúdo original.
             </p>
-            <p className="font-bold text-[#0F0F0F]">
-              Em caso de dúvidas, sugestões ou solicitações referentes aos nossos termos, entre em contato através do e-mail: <a href="mailto:contato@estradaadois.com" className="text-[#B6D200] hover:underline">contato@estradaadois.com</a>.
+            <p>
+              Marcas, logotipos e materiais de terceiros pertencem a seus respectivos titulares e, quando utilizados
+              editorialmente, permanecem sujeitos às regras de uso e direitos correspondentes.
             </p>
-            <p className="text-xs text-gray-400">
-              Última atualização: {new Date().toLocaleDateString('pt-BR')}.
+
+            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">5. Publicidade e parcerias</h2>
+            <p>
+              O site <strong>poderá exibir</strong> publicidade de terceiros, inclusive por plataformas como Google
+              AdSense, além de realizar parcerias comerciais identificadas de forma apropriada. A existência de
+              publicidade ou parceria não transfere ao Estrada a Dois responsabilidade pela entrega, garantia ou
+              conformidade de produtos e serviços oferecidos por terceiros.
             </p>
+
+            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">6. Links externos</h2>
+            <p>
+              Links para fabricantes, órgãos oficiais, fontes jornalísticas, mapas, hotéis, restaurantes ou outros
+              serviços externos são fornecidos como referência. O Estrada a Dois não controla conteúdo, disponibilidade,
+              políticas ou práticas dos sites de destino.
+            </p>
+
+            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">7. Formulário e conduta do usuário</h2>
+            <p>
+              Ao utilizar nossos canais de contato, o usuário concorda em não enviar spam, conteúdo ilícito, ofensivo,
+              fraudulento ou destinado a comprometer a segurança do portal. O tratamento dos dados enviados está
+              descrito na nossa <a href="/politica-de-privacidade" className="text-[#8ac200] hover:underline font-bold">
+                Política de Privacidade
+              </a>.
+            </p>
+
+            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">8. Alterações destes termos</h2>
+            <p>
+              Estes termos poderão ser atualizados para refletir mudanças editoriais, técnicas ou legais. A versão
+              vigente estará sempre disponível nesta página.
+            </p>
+
+            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">9. Contato</h2>
+            <p>
+              Dúvidas podem ser enviadas para{' '}
+              <a href="mailto:contato@estradaadois.com" className="text-[#8ac200] hover:underline font-bold">
+                contato@estradaadois.com
+              </a>.
+            </p>
+
+            <p className="font-bold text-[#0F0F0F]">Última atualização: 22 de setembro de 2026.</p>
           </div>
         </div>
       </div>

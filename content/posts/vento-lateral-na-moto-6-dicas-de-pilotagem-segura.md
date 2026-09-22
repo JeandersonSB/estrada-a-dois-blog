@@ -79,7 +79,7 @@ Fique atento aos indícios visuais ao redor: a inclinação da vegetação, as b
 
 Viajar sobre duas rodas envolve saber negociar com os elementos. Em velocidades elevadas, a inércia giroscópica das rodas estabiliza a moto, mas reduz a sua capacidade de manobra evasiva quando uma rajada forte surge.
 
-Reduzir 15 a 20 km/h do seu ritmo de cruzeiro alivia a tensão muscular e dá tempo de resposta para você e sua garupa. Conforme aprendemos em roteiros técnicos pelo sul do país, como relatamos em nosso diário [De R15 à Serra do Rio do Rastro: Um Sonho em Duas Rodas](/blog/de-r15-a-serra-do-rio-do-rastro-um-sonho-em), a paciência na estrada vale mais do que qualquer pressa no cronômetro.
+Reduzir 15 a 20 km/h do seu ritmo de cruzeiro alivia a tensão muscular e dá tempo de resposta para você e sua garupa. Conforme aprendemos em roteiros técnicos pelo sul do país, como relatamos em nosso diário [De R15 à Serra do Rio do Rastro: Um Sonho em Duas Rodas](/blog/r15-na-serra-do-rio-do-rastro), a paciência na estrada vale mais do que qualquer pressa no cronômetro.
 
 Se o vento estiver empurrando poeira densa, galhos ou tornando o controle da moto estafante, pare no próximo posto de serviços. Descanse, tome um café com a garupa e aguarde a frente de vento acalmar.
 

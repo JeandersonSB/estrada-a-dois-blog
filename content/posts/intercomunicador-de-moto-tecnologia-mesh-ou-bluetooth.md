@@ -89,7 +89,7 @@ Para casais que viajam juntos na mesma moto, a tecnologia **Bluetooth** continua
 
 Para quem costuma pegar a estrada em grupos formados por três ou mais motos, a tecnologia **Mesh é indispensável**. A capacidade de manter o grupo conectado em trechos sinuosos sem a necessidade de paradas para reconfigurar conexões garante um ganho técnico e operacional incomparável.
 
-Essa estabilidade de sinal faz muita diferença na hora de encarar trechos desafiadores, como na nossa viagem de [5 serras e 831 km de moto em um fim de semana](/blog/5-serras-e-831-km-de-moto-em-um-fim-de), onde curvas fechadas e relevo acidentado colocam a prova a conectividade dos equipamentos.
+Essa estabilidade de sinal faz muita diferença na hora de encarar trechos desafiadores, como na nossa viagem de [5 serras e 831 km de moto em um fim de semana](/blog/rastro-da-serpente-de-moto), onde curvas fechadas e relevo acidentado colocam a prova a conectividade dos equipamentos.
 
 ***
 

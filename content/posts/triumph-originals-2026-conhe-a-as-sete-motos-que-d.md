@@ -3,7 +3,8 @@ title: 'Triumph Originals 2026: Concurso de Customização Reúne Sete Projetos 
 status: 🟢 Publicado
 date: 2026-09-18T21:11:00
 category: Notícias
-image: https://media.triumphmotorcycles.co.uk/image/upload/t_triumph_landscape/c_limit,w_640/f_auto/q_auto:eco/v1773936242/Triumph_Originals_2026_01_lxkryp?_a=BAVMn6ID0
+image: "/images/blog/triumph-originals-2026-conhe-a-as-sete-motos-que-d.webp"
+imageSource: "https://media.triumphmotorcycles.co.uk/image/upload/t_triumph_landscape/c_limit,w_640/f_auto/q_auto:eco/v1773936242/Triumph_Originals_2026_01_lxkryp?_a=BAVMn6ID0"
 excerpt: A Triumph Motorcycles Brasil promove a nova edição do Triumph Originals, colocando em disputa sete projetos de customização baseados na cultuada linha Modern Classics da fabricante britânica.
 ---
 

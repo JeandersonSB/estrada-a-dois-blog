@@ -52,6 +52,6 @@ Na frenagem, os discos duplos semi-flutuantes na dianteira contam com pinças mo
 
 No Brasil, a Kawasaki Ninja ZX-6R ocupa um nicho de destaque entre as esportivas médias puras. Com poucas concorrentes diretas de quatro cilindros em linha ainda em produção, o modelo se consolida como a principal escolha tanto para entusiastas de _track days_ quanto para quem deseja o urro característico dos motores tetracilíndricos com tecnologia moderna de gerenciamento eletrônico.
 
-> 💡 **Leia também:** [De R15 à Serra do Rio do Rastro: Um Sonho em Duas Rodas](/blog/de-r15-a-serra-do-rio-do-rastro-um-sonho-em)
+> 💡 **Leia também:** [De R15 à Serra do Rio do Rastro: Um Sonho em Duas Rodas](/blog/r15-na-serra-do-rio-do-rastro)
 
 Fonte: [Motonline](https://news.google.com/rss/articles/CBMie0FVX3lxTE5OLVR1Nk9hYVBCVzFwSzJjcXlTcUdZZV83VElBQWpiUGhKZEE5N2FnN2tnTFRBRjVMVHlIZ3o1bXh1Sy1jUDlPeXpIVXJEpHScnZYeFd4OFJMVTUyaWFodmRObFhWOFVNM29veGZnT2RHOHRObi1ZSDBOaw?oc=5)

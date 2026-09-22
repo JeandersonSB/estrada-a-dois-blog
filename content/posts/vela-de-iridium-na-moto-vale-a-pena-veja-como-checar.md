@@ -118,6 +118,6 @@ Após encostar manualmente:
 
 Manter a vela de ignição revisada transforma o comportamento da moto na cidade e garante a confiabilidade mecânica necessária para encarar viagens longas e inesquecíveis. A sensação de ligar a moto e sentir o motor trabalhando liso e potente é impagável.
 
-Foi exatamente esse tipo de cuidado prévio com a mecânica e a preparação da moto que nos permitiu curtir roteiros incríveis pelo Brasil com tranquilidade, como quando encaramos o desafio de percorrer [5 serras e 831 km de moto em um fim de semana](/blog/5-serras-e-831-km-de-moto-em-um-fim-de) com paz de espírito total.
+Foi exatamente esse tipo de cuidado prévio com a mecânica e a preparação da moto que nos permitiu curtir roteiros incríveis pelo Brasil com tranquilidade, como quando encaramos o desafio de percorrer [5 serras e 831 km de moto em um fim de semana](/blog/rastro-da-serpente-de-moto) com paz de espírito total.
 
 Cuide bem da sua parceira de duas rodas, faça a verificação periódica no tempo correto e nos vemos pelas estradas!

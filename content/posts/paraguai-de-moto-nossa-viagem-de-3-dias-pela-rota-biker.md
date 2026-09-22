@@ -60,7 +60,7 @@ _Bagagem compacta. Foto: acervo Estrada a Dois._
 
 Para quem pretende repetir o roteiro em casal, recomendamos testar a arrumação completa com antecedência. Vale conferir nosso guia de [bagagem para viagem de moto: 7 passos para o casal](/blog/bagagem-para-viagem-de-moto-casal) para prever o espaço das capas quando estiverem fora do corpo, limites de carga dos suportes e liberdade de movimento do guidão.
 
-Na preparação da moto, a referência deve ser sempre o manual do proprietário: [calibragem de pneus a frio](/blog/calibragem-de-pneus-de-moto-a-frio-o-guia-pr-tico), ajuste de suspensão para carga com garupa, transmissão, iluminação e manutenção preventiva em dia.
+Na preparação da moto, a referência deve ser sempre o manual do proprietário: [calibragem de pneus a frio](/blog/calibragem-de-pneus-de-moto-confira-a-pressao-a-frio), ajuste de suspensão para carga com garupa, transmissão, iluminação e manutenção preventiva em dia.
 
 ## Dia 1: de Guarapuava a Guaíra, entre chuva e encontros
 
@@ -126,7 +126,7 @@ Foi ali também que nasceu uma brincadeira interna que repetimos dezenas de veze
 
 ### Ciudad del Este, Foz do Iguaçu e uma lição de acolhimento
 
-Chegando a Ciudad del Este, fomos direto à aduana registrar a saída do Paraguai. Encontramos uma fila pequena e atendimento ágil na cabine de imigração. Cruzamos a Ponte da Amizade de volta ao Brasil rumo a Foz do Iguaçu, cidade que já conhecíamos muito bem de viagens anteriores ([veja nosso roteiro completo de R15 até as Cataratas do Iguaçu](/blog/de-r15-para-as-cataratas-roteiro-de)).
+Chegando a Ciudad del Este, fomos direto à aduana registrar a saída do Paraguai. Encontramos uma fila pequena e atendimento ágil na cabine de imigração. Cruzamos a Ponte da Amizade de volta ao Brasil rumo a Foz do Iguaçu, cidade que já conhecíamos muito bem de viagens anteriores ([veja nosso roteiro completo de R15 até as Cataratas do Iguaçu](/blog/de-r15-nas-cataratas)).
 
 Fizemos check-in no hotel ibis e tivemos uma surpresa emocionante no quarto: uma mensagem carinhosa de boas-vindas da equipe e mimos preparados especialmente para nós. Foi um detalhe reconfortante após um longo dia de vento e chuva.
 
@@ -193,9 +193,9 @@ A Rota Biker nos forneceu a meta no mapa, mas foram a parceria a dois, os desafi
 Quem sonha em fazer uma viagem internacional de moto não precisa esperar ter uma moto de grande cilindrada para começar. Com planejamento, respeito aos limites do casal e vontade de desbravar o mundo, qualquer cilindrada te leva tão longe quanto você desejar ir.
 
 > 💡 **Leia também nossos outros roteiros autorais:**
-> - [De R15 à Serra do Rio do Rastro: Um Sonho em Duas Rodas](/blog/de-r15-a-serra-do-rio-do-rastro-um-sonho-em)
-> - [5 serras e 831 km de moto em um fim de semana](/blog/5-serras-e-831-km-de-moto-em-um-fim-de)
-> - [De R15 para as Cataratas: Roteiro de 2.012 km a Dois](/blog/de-r15-para-as-cataratas-roteiro-de)
+> - [De R15 à Serra do Rio do Rastro: Um Sonho em Duas Rodas](/blog/r15-na-serra-do-rio-do-rastro)
+> - [5 serras e 831 km de moto em um fim de semana](/blog/rastro-da-serpente-de-moto)
+> - [De R15 para as Cataratas: Roteiro de 2.012 km a Dois](/blog/de-r15-nas-cataratas)
 
 ***
 
