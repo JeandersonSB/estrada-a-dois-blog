@@ -162,7 +162,7 @@ export function CookieBanner() {
                   onClick={() => saveConsent(true)}
                   className="px-6 py-3 bg-[#B6D200] hover:bg-[#8ac200] text-[#0F0F0F] font-black uppercase tracking-wider rounded-lg transition-colors text-sm"
                 >
-                  Aceitar análise
+                  Aceitar
                 </button>
 
                 <button
