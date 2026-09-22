@@ -1,0 +1,4 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "ignoreCommand": "MSG=\"$(git log -1 --pretty=%B)\"; if printf '%s' \"$MSG\" | grep -q '\\[force vercel\\]'; then exit 1; fi; if [ \"$VERCEL_ENV\" = \"preview\" ]; then exit 0; fi; if printf '%s' \"$MSG\" | grep -q '\\[skip vercel\\]'; then exit 0; fi; exit 1"
+}
