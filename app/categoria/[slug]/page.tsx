@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import { SmartImage } from '@/components/SmartImage';
 import { getSortedPostsData } from '@/lib/posts';
 
 function slugifyCategory(cat: string) {
@@ -77,9 +79,9 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
         {posts.length === 0 ? (
           <div className="text-center py-20">
             <h2 className="text-2xl font-bold text-gray-500">Nenhum artigo encontrado nessa categoria ainda.</h2>
-            <a href="/" className="inline-block mt-6 text-[#B6D200] font-bold uppercase tracking-widest hover:underline">
+            <Link href="/" className="inline-block mt-6 text-[#B6D200] font-bold uppercase tracking-widest hover:underline">
               Voltar para a Home
-            </a>
+            </Link>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -87,12 +89,11 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
               <article key={post.slug} className="bg-[#ffffff] rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.1)] transition-all duration-300 group border border-gray-100 flex flex-col h-full">
                 <a href={`/blog/${post.slug}`} className="block relative overflow-hidden aspect-[4/3]">
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
-                  <img 
-                    src={post.image} 
-                    alt={post.title} 
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  <SmartImage
+                    src={post.image}
+                    alt={post.title}
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    className="object-cover transform group-hover:scale-105 transition-transform duration-500"
                   />
                   <span className="absolute top-4 left-4 bg-[#B6D200] text-[#0F0F0F] text-[11px] font-black uppercase px-3 py-1 tracking-widest z-20 shadow-md">
                     {post.category}
