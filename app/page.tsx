@@ -1,5 +1,6 @@
 ﻿import { getSortedPostsData, slugifyCategory } from '@/lib/posts';
 import { SmartImage } from '@/components/SmartImage';
+import Link from 'next/link';
 
 export const revalidate = 60;
 
@@ -140,7 +141,7 @@ export default function Home() {
                 </span>
               </div>
 
-              <a
+              <Link
                 href="/categoria/roteiros"
                 className="text-[11px] md:text-xs font-bold text-gray-400 hover:text-[#B6D200] uppercase tracking-wider flex items-center gap-1 transition-colors"
               >
@@ -148,7 +149,7 @@ export default function Home() {
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
                 </svg>
-              </a>
+              </Link>
             </div>
 
             {/* Compact Cards (Horizontal scroll on mobile, 4-col grid on desktop) */}
