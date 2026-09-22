@@ -89,7 +89,7 @@ No capacete integral, beber água ou comer um lanche rápido exige retirar o equ
 
 Para o casal, lembrem-se: o piloto pode usar um integral e a garupa um modular (ou vice-versa). O melhor capacete do mundo é sempre aquele que se ajusta com perfeição ao formato anatômico da sua cabeça!
 
-> 💡 **Inspire-se na estrada:** Conheça nossa aventura de [R15 à Serra do Rio do Rastro: Nosso Roteiro Completo a Dois](/blog/de-r15-a-serra-do-rio-do-rastro-um-sonho-em)!
+> 💡 **Inspire-se na estrada:** Conheça nossa aventura de [R15 à Serra do Rio do Rastro: Nosso Roteiro Completo a Dois](/blog/r15-na-serra-do-rio-do-rastro)!
 
 ***
 

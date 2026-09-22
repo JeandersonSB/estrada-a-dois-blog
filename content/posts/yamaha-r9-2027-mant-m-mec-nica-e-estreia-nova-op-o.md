@@ -3,7 +3,8 @@ title: 'Yamaha YZF-R9 2027: Esportiva Mantém o Consagrado Motor CP3 e Apresenta
 status: 🟢 Publicado
 date: 2026-09-16
 category: Notícias
-image: https://image1.mobiauto.com.br/images/api/images/v1.0/721477346/transform/fl_progressive,f_webp,q_100,w_1200
+image: "/images/blog/yamaha-r9-2027-mant-m-mec-nica-e-estreia-nova-op-o.webp"
+imageSource: "https://image1.mobiauto.com.br/images/api/images/v1.0/721477346/transform/fl_progressive,f_webp,q_100,w_1200"
 excerpt: A Yamaha YZF-R9 renova suas opções estéticas mantendo a consagrada mecânica de três cilindros CP3. Confira os detalhes técnicos, pacote eletrônico e o impacto do modelo no segmento supersport.
 ---
 

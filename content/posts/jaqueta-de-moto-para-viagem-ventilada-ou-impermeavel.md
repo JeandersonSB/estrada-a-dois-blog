@@ -98,7 +98,7 @@ Para lavar e conservar sua jaqueta:
 ## O veredito: qual escolher para viagens longas?
 
 * **Escolha a Ventilada (com capa de chuva na bagagem):** Se suas viagens ocorrem predominantemente no calor do Brasil, litoral ou Centro-Oeste. O conforto de pilotar com vento fresco no peito reduz a fadiga térmica em viagens de 600 km.
-* **Escolha a Impermeável de Turismo:** Se você viaja com frequência pelo Sul do país, regiões montanhosas ou encara viagens de inverno — como no nosso roteiro pela [Serra do Rio do Rastro](/blog/de-r15-a-serra-do-rio-do-rastro-um-sonho-em) —, onde a neblina gelada e o frio pedem proteção selada o tempo todo.
+* **Escolha a Impermeável de Turismo:** Se você viaja com frequência pelo Sul do país, regiões montanhosas ou encara viagens de inverno — como no nosso roteiro pela [Serra do Rio do Rastro](/blog/r15-na-serra-do-rio-do-rastro) —, onde a neblina gelada e o frio pedem proteção selada o tempo todo.
 
 Para casais, lembrem-se: não há problema algum se o piloto preferir uma jaqueta ventilada e a garupa optar por uma impermeável. O equipamento perfeito é aquele que mantém cada ocupante confortável durante todo o trajeto!
 

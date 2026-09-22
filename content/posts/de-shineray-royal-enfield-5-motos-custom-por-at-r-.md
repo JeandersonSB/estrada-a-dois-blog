@@ -3,7 +3,8 @@ title: 'Motos Custom Até R$ 35 Mil: Do Acessível ao Neoclássico no Mercado Br
 status: 🟢 Publicado
 date: 2026-09-14
 category: Notícias
-image: https://upload.wikimedia.org/wikipedia/commons/7/7a/4th_International_Auto_Show%2C_Bangalore_%282025%29_190.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original
+image: "/images/blog/de-shineray-royal-enfield-5-motos-custom-por-at-r-.webp"
+imageSource: "https://upload.wikimedia.org/wikipedia/commons/7/7a/4th_International_Auto_Show%2C_Bangalore_%282025%29_190.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original"
 excerpt: O segmento de motos custom e cruiser ganha força no Brasil com opções que vão desde modelos urbanos de baixa cilindrada até estradeiras neoclássicas com ótimo custo-benefício.
 ---
 

@@ -43,7 +43,7 @@ Uma sequência simples que funciona:
 2. Separe os itens essenciais de uso comum e elimine duplicidades.
 3. Monte as mudas de roupas considerando tecidos sintéticos leves e de secagem rápida.
 
-Para viagens de fim de semana, como fizemos no nosso relato de [5 serras e 831 km de moto em um fim de semana](/blog/5-serras-e-831-km-de-moto-em-um-fim-de), duas ou três mudas de roupa são mais do que suficientes para curtir a estrada com total leveza.
+Para viagens de fim de semana, como fizemos no nosso relato de [5 serras e 831 km de moto em um fim de semana](/blog/rastro-da-serpente-de-moto), duas ou três mudas de roupa são mais do que suficientes para curtir a estrada com total leveza.
 
 ## 3. Monte pequenos conjuntos por função (Sacos Organizadores)
 
@@ -105,7 +105,7 @@ Escolher o volume da bagagem antes de escolher o que realmente é necessário. Q
 
 Viajar de moto em casal com a bagagem certa transforma a viagem em uma experiência leve, livre e sem estresse. Ao planejar juntos e respeitar os limites da motocicleta, vocês garantem conforto para curtir cada curva do caminho.
 
-> 💡 **Inspire-se na estrada:** Conheça o nosso roteiro de [2.012 km a dois até as Cataratas do Iguaçu](/blog/de-r15-para-as-cataratas-roteiro-de) e veja como organizamos nossas paradas na rodovia!
+> 💡 **Inspire-se na estrada:** Conheça o nosso roteiro de [2.012 km a dois até as Cataratas do Iguaçu](/blog/de-r15-nas-cataratas) e veja como organizamos nossas paradas na rodovia!
 
 Quais itens você e seu parceiro(a) descobriram que não precisavam levar na estrada? Conte para a gente nos comentários do Estrada a Dois!
 

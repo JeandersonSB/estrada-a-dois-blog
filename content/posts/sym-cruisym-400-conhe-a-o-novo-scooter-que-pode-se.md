@@ -3,7 +3,8 @@ title: 'SYM Cruisym 400: Dafra pode trazer novo maxi-scooter ao mercado brasilei
 status: 🟢 Publicado
 date: 2026-09-18T18:11:00
 category: Notícias
-image: https://motociclismoonline.com.br/wp-content/uploads/2026/08/SYM-Cruisym-400-Isma.avif
+image: "/images/blog/sym-cruisym-400-conhe-a-o-novo-scooter-que-pode-se.webp"
+imageSource: "https://motociclismoonline.com.br/wp-content/uploads/2026/08/SYM-Cruisym-400-Isma.avif"
 excerpt: Com visual agressivo, motorização potente e pacote tecnológico recheado, a SYM Cruisym 400 surge como forte candidata para renovar a linha de maxi-scooters da Dafra no Brasil.
 ---
 

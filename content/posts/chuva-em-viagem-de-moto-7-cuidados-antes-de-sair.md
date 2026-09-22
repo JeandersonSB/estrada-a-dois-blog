@@ -59,7 +59,7 @@ Com o piso molhado, a aderência diminui e qualquer falha mecânica é amplifica
 - **Freios:** Pastilhas em bom estado garantem mordida precisa sem travamento prematuro da roda.
 - **Iluminação:** Farol baixo, lanterna traseira e piscas devem estar 100% operacionais para você ser visto por outros veículos sob a névoa.
 
-> 💡 **Manutenção preventiva:** Veja nosso guia detalhado sobre [como limpar e lubrificar a corrente da moto corretamente](/blog/como-limpar-e-lubrificar-a-corrente-da-moto-corretamente) para proteger a relação da moto após pegar estrada molhada.
+> 💡 **Manutenção preventiva:** Veja nosso guia detalhado sobre [como limpar e lubrificar a corrente da moto corretamente](/blog/como-limpar-a-corrente-da-moto-cuidados-e-lubrificacao) para proteger a relação da moto após pegar estrada molhada.
 
 ## 6. Deixe os itens essenciais de chuva à mão
 
@@ -93,7 +93,7 @@ Achar que precisa "vencer o temporal" para não perder a diária da pousada ou n
 
 Pilotar na chuva exige respeito, suavidade nos comandos e uma dose extra de prudência. Com a moto em dia, os equipamentos certos e a mente aberta para fazer paradas sem pressa, a chuva se torna apenas mais um capítulo marcante da sua história de viagem a dois.
 
-> 💡 **Inspire-se na estrada:** Conheça o nosso roteiro pela [Rota 513, Letts Road e o Túnel de Bambus de moto](/blog/rota-513-letts-road-e-o-t-nel-de-bambus-um)!
+> 💡 **Inspire-se na estrada:** Conheça o nosso roteiro pela [Rota 513, Letts Road e o Túnel de Bambus de moto](/blog/r15-em-ponta-grossa)!
 
 Como você e seu parceiro(a) lidam com a chuva na estrada? Quais truques vocês usam para manter a calma e a segurança? Deixe seu comentário no Estrada a Dois!
 

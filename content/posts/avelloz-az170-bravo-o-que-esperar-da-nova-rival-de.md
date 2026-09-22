@@ -3,7 +3,8 @@ title: 'Avelloz AZ170 Bravo: Conheça a Nova Aposta para Desafiar CG 160 e Facto
 status: 🟢 Publicado
 date: 2026-09-17T20:45:00
 category: Notícias
-image: https://motociclismoonline.com.br/wp-content/uploads/2026/09/Avelloz-bravo-detalhe-farol.avif
+image: "/images/blog/avelloz-az170-bravo-o-que-esperar-da-nova-rival-de.webp"
+imageSource: "https://motociclismoonline.com.br/wp-content/uploads/2026/09/Avelloz-bravo-detalhe-farol.avif"
 excerpt: A Avelloz eleva o nível da sua gama no Brasil com a AZ170 Bravo, modelo street que promete agitar o disputado segmento utilitário dominado por Honda CG 160 e Yamaha Factor.
 ---
 

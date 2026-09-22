@@ -90,7 +90,7 @@ Em dias de chuva com bota de cano longo, **a barra da calça impermeável deve f
 ## O veredito: qual escolher para a sua viagem?
 
 * **Fique com a Bota de Cano Curto:** Se o seu perfil de viagem envolve muitos passeios a pé nas paradas, clima predominantemente quente e deslocamentos de fim de semana com paradas em cidades turísticas.
-* **Fique com a Bota de Cano Longo:** Se você encara centenas de quilômetros de rodovia aberta em qualquer clima — como na nossa rota de [2.012 km a dois até as Cataratas do Iguaçu](/blog/de-r15-para-as-cataratas-roteiro-de) —, onde a proteção contra o vento frio, pedriscos de caminhões e tempestades exige uma barreira intransponível na canela.
+* **Fique com a Bota de Cano Longo:** Se você encara centenas de quilômetros de rodovia aberta em qualquer clima — como na nossa rota de [2.012 km a dois até as Cataratas do Iguaçu](/blog/de-r15-nas-cataratas) —, onde a proteção contra o vento frio, pedriscos de caminhões e tempestades exige uma barreira intransponível na canela.
 
 ***
 
