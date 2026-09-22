@@ -26,7 +26,6 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_PROJECT_ID: 'prj_VAkuyXkjskhBGAEkT7R5LyglgJAp'
           VERCEL_TEAM_ID: 'team_aJBVPVcwGqAPDRsLQYhOBYRf'
-          KEEP_PRODUCTION: '3'
           KEEP_PREVIEW: '2'
           MAX_DEPLOYMENTS: '500'
         run: node scripts/clean_vercel.mjs
