@@ -8,15 +8,9 @@ concurrency:
   cancel-in-progress: false
 
 
+# Mantido para uso futuro. Não há disparo automático.
+# Para gerar cards manualmente: GitHub Actions > este workflow > Run workflow.
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'content/posts/**'
-      - '.github/workflows/social_cards.yml'
-      - 'scripts/social_*.mjs'
-
   workflow_dispatch:
     inputs:
       slug:
@@ -37,7 +31,6 @@ on:
 
 jobs:
   gerar-cards-sociais:
-    if: ${{ github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip vercel]') }}
     runs-on: ubuntu-latest
 
     steps:
