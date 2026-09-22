@@ -97,6 +97,56 @@ jobs:
           git reset --hard "$ORIGINAL_SHA"
           git clean -fd content/posts public/images/blog
 
+      - name: Testar capa já normalizada sem barra duplicada
+        run: |
+          ORIGINAL_SHA="$(git rev-parse HEAD)"
+          git config user.name "ci-test"
+          git config user.email "ci-test@example.com"
+
+          mkdir -p content/posts public/images/blog
+
+          node --input-type=module <<'NODE'
+          import sharp from 'sharp';
+          await sharp({
+            create: {
+              width: 800,
+              height: 600,
+              channels: 3,
+              background: { r: 60, g: 60, b: 60 }
+            }
+          }).webp({ quality: 82 }).toFile('public/images/blog/artigo-normalizado.webp');
+          NODE
+
+          cat > content/posts/artigo-normalizado.md <<'EOF'
+          ---
+          title: "Artigo Normalizado"
+          status: "🟢 Publicado"
+          image: "/images/blog/artigo-normalizado.webp"
+          ---
+
+          Conteúdo inicial.
+          EOF
+
+          git add content/posts/artigo-normalizado.md public/images/blog/artigo-normalizado.webp
+          git commit --quiet -m "fixture: artigo publicado"
+          BEFORE_SHA="$(git rev-parse HEAD)"
+
+          printf '\nAtualização editorial.\n' >> content/posts/artigo-normalizado.md
+          git add content/posts/artigo-normalizado.md
+          git commit --quiet -m "fixture: editar artigo"
+          HEAD_SHA="$(git rev-parse HEAD)"
+
+          node scripts/normalize_published_images.mjs "$BEFORE_SHA" "$HEAD_SHA"
+
+          grep -F 'image: "/images/blog/artigo-normalizado.webp"' content/posts/artigo-normalizado.md
+          if grep -Fq 'image: "//images/blog/' content/posts/artigo-normalizado.md; then
+            echo "ERRO: referência de imagem ganhou barra duplicada"
+            exit 1
+          fi
+
+          git reset --hard "$ORIGINAL_SHA"
+          git clean -fd content/posts public/images/blog
+
       - name: Validar conversão de AVIF para WebP
         run: |
           node --input-type=module <<'NODE'
