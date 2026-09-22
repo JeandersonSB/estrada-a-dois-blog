@@ -73,3 +73,7 @@ jobs:
 
       - name: Auditoria de dependências de produção
         run: npm audit --omit=dev --audit-level=high
+
+      - name: Relatório completo de dependências
+        continue-on-error: true
+        run: npm audit --audit-level=low
