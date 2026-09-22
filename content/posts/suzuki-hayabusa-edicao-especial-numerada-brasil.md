@@ -1,13 +1,13 @@
 ---
-title: "Suzuki Hayabusa ganha edição especial e numerada limitada a 120 unidades no Brasil"
-date: "2026-09-22T11:06:45"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "/images/blog/suzuki-hayabusa-edicao-especial-numerada-brasil.webp"
-excerpt: "A Suzuki anunciou a chegada de uma edição comemorativa e numerada da lendária Hayabusa ao mercado brasileiro, com lote exclusivo de apenas 120 unidades e foco total em colecionadores."
+title: Suzuki Hayabusa ganha edição especial e numerada limitada a 120 unidades no Brasil
+status: 🟢 Publicado
+date: 2026-09-22T08:09:00
+category: Notícias
+image: /images/blog/1789067667_interlagos_hayabusa.jpg
+excerpt: A Suzuki anunciou a chegada de uma edição comemorativa e numerada da lendária Hayabusa ao mercado brasileiro, com lote exclusivo de apenas 120 unidades e foco total em colecionadores.
 ---
 
-A Suzuki confirmou o lançamento de uma edição especial e numerada da icônica **Hayabusa** no mercado brasileiro. Referência global na categoria de *hyperbikes* desde seu lançamento original no final dos anos 1990, a motocicleta chega ao país em um lote extremamente restrito de apenas **120 unidades**, posicionada na faixa dos R$ 127 mil.
+A Suzuki confirmou o lançamento de uma edição especial e numerada da icônica **Hayabusa** no mercado brasileiro. Referência global na categoria de _hyperbikes_ desde seu lançamento original no final dos anos 1990, a motocicleta chega ao país em um lote extremamente restrito de apenas **120 unidades**, posicionada na faixa dos R$ 127 mil.
 
 A novidade visa atender entusiastas da marca e colecionadores que buscam um modelo com alto apelo histórico, acabamento diferenciado e a chancela de uma produção limitada para o território nacional.
 
@@ -21,12 +21,12 @@ O diferencial desta versão comemorativa está nos detalhes estéticos exclusivo
 
 Sob a carenagem aerodinâmica, a edição especial preserva o consagrado propulsor quadricilíndrico em linha de **1.340 cm³**, com duplo comando no cabeçote (DOHC) e refrigeração líquida. O motor entrega entrega de torque linear desde as baixas rotações e uma potência máxima na casa dos 190 cv.
 
-A eletrônica embarcada é gerenciada pelo sistema **SIRS** (*Suzuki Intelligent Ride System*), um pacote tecnológico que inclui:
+A eletrônica embarcada é gerenciada pelo sistema **SIRS** (_Suzuki Intelligent Ride System_), um pacote tecnológico que inclui:
 
 * **IMU de 6 Eixos:** Unidade de medição inercial que monitora o comportamento da moto em tempo real (inclinação, arfagem e esterço) para atuar nos sistemas de assistência.
 * **Quickshifter Bidirecional:** Permite a troca de marchas acima ou abaixo sem a necessidade de acionar a manete de embreagem.
 * **Controle de Tração e Modos de Pilotagem:** Ajustes personalizáveis de entrega de potência e sensibilidade para diferentes condições de piso.
-* **Controle de Largada (*Launch Control*) e Anti-wheelie:** Sistemas projetados para otimizar acelerações fortes com segurança.
+* **Controle de Largada (_Launch Control_) e Anti-wheelie:** Sistemas projetados para otimizar acelerações fortes com segurança.
 
 A ciclística mantém o quadro de alumínio de dupla trave, suspensões ajustáveis do especialista KYB e sistema de freios Brembo Stylema com discos duplos na dianteira, garantindo rigidez e capacidade de frenagem condizentes com a performance do modelo.
 
