@@ -1,97 +1,137 @@
 // scripts/clean_vercel.mjs
-// Robô de Faxina Automático: limpa deploys antigos na Vercel para economizar armazenamento
+// Mantém poucos deployments úteis e remove previews/erros antigos sem arriscar a produção atual.
 
 const VERCEL_TOKEN = process.env.VERCEL_TOKEN;
-const PROJECT_NAME = process.env.VERCEL_PROJECT_NAME || 'estrada-a-dois-blog';
-const KEEP_COUNT = parseInt(process.env.KEEP_COUNT || '5', 10);
+const PROJECT_ID = process.env.VERCEL_PROJECT_ID || 'prj_VAkuyXkjskhBGAEkT7R5LyglgJAp';
+const TEAM_ID = process.env.VERCEL_TEAM_ID || 'team_aJBVPVcwGqAPDRsLQYhOBYRf';
+const KEEP_PRODUCTION = parseInt(process.env.KEEP_PRODUCTION || '3', 10);
+const KEEP_PREVIEW = parseInt(process.env.KEEP_PREVIEW || '2', 10);
+const MAX_DEPLOYMENTS = parseInt(process.env.MAX_DEPLOYMENTS || '500', 10);
 
 if (!VERCEL_TOKEN) {
-  console.error('❌ ERRO: VERCEL_TOKEN não configurado no ambiente.');
-  console.error('👉 Adicione o segredo VERCEL_TOKEN no GitHub (Settings > Secrets and variables > Actions).');
+  console.error('❌ VERCEL_TOKEN não configurado.');
   process.exit(1);
 }
 
-async function cleanOldDeployments() {
-  console.log(`🧹 Iniciando faxina na Vercel para o projeto: "${PROJECT_NAME}"...`);
-  console.log(`🛡️ Mantendo os ${KEEP_COUNT} deploys mais recentes intactos por segurança.\n`);
+async function fetchDeployments() {
+  const deployments = [];
+  let until = null;
 
-  try {
-    // 1. Listar deployments da Vercel
-    const url = `https://api.vercel.com/v6/deployments?app=${encodeURIComponent(PROJECT_NAME)}&limit=100`;
-    const res = await fetch(url, {
-      headers: {
-        Authorization: `Bearer ${VERCEL_TOKEN}`,
-      },
+  while (deployments.length < MAX_DEPLOYMENTS) {
+    const params = new URLSearchParams({
+      projectId: PROJECT_ID,
+      teamId: TEAM_ID,
+      limit: '100',
+    });
+
+    if (until) params.set('until', String(until));
+
+    const res = await fetch(`https://api.vercel.com/v6/deployments?${params.toString()}`, {
+      headers: { Authorization: `Bearer ${VERCEL_TOKEN}` },
     });
 
     if (!res.ok) {
-      const errText = await res.text();
-      throw new Error(`Falha ao listar deployments da Vercel (Status ${res.status}): ${errText}`);
+      throw new Error(`Falha ao listar deployments (${res.status}): ${await res.text()}`);
     }
 
     const data = await res.json();
-    const deployments = data.deployments || [];
+    const page = data.deployments || [];
+    deployments.push(...page);
 
-    console.log(`📦 Total de deploys encontrados para "${PROJECT_NAME}": ${deployments.length}`);
+    if (!data.pagination?.next || page.length === 0) break;
+    until = Number(data.pagination.next) - 1;
+  }
 
-    if (deployments.length <= KEEP_COUNT) {
-      console.log(`✅ Quantidade atual de deploys (${deployments.length}) já está dentro do limite seguro (<= ${KEEP_COUNT}). Nada a excluir.`);
-      return;
+  return deployments.slice(0, MAX_DEPLOYMENTS);
+}
+
+function newestFirst(a, b) {
+  return (b.created || b.createdAt || 0) - (a.created || a.createdAt || 0);
+}
+
+async function deleteDeployment(dep) {
+  const id = dep.uid || dep.id;
+  const params = new URLSearchParams({ teamId: TEAM_ID });
+
+  const res = await fetch(
+    `https://api.vercel.com/v13/deployments/${id}?${params.toString()}`,
+    {
+      method: 'DELETE',
+      headers: { Authorization: `Bearer ${VERCEL_TOKEN}` },
     }
+  );
 
-    // Ordenar por data decrescente (mais recente primeiro)
-    deployments.sort((a, b) => (b.created || 0) - (a.created || 0));
-
-    // Os primeiros KEEP_COUNT são mantidos
-    const toKeep = deployments.slice(0, KEEP_COUNT);
-    const toDelete = deployments.slice(KEEP_COUNT);
-
-    console.log(`🛡️ Deploys protegidos (mais recentes):`);
-    toKeep.forEach((d, idx) => {
-      console.log(`  ${idx + 1}. [${d.uid}] ${d.url} (${new Date(d.created).toLocaleString('pt-BR')})`);
-    });
-
-    console.log(`\n🗑️ Deploys antigos a serem excluídos: ${toDelete.length}`);
-
-    let deletedCount = 0;
-    let errorCount = 0;
-
-    for (const dep of toDelete) {
-      const deleteUrl = `https://api.vercel.com/v13/deployments/${dep.uid}`;
-      try {
-        const delRes = await fetch(deleteUrl, {
-          method: 'DELETE',
-          headers: {
-            Authorization: `Bearer ${VERCEL_TOKEN}`,
-          },
-        });
-
-        if (delRes.ok) {
-          deletedCount++;
-          console.log(`  ✅ Excluído: [${dep.uid}] ${dep.url} (${new Date(dep.created).toLocaleDateString('pt-BR')})`);
-        } else {
-          errorCount++;
-          const errBody = await delRes.text();
-          console.warn(`  ⚠️ Falha ao excluir [${dep.uid}]: Status ${delRes.status} - ${errBody}`);
-        }
-      } catch (err) {
-        errorCount++;
-        console.error(`  ❌ Erro de conexão ao excluir [${dep.uid}]: ${err.message}`);
-      }
-
-      // Pequena pausa de 300ms entre as requisições para evitar rate limit
-      await new Promise((resolve) => setTimeout(resolve, 300));
-    }
-
-    console.log(`\n🎉 Faxina concluída!`);
-    console.log(`- Excluídos com sucesso: ${deletedCount}`);
-    if (errorCount > 0) {
-      console.log(`- Falhas/Avisos: ${errorCount}`);
-    }
-  } catch (err) {
-    console.error(`💥 Erro durante a faxina:`, err.message);
-    process.exit(1);
+  if (!res.ok) {
+    throw new Error(`${res.status} - ${await res.text()}`);
   }
 }
 
-cleanOldDeployments();
+async function run() {
+  console.log('🧹 Faxina Vercel iniciada.');
+  console.log(`Projeto: ${PROJECT_ID}`);
+  console.log(`Retenção: ${KEEP_PRODUCTION} produção + ${KEEP_PREVIEW} previews READY`);
+
+  const deployments = (await fetchDeployments()).sort(newestFirst);
+
+  const inProgress = deployments.filter((d) =>
+    ['BUILDING', 'QUEUED', 'INITIALIZING'].includes(d.state)
+  );
+
+  const production = deployments.filter(
+    (d) => d.target === 'production' && !inProgress.includes(d)
+  );
+
+  const previewReady = deployments.filter(
+    (d) => d.target !== 'production' && d.state === 'READY'
+  );
+
+  const disposable = deployments.filter(
+    (d) =>
+      !inProgress.includes(d) &&
+      !production.includes(d) &&
+      !previewReady.includes(d)
+  );
+
+  const keepProduction = new Set(
+    production.slice(0, KEEP_PRODUCTION).map((d) => d.uid || d.id)
+  );
+
+  const keepPreview = new Set(
+    previewReady.slice(0, KEEP_PREVIEW).map((d) => d.uid || d.id)
+  );
+
+  const toDelete = [
+    ...production.filter((d) => !keepProduction.has(d.uid || d.id)),
+    ...previewReady.filter((d) => !keepPreview.has(d.uid || d.id)),
+    ...disposable,
+  ];
+
+  console.log(`📦 Encontrados: ${deployments.length}`);
+  console.log(`🛡️ Em andamento preservados: ${inProgress.length}`);
+  console.log(`🛡️ Produção preservada: ${Math.min(production.length, KEEP_PRODUCTION)}`);
+  console.log(`🛡️ Preview READY preservado: ${Math.min(previewReady.length, KEEP_PREVIEW)}`);
+  console.log(`🗑️ A excluir: ${toDelete.length}`);
+
+  let deleted = 0;
+  let failed = 0;
+
+  for (const dep of toDelete) {
+    const id = dep.uid || dep.id;
+    try {
+      await deleteDeployment(dep);
+      deleted++;
+      console.log(`✅ Excluído: ${id} | ${dep.target || 'preview'} | ${dep.state}`);
+    } catch (error) {
+      failed++;
+      console.warn(`⚠️ Não foi possível excluir ${id}: ${error.message}`);
+    }
+    await new Promise((resolve) => setTimeout(resolve, 250));
+  }
+
+  console.log(`🎉 Faxina concluída: ${deleted} excluídos, ${failed} falhas.`);
+}
+
+run().catch((error) => {
+  console.error('💥 Erro na faxina:', error.message);
+  process.exit(1);
+});
