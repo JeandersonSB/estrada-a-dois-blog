@@ -53,12 +53,12 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           NEWS_COUNT: ${{ github.event.inputs.count || '' }}
-        run: node scripts/news_bot.mjs
+        run: node scripts/news_bot.mjs 2>&1 | tee bot_debug.log
         
       - name: Salvar e Publicar no Painel (Rascunho)
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Notícia Automática (Rascunho gerado pela IA)"
           branch: main
-          file_pattern: 'content/posts/*.md public/images/blog/*'
+          file_pattern: 'content/posts/*.md public/images/blog/* bot_debug.log'
 
