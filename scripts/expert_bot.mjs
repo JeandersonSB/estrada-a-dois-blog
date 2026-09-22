@@ -315,8 +315,7 @@ async function gerarArtigo(categoria) {
     let markdownContent = null;
     const modelCandidates = [
       'gemini-3.6-flash',
-      'gemini-flash-latest',
-      'gemini-2.5-flash'
+      'gemini-flash-latest'
     ];
     let lastError = null;
 

@@ -24,13 +24,6 @@ on:
           - '2'
           - '3'
 
-  push:
-    branches:
-      - main
-    paths:
-      - '.github/workflows/news_bot.yml'
-      - 'scripts/news_bot.mjs'
-
 jobs:
   gerar-noticia:
     runs-on: ubuntu-latest
@@ -53,12 +46,12 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           NEWS_COUNT: ${{ github.event.inputs.count || '' }}
-        run: node scripts/news_bot.mjs 2>&1 | tee bot_debug.log
+        run: node scripts/news_bot.mjs
         
       - name: Salvar e Publicar no Painel (Rascunho)
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Notícia Automática (Rascunho gerado pela IA)"
           branch: main
-          file_pattern: 'content/posts/*.md public/images/blog/* bot_debug.log'
+          file_pattern: 'content/posts/*.md public/images/blog/*'
 

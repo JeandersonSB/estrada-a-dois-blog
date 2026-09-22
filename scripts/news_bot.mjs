@@ -382,8 +382,7 @@ SELECAO: [numeros separados por virgula, ex: 1, 3]
 
   const modelCandidates = [
     'gemini-3.6-flash',
-    'gemini-flash-latest',
-    'gemini-2.5-flash'
+    'gemini-flash-latest'
   ];
 
   for (const modelName of modelCandidates) {
@@ -480,8 +479,7 @@ async function processarItem(item, genAI, isBrazilianSource = true) {
     let markdownContent = null;
     const modelCandidates = [
       'gemini-3.6-flash',
-      'gemini-flash-latest',
-      'gemini-2.5-flash'
+      'gemini-flash-latest'
     ];
     let lastError = null;
 
