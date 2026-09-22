@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
+import remarkGfm from 'remark-gfm';
 import html from 'remark-html';
 import { cache } from 'react';
 
@@ -151,6 +152,7 @@ async function _getPostDataInternal(slug: string): Promise<PostDataWithContent> 
   const articleBody = matterResult.content.replace(/^\s*#\s+[^\r\n]+\r?\n+/, '');
 
   const processedContent = await remark()
+    .use(remarkGfm)
     .use(html)
     .process(articleBody);
   const rawContentHtml = processedContent.toString();
