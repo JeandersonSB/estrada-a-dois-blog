@@ -112,8 +112,11 @@ async function testarLinkAtivo(url) {
   }
 }
 
-// 2. Extrai imagem real do site de origem
+// 2. Extrai imagem real do site de origem (evita intermediários como Google News)
 async function extrairImagemSiteOrigem(url) {
+  if (!url || url.includes('news.google.com') || url.includes('google.com')) {
+    return null; // Google News não serve imagem da matéria, apenas ícone do app
+  }
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 6000);
   try {
@@ -132,7 +135,15 @@ async function extrairImagemSiteOrigem(url) {
                     html.match(/<meta\s+content=["']([^"'>]+)["']\s+property=["']og:image["']/i);
     if (ogMatch && ogMatch[1]) {
       const img = ogMatch[1].trim();
-      if (img.startsWith('http') && !img.includes('default') && !img.includes('logo') && !img.includes('avatar')) {
+      if (img.startsWith('http') &&
+          !img.includes('googleusercontent.com') &&
+          !img.includes('gstatic.com') &&
+          !img.includes('google.com') &&
+          !img.includes('default') &&
+          !img.includes('logo') &&
+          !img.includes('avatar') &&
+          !img.includes('favicon') &&
+          !img.includes('placeholder')) {
         return img;
       }
     }
@@ -141,7 +152,15 @@ async function extrairImagemSiteOrigem(url) {
                     html.match(/<meta\s+content=["']([^"'>]+)["']\s+name=["']twitter:image["']/i);
     if (twMatch && twMatch[1]) {
       const img = twMatch[1].trim();
-      if (img.startsWith('http') && !img.includes('default') && !img.includes('logo')) {
+      if (img.startsWith('http') &&
+          !img.includes('googleusercontent.com') &&
+          !img.includes('gstatic.com') &&
+          !img.includes('google.com') &&
+          !img.includes('default') &&
+          !img.includes('logo') &&
+          !img.includes('avatar') &&
+          !img.includes('favicon') &&
+          !img.includes('placeholder')) {
         return img;
       }
     }
@@ -152,32 +171,72 @@ async function extrairImagemSiteOrigem(url) {
   }
 }
 
-// 3. Fallback de imagem
+// 3. Busca de imagem real contextual com fotos fotográficas de alta resolução
+const FOTOS_MOTO_CURADAS = {
+  custom: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=1200&auto=format&fit=crop&q=80',
+  trail: 'https://images.unsplash.com/photo-1558981285-6f0c94958bb6?w=1200&auto=format&fit=crop&q=80',
+  sport: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=1200&auto=format&fit=crop&q=80',
+  street: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=1200&auto=format&fit=crop&q=80',
+  scooter: 'https://images.unsplash.com/photo-1558981420-87aa9210d992?w=1200&auto=format&fit=crop&q=80'
+};
+
 async function buscarImagemPorPalavrasChave(termoBusca) {
-  if (!termoBusca) return 'https://loremflickr.com/1200/600/motorcycle,superbike/all';
-  try {
-    const cleanKw = termoBusca.replace(/[^a-zA-Z0-9\s]/g, '').trim();
-    const url = `https://en.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(cleanKw)}&gsrlimit=1&prop=pageimages&piprop=original&format=json`;
-    const res = await fetch(url, {
-      headers: { 'User-Agent': 'EstradaADoisBot/1.0' },
-      signal: AbortSignal.timeout(6000)
-    });
-    if (res.ok) {
-      const data = await res.json();
-      if (data.query && data.query.pages) {
-        const pages = Object.values(data.query.pages);
-        if (pages.length > 0 && pages[0].original && pages[0].original.source) {
-          return pages[0].original.source;
+  if (!termoBusca) return FOTOS_MOTO_CURADAS.street;
+
+  // 1. Tentar busca no Wikimedia Commons por fotos reais de motos
+  const termosTeste = [
+    termoBusca.replace(/\b(2025|2026|2027|nova|novo|lancamento|recorde)\b/gi, '').trim(),
+    termoBusca.split(' ').slice(0, 2).join(' ')
+  ];
+
+  for (const t of termosTeste) {
+    if (!t || t.length < 3) continue;
+    try {
+      const cleanKw = t.replace(/[^a-zA-Z0-9\s]/g, '').trim();
+      const url = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(cleanKw + ' motorcycle')}&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url|size|mime&format=json`;
+      const res = await fetch(url, {
+        headers: { 'User-Agent': 'EstradaADoisBot/1.0 (contato@estradaadois.com)' },
+        signal: AbortSignal.timeout(6000)
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data?.query?.pages) {
+          const pages = Object.values(data.query.pages);
+          for (const page of pages) {
+            const info = page.imageinfo?.[0];
+            if (info && info.mime && info.mime.startsWith('image/jpeg') && info.width >= 600) {
+              const urlFoto = info.url;
+              if (!urlFoto.includes('logo') && !urlFoto.includes('flag') && !urlFoto.includes('icon')) {
+                console.log(`[Imagem] Foto encontrada no Wikimedia Commons para "${t}": ${urlFoto}`);
+                return urlFoto;
+              }
+            }
+          }
         }
       }
+    } catch (e) {
+      console.warn(`[Imagem] Falha na busca Commons para "${t}": ${e.message}`);
     }
-  } catch (e) {}
-  const tags = encodeURIComponent(termoBusca.toLowerCase().replace(/[^a-z0-9]+/g, ','));
-  return `https://loremflickr.com/1200/600/${tags}/all`;
+  }
+
+  // 2. Classificação contextual por estilo para fotos premium do Unsplash
+  const termoLower = termoBusca.toLowerCase();
+  if (/\b(custom|classic|meteor|hunter|bullet|interceptor|cruiser|harley|chopper|denver)\b/.test(termoLower)) {
+    return FOTOS_MOTO_CURADAS.custom;
+  }
+  if (/\b(trail|adventure|himalayan|bros|sahara|crosser|lander|tenere|ténéré|gs|tiger|off-road|dakkar|transalp)\b/.test(termoLower)) {
+    return FOTOS_MOTO_CURADAS.trail;
+  }
+  if (/\b(sport|ninja|cbr|zx|r1|r3|r7|r9|panigale|hayabusa|superbike|naked|mt-03|mt-07|mt-09|z900|streetfighter)\b/.test(termoLower)) {
+    return FOTOS_MOTO_CURADAS.sport;
+  }
+  if (/\b(scooter|nmax|pcx|adv|cruisym|burgman|sh150|elite|vespa)\b/.test(termoLower)) {
+    return FOTOS_MOTO_CURADAS.scooter;
+  }
+  return FOTOS_MOTO_CURADAS.street;
 }
 
-
-// 3.1 Baixa e otimiza a imagem localmente (Vercel CDN, evita 403 e garante < 200 KB para WhatsApp)
+// 3.1 Baixa, valida resolução e otimiza a imagem localmente (1200x675 cover, WebP)
 async function salvarEOtimizarImagemLocal(imageUrl, slug) {
   try {
     const res = await fetch(imageUrl, {
@@ -186,9 +245,15 @@ async function salvarEOtimizarImagemLocal(imageUrl, slug) {
       },
       signal: AbortSignal.timeout(12000)
     });
-    if (!res.ok) return imageUrl;
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const arrayBuffer = await res.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
+
+    // Validação estrita de dimensões: descarta ícones e imagens minúsculas (< 400x250)
+    const meta = await sharp(buffer).metadata();
+    if (!meta.width || meta.width < 400 || !meta.height || meta.height < 250) {
+      throw new Error(`Imagem pequena demais (${meta.width}x${meta.height}) - provável ícone ou thumbnail descartado`);
+    }
 
     const imagesDir = path.join(process.cwd(), 'public', 'images', 'blog');
     if (!fs.existsSync(imagesDir)) {
@@ -200,18 +265,35 @@ async function salvarEOtimizarImagemLocal(imageUrl, slug) {
 
     const optimizedBuffer = await sharp(buffer)
       .rotate()
-      .resize(1200, null, { withoutEnlargement: true })
-      .webp({ quality: 78, effort: 4 })
+      .resize(1200, 675, { fit: 'cover' })
+      .webp({ quality: 80, effort: 4 })
       .toBuffer();
 
     fs.writeFileSync(targetPath, optimizedBuffer);
     console.log(`🖼️ Imagem baixada e otimizada localmente: /images/blog/${fileName} (${(optimizedBuffer.length / 1024).toFixed(0)} KB)`);
     return `/images/blog/${fileName}`;
   } catch (err) {
-    console.warn(`Aviso ao salvar imagem local (${err.message}). Mantendo URL externa.`);
-    return imageUrl;
+    console.warn(`Aviso ao salvar imagem local (${err.message}). Usando fallback de fotografia de moto.`);
+    try {
+      const fallbackUrl = FOTOS_MOTO_CURADAS.street;
+      const res = await fetch(fallbackUrl);
+      const buffer = Buffer.from(await res.arrayBuffer());
+      const fileName = `${slug}.webp`;
+      const targetPath = path.join(process.cwd(), 'public', 'images', 'blog', fileName);
+      const optimized = await sharp(buffer)
+        .rotate()
+        .resize(1200, 675, { fit: 'cover' })
+        .webp({ quality: 80, effort: 4 })
+        .toBuffer();
+      fs.writeFileSync(targetPath, optimized);
+      console.log(`🖼️ Imagem curada aplicada: /images/blog/${fileName} (${(optimized.length / 1024).toFixed(0)} KB)`);
+      return `/images/blog/${fileName}`;
+    } catch (fbErr) {
+      return imageUrl;
+    }
   }
 }
+
 // 4. Envia notificacao instantanea para o Telegram
 async function enviarNotificacaoTelegram({ title, excerpt, date, slug, image }) {
   const token = process.env.TELEGRAM_BOT_TOKEN;
@@ -226,7 +308,7 @@ async function enviarNotificacaoTelegram({ title, excerpt, date, slug, image }) 
 
   const mensagem = `📰 <b>NOVO RASCUNHO GERADO PELO ROBÔ!</b>\n\n` +
     `📌 <b>Título:</b>\n${escapeHtml(title)}\n\n` +
-    `📂 <b>Categoria:</b> Notícias (📝 Rascunho)\n` +
+    `📂 <b>Categoria:</b> Notícias (⏳ Rascunho)\n` +
     `📅 <b>Data:</b> ${escapeHtml(date)}\n\n` +
     (excerpt ? `📝 <b>Resumo:</b>\n<i>${escapeHtml(excerpt)}</i>\n\n` : '') +
     `🔗 <a href="https://www.estradaadois.com/admin/"><b>Clique aqui para revisar e publicar no Painel</b></a>`;
@@ -316,13 +398,38 @@ function limparFimSlug(slug) {
 // SISTEMA EDITORIAL INTELIGENTE ANTI-DUPLICIDADE DE TEMAS
 // =========================================================================
 
-function carregarPostsRecentes(dias = 30) {
+const STOPWORDS_ANTI_DUPLICADOS = new Set([
+  'de', 'em', 'no', 'na', 'do', 'da', 'dos', 'das', 'os', 'as', 'ao', 'aos',
+  'um', 'uma', 'uns', 'umas', 'para', 'com', 'por', 'pela', 'pelo', 'pelos', 'pelas',
+  'sobre', 'entre', 'contra', 'ate', 'atraves', 'que', 'se', 'ja', 'ou', 'so',
+  'este', 'esta', 'esse', 'essa', 'estes', 'estas', 'esses', 'essas',
+  'seu', 'sua', 'seus', 'suas', 'meu', 'minha', 'nosso', 'nossa',
+  'foi', 'sao', 'ser', 'ter', 'tera', 'terao', 'tem', 'temos', 'estao', 'estar',
+  'mais', 'menos', 'como', 'quando', 'onde', 'qual', 'quais', 'quem',
+  'novo', 'nova', 'novos', 'novas', 'novidade', 'novidades',
+  'moto', 'motos', 'motocicleta', 'motocicletas', 'motociclismo', 'brasil',
+  'chega', 'chegam', 'ganha', 'ganham', 'revela', 'revelam', 'apresenta', 'apresentam',
+  'veja', 'confira', 'conheca', 'saiba', 'tudo', 'detalhes', 'fotos', 'galeria',
+  'oficial', 'oficialmente', 'esperar', 'pode', 'anos', 'meses', 'dias'
+]);
+
+function extrairTokensAntiDuplicidade(texto) {
+  if (!texto) return new Set();
+  return new Set(
+    texto.toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9\s]/g, ' ')
+      .split(/\s+/)
+      .filter(w => w.length >= 2 && !STOPWORDS_ANTI_DUPLICADOS.has(w))
+  );
+}
+
+function carregarTodosPostsExistentes() {
   if (!fs.existsSync(POSTS_DIR)) return [];
   try {
     const files = fs.readdirSync(POSTS_DIR).filter(f => f.endsWith('.md'));
     const posts = [];
-    const limiteMs = Date.now() - (dias * 24 * 60 * 60 * 1000);
-
     for (const f of files) {
       try {
         const content = fs.readFileSync(path.join(POSTS_DIR, f), 'utf8');
@@ -330,44 +437,64 @@ function carregarPostsRecentes(dias = 30) {
         const dateMatch = content.match(/date:\s*["']?([^"'\r\n]+)["']?/i);
         const title = titleMatch ? titleMatch[1].trim() : '';
         const dateStr = dateMatch ? dateMatch[1].trim() : '';
-        const postTime = dateStr ? new Date(dateStr).getTime() : 0;
-
+        const time = dateStr ? new Date(dateStr).getTime() : 0;
         if (title) {
           posts.push({
             slug: f.replace('.md', ''),
             title,
             date: dateStr,
-            time: postTime
+            time,
+            tokens: extrairTokensAntiDuplicidade(title)
           });
         }
       } catch (err) {}
     }
-
     posts.sort((a, b) => b.time - a.time);
     return posts;
   } catch (e) {
-    console.warn("Aviso ao carregar posts recentes:", e.message);
+    console.warn("Aviso ao carregar posts:", e.message);
     return [];
   }
 }
 
-// Triagem editorial com IA em 1 UNICA chamada: escolhe quais candidatos sao mais promissores
+function verificarDuplicidadeTematica(tituloCandidato, todosPosts) {
+  const candTokens = Array.from(extrairTokensAntiDuplicidade(tituloCandidato));
+  if (candTokens.length === 0) return null;
+
+  for (const post of todosPosts) {
+    const overlap = candTokens.filter(t => post.tokens.has(t));
+    const unionSize = new Set([...candTokens, ...post.tokens]).size;
+    const jaccard = unionSize > 0 ? overlap.length / unionSize : 0;
+
+    if (overlap.length >= 3 || (overlap.length >= 2 && jaccard >= 0.28)) {
+      return {
+        postExistente: post.title,
+        overlap,
+        jaccard
+      };
+    }
+  }
+  return null;
+}
+
+// Triagem editorial com IA: escolhe candidatos estritamente inéditos
 async function selecionarCandidatosIneditos(candidatosDisponiveis, postsRecentes, targetCount, genAI) {
   if (!candidatosDisponiveis || candidatosDisponiveis.length === 0) return [];
   if (!postsRecentes || postsRecentes.length === 0) return candidatosDisponiveis.slice(0, targetCount);
 
-  const listaRecentes = postsRecentes.slice(0, 25).map((p, i) => `${i + 1}. "${p.title}"`).join('\n');
+  const listaRecentes = postsRecentes.slice(0, 35).map((p, i) => `${i + 1}. "${p.title}"`).join('\n');
   const listaCandidatos = candidatosDisponiveis.slice(0, 10).map((c, i) => `[${i + 1}] "${c.title}"`).join('\n');
 
   const promptTriagem = `
 Voce e o Editor-Chefe do portal de motociclismo "Estrada a Dois".
 Abaixo estao as ultimas materias publicadas no portal e a lista de novas noticias candidatas coletadas dos portais do setor.
 
-DIRETRIZES DE DECISAO EDITORIAL:
-1. O portal deve ser dinâmico e trazer sempre conteudos novos e interessantes para os motociclistas.
-2. MESMA MARCA/MONTADORA COM NOVO MODELO, NOVO FATO OU NOVO RECORDE = TOTALMENTE PERMITIDO E DESEJAVEL (ex: Honda CG vs Honda Sahara vs Recorde de vendas da Honda, ou Yamaha MT-03 vs Tenere 900). NUNCA descarte apenas porque a montadora ja apareceu no blog!
-3. REJEITE APENAS SE FOR COPIA IDENTICA DO MESMO FATO JA PUBLICADO (ex: exatamente o mesmo modelo lançado no mesmo dia com a mesma materia).
-4. Se a materia trouxer novidade tecnica, novo lote, novo recorde, flagra ou lancamento, SELECIONE O(S) MELHORE(S).
+DIRETRIZES RIGIDAS DE DECISAO EDITORIAL:
+1. VARIABILIDADE E INEDITISMO: O leitor nao quer ver materias repetidas sobre o mesmo modelo, lancamento ou evento que ja cobrimos recentemente.
+2. SE UM CANDIDATO COBRE O MESMO FATO/MODELO/EVENTO JA PUBLICADO NO BLOG (mesmo que com palavras diferentes de outro portal): REJEITE O CANDIDATO!
+3. DIVERSIDADE DE MARCAS: Priorize modelos e marcas que nao foram abordados nos ultimos dias.
+4. Se NENHUM candidato for uma novidade real ou todos forem repeticoes de temas ja cobertos, responda ESTRITAMENTE:
+SELECAO: NENHUM
 
 MATERIAS RECENTES JA PUBLICADAS NO BLOG:
 ${listaRecentes}
@@ -375,9 +502,9 @@ ${listaRecentes}
 CANDIDATOS COLETADOS:
 ${listaCandidatos}
 
-Sua missao: Selecione ${targetCount} numero(s) dos candidatos mais promissores e interessantes para publicar agora.
+Sua missao: Selecione ate ${targetCount} numero(s) dos candidatos que sao NOTICIAS REALMENTE INEDITAS para o blog.
 Responda ESTRITAMENTE no formato:
-SELECAO: [numeros separados por virgula, ex: 1, 3]
+SELECAO: [numeros separados por virgula, ex: 1, 3] ou SELECAO: NENHUM
 `;
 
   const modelCandidates = [
@@ -393,12 +520,17 @@ SELECAO: [numeros separados por virgula, ex: 1, 3]
       const texto = res.response.text().trim();
       console.log(`[Editor-Chefe IA] Resposta da triagem: ${texto}`);
 
+      if (texto.includes('NENHUM')) {
+        console.log(`[Editor-Chefe IA] Todos os candidatos analisados sao repeticoes de temas ja publicados.`);
+        return [];
+      }
+
       const match = texto.match(/SELECAO:\s*([0-9,\s]+)/i);
       if (match && match[1]) {
         const indexes = match[1].split(',').map(n => parseInt(n.trim(), 10) - 1).filter(n => !isNaN(n) && n >= 0 && n < candidatosDisponiveis.length);
         if (indexes.length > 0) {
-          const selecionados = indexes.map(idx => candidatosDisponiveis[idx]);
-          console.log(`[Editor-Chefe IA] Selecionado(s) ${selecionados.length} candidato(s) em ordem de prioridade:`);
+          const selecionados = indexes.slice(0, targetCount).map(idx => candidatosDisponiveis[idx]);
+          console.log(`[Editor-Chefe IA] Selecionado(s) ${selecionados.length} candidato(s) inédito(s):`);
           selecionados.forEach(s => console.log(`  - "${s.title}"`));
           return selecionados;
         }
@@ -409,9 +541,8 @@ SELECAO: [numeros separados por virgula, ex: 1, 3]
     }
   }
 
-  // Fallback garantido: retorna todos os candidatos disponíveis ordenados por relevância
-  console.log('[Editor-Chefe IA] Usando candidatos disponíveis como lista de prioridade...');
-  return candidatosDisponiveis;
+  // Se a IA respondeu NENHUM ou formato inválido, NÃO force candidatos duplicados
+  return [];
 }
 
 // 5. Redige e publica o artigo
@@ -462,7 +593,7 @@ async function processarItem(item, genAI, isBrazilianSource = true) {
   slug: "[slug-curto-e-objetivo-focado-na-moto-e-acao-ex-royal-enfield-classic-350-nova-cor-branca]"
   date: "${today}"
   category: "Notícias"
-  status: "📝 Rascunho"
+  status: "⏳ Rascunho"
   image: "IMAGE_PLACEHOLDER"
   keywords_image: "[2 a 3 palavras da moto/marca]"
   excerpt: "[Resumo impactante de 2 a 3 linhas]"
@@ -627,7 +758,7 @@ async function coletarItensQuery(query, isBR = true) {
 
 async function gerarNoticias() {
   const targetCount = calcularMetaNoticias();
-  const postsRecentes = carregarPostsRecentes(30);
+  const todosPosts = carregarTodosPostsExistentes();
 
   console.log(`\n======================================================`);
   console.log(`Iniciando Robô Jornalista Estrada a Dois`);
@@ -635,7 +766,7 @@ async function gerarNoticias() {
   console.log(`Prioridade 1: Mercado Brasileiro (gl=BR, hl=pt-BR)`);
   console.log(`Prioridade 2: Mercado Global (fallback)`);
   console.log(`Meta: ${targetCount} notícia(s)`);
-  console.log(`Artigos recentes carregados no controle anti-duplicidade: ${postsRecentes.length}`);
+  console.log(`Artigos existentes carregados no controle anti-duplicidade: ${todosPosts.length}`);
   console.log(`======================================================\n`);
 
   console.log("Coletando notícias dos melhores portais do Brasil...");
@@ -649,6 +780,12 @@ async function gerarNoticias() {
       seenTitles.add(item.title);
 
       if (itemValido(item)) {
+        const dup = verificarDuplicidadeTematica(item.title, todosPosts);
+        if (dup) {
+          // Descarte silencioso de temas repetidos já abordados no blog
+          return;
+        }
+
         let score = 100 - index;
         const fullSource = `${item.source || ''} ${item.title || ''} ${item.link || ''}`.toLowerCase();
         if (TOP_PORTALS.some(p => fullSource.includes(p))) score += 35;
@@ -661,10 +798,10 @@ async function gerarNoticias() {
 
   rawCandidatosBR.sort((a, b) => b.score - a.score);
 
-  // Filtrar links ativos e que nao tenham slug repetido
+  // Filtrar links ativos e validar slugs
   const candidatosValidos = [];
   for (const item of rawCandidatosBR) {
-    if (candidatosValidos.length >= 10) break; // Avalia ate os 10 melhores
+    if (candidatosValidos.length >= 10) break;
 
     const initialSlug = gerarSlugInteligente(item.title, 65);
     if (fs.existsSync(path.join(POSTS_DIR, `${initialSlug}.md`))) continue;
@@ -675,9 +812,9 @@ async function gerarNoticias() {
     }
   }
 
-  // Fallback complementar com notícias globais se o Brasil estiver com poucos candidatos
+  // Fallback complementar com notícias globais caso o mercado brasileiro esteja sem novidades
   if (candidatosValidos.length < targetCount) {
-    console.log(`Poucos candidatos no Brasil (${candidatosValidos.length}/${targetCount}). Buscando notícias globais complementares...`);
+    console.log(`Poucos candidatos no Brasil (${candidatosValidos.length}/${targetCount}). Buscando novidades globais complementares...`);
     let rawItensGlobal = [];
     for (const q of QUERIES_GLOBAL) {
       const items = await coletarItensQuery(q, false);
@@ -687,6 +824,9 @@ async function gerarNoticias() {
       if (seenTitles.has(item.title)) continue;
       seenTitles.add(item.title);
       if (itemValido(item)) {
+        const dup = verificarDuplicidadeTematica(item.title, todosPosts);
+        if (dup) continue;
+
         const initialSlug = gerarSlugInteligente(item.title, 65);
         if (fs.existsSync(path.join(POSTS_DIR, `${initialSlug}.md`))) continue;
         const linkAtivo = await testarLinkAtivo(item.link);
@@ -700,26 +840,26 @@ async function gerarNoticias() {
 
   console.log(`Candidatos com links ativos selecionados para triagem: ${candidatosValidos.length}`);
 
-  // Triagem editorial inteligente com Gemini em 1 chamada batch
-  let selecionados = await selecionarCandidatosIneditos(candidatosValidos, postsRecentes, targetCount, genAI);
-
-  if (!selecionados || selecionados.length === 0) {
-    selecionados = candidatosValidos.slice(0, targetCount);
+  if (candidatosValidos.length === 0) {
+    console.log("ℹ️ Nenhum candidato inédito com link ativo encontrado hoje. Evitando acúmulo de rascunhos duplicados.");
+    return;
   }
 
+  // Triagem editorial inteligente com Gemini
+  const selecionados = await selecionarCandidatosIneditos(candidatosValidos, todosPosts, targetCount, genAI);
+
   if (!selecionados || selecionados.length === 0) {
-    console.log("Nenhum candidato com link ativo disponível no momento.");
+    console.log("ℹ️ Todos os candidatos analisados foram classificados como repetições de temas já abordados.");
+    console.log("🛑 Nenhuma matéria duplicada será gerada para não acumular rascunhos no painel.");
     return;
   }
 
   let geradasCount = 0;
-  const processedUrls = new Set();
 
   for (const item of selecionados) {
     if (geradasCount >= targetCount) break;
-    processedUrls.add(item.link);
 
-    console.log(`\n📰 Processando candidato: "${item.title}"...`);
+    console.log(`\n📰 Processando candidato inédito: "${item.title}"...`);
     const sucesso = await processarItem(item, genAI, item.isBR);
     if (sucesso) {
       geradasCount++;
@@ -728,26 +868,7 @@ async function gerarNoticias() {
         await new Promise(r => setTimeout(r, 3000));
       }
     } else {
-      console.log(`⚠️ Candidato não aprovado ou descartado. Prosseguindo para a próxima opção...`);
-    }
-  }
-
-  // Se a meta ainda não foi atingida, tenta os candidatos válidos restantes
-  if (geradasCount < targetCount) {
-    console.log(`Meta não atingida (${geradasCount}/${targetCount}). Tentando candidatos reservas...`);
-    for (const item of candidatosValidos) {
-      if (geradasCount >= targetCount) break;
-      if (processedUrls.has(item.link)) continue;
-
-      console.log(`\n📰 Processando candidato reserva: "${item.title}"...`);
-      const sucesso = await processarItem(item, genAI, item.isBR);
-      if (sucesso) {
-        geradasCount++;
-        console.log(`Progresso: ${geradasCount}/${targetCount} notícia(s) gerada(s).`);
-        if (geradasCount < targetCount) {
-          await new Promise(r => setTimeout(r, 3000));
-        }
-      }
+      console.log(`⚠️ Candidato não aprovado ou descartado. Prosseguindo...`);
     }
   }
 
