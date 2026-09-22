@@ -35,7 +35,7 @@ jobs:
 
     steps:
       - name: Checkout do Código
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           ref: main
           fetch-depth: 0
@@ -57,10 +57,6 @@ jobs:
           CATEGORY: ${{ github.event.inputs.category || 'auto' }}
         run: node scripts/expert_bot.mjs
 
-      - name: Salvar Rascunho no Repositório (Git Auto-Commit)
-        uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          commit_message: "Novo Artigo Especialista (Rascunho gerado pela IA) [skip vercel]"
-          branch: main
-          file_pattern: 'content/posts/*.md public/images/blog/*'
+      - name: Salvar Rascunho no Repositório
+        run: bash scripts/git_commit_retry.sh "Novo Artigo Especialista (Rascunho gerado pela IA) [skip vercel]" content/posts public/images/blog
 
