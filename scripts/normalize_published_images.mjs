@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 import { execFileSync } from 'child_process';
+import sharp from 'sharp';
 
 const POSTS_DIR = path.join(process.cwd(), 'content', 'posts');
 const BLOG_IMAGES_DIR = path.join(process.cwd(), 'public', 'images', 'blog');
@@ -227,7 +228,7 @@ function pickTarget(slug, extension, currentPostPath, sourcePath) {
   );
 }
 
-function normalizePublishedPost(postPath) {
+async function normalizePublishedPost(postPath) {
   if (!fs.existsSync(postPath)) return false;
 
   const content = fs.readFileSync(postPath, 'utf8');
@@ -251,13 +252,84 @@ function normalizePublishedPost(postPath) {
   }
 
   const slug = path.basename(postPath, '.md');
-  const extension = path.extname(source.fsPath) || path.extname(imageValue);
+  let extension = path.extname(source.fsPath) || path.extname(imageValue);
 
   if (!extension) {
-    console.warn(
-      `⚠️ ${path.basename(postPath)}: imagem sem extensão; renomeação ignorada.`
+    throw new Error(
+      `Imagem de capa sem extensão em ${path.basename(postPath)}.`
     );
-    return false;
+  }
+
+  extension = extension.toLowerCase();
+
+  // Valida a imagem antes de liberar qualquer publicação.
+  // Se o Sharp não consegue ler, o mesmo tipo de falha pode quebrar o next/image.
+  try {
+    const meta = await sharp(source.fsPath).metadata();
+    if (!meta.width || !meta.height) {
+      throw new Error('dimensões ausentes');
+    }
+  } catch (error) {
+    throw new Error(
+      `Imagem de capa inválida em ${path.basename(postPath)}: ${error.message}`
+    );
+  }
+
+  fs.mkdirSync(BLOG_IMAGES_DIR, { recursive: true });
+
+  // AVIFs vindos de fontes externas podem usar variantes de container que
+  // navegadores aceitam, mas o otimizador da Vercel/Next rejeita.
+  // Na publicação, convertemos AVIF local para WebP padronizado.
+  if (extension === '.avif') {
+    const { targetPath, targetRef } = pickTarget(
+      slug,
+      '.webp',
+      postPath,
+      source.fsPath
+    );
+
+    await sharp(source.fsPath)
+      .rotate()
+      .resize({
+        width: 1600,
+        height: 1200,
+        fit: 'inside',
+        withoutEnlargement: true,
+      })
+      .webp({ quality: 82, effort: 4 })
+      .toFile(targetPath);
+
+    const convertedMeta = await sharp(targetPath).metadata();
+    if (!convertedMeta.width || !convertedMeta.height || convertedMeta.format !== 'webp') {
+      throw new Error(
+        `Falha ao validar WebP convertido para ${path.basename(postPath)}.`
+      );
+    }
+
+    const sourceShared = countReferences(source.publicRef, postPath) > 0;
+    if (!sourceShared && fs.existsSync(source.fsPath)) {
+      fs.unlinkSync(source.fsPath);
+    }
+
+    const updated = replaceImageReferences(
+      content,
+      imageValue,
+      source.publicRef,
+      targetRef
+    );
+
+    if (updated !== content) {
+      fs.writeFileSync(postPath, updated, 'utf8');
+    }
+
+    console.log(
+      `🖼️ AVIF convertido e normalizado: ${path.basename(source.fsPath)} → ${path.basename(targetPath)}`
+    );
+    console.log(
+      `📝 Frontmatter atualizado: ${path.relative(process.cwd(), postPath)} → ${targetRef}`
+    );
+
+    return true;
   }
 
   const { targetPath, targetRef } = pickTarget(
@@ -271,8 +343,6 @@ function normalizePublishedPost(postPath) {
     path.resolve(source.fsPath) === path.resolve(targetPath);
 
   if (!samePath) {
-    fs.mkdirSync(BLOG_IMAGES_DIR, { recursive: true });
-
     const sourceShared =
       countReferences(source.publicRef, postPath) > 0;
 
@@ -361,7 +431,7 @@ if (!requiresFinalPublish) {
 }
 
 for (const postPath of currentPublishedPaths) {
-  normalizePublishedPost(postPath);
+  await normalizePublishedPost(postPath);
 }
 
 console.log(
