@@ -44,6 +44,11 @@ jobs:
       - name: Instalar dependências de forma reproduzível
         run: npm ci --no-audit --no-fund
 
+      - name: Validar scripts de automação
+        run: |
+          node --check scripts/normalize_published_images.mjs
+          bash -n scripts/git_commit_retry.sh
+
       - name: ESLint
         run: npm run lint
 
