@@ -398,8 +398,8 @@ SELECAO: [numeros separados por virgula, ex: 1, 3]
       if (match && match[1]) {
         const indexes = match[1].split(',').map(n => parseInt(n.trim(), 10) - 1).filter(n => !isNaN(n) && n >= 0 && n < candidatosDisponiveis.length);
         if (indexes.length > 0) {
-          const selecionados = indexes.slice(0, targetCount).map(idx => candidatosDisponiveis[idx]);
-          console.log(`[Editor-Chefe IA] Selecionado(s) ${selecionados.length} candidato(s):`);
+          const selecionados = indexes.map(idx => candidatosDisponiveis[idx]);
+          console.log(`[Editor-Chefe IA] Selecionado(s) ${selecionados.length} candidato(s) em ordem de prioridade:`);
           selecionados.forEach(s => console.log(`  - "${s.title}"`));
           return selecionados;
         }
@@ -410,9 +410,9 @@ SELECAO: [numeros separados por virgula, ex: 1, 3]
     }
   }
 
-  // Fallback garantido caso a IA retorne formato inesperado: seleciona os melhores candidatos da lista
-  console.log('[Editor-Chefe IA] Usando selecao dos candidatos de maior pontuacao como fallback garantido...');
-  return candidatosDisponiveis.slice(0, targetCount);
+  // Fallback garantido: retorna todos os candidatos disponíveis ordenados por relevância
+  console.log('[Editor-Chefe IA] Usando candidatos disponíveis como lista de prioridade...');
+  return candidatosDisponiveis;
 }
 
 // 5. Redige e publica o artigo
@@ -715,15 +715,40 @@ async function gerarNoticias() {
   }
 
   let geradasCount = 0;
+  const processedUrls = new Set();
+
   for (const item of selecionados) {
     if (geradasCount >= targetCount) break;
+    processedUrls.add(item.link);
 
+    console.log(`\n📰 Processando candidato: "${item.title}"...`);
     const sucesso = await processarItem(item, genAI, item.isBR);
     if (sucesso) {
       geradasCount++;
       console.log(`Progresso: ${geradasCount}/${targetCount} notícia(s) gerada(s).`);
       if (geradasCount < targetCount) {
         await new Promise(r => setTimeout(r, 3000));
+      }
+    } else {
+      console.log(`⚠️ Candidato não aprovado ou descartado. Prosseguindo para a próxima opção...`);
+    }
+  }
+
+  // Se a meta ainda não foi atingida, tenta os candidatos válidos restantes
+  if (geradasCount < targetCount) {
+    console.log(`Meta não atingida (${geradasCount}/${targetCount}). Tentando candidatos reservas...`);
+    for (const item of candidatosValidos) {
+      if (geradasCount >= targetCount) break;
+      if (processedUrls.has(item.link)) continue;
+
+      console.log(`\n📰 Processando candidato reserva: "${item.title}"...`);
+      const sucesso = await processarItem(item, genAI, item.isBR);
+      if (sucesso) {
+        geradasCount++;
+        console.log(`Progresso: ${geradasCount}/${targetCount} notícia(s) gerada(s).`);
+        if (geradasCount < targetCount) {
+          await new Promise(r => setTimeout(r, 3000));
+        }
       }
     }
   }
