@@ -10,14 +10,11 @@ concurrency:
 
 on:
   schedule:
-    # Horários de Brasília: 05:47, 09:47, 11:47, 14:47, 17:47, 19:47 (UTC +3h)
-    # Cada horário em linha independente garante registro e disparo autônomo no scheduler do GitHub
-    - cron: '47 8 * * *'   # 05:47 BRT
-    - cron: '47 12 * * *'  # 09:47 BRT
-    - cron: '47 14 * * *'  # 11:47 BRT
-    - cron: '47 17 * * *'  # 14:47 BRT
-    - cron: '47 20 * * *'  # 17:47 BRT
-    - cron: '47 22 * * *'  # 19:47 BRT
+    # Horários de Brasília: 06:36, 11:36 e 17:36 (UTC +3h)
+    # Todos os dias. Cada horário tem disparo autônomo no scheduler do GitHub.
+    - cron: '36 9 * * *'   # 06:36 BRT
+    - cron: '36 14 * * *'  # 11:36 BRT
+    - cron: '36 20 * * *'  # 17:36 BRT
 
   workflow_dispatch:
     # Permite disparar manualmente escolhendo a quantidade de notícias
