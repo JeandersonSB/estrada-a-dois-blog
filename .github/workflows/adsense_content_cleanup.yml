@@ -46,6 +46,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add content/posts public/images/blog scripts/adsense_content_cleanup.mjs .github/workflows/adsense_content_cleanup.yml
+          git add -A
           git commit -m "chore(content): consolidar notícias, links e capas locais [skip vercel]"
           git push origin HEAD:chore/adsense-readiness-2026-09-22
