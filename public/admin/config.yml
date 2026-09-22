@@ -3,6 +3,12 @@ backend:
   repo: JeandersonSB/estrada-a-dois-blog
   branch: main
   base_url: https://estrada-a-dois-blog.vercel.app/api
+  commit_messages:
+    create: 'content(cms): criar {{collection}} "{{slug}}" [skip vercel]'
+    update: 'content(cms): atualizar {{collection}} "{{slug}}" [skip vercel]'
+    delete: 'content(cms): excluir {{collection}} "{{slug}}" [skip vercel]'
+    uploadMedia: 'content(cms): enviar mídia "{{path}}" [skip vercel]'
+    deleteMedia: 'content(cms): excluir mídia "{{path}}" [skip vercel]'
 
 # Habilita testes no seu próprio computador
 local_backend: true
