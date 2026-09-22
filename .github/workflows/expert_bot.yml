@@ -4,9 +4,9 @@ permissions:
   contents: write
 
 concurrency:
-  group: estrada-main-write
+  group: expert-bot
   cancel-in-progress: false
-  queue: max
+
 
 on:
   schedule:
