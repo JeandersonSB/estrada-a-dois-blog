@@ -187,7 +187,10 @@ function replaceImageReferences(content, oldValue, oldPublicRef, newPublicRef) {
   ]);
 
   for (const ref of variants) {
-    if (!ref || ref === newPublicRef) continue;
+    // Não substitui variantes que já são parte do caminho final.
+    // Ex.: "images/blog/artigo.webp" dentro de "/images/blog/artigo.webp"
+    // não pode virar "//images/blog/artigo.webp".
+    if (!ref || ref === newPublicRef || newPublicRef.includes(ref)) continue;
     updated = updated.split(ref).join(newPublicRef);
   }
 
