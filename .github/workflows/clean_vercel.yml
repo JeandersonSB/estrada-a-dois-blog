@@ -3,7 +3,7 @@ name: Faxina Vercel (Limpeza de Deploys Antigos)
 on:
   schedule:
     # Roda todos os dias às 00:47 de Brasília (03:47 UTC)
-    - cron: '47 3 * * *'
+    - cron: '47 */6 * * *'
   workflow_dispatch:
     # Permite disparar manualmente a qualquer momento pela aba Actions do GitHub
 
@@ -24,6 +24,9 @@ jobs:
       - name: Executar Faxina de Deploys Antigos
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_PROJECT_NAME: 'estrada-a-dois-blog'
-          KEEP_COUNT: '5'
+          VERCEL_PROJECT_ID: 'prj_VAkuyXkjskhBGAEkT7R5LyglgJAp'
+          VERCEL_TEAM_ID: 'team_aJBVPVcwGqAPDRsLQYhOBYRf'
+          KEEP_PRODUCTION: '3'
+          KEEP_PREVIEW: '2'
+          MAX_DEPLOYMENTS: '500'
         run: node scripts/clean_vercel.mjs
