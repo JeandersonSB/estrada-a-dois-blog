@@ -8,6 +8,8 @@ export function CookieBanner() {
     // Check if user already accepted cookies
     const consent = localStorage.getItem('cookie-consent');
     if (!consent) {
+      // A leitura depende do localStorage, disponível apenas após montar no cliente.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setShowBanner(true);
     }
   }, []);
