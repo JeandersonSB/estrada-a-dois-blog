@@ -66,6 +66,6 @@ jobs:
       - name: Atualizar Histórico no Repositório (Git Auto-Commit)
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: atualizar historico de cards sociais divulgados"
+          commit_message: "chore: atualizar historico de cards sociais divulgados [skip vercel]"
           branch: main
           file_pattern: '.social_history.json'

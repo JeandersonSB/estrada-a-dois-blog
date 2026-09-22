@@ -1,4 +1,4 @@
-﻿name: Robô Especialista (Dicas, Equipamentos e Manutenção)
+name: Robô Especialista (Dicas, Equipamentos e Manutenção)
 
 on:
   schedule:
@@ -48,7 +48,7 @@ jobs:
       - name: Salvar Rascunho no Repositório (Git Auto-Commit)
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Novo Artigo Especialista (Rascunho gerado pela IA)"
+          commit_message: "Novo Artigo Especialista (Rascunho gerado pela IA) [skip vercel]"
           branch: main
           file_pattern: 'content/posts/*.md public/images/blog/*'
 

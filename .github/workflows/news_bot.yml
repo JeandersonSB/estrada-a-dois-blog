@@ -51,7 +51,7 @@ jobs:
       - name: Salvar e Publicar no Painel (Rascunho)
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Notícia Automática (Rascunho gerado pela IA)"
+          commit_message: "Notícia Automática (Rascunho gerado pela IA) [skip vercel]"
           branch: main
           file_pattern: 'content/posts/*.md public/images/blog/*'
 
