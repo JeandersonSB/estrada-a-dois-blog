@@ -3,7 +3,7 @@ title: 'Jaqueta de moto para viagem: ventilada ou impermeável?'
 status: 🟢 Publicado
 date: 2026-09-15
 category: Equipamentos
-image: /images/blog/planejamento-viagem-moto-570-km.webp
+image: "/images/blog/jaqueta-de-moto-para-viagem-ventilada-ou-impermeavel.webp"
 excerpt: 'Jaqueta de moto para viagem: compare ventilação, membranas, proteção e ajuste para escolher entre uma peça ventilada e uma impermeável conforme seu uso.'
 ---
 

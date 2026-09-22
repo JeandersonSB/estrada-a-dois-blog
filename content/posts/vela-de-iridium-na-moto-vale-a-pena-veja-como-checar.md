@@ -3,7 +3,7 @@ title: 'Vela de Iridium na Moto: Vale a Pena? Veja Como Checar'
 status: 🟢 Publicado
 date: 2026-09-19T14:23:00
 category: Manutenção
-image: /images/blog/Vela-de-iridium.webp
+image: "/images/blog/vela-de-iridium-na-moto-vale-a-pena-veja-como-checar.webp"
 excerpt: Descubra se a vela de Iridium vale a pena para sua moto, saiba quando trocar e aprenda o passo a passo para fazer a inspeção com segurança.
 ---
 

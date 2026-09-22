@@ -3,7 +3,7 @@ title: 'Chuva em viagem de moto: 7 cuidados antes de sair'
 status: 🟢 Publicado
 date: 2026-09-16
 category: Dicas
-image: /images/blog/20260905_143608-EDIT.webp
+image: "/images/blog/chuva-em-viagem-de-moto-7-cuidados-antes-de-sair.webp"
 excerpt: 'Chuva em viagem de moto pede planejamento: veja como consultar alertas, preparar os equipamentos e combinar pausas para viajar a dois com mais tranquilidade.'
 ---
 

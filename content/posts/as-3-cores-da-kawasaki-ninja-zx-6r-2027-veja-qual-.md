@@ -3,7 +3,7 @@ title: 'Kawasaki Ninja ZX-6R 2027: Confira as Novas Cores e Detalhes da Superspo
 status: 🟢 Publicado
 date: 2026-09-21T13:40:00
 category: Notícias
-image: /images/blog/cq5dam.web.1280.1280.webp
+image: "/images/blog/as-3-cores-da-kawasaki-ninja-zx-6r-2027-veja-qual-.webp"
 excerpt: A Kawasaki atualiza a linha da Ninja ZX-6R para a gama 2027 com três novas opções de cores e grafismos. Veja as novidades estéticas, a ficha técnica da supersport e seu impacto no mercado nacional.
 ---
 

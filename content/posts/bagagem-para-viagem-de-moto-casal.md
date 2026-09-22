@@ -3,7 +3,7 @@ title: 'Bagagem para viagem de moto: 7 passos para o casal'
 status: 🟢 Publicado
 date: 2026-09-13T16:00:00
 category: Dicas
-image: /images/blog/01.webp
+image: "/images/blog/bagagem-para-viagem-de-moto-casal.webp"
 excerpt: Bagagem para viagem de moto fica mais prática com uma lista compartilhada. Veja como selecionar itens, distribuir o peso e facilitar as paradas do casal.
 ---
 

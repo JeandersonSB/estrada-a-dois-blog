@@ -3,7 +3,7 @@ title: 'Nova Yamaha Crosser ABS: Como a Trail de Entrada Transforma Economia de 
 status: 🟢 Publicado
 date: 2026-09-16
 category: Notícias
-image: "/images/blog/nova-yamaha-crosser-abs-2027-transforma-economia-d.webp"
+image: "//images/blog/nova-yamaha-crosser-abs-2027-transforma-economia-d.webp"
 imageSource: "https://image1.mobiauto.com.br/images/api/images/v1.0/718539463/transform/fl_progressive,f_webp,w_592"
 excerpt: A Yamaha eleva a disputa no segmento on/off-road de entrada com a Crosser ABS, apostando em conectividade, indicadores de pilotagem e foco total na máxima eficiência energética.
 ---

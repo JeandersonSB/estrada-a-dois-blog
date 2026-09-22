@@ -3,7 +3,7 @@ title: 'Paraguai de moto: nossa viagem de 3 dias pela Rota Biker'
 status: 🟢 Publicado
 date: 2026-09-19T16:02:00
 category: Roteiros
-image: /images/blog/Paraguai 03.webp
+image: "/images/blog/paraguai-de-moto-nossa-viagem-de-3-dias-pela-rota-biker.webp"
 excerpt: 'Paraguai de moto em casal: acompanhe nossa viagem de 3 dias, de Guarapuava a Katueté e Foz, com chuva, encontros, paradas e aprendizados na estrada.'
 ---
 

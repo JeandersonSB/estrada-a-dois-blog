@@ -3,7 +3,7 @@ title: 'Combustível em viagem de moto: 7 passos para planejar'
 status: 🟢 Publicado
 date: 2026-09-14
 category: Dicas
-image: /images/blog/20260227_174507-EDIT.webp
+image: "/images/blog/combustivel-em-viagem-de-moto-7-passos-para-planejar.webp"
 excerpt: Combustível em viagem de moto exige margem, consumo real e postos confiáveis. Aprenda a planejar abastecimentos tranquilos para viajar a dois.
 ---
 

@@ -3,7 +3,7 @@ title: 'Capacete integral ou modular: qual escolher para viajar?'
 status: 🟢 Publicado
 date: 2026-09-19T00:01:00
 category: Equipamentos
-image: /images/blog/ChatGPT-Image-18-de-set.-de-2026_-23_05_26.webp
+image: "/images/blog/capacete-integral-ou-modular-qual-escolher-para-viajar.webp"
 excerpt: 'Capacete integral ou modular: qual escolher para viajar? Compare segurança da queixeira, ruído de vento, peso e praticidade nas paradas a dois.'
 ---
 

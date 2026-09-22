@@ -3,7 +3,7 @@ title: 'Botas para viagem de moto: cano curto ou longo?'
 status: 🟢 Publicado
 date: 2026-09-17
 category: Equipamentos
-image: /images/blog/ChatGPT-Image-18-de-set.-de-2026_-23_03_23.webp
+image: "/images/blog/botas-para-viagem-de-moto-cano-curto-ou-longo.webp"
 excerpt: 'Botas para viagem de moto: cano curto ou longo? Analise proteção contra torção, impermeabilidade, conforto ao caminhar e controle dos pedais na estrada.'
 ---
 

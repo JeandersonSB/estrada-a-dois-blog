@@ -3,7 +3,7 @@ title: 'Intercomunicador de Moto: Tecnologia Mesh ou Bluetooth?'
 status: 🟢 Publicado
 date: 2026-09-19T14:17:00
 category: Equipamentos
-image: /images/blog/Intercomunicador.webp
+image: "/images/blog/intercomunicador-de-moto-tecnologia-mesh-ou-bluetooth.webp"
 excerpt: Descubra as diferenças técnicas entre intercomunicadores Mesh e Bluetooth para pilotar em dupla ou em grupo com total segurança e clareza.
 ---
 

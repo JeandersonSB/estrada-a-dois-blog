@@ -3,7 +3,7 @@ title: Kawasaki KLX 230 ganha programa de revisões com preço fixo no Brasil
 status: 🟢 Publicado
 date: 2026-09-18T13:30:00
 category: Notícias
-image: "/images/blog/kawasaki-klx-230-tem-revis-es-com-pre-os-fixos-web.webp"
+image: "//images/blog/kawasaki-klx-230-tem-revis-es-com-pre-os-fixos-web.webp"
 imageSource: "https://www.webmotors.com.br/wp-content/uploads/2026/08/17134941/Kawasaki-KLX-230-4-730x410.webp"
 excerpt: A Kawasaki passa a oferecer o programa de revisões com preço fixo para a linha KLX 230 no Brasil. A medida busca garantir transparência nos custos de manutenção e maior previsibilidade para os proprietários do modelo trail.
 ---

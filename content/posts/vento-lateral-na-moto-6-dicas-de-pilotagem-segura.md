@@ -3,7 +3,7 @@ title: 'Vento Lateral na Moto: 6 Dicas de Pilotagem Segura'
 status: 🟢 Publicado
 date: 2026-09-21T16:21:00
 category: Dicas
-image: /images/blog/ChatGPT-Image-21-de-set.-de-2026_-16_05_39.webp
+image: "/images/blog/vento-lateral-na-moto-6-dicas-de-pilotagem-segura.webp"
 excerpt: Aprenda a encarar rajadas de vento lateral na estrada com segurança e estabilidade, mantendo o controle da moto em viagens solo ou a dois.
 ---
 

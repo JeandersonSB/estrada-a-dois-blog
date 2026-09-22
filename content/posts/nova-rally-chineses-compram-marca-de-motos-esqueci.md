@@ -3,7 +3,7 @@ title: 'Marcas Históricas de Volta: Grupos Chineses Adquirem Marcas Europeias p
 status: 🟢 Publicado
 date: 2026-09-16
 category: Notícias
-image: "/images/blog/nova-rally-chineses-compram-marca-de-motos-esqueci.webp"
+image: "//images/blog/nova-rally-chineses-compram-marca-de-motos-esqueci.webp"
 imageSource: "https://images.unsplash.com/photo-1558981285-6f0c94958bb6?w=1600&auto=format&fit=crop&q=85"
 excerpt: A expansão da indústria chinesa no segmento de duas rodas ganha um novo capítulo com a aquisição de marcas europeias tradicionais para o lançamento de modelos focados no segmento Rally e Big Trail.
 ---

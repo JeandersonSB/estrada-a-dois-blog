@@ -3,7 +3,7 @@ title: Triumph Tiger 1200 Deve Ganhar Radar Frontal e Piloto Automático Adaptat
 status: 🟢 Publicado
 date: 2026-09-22T09:57:00
 category: Notícias
-image: /images/blog/65970.jpg
+image: "/images/blog/triumph-tiger-1200-2027-radar-frontal.jpg"
 excerpt: A Triumph prepara um salto tecnológico para a Tiger 1200, com a adição de radar frontal para piloto automático adaptativo, mirando a liderança entre as maxi-trails de alta cilindrada.
 ---
 
