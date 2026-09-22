@@ -11,6 +11,17 @@ const duplicatePosts = [
   'royal-enfield-flying-flea-c6-ganha-nova-cor-motoci.md',
 ];
 
+const coverFallbacks = new Map([
+  [
+    'nova-rally-chineses-compram-marca-de-motos-esqueci.md',
+    'https://images.unsplash.com/photo-1558981285-6f0c94958bb6?w=1600&auto=format&fit=crop&q=85'
+  ],
+  [
+    'royal-enfield-flying-flea-c6-ganha-nova-cor-branca.md',
+    'https://motociclismoonline.com.br/wp-content/uploads/2026/09/royal-enfield-flying-flea-branco.avif'
+  ],
+]);
+
 const linkMap = new Map([
   ['/blog/5-serras-e-831-km-de-moto-em-um-fim-de', '/blog/rastro-da-serpente-de-moto'],
   ['/blog/de-r15-para-as-cataratas-roteiro-de', '/blog/de-r15-nas-cataratas'],
@@ -83,12 +94,14 @@ async function localizeCover(filePath, content) {
   const externalUrl = getExternalImage(content);
   if (!externalUrl) return { changed: false, content };
 
+  const fileNameOnly = path.basename(filePath);
+  const downloadUrl = coverFallbacks.get(fileNameOnly) || externalUrl;
   const slug = path.basename(filePath, '.md');
   const fileName = `${slug}.webp`;
   const targetPath = path.join(IMAGES_DIR, fileName);
   const localRef = `/images/blog/${fileName}`;
 
-  const sourceBuffer = await fetchImage(externalUrl);
+  const sourceBuffer = await fetchImage(downloadUrl);
   const optimized = await sharp(sourceBuffer)
     .rotate()
     .resize({
@@ -114,7 +127,7 @@ async function localizeCover(filePath, content) {
 
   return {
     changed: true,
-    content: setLocalImage(content, localRef, externalUrl),
+    content: setLocalImage(content, localRef, downloadUrl),
   };
 }
 
