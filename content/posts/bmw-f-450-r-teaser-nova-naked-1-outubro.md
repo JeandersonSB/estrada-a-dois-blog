@@ -1,10 +1,10 @@
 ---
-title: "BMW F 450 R? Teaser indica nova naked para 1º de outubro"
-date: "2026-09-23T16:20:00"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "/images/blog/bmw-f-450-r-teaser-nova-naked-1-outubro.webp"
-excerpt: "BMW Motorrad mostrou a silhueta de uma nova naked e marcou a revelação para 1º de outubro. A imagem reforça os indícios sobre uma possível F 450 R, mas o nome do modelo ainda não foi confirmado oficialmente."
+title: BMW F 450 R? Teaser indica nova naked para 1º de outubro
+status: ⏳ Rascunho
+date: 2026-09-23T16:39:00
+category: Notícias
+image: /images/blog/bmw-f-450-r-teaser-nova-naked-1-outubro.webp
+excerpt: BMW Motorrad mostrou a silhueta de uma nova naked e marcou a revelação para 1º de outubro. A imagem reforça os indícios sobre uma possível F 450 R, mas o nome do modelo ainda não foi confirmado oficialmente.
 ---
 
 A BMW Motorrad publicou um novo teaser nas redes sociais e marcou a revelação de uma motocicleta para **1º de outubro de 2026, às 17h CEST**. A imagem mostra uma moto praticamente inteira em silhueta, cercada por iluminação vermelha, e deixa um detalhe bastante evidente: a novidade tem proporções de uma **roadster/naked**.
