@@ -235,7 +235,16 @@ async function enviarNotificacaoTelegram({ title, category, excerpt, date }) {
 // 5. Gera o artigo completo para a categoria indicada
 async function gerarArtigo(categoria) {
   const titulosExistentes = listarArtigosExistentes();
-  const today = new Date().toISOString().split('T')[0];
+  const today = new Intl.DateTimeFormat('sv-SE', {
+    timeZone: 'America/Sao_Paulo',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+  }).format(new Date()).replace(' ', 'T');
 
   console.log(`\n======================================================`);
   console.log(`🤖 ROBÔ ESPECIALISTA INICIANDO`);
