@@ -3,7 +3,7 @@ title: Honda revela CB500 com visual Neo Café Racer e consolida renovação da 
 status: 🟢 Publicado
 date: 2026-09-23T06:51:00
 category: Notícias
-image: /images/blog/66344.jpg
+image: "/images/blog/honda-cb500-neo-cafe-racer-lancamento.jpg"
 excerpt: A Honda apresentou a nova CB500 com o conceito estilístico Neo Café Racer, unindo estética minimalista retrofuturista com a consagrada plataforma mecânica de dois cilindros.
 ---
 
