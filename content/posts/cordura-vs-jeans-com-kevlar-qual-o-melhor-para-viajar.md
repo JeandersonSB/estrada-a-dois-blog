@@ -3,7 +3,7 @@ title: 'Cordura vs Jeans com Kevlar: Qual o Melhor para Viajar?'
 status: 🟢 Publicado
 date: 2026-09-23T12:15:00
 category: Equipamentos
-image: /images/blog/ChatGPT Image 23 de set. de 2026, 12_14_41.png
+image: "/images/blog/cordura-vs-jeans-com-kevlar-qual-o-melhor-para-viajar.png"
 excerpt: Cordura ou Jeans com Kevlar? Analisamos a segurança, a resistência à abrasão (norma EN 17092) e o conforto de cada opção para sua próxima viagem de moto.
 ---
 
