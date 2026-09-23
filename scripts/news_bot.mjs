@@ -551,7 +551,8 @@ SELECAO: NENHUM
 
   const modelCandidates = [
     'gemini-3.6-flash',
-    'gemini-flash-latest'
+    'gemini-3.5-flash',
+    'gemini-3.5-flash-lite'
   ];
 
   for (const modelName of modelCandidates) {
@@ -674,14 +675,15 @@ async function processarItem(item, genAI, isBrazilianSource = true) {
     let markdownContent = null;
     const modelCandidates = [
       'gemini-3.6-flash',
-      'gemini-flash-latest'
+      'gemini-3.5-flash',
+      'gemini-3.5-flash-lite'
     ];
     let lastError = null;
 
     for (const modelName of modelCandidates) {
-      for (let attempt = 1; attempt <= 3; attempt++) {
+      for (let attempt = 1; attempt <= 2; attempt++) {
         try {
-          console.log(`🤖 Solicitando redação ao modelo: ${modelName} (tentativa ${attempt}/3)...`);
+          console.log(`🤖 Solicitando redação ao modelo: ${modelName} (tentativa ${attempt}/2)...`);
           const model = genAI.getGenerativeModel({ model: modelName });
           const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error(`Timeout de 45s na API do Gemini (${modelName})`)), 45000));
           const result = await Promise.race([model.generateContent(prompt), timeoutPromise]);
@@ -693,7 +695,7 @@ async function processarItem(item, genAI, isBrazilianSource = true) {
           if (err.message && err.message.includes('404')) {
             break;
           }
-          const waitTime = attempt * 3000;
+          const waitTime = attempt === 1 ? 8000 : 20000;
           await new Promise(r => setTimeout(r, waitTime));
         }
       }
