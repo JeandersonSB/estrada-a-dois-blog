@@ -1,10 +1,10 @@
 ---
-title: "Yamaha YZ250 e YZ125: Linha de Motocross 2 Tempos Chega Atualizada"
-date: "2026-09-23T08:47:45"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "/images/blog/yamaha-yz250-yz125-linha-motocross-detalhes.webp"
-excerpt: "A Yamaha reforça sua tradição nas pistas de terra ao apresentar novidades para as consagradas YZ125 e YZ250. Confira as atualizações das icônicas máquinas de motocross de dois tempos."
+title: 'Yamaha YZ250 e YZ125: Linha de Motocross 2 Tempos Chega Atualizada'
+status: 🟢 Publicado
+date: 2026-09-23T06:52:00
+category: Notícias
+image: /images/blog/yamaha-yz250-yz125-linha-motocross-detalhes.webp
+excerpt: A Yamaha reforça sua tradição nas pistas de terra ao apresentar novidades para as consagradas YZ125 e YZ250. Confira as atualizações das icônicas máquinas de motocross de dois tempos.
 ---
 
 A Yamaha segue firme na preservação e no aprimoramento de uma das linhagens mais puristas e reverenciadas do motociclismo mundial: as motos de motocross com motor de dois tempos. A fabricante japonesa revelou novidades para a sua consagrada dupla de competição, a YZ125 e a YZ250, trazendo revisões que buscam otimizar a ciclística, o rendimento dinâmico e a ergonomia para pilotos que disputam campeonatos em pistas fechadas.
@@ -22,8 +22,9 @@ A alimentação é feita por carburadores Keihin com sensores de posição do ac
 A ciclística permanece sendo a grande referência das YZ. Ambas utilizam quadro de alumínio semi-duplo berço, projetado para equilibrar rigidez torcional e flexibilidade controlada, permitindo mudanças rápidas de trajetória e alta tração nas saídas de curva.
 
 O conjunto de suspensões segue a renomada parceria com a KYB:
+
 - **Dianteira:** Garfo invertido KYB com sistema SSS (Speed Sensitive System), amplamente elogiado pela leitura precisa do solo e resistência a batidas de fim de curso em saltos de grande porte.
-- **Traseira:** Amortecedor único KYB totalmente ajustável, operando por link progressivo, revisado para manter a moto assentada em trechos de costelas (*whoops*).
+- **Traseira:** Amortecedor único KYB totalmente ajustável, operando por link progressivo, revisado para manter a moto assentada em trechos de costelas (_whoops_).
 
 O subchassi estreito, associado a um banco plano e tampas laterais integradas, permite movimentação livre do piloto, facilitando a transferência de peso entre as fases de frenagem, curva e aceleração.
 
