@@ -27,14 +27,19 @@ export const metadata: Metadata = {
   publisher: 'Estrada a Dois',
   icons: {
     icon: [
-      { url: '/icon.png', sizes: '64x64', type: 'image/png' },
-      { url: '/favicon.ico', sizes: '32x32' },
-      { url: '/images/favicon.png', sizes: '64x64', type: 'image/png' },
+      {
+        url: '/images/logo-publisher-512x512.png',
+        sizes: '512x512',
+        type: 'image/png',
+      },
     ],
-    shortcut: '/favicon.ico',
+    shortcut: '/images/logo-publisher-512x512.png',
     apple: [
-      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
-      { url: '/images/favicon.png', sizes: '64x64', type: 'image/png' },
+      {
+        url: '/images/logo-publisher-512x512.png',
+        sizes: '512x512',
+        type: 'image/png',
+      },
     ],
   },
   openGraph: {
@@ -63,11 +68,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <head>
-        <link rel="icon" href="/images/favicon.png" type="image/png" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/images/favicon.png" />
-      </head>
       <body className={`${inter.className} ${queraBrand.variable} min-h-screen flex flex-col`}>
         <Header />
         <main className="flex-grow">
