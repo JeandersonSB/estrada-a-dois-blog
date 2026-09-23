@@ -685,18 +685,21 @@ async function processarItem(item, genAI, isBrazilianSource = true) {
         try {
           console.log(`🤖 Solicitando redação ao modelo: ${modelName} (tentativa ${attempt}/2)...`);
           const model = genAI.getGenerativeModel({ model: modelName });
-          const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error(`Timeout de 45s na API do Gemini (${modelName})`)), 45000));
+          const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error(`Timeout de 75s na API do Gemini (${modelName})`)), 75000));
           const result = await Promise.race([model.generateContent(prompt), timeoutPromise]);
           markdownContent = result.response.text();
           if (markdownContent) break;
         } catch (err) {
           console.log(`⚠️ Tentativa ${attempt} com ${modelName} falhou: ${err.message}`);
           lastError = err;
-          if (err.message && err.message.includes('404')) {
+          const message = err.message || '';
+          if (message.includes('404') || message.includes('503') || /high demand/i.test(message)) {
+            console.log(`↪️ Trocando de modelo após indisponibilidade de ${modelName}...`);
             break;
           }
-          const waitTime = attempt === 1 ? 8000 : 20000;
-          await new Promise(r => setTimeout(r, waitTime));
+          if (attempt < 2) {
+            await new Promise(r => setTimeout(r, 8000));
+          }
         }
       }
       if (markdownContent) break;
