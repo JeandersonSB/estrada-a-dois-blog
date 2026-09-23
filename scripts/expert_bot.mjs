@@ -320,30 +320,37 @@ async function gerarArtigo(categoria) {
     let markdownContent = null;
     const modelCandidates = [
       'gemini-3.6-flash',
-      'gemini-flash-latest'
+      'gemini-3.5-flash',
+      'gemini-3.5-flash-lite'
     ];
     let lastError = null;
 
     for (const modelName of modelCandidates) {
-      for (let attempt = 1; attempt <= 3; attempt++) {
+      for (let attempt = 1; attempt <= 2; attempt++) {
         try {
-          console.log(`🧠 Solicitando redação ao modelo: ${modelName} (tentativa ${attempt}/3)...`);
+          console.log(`🧠 Solicitando redação ao modelo: ${modelName} (tentativa ${attempt}/2)...`);
           const model = genAI.getGenerativeModel({ model: modelName });
-          const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error(`Timeout de 50s no modelo ${modelName}`)), 50000));
+          const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error(`Timeout de 75s no modelo ${modelName}`)), 75000));
           const result = await Promise.race([model.generateContent(prompt), timeoutPromise]);
           markdownContent = result.response.text();
           if (markdownContent) break;
         } catch (err) {
           console.log(`⚠️ Tentativa ${attempt} com ${modelName} falhou: ${err.message}`);
           lastError = err;
-          // Se for 404 (modelo não existe), não adianta tentar novamente este modelo
-          if (err.message && err.message.includes('404')) {
+          // 404: modelo indisponível nesta conta. 503/high demand: troca de modelo
+          // imediatamente, porque repetir o mesmo endpoint tende a falhar de novo.
+          const message = err.message || '';
+          if (message.includes('404') || message.includes('503') || /high demand/i.test(message)) {
+            console.log(`↪️ Trocando de modelo após indisponibilidade de ${modelName}...`);
             break;
           }
-          // Para 503 (alta demanda) ou timeout, aguardar com backoff antes de tentar novamente
-          const waitTime = attempt * 3000;
-          console.log(`⏳ Aguardando ${waitTime / 1000}s antes da próxima tentativa...`);
-          await new Promise(r => setTimeout(r, waitTime));
+
+          // Timeout/429/outros erros transitórios: uma segunda tentativa após pequena espera.
+          if (attempt < 2) {
+            const waitTime = 8000;
+            console.log(`⏳ Aguardando ${waitTime / 1000}s antes da próxima tentativa...`);
+            await new Promise(r => setTimeout(r, waitTime));
+          }
         }
       }
       if (markdownContent) break;
