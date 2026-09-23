@@ -3,7 +3,7 @@ title: 'Travas de Moto para Viagem: Disco vs Corrente'
 status: 🟢 Publicado
 date: 2026-09-23T15:29:00
 category: Equipamentos
-image: /images/blog/ChatGPT Image 23 de set. de 2026, 15_29_11.png
+image: "/images/blog/travas-de-moto-para-viagem-disco-vs-corrente.png"
 excerpt: 'Descubra qual é a melhor opção de segurança para proteger sua moto durante viagens: travas de disco compactas ou correntes reforçadas.'
 ---
 
