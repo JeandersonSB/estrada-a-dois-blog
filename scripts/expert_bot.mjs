@@ -337,14 +337,20 @@ async function gerarArtigo(categoria) {
         } catch (err) {
           console.log(`⚠️ Tentativa ${attempt} com ${modelName} falhou: ${err.message}`);
           lastError = err;
-          // Se for 404 (modelo não existe), não adianta tentar novamente este modelo
-          if (err.message && err.message.includes('404')) {
+          // 404: modelo indisponível nesta conta. 503/high demand: troca de modelo
+          // imediatamente, porque repetir o mesmo endpoint tende a falhar de novo.
+          const message = err.message || '';
+          if (message.includes('404') || message.includes('503') || /high demand/i.test(message)) {
+            console.log(`↪️ Trocando de modelo após indisponibilidade de ${modelName}...`);
             break;
           }
-          // Para 503 (alta demanda) ou timeout, aguardar com backoff antes de tentar novamente
-          const waitTime = attempt === 1 ? 8000 : 20000;
-          console.log(`⏳ Aguardando ${waitTime / 1000}s antes da próxima tentativa...`);
-          await new Promise(r => setTimeout(r, waitTime));
+
+          // Timeout/429/outros erros transitórios: uma segunda tentativa após pequena espera.
+          if (attempt < 2) {
+            const waitTime = 8000;
+            console.log(`⏳ Aguardando ${waitTime / 1000}s antes da próxima tentativa...`);
+            await new Promise(r => setTimeout(r, waitTime));
+          }
         }
       }
       if (markdownContent) break;
