@@ -1,6 +1,6 @@
 ---
 title: BMW F 450 R? Teaser indica nova naked para 1º de outubro
-status: ⏳ Rascunho
+status: 🟢 Publicado
 date: 2026-09-23T16:39:00
 category: Notícias
 image: /images/blog/bmw-f-450-r-teaser-nova-naked-1-outubro.webp
