@@ -3,7 +3,7 @@ title: 'Honda Tornado 300 e Sahara 300 2027: Linha Trail Ganha Avanços em Tecno
 status: 🟢 Publicado
 date: 2026-09-23T13:32:00
 category: Notícias
-image: /images/blog/honda-saraha-300-2027-1024x682.avif
+image: "/images/blog/honda-tornado-300-sahara-300-2027-tecnologia-seguranca.webp"
 excerpt: A Honda atualiza sua vitoriosa plataforma de 300cc para a linha 2027. Confira as novidades em eletrônica, segurança e posicionamento de mercado da XR 300L Tornado e da Sahara 300.
 ---
 
