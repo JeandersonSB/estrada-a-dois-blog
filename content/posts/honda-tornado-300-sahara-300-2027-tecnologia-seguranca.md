@@ -1,10 +1,10 @@
 ---
-title: "Honda Tornado 300 e Sahara 300 2027: Linha Trail Ganha Avanços em Tecnologia e Segurança"
-date: "2026-09-23T16:26:19"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "/images/blog/honda-tornado-300-sahara-300-2027-tecnologia-seguranca.webp"
-excerpt: "A Honda atualiza sua vitoriosa plataforma de 300cc para a linha 2027. Confira as novidades em eletrônica, segurança e posicionamento de mercado da XR 300L Tornado e da Sahara 300."
+title: 'Honda Tornado 300 e Sahara 300 2027: Linha Trail Ganha Avanços em Tecnologia e Segurança'
+status: 🟢 Publicado
+date: 2026-09-23T13:32:00
+category: Notícias
+image: /images/blog/honda-saraha-300-2027-1024x682.avif
+excerpt: A Honda atualiza sua vitoriosa plataforma de 300cc para a linha 2027. Confira as novidades em eletrônica, segurança e posicionamento de mercado da XR 300L Tornado e da Sahara 300.
 ---
 
 A Honda reforça sua soberania no segmento de uso misto de média cilindrada no Brasil com a atualização da linha 2027 da **Sahara 300** e da **XR 300L Tornado**. Compartilhando a mesma base mecânica e estrutural, mas com propostas de pilotagem distintas, ambas as motocicletas recebem aprimoramentos focados em segurança ativa, conectividade e refinamento eletrônico.
@@ -19,7 +19,7 @@ A ciclística mantém o chassi de aço tipo berço semi-duplo derivado da linha 
 
 ## Evolução em Segurança e Tecnologia Eletrônica
 
-A grande novidade da linha 2027 concentra-se no pacote eletrônico e na ampliação dos itens de segurança de série. A Honda incorporou aprimoramentos no sistema de freios ABS, garantindo modulação mais precisa tanto no asfalto quanto na terra, além de manter o sinal de frenagem de emergência (ESS - *Emergency Stop Signal*), que aciona automaticamente os pisca-alertas em desacelerações bruscas.
+A grande novidade da linha 2027 concentra-se no pacote eletrônico e na ampliação dos itens de segurança de série. A Honda incorporou aprimoramentos no sistema de freios ABS, garantindo modulação mais precisa tanto no asfalto quanto na terra, além de manter o sinal de frenagem de emergência (ESS - _Emergency Stop Signal_), que aciona automaticamente os pisca-alertas em desacelerações bruscas.
 
 No painel de instrumentos, o display 100% digital do tipo blackout recebeu atualização na interface, oferecendo melhor leitura em condições de alta luminosidade solar, indicador de marcha engatada, computador de bordo completo e conta-giros digital. A iluminação de ambas as motocicletas permanece Full LED, garantindo alta visibilidade noturna e durabilidade dos componentes.
 
@@ -34,5 +34,3 @@ Já a **XR 300L Tornado** atua quase isolada em sua proposta purista on-off road
 Para o mercado nacional, o constante investimento da Honda na plataforma de 300 cm³ assegura a modernização contínua de duas das motos mais vendidas da categoria. Para o motociclista brasileiro, o ganho de tecnologia e elementos de segurança ativa reflete diretamente na redução do risco de acidentes em frenagens severas e na melhoria da dirigibilidade do dia a dia. Além disso, o fortalecimento dos dois modelos mantém a liquidez no mercado de seminovas, ampla oferta de peças no pós-venda e consolidação do segmento de média cilindrada como o degrau ideal de evolução para quem sai do segmento de 150/160 cm³.
 
 > 🏍️ **Veja nosso diário de bordo:** [5 serras e 831 km de moto em um fim de semana](/blog/5-serras-e-831-km-de-moto-em-um-fim-de)
-
-Fonte: Motociclismo Online
