@@ -586,14 +586,14 @@ async function selecionarCandidatosIneditos(candidatosDisponiveis, postsRecentes
   if (!candidatosDisponiveis || candidatosDisponiveis.length === 0) return [];
 
   const listaRecentes = postsRecentes
-    .slice(0, 40)
+    .slice(0, 25)
     .map((p, i) => `${i + 1}. [${p.date || 'sem data'}] "${p.title}"${p.excerpt ? ` — ${p.excerpt}` : ''}`)
     .join('\n');
 
   const listaCandidatos = candidatosDisponiveis
-    .slice(0, 10)
+    .slice(0, 8)
     .map((c, i) => {
-      const resumo = String(c.contentSnippet || c.content || '').replace(/\s+/g, ' ').slice(0, 500);
+      const resumo = String(c.contentSnippet || c.content || '').replace(/\s+/g, ' ').slice(0, 280);
       const conflitos = (c._cooldownConflicts || [])
         .slice(0, 3)
         .map(x => `"${x.title}" (${x.ageHours.toFixed(1)}h atrás; termos em comum: ${x.overlap.join(', ')})`)
@@ -642,7 +642,7 @@ SELECAO: NENHUM
   for (const modelName of modelCandidates) {
     try {
       const model = genAI.getGenerativeModel({ model: modelName });
-      const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout triagem')), 15000));
+      const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout triagem')), 60000));
       const res = await Promise.race([model.generateContent(promptTriagem), timeoutPromise]);
       const texto = res.response.text().trim();
       console.log(`[Editor-Chefe IA] Resposta da triagem: ${texto}`);
@@ -688,7 +688,46 @@ SELECAO: NENHUM
     }
   }
 
-  // Falha da triagem não deve virar publicação automática.
+  // Se todos os modelos de triagem falharem por indisponibilidade/timeout,
+  // não transformar um problema da API em "zero notícias".
+  // O fallback usa apenas candidatos que JÁ passaram pelos filtros de:
+  // atualidade, relevância de motos, segurança, anti-venda, link e duplicidade forte.
+  // Além disso, rejeita qualquer candidato com conflito de cooldown de 72h.
+  const fallbackCandidates = candidatosDisponiveis
+    .filter(item => (item._cooldownConflicts || []).length === 0)
+    .slice(0, 8);
+
+  const fallbackSelecionados = [];
+
+  for (const item of fallbackCandidates) {
+    const textoItem = `${item.title || ''} ${item.contentSnippet || ''}`;
+
+    const conflitoInterno = fallbackSelecionados.some(prev => {
+      const prevPost = {
+        tokens: extrairTokensAntiDuplicidade(`${prev.title || ''} ${prev.contentSnippet || ''}`)
+      };
+      const sim = calcularSimilaridadeTematica(textoItem, prevPost);
+      return sim.overlap.length >= 3 || sim.jaccard >= 0.35;
+    });
+
+    if (!conflitoInterno) {
+      fallbackSelecionados.push(item);
+    }
+
+    if (fallbackSelecionados.length >= targetCount) break;
+  }
+
+  if (fallbackSelecionados.length > 0) {
+    console.warn(
+      `[Editor-Chefe fallback] IA de triagem indisponível. ${fallbackSelecionados.length} pauta(s) selecionada(s) pelos filtros determinísticos.`
+    );
+    fallbackSelecionados.forEach((item, index) => {
+      console.log(`[Editor-Chefe fallback] #${index + 1}: ${item.title}`);
+    });
+    return fallbackSelecionados;
+  }
+
+  console.warn('[Editor-Chefe fallback] Nenhuma pauta segura sem conflito de cooldown disponível.');
   return [];
 }
 
