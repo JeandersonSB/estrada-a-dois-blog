@@ -26,12 +26,30 @@ if (!API_KEY) {
   process.exit(1);
 }
 
-// 1. FEED PRINCIPAL: Mercado Brasileiro (gl=BR, hl=pt-BR) - Janela máxima de 72 horas
+// 1. FONTES DIRETAS: consultadas antes do Google News.
+// Mantemos somente feeds editoriais confiáveis e focados em motocicletas.
+const DIRECT_FEEDS_BR = [
+  { name: 'Motociclismo Online', url: 'https://motociclismoonline.com.br/feed/' },
+  { name: 'MOTOO', url: 'https://www.motoo.com.br/feed/' },
+  { name: 'Motor1 Brasil - Motos', url: 'https://motor1.uol.com.br/rss/category/motos/' }
+];
+
+// 2. GOOGLE NEWS BRASIL: cobertura ampla + buscas por temas e portais.
+// Janela máxima de 72 horas continua valendo no filtro editorial.
 const QUERIES_BR = [
-  'motos lancamento when:3d',
-  'motos brasil lancamento when:3d',
   'motos brasil when:3d',
   'motociclismo brasil when:3d',
+  'motos lancamento when:3d',
+  'motos novidade when:3d',
+  'motos nova versao when:3d',
+  'motos flagra when:3d',
+  'motos teaser when:3d',
+  'motos recall when:3d',
+  'motos homologacao when:3d',
+  'motos preco oficial when:3d',
+  'motos tecnologia when:3d',
+  'motos vendas mercado when:3d',
+  'motos fabrica producao when:3d',
   'honda motos brasil when:3d',
   'yamaha motos brasil when:3d',
   'royal enfield brasil when:3d',
@@ -39,20 +57,49 @@ const QUERIES_BR = [
   'bmw motorrad brasil when:3d',
   'triumph motos brasil when:3d',
   'kawasaki motos brasil when:3d',
-  'duas rodas motos brasil when:3d'
+  'suzuki motos brasil when:3d',
+  'bajaj brasil motos when:3d',
+  'cfmoto brasil motos when:3d',
+  'hero motos brasil when:3d',
+  'ducati brasil motos when:3d',
+  'ktm motos when:3d',
+  'kove motos when:3d',
+  'zontes motos when:3d',
+  'site:motonline.com.br moto when:3d',
+  'site:motociclismoonline.com.br moto when:3d',
+  'site:motoo.com.br moto when:3d',
+  'site:motor1.uol.com.br motos when:3d',
+  'site:webmotors.com.br motos when:3d',
+  'site:autoesporte.globo.com motos when:3d',
+  'site:mobiauto.com.br motos when:3d'
 ];
 
-// 2. FEED SECUNDARIO: Mercado Global (apenas fallback)
+// 3. MERCADO GLOBAL: apenas fallback complementar.
 const QUERIES_GLOBAL = [
   'motorcycle launch when:3d',
   'motorcycle unveiled when:3d',
-  'new motorcycle model when:3d'
+  'new motorcycle model when:3d',
+  'motorcycle recall when:3d',
+  'motorcycle spy shots when:3d',
+  'motorcycle new version when:3d'
 ];
 
 const MAX_AGE_HOURS = 72;
 const TOPIC_COOLDOWN_HOURS = 72;
 
 const TOP_PORTALS = ['autoesporte', 'motor1', 'webmotors', 'motonline', 'motoo', 'estadao', 'uol', 'cnn', 'r7', 'noticiasautomotivas', 'garagem360', 'motociclismo', 'mobiauto'];
+
+const TRUSTED_EDITORIAL_DOMAINS = [
+  'motonline.com.br',
+  'motociclismoonline.com.br',
+  'motoo.com.br',
+  'motor1.uol.com.br',
+  'webmotors.com.br',
+  'autoesporte.globo.com',
+  'mobiauto.com.br',
+  'garagem360.com.br',
+  'noticiasautomotivas.com.br'
+];
 
 const CRIME_POLICE_KEYWORDS_REGEX = /\b(acidente|acidentes|colisao|colisão|batida|morte|mortes|morre|morreu|morto|mortos|fatal|fatidico|fatídico|ferido|feridos|tiro|tiros|baleado|baleada|assalto|assaltante|assalta|roubo|roubada|roubado|furto|furtam|furtada|apreensao|apreensão|apreendido|apreendida|preso|presos|prisao|prisão|detido|detida|policia|polícia|policial|policiais|criminoso|criminosos|crime|crimes|trafico|tráfico|drogas|suspeito|suspeitos|tragedia|tragédia|homicidio|homicídio|corpo|chacina|atropelado|atropelamento|leilao|leilão|leiloes|leilões|queda|caiu|cai\b|esborracha|capotar|capotamento|letreiro|resgate|vitima|vítima|vitimas|vítimas|perde\s+a\s+vida|amputada|amputado|sangue|feminicidio|feminicídio|arma|cadeira\s+de\s+rodas|bicicleta|ciclista|boko\s+haram|terrorist|terrorism|troops\s+arrest|militant|killed|death|fatal\s+crash|stolen|robbery|suspects?|homicide|thief|thieves|rolezinho|operacao|operação)\b/i;
 
@@ -66,28 +113,65 @@ const SALES_DOMAINS_AND_KEYWORDS = [
 
 const SALES_TITLE_REGEX = /\b(deal|deals|sale|sales|discount|discounts|save\s+\$|save\s+up\s+to|\$\d+|\d+%\s+off|coupon|coupons|buy\s+now|promo|promotion|promotional|best\s+price|cheap|under\s+\$|free\s+shipping|iphone|celular|smartphone|smartwatch|motorola|moto\s+g\d*|moto\s+e\d*|moto\s+edge|moto\s+snaps?|moto\s+360|mounjaro|geladeira|geladeiras|compre\s+j[aá]|desconto|liquidacao|liquidação|oferta|ofertas|for\s+sale|clearance|outlet|order\s+now|cashback|wholesale|affiliate|gta\s+online|chevrolet|carro|carros|suv|hibrido|híbrido|picape|caminhao|caminhão|onibus|ônibus|volvo|hyundai|changan|elantra|cs55|ram\s+cresce|nissan|renault|dolphin|s10|m2|m4|i5|volei|vôlei|basquete|dark\s+horse|investigado|candidatura|governo\s+do\s+estado|bolsonaro|lula|congresso\s+de\s+missoes|congresso\s+de\s+missões|tv\s+brasil|programacao\s+semanal|programação\s+semanal|banco|fatura|futebol|chile|ancelotti|willis)\b/i;
 
-const MOTORCYCLE_POSITIVE_REGEX = /\b(moto|motos|motocicleta|motocicletas|motociclismo|motociclista|motociclistas|scooter|scooters|ciclomotor|honda|yamaha|royal\s+enfield|shineray|bmw\s+motorrad|triumph|kawasaki|suzuki|ducati|bajaj|cfmoto|voge|dafra|harley|kymco|trail|custom|naked|carenada|big\s+trail|pilotagem|duas\s+rodas|piloto|motovelocidade)\b/i;
+const MOTORCYCLE_POSITIVE_REGEX = /\b(moto|motos|motocicleta|motocicletas|motociclismo|motociclista|motociclistas|scooter|scooters|ciclomotor|honda|yamaha|royal\s+enfield|shineray|bmw\s+motorrad|triumph|kawasaki|suzuki|ducati|bajaj|cfmoto|voge|dafra|harley|harley-davidson|kymco|ktm|husqvarna|zontes|benelli|indian\s+motorcycle|aprilia|moto\s+guzzi|vespa|qjmotor|kove|hero|haojue|mv\s+agusta|gasgas|trail|custom|naked|carenada|big\s+trail|pilotagem|duas\s+rodas|piloto|motovelocidade)\b/i;
 
-const parser = new Parser({ timeout: 8000 });
+const parser = new Parser({ timeout: 12000 });
 const genAI = new GoogleGenerativeAI(API_KEY);
 
-// 1. Testa se o link da fonte original esta ativo e respondendo (200/300)
-async function testarLinkAtivo(url) {
+function isGoogleNewsUrl(url) {
+  return /(^|\.)news\.google\.com$/i.test((() => {
+    try { return new URL(url).hostname; } catch { return ''; }
+  })());
+}
+
+function isTrustedEditorialUrl(url) {
   try {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 6000);
+    const hostname = new URL(url).hostname.toLowerCase();
+    return TRUSTED_EDITORIAL_DOMAINS.some(domain =>
+      hostname === domain || hostname.endsWith('.' + domain)
+    );
+  } catch {
+    return false;
+  }
+}
+
+// Testa links sem eliminar boas pautas por bloqueio anti-bot.
+// Links do Google News já vieram de um feed válido e não precisam de uma segunda
+// requisição para entrar na triagem. Portais confiáveis com 401/403/429 também
+// são aceitos, pois esses status normalmente significam bloqueio ao robô.
+async function testarLinkAtivo(url) {
+  if (!url) return false;
+  if (isGoogleNewsUrl(url)) return true;
+
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 15000);
+
+  try {
     const res = await fetch(url, {
       method: 'GET',
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
       },
       redirect: 'follow',
       signal: controller.signal
     });
-    clearTimeout(timer);
-    return res.status >= 200 && res.status < 400;
-  } catch (err) {
+
+    if (res.status >= 200 && res.status < 400) return true;
+    if (isTrustedEditorialUrl(url) && [401, 403, 429].includes(res.status)) {
+      console.log(`[Link] Portal confiável respondeu ${res.status}; mantendo pauta: ${url}`);
+      return true;
+    }
+
     return false;
+  } catch (err) {
+    if (isTrustedEditorialUrl(url)) {
+      console.log(`[Link] Timeout/bloqueio em portal confiável; mantendo pauta para triagem: ${url}`);
+      return true;
+    }
+    return false;
+  } finally {
+    clearTimeout(timer);
   }
 }
 
@@ -819,13 +903,43 @@ function itemValido(item) {
   return true;
 }
 
+function normalizarFonteItem(item, fallback = 'Portal Noticioso') {
+  const source =
+    typeof item.source === 'string'
+      ? item.source
+      : item.source?.title || item.creator || fallback;
+
+  return {
+    ...item,
+    source: String(source || fallback).trim(),
+  };
+}
+
 async function coletarItensQuery(query, isBR = true) {
   const langParams = isBR ? '&hl=pt-BR&gl=BR&ceid=BR:pt-419' : '&hl=en-US&gl=US';
   const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}${langParams}`;
   try {
     const feed = await parser.parseURL(url);
-    return feed.items || [];
+    return (feed.items || []).map(item => normalizarFonteItem(item, 'Google News'));
   } catch (e) {
+    console.warn(`[Google News] Falha na consulta "${query}": ${e.message}`);
+    return [];
+  }
+}
+
+async function coletarFeedDireto(feedInfo) {
+  try {
+    const feed = await parser.parseURL(feedInfo.url);
+    const items = (feed.items || []).map(item => ({
+      ...normalizarFonteItem(item, feedInfo.name),
+      source: feedInfo.name,
+      _directSource: true,
+      _directFeed: feedInfo.url,
+    }));
+    console.log(`[Fonte direta] ${feedInfo.name}: ${items.length} item(ns) coletado(s).`);
+    return items;
+  } catch (e) {
+    console.warn(`[Fonte direta] Falha em ${feedInfo.name}: ${e.message}`);
     return [];
   }
 }
@@ -844,39 +958,54 @@ async function gerarNoticias() {
   console.log(`Artigos existentes carregados no controle anti-duplicidade: ${todosPosts.length}`);
   console.log(`======================================================\n`);
 
-  console.log("Coletando notícias dos melhores portais do Brasil...");
+  console.log("Coletando notícias em fontes diretas e no Google News...");
   const seenTitles = new Set();
   const rawCandidatosBR = [];
 
+  const adicionarCandidatoBR = (item, index = 0, direct = false) => {
+    if (!item?.title || seenTitles.has(item.title)) return;
+    seenTitles.add(item.title);
+
+    if (!itemValido(item)) return;
+
+    const conflitos = analisarConflitosTematicos(item, todosPosts);
+    if (conflitos.hardDuplicates.length > 0) return;
+    item._cooldownConflicts = conflitos.cooldownConflicts;
+
+    let score = (direct ? 180 : 100) - index;
+    const fullSource = `${item.source || ''} ${item.title || ''} ${item.link || ''}`.toLowerCase();
+
+    if (TOP_PORTALS.some(p => fullSource.includes(p))) score += 35;
+    if (/\b(lancamento|lançamento|nova|novo|novidade|inedita|inédita|chega\s+ao\s+brasil|revelada|apresenta|esgota|recorde|flagrada|flagra|recall|homologada|homologação|teaser|preço\s+oficial|versão)\b/i.test(item.title)) {
+      score += 25;
+    }
+
+    rawCandidatosBR.push({ ...item, isBR: true, score });
+  };
+
+  let directItemsCount = 0;
+  for (const feedInfo of DIRECT_FEEDS_BR) {
+    const items = await coletarFeedDireto(feedInfo);
+    directItemsCount += items.length;
+    items.forEach((item, index) => adicionarCandidatoBR(item, index, true));
+  }
+
   for (const q of QUERIES_BR) {
     const items = await coletarItensQuery(q, true);
-    items.forEach((item, index) => {
-      if (seenTitles.has(item.title)) return;
-      seenTitles.add(item.title);
-
-      if (itemValido(item)) {
-        const conflitos = analisarConflitosTematicos(item, todosPosts);
-        if (conflitos.hardDuplicates.length > 0) {
-          return;
-        }
-        item._cooldownConflicts = conflitos.cooldownConflicts;
-
-        let score = 100 - index;
-        const fullSource = `${item.source || ''} ${item.title || ''} ${item.link || ''}`.toLowerCase();
-        if (TOP_PORTALS.some(p => fullSource.includes(p))) score += 35;
-        if (/\b(lancamento|lançamento|nova|novo|novidade|inedita|inédita|chega\s+ao\s+brasil|revelada|apresenta|esgota|recorde|flagrada)\b/i.test(item.title)) score += 25;
-
-        rawCandidatosBR.push({ ...item, isBR: true, score });
-      }
-    });
+    items.forEach((item, index) => adicionarCandidatoBR(item, index, false));
   }
 
   rawCandidatosBR.sort((a, b) => b.score - a.score);
 
-  // Filtrar links ativos e validar slugs
+  console.log(`[Descoberta] Itens brutos em feeds diretos: ${directItemsCount}`);
+  console.log(`[Descoberta] Candidatos BR após filtros editoriais/anti-duplicidade: ${rawCandidatosBR.length}`);
+
+  // Filtrar links ativos e validar slugs. Google News não é descartado por redirect.
   const candidatosValidos = [];
+  let linksDescartados = 0;
+
   for (const item of rawCandidatosBR) {
-    if (candidatosValidos.length >= 10) break;
+    if (candidatosValidos.length >= 15) break;
 
     const initialSlug = gerarSlugInteligente(item.title, 65);
     if (fs.existsSync(path.join(POSTS_DIR, `${initialSlug}.md`))) continue;
@@ -884,8 +1013,12 @@ async function gerarNoticias() {
     const linkAtivo = await testarLinkAtivo(item.link);
     if (linkAtivo) {
       candidatosValidos.push(item);
+    } else {
+      linksDescartados++;
     }
   }
+
+  console.log(`[Descoberta] Links realmente inválidos descartados: ${linksDescartados}`);
 
   // Fallback complementar com notícias globais caso o mercado brasileiro esteja sem novidades
   if (candidatosValidos.length < targetCount) {
@@ -910,7 +1043,7 @@ async function gerarNoticias() {
           candidatosValidos.push({ ...item, isBR: false });
         }
       }
-      if (candidatosValidos.length >= 10) break;
+      if (candidatosValidos.length >= 15) break;
     }
   }
 
