@@ -1,6 +1,6 @@
 ---
 title: "Cordura vs Jeans com Kevlar: Qual o Melhor para Viajar?"
-date: "2026-09-23"
+date: "2026-09-23T12:06:31"
 category: "Equipamentos"
 status: "⏳ Rascunho"
 image: "https://loremflickr.com/1200/600/motorcycle%2Criding%2Cpants%2Ccordura%2Caramid%2Ckevlar%2Cjeans/all"
