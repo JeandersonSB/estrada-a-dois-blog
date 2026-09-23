@@ -3,7 +3,7 @@ title: 'Nova Honda Airblade é registrada no Brasil: Conheça a scooter de visua
 status: 🟢 Publicado
 date: 2026-09-23T19:59:00
 category: Notícias
-image: /images/blog/honda-airblade-registrada-no-brasil-nova-scooter.webp
+image: "/images/blog/honda-airblade-registrada-no-brasil-nova-scooter.webp"
 excerpt: A Honda registrou a patente da scooter Airblade no Brasil. Descubra os detalhes técnicos, a proposta de design e o impacto desse movimento no mercado nacional.
 ---
 
