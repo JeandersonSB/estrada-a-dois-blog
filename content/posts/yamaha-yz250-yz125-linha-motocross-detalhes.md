@@ -3,7 +3,7 @@ title: 'Yamaha YZ250 e YZ125: Linha de Motocross 2 Tempos Chega Atualizada'
 status: 🟢 Publicado
 date: 2026-09-23T06:52:00
 category: Notícias
-image: /images/blog/yamaha-yz250-yz125-linha-motocross-detalhes.webp
+image: "/images/blog/yamaha-yz250-yz125-linha-motocross-detalhes.webp"
 excerpt: A Yamaha reforça sua tradição nas pistas de terra ao apresentar novidades para as consagradas YZ125 e YZ250. Confira as atualizações das icônicas máquinas de motocross de dois tempos.
 ---
 
