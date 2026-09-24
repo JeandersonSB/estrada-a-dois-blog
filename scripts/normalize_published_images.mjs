@@ -238,7 +238,7 @@ async function normalizePublishedPost(postPath) {
   if (!isPublished(content)) return false;
 
   const imageValue = getImageValue(content);
-  const source = normalizeImageReference(imageValue);
+  let source = normalizeImageReference(imageValue);
 
   if (!source) {
     console.log(
@@ -247,14 +247,32 @@ async function normalizePublishedPost(postPath) {
     return false;
   }
 
-  if (!fs.existsSync(source.fsPath)) {
-    console.warn(
-      `⚠️ ${path.basename(postPath)}: imagem não encontrada em ${source.fsPath}. Publicação continuará sem renomear.`
-    );
-    return false;
-  }
-
   const slug = path.basename(postPath, '.md');
+
+  if (!fs.existsSync(source.fsPath)) {
+    // O CMS pode salvar uma referência local antes do upload da mídia concluir.
+    // Antes de publicar uma capa quebrada, recupera uma imagem válida já existente
+    // com o nome canônico do próprio artigo.
+    const fallbackExtensions = ['.webp', '.jpg', '.jpeg', '.png', '.avif'];
+    const fallbackPath = fallbackExtensions
+      .map(ext => path.join(BLOG_IMAGES_DIR, `${slug}${ext}`))
+      .find(candidate => fs.existsSync(candidate));
+
+    if (fallbackPath) {
+      const fallbackRef = `/images/blog/${path.basename(fallbackPath)}`;
+      console.warn(
+        `⚠️ ${path.basename(postPath)}: referência de capa ausente (${imageValue}). Recuperando ${fallbackRef}.`
+      );
+      source = {
+        fsPath: fallbackPath,
+        publicRef: fallbackRef,
+      };
+    } else {
+      throw new Error(
+        `Imagem de capa local não encontrada em ${path.basename(postPath)}: ${imageValue}`
+      );
+    }
+  }
   let extension = path.extname(source.fsPath) || path.extname(imageValue);
 
   if (!extension) {
