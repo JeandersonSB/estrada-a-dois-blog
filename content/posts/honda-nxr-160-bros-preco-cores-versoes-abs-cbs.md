@@ -3,7 +3,7 @@ title: 'Honda NXR 160 Bros: Preço, Cores e as Novidades das Versões ABS e CBS'
 status: 🟢 Publicado
 date: 2026-09-24T14:11:00
 category: Notícias
-image: /images/blog/honda-nxr-160-bros-2027-23-1536x1025.webp
+image: "/images/blog/honda-nxr-160-bros-preco-cores-versoes-abs-cbs.webp"
 excerpt: A nova Honda NXR 160 Bros chega ao mercado brasileiro trazendo atualizações importantes em seu catálogo, destacando-se pelas opções de segurança com freios ABS e CBS, novas cores e posicionamento estratégico na categoria trail.
 ---
 
