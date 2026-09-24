@@ -3,7 +3,7 @@ title: Honda Racing Brasil desembarca no Rio Grande do Sul para a sexta etapa do
 status: 🟢 Publicado
 date: 2026-09-24T18:17:00
 category: Notícias
-image: /images/blog/honda-racing-rs-sexta-etapa-moto1000gp.webp
+image: "/images/blog/honda-racing-rs-sexta-etapa-moto1000gp.webp"
 excerpt: A equipe oficial Honda Racing intensifica os preparativos e leva toda a sua estrutura técnica e de pilotos para o Autódromo Internacional de Tarumã, no Rio Grande do Sul, visando a disputa de mais uma etapa decisiva do campeonato brasileiro de motovelocidade.
 ---
 
