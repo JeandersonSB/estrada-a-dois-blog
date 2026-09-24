@@ -86,6 +86,9 @@ const QUERIES_GLOBAL = [
 
 const MAX_AGE_HOURS = 72;
 const TOPIC_COOLDOWN_HOURS = 72;
+const TRIAGE_MAX_CANDIDATES = 15;
+const TRIAGE_MAX_PER_SOURCE = 3;
+const TRIAGE_TIMEOUT_MS = 45000;
 
 const TOP_PORTALS = ['autoesporte', 'motor1', 'webmotors', 'motonline', 'motoo', 'estadao', 'uol', 'cnn', 'r7', 'noticiasautomotivas', 'garagem360', 'motociclismo', 'mobiauto'];
 
@@ -562,11 +565,16 @@ function analisarConflitosTematicos(item, todosPosts) {
 
     const ageHours = post.time > 0 ? (agora - post.time) / (1000 * 60 * 60) : Infinity;
 
-    // Cooldown de 72h: mesmo modelo/assunto exige revisão editorial da IA.
+    // Cooldown de 72h: exige sinal temático mais forte que apenas dois termos
+    // genéricos em comum. Duplicidade forte continua sendo barrada acima.
+    const cooldownTematicoForte =
+      overlap.length >= 3 ||
+      (overlap.length >= 2 && jaccard >= 0.28);
+
     if (
       ageHours >= 0 &&
       ageHours <= TOPIC_COOLDOWN_HOURS &&
-      (overlap.length >= 2 || jaccard >= 0.22)
+      cooldownTematicoForte
     ) {
       cooldownConflicts.push({
         title: post.title,
@@ -585,22 +593,32 @@ function analisarConflitosTematicos(item, todosPosts) {
 async function selecionarCandidatosIneditos(candidatosDisponiveis, postsRecentes, targetCount, genAI) {
   if (!candidatosDisponiveis || candidatosDisponiveis.length === 0) return [];
 
-  const listaRecentes = postsRecentes
+  const candidatosTriagem = candidatosDisponiveis.slice(0, TRIAGE_MAX_CANDIDATES);
+  const noticiasRecentes = postsRecentes.filter(p =>
+    String(p.category || '')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .includes('noticia')
+  );
+  const baseRecentes = noticiasRecentes.length > 0 ? noticiasRecentes : postsRecentes;
+
+  const listaRecentes = baseRecentes
     .slice(0, 25)
     .map((p, i) => `${i + 1}. [${p.date || 'sem data'}] "${p.title}"${p.excerpt ? ` — ${p.excerpt}` : ''}`)
     .join('\n');
 
-  const listaCandidatos = candidatosDisponiveis
-    .slice(0, 8)
-    .map((c, i) => {
-      const resumo = String(c.contentSnippet || c.content || '').replace(/\s+/g, ' ').slice(0, 280);
-      const conflitos = (c._cooldownConflicts || [])
+  const listaCandidatos = candidatosTriagem
+    .map((cand, i) => {
+      const resumo = String(cand.contentSnippet || cand.content || '').replace(/\s+/g, ' ').slice(0, 280);
+      const conflitos = (cand._cooldownConflicts || [])
         .slice(0, 3)
-        .map(x => `"${x.title}" (${x.ageHours.toFixed(1)}h atrás; termos em comum: ${x.overlap.join(', ')})`)
+        .map(x => `"${x.title}" (${x.ageHours.toFixed(1)}h atrás; termos: ${x.overlap.join(', ')}; jaccard: ${x.jaccard.toFixed(2)})`)
         .join(' | ');
 
       return [
-        `[${i + 1}] "${c.title}"`,
+        `[${i + 1}] "${cand.title}"`,
+        `Fonte: ${cand.source || 'desconhecida'} | Score: ${cand.score ?? 0} | Data: ${cand.pubDate || cand.isoDate || 'sem data'}`,
         `Resumo: ${resumo || 'sem resumo disponível'}`,
         conflitos ? `ALERTA DE COOLDOWN 72H: ${conflitos}` : 'Cooldown: sem conflito detectado'
       ].join('\n');
@@ -609,16 +627,18 @@ async function selecionarCandidatosIneditos(candidatosDisponiveis, postsRecentes
 
   const promptTriagem = `
 Voce e o Editor-Chefe do portal de motociclismo "Estrada a Dois".
-Sua prioridade e QUALIDADE EDITORIAL, INEDITISMO e utilidade para o motociclista brasileiro — nunca preencher cota de publicacao.
+Sua prioridade e QUALIDADE EDITORIAL, INEDITISMO e utilidade para o motociclista brasileiro.
 
 REGRAS RIGIDAS:
 1. REJEITE candidato que trate do mesmo fato, modelo, lancamento ou evento ja coberto, mesmo com titulo diferente.
-2. COOLDOWN DE 72 HORAS: se houver alerta de cooldown para o mesmo modelo/assunto, REJEITE por padrao.
-3. EXCECAO AO COOLDOWN: so aceite se houver uma ATUALIZACAO MATERIAL NOVA e verificavel, como preco oficial novo, chegada confirmada ao Brasil, ficha tecnica oficial antes desconhecida, data oficial, recall, homologacao, nova versao formalmente apresentada ou outro fato concreto que altere substancialmente a materia anterior.
+2. COOLDOWN DE 72 HORAS: se houver alerta de cooldown para o mesmo fato/assunto, rejeite por padrao.
+3. EXCECAO AO COOLDOWN: aceite somente se houver ATUALIZACAO MATERIAL NOVA e verificavel, como preco oficial, chegada confirmada ao Brasil, ficha tecnica oficial nova, data oficial, recall, homologacao ou nova versao formalmente apresentada.
 4. Mudanca de titulo, nova fonte repetindo a mesma informacao, rumor equivalente, novas fotos sem fato novo ou simples repercussao NAO sao atualizacao material.
-5. DIVERSIDADE: nao selecione dois candidatos sobre o mesmo modelo/evento na mesma execucao.
-6. VALOR PROPRIO: selecione apenas noticias que permitam acrescentar contexto util ao leitor brasileiro (mercado, concorrentes, especificacoes, disponibilidade, posicionamento ou implicacao pratica).
-7. Se nenhuma pauta atingir esse nivel, responda ESTRITAMENTE: SELECAO: NENHUM.
+5. MESMA MARCA NAO SIGNIFICA DUPLICIDADE. Honda, Yamaha, Royal Enfield etc. podem aparecer em noticias diferentes no mesmo periodo.
+6. MESMO MODELO TAMBEM PODE TER OUTRO FATO NOVO: recall, preco, homologacao, chegada ao Brasil e lancamento sao acontecimentos diferentes quando efetivamente novos.
+7. DIVERSIDADE: nao selecione dois candidatos sobre o mesmo fato/evento na mesma execucao.
+8. VALOR PROPRIO: priorize noticias que permitam acrescentar contexto util ao leitor brasileiro.
+9. Se houver pelo menos uma pauta claramente nova, relevante e sem conflito de cooldown, selecione a melhor. Use NENHUM somente quando TODOS os candidatos forem duplicados, estiverem em cooldown sem atualizacao material ou forem editorialmente fracos.
 
 MATERIAS RECENTES/JÁ EXISTENTES:
 ${listaRecentes || 'Nenhuma materia anterior carregada.'}
@@ -639,17 +659,27 @@ SELECAO: NENHUM
     'gemini-3.5-flash-lite'
   ];
 
+  let transientFailures = 0;
+  let otherFailures = 0;
+  let noneResponses = 0;
+  let malformedResponses = 0;
+  let successfulResponses = 0;
+
   for (const modelName of modelCandidates) {
     try {
       const model = genAI.getGenerativeModel({ model: modelName });
-      const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout triagem')), 60000));
+      const timeoutPromise = new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('Timeout triagem')), TRIAGE_TIMEOUT_MS)
+      );
       const res = await Promise.race([model.generateContent(promptTriagem), timeoutPromise]);
       const texto = res.response.text().trim();
-      console.log(`[Editor-Chefe IA] Resposta da triagem: ${texto}`);
+      successfulResponses++;
+      console.log(`[Editor-Chefe IA][${modelName}] Resposta da triagem: ${texto}`);
 
-      if (texto.includes('NENHUM')) {
-        console.log('[Editor-Chefe IA] Nenhuma pauta atingiu o nível editorial mínimo.');
-        return [];
+      if (/SELECAO:\s*NENHUM/i.test(texto)) {
+        noneResponses++;
+        console.log(`[Editor-Chefe IA][${modelName}] Modelo não aprovou pauta; consultando próximo modelo antes de encerrar.`);
+        continue;
       }
 
       const match = texto.match(/SELECAO:\s*([0-9,\s]+)/i);
@@ -658,14 +688,22 @@ SELECAO: NENHUM
           match[1]
             .split(',')
             .map(n => parseInt(n.trim(), 10) - 1)
-            .filter(n => !isNaN(n) && n >= 0 && n < candidatosDisponiveis.length)
+            .filter(n => !isNaN(n) && n >= 0 && n < candidatosTriagem.length)
         )];
 
         const selecionados = [];
         for (const idx of indexes) {
-          const item = candidatosDisponiveis[idx];
-          const textoItem = `${item.title || ''} ${item.contentSnippet || ''}`;
+          const item = candidatosTriagem[idx];
 
+          // A IA não pode furar o cooldown sem uma decisão editorial explícita.
+          // Como o formato de resposta contém apenas índices, candidatos em cooldown
+          // permanecem bloqueados nesta camada automática.
+          if ((item._cooldownConflicts || []).length > 0) {
+            console.log(`[Editor-Chefe IA] Candidato #${idx + 1} bloqueado pelo cooldown determinístico: "${item.title}"`);
+            continue;
+          }
+
+          const textoItem = `${item.title || ''} ${item.contentSnippet || ''}`;
           const conflitoInterno = selecionados.some(prev => {
             const prevPost = {
               tokens: extrairTokensAntiDuplicidade(`${prev.title || ''} ${prev.contentSnippet || ''}`)
@@ -679,23 +717,50 @@ SELECAO: NENHUM
         }
 
         if (selecionados.length > 0) {
-          console.log(`[Editor-Chefe IA] ${selecionados.length} pauta(s) aprovada(s) após controle semântico/cooldown.`);
+          console.log(`[Editor-Chefe IA][${modelName}] ${selecionados.length} pauta(s) aprovada(s) após controle semântico/cooldown.`);
           return selecionados;
         }
+
+        console.log(`[Editor-Chefe IA][${modelName}] Resposta tinha índices, mas todos foram bloqueados por cooldown/duplicidade interna.`);
+        continue;
       }
+
+      malformedResponses++;
+      console.warn(`[Editor-Chefe IA][${modelName}] Resposta fora do formato esperado; tentando próximo modelo.`);
     } catch (err) {
-      console.warn(`Tentativa de triagem com ${modelName} falhou: ${err.message}`);
+      const message = String(err?.message || err || '');
+      const transient = /503|429|timeout|high demand|service unavailable|temporar|5\d\d/i.test(message);
+      if (transient) transientFailures++;
+      else otherFailures++;
+      console.warn(`Tentativa de triagem com ${modelName} falhou: ${message}`);
     }
   }
 
-  // Se todos os modelos de triagem falharem por indisponibilidade/timeout,
-  // não transformar um problema da API em "zero notícias".
-  // O fallback usa apenas candidatos que JÁ passaram pelos filtros de:
-  // atualidade, relevância de motos, segurança, anti-venda, link e duplicidade forte.
-  // Além disso, rejeita qualquer candidato com conflito de cooldown de 72h.
-  const fallbackCandidates = candidatosDisponiveis
+  console.log(
+    `[Editor-Chefe diagnóstico] respostas=${successfulResponses}, nenhum=${noneResponses}, ` +
+    `falhas_transitorias=${transientFailures}, falhas_outras=${otherFailures}, formato_invalido=${malformedResponses}`
+  );
+
+  // Só aceitamos "nenhuma pauta" como decisão editorial quando TODOS os modelos
+  // responderam normalmente e concordaram em NENHUM. Se houve 503/timeout,
+  // não transformamos indisponibilidade da API em ausência de notícias.
+  const consensoEditorialNenhum =
+    noneResponses === modelCandidates.length &&
+    transientFailures === 0 &&
+    otherFailures === 0 &&
+    malformedResponses === 0;
+
+  if (consensoEditorialNenhum) {
+    console.log('[Editor-Chefe IA] Todos os modelos disponíveis concordaram que nenhuma pauta atingiu o nível editorial mínimo.');
+    return [];
+  }
+
+  // Fallback determinístico seguro: somente candidatos que já passaram por
+  // atualidade, relevância de motos, segurança, anti-venda, link e duplicidade forte,
+  // e que NÃO possuem conflito de cooldown de 72h.
+  const fallbackCandidates = candidatosTriagem
     .filter(item => (item._cooldownConflicts || []).length === 0)
-    .slice(0, 8);
+    .sort((a, b) => (b.score || 0) - (a.score || 0));
 
   const fallbackSelecionados = [];
 
@@ -710,19 +775,18 @@ SELECAO: NENHUM
       return sim.overlap.length >= 3 || sim.jaccard >= 0.35;
     });
 
-    if (!conflitoInterno) {
-      fallbackSelecionados.push(item);
-    }
-
+    if (!conflitoInterno) fallbackSelecionados.push(item);
     if (fallbackSelecionados.length >= targetCount) break;
   }
 
   if (fallbackSelecionados.length > 0) {
     console.warn(
-      `[Editor-Chefe fallback] IA de triagem indisponível. ${fallbackSelecionados.length} pauta(s) selecionada(s) pelos filtros determinísticos.`
+      `[Editor-Chefe fallback] Triagem degradada/inconclusiva. ${fallbackSelecionados.length} pauta(s) selecionada(s) pelos filtros determinísticos seguros.`
     );
     fallbackSelecionados.forEach((item, index) => {
-      console.log(`[Editor-Chefe fallback] #${index + 1}: ${item.title}`);
+      console.log(
+        `[Editor-Chefe fallback] #${index + 1}: "${item.title}" | fonte=${item.source || 'desconhecida'} | score=${item.score ?? 0}`
+      );
     });
     return fallbackSelecionados;
   }
@@ -954,6 +1018,71 @@ function normalizarFonteItem(item, fallback = 'Portal Noticioso') {
   };
 }
 
+function chaveFonteCandidato(item) {
+  const source = String(item?.source || '').trim().toLowerCase();
+  if (source && source !== 'google news' && source !== 'portal noticioso') {
+    return source;
+  }
+
+  try {
+    return new URL(item?.link || '').hostname.replace(/^www\./, '').toLowerCase() || 'fonte-desconhecida';
+  } catch {
+    return source || 'fonte-desconhecida';
+  }
+}
+
+function montarFilaTriagemDiversificada(candidatos) {
+  const ordenarComLimitePorFonte = (lista) => {
+    const principais = [];
+    const excedentes = [];
+    const contagem = new Map();
+
+    for (const item of lista) {
+      const fonte = chaveFonteCandidato(item);
+      const atual = contagem.get(fonte) || 0;
+
+      if (atual < TRIAGE_MAX_PER_SOURCE) {
+        principais.push(item);
+        contagem.set(fonte, atual + 1);
+      } else {
+        excedentes.push(item);
+      }
+    }
+
+    return [...principais, ...excedentes];
+  };
+
+  // Candidatos sem cooldown entram primeiro. Dentro de cada grupo, limitamos
+  // a concentração inicial por fonte para evitar que um único portal domine
+  // toda a lista enviada ao Editor-Chefe.
+  const semCooldown = candidatos.filter(item => (item._cooldownConflicts || []).length === 0);
+  const comCooldown = candidatos.filter(item => (item._cooldownConflicts || []).length > 0);
+
+  return [
+    ...ordenarComLimitePorFonte(semCooldown),
+    ...ordenarComLimitePorFonte(comCooldown)
+  ];
+}
+
+function logDiagnosticoCandidatos(candidatos) {
+  console.log('[Triagem diagnóstico] Candidatos enviados ao Editor-Chefe:');
+
+  candidatos.forEach((item, index) => {
+    const conflitos = item._cooldownConflicts || [];
+    console.log(
+      `  #${index + 1} | score=${item.score ?? 0} | fonte=${item.source || 'desconhecida'} | ` +
+      `cooldown=${conflitos.length} | "${item.title}"`
+    );
+
+    conflitos.slice(0, 2).forEach(conf => {
+      console.log(
+        `     ↳ conflito: "${conf.title}" | ${conf.ageHours.toFixed(1)}h | ` +
+        `overlap=${conf.overlap.join(',')} | jaccard=${conf.jaccard.toFixed(2)}`
+      );
+    });
+  });
+}
+
 async function coletarItensQuery(query, isBR = true) {
   const langParams = isBR ? '&hl=pt-BR&gl=BR&ceid=BR:pt-419' : '&hl=en-US&gl=US';
   const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}${langParams}`;
@@ -1039,12 +1168,16 @@ async function gerarNoticias() {
   console.log(`[Descoberta] Itens brutos em feeds diretos: ${directItemsCount}`);
   console.log(`[Descoberta] Candidatos BR após filtros editoriais/anti-duplicidade: ${rawCandidatosBR.length}`);
 
+  // Prioriza pautas sem cooldown e diversifica fontes antes de validar os links.
+  // Assim, feeds diretos continuam valorizados, mas não monopolizam os 15 candidatos.
+  const filaTriagemBR = montarFilaTriagemDiversificada(rawCandidatosBR);
+
   // Filtrar links ativos e validar slugs. Google News não é descartado por redirect.
   const candidatosValidos = [];
   let linksDescartados = 0;
 
-  for (const item of rawCandidatosBR) {
-    if (candidatosValidos.length >= 15) break;
+  for (const item of filaTriagemBR) {
+    if (candidatosValidos.length >= TRIAGE_MAX_CANDIDATES) break;
 
     const initialSlug = gerarSlugInteligente(item.title, 65);
     if (fs.existsSync(path.join(POSTS_DIR, `${initialSlug}.md`))) continue;
@@ -1058,6 +1191,7 @@ async function gerarNoticias() {
   }
 
   console.log(`[Descoberta] Links realmente inválidos descartados: ${linksDescartados}`);
+  logDiagnosticoCandidatos(candidatosValidos);
 
   // Fallback complementar com notícias globais caso o mercado brasileiro esteja sem novidades
   if (candidatosValidos.length < targetCount) {
@@ -1082,7 +1216,7 @@ async function gerarNoticias() {
           candidatosValidos.push({ ...item, isBR: false });
         }
       }
-      if (candidatosValidos.length >= 15) break;
+      if (candidatosValidos.length >= TRIAGE_MAX_CANDIDATES) break;
     }
   }
 
