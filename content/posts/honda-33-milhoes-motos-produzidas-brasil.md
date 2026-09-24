@@ -3,7 +3,7 @@ title: Honda marca história e chega a 33 milhões de motocicletas produzidas no
 status: 🟢 Publicado
 date: 2026-09-24T14:53:00
 category: Notícias
-image: /images/blog/honda-33-milhoes-motos-produzidas-brasil.webp
+image: "/images/blog/honda-33-milhoes-motos-produzidas-brasil.webp"
 excerpt: A fabricante japonesa alcança um marco histórico em sua linha de montagem em Manaus, consolidando a liderança absoluta no mercado brasileiro de duas rodas.
 ---
 
