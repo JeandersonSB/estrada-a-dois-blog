@@ -3,7 +3,7 @@ title: 'Novas Motos Yamaha para Aluguel: Plataforma Expande Frota no Brasil'
 status: 🟢 Publicado
 date: 2026-09-24T15:56:00
 category: Notícias
-image: /images/blog/yamahablustar-1_24092026_72830_1280_960.jpg
+image: "/images/blog/yamaha-novos-modelos-aluguel-aplicativo-brasil.jpg"
 excerpt: A Yamaha amplia sua presença no ecossistema de locação de motocicletas no Brasil com a inclusão de novos modelos integrados diretamente em plataformas de aplicativos.
 ---
 
