@@ -3,7 +3,7 @@ title: 'Motos incríveis com vendas baixas: Entenda por que ótimos modelos enca
 status: 🟢 Publicado
 date: 2026-09-24T08:25:00
 category: Notícias
-image: /images/blog/suzuki-gsx-8s.jpg
+image: "/images/blog/motos-incriveis-poucas-vendas-mercado-brasileiro.jpg"
 excerpt: Nem toda motocicleta repleta de tecnologia e alto desempenho consegue emplacar grandes volumes no Brasil. Entenda as dinâmicas de mercado que explicam vendas discretas de modelos aclamados.
 ---
 
