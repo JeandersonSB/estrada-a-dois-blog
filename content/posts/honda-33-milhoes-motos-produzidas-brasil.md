@@ -1,10 +1,10 @@
 ---
-title: "Honda marca história e chega a 33 milhões de motocicletas produzidas no Brasil"
-date: "2026-09-24T17:48:09"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "/images/blog/honda-33-milhoes-motos-produzidas-brasil.webp"
-excerpt: "A fabricante japonesa alcança um marco histórico em sua linha de montagem em Manaus, consolidando a liderança absoluta no mercado brasileiro de duas rodas."
+title: Honda marca história e chega a 33 milhões de motocicletas produzidas no Brasil
+status: 🟢 Publicado
+date: 2026-09-24T14:53:00
+category: Notícias
+image: /images/blog/honda-33-milhoes-motos-produzidas-brasil.webp
+excerpt: A fabricante japonesa alcança um marco histórico em sua linha de montagem em Manaus, consolidando a liderança absoluta no mercado brasileiro de duas rodas.
 ---
 
 O mercado brasileiro de motocicletas acaba de testemunhar um marco histórico impressionante. A Honda Motos alcançou a marca de 33 milhões de unidades produzidas no Polo Industrial de Manaus (AM). Esse número monumental reforça não apenas a solidez da fabricante japonesa no país, mas também a relevância do setor de duas rodas na economia nacional e na mobilidade urbana e rodoviária dos brasileiros.
@@ -30,5 +30,3 @@ Para quem vive o motociclismo no Brasil, a marca de 33 milhões de unidades prod
 A forte presença da fabricante garante que a manutenção e o suporte técnico estejam acessíveis mesmo em regiões distantes dos grandes centros urbanos. Além disso, a escala industrial permite que a tecnologia de ponta seja democratizada de forma mais ágil para o consumidor final, impactando positivamente a segurança e a durabilidade das máquinas que rodam diariamente pelas ruas e estradas do país.
 
 > 🏍️ **Leia também:** [De R15 para as Cataratas: Roteiro de 2.012 km a Dois](/blog/de-r15-para-as-cataratas-roteiro-de)
-
-Fonte: Motociclismo Online
