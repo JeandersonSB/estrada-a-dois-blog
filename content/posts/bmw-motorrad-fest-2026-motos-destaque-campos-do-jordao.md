@@ -1,9 +1,9 @@
 ---
 title: 'BMW Motorrad Fest 2026: Principais Motos e Lançamentos em Destaque em Campos do Jordão'
-status: 🟢 Publicado
+status: ⏳ Rascunho
 date: 2026-09-24T20:37:00
 category: Notícias
-image: "/images/blog/bmw-motorrad-fest-2026-motos-destaque-campos-do-jordao.webp"
+image: /images/blog/67154.png
 excerpt: O BMW Motorrad Fest 2026 reúne os principais modelos, tecnologias de ponta e lançamentos da marca alemã no Brasil em Campos do Jordão. Confira as máquinas em destaque.
 ---
 
