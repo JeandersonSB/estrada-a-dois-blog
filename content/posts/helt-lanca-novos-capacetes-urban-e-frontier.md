@@ -3,7 +3,7 @@ title: 'Capacetes Helt Urban e Frontier: Novos Modelos Chegam ao Mercado Brasile
 status: 🟢 Publicado
 date: 2026-09-25T09:50:00
 category: Notícias
-image: "/images/blog/helt-lanca-novos-capacetes-urban-e-frontier.webp"
+image: /images/blog/helt-lanca-novos-capacetes-urban-e-frontier.webp
 excerpt: A Helt amplia seu portfólio no Brasil com o lançamento dos novos capacetes Urban e Frontier, trazendo opções focadas na proteção e no estilo para o motociclista urbano e estradeiro.
 ---
 
@@ -23,5 +23,9 @@ Para o mercado nacional, todo e qualquer capacete comercializado deve obrigatori
 ## O que isso significa para o motociclista brasileiro
 
 Para quem roda diariamente nas ruas e estradas do Brasil, a chegada dos novos Helt Urban e Frontier representa mais opções de escolha no competitivo segmento de entrada e intermediário de capacetes nacionais. A atualização do portfólio por parte das marcas locais força a concorrência a elevar o patamar de acabamento, design e conforto oferecidos aos motociclistas, sem a necessidade de recorrer a produtos importados de altíssimo custo. É uma evolução importante para a segurança passiva do condutor e do garupa no cenário nacional.
+
+![](/images/blog/helt-urban-aberto-1024x683.webp)
+
+![](/images/blog/helt-frontier-escamoteavel-1-1024x683.webp)
 
 > 🏍️ **Leia também:** [De R15 para as Cataratas: Roteiro de 2.012 km a Dois](/blog/de-r15-para-as-cataratas-roteiro-de)
