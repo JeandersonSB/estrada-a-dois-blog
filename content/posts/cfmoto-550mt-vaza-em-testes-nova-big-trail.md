@@ -3,7 +3,7 @@ title: 'CFMoto 550MT vaza em testes: a nova big trail que mira acima da 450MT'
 status: 🟢 Publicado
 date: 2026-09-25T12:37:00
 category: Notícias
-image: /images/blog/cfmoto-550mt-vaza-em-testes-nova-big-trail.webp
+image: "/images/blog/cfmoto-550mt-vaza-em-testes-nova-big-trail.webp"
 excerpt: Flagra internacional revela o desenvolvimento da CFMoto 550MT, uma big trail inédita que promete ampliar o portfólio da marca e desafiar concorrentes no segmento de média cilindrada.
 ---
 
