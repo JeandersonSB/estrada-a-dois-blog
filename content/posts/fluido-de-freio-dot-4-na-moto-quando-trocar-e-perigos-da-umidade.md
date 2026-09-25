@@ -3,7 +3,7 @@ title: 'Fluido de Freio DOT 4 na Moto: Quando Trocar e Perigos da Umidade'
 status: 🟢 Publicado
 date: 2026-09-25T12:39:00
 category: Manutenção
-image: /images/blog/imagem-do-chatgpt-25-de-set-de-2026-12_38_42.webp
+image: "/images/blog/fluido-de-freio-dot-4-na-moto-quando-trocar-e-perigos-da-umidade.webp"
 excerpt: Descubra por que a umidade no fluido de freio DOT 4 pode comprometer a segurança da sua moto em viagens e saiba quando fazer a troca preventiva.
 ---
 
