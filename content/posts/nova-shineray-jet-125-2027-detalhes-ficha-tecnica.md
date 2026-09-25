@@ -1,10 +1,10 @@
 ---
-title: "Nova Shineray JET 125 2027: Detalhes, Ficha Técnica e a Briga no Segmento CUB"
-date: "2026-09-25T08:49:54"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "/images/blog/nova-shineray-jet-125-2027-detalhes-ficha-tecnica.webp"
-excerpt: "Conheça as novidades da Shineray JET 125 para a linha 2027. Analisamos a proposta, o conjunto mecânico e como ela se posiciona frente à concorrência."
+title: 'Nova Shineray JET 125 2027: Detalhes, Ficha Técnica e a Briga no Segmento CUB'
+status: 🟢 Publicado
+date: 2026-09-25T06:43:00
+category: Notícias
+image: /images/blog/67285.webp
+excerpt: Conheça as novidades da Shineray JET 125 para a linha 2027. Analisamos a proposta, o conjunto mecânico e como ela se posiciona frente à concorrência.
 ---
 
 O mercado brasileiro de motocicletas tem nas motonetas (CUB) uma de suas maiores forças de vendas. Práticas, baratas e extremamente fáceis de pilotar, elas são a porta de entrada para a mobilidade urbana e a ferramenta de trabalho de milhares de motociclistas. É nesse cenário altamente competitivo que a **Shineray Jet 125** se apresenta para a linha 2027, trazendo atualizações pontuais para se manter como uma das principais alternativas do segmento.
@@ -43,5 +43,3 @@ A chegada da Shineray JET 125 2027 reforça a importância da concorrência no s
 A presença de modelos como a JET 125 força o mercado a se manter ativo, oferecendo opções para quem precisa de um meio de transporte ágil, de mecânica simples e que não comprometa o orçamento familiar.
 
 > 🏍️ **Conheça o casal:** [Sobre o projeto Estrada a Dois e nossas viagens](/sobre)
-
-Fonte: Mobiauto
