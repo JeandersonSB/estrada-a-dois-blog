@@ -1,9 +1,9 @@
 ---
 title: Diogo Moreira Lidera Testes da Pirelli para a Nova Era de 850 cc da MotoGP
-status: ⏳ Rascunho
-date: 2026-09-24T20:51:00
+status: 🟢 Publicado
+date: 2026-09-24T21:34:00
 category: Notícias
-image: /images/blog/diogo-moreira-lidera-testes-pirelli-motogp-850cc-2027.webp
+image: /images/blog/67181.webp
 excerpt: O piloto brasileiro Diogo Moreira destacou-se nos testes de desenvolvimento da Pirelli com protótipos focados no regulamento de 850 cc da MotoGP, acelerando a evolução técnica da categoria.
 ---
 
