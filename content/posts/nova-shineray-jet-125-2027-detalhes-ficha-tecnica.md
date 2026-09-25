@@ -3,7 +3,7 @@ title: 'Nova Shineray JET 125 2027: Detalhes, Ficha Técnica e a Briga no Segmen
 status: 🟢 Publicado
 date: 2026-09-25T06:43:00
 category: Notícias
-image: /images/blog/67285.webp
+image: "/images/blog/nova-shineray-jet-125-2027-detalhes-ficha-tecnica.webp"
 excerpt: Conheça as novidades da Shineray JET 125 para a linha 2027. Analisamos a proposta, o conjunto mecânico e como ela se posiciona frente à concorrência.
 ---
 
