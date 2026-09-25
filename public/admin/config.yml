@@ -16,6 +16,20 @@ local_backend: true
 media_folder: "public/images/blog"
 public_folder: "/images/blog"
 
+# Normaliza imagens no próprio navegador antes do upload.
+# Isso corrige fotos HEIC/HEIF (inclusive quando chegam com extensão .jpg)
+# e padroniza JPEG/PNG/AVIF/WebP em WebP real, evitando incompatibilidade
+# entre o conteúdo do arquivo e sua extensão.
+media_libraries:
+  all:
+    slugify_filename: true
+    transformations:
+      raster_image:
+        format: webp
+        quality: 88
+        width: 2048
+        height: 2048
+
 # Configuração da identidade da interface
 site_url: "https://www.estradaadois.com"
 display_url: "https://www.estradaadois.com"
