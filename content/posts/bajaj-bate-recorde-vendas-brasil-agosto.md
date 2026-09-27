@@ -3,7 +3,7 @@ title: Bajaj bate recorde histórico no Brasil e ultrapassa 3,5 mil emplacamento
 status: 🟢 Publicado
 date: 2026-09-27T22:47:00
 category: Notícias
-image: /images/blog/bajaj-bate-novo-recorde-no-brasil-em-agosto-1568x1046.webp
+image: "/images/blog/bajaj-bate-recorde-vendas-brasil-agosto.webp"
 excerpt: A fabricante indiana Bajaj consolida sua expansão no mercado brasileiro ao registrar mais de 3,5 mil motocicletas emplacadas em agosto, estabelecendo um novo marco histórico para a marca no país.
 ---
 
