@@ -3,7 +3,7 @@ title: CFMoto reforça presença no Brasil com novo lote de 700 motocicletas
 status: 🟢 Publicado
 date: 2026-09-27T20:22:00
 category: Notícias
-image: /images/blog/imagem-do-chatgpt-27-de-set-de-2026-20_12_24.webp
+image: "/images/blog/cfmoto-novo-lote-700-motos-brasil.webp"
 excerpt: A CFMoto anunciou a abertura de um novo lote com 700 unidades no Brasil para o final de setembro, impulsionando sua expansão e consolidando sua linha de modelos no mercado nacional.
 ---
 
