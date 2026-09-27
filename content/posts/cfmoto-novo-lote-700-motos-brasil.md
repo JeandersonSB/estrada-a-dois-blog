@@ -1,10 +1,10 @@
 ---
-title: "CFMoto reforça presença no Brasil com novo lote de 700 motocicletas"
-date: "2026-09-25T20:47:48"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "/images/blog/cfmoto-novo-lote-700-motos-brasil.webp"
-excerpt: "A CFMoto anunciou a abertura de um novo lote com 700 unidades no Brasil para o final de setembro, impulsionando sua expansão e consolidando sua linha de modelos no mercado nacional."
+title: CFMoto reforça presença no Brasil com novo lote de 700 motocicletas
+status: ⏳ Rascunho
+date: 2026-09-27T20:12:00
+category: Notícias
+image: /images/blog/imagem-do-chatgpt-27-de-set-de-2026-20_12_24.webp
+excerpt: A CFMoto anunciou a abertura de um novo lote com 700 unidades no Brasil para o final de setembro, impulsionando sua expansão e consolidando sua linha de modelos no mercado nacional.
 ---
 
 A CFMoto continua acelerando seus planos de expansão no mercado nacional de duas rodas. A fabricante confirmou a liberação de um novo lote com 700 motocicletas destinadas aos compradores brasileiros a partir do dia 30 de setembro. A movimentação visa atender à demanda crescente pelos modelos da marca, que vêm ganhando destaque por combinar pacote tecnológico recheado e design agressivo.
@@ -19,7 +19,7 @@ A gama da CFMoto no Brasil contempla modelos que cobrem diferentes perfis de pil
 - **Linha SR (Sport Racing):** Focada na esportividade, a **450SR** traz carenagens aerodinâmicas com asas (winglets) integradas e motor bicilíndrico em linha com virabrequim a 270 graus, entregando um ronco característico e entregas de torque vigorosas.
 - **Linha MT (Multi-Touring):** A ventureira **800MT**, fruto da parceria global com o grupo Pierer Mobility (proprietário da KTM), utiliza a plataforma do motor de dois cilindros paralelos de 799 cm³, disputando espaço diretamente com big trails de média/alta cilindrada como Triumph Tiger 850 Sport e BMW F 800 GS.
 
-Além do design assinado pelo estúdio Kiska — responsável por linhas consagradas da indústria europeia —, a CFMoto aposta em componentes de fornecedores renomados na indústria, como suspensões KYB, freios J.Juan (subsidiária da Brembo) e sistemas de injeção eletrônica Bosch.
+Além do design assinado pelo estúdio Kiska, responsável por linhas consagradas da indústria europeia, a CFMoto aposta em componentes de fornecedores renomados na indústria, como suspensões KYB, freios J.Juan (subsidiária da Brembo) e sistemas de injeção eletrônica Bosch.
 
 ## O que isso significa para o motociclista brasileiro
 
@@ -33,5 +33,3 @@ A abertura de um lote expressivo com 700 unidades traz implicações práticas p
 A abertura de vendas do lote no dia 30 de setembro reafirma o Brasil como um dos focos prioritários da operação global da CFMoto na América Latina.
 
 > 🏍️ **Conheça o casal:** [Sobre o projeto Estrada a Dois e nossas viagens](/sobre)
-
-Fonte: Motociclismo Online
