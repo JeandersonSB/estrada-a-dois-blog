@@ -3,7 +3,7 @@ title: MotoGP confirma Brasil no calendário de 2027 em temporada histórica com
 status: 🟢 Publicado
 date: 2026-09-27T20:21:00
 category: Notícias
-image: /images/blog/moto-gp-2027_25092026_72836_1280_960.webp
+image: "/images/blog/motogp-brasil-calendario-2027-motos-850cc.webp"
 excerpt: A categoria máxima do motociclismo mundial divulgou o calendário de 2027 com 22 etapas, garantindo a etapa do Brasil em abril e a estreia do novo regulamento de protótipos de 850cc.
 ---
 
