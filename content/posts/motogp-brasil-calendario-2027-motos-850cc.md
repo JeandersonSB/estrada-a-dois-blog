@@ -1,10 +1,10 @@
 ---
-title: "MotoGP confirma Brasil no calendário de 2027 em temporada histórica com motores 850cc"
-date: "2026-09-27T08:48:11"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "/images/blog/motogp-brasil-calendario-2027-motos-850cc.webp"
-excerpt: "A categoria máxima do motociclismo mundial divulgou o calendário de 2027 com 22 etapas, garantindo a etapa do Brasil em abril e a estreia do novo regulamento de protótipos de 850cc."
+title: MotoGP confirma Brasil no calendário de 2027 em temporada histórica com motores 850cc
+status: 🟢 Publicado
+date: 2026-09-27T20:21:00
+category: Notícias
+image: /images/blog/moto-gp-2027_25092026_72836_1280_960.webp
+excerpt: A categoria máxima do motociclismo mundial divulgou o calendário de 2027 com 22 etapas, garantindo a etapa do Brasil em abril e a estreia do novo regulamento de protótipos de 850cc.
 ---
 
 A FIM (Federação Internacional de Motociclismo) e a Dorna divulgaram oficialmente o calendário provisional para a temporada de 2027 da MotoGP. O anúncio traz duas grandes confirmações de alto impacto para o esporte e a indústria: o retorno do Brasil ao circuito mundial com uma etapa programada para o mês de abril e a consolidação de um ano revolucionário, marcado pela estreia do novo regulamento técnico que introduz os motores de 850cc.
@@ -33,5 +33,3 @@ A presença do Brasil no calendário da MotoGP em abril traz ramificações dire
 * **Visibilidade para marcas locais:** A realização de um Grande Prêmio no país atrai investimentos da indústria nacional de motopeças, equipamentos e lubrificantes, fortalecendo a presença do setor de duas rodas na economia brasileira.
 
 > 🏍️ **Conheça o casal:** [Sobre o projeto Estrada a Dois e nossas viagens](/sobre)
-
-Fonte: MOTOO
