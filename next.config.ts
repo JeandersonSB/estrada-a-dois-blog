@@ -33,6 +33,15 @@ const nextConfig: NextConfig = {
   images: {
     contentDispositionType: "inline",
   },
+  async rewrites() {
+    return [
+      {
+        source: "/favicon.ico",
+        destination: "/images/logo-publisher-512x512.png",
+      },
+    ];
+  },
+
   async redirects() {
     return [
       { source: "/blog/5-serras-e-831-km-de-moto-em-um-fim-de", destination: "/blog/rastro-da-serpente-de-moto", permanent: true },
