@@ -28,12 +28,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/images/logo-publisher-512x512.png',
+        url: '/favicon.ico',
         sizes: '512x512',
         type: 'image/png',
       },
     ],
-    shortcut: '/images/logo-publisher-512x512.png',
+    shortcut: '/favicon.ico',
     apple: [
       {
         url: '/images/logo-publisher-512x512.png',
