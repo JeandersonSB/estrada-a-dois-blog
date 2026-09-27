@@ -3,7 +3,7 @@ title: 'Honda CB 300F Twister: Estratégias e Atributos para Enfrentar Fazer FZ2
 status: 🟢 Publicado
 date: 2026-09-27T20:17:00
 category: Notícias
-image: /images/blog/whatsapp-image-2026-08-13-at-16-49-55-1500x600.webp
+image: "/images/blog/honda-cb-300f-twister-novidades-concorrencia-fz25-dominar-250.webp"
 excerpt: A Honda CB 300F Twister reforça seu posicionamento no concorrido mercado de 250cc a 300cc no Brasil. Saiba como o modelo se estrutura diante de rivais como Yamaha Fazer FZ25 e Bajaj Dominar 250.
 ---
 
