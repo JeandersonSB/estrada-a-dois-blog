@@ -3,7 +3,7 @@ title: 'Ergonomia na Moto: Como Viajar a Dois sem Cansaço'
 status: 🟢 Publicado
 date: 2026-09-28T10:47:00
 category: Dicas
-image: /images/blog/imagem-do-chatgpt-28-de-set-de-2026-11_04_57.webp
+image: "/images/blog/ergonomia-na-moto-como-viajar-a-dois-sem-cansaco.webp"
 excerpt: Descubra como ajustar a postura, planejar paradas estratégicas e evitar a fadiga em viagens longas de moto a dois. Dicas práticas do Estrada a Dois!
 ---
 
