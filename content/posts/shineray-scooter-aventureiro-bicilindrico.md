@@ -3,7 +3,7 @@ title: Shineray Aposta em Scooter Aventureiro com Motor Bicilíndrico Central
 status: 🟢 Publicado
 date: 2026-09-28T15:33:00
 category: Notícias
-image: /images/blog/shineray-scooter-aventureiro-bicilindrico.webp
+image: "/images/blog/shineray-scooter-aventureiro-bicilindrico.webp"
 excerpt: A Shineray surpreende o mercado brasileiro ao mirar o segmento de alta cilindrada com um inédito scooter aventureiro equipado com motor bicilíndrico central.
 ---
 
