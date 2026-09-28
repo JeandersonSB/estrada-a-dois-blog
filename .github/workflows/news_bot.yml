@@ -10,10 +10,9 @@ concurrency:
 
 on:
   schedule:
-    # Horários de Brasília: 06:36, 11:36 e 17:36 (UTC +3h)
-    # Todos os dias. Cada horário tem disparo autônomo no scheduler do GitHub.
+    # Horários de Brasília: 06:36 e 17:36 (UTC +3h)
+    # Todos os dias. Mantemos apenas o primeiro e o último disparo do dia.
     - cron: '36 9 * * *'   # 06:36 BRT
-    - cron: '36 14 * * *'  # 11:36 BRT
     - cron: '36 20 * * *'  # 17:36 BRT
 
   workflow_dispatch:
