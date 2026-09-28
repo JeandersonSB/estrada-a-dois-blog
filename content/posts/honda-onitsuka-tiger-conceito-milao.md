@@ -3,7 +3,7 @@ title: Honda e Onitsuka Tiger unem design e cultura urbana em conceito exclusivo
 status: 🟢 Publicado
 date: 2026-09-28T10:59:00
 category: Notícias
-image: /images/blog/honda-onitsuka-tiger-conceito-milao.webp
+image: "/images/blog/honda-onitsuka-tiger-conceito-milao.webp"
 excerpt: Honda se une à icônica marca japonesa de calçados Onitsuka Tiger para apresentar um projeto conceitual que funde alta moda, design urbano e cultura de duas rodas em Milão.
 ---
 
