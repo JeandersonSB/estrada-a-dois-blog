@@ -3,7 +3,7 @@ title: Nicolò Bulega garante título mundial de Superbike e coroa a hegemonia d
 status: 🟢 Publicado
 date: 2026-09-28T07:18:00
 category: Notícias
-image: /images/blog/nicolo-bulega-campeao-mundial-superbike-ducati.webp
+image: "/images/blog/nicolo-bulega-campeao-mundial-superbike-ducati.webp"
 excerpt: O piloto italiano Nicolò Bulega conquista o Mundial de Superbike e consolida a superioridade tecnológica da Ducati nas pistas globais.
 ---
 
