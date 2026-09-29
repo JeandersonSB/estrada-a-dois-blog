@@ -1,6 +1,6 @@
 ---
 title: 'Ducati Monster 100: Edição Centenário Chega Exclusiva para Colecionadores'
-status: ⏳ Rascunho
+status: 🟢 Publicado
 date: 2026-09-29T16:06:00
 category: Notícias
 image: /images/blog/imagem-lateral-frontal-ducati-monster-100-motociclismoonline-1024x684.webp
