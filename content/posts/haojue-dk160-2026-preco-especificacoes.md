@@ -1,13 +1,13 @@
 ---
-title: "Haojue DK160 2026 chega por R$ 16.950: confira atributos e posicionamento da street"
-date: "2026-09-29T22:47:55"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "/images/blog/haojue-dk160-2026-preco-especificacoes.webp"
-excerpt: "A Haojue atualiza a DK160 para a linha 2026 mantendo o foco no custo-benefício. Veja os detalhes técnicos, equipamentos de série e como o modelo se posiciona frente às concorrentes do segmento street."
+title: 'Haojue DK160 2026 chega por R$ 16.950: confira atributos e posicionamento da street'
+status: 🟢 Publicado
+date: 2026-09-29T20:58:00
+category: Notícias
+image: /images/blog/haojue-dr160-diferenciais-cidade-e-estrada.webp
+excerpt: A Haojue atualiza a DK160 para a linha 2026 mantendo o foco no custo-benefício. Veja os detalhes técnicos, equipamentos de série e como o modelo se posiciona frente às concorrentes do segmento street.
 ---
 
-O segmento das motocicletas *street* de entrada e média cilindrada continua sendo o verdadeiro motor das vendas de duas rodas no Brasil. Atenta à forte demanda por modelos urbanos econômicos e robustos, a Haojue apresenta a **DK160 2026**, posicionada no mercado nacional com preço público sugerido de **R$ 16.950** (sem frete).
+O segmento das motocicletas _street_ de entrada e média cilindrada continua sendo o verdadeiro motor das vendas de duas rodas no Brasil. Atenta à forte demanda por modelos urbanos econômicos e robustos, a Haojue apresenta a **DK160 2026**, posicionada no mercado nacional com preço público sugerido de **R$ 16.950** (sem frete).
 
 Desenvolvida para o uso diário em deslocamentos urbanos e trabalho, a DK160 busca se consolidar como uma alternativa direta e competitiva diante do domínio histórico de marcas tradicionais no país.
 
@@ -15,7 +15,7 @@ Desenvolvida para o uso diário em deslocamentos urbanos e trabalho, a DK160 bus
 
 A Haojue DK160 traz como coração mecânico o motor monocilíndrico de 162,4 cm³, refrigerado a ar, com comando simples no cabeçote (SOHC) e tecnologia TSR (Tecnologia de Silenciador e Redução de Vibração). Esse propulsor entrega uma calibração voltada para torque em baixas e médias rotações, priorizando a agilidade nas saídas de sinal e no trânsito pesado das cidades.
 
-A transmissão é manual de 5 velocidades, acompanhada por uma embreagem multidisco em banho de óleo. A proposta mecânica da marca chinesa — representada no Brasil pela JTZ Motos — enfatiza o baixo nível de vibração e o consumo contido de combustível, fatores cruciais para quem roda centenas de quilômetros semanalmente.
+A transmissão é manual de 5 velocidades, acompanhada por uma embreagem multidisco em banho de óleo. A proposta mecânica da marca chinesa, representada no Brasil pela JTZ Motos, enfatiza o baixo nível de vibração e o consumo contido de combustível, fatores cruciais para quem roda centenas de quilômetros semanalmente.
 
 ## Equipamentos de série e diferenciais da categoria
 
@@ -39,5 +39,3 @@ Para o consumidor brasileiro, a chegada da linha 2026 da Haojue DK160 por R$ 16.
 Além disso, para quem busca uma moto voltada ao trabalho ou ao transporte diário com baixo custo de manutenção, a permanência da DK160 atualizada no portfólio garante uma escolha racional que equilibra economia de combustível, ergonomia confortável e confiabilidade mecânica.
 
 > 🏍️ **Conheça o casal:** [Sobre o projeto Estrada a Dois e nossas viagens](/sobre)
-
-Fonte: MOTOO
