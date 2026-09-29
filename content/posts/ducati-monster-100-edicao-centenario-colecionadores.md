@@ -3,7 +3,7 @@ title: 'Ducati Monster 100: Edição Centenário Chega Exclusiva para Colecionad
 status: 🟢 Publicado
 date: 2026-09-29T16:06:00
 category: Notícias
-image: /images/blog/imagem-lateral-frontal-ducati-monster-100-motociclismoonline-1024x684.webp
+image: "/images/blog/ducati-monster-100-edicao-centenario-colecionadores.webp"
 excerpt: A Ducati revelou a Monster 100, uma edição comemorativa extremamente limitada voltada para colecionadores e entusiastas da marca italiana.
 ---
 
