@@ -3,7 +3,7 @@ title: 'Haojue DK160 2026 chega por R$ 16.950: confira atributos e posicionament
 status: 🟢 Publicado
 date: 2026-09-29T20:58:00
 category: Notícias
-image: /images/blog/haojue-dr160-diferenciais-cidade-e-estrada.webp
+image: "/images/blog/haojue-dk160-2026-preco-especificacoes.webp"
 excerpt: A Haojue atualiza a DK160 para a linha 2026 mantendo o foco no custo-benefício. Veja os detalhes técnicos, equipamentos de série e como o modelo se posiciona frente às concorrentes do segmento street.
 ---
 
