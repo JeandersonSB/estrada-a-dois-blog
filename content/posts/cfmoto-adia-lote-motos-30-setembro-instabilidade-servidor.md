@@ -3,7 +3,7 @@ title: CFMOTO adia novo lote de motos previsto para 30 de setembro após instabi
 status: 🟢 Publicado
 date: 2026-09-30T11:40:00
 category: Notícias
-image: /images/blog/imagem-do-chatgpt-30-de-set-de-2026-11_40_37.webp
+image: "/images/blog/cfmoto-adia-lote-motos-30-setembro-instabilidade-servidor.webp"
 excerpt: A CFMOTO adiou a abertura do novo lote de motocicletas prevista para 30 de setembro, às 12h, após instabilidades técnicas no servidor. Nova data e horário ainda serão divulgados.
 ---
 
