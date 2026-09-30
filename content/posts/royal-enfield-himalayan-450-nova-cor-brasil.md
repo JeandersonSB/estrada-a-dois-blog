@@ -3,7 +3,7 @@ title: Royal Enfield Himalayan 450 ganha nova opção de cor no Brasil; veja det
 status: 🟢 Publicado
 date: 2026-09-30T08:13:00
 category: Notícias
-image: /images/blog/royal-enfield-himalayan-450-mana-black-1-1024x635.webp
+image: "/images/blog/royal-enfield-himalayan-450-nova-cor-brasil.webp"
 excerpt: A Royal Enfield amplia o catálogo da Himalayan 450 no mercado brasileiro com a introdução de uma nova pintura. Confira os detalhes técnicos do modelo e sua atuação no segmento trail.
 ---
 
