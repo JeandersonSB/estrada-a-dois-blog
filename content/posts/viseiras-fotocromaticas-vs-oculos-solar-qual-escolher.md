@@ -3,7 +3,7 @@ title: 'Viseiras Fotocromáticas vs Óculos Solar: Qual Escolher?'
 status: 🟢 Publicado
 date: 2026-09-30T20:04:00
 category: Equipamentos
-image: /images/blog/capacetes-em-estradas-cenicas.webp
+image: "/images/blog/viseiras-fotocromaticas-vs-oculos-solar-qual-escolher.webp"
 excerpt: 'Descubra qual a melhor tecnologia para proteger seus olhos na estrada: a praticidade da viseira fotocromática ou a versatilidade do óculos solar interno.'
 ---
 
