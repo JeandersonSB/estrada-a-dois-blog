@@ -1,10 +1,10 @@
 ---
-title: CFMOTO confirma nova data para lote de motos: reservas abrem em 5 de outubro às 12h
+title: "CFMOTO confirma nova data para lote de motos: reservas abrem em 5 de outubro às 12h"
 status: ⏳ Rascunho
 date: 2026-10-01T10:40:00
 category: Notícias
 image: "/images/blog/cfmoto-novo-lote-700-motos-brasil.webp"
-excerpt: Após adiar a abertura do lote por instabilidade técnica, a CFMOTO confirmou uma nova data: as reservas serão abertas em 5 de outubro, às 12h, com cerca de 700 motocicletas disponíveis.
+excerpt: "Após adiar a abertura do lote por instabilidade técnica, a CFMOTO confirmou uma nova data: as reservas serão abertas em 5 de outubro, às 12h, com cerca de 700 motocicletas disponíveis."
 ---
 
 A **CFMOTO confirmou uma nova data para a abertura do seu próximo lote de motocicletas no Brasil**. Depois de adiar o início das reservas que estava previsto para 30 de setembro, a fabricante informou que o portal será reaberto no dia **5 de outubro de 2026, às 12h**.
