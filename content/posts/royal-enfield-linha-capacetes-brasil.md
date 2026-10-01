@@ -3,7 +3,7 @@ title: Royal Enfield lança linha oficial de capacetes no Brasil com proposta re
 status: 🟢 Publicado
 date: 2026-10-01T09:51:00
 category: Notícias
-image: /images/blog/royalenfield-mod-x-mod-mono_30092026_72909_1280_960.webp
+image: "/images/blog/royal-enfield-linha-capacetes-brasil.webp"
 excerpt: A fabricante anglo-indiana expande seu portfólio de lifestyle no mercado nacional com itens de proteção que combinam com o visual clássico de suas motocicletas.
 ---
 
