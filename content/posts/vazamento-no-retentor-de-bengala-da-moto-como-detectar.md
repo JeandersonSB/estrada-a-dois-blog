@@ -1,10 +1,10 @@
 ---
-title: "Vazamento no retentor de bengala da moto: como detectar"
-date: "2026-10-02T10:47:30"
-category: "Manutenção"
-status: "⏳ Rascunho"
-image: "https://loremflickr.com/1200/600/moto%2Cgarfo%2Cretentor%2Cvazamento/all"
-excerpt: "Descubra como identificar vazamentos no retentor de bengala da moto antes que afetem seus freios e comprometam sua segurança na estrada."
+title: 'Vazamento no retentor de bengala da moto: como detectar'
+status: 🟢 Publicado
+date: 2026-10-02T12:12:00
+category: Manutenção
+image: /images/blog/inspecao-de-vazamento-na-suspensao-dianteira.webp
+excerpt: Descubra como identificar vazamentos no retentor de bengala da moto antes que afetem seus freios e comprometam sua segurança na estrada.
 ---
 
 # Vazamento no retentor de bengala da moto: como detectar
