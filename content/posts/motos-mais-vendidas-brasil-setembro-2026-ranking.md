@@ -1,10 +1,10 @@
 ---
-title: "As Motos Mais Vendidas do Brasil em Setembro de 2026: Veja o Ranking e as Tendências de Mercado"
-date: "2026-10-02T00:04:14"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "/images/blog/motos-mais-vendidas-brasil-setembro-2026-ranking.webp"
-excerpt: "O mercado brasileiro de motocicletas registrou números expressivos em setembro de 2026. Confira o panorama de emplacamentos, as categorias em alta e as novidades entre as líderes do setor."
+title: 'As Motos Mais Vendidas do Brasil em Setembro de 2026: Veja o Ranking e as Tendências de Mercado'
+status: 🟢 Publicado
+date: 2026-10-02T09:13:00
+category: Notícias
+image: /images/blog/honda-cg-160-2026-titan-start-2.webp
+excerpt: O mercado brasileiro de motocicletas registrou números expressivos em setembro de 2026. Confira o panorama de emplacamentos, as categorias em alta e as novidades entre as líderes do setor.
 ---
 
 O mercado brasileiro de motocicletas consolida em setembro de 2026 um ritmo forte de emplacamentos, reforçando o papel das duas rodas como solução essencial para locomoção urbana, trabalho e lazer em todo o país. O fechamento dos dados do mês reflete a dominância contínua de modelos de baixa cilindrada, aliada à consolidação cada vez maior do segmento trail e CUB.
@@ -40,5 +40,3 @@ O ranking de vendas de setembro de 2026 confirma a maturidade do mercado naciona
 * **Aprimoramento tecnológico acessível:** A competição entre as principais montadoras impulsiona a inclusão de tecnologias como ABS, injeção eletrônica aprimorada e conectividade mesmo em faixas de preço competitivas.
 
 > 🏍️ **Veja nosso diário de bordo:** [5 serras e 831 km de moto em um fim de semana](/blog/5-serras-e-831-km-de-moto-em-um-fim-de)
-
-Fonte: MOTOO
