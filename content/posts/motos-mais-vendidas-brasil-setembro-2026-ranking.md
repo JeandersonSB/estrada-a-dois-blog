@@ -3,7 +3,7 @@ title: 'As Motos Mais Vendidas do Brasil em Setembro de 2026: Veja o Ranking e a
 status: 🟢 Publicado
 date: 2026-10-02T09:13:00
 category: Notícias
-image: /images/blog/honda-cg-160-2026-titan-start-2.webp
+image: "/images/blog/motos-mais-vendidas-brasil-setembro-2026-ranking.webp"
 excerpt: O mercado brasileiro de motocicletas registrou números expressivos em setembro de 2026. Confira o panorama de emplacamentos, as categorias em alta e as novidades entre as líderes do setor.
 ---
 
