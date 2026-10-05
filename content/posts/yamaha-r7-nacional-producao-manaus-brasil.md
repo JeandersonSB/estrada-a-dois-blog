@@ -3,7 +3,7 @@ title: 'Yamaha R7 Nacional: Esportiva Média Chega ao Brasil com Produção em M
 status: 🟢 Publicado
 date: 2026-10-05T11:31:00
 category: Notícias
-image: /images/blog/yamaha-r7-pintura-70-anos-1024x670.webp
+image: "/images/blog/yamaha-r7-nacional-producao-manaus-brasil.webp"
 excerpt: A Yamaha R7 finalmente desembarca no mercado brasileiro com produção nacional em Manaus, trazendo o aclamado motor CP2 de 73,4 cv, IMU de 6 eixos e surpreendentes 4 anos de garantia.
 ---
 
