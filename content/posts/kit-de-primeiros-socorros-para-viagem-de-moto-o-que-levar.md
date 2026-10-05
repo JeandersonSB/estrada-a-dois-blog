@@ -1,10 +1,10 @@
 ---
-title: "Kit de Primeiros Socorros para Viagem de Moto: O Que Levar"
-date: "2026-10-05T10:47:26"
-category: "Dicas"
-status: "⏳ Rascunho"
-image: "/images/blog/kit-de-primeiros-socorros-para-viagem-de-moto-o-que-levar.webp"
-excerpt: "Aprenda a montar um kit de primeiros socorros compacto e eficiente para suas viagens de moto a dois. Segurança e prevenção em duas rodas."
+title: 'Kit de Primeiros Socorros para Viagem de Moto: O Que Levar'
+status: 🟢 Publicado
+date: 2026-10-05T11:36:00
+category: Dicas
+image: /images/blog/kit-de-primeiros-socorros-na-montanha.webp
+excerpt: Aprenda a montar um kit de primeiros socorros compacto e eficiente para suas viagens de moto a dois. Segurança e prevenção em duas rodas.
 ---
 
 # Kit de Primeiros Socorros para Viagem de Moto: O Que Levar
