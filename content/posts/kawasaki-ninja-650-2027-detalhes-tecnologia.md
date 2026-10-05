@@ -1,10 +1,10 @@
 ---
-title: "Nova Kawasaki Ninja 650 2027: Detalhes, Tecnologia e o que Muda na Sport-Touring"
-date: "2026-10-02T22:48:00"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "/images/blog/kawasaki-ninja-650-2027-detalhes-tecnologia.webp"
-excerpt: "A Kawasaki apresenta a linha 2027 da consagrada Ninja 650. Conheça as especificações, o conjunto mecânico com motor bicilíndrico e o posicionamento da sport-touring."
+title: 'Nova Kawasaki Ninja 650 2027: Detalhes, Tecnologia e o que Muda na Sport-Touring'
+status: 🟢 Publicado
+date: 2026-10-05T11:32:00
+category: Notícias
+image: /images/blog/kawasaki_ninja-650_2027_9_02102026_72941_960_720.webp
+excerpt: A Kawasaki apresenta a linha 2027 da consagrada Ninja 650. Conheça as especificações, o conjunto mecânico com motor bicilíndrico e o posicionamento da sport-touring.
 ---
 
 A Kawasaki revelou globalmente as novidades para a **Ninja 650 2027**, modelo que equilibra com maestria a agressividade visual das pistas com o conforto necessário para o uso diário e viagens. Consagrada no segmento de média cilindrada, a sport-touring da marca japonesa mantém sua receita de sucesso, apostando em atualizações estéticas e refinamento tecnológico para seguir competitiva em um mercado cada vez mais disputado.
@@ -21,7 +21,7 @@ O conjunto mecânico entrega potência e torque de forma linear, gerenciados por
 
 A eletrônica da Ninja 650 continua sendo um de seus grandes pontos fortes. A moto conta com o **KTRC (Kawasaki Traction Control)**, o controle de tração da marca que oferece modos de atuação selecionáveis para se adaptar a diferentes condições de aderência (como pista molhada ou asfalto irregular), além da opção de ser totalmente desligado.
 
-O painel de instrumentos é uma tela **TFT colorida de 4,3 polegadas**, que oferece excelente leitura de dados e se conecta a smartphones via Bluetooth por meio do aplicativo *Rideology The App*. Com ele, o motociclista pode acessar informações de telemetria, histórico de rotas e notificações do celular diretamente no painel da moto. O sistema de iluminação é inteiramente em LED, reforçando a assinatura visual moderna da família Ninja.
+O painel de instrumentos é uma tela **TFT colorida de 4,3 polegadas**, que oferece excelente leitura de dados e se conecta a smartphones via Bluetooth por meio do aplicativo _Rideology The App_. Com ele, o motociclista pode acessar informações de telemetria, histórico de rotas e notificações do celular diretamente no painel da moto. O sistema de iluminação é inteiramente em LED, reforçando a assinatura visual moderna da família Ninja.
 
 ## Posicionamento de Mercado e Concorrentes
 
@@ -36,5 +36,3 @@ Para o mercado brasileiro, a chegada da linha 2027 da Ninja 650 reforça a prese
 A manutenção do motor bicilíndrico e do pacote eletrônico robusto garante que a moto continue sendo uma opção confiável de custo-benefício equilibrado dentro do segmento premium. Embora a Kawasaki do Brasil ainda vá definir o cronograma oficial de distribuição e os valores sugeridos para o mercado nacional, a atualização assegura que a sport-touring segue atualizada frente às novas exigências tecnológicas do segmento.
 
 > 🏍️ **Veja nosso diário de bordo:** [5 serras e 831 km de moto em um fim de semana](/blog/5-serras-e-831-km-de-moto-em-um-fim-de)
-
-Fonte: MOTOO
