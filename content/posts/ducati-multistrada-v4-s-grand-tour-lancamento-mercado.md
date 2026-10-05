@@ -3,7 +3,7 @@ title: 'Ducati Multistrada V4 S Grand Tour: A Máquina Definitiva para o Asfalto
 status: 🟢 Publicado
 date: 2026-10-05T17:53:00
 category: Notícias
-image: /images/blog/2c16d413b39ec42434936ca21d842323-m-jpg.webp
+image: "/images/blog/ducati-multistrada-v4-s-grand-tour-lancamento-mercado.webp"
 excerpt: A Ducati Multistrada V4 S ganha a versão Grand Tour, elevando o patamar tecnológico e mecânico da maxitrail italiana voltada para alta performance.
 ---
 
