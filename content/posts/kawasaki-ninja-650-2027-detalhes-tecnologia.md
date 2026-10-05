@@ -3,7 +3,7 @@ title: 'Nova Kawasaki Ninja 650 2027: Detalhes, Tecnologia e o que Muda na Sport
 status: 🟢 Publicado
 date: 2026-10-05T11:32:00
 category: Notícias
-image: /images/blog/kawasaki_ninja-650_2027_9_02102026_72941_960_720.webp
+image: "/images/blog/kawasaki-ninja-650-2027-detalhes-tecnologia.webp"
 excerpt: A Kawasaki apresenta a linha 2027 da consagrada Ninja 650. Conheça as especificações, o conjunto mecânico com motor bicilíndrico e o posicionamento da sport-touring.
 ---
 
