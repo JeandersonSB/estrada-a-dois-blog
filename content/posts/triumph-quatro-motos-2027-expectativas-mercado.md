@@ -3,7 +3,7 @@ title: 'Triumph prepara quatro motos para 2027: O que esperar da ofensiva global
 status: 🟢 Publicado
 date: 2026-10-05T15:51:00
 category: Notícias
-image: /images/blog/triumph-quatro-motos-2027-expectativas-mercado.webp
+image: "/images/blog/triumph-quatro-motos-2027-expectativas-mercado.webp"
 excerpt: A fabricante britânica Triumph planeja a chegada de quatro novos modelos até 2027, movimentando o mercado global e gerando expectativas para o segmento de média e alta cilindrada.
 ---
 
