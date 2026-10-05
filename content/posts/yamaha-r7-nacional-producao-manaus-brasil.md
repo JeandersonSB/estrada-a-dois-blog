@@ -1,10 +1,10 @@
 ---
-title: "Yamaha R7 Nacional: Esportiva Média Chega ao Brasil com Produção em Manaus e Eletrônica de Ponta"
-date: "2026-10-02T15:57:18"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "/images/blog/yamaha-r7-nacional-producao-manaus-brasil.webp"
-excerpt: "A Yamaha R7 finalmente desembarca no mercado brasileiro com produção nacional em Manaus, trazendo o aclamado motor CP2 de 73,4 cv, IMU de 6 eixos e surpreendentes 4 anos de garantia."
+title: 'Yamaha R7 Nacional: Esportiva Média Chega ao Brasil com Produção em Manaus e Eletrônica de Ponta'
+status: 🟢 Publicado
+date: 2026-10-05T11:31:00
+category: Notícias
+image: /images/blog/yamaha-r7-pintura-70-anos-1024x670.webp
+excerpt: A Yamaha R7 finalmente desembarca no mercado brasileiro com produção nacional em Manaus, trazendo o aclamado motor CP2 de 73,4 cv, IMU de 6 eixos e surpreendentes 4 anos de garantia.
 ---
 
 O mercado brasileiro de motocicletas esportivas acaba de receber uma das novidades mais aguardadas dos últimos anos. A **Yamaha R7** está oficialmente confirmada para o Brasil e, para a surpresa de muitos, não virá como um lote importado limitado: ela será **produzida nacionalmente na fábrica de Manaus (AM)**. 
@@ -15,7 +15,7 @@ A esportiva de média cilindrada chega com um pacote tecnológico de respeito, h
 
 A Yamaha R7 é equipada com o consagrado motor bicilíndrico **CP2 (Crossplane 2)** de 689 cm³, o mesmo bloco que consagrou a naked MT-07 e a crossover Ténéré 700 no mercado global. Nesta calibração, o motor entrega **73,4 cv de potência máxima** e foca na entrega de torque imediato em baixas e médias rotações. 
 
-Diferente das antigas esportivas de quatro cilindros (como a lendária R6), que exigiam giros altíssimos para entregar potência, a proposta do motor CP2 na R7 é oferecer uma pilotagem extremamente ágil, divertida e controlável, tanto em circuitos fechados (*track days*) quanto no uso urbano e rodoviário diário.
+Diferente das antigas esportivas de quatro cilindros (como a lendária R6), que exigiam giros altíssimos para entregar potência, a proposta do motor CP2 na R7 é oferecer uma pilotagem extremamente ágil, divertida e controlável, tanto em circuitos fechados (_track days_) quanto no uso urbano e rodoviário diário.
 
 ## Eletrônica de Superbike na Categoria Média
 
@@ -29,7 +29,7 @@ Além disso, a parte ciclística traz suspensão dianteira invertida da marca KY
 
 ## Posicionamento de Mercado e Concorrência
 
-A chegada da Yamaha R7 movimenta significativamente o segmento de médias esportivas no Brasil. Até então, o mercado contava com opções focadas em propostas distintas: de um lado, a **Kawasaki Ninja 650**, com foco mais voltado ao *sport-touring* (posição de pilotagem mais ereta); do outro, a **Honda CBR 650R**, com seu motor de quatro cilindros em linha de comportamento mais linear.
+A chegada da Yamaha R7 movimenta significativamente o segmento de médias esportivas no Brasil. Até então, o mercado contava com opções focadas em propostas distintas: de um lado, a **Kawasaki Ninja 650**, com foco mais voltado ao _sport-touring_ (posição de pilotagem mais ereta); do outro, a **Honda CBR 650R**, com seu motor de quatro cilindros em linha de comportamento mais linear.
 
 A R7 se posiciona exatamente no centro para quem busca o visual agressivo e a agilidade de uma moto de pista de verdade, mas com a manutenção simplificada e o torque esperto de um motor bicilíndrico moderno. O diferencial de ser montada em Manaus garante maior previsibilidade de peças de reposição e estabilidade na distribuição nacional.
 
@@ -42,5 +42,3 @@ A chegada da Yamaha R7 com produção nacional representa um marco para o motoci
 3.  **Democratização da Tecnologia de Pista:** Recursos como o IMU de 6 eixos deixam de ser exclusividade de motos que custam cifras exorbitantes, trazendo mais segurança ativa (como o ABS de curvas) para o piloto comum que utiliza a moto na estrada ou em pistas de fim de semana.
 
 > 🏍️ **Leia também:** [De R15 à Serra do Rio do Rastro: Um Sonho em Duas Rodas](/blog/de-r15-a-serra-do-rio-do-rastro-um-sonho-em)
-
-Fonte: CPG Click Petróleo e Gás
