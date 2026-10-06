@@ -1,10 +1,10 @@
 ---
-title: "Nova Triumph Bonneville 400 flagrada em testes: clássica de entrada a caminho?"
-date: "2026-10-06T08:48:25"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "/images/blog/nova-triumph-bonneville-400-flagrada-testes-mercado.webp"
-excerpt: "A aclamada plataforma de 400cc da Triumph pode ganhar um terceiro membro com a lendária identidade Bonneville. Flagras revelam uma clássica pura em desenvolvimento."
+title: 'Nova Triumph Bonneville 400 flagrada em testes: clássica de entrada a caminho?'
+status: 🟢 Publicado
+date: 2026-10-06T08:36:00
+category: Notícias
+image: /images/blog/nova-triumph-bonneville-400-flagrada-testes-mercado.webp
+excerpt: A aclamada plataforma de 400cc da Triumph pode ganhar um terceiro membro com a lendária identidade Bonneville. Flagras revelam uma clássica pura em desenvolvimento.
 ---
 
 A Triumph parece estar pronta para expandir sua bem-sucedida família de média cilindrada, fruto da parceria com a gigante indiana Bajaj. Após o enorme sucesso global (e brasileiro) da roadster Speed 400 e da aventureira urbana Scrambler 400 X, novos flagras na Europa apontam para o desenvolvimento de um terceiro modelo: uma inédita **Triumph Bonneville 400** (que também cogita-se chamar T400).
@@ -41,5 +41,3 @@ Para quem sempre sonhou em estacionar uma legítima Bonneville na garagem, mas e
 Até o momento, a Triumph mantém sigilo absoluto sobre datas de apresentação oficial ou início das vendas globais. No entanto, o nível de maturidade do protótipo flagrado sugere que a revelação mundial pode acontecer muito em breve.
 
 > 🏍️ **Conheça o casal:** [Sobre o projeto Estrada a Dois e nossas viagens](/sobre)
-
-Fonte: Motociclismo Online
