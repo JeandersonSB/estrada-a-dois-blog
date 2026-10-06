@@ -3,7 +3,7 @@ title: 'Nova Triumph Bonneville 400 flagrada em testes: clássica de entrada a c
 status: 🟢 Publicado
 date: 2026-10-06T08:36:00
 category: Notícias
-image: /images/blog/nova-triumph-bonneville-400-flagrada-testes-mercado.webp
+image: "/images/blog/nova-triumph-bonneville-400-flagrada-testes-mercado.webp"
 excerpt: A aclamada plataforma de 400cc da Triumph pode ganhar um terceiro membro com a lendária identidade Bonneville. Flagras revelam uma clássica pura em desenvolvimento.
 ---
 
