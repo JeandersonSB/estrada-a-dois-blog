@@ -3,7 +3,7 @@ title: 'Triumph apresenta as novas T40 e T40 Black: novidades reforçam a linha 
 status: 🟢 Publicado
 date: 2026-10-06T11:52:00
 category: Notícias
-image: /images/blog/triumph_t40_family_hero.webp
+image: "/images/blog/triumph-apresenta-novas-t40-e-t40-black-detalhes-e-especificacoes.webp"
 excerpt: A Triumph amplia suas opções com a apresentação das novas T40 e T40 Black, apostando em visual sofisticado, acabamento escurecido e forte presença no segmento.
 ---
 
