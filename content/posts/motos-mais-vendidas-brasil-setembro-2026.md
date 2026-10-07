@@ -3,7 +3,7 @@ title: 'Mercado de motos em alta: confira as 20 motocicletas mais vendidas no Br
 status: 🟢 Publicado
 date: 2026-10-07T08:55:00
 category: Notícias
-image: /images/blog/motos-mais-vendidas-brasil-setembro-2026.webp
+image: "/images/blog/motos-mais-vendidas-brasil-setembro-2026.webp"
 excerpt: O mercado brasileiro de duas rodas registrou forte volume de emplacamentos em setembro. Entenda a hegemonia das utilitárias, o avanço das trails e o comportamento das médias cilindradas.
 ---
 
