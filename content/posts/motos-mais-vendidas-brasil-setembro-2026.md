@@ -1,10 +1,10 @@
 ---
-title: "Mercado de motos em alta: confira as 20 motocicletas mais vendidas no Brasil em setembro"
-date: "2026-10-07T08:47:52"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "/images/blog/motos-mais-vendidas-brasil-setembro-2026.webp"
-excerpt: "O mercado brasileiro de duas rodas registrou forte volume de emplacamentos em setembro. Entenda a hegemonia das utilitárias, o avanço das trails e o comportamento das médias cilindradas."
+title: 'Mercado de motos em alta: confira as 20 motocicletas mais vendidas no Brasil em setembro'
+status: 🟢 Publicado
+date: 2026-10-07T08:55:00
+category: Notícias
+image: /images/blog/motos-mais-vendidas-brasil-setembro-2026.webp
+excerpt: O mercado brasileiro de duas rodas registrou forte volume de emplacamentos em setembro. Entenda a hegemonia das utilitárias, o avanço das trails e o comportamento das médias cilindradas.
 ---
 
 O mercado brasileiro de motocicletas segue demonstrando vigor e consolidação nas estatísticas de vendas do país. O balanço do mês de setembro reafirma o papel essencial das duas rodas como solução principal de mobilidade urbana, transporte pessoal e ferramenta de trabalho para milhões de brasileiros. 
@@ -42,5 +42,3 @@ A consolidação deste ranking traz implicações diretas e práticas para quem 
 3. **Acessibilidade técnica:** A liderança do segmento de baixa e média cilindrada mantém o foco das montadoras em aprimorar a eficiência energética, reduzindo o consumo de combustível e a emissão de poluentes em motores monocilíndricos flex.
 
 > 🏍️ **Veja nosso diário de bordo:** [5 serras e 831 km de moto em um fim de semana](/blog/5-serras-e-831-km-de-moto-em-um-fim-de)
-
-Fonte: Motociclismo Online
