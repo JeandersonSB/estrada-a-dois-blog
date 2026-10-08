@@ -1,10 +1,10 @@
 ---
-title: "Yamaha YZF-R7 no Brasil: Preço Oficial, Ficha Técnica e Impacto no Mercado"
-date: "2026-10-08T16:51:19"
-category: "Notícias"
-status: "⏳ Rascunho"
-image: "/images/blog/yamaha-r7-preco-divulgado-brasil-detalhes-tecnicos.webp"
-excerpt: "A Yamaha oficializou o preço da esportiva YZF-R7 no mercado brasileiro. Conheça as especificações do motor CP2, ciclística e o posicionamento da moto frente aos concorrentes."
+title: 'Yamaha YZF-R7 no Brasil: Preço Oficial, Ficha Técnica e Impacto no Mercado'
+status: 🟢 Publicado
+date: 2026-10-08T14:54:00
+category: Notícias
+image: /images/blog/nova-r7-yamaha-capa-motociclismoonline.webp
+excerpt: A Yamaha oficializou o preço da esportiva YZF-R7 no mercado brasileiro. Conheça as especificações do motor CP2, ciclística e o posicionamento da moto frente aos concorrentes.
 ---
 
 A Yamaha confirmou os detalhes de comercialização da **Yamaha YZF-R7** para o mercado brasileiro, revelando os valores oficiais e consolidando o retorno da marca ao segmento de esportivas de média cilindrada no país. Construída sobre a consagrada plataforma do motor CP2, a R7 chega para ocupar um espaço estratégico no portfólio da fabricante japonesa.
@@ -29,6 +29,7 @@ Diferente da naked MT-07, com a qual compartilha a base do motor, a R7 possui um
 A posição de pilotagem é nitidamente esportiva, caracterizada por semiguidões fixados abaixo da mesa superior, pedaleiras recuadas e um tanque de combustível esculpido para permitir que o piloto se encaixe perfeitamente atrás da bolha aerodinâmica.
 
 ### Suspensão e Freios
+
 * **Dianteira:** Garfo invertido KYB de 41 mm, totalmente ajustável em pré-carga, retorno e compressão.
 * **Traseira:** Amortecedor monoamortecido com link, ajustável em pré-carga e retorno.
 * **Freios:** Disco duplo flutuante de 298 mm na dianteira com pinças de fixação radial e cilíndro mestre radial Brembo; disco simples de 245 mm na traseira, com sistema ABS de dois canais.
@@ -52,5 +53,3 @@ A divulgação oficial do preço e o início das entregas da Yamaha YZF-R7 repre
 Para o consumidor nacional, a confirmação do preço permite planejar a aquisição de um modelo atualizado globalmente, com ampla rede de concessionárias, garantia de fábrica e oferta de peças estruturada. Além disso, a presença de componentes de grife, como o cilindro mestre Brembo e a suspensão invertida ajustável, garante uma máquina pronta para uso em pista sem a necessidade imediata de preparação paralela.
 
 > 🏍️ **Leia também:** [De R15 à Serra do Rio do Rastro: Um Sonho em Duas Rodas](/blog/de-r15-a-serra-do-rio-do-rastro-um-sonho-em)
-
-Fonte: Motociclismo Online
