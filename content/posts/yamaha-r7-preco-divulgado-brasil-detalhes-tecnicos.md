@@ -3,7 +3,7 @@ title: 'Yamaha YZF-R7 no Brasil: Preço Oficial, Ficha Técnica e Impacto no Mer
 status: 🟢 Publicado
 date: 2026-10-08T14:54:00
 category: Notícias
-image: /images/blog/nova-r7-yamaha-capa-motociclismoonline.webp
+image: "/images/blog/yamaha-r7-preco-divulgado-brasil-detalhes-tecnicos.webp"
 excerpt: A Yamaha oficializou o preço da esportiva YZF-R7 no mercado brasileiro. Conheça as especificações do motor CP2, ciclística e o posicionamento da moto frente aos concorrentes.
 ---
 
