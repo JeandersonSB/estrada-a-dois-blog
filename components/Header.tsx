@@ -29,13 +29,13 @@ export function Header() {
 
       if (hoveredTarget === 'logo') {
         // Place crown partially behind the left side of 'E', slightly lower
-        top -= 12; // Move up to align with the E
-        left -= 28; // Move left to peek out from behind
+        top -= 12;
+        left -= 28;
         rotate = -12;
       } else {
         // Place crown at the bottom-left of the menu item text
-        top -= 18; // Move up to align with the menu text
-        left -= 18; // Move closer to the text
+        top -= 18;
+        left -= 18;
         rotate = -15;
       }
 
@@ -59,7 +59,6 @@ export function Header() {
   }, [updateCrownPosition]);
 
   const navLinks = [
-    { name: 'NOTÍCIAS', href: '/categoria/noticias', id: 'noticias' },
     { name: 'ROTEIROS', href: '/categoria/roteiros', id: 'roteiros' },
     { name: 'DICAS', href: '/categoria/dicas', id: 'dicas' },
     { name: 'EQUIPAMENTOS', href: '/categoria/equipamentos', id: 'equipamentos' },

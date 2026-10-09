@@ -28,6 +28,14 @@ let cachedSortedPosts: { data: PostData[]; timestamp: number } | null = null;
 const postDataCache = new Map<string, { data: PostDataWithContent; timestamp: number }>();
 const CACHE_TTL_MS = 60 * 1000; // 60 segundos
 
+export function slugifyCategory(cat: string): string {
+  return cat
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/\s+/g, '-');
+}
+
 function _getSortedPostsDataInternal(): PostData[] {
   const now = Date.now();
   if (cachedSortedPosts && (now - cachedSortedPosts.timestamp < CACHE_TTL_MS)) {
@@ -74,10 +82,16 @@ function _getSortedPostsDataInternal(): PostData[] {
     });
 
   const publishedPosts = allPostsData.filter((post) => {
-    if (post.status) {
-      return post.status.includes('Publicado');
-    }
-    return post.draft !== true;
+    const isPublished = post.status
+      ? post.status.includes('Publicado')
+      : post.draft !== true;
+
+    // A partir de outubro/2026, Notícias deixa de fazer parte da proposta pública
+    // do Estrada a Dois. Os arquivos antigos permanecem no repositório durante a
+    // auditoria, mas não entram mais em home, categorias, relacionados ou sitemap.
+    const isLegacyNews = post.category && slugifyCategory(post.category) === 'noticias';
+
+    return isPublished && !isLegacyNews;
   });
 
   const sorted = publishedPosts.sort((a, b) => {
@@ -92,14 +106,6 @@ function _getSortedPostsDataInternal(): PostData[] {
 
 // React cache() memoizes calls within the same request lifecycle (generateMetadata + BlogPost)
 export const getSortedPostsData = cache(_getSortedPostsDataInternal);
-
-export function slugifyCategory(cat: string): string {
-  return cat
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .replace(/\s+/g, '-');
-}
 
 export function getPostsByCategory(categorySlug: string): PostData[] {
   const allPosts = getSortedPostsData();

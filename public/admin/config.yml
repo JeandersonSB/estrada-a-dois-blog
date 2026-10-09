@@ -64,7 +64,7 @@ collections:
       - { label: "Título do Artigo", name: "title", widget: "string" }
       - { label: "Status de Publicação", name: "status", widget: "select", options: ["⏳ Rascunho", "🟢 Publicado"], default: "⏳ Rascunho" }
       - { label: "Data e Hora de Publicação", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ss", date_format: "YYYY-MM-DD", time_format: "HH:mm" }
-      - { label: "Categoria", name: "category", widget: "select", options: ["Roteiros", "Dicas", "Manutenção", "Equipamentos", "Notícias"] }
+      - { label: "Categoria", name: "category", widget: "select", options: ["Roteiros", "Dicas", "Manutenção", "Equipamentos"] }
       - { label: "Imagem de Capa (Horizontal)", name: "image", widget: "image" }
       - { label: "Resumo para a Home (Até 3 linhas)", name: "excerpt", widget: "text" }
       - { label: "Conteúdo do Artigo", name: "body", widget: "markdown" }
