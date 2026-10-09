@@ -7,6 +7,12 @@ import html from 'remark-html';
 import { cache } from 'react';
 
 const postsDirectory = path.join(process.cwd(), 'content/posts');
+const PUBLIC_CATEGORY_SLUGS = new Set([
+  'roteiros',
+  'dicas',
+  'equipamentos',
+  'manutencao',
+]);
 
 export interface PostData {
   slug: string;
@@ -34,6 +40,16 @@ export function slugifyCategory(cat: string): string {
     .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
     .replace(/\s+/g, '-');
+}
+
+export function isPublicCategory(category?: string | null): boolean {
+  return Boolean(category && PUBLIC_CATEGORY_SLUGS.has(slugifyCategory(category)));
+}
+
+export function isPostPublished(post: Pick<PostData, 'status' | 'draft'>): boolean {
+  return post.status
+    ? post.status.includes('Publicado')
+    : post.draft !== true;
 }
 
 function _getSortedPostsDataInternal(): PostData[] {
@@ -82,16 +98,11 @@ function _getSortedPostsDataInternal(): PostData[] {
     });
 
   const publishedPosts = allPostsData.filter((post) => {
-    const isPublished = post.status
-      ? post.status.includes('Publicado')
-      : post.draft !== true;
-
-    // A partir de outubro/2026, Notícias deixa de fazer parte da proposta pública
-    // do Estrada a Dois. Os arquivos antigos permanecem no repositório durante a
-    // auditoria, mas não entram mais em home, categorias, relacionados ou sitemap.
-    const isLegacyNews = post.category && slugifyCategory(post.category) === 'noticias';
-
-    return isPublished && !isLegacyNews;
+    // Somente artigos publicados e pertencentes às quatro categorias editoriais
+    // atuais podem entrar em home, categorias, relacionados, feed e sitemap.
+    // Isso também impede que rascunhos ou arquivos com frontmatter inválido
+    // apareçam publicamente por acidente.
+    return isPostPublished(post) && isPublicCategory(post.category);
   });
 
   const sorted = publishedPosts.sort((a, b) => {

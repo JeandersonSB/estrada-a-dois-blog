@@ -1,7 +1,14 @@
 import type { Metadata } from 'next';
-import { getPostData, getSortedPostsData, slugifyCategory } from '@/lib/posts';
+import {
+  getPostData,
+  getSortedPostsData,
+  isPostPublished,
+  isPublicCategory,
+  slugifyCategory,
+} from '@/lib/posts';
 import { SmartImage } from '@/components/SmartImage';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 export const revalidate = 60;
 
@@ -21,10 +28,8 @@ export async function generateMetadata({
   const { slug } = await params;
   try {
     const postData = await getPostData(slug);
-    const isLegacyNews = Boolean(
-      postData.category && slugifyCategory(postData.category) === 'noticias'
-    );
-    const excerpt = postData.excerpt || `${postData.title} - Acompanhe no Estrada a Dois.`;
+    const isIndexablePublicPost = isPostPublished(postData) && isPublicCategory(postData.category);
+    const excerpt = postData.excerpt || `${postData.title || 'Artigo'} - Acompanhe no Estrada a Dois.`;
     const canonicalUrl = `https://www.estradaadois.com/blog/${slug}`;
     const baseUrl = 'https://www.estradaadois.com';
 
@@ -44,22 +49,22 @@ export async function generateMetadata({
 
     return {
       metadataBase: new URL(baseUrl),
-      title: postData.title,
+      title: postData.title || 'Artigo',
       description: excerpt,
-      robots: isLegacyNews
+      robots: isIndexablePublicPost
         ? {
-            index: false,
+            index: true,
             follow: true,
           }
         : {
-            index: true,
+            index: false,
             follow: true,
           },
       alternates: {
         canonical: canonicalUrl,
       },
       openGraph: {
-        title: postData.title,
+        title: postData.title || 'Artigo | Estrada a Dois',
         description: excerpt,
         url: canonicalUrl,
         siteName: 'Estrada a Dois',
@@ -75,14 +80,14 @@ export async function generateMetadata({
                 width: 1200,
                 height: 630,
                 type: mimeType,
-                alt: postData.title,
+                alt: postData.title || 'Estrada a Dois',
               },
             ]
           : [],
       },
       twitter: {
         card: 'summary_large_image',
-        title: postData.title,
+        title: postData.title || 'Artigo | Estrada a Dois',
         description: excerpt,
         images: imageUrl ? [imageUrl] : [],
       },
@@ -102,6 +107,17 @@ export async function generateMetadata({
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const postData = await getPostData(slug);
+  const categorySlug = postData.category ? slugifyCategory(postData.category) : '';
+  const isLegacyNews = categorySlug === 'noticias';
+  const isPublished = isPostPublished(postData);
+
+  // Notícias que já foram publicadas continuam acessíveis temporariamente com
+  // noindex para preservar URLs durante a auditoria. Rascunhos, arquivos
+  // malformados e categorias fora da proposta atual não ficam públicos.
+  if (!isPublished || (!isLegacyNews && !isPublicCategory(postData.category))) {
+    notFound();
+  }
+
   const allPosts = getSortedPostsData();
 
   // Artigos Relacionados: prioriza mesma categoria, completa com outros recentes
