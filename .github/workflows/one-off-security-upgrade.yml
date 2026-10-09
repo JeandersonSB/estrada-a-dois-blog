@@ -1,0 +1,59 @@
+name: One-off dependency security upgrade
+
+on:
+  push:
+    branches:
+      - security/deps-20261009
+
+permissions:
+  contents: write
+
+jobs:
+  upgrade:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          ref: security/deps-20261009
+          fetch-depth: 0
+
+      - name: Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Regenerar lockfile com versões corrigidas
+        run: npm install --package-lock-only --ignore-scripts --no-fund --no-audit
+
+      - name: Aplicar correções seguras transitivas
+        run: npm audit fix --package-lock-only --ignore-scripts --no-fund || true
+
+      - name: Validar instalação reproduzível
+        run: npm ci --no-audit --no-fund
+
+      - name: ESLint
+        run: npm run lint
+
+      - name: TypeScript
+        run: npx tsc --noEmit
+
+      - name: Build Next.js
+        run: npm run build
+
+      - name: Auditoria de produção sem vulnerabilidades altas/críticas
+        run: npm audit --omit=dev --audit-level=high
+
+      - name: Gravar lockfile e remover workflow temporário
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm .github/workflows/one-off-security-upgrade.yml
+          git add package.json package-lock.json .github/workflows/one-off-security-upgrade.yml
+          if git diff --cached --quiet; then
+            echo "Nenhuma alteração para gravar."
+            exit 0
+          fi
+          git commit -m "chore(security): atualizar lockfile e dependências transitivas"
+          git push origin HEAD:security/deps-20261009
