@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import {
   getPostData,
   getSortedPostsData,
+  isEditorialHold,
   isPostPublished,
   isPublicCategory,
   slugifyCategory,
@@ -28,7 +29,10 @@ export async function generateMetadata({
   const { slug } = await params;
   try {
     const postData = await getPostData(slug);
-    const isIndexablePublicPost = isPostPublished(postData) && isPublicCategory(postData.category);
+    const isIndexablePublicPost =
+      isPostPublished(postData) &&
+      isPublicCategory(postData.category) &&
+      !isEditorialHold(slug);
     const excerpt = postData.excerpt || `${postData.title || 'Artigo'} - Acompanhe no Estrada a Dois.`;
     const canonicalUrl = `https://www.estradaadois.com/blog/${slug}`;
     const baseUrl = 'https://www.estradaadois.com';
@@ -114,6 +118,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   // Notícias que já foram publicadas continuam acessíveis temporariamente com
   // noindex para preservar URLs durante a auditoria. Rascunhos, arquivos
   // malformados e categorias fora da proposta atual não ficam públicos.
+  // Artigos em revisão editorial permanecem acessíveis por URL e recebem
+  // noindex via generateMetadata, mas não aparecem nas superfícies públicas.
   if (!isPublished || (!isLegacyNews && !isPublicCategory(postData.category))) {
     notFound();
   }
