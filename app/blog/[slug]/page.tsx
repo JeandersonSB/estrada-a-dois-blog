@@ -1,5 +1,5 @@
-﻿import type { Metadata } from 'next';
-import { getPostData, getSortedPostsData } from '@/lib/posts';
+import type { Metadata } from 'next';
+import { getPostData, getSortedPostsData, slugifyCategory } from '@/lib/posts';
 import { SmartImage } from '@/components/SmartImage';
 import Link from 'next/link';
 
@@ -21,6 +21,9 @@ export async function generateMetadata({
   const { slug } = await params;
   try {
     const postData = await getPostData(slug);
+    const isLegacyNews = Boolean(
+      postData.category && slugifyCategory(postData.category) === 'noticias'
+    );
     const excerpt = postData.excerpt || `${postData.title} - Acompanhe no Estrada a Dois.`;
     const canonicalUrl = `https://www.estradaadois.com/blog/${slug}`;
     const baseUrl = 'https://www.estradaadois.com';
@@ -43,6 +46,15 @@ export async function generateMetadata({
       metadataBase: new URL(baseUrl),
       title: postData.title,
       description: excerpt,
+      robots: isLegacyNews
+        ? {
+            index: false,
+            follow: true,
+          }
+        : {
+            index: true,
+            follow: true,
+          },
       alternates: {
         canonical: canonicalUrl,
       },
@@ -78,7 +90,11 @@ export async function generateMetadata({
   } catch {
     return {
       title: 'Artigo | Estrada a Dois',
-      description: 'Artigos, notícias e novidades do motociclismo no Estrada a Dois.',
+      description: 'Artigos sobre viagens de moto, roteiros, equipamentos, manutenção e mototurismo no Estrada a Dois.',
+      robots: {
+        index: false,
+        follow: true,
+      },
     };
   }
 }
@@ -167,7 +183,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         </div>
 
         {/* Post Content (Markdown Rendered) */}
-        <div 
+        <div
           className="prose prose-lg md:prose-xl mx-auto text-[#444444] prose-headings:font-black prose-headings:text-[#0F0F0F] prose-a:text-[#B6D200] prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl prose-img:shadow-lg prose-blockquote:border-l-4 prose-blockquote:border-[#B6D200] prose-blockquote:bg-white prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:shadow-sm prose-blockquote:not-italic prose-blockquote:font-medium prose-strong:text-[#0F0F0F]"
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
         />
@@ -231,10 +247,10 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         {/* Tags / Footer */}
         <footer className="mt-12 pt-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row items-center justify-between">
-             <Link href="/" className="inline-flex items-center text-[#0F0F0F] font-black uppercase tracking-widest hover:text-[#B6D200] transition-colors">
-               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-               Voltar para Home
-             </Link>
+            <Link href="/" className="inline-flex items-center text-[#0F0F0F] font-black uppercase tracking-widest hover:text-[#B6D200] transition-colors">
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+              Voltar para Home
+            </Link>
           </div>
         </footer>
 
