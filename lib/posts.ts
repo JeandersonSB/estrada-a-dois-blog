@@ -14,6 +14,16 @@ const PUBLIC_CATEGORY_SLUGS = new Set([
   'manutencao',
 ]);
 
+// Artigos preservados no acervo, mas temporariamente fora de home, categorias,
+// relacionados, feed e sitemap enquanto passam por revisão editorial.
+const EDITORIAL_HOLD_SLUGS = new Set([
+  'fluido-de-freio-dot-4-na-moto-quando-trocar-e-perigos-da-umidade',
+  'cordura-vs-jeans-com-kevlar-qual-o-melhor-para-viajar',
+  'protetor-de-coluna-para-moto-integrado-ou-avulso',
+  'luvas-de-moto-para-viagem-couro-ou-tecido-tecnico',
+  'viseiras-fotocromaticas-vs-oculos-solar-qual-escolher',
+]);
+
 export interface PostData {
   slug: string;
   date: string;
@@ -44,6 +54,10 @@ export function slugifyCategory(cat: string): string {
 
 export function isPublicCategory(category?: string | null): boolean {
   return Boolean(category && PUBLIC_CATEGORY_SLUGS.has(slugifyCategory(category)));
+}
+
+export function isEditorialHold(slug?: string | null): boolean {
+  return Boolean(slug && EDITORIAL_HOLD_SLUGS.has(slug));
 }
 
 export function isPostPublished(post: Pick<PostData, 'status' | 'draft'>): boolean {
@@ -98,11 +112,13 @@ function _getSortedPostsDataInternal(): PostData[] {
     });
 
   const publishedPosts = allPostsData.filter((post) => {
-    // Somente artigos publicados e pertencentes às quatro categorias editoriais
-    // atuais podem entrar em home, categorias, relacionados, feed e sitemap.
-    // Isso também impede que rascunhos ou arquivos com frontmatter inválido
-    // apareçam publicamente por acidente.
-    return isPostPublished(post) && isPublicCategory(post.category);
+    // Somente artigos publicados, pertencentes às quatro categorias editoriais
+    // atuais e fora da fila de revisão podem entrar em home, categorias,
+    // relacionados, feed e sitemap. Os artigos em revisão seguem acessíveis
+    // diretamente pela URL, mas ficam fora das superfícies indexáveis.
+    return isPostPublished(post) &&
+      isPublicCategory(post.category) &&
+      !isEditorialHold(post.slug);
   });
 
   const sorted = publishedPosts.sort((a, b) => {
