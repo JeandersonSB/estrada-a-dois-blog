@@ -22,7 +22,7 @@ export async function GET() {
       <pubDate>${pubDate}</pubDate>
       <description><![CDATA[${post.excerpt || post.title}]]></description>
       ${imageTag}
-      <category><![CDATA[${post.category || 'Notícias'}]]></category>
+      <category><![CDATA[${post.category || 'Mototurismo'}]]></category>
     </item>`;
     })
     .join('');
@@ -30,9 +30,9 @@ export async function GET() {
   const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Estrada a Dois | Portal de Notícias e Motociclismo</title>
+    <title>Estrada a Dois | Viagens de Moto, Roteiros e Dicas</title>
     <link>${baseUrl}</link>
-    <description>O portal definitivo sobre motociclismo: notícias, lançamentos de motos, roteiros e equipamentos.</description>
+    <description>Viagens de moto em casal, roteiros reais, planejamento, equipamentos, manutenção e aprendizados de quem vive a estrada.</description>
     <language>pt-BR</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${baseUrl}/feed.xml" rel="self" type="application/rss+xml"/>
