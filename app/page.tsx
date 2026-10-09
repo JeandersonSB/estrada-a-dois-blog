@@ -48,19 +48,9 @@ export default function Home() {
 
   return (
     <div className="bg-[#f8f9fa] min-h-screen">
-      <section className="bg-[#0F0F0F] pt-10 pb-10 px-4">
+      <section className="bg-[#0F0F0F] pt-6 md:pt-8 pb-10 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-8 max-w-3xl">
-            <span className="text-[#B6D200] text-xs md:text-sm font-black uppercase tracking-[0.22em]">
-              Viagens de moto • Roteiros • Experiências reais
-            </span>
-            <h1 className="text-white text-3xl md:text-5xl font-black mt-3 leading-tight">
-              A estrada que vivemos, transformada em conteúdo para a sua próxima viagem.
-            </h1>
-            <p className="text-gray-400 mt-4 text-sm md:text-base leading-relaxed max-w-2xl">
-              Somos Jeanderson e Ana Paula. Compartilhamos rotas, planejamento, equipamentos, custos e aprendizados de quem realmente pega a estrada de moto a dois.
-            </p>
-          </div>
+          <h1 className="sr-only">Estrada a Dois — Viagens de moto, roteiros e dicas</h1>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {featuredMain && (
