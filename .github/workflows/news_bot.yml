@@ -7,19 +7,15 @@ concurrency:
   group: news-bot
   cancel-in-progress: false
 
-
+# Automação de notícias desativada em 01/10/2026.
+# O workflow permanece disponível apenas para execução manual durante a transição
+# do Estrada a Dois para um blog focado em viagens, roteiros, dicas, equipamentos
+# e manutenção.
 on:
-  schedule:
-    # Horários de Brasília: 06:36 e 17:36 (UTC +3h)
-    # Todos os dias. Mantemos apenas o primeiro e o último disparo do dia.
-    - cron: '36 9 * * *'   # 06:36 BRT
-    - cron: '36 20 * * *'  # 17:36 BRT
-
   workflow_dispatch:
-    # Permite disparar manualmente escolhendo a quantidade de notícias
     inputs:
       count:
-        description: 'Quantidade de notícias a gerar'
+        description: 'Quantidade de notícias a gerar manualmente'
         required: true
         default: '1'
         type: choice
@@ -31,23 +27,23 @@ on:
 jobs:
   gerar-noticia:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout do Código
         uses: actions/checkout@v7
         with:
           ref: main
           fetch-depth: 0
-        
+
       - name: Configurar Node.js
         uses: actions/setup-node@v7
         with:
           node-version: '24'
           package-manager-cache: false
-          
+
       - name: Instalar Dependências
         run: npm ci --no-audit --no-fund
-        
+
       - name: Rodar a Inteligência Artificial
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -55,7 +51,6 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           NEWS_COUNT: ${{ github.event.inputs.count || '' }}
         run: node scripts/news_bot.mjs
-        
+
       - name: Salvar e Publicar no Painel (Rascunho)
         run: bash scripts/git_commit_retry.sh "Notícia Automática (Rascunho gerado pela IA) [skip vercel]" content/posts public/images/blog
-
