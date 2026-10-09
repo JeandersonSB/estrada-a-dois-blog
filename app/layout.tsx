@@ -17,11 +17,11 @@ const queraBrand = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.estradaadois.com'),
   title: {
-    default: 'Estrada a Dois | Portal de Notícias e Motociclismo',
+    default: 'Estrada a Dois | Viagens de Moto, Roteiros e Dicas',
     template: '%s | Estrada a Dois',
   },
-  description: 'O portal definitivo sobre motociclismo: notícias, lançamentos de motos, modelos, tecnologia e equipamentos.',
-  keywords: ['motos', 'motociclismo', 'lançamentos de motos', 'motos elétricas', 'equipamentos para motociclistas', 'estrada a dois'],
+  description: 'Viagens de moto em casal, roteiros reais, planejamento, equipamentos, manutenção e aprendizados de quem vive a estrada.',
+  keywords: ['viagem de moto', 'mototurismo', 'roteiros de moto', 'viagem de moto em casal', 'dicas para viajar de moto', 'equipamentos para motociclistas', 'estrada a dois'],
   authors: [{ name: 'Estrada a Dois' }],
   creator: 'Estrada a Dois',
   publisher: 'Estrada a Dois',
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'Estrada a Dois | Portal de Notícias e Motociclismo',
-    description: 'O portal definitivo sobre motociclismo: notícias, lançamentos de motos, modelos, tecnologia e equipamentos.',
+    title: 'Estrada a Dois | Viagens de Moto, Roteiros e Dicas',
+    description: 'Viagens de moto em casal, roteiros reais, planejamento, equipamentos, manutenção e aprendizados de quem vive a estrada.',
     url: 'https://www.estradaadois.com',
     siteName: 'Estrada a Dois',
     locale: 'pt_BR',
@@ -55,8 +55,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Estrada a Dois | Portal de Notícias e Motociclismo',
-    description: 'O portal definitivo sobre motociclismo: notícias, lançamentos de motos, modelos, tecnologia e equipamentos.',
+    title: 'Estrada a Dois | Viagens de Moto, Roteiros e Dicas',
+    description: 'Viagens de moto em casal, roteiros reais, planejamento, equipamentos, manutenção e aprendizados de quem vive a estrada.',
   },
   robots: {
     index: true,
