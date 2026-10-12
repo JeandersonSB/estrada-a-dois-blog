@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SmartImage } from '@/components/SmartImage';
-import { getSortedPostsData } from '@/lib/posts';
+import { formatDateBR, getSortedPostsData } from '@/lib/posts';
 
 function slugifyCategory(cat: string) {
   return cat
@@ -105,7 +105,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
               <div className="p-6 flex flex-col flex-grow">
                 <div className="text-[12px] text-gray-600 font-bold uppercase tracking-wider mb-2 flex items-center">
                   <span className="w-2 h-2 rounded-full bg-[#B6D200] mr-2"></span>
-                  {post.date}
+                  <time dateTime={post.date}>{formatDateBR(post.date)}</time>
                 </div>
                 <Link href={`/blog/${post.slug}`} className="block">
                   <h2 className="text-xl font-bold text-[#0F0F0F] mb-3 leading-snug group-hover:text-[#B6D200] transition-colors line-clamp-2">

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import {
+  formatDateBR,
   getPostData,
   getSortedPostsData,
   isEditorialHold,
@@ -189,7 +190,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           <div className="text-gray-500 font-bold uppercase tracking-widest text-sm flex items-center justify-center">
             <span className="mr-3">Por Estrada a Dois</span>
             <span className="w-1.5 h-1.5 rounded-full bg-[#B6D200] mx-3"></span>
-            <span>{postData.date}</span>
+            <time dateTime={postData.date}>{formatDateBR(postData.date)}</time>
           </div>
         </header>
 
@@ -250,9 +251,9 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                     </span>
                   </div>
                   <div className="p-5 flex flex-col flex-1">
-                    <span className="text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-2">
-                      {related.date}
-                    </span>
+                    <time dateTime={related.date} className="text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-2">
+                      {formatDateBR(related.date)}
+                    </time>
                     <h4 className="text-base font-bold text-[#0F0F0F] leading-snug line-clamp-2 group-hover:text-[#8ac200] transition-colors mb-2">
                       {related.title}
                     </h4>

@@ -1,4 +1,4 @@
-import { getSortedPostsData, slugifyCategory } from '@/lib/posts';
+import { formatDateBR, getSortedPostsData, slugifyCategory } from '@/lib/posts';
 import { SmartImage } from '@/components/SmartImage';
 import Link from 'next/link';
 
@@ -208,7 +208,7 @@ export default function Home() {
                           </span>
                         </Link>
                         <div className="p-6 flex flex-col flex-grow">
-                          <div className="text-[12px] text-gray-600 font-bold uppercase tracking-wider mb-2">{post.date}</div>
+                          <div className="text-[12px] text-gray-600 font-bold uppercase tracking-wider mb-2">{formatDateBR(post.date)}</div>
                           <Link href={`/blog/${post.slug}`}>
                             <h3 className="text-xl font-bold text-[#0F0F0F] mb-3 leading-snug group-hover:text-[#B6D200] transition-colors line-clamp-2">
                               {post.title}
