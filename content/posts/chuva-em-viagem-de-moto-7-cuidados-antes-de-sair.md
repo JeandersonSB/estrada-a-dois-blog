@@ -3,15 +3,11 @@ title: 'Chuva em viagem de moto: 7 cuidados antes de sair'
 status: 🟢 Publicado
 date: 2026-09-16
 category: Dicas
-image: "/images/blog/chuva-em-viagem-de-moto-7-cuidados-antes-de-sair.webp"
+image: /images/blog/chuva-em-viagem-de-moto-7-cuidados-antes-de-sair.webp
 excerpt: 'Chuva em viagem de moto pede planejamento: veja como consultar alertas, preparar os equipamentos e combinar pausas para viajar a dois com mais tranquilidade.'
 ---
 
 # Chuva em viagem de moto: 7 cuidados antes de sair
-
-![Ilustração de um casal com roupas de motociclismo esperando a chuva passar sob uma cobertura, com a moto estacionada](/images/blog/chuva-em-viagem-de-moto.png)
-
-_Ilustração editorial criada com IA para o Estrada a Dois._
 
 Chuva em viagem de moto exige decisões conscientes antes mesmo de fechar o portão da garagem. Consultar a previsão do tempo detalhada, preparar a vestimenta impermeável e saber antecipadamente onde parar para esperar o temporal passar evitam que uma viagem agradável vire uma sequência de sustos e desconforto.
 
