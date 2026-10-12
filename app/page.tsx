@@ -2,7 +2,9 @@ import { getSortedPostsData, slugifyCategory } from '@/lib/posts';
 import { SmartImage } from '@/components/SmartImage';
 import Link from 'next/link';
 
-export const revalidate = 60;
+// O conteúdo da home só muda quando um novo deploy é publicado.
+// Mantê-la totalmente estática evita revalidação em tempo de requisição.
+export const revalidate = false;
 
 const categories = [
   {
@@ -61,7 +63,7 @@ export default function Home() {
                     src={featuredMain.image}
                     alt={featuredMain.title}
                     priority
-                    sizes="(min-width: 1024px) 66vw, 100vw"
+                    sizes="(min-width: 1024px) 752px, calc(100vw - 32px)"
                     className="object-cover transform group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute bottom-0 left-0 p-6 md:p-10 z-20 w-full">
@@ -87,7 +89,7 @@ export default function Home() {
                     <SmartImage
                       src={featuredRoute.image}
                       alt={featuredRoute.title}
-                      sizes="(min-width: 1024px) 33vw, 100vw"
+                      sizes="(min-width: 1024px) 368px, calc(100vw - 32px)"
                       className="object-cover transform group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute bottom-0 left-0 p-4 md:p-6 z-20 w-full">
@@ -109,7 +111,7 @@ export default function Home() {
                     <SmartImage
                       src={featuredGuide.image}
                       alt={featuredGuide.title}
-                      sizes="(min-width: 1024px) 33vw, 100vw"
+                      sizes="(min-width: 1024px) 368px, calc(100vw - 32px)"
                       className="object-cover transform group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute bottom-0 left-0 p-6 z-20 w-full">
@@ -198,7 +200,7 @@ export default function Home() {
                           <SmartImage
                             src={post.image}
                             alt={post.title}
-                            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                            sizes="(min-width: 1024px) 363px, (min-width: 768px) calc(50vw - 28px), calc(100vw - 32px)"
                             className="object-cover transform group-hover:scale-105 transition-transform duration-500"
                           />
                           <span className="absolute top-4 left-4 bg-[#B6D200] text-[#0F0F0F] text-[11px] font-black uppercase px-3 py-1 tracking-widest shadow-md">

@@ -71,13 +71,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <head>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5452131758402825"
-          crossOrigin="anonymous"
-        />
-      </head>
       <body className={`${inter.className} ${queraBrand.variable} min-h-screen flex flex-col`}>
         <Header />
         <main className="flex-grow">
