@@ -52,6 +52,20 @@ export function slugifyCategory(cat: string): string {
     .replace(/\s+/g, '-');
 }
 
+// Formata apenas a exibição visual. A data interna continua em ISO (AAAA-MM-DD)
+// para metadados, schema.org, feed, sitemap e ordenação.
+export function formatDateBR(date?: string | null): string {
+  if (!date) return '';
+
+  const normalized = String(date).trim();
+  const match = normalized.match(/^(\d{4})-(\d{2})-(\d{2})/);
+
+  if (!match) return normalized;
+
+  const [, year, month, day] = match;
+  return `${day}/${month}/${year}`;
+}
+
 export function isPublicCategory(category?: string | null): boolean {
   return Boolean(category && PUBLIC_CATEGORY_SLUGS.has(slugifyCategory(category)));
 }
