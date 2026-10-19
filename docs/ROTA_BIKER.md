@@ -30,11 +30,11 @@ service cloud.firestore {
 }
 ```
 
-Sem configuração, marcações funcionam apenas no navegador. Ao entrar, o histórico da conta substitui o histórico local; não há importação automática. A sessão não escreve visitas de outra conta. Não existe coleta de localização até o usuário clicar em Minha localização. Cartão PNG 1080x1920 gerado localmente; gráfico de pontos esquemático, sem mapa-base.
+Sem configuração, marcações funcionam apenas no navegador. Ao entrar, o histórico da conta substitui o histórico local; não há importação automática. A sessão não escreve visitas de outra conta. Não existe coleta de localização até o usuário clicar em Minha localização ou abrir Planejar viagem. Cartão PNG 1080x1920 gerado localmente; gráfico de pontos esquemático, sem mapa-base.
 
 ## Planejamento
 
-Origem e destino livres, até três monumentos selecionados na ordem desejada. Link oficial de direções do Google Maps, que calcula o percurso. Não calcula distância nem sugere automaticamente monumentos ao longo de uma rota rodoviária nesta versão. Essa etapa precisa de serviço de rotas e geocodificação antes de ser oferecida. Filtros disponíveis: nome e situação; a fonte não fornece estado/país estruturados.
+Origem obrigatória por geolocalização do navegador (sem campo editável), destino livre e até três monumentos selecionados na ordem desejada. Ao abrir o planejador, solicita uma posição atual com timeout e sem cache; sem permissão ou posição válida, a abertura do roteiro fica indisponível. Link oficial de direções do Google Maps, que calcula o percurso. Não calcula distância nem sugere automaticamente monumentos ao longo de uma rota rodoviária nesta versão. Essa etapa precisa de serviço de rotas e geocodificação antes de ser oferecida. Busca por palavras-chave e nomes sem acentos; filtros de situação em painel suspenso; a fonte não fornece estado/país estruturados.
 
 ## Validação manual após configurar
 
