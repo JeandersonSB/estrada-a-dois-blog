@@ -32,10 +32,14 @@ service cloud.firestore {
 
 Sem configuração, marcações funcionam apenas no navegador. Ao entrar, o histórico da conta substitui o histórico local; não há importação automática. A sessão não escreve visitas de outra conta. Não existe coleta de localização até o usuário clicar em Minha localização ou abrir Planejar viagem. Cartão PNG 1080x1920 gerado localmente; gráfico de pontos esquemático, sem mapa-base.
 
-## Planejamento
+## Planejamento e busca
 
-Origem obrigatória por geolocalização do navegador (sem campo editável), destino livre e até três monumentos selecionados na ordem desejada. Ao abrir o planejador, solicita uma posição atual com timeout e sem cache; sem permissão ou posição válida, a abertura do roteiro fica indisponível. Link oficial de direções do Google Maps, que calcula o percurso. Não calcula distância nem sugere automaticamente monumentos ao longo de uma rota rodoviária nesta versão. Essa etapa precisa de serviço de rotas e geocodificação antes de ser oferecida. Busca por palavras-chave e nomes sem acentos; filtros de situação em painel suspenso; a fonte não fornece estado/país estruturados.
+Origem obrigatória por geolocalização do navegador (sem campo editável), com posição sem cache, alta precisão e timeout de 15 segundos. A pessoa escolhe um monumento em um select ordenado por distância crescente. A distância é Haversine (linha reta), explicitamente identificada na tela, sem representar distância rodoviária. Google Maps recebe origem e destino; Waze recebe o destino e usa a posição atual do próprio aplicativo. Não há múltiplas paradas nesta versão. Não grava a geolocalização em banco, analytics ou cartão.
+
+Cidades, UF, nomes dos estados e números enriquecidos a partir da lista oficial https://monumentobikers.com.br/ em 19/10/2026; coordenadas preservadas do mapa original. IDs não mudaram, preservando marcações anteriores. Busca por nome, apelidos, cidade, estado, sigla, região, país e número, sem exigir acentos. Siglas e números usam palavras inteiras para evitar, por exemplo, PR corresponder a Prado ou número 1 corresponder a 12. Cajá é exibida como localidade conforme a lista oficial.
+
+Marcadores existentes são recoloridos sem reconstruir a camada. Marcar uma visita no filtro de pendentes troca para Todos; desmarcar em Visitados também troca para Todos, mantendo o ponto visível.
 
 ## Validação manual após configurar
 
-Entrar com Google em duas contas, marcar/desmarcar e recarregar; confirmar isolamento de dados e negação de leitura de outro UID pelas regras. Conferir sincronização em outro navegador. Conferir negação offline, popup bloqueado, localização recusada e mapa indisponível. Montar roteiro no celular e verificar ordem das três paradas. Baixar PNG e confirmar contador. Nenhum segredo ou projeto Firebase foi provisionado por este PR.
+Entrar com Google em duas contas, marcar/desmarcar e recarregar; confirmar isolamento de dados e negação de leitura de outro UID pelas regras. Conferir sincronização em outro navegador. Conferir negação offline, popup bloqueado, localização recusada e mapa indisponível. Permitir localização no celular e verificar a ordenação crescente do select; selecionar um monumento e conferir Google Maps e Waze. Testar erro de permissão, timeout e nova tentativa. Marcar um ponto no filtro de pendentes e confirmar que permanece visível e verde. Baixar PNG e confirmar contador. Nenhum segredo ou projeto Firebase foi provisionado por este PR.
