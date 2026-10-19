@@ -43,3 +43,7 @@ Marcadores existentes são recoloridos sem reconstruir a camada. Marcar uma visi
 ## Validação manual após configurar
 
 Entrar com Google em duas contas, marcar/desmarcar e recarregar; confirmar isolamento de dados e negação de leitura de outro UID pelas regras. Conferir sincronização em outro navegador. Conferir negação offline, popup bloqueado, localização recusada e mapa indisponível. Permitir localização no celular e verificar a ordenação crescente do select; selecionar um monumento e conferir Google Maps e Waze. Testar erro de permissão, timeout e nova tentativa. Marcar um ponto no filtro de pendentes e confirmar que permanece visível e verde. Baixar PNG e confirmar contador. Nenhum segredo ou projeto Firebase foi provisionado por este PR.
+
+## Correção da permissão de localização
+
+O cabeçalho global `Permissions-Policy: geolocation=()` bloqueava a API antes de solicitar permissão. A configuração agora mantém o bloqueio global e aplica uma exceção apenas a `/rota-biker`: `camera=(), microphone=(), geolocation=(self)`. A autorização do navegador e do sistema operacional continua obrigatória. O bloco “Como testar minha localização” foi removido a pedido do usuário.

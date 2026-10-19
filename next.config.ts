@@ -62,6 +62,15 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         headers: securityHeaders,
       },
+      {
+        source: "/rota-biker",
+        headers: [
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=(self)",
+          },
+        ],
+      },
     ];
   },
 };
