@@ -1,0 +1,260 @@
+[
+  {
+    "id": "28ff06f4f7139402",
+    "name": "Serpenteando Café",
+    "lat": -25.0777701,
+    "lng": -49.0862979
+  },
+  {
+    "id": "bb34785bb71c9ffd",
+    "name": "Mirante 12 Lanchonete e Entretenimento-LTDA",
+    "lat": -28.3848397,
+    "lng": -49.4850811
+  },
+  {
+    "id": "4017e9cf25b05570",
+    "name": "Rota 370",
+    "lat": -27.9987446,
+    "lng": -49.5544447
+  },
+  {
+    "id": "e8a6a5efa0fa4650",
+    "name": "Parada Rota 218",
+    "lat": -23.4197284,
+    "lng": -49.7087751
+  },
+  {
+    "id": "702b9255802d1133",
+    "name": "Parada Rota Bike Café",
+    "lat": -26.672074,
+    "lng": -49.3214022
+  },
+  {
+    "id": "d0b075141239afda",
+    "name": "Container da Serra",
+    "lat": -26.6254623,
+    "lng": -49.5165773
+  },
+  {
+    "id": "782988960100ca0f",
+    "name": "Parada 261",
+    "lat": -24.1898018,
+    "lng": -48.5367075
+  },
+  {
+    "id": "f33d43c1306116cc",
+    "name": "Posto Rota 090",
+    "lat": -24.5377613,
+    "lng": -49.9592831
+  },
+  {
+    "id": "5ba377c8848471a4",
+    "name": "Terrasul Motos",
+    "lat": -32.5522043,
+    "lng": -53.3838142
+  },
+  {
+    "id": "202bb30d3c56b455",
+    "name": "Pad Bier Restaurante e Cervejaria",
+    "lat": -15.9990196,
+    "lng": -47.5603231
+  },
+  {
+    "id": "dab413a7c161119d",
+    "name": "Centro Cultural Movimento",
+    "lat": -22.5972528,
+    "lng": -46.5256306
+  },
+  {
+    "id": "20341b3aa76e7e78",
+    "name": "Rota 513",
+    "lat": -25.1421648,
+    "lng": -49.9811553
+  },
+  {
+    "id": "cd53a5303d9228c8",
+    "name": "Parador 158",
+    "lat": -29.6010665,
+    "lng": -53.7677307
+  },
+  {
+    "id": "c9a71d0b208a032d",
+    "name": "Garimpo em Atividade",
+    "lat": -27.3577814,
+    "lng": -53.1916744
+  },
+  {
+    "id": "9db2645299bf7578",
+    "name": "Bar Original – Pier SP-270",
+    "lat": -23.184275,
+    "lng": -49.3906025
+  },
+  {
+    "id": "28d8a52e73deea39",
+    "name": "Armazém Canastra",
+    "lat": -20.4576587,
+    "lng": -45.9784098
+  },
+  {
+    "id": "2e99c22af02667da",
+    "name": "Box 1200 Concept",
+    "lat": -23.1918773,
+    "lng": -46.9628832
+  },
+  {
+    "id": "1bd4bbd09dd4326d",
+    "name": "Rancho Terra Crua",
+    "lat": -23.5212416,
+    "lng": -45.8982779
+  },
+  {
+    "id": "0b1113915d605464",
+    "name": "Casa Rural Pastelaria",
+    "lat": -30.4075303,
+    "lng": -51.4541004
+  },
+  {
+    "id": "aca06531bd0b8301",
+    "name": "Parada Penhasco",
+    "lat": -26.8112913,
+    "lng": -48.6664038
+  },
+  {
+    "id": "9ecd3efe6428f177",
+    "name": "Restaurante Mata Virgem",
+    "lat": -21.6144094,
+    "lng": -45.2614054
+  },
+  {
+    "id": "46e37a95c26bf4a5",
+    "name": "Bar Do Hélio",
+    "lat": -21.0256805,
+    "lng": -47.1669616
+  },
+  {
+    "id": "89e91836dbbc072b",
+    "name": "Pousada e Camping Poço Do Caixão",
+    "lat": -28.8141693,
+    "lng": -49.8813927
+  },
+  {
+    "id": "009f82c4714dcaa6",
+    "name": "Os Independentes",
+    "lat": -20.5095141,
+    "lng": -48.5976393
+  },
+  {
+    "id": "1c5d33a2b166674b",
+    "name": "Restaurante Portal Grill",
+    "lat": -26.2742813,
+    "lng": -51.0541948
+  },
+  {
+    "id": "f2ee27c40490db95",
+    "name": "Restaurante Pedra do Baú",
+    "lat": -22.680331,
+    "lng": -45.6632399
+  },
+  {
+    "id": "90860b85f7a73459",
+    "name": "Hotel Barra Bonita",
+    "lat": -22.4980628,
+    "lng": -48.5620735
+  },
+  {
+    "id": "a73234f7fdf065da",
+    "name": "Rancho Gastronomia e Cultura - Restaurante, Pizzaria e Armazém.",
+    "lat": -22.6452812,
+    "lng": -44.5767615
+  },
+  {
+    "id": "fb6fa4f1b1d81ec5",
+    "name": "Drei Schritte Katuete",
+    "lat": -24.253942,
+    "lng": -54.7702719
+  },
+  {
+    "id": "8b52e305510f7f4d",
+    "name": "Pro Tork",
+    "lat": -23.6704833,
+    "lng": -49.836561
+  },
+  {
+    "id": "fac98efe5cd32da5",
+    "name": "Hell's Dogs Motorcycle Bar",
+    "lat": -25.5159988,
+    "lng": -54.5751596
+  },
+  {
+    "id": "962d09dcc44eb506",
+    "name": "Zapata Garage",
+    "lat": -22.2001017,
+    "lng": -49.6494886
+  },
+  {
+    "id": "673377fbe5d433db",
+    "name": "Lanchonete Parada da Búfala",
+    "lat": -24.2769151,
+    "lng": -47.9479979
+  },
+  {
+    "id": "972d03a782639e15",
+    "name": "Portal de São Lourenço",
+    "lat": -22.1270713,
+    "lng": -45.0392427
+  },
+  {
+    "id": "32cf04e5b0b6dc52",
+    "name": "Route 60",
+    "lat": -16.1849568,
+    "lng": -48.688318
+  },
+  {
+    "id": "78661860d36eee58",
+    "name": "Bela Vista Mall",
+    "lat": -19.0441262,
+    "lng": -43.4223614
+  },
+  {
+    "id": "978ab71cd51d889e",
+    "name": "MAPY - Restaurante e Cafe",
+    "lat": -23.9122125,
+    "lng": -51.1844918
+  },
+  {
+    "id": "20ba538ba68a6c69",
+    "name": "Mar & Sol Praia Hotel",
+    "lat": -17.340253,
+    "lng": -39.2181944
+  },
+  {
+    "id": "b0aeee019ac7828a",
+    "name": "Quiosque Romano",
+    "lat": -31.5159801,
+    "lng": -52.599415
+  },
+  {
+    "id": "67da1e3f40594cc2",
+    "name": "ROTA 15",
+    "lat": -28.6400737,
+    "lng": -51.9385666
+  },
+  {
+    "id": "580a27b995614c83",
+    "name": "Tapioca do Irmão Firmino",
+    "lat": -7.1684174,
+    "lng": -35.3509599
+  },
+  {
+    "id": "3327d5a2feda033c",
+    "name": "Parada Route",
+    "lat": -17.0708946,
+    "lng": -48.6570364
+  },
+  {
+    "id": "9ea8b501fe4159e6",
+    "name": "Laranja Doce - Pão com Linguiça",
+    "lat": -22.131556,
+    "lng": -51.1689638
+  }
+]
