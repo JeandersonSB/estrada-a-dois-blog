@@ -30,6 +30,7 @@ export default function Explorer() {
   const [locationError, setLocationError] = useState('');
   const [locationAccuracy, setLocationAccuracy] = useState<number | null>(null);
   const filtersPanel = useRef<HTMLDetailsElement>(null);
+  const privacyDialog = useRef<HTMLDialogElement>(null);
   const [destination, setDestination] = useState('');
   const [message, setMessage] = useState('');
   useEffect(() => {
@@ -123,6 +124,7 @@ export default function Explorer() {
     } else { setVisited(current => next ? [...current, m.id] : current.filter(id => id !== m.id)); keepMarkedVisible(next); }
   }
   async function login() {
+    privacyDialog.current?.close();
     const s = services();
     if (!s) { setMessage('O login Google ainda está em configuração. Suas marcações ficam salvas neste navegador.'); return; }
     try { await signInWithPopup(s.auth, new GoogleAuthProvider()); }
@@ -162,7 +164,16 @@ export default function Explorer() {
     if (!planning) locate(true);
   }
   return <div className="biker">
-    <header className="biker-intro"><div><span className="biker-eyebrow">SEU PRÓXIMO DESTINO COMEÇA AQUI</span><h1>Minha Rota Biker<span>.</span></h1><p>Marque suas visitas. Escolha as próximas paradas. Viva a estrada.</p></div><div className="biker-account">{user ? <><span>{user.displayName || 'Minha conta'}</span><button onClick={() => { const s = services(); if (s) signOut(s.auth).catch(() => setMessage('Não foi possível sair.')); }}>Sair</button></> : <button onClick={login}>Entrar com Google</button>}</div></header>
+    <header className="biker-intro"><div><span className="biker-eyebrow">SEU PRÓXIMO DESTINO COMEÇA AQUI</span><h1>Minha Rota Biker<span>.</span></h1><p>Marque suas visitas. Escolha as próximas paradas. Viva a estrada.</p></div><div className="biker-account">{user ? <><span>{user.displayName || 'Minha conta'}</span><button onClick={() => { const s = services(); if (s) signOut(s.auth).catch(() => setMessage('Não foi possível sair.')); }}>Sair</button></> : <button onClick={() => privacyDialog.current?.showModal()}>Entrar com Google</button>}</div></header>
+    <dialog ref={privacyDialog} className="biker-privacy-dialog" aria-labelledby="biker-privacy-title" aria-describedby="biker-privacy-description">
+      <h2 id="biker-privacy-title">Sua privacidade no login</h2>
+      <div id="biker-privacy-description">
+        <p>Para entrar e sincronizar suas visitas, o Estrada a Dois utiliza seu nome, e-mail, foto de perfil (se disponível) e identificador da conta Google, além das marcações de monumentos, com os serviços Google/Firebase.</p>
+        <p>Ao aceitar, você autoriza esse tratamento para login e sincronização, conforme a LGPD. Você pode recusar e continuar usando o mapa sem login, com as marcações salvas neste navegador.</p>
+      </div>
+      <p className="biker-privacy-detail">Você pode solicitar a exclusão dos dados ou revogar esta autorização pelo contato indicado na <a href="/politica-de-privacidade#rota-biker" target="_blank" rel="noopener noreferrer">Política de Privacidade ↗</a>.</p>
+      <div className="biker-privacy-actions"><button autoFocus onClick={() => privacyDialog.current?.close()}>Recusar</button><button className="biker-primary" onClick={login}>Aceitar e continuar</button></div>
+    </dialog>
     <div className="biker-toolbar"><div><strong>{visited.length} / {monuments.length}</strong> pontos visitados <progress value={visited.length} max={monuments.length} /></div><button onClick={openPlanner} aria-expanded={planning}>Planejar viagem</button><button onClick={story}>Cartão para Stories ↓</button></div>
     <p className="biker-storage">{user ? (syncReady ? 'Marcações privadas sincronizadas com sua conta.' : 'Sincronizando sua conta…') : 'Sem login: marcações salvas apenas neste navegador. Ao entrar, será exibido o histórico da sua conta.'}</p>
     {message && <div className="biker-message" role="status">{message}<button aria-label="Fechar aviso" onClick={() => setMessage('')}>×</button></div>}
@@ -178,6 +189,6 @@ export default function Explorer() {
       <div className="biker-map-wrap"><div ref={container} className="biker-map" aria-label="Mapa interativo dos pontos da Rota Biker" /><button className="biker-locate" disabled={locating} onClick={() => locate()}>◎ {locating ? 'Localizando…' : 'Minha localização'}</button><div className="biker-legend">● Pendente <span>● Visitado</span>{origin && <span className="biker-user-location">● Você</span>}</div></div>
     </div>
     {selected && <section className={`biker-selected${visited.includes(selected.id) ? ' biker-selected-visited' : ''}`}><div><span className="biker-eyebrow">PONTO SELECIONADO</span><h2>{visited.includes(selected.id) && <span className="biker-visited-check" aria-label="Visitado">✅ </span>}{selected.name}</h2><p>{selected.city} · {selected.state || selected.country} · Monumento {selected.number}</p></div><button className="biker-primary" disabled={!loaded || (!!user && !syncReady)} onClick={() => toggle(selected)}>{visited.includes(selected.id) ? '✓ Visitado — desmarcar' : 'Marcar como visitado'}</button><a href={`https://www.google.com/maps/search/?api=1&query=${selected.lat},${selected.lng}`} target="_blank" rel="noopener noreferrer">Como chegar ↗</a></section>}
-    <footer className="biker-note">Pontos importados do <a href="https://www.google.com/maps/d/viewer?mid=1ZHPck3Yykbhc8M1GYPrCcKf5pajiTvk" target="_blank" rel="noopener noreferrer">mapa de referência Rota Bikers</a> em 19/10/2026. Confira acesso e funcionamento antes de viajar. Ferramenta independente do Estrada a Dois.</footer>
+    <footer className="biker-note"><p>Pontos importados do <a href="https://www.google.com/maps/d/viewer?mid=1ZHPck3Yykbhc8M1GYPrCcKf5pajiTvk" target="_blank" rel="noopener noreferrer">mapa de referência Rota Bikers</a> em 19/10/2026. Confira acesso e funcionamento antes de viajar.</p><p>Este mapa é uma ferramenta independente do Estrada a Dois, criada para ajudar cada viajante a manter seu controle online dos monumentos que já visitou. Os direitos sobre a Rota Biker, sua marca e identidade pertencem aos seus respectivos idealizadores e titulares. Como participante e divulgador do movimento, o Estrada a Dois quer contribuir, somar e facilitar a vida de quem vive a estrada. Esta página não é um serviço oficial da Rota Biker e suas marcações não substituem o passaporte físico nem validam carimbos ou conquistas oficiais.</p></footer>
   </div>;
 }

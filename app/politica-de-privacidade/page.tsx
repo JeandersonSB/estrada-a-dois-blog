@@ -107,7 +107,36 @@ export default function PoliticaPrivacidade() {
               quando houver alterações relevantes nos serviços, tecnologias utilizadas ou requisitos legais.
             </p>
 
-            <p className="font-bold text-[#0F0F0F]">Última atualização: 22 de setembro de 2026.</p>
+            <h2 id="rota-biker" className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">10. Mapa de monumentos — Rota Biker</h2>
+            <p>
+              O Estrada a Dois é responsável por esta ferramenta independente de controle pessoal de visitas.
+              Sem login, as marcações ficam no armazenamento local do navegador. Ao aceitar o aviso e entrar com
+              Google, você autoriza o uso do nome, e-mail, foto de perfil (se disponível) e identificador da conta
+              fornecidos pelo Google para autenticação. As marcações são associadas ao identificador da conta no
+              Firebase para permitir acesso privado e sincronização entre dispositivos.
+            </p>
+            <p>
+              Utilizamos Google Authentication/Firebase Authentication e Cloud Firestore para essas finalidades.
+              Esses serviços processam os dados segundo seus próprios termos e políticas, podendo envolver
+              infraestrutura fora do Brasil. Esta autorização não abrange envio de publicidade. As marcações
+              não são publicadas nem compartilhadas com os organizadores da Rota Biker pela ferramenta.
+            </p>
+            <p>
+              A localização depende de uma permissão separada do navegador e é utilizada para encontrar destinos
+              próximos e planejar o trajeto. Suas coordenadas não são gravadas no histórico da conta. Ao abrir o
+              Google Maps ou Waze, as informações necessárias ao trajeto são encaminhadas ao serviço escolhido.
+              O mapa utiliza o OpenStreetMap, que pode receber dados técnicos necessários ao carregamento.
+            </p>
+            <p>
+              Você pode recusar o aviso e continuar usando o mapa sem login. Os dados da conta são mantidos
+              enquanto necessários à sincronização e até solicitação de exclusão, ressalvadas obrigações legais
+              aplicáveis. Para exercer seus direitos, solicitar exclusão ou revogar o consentimento, escreva para{' '}
+              <a href="mailto:contato@estradaadois.com" className="text-[#8ac200] hover:underline font-bold">contato@estradaadois.com</a>.
+              Sair da conta interrompe a sessão, mas não exclui o histórico já salvo. Para remover marcações locais,
+              desmarque os monumentos ou limpe os dados deste site no navegador.
+            </p>
+
+            <p className="font-bold text-[#0F0F0F]">Última atualização: 20 de outubro de 2026.</p>
           </div>
         </div>
       </div>
