@@ -16,7 +16,7 @@ export default function PoliticaPrivacidade() {
 
           <div className="prose prose-gray max-w-none text-[#555555] font-medium leading-relaxed space-y-6">
             <p>
-              O <strong>Estrada a Dois</strong> respeita a privacidade de seus visitantes e trata dados pessoais de
+              O <strong>Estrada a Dois</strong>, sob responsabilidade de Jeanderson de Souza Batista, respeita a privacidade de seus visitantes e trata dados pessoais de
               forma compatível com a legislação aplicável, incluindo a Lei Geral de Proteção de Dados Pessoais
               (LGPD — Lei nº 13.709/2018).
             </p>
@@ -61,7 +61,7 @@ export default function PoliticaPrivacidade() {
             <p>
               Com sua autorização, utilizamos o <strong>Google Analytics 4</strong> para compreender, de forma agregada,
               como o portal é utilizado, quais páginas recebem mais visitas e como podemos melhorar conteúdo e
-              desempenho. O Google Analytics não é carregado quando você rejeita os recursos analíticos.
+              desempenho. Se você rejeitar, o Google Analytics não será carregado. Se já tiver aceitado e depois retirar a autorização, desativamos a medição futura e tentamos remover os cookies analíticos acessíveis neste domínio. Isso não apaga automaticamente dados já recebidos pelo Google.
             </p>
             <p>
               O tratamento realizado pelo Google segue os próprios termos e políticas de privacidade da empresa.
@@ -70,9 +70,7 @@ export default function PoliticaPrivacidade() {
 
             <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">5. Publicidade e Google AdSense</h2>
             <p>
-              O Estrada a Dois poderá futuramente utilizar plataformas de publicidade, incluindo o Google AdSense.
-              Caso anúncios e tecnologias publicitárias sejam ativados, esta política e o mecanismo de consentimento
-              serão adequados às exigências aplicáveis antes da utilização desses recursos.
+              O site está cadastrado no Google AdSense, mas esta versão não exibe anúncios nem utiliza cookies publicitários. Caso a exibição de anúncios seja ativada, esta política e os controles de privacidade serão atualizados antes da utilização de tecnologias publicitárias.
             </p>
 
             <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">6. Serviços de terceiros</h2>
@@ -92,7 +90,7 @@ export default function PoliticaPrivacidade() {
             <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">8. Direitos do titular</h2>
             <p>
               Nos termos da LGPD, você pode solicitar, quando aplicável, confirmação de tratamento, acesso, correção,
-              atualização ou exclusão de dados, além de revogar consentimentos concedidos.
+              atualização, anonimização, bloqueio ou exclusão de dados, informações sobre compartilhamento e portabilidade nos termos da regulamentação aplicável, além de revogar consentimentos concedidos e apresentar reclamação à ANPD. Podemos solicitar informações mínimas para confirmar sua identidade e proteger seus dados.
             </p>
             <p>
               Solicitações podem ser encaminhadas para{' '}
@@ -113,13 +111,12 @@ export default function PoliticaPrivacidade() {
               Sem login, as marcações ficam no armazenamento local do navegador. Ao aceitar o aviso e entrar com
               Google, você autoriza o uso do nome, e-mail, foto de perfil (se disponível) e identificador da conta
               fornecidos pelo Google para autenticação. As marcações são associadas ao identificador da conta no
-              Firebase para permitir acesso privado e sincronização entre dispositivos.
+              Firebase para permitir acesso privado e sincronização entre dispositivos. As visitas marcadas sem login permanecem neste navegador e não são importadas automaticamente para a conta. O cartão para Stories é gerado no seu dispositivo; baixar a imagem não a publica nas redes sociais.
             </p>
             <p>
               Utilizamos Google Authentication/Firebase Authentication e Cloud Firestore para essas finalidades.
               Esses serviços processam os dados segundo seus próprios termos e políticas, podendo envolver
-              infraestrutura fora do Brasil. Esta autorização não abrange envio de publicidade. As marcações
-              não são publicadas nem compartilhadas com os organizadores da Rota Biker pela ferramenta.
+              infraestrutura fora do Brasil. Esta autorização não abrange envio de publicidade. As marcações não são publicadas, vendidas nem repassadas aos organizadores da Rota Biker ou a anunciantes. A equipe responsável pode acessar os dados pelos painéis administrativos para suporte, segurança e atendimento aos seus direitos; os fornecedores envolvidos também os processam para operar o serviço.
             </p>
             <p>
               A localização depende de uma permissão separada do navegador e é utilizada para encontrar destinos
@@ -134,6 +131,31 @@ export default function PoliticaPrivacidade() {
               <a href="mailto:contato@estradaadois.com" className="text-[#8ac200] hover:underline font-bold">contato@estradaadois.com</a>.
               Sair da conta interrompe a sessão, mas não exclui o histórico já salvo. Para remover marcações locais,
               desmarque os monumentos ou limpe os dados deste site no navegador.
+            </p>
+
+            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">11. Finalidades, escolhas e conservação</h2>
+            <p>
+              A medição de audiência e o uso dos dados autorizados no login se baseiam no seu consentimento.
+              O atendimento de solicitações usa os dados necessários ao contato e, conforme o caso, a procedimentos
+              solicitados por você. Registros técnicos são tratados para funcionamento e segurança, com base no
+              legítimo interesse, respeitados seus direitos, ou no cumprimento de obrigações legais aplicáveis.
+              Não usamos o contato nem o login como autorização para campanhas de marketing.
+            </p>
+            <p>
+              A preferência de cookies fica neste navegador até ser alterada ou até você limpar os dados do site.
+              Marcações de visitante permanecem até serem removidas ou até a limpeza do navegador; autenticação
+              pode usar armazenamento próprio do Firebase. Esses recursos não dependem da autorização ao Analytics.
+              O prazo de cookies e dados mantidos pelos fornecedores varia conforme o serviço e suas configurações;
+              não há um prazo único para todos os dados. Dados de atendimento são conservados pelo tempo necessário
+              à solicitação e às obrigações aplicáveis. Excluir o histórico do mapa não exclui sua conta Google.
+            </p>
+            <p>
+              Fornecedores de hospedagem, autenticação, mapas, métricas e mensagens podem processar dados fora do
+              Brasil. Consulte também as políticas de{' '}
+              <a href="https://policies.google.com/privacy" className="text-[#8ac200] hover:underline">Google</a>,{' '}
+              <a href="https://vercel.com/legal/privacy-policy" className="text-[#8ac200] hover:underline">Vercel</a>,{' '}
+              <a href="https://telegram.org/privacy" className="text-[#8ac200] hover:underline">Telegram</a> e{' '}
+              <a href="https://osmfoundation.org/wiki/Privacy_Policy" className="text-[#8ac200] hover:underline">OpenStreetMap</a>.
             </p>
 
             <p className="font-bold text-[#0F0F0F]">Última atualização: 20 de outubro de 2026.</p>

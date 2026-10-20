@@ -114,7 +114,6 @@ export function CookieBanner() {
         <div
           className="fixed inset-x-0 bottom-0 z-[100] border-t-4 border-[#B6D200] bg-[#0F0F0F] text-[#D9D9D9] shadow-[0_-10px_30px_rgba(0,0,0,0.3)]"
           role="dialog"
-          aria-modal="true"
           aria-label="Preferências de privacidade"
         >
           <div className="max-w-6xl mx-auto p-5 md:p-6">
@@ -127,7 +126,7 @@ export function CookieBanner() {
                   aceitar, rejeitar ou ajustar sua preferência. Consulte nossa{' '}
                   <a href="/politica-de-privacidade" className="text-[#B6D200] hover:underline">
                     Política de Privacidade
-                  </a>.
+                  </a>. Rejeitar a medição não impede usar o mapa, entrar com Google ou salvar suas visitas.
                 </p>
               </div>
 
@@ -144,6 +143,7 @@ export function CookieBanner() {
                     <button
                       type="button"
                       role="switch"
+                      aria-label="Permitir Google Analytics 4"
                       aria-checked={analyticsChoice}
                       onClick={() => setAnalyticsChoice((value) => !value)}
                       className={'relative mt-1 h-7 w-12 shrink-0 rounded-full transition-colors ' + (analyticsChoice ? 'bg-[#B6D200]' : 'bg-gray-600')}
@@ -155,9 +155,9 @@ export function CookieBanner() {
                   </div>
 
                   <div className="mt-4 border-t border-white/10 pt-4">
-                    <p className="font-bold text-white">Cookies essenciais</p>
+                    <p className="font-bold text-white">Armazenamento necessário ao serviço</p>
                     <p className="text-xs md:text-sm text-gray-400 mt-1">
-                      Necessários para recursos básicos e para registrar sua escolha de privacidade. Sempre ativos.
+                      Guardam sua escolha de privacidade. No mapa, o armazenamento local mantém suas marcações e o Firebase mantém a autenticação quando você escolhe entrar. Esses recursos não são desativados pela recusa ao Analytics.
                     </p>
                   </div>
                 </div>
@@ -169,13 +169,13 @@ export function CookieBanner() {
                   onClick={() => saveConsent(true)}
                   className="px-6 py-3 bg-[#B6D200] hover:bg-[#8ac200] text-[#0F0F0F] font-black uppercase tracking-wider rounded-lg transition-colors text-sm"
                 >
-                  Aceitar
+                  Aceitar medição
                 </button>
 
                 <button
                   type="button"
                   onClick={() => saveConsent(false)}
-                  className="px-6 py-3 bg-white/10 hover:bg-white/15 border border-white/15 text-white font-bold uppercase tracking-wider rounded-lg transition-colors text-sm"
+                  className="px-6 py-3 bg-[#B6D200] hover:bg-[#8ac200] text-[#0F0F0F] font-black uppercase tracking-wider rounded-lg transition-colors text-sm"
                 >
                   Rejeitar não essenciais
                 </button>
