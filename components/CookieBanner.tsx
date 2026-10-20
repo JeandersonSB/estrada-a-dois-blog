@@ -2,6 +2,7 @@
 
 import Script from 'next/script';
 import { useEffect, useState } from 'react';
+import { ANALYTICS_ID, applyAnalyticsConsent, initializeAnalytics } from '@/lib/analytics-consent';
 
 const STORAGE_KEY = 'cookie-consent-v2';
 
@@ -47,13 +48,14 @@ export function CookieBanner() {
 
   useEffect(() => {
     const stored = readStoredConsent();
+    applyAnalyticsConsent(stored?.analytics === true);
 
     if (stored) {
+      // Hydrate the browser-only preference after SSR, before loading Analytics.
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setAnalyticsEnabled(stored.analytics);
       setAnalyticsChoice(stored.analytics);
     } else {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setShowBanner(true);
     }
 
@@ -65,17 +67,32 @@ export function CookieBanner() {
     };
 
     window.addEventListener('open-cookie-settings', openSettings);
-    return () => window.removeEventListener('open-cookie-settings', openSettings);
+    const syncConsent = (event: StorageEvent) => {
+      if (event.key !== STORAGE_KEY && event.key !== null) return;
+      const current = readStoredConsent();
+      applyAnalyticsConsent(current?.analytics === true);
+      setAnalyticsEnabled(current?.analytics === true);
+      setAnalyticsChoice(current?.analytics === true);
+      if (!current) setShowBanner(true);
+    };
+    window.addEventListener('storage', syncConsent);
+    return () => {
+      window.removeEventListener('open-cookie-settings', openSettings);
+      window.removeEventListener('storage', syncConsent);
+    };
   }, []);
 
   const saveConsent = (analytics: boolean) => {
+    applyAnalyticsConsent(analytics);
     const consent: ConsentState = {
       analytics,
       updatedAt: new Date().toISOString(),
     };
 
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
-    localStorage.removeItem('cookie-consent');
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
+      localStorage.removeItem('cookie-consent');
+    } catch { /* The choice still applies to this page when storage is blocked. */ }
     setAnalyticsEnabled(analytics);
     setAnalyticsChoice(analytics);
     setShowBanner(false);
@@ -85,29 +102,18 @@ export function CookieBanner() {
   return (
     <>
       {analyticsEnabled && (
-        <>
-          <Script
-            id="google-analytics-loader"
-            src="https://www.googletagmanager.com/gtag/js?id=G-1MTMR5WVE5"
-            strategy="afterInteractive"
-          />
-          <Script id="google-analytics-consented" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('consent', 'update', { analytics_storage: 'granted' });
-              gtag('config', 'G-1MTMR5WVE5');
-            `}
-          </Script>
-        </>
+        <Script
+          id="google-analytics-loader"
+          src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_ID}`}
+          strategy="afterInteractive"
+          onReady={initializeAnalytics}
+        />
       )}
 
       {showBanner && (
         <div
           className="fixed inset-x-0 bottom-0 z-[100] border-t-4 border-[#B6D200] bg-[#0F0F0F] text-[#D9D9D9] shadow-[0_-10px_30px_rgba(0,0,0,0.3)]"
           role="dialog"
-          aria-modal="true"
           aria-label="Preferências de privacidade"
         >
           <div className="max-w-6xl mx-auto p-5 md:p-6">
@@ -120,7 +126,7 @@ export function CookieBanner() {
                   aceitar, rejeitar ou ajustar sua preferência. Consulte nossa{' '}
                   <a href="/politica-de-privacidade" className="text-[#B6D200] hover:underline">
                     Política de Privacidade
-                  </a>.
+                  </a>. Rejeitar a medição não impede usar o mapa, entrar com Google ou salvar suas visitas.
                 </p>
               </div>
 
@@ -137,6 +143,7 @@ export function CookieBanner() {
                     <button
                       type="button"
                       role="switch"
+                      aria-label="Permitir Google Analytics 4"
                       aria-checked={analyticsChoice}
                       onClick={() => setAnalyticsChoice((value) => !value)}
                       className={'relative mt-1 h-7 w-12 shrink-0 rounded-full transition-colors ' + (analyticsChoice ? 'bg-[#B6D200]' : 'bg-gray-600')}
@@ -148,9 +155,9 @@ export function CookieBanner() {
                   </div>
 
                   <div className="mt-4 border-t border-white/10 pt-4">
-                    <p className="font-bold text-white">Cookies essenciais</p>
+                    <p className="font-bold text-white">Armazenamento necessário ao serviço</p>
                     <p className="text-xs md:text-sm text-gray-400 mt-1">
-                      Necessários para recursos básicos e para registrar sua escolha de privacidade. Sempre ativos.
+                      Guardam sua escolha de privacidade. No mapa, o armazenamento local mantém suas marcações e o Firebase mantém a autenticação quando você escolhe entrar. Esses recursos não são desativados pela recusa ao Analytics.
                     </p>
                   </div>
                 </div>
@@ -162,13 +169,13 @@ export function CookieBanner() {
                   onClick={() => saveConsent(true)}
                   className="px-6 py-3 bg-[#B6D200] hover:bg-[#8ac200] text-[#0F0F0F] font-black uppercase tracking-wider rounded-lg transition-colors text-sm"
                 >
-                  Aceitar
+                  Aceitar medição
                 </button>
 
                 <button
                   type="button"
                   onClick={() => saveConsent(false)}
-                  className="px-6 py-3 bg-white/10 hover:bg-white/15 border border-white/15 text-white font-bold uppercase tracking-wider rounded-lg transition-colors text-sm"
+                  className="px-6 py-3 bg-[#B6D200] hover:bg-[#8ac200] text-[#0F0F0F] font-black uppercase tracking-wider rounded-lg transition-colors text-sm"
                 >
                   Rejeitar não essenciais
                 </button>

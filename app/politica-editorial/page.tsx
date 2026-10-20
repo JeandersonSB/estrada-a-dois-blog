@@ -43,15 +43,12 @@ export default function PoliticaEditorial() {
               sejam confirmadas em fontes oficiais antes de uma viagem ou procedimento.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">3. Revisão antes da publicação</h2>
+            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">3. Produção e responsabilidade editorial</h2>
             <p>
-              Todo artigo publicado passa por revisão antes de entrar no site. Verificamos clareza, coerência,
-              utilidade, informações técnicas, links, imagens e adequação à proposta do Estrada a Dois.
+              A produção de conteúdo pode contar com inteligência artificial e ferramentas digitais para pesquisa, organização e redação. O Estrada a Dois responde pelo conteúdo publicado, pela seleção de temas e pelas correções. Informação produzida com apoio dessas ferramentas não deve ser confundida com uma experiência vivida por nós.
             </p>
             <p>
-              Ferramentas digitais e inteligência artificial podem auxiliar em pesquisa, organização e estruturação,
-              mas a seleção do tema, a revisão e a decisão de publicação permanecem sob responsabilidade editorial do
-              Estrada a Dois.
+              Nossos critérios de revisão incluem clareza, coerência, utilidade, fontes, informações técnicas, links e imagens. Ilustrações e imagens geradas digitalmente não constituem prova de visita, teste de produto ou registro documental.
             </p>
 
             <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">4. Roteiros e viagens</h2>
@@ -80,11 +77,18 @@ export default function PoliticaEditorial() {
             <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">7. Independência editorial</h2>
             <p>
               Parcerias comerciais, ações com marcas ou conteúdos patrocinados não devem alterar fatos técnicos nem
-              transformar opinião comercial em informação editorial. Quando uma publicação envolver parceria paga,
-              buscamos identificá-la de forma clara ao leitor.
+              transformar opinião comercial em informação editorial. Publicações que envolvam patrocínio, permuta, produto recebido ou links que possam gerar comissão devem informar essa relação de forma clara ao leitor.
             </p>
 
-            <p className="font-bold text-[#0F0F0F]">Última atualização: 9 de outubro de 2026.</p>
+            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">8. Informações do mapa de monumentos</h2>
+            <p>
+              O mapa utiliza o catálogo e a data de atualização indicados na própria ferramenta. A inclusão de um
+              monumento não significa visita da nossa equipe, avaliação do estabelecimento ou vínculo comercial.
+              Marcações pessoais de usuários não são publicadas como avaliações nem usadas como comprovação editorial.
+              Correções de nome, localização ou funcionamento podem ser encaminhadas ao nosso e-mail de contato.
+            </p>
+
+            <p className="font-bold text-[#0F0F0F]">Última atualização: 20 de outubro de 2026.</p>
           </div>
         </div>
       </div>
