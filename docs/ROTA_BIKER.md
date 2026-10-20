@@ -49,7 +49,9 @@ As dependências transitivas `@grpc/grpc-js`, `postcss-selector-parser` e `argpa
 
 Na validação de 20/10/2026, o teste de privacidade e os oito cenários do emulador passaram, assim como a compilação de produção e o CLI legado do js-yaml. O audit de dependências de produção ficou sem alertas. O audit completo ainda aponta GHSA-vfj7-8cjw-p6xm em `braces` (propagado por cinco pacotes de desenvolvimento do ESLint/Next): não há versão corrigida publicada; os padrões usados pelo lint vêm do repositório, não de entrada de visitantes. Esse alerta não foi ocultado nem foi feito downgrade do Next para suprimi-lo. Reavaliar quando houver correção upstream.
 
-Pendente no ambiente real: publicar `firestore.rules` no console do projeto `estrada-a-dois-rota-biker` e confirmar o fluxo com duas contas Google reais. Os testes locais não alteraram contas ou históricos reais.
+Em 20/10/2026, o proprietário confirmou a publicação de `firestore.rules` no console do projeto `estrada-a-dois-rota-biker` e o teste de marcar/desmarcar com persistência após recarregar. O isolamento entre contas passou no emulador; o teste com duas contas Google reais ainda não foi confirmado. Os testes locais não alteraram contas ou históricos reais.
+
+Para o lançamento, `/rota-biker` também está no menu principal (desktop e celular) e no sitemap público do site. O menu usa a versão recolhida até 1023 px para acomodar todos os links.
 
 ## Correção da permissão de localização
 

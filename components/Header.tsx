@@ -14,7 +14,7 @@ export function Header() {
 
   const updateCrownPosition = useCallback(() => {
     // Only update crown position on desktop, mobile has no crown animation
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 1024) {
       setCrownPos(prev => ({ ...prev, opacity: 0 }));
       return;
     }
@@ -45,7 +45,7 @@ export function Header() {
 
   useEffect(() => {
     // Evita Forced Synchronous Layout no carregamento inicial adiando a leitura para momento ocioso
-    if (typeof window !== 'undefined' && window.innerWidth >= 768) {
+    if (typeof window !== 'undefined' && window.innerWidth >= 1024) {
       if ('requestIdleCallback' in window) {
         (window as Window).requestIdleCallback(() => updateCrownPosition());
       } else {
@@ -60,6 +60,7 @@ export function Header() {
 
   const navLinks = [
     { name: 'ROTEIROS', href: '/categoria/roteiros', id: 'roteiros' },
+    { name: 'ROTA BIKER', href: '/rota-biker', id: 'rota-biker' },
     { name: 'DICAS', href: '/categoria/dicas', id: 'dicas' },
     { name: 'EQUIPAMENTOS', href: '/categoria/equipamentos', id: 'equipamentos' },
     { name: 'MANUTENÇÃO', href: '/categoria/manutencao', id: 'manutencao' },
@@ -80,7 +81,7 @@ export function Header() {
           height={42}
           loading="lazy"
           decoding="async"
-          className="hidden md:block absolute top-0 left-0 w-[42px] pointer-events-none transition-all duration-300 ease-out z-0"
+          className="hidden lg:block absolute top-0 left-0 w-[42px] pointer-events-none transition-all duration-300 ease-out z-0"
           style={{ 
             transform: `translate(${crownPos.left}px, ${crownPos.top}px) rotate(${crownPos.rotate}deg)`,
             opacity: crownPos.opacity 
@@ -101,14 +102,14 @@ export function Header() {
         
         {/* Desktop Navigation */}
         <nav 
-          className="space-x-8 text-[15px] font-bold text-[#333333] hidden md:flex z-10"
+          className="space-x-4 xl:space-x-6 text-[13px] xl:text-[14px] font-bold text-[#333333] hidden lg:flex z-10"
           onMouseLeave={() => setHoveredTarget('logo')}
         >
           {navLinks.map((link) => (
             <a 
               key={link.id}
               href={link.href}
-              className="hover:text-[#0F0F0F] transition-colors relative z-10 pl-2"
+              className="hover:text-[#0F0F0F] transition-colors relative z-10 pl-2 whitespace-nowrap"
               ref={(el) => { targetsRef.current[link.id] = el; }}
               onMouseEnter={() => setHoveredTarget(link.id)}
             >
@@ -119,7 +120,7 @@ export function Header() {
 
         {/* Mobile Hamburger Button */}
         <button 
-          className="md:hidden text-[#0F0F0F] p-2 focus:outline-none z-10"
+          className="lg:hidden text-[#0F0F0F] p-2 focus:outline-none z-10"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Abrir Menu"
         >
@@ -135,7 +136,7 @@ export function Header() {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full left-0 top-full flex flex-col py-4 z-40">
+        <div className="lg:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full left-0 top-full flex flex-col py-4 z-40">
           {navLinks.map((link) => (
             <a 
               key={link.id}

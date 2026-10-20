@@ -34,23 +34,21 @@ export default function Explorer() {
   const [destination, setDestination] = useState('');
   const [message, setMessage] = useState('');
   useEffect(() => {
-    try { const data = JSON.parse(localStorage.getItem('ead-biker-visits-v1') || '[]'); if (Array.isArray(data)) setVisited(data.filter(id => typeof id === 'string' && ids.has(id))); } catch { /* Start with empty visits. */ }
-    setLoaded(true);
     const s = services();
-    if (!s) return;
-    return onAuthStateChanged(s.auth, u => {
+    function restoreVisits(u: User | null) {
       setSyncReady(false);
       if (u) setVisited([]);
       else {
         try { const local = JSON.parse(localStorage.getItem('ead-biker-visits-v1') || '[]'); setVisited(Array.isArray(local) ? local.filter(id => typeof id === 'string' && ids.has(id)) : []); } catch { setVisited([]); }
       }
       setUser(u);
-    });
+      setLoaded(true);
+    }
+    if (s) return onAuthStateChanged(s.auth, restoreVisits);
+    // Without Firebase, restore browser-only visits after hydration.
+    const timer = window.setTimeout(() => restoreVisits(null), 0);
+    return () => window.clearTimeout(timer);
   }, []);
-  useEffect(() => {
-    if (!loaded || user) return;
-    try { localStorage.setItem('ead-biker-visits-v1', JSON.stringify(visited)); } catch { setMessage('Não foi possível salvar neste navegador.'); }
-  }, [visited, loaded, user]);
   useEffect(() => {
     const s = services();
     if (!user || !s) return;
@@ -121,7 +119,13 @@ export default function Explorer() {
       keepMarkedVisible(next);
       try { await setDoc(doc(s.db, 'bikerVisits', user.uid), { visits: { [m.id]: next ? true : deleteField() } }, { merge: true }); }
       catch { setMessage('Não foi possível salvar a marcação. Tente novamente.'); }
-    } else { setVisited(current => next ? [...current, m.id] : current.filter(id => id !== m.id)); keepMarkedVisible(next); }
+    } else {
+      const nextVisits = next ? [...visited, m.id] : visited.filter(id => id !== m.id);
+      setVisited(nextVisits);
+      keepMarkedVisible(next);
+      try { localStorage.setItem('ead-biker-visits-v1', JSON.stringify(nextVisits)); }
+      catch { setMessage('Não foi possível salvar neste navegador.'); }
+    }
   }
   async function login() {
     privacyDialog.current?.close();
