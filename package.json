@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "social": "node scripts/social_bot.mjs"
+    "social": "node scripts/social_bot.mjs",
+    "test:security:privacy": "node --experimental-strip-types --test tests/privacy.test.mjs",
+    "test:security:rules": "node --test tests/firestore-rules.test.mjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
@@ -36,5 +38,12 @@
     "eslint-config-next": "16.4.0",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "overrides": {
+    "@grpc/grpc-js": "1.14.6",
+    "postcss-selector-parser": "7.1.6",
+    "js-yaml": {
+      "argparse": "2.0.1"
+    }
   }
 }

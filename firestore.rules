@@ -1,0 +1,73 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function ownsDocument(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    // Generated from monuments.json. Regenerate when adding monument IDs.
+    function monumentIds() {
+      return [
+        '28ff06f4f7139402',
+        'bb34785bb71c9ffd',
+        '4017e9cf25b05570',
+        'e8a6a5efa0fa4650',
+        '702b9255802d1133',
+        'd0b075141239afda',
+        '782988960100ca0f',
+        'f33d43c1306116cc',
+        '5ba377c8848471a4',
+        '202bb30d3c56b455',
+        'dab413a7c161119d',
+        '20341b3aa76e7e78',
+        'cd53a5303d9228c8',
+        'c9a71d0b208a032d',
+        '9db2645299bf7578',
+        '28d8a52e73deea39',
+        '2e99c22af02667da',
+        '1bd4bbd09dd4326d',
+        '0b1113915d605464',
+        'aca06531bd0b8301',
+        '9ecd3efe6428f177',
+        '46e37a95c26bf4a5',
+        '89e91836dbbc072b',
+        '009f82c4714dcaa6',
+        '1c5d33a2b166674b',
+        'f2ee27c40490db95',
+        '90860b85f7a73459',
+        'a73234f7fdf065da',
+        'fb6fa4f1b1d81ec5',
+        '8b52e305510f7f4d',
+        'fac98efe5cd32da5',
+        '962d09dcc44eb506',
+        '673377fbe5d433db',
+        '972d03a782639e15',
+        '32cf04e5b0b6dc52',
+        '78661860d36eee58',
+        '978ab71cd51d889e',
+        '20ba538ba68a6c69',
+        'b0aeee019ac7828a',
+        '67da1e3f40594cc2',
+        '580a27b995614c83',
+        '3327d5a2feda033c',
+        '9ea8b501fe4159e6'
+      ];
+    }
+
+    function validVisits() {
+      let data = request.resource.data;
+      return data.keys().hasOnly(['visits'])
+        && data.keys().hasAll(['visits'])
+        && data.visits is map
+        && data.visits.size() <= 43
+        && data.visits.keys().hasOnly(monumentIds())
+        && data.visits.values().hasOnly([true]);
+    }
+
+    match /bikerVisits/{uid} {
+      allow get, delete: if ownsDocument(uid);
+      allow list: if false;
+      allow create, update: if ownsDocument(uid) && validVisits();
+    }
+  }
+}

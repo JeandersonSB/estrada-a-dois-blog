@@ -2,6 +2,7 @@
 
 import Script from 'next/script';
 import { useEffect, useState } from 'react';
+import { ANALYTICS_ID, applyAnalyticsConsent, initializeAnalytics } from '@/lib/analytics-consent';
 
 const STORAGE_KEY = 'cookie-consent-v2';
 
@@ -47,13 +48,14 @@ export function CookieBanner() {
 
   useEffect(() => {
     const stored = readStoredConsent();
+    applyAnalyticsConsent(stored?.analytics === true);
 
     if (stored) {
+      // Hydrate the browser-only preference after SSR, before loading Analytics.
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setAnalyticsEnabled(stored.analytics);
       setAnalyticsChoice(stored.analytics);
     } else {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setShowBanner(true);
     }
 
@@ -65,17 +67,32 @@ export function CookieBanner() {
     };
 
     window.addEventListener('open-cookie-settings', openSettings);
-    return () => window.removeEventListener('open-cookie-settings', openSettings);
+    const syncConsent = (event: StorageEvent) => {
+      if (event.key !== STORAGE_KEY && event.key !== null) return;
+      const current = readStoredConsent();
+      applyAnalyticsConsent(current?.analytics === true);
+      setAnalyticsEnabled(current?.analytics === true);
+      setAnalyticsChoice(current?.analytics === true);
+      if (!current) setShowBanner(true);
+    };
+    window.addEventListener('storage', syncConsent);
+    return () => {
+      window.removeEventListener('open-cookie-settings', openSettings);
+      window.removeEventListener('storage', syncConsent);
+    };
   }, []);
 
   const saveConsent = (analytics: boolean) => {
+    applyAnalyticsConsent(analytics);
     const consent: ConsentState = {
       analytics,
       updatedAt: new Date().toISOString(),
     };
 
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
-    localStorage.removeItem('cookie-consent');
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
+      localStorage.removeItem('cookie-consent');
+    } catch { /* The choice still applies to this page when storage is blocked. */ }
     setAnalyticsEnabled(analytics);
     setAnalyticsChoice(analytics);
     setShowBanner(false);
@@ -85,22 +102,12 @@ export function CookieBanner() {
   return (
     <>
       {analyticsEnabled && (
-        <>
-          <Script
-            id="google-analytics-loader"
-            src="https://www.googletagmanager.com/gtag/js?id=G-1MTMR5WVE5"
-            strategy="afterInteractive"
-          />
-          <Script id="google-analytics-consented" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('consent', 'update', { analytics_storage: 'granted' });
-              gtag('config', 'G-1MTMR5WVE5');
-            `}
-          </Script>
-        </>
+        <Script
+          id="google-analytics-loader"
+          src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_ID}`}
+          strategy="afterInteractive"
+          onReady={initializeAnalytics}
+        />
       )}
 
       {showBanner && (
