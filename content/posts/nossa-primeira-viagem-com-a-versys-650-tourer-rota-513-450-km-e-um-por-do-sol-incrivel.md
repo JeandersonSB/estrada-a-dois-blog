@@ -3,7 +3,7 @@ title: 'Nossa primeira viagem com a Versys 650 Tourer: Rota 513, 450 km e um pô
 status: 🟢 Publicado
 date: 2026-10-21T18:00:00
 category: Roteiros
-image: /images/blog/capa.webp
+image: "/images/blog/nossa-primeira-viagem-com-a-versys-650-tourer-rota-513-450-km-e-um-por-do-sol-incrivel.webp"
 excerpt: Nossa primeira viagem com a Kawasaki Versys 650 Tourer rendeu aproximadamente 450 km entre Guarapuava e Ponta Grossa! 🏍️ Visitamos a Rota 513 para garantir mais um carimbo da Rota Biker, reencontramos a família e aproveitamos um pôr do sol incrível pelas estradas do Paraná.
 ---
 
