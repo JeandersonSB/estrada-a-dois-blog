@@ -48,6 +48,13 @@ export function distanceKm(a: Coordinates, b: Coordinates) {
   const h = Math.sin(dLat / 2) ** 2 + Math.cos(radians(a.lat)) * Math.cos(radians(b.lat)) * Math.sin(dLng / 2) ** 2;
   return 6371.0088 * 2 * Math.asin(Math.sqrt(Math.max(0, Math.min(1, h))));
 }
+export function rankNextStops<T extends Coordinates & { id: string; name: string }>(catalog: readonly T[], stopIds: readonly string[], origin: Coordinates | null) {
+  const lastStop = catalog.find(m => m.id === stopIds.at(-1));
+  const reference = lastStop || origin;
+  return catalog.filter(m => !stopIds.includes(m.id))
+    .map(m => ({ ...m, distance: reference ? distanceKm(reference, m) : null }))
+    .sort((a, b) => a.distance !== null && b.distance !== null ? a.distance - b.distance || a.name.localeCompare(b.name) : a.name.localeCompare(b.name));
+}
 export function mapsUrl(origin: Coordinates, destination: Coordinates) {
   return mapsRouteUrl([origin, destination]);
 }

@@ -124,7 +124,10 @@ export default function PoliticaPrivacidade() {
               Google Maps ou Waze, as informações necessárias ao trajeto são encaminhadas ao serviço escolhido.
               Você também pode digitar a cidade ou endereço de partida. Esse endereço e a sequência do roteiro
               ficam na memória desta página e não são salvos no histórico da conta; são enviados ao Google Maps
-              quando você escolhe abrir o roteiro. Fechar ou recarregar a página limpa esse planejamento.
+              quando você escolhe abrir o roteiro. Ao clicar em “Localizar ponto de partida”, o texto digitado
+              também é enviado ao serviço Photon/Komoot, baseado em dados do OpenStreetMap, para encontrar
+              a posição e ordenar a primeira parada. A busca só ocorre por sua ação, e os resultados ficam
+              temporariamente na memória da página. Fechar ou recarregar a página limpa esse planejamento.
               O mapa utiliza o OpenStreetMap, que pode receber dados técnicos necessários ao carregamento.
             </p>
             <p>

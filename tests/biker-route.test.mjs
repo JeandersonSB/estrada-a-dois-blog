@@ -1,9 +1,28 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { mapsRouteUrl, mapsUrl, splitRoute, MAX_ROUTE_LOCATIONS } from '../app/rota-biker/helpers.ts';
+import { mapsRouteUrl, mapsUrl, splitRoute, MAX_ROUTE_LOCATIONS, rankNextStops, distanceKm } from '../app/rota-biker/helpers.ts';
 
 const stops = Array.from({ length: 9 }, (_, index) => ({ lat: -25 + index / 10, lng: -51 + index / 10 }));
 const text = point => typeof point === 'string' ? point : `${point.lat},${point.lng}`;
+
+test('next stops follow the last selected stop, and recalculate after reorder/removal', () => {
+  const origin = { lat: 0, lng: 0 };
+  const catalog = [
+    { id: 'a', name: 'First', lat: 0, lng: 1 },
+    { id: 'b', name: 'Second', lat: 0, lng: 2 },
+    { id: 'c', name: 'Far from origin', lat: 0, lng: 10 },
+    { id: 'd', name: 'Close to last stop', lat: 0, lng: 9 },
+  ];
+  assert.equal(rankNextStops(catalog, [], origin)[0].id, 'a');
+  const afterFirst = rankNextStops(catalog, ['c'], origin);
+  assert.equal(afterFirst[0].id, 'd'); // From origin it would have been a.
+  assert.equal(afterFirst[0].distance, distanceKm(catalog[2], catalog[3]));
+  assert.equal(afterFirst.some(m => m.id === 'c'), false);
+  assert.equal(rankNextStops(catalog, ['c', 'a'], origin)[0].id, 'b');
+  assert.equal(rankNextStops(catalog, ['a', 'c'], origin)[0].id, 'd');
+  assert.equal(rankNextStops(catalog, ['c'], null)[0].id, 'd');
+  assert.equal(rankNextStops(catalog, [], null).every(m => m.distance === null), true);
+});
 
 test('ten locations keep the chosen origin, all eight waypoints and final destination', () => {
   const points = ['Guarapuava, PR, Brasil', ...stops];
