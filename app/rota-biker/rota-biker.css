@@ -79,3 +79,14 @@
 .biker .biker-unmark:hover{filter:brightness(.94)}
 .biker-map-popup a.leaflet-popup-close-button{top:5px;right:5px;width:30px;height:30px;font-size:24px;color:#403939}
 .biker-map .leaflet-interactive:focus-visible{outline:3px solid #6554c0;outline-offset:4px}
+
+.biker-install{margin:-8px 0 22px;font-size:12px;color:#55594a}
+.biker-install>summary{display:flex;align-items:center;gap:8px;cursor:pointer;width:fit-content;min-height:44px;font-weight:600;list-style:none;text-decoration:underline;text-underline-offset:3px}
+.biker-install>summary::-webkit-details-marker{display:none}
+.biker-install>summary:focus-visible{outline:3px solid #6554c0;outline-offset:3px}
+.biker-install-content{background:#fff;border:1px solid #d8d5cb;border-radius:12px;padding:16px 20px;max-width:620px;font-size:13px;line-height:1.7}
+.biker-install-content p{margin:0 0 12px}
+.biker-install-content ul{padding-left:20px;list-style:disc;margin:12px 0}
+.biker-install-content li{margin:8px 0}
+.biker-install-content small{font-size:12px;color:#68665e}
+.biker .biker-install-content button{background:#edf6ce;border-color:#c3d980;min-height:44px}

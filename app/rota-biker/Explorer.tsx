@@ -7,6 +7,7 @@ import { doc, onSnapshot, setDoc, deleteField } from 'firebase/firestore';
 import { services } from './firebase';
 import monuments from './monuments.json';
 import { matchesSearch, MAX_ROUTE_LOCATIONS, type Coordinates } from './helpers';
+import InstallShortcut from './InstallShortcut';
 import RoutePlanner, { emptyTripPlan, type TripPlan } from './RoutePlanner';
 import 'leaflet/dist/leaflet.css';
 import './rota-biker.css';
@@ -79,7 +80,7 @@ export default function Explorer() {
     }).catch(() => setMessage('Não foi possível carregar o mapa. Abra Filtros para consultar a lista de monumentos.'));
     return () => { cancelled = true; popup.current?.off(); popup.current = null; routeLabels.current = {}; map.current?.remove(); map.current = null; markerById.current = {}; locationMarker.current = null; };
   }, []);
-  const visible = useMemo(() => monuments.filter(m => matchesSearch(query, [m.name, m.city, m.state, m.stateCode, m.country, ...m.keywords]) && (filter === 'all' || (filter === 'visited' ? visited.includes(m.id) : !visited.includes(m.id)))), [query, filter, visited]);
+  const visible = useMemo(() => monuments.filter(m => matchesSearch(query, [m.name, m.city, m.state, m.stateCode, m.country, ...m.keywords]) && (filter === 'all' || (filter === 'visited' ? visited.includes(m.id) : !visited.includes(m.id)))).sort((a, b) => Number(visited.includes(a.id)) - Number(visited.includes(b.id)) || a.name.localeCompare(b.name, 'pt-BR', { sensitivity: 'base', numeric: true }) || a.city.localeCompare(b.city, 'pt-BR') || a.number - b.number), [query, filter, visited]);
   const routeStops = useMemo(() => plan.stopIds.map(id => monuments.find(m => m.id === id)).filter((m): m is Monument => !!m), [plan.stopIds]);
   const mapPoints = useMemo(() => [...visible, ...routeStops.filter(m => !visible.some(point => point.id === m.id))], [visible, routeStops]);
   useEffect(() => {
@@ -170,20 +171,6 @@ export default function Explorer() {
     try { await signInWithPopup(s.auth, new GoogleAuthProvider()); }
     catch { setMessage('Login não concluído. Você pode tentar novamente.'); }
   }
-  function story() {
-    const canvas = document.createElement('canvas'); canvas.width = 1080; canvas.height = 1920;
-    const ctx = canvas.getContext('2d'); if (!ctx) return;
-    ctx.fillStyle = '#242323'; ctx.fillRect(0, 0, 1080, 1920);
-    ctx.fillStyle = '#B6D200'; ctx.fillRect(80, 160, 120, 12);
-    ctx.font = 'bold 42px sans-serif'; ctx.fillText('ESTRADA A DOIS', 80, 260);
-    ctx.fillStyle = '#fff'; ctx.font = 'bold 86px sans-serif'; ctx.fillText('MINHA ROTA', 80, 450); ctx.fillText('BIKER', 80, 555);
-    ctx.fillStyle = '#B6D200'; ctx.font = 'bold 240px sans-serif'; ctx.fillText(String(visited.length), 80, 870);
-    ctx.fillStyle = '#fff'; ctx.font = '40px sans-serif'; ctx.fillText(`de ${monuments.length} pontos visitados`, 80, 950);
-    ctx.strokeStyle = '#777'; ctx.strokeRect(80, 1060, 920, 530);
-    monuments.forEach(m => { ctx.beginPath(); ctx.fillStyle = visited.includes(m.id) ? '#B6D200' : '#666'; ctx.arc(125 + (m.lng + 55) / 21 * 830, 1100 + (-m.lat - 6) / 28 * 440, 8, 0, Math.PI * 2); ctx.fill(); });
-    ctx.font = '30px sans-serif'; ctx.fillStyle = '#ddd'; ctx.fillText('Cada ponto, uma nova história.', 80, 1680); ctx.fillText('estradaadois.com/rota-biker', 80, 1770);
-    canvas.toBlob(blob => { if (!blob) return; const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'meu-progresso-rota-biker.png'; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); });
-  }
   function locate(forRoute = false) {
     if (forRoute) { setOrigin(null); setLocationError(''); }
     if (!navigator.geolocation) { const error = 'Seu navegador não oferece localização. Use um navegador com localização para planejar a viagem.'; setLocationError(error); setMessage(error); return; }
@@ -225,8 +212,9 @@ export default function Explorer() {
       <p className="biker-privacy-detail">Mudou de ideia? Você pode pedir a exclusão dos seus dados ou retirar essa permissão. Veja como na <a href="/politica-de-privacidade#rota-biker" target="_blank" rel="noopener noreferrer">Política de Privacidade ↗</a>.</p>
       <div className="biker-privacy-actions"><button autoFocus onClick={() => privacyDialog.current?.close()}>Recusar</button><button className="biker-primary" onClick={login}>Aceitar e continuar</button></div>
     </dialog>
-    <div className="biker-toolbar"><div><strong>{visited.length} / {monuments.length}</strong> pontos visitados <progress value={visited.length} max={monuments.length} /></div><button onClick={openPlanner} aria-expanded={planning}>Planejar viagem</button><button onClick={story}>Cartão para Stories ↓</button></div>
+    <div className="biker-toolbar"><div><strong>{visited.length} / {monuments.length}</strong> pontos visitados <progress value={visited.length} max={monuments.length} /></div><button onClick={openPlanner} aria-expanded={planning}>Planejar viagem</button></div>
     <p className="biker-storage">{user ? (syncReady ? 'Marcações privadas sincronizadas com sua conta.' : 'Sincronizando sua conta…') : 'Entre com Google e leve suas conquistas com você: acesse seus pontos salvos em qualquer dispositivo.'}</p>
+    <InstallShortcut />
     {message && <div className="biker-message" role="status">{message}<button aria-label="Fechar aviso" onClick={() => setMessage('')}>×</button></div>}
     {planning && <RoutePlanner plan={plan} setPlan={setPlan} origin={origin} locating={locating} locationError={locationError} locationAccuracy={locationAccuracy} visited={visited} onLocate={() => locate(true)} onSelect={selectRouteStop} onAdd={addRouteStop} />}
     <div className="biker-workspace">
@@ -234,7 +222,7 @@ export default function Explorer() {
         <label className="biker-search">Buscar monumento<input type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Nome, cidade, estado ou número…" /></label>
         <details className="biker-filters" ref={filtersPanel}>
           <summary aria-label="Abrir filtros e lista de monumentos"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><path d="M4 5h16M7 12h10M10 19h4"/><circle cx="9" cy="5" r="2" fill="currentColor"/><circle cx="15" cy="12" r="2" fill="currentColor"/></svg><span>Filtros</span>{filter !== 'all' && <i aria-label="Filtro ativo" />}</summary>
-          <div className="biker-filter-panel"><div className="biker-filter-heading"><strong>Filtrar monumentos</strong><button onClick={() => { if (filtersPanel.current) filtersPanel.current.open = false; }} aria-label="Fechar filtros">×</button></div><label className="biker-search">Mostrar<select value={filter} onChange={e => setFilter(e.target.value)}><option value="all">Todos os pontos</option><option value="visited">Já visitados</option><option value="pending">Ainda não visitei</option></select></label><p className="biker-result" role="status">{visible.length} pontos encontrados</p><div className="biker-list">{visible.map(m => <button key={m.id} className={[selected?.id === m.id ? 'active' : '', visited.includes(m.id) ? 'biker-row-visited' : ''].filter(Boolean).join(' ')} onClick={() => { setSelected(m); map.current?.setView([m.lat, m.lng], 12); if (filtersPanel.current) filtersPanel.current.open = false; }}><span className={visited.includes(m.id) ? 'biker-dot visited' : 'biker-dot'} /><span>{visited.includes(m.id) && <span className="biker-visited-check" aria-label="Visitado">✅ </span>}{m.name}<small>{m.city} · {m.stateCode || m.country} — {visited.includes(m.id) ? 'Já visitei' : 'Quero conhecer'}</small></span><span>↗</span></button>)}{!visible.length && <p>Nenhum ponto encontrado.</p>}</div></div>
+          <div className="biker-filter-panel"><div className="biker-filter-heading"><strong>Filtrar monumentos</strong><button onClick={() => { if (filtersPanel.current) filtersPanel.current.open = false; }} aria-label="Fechar filtros">×</button></div><label className="biker-search">Mostrar<select value={filter} onChange={e => setFilter(e.target.value)}><option value="all">Todos os pontos</option><option value="visited">Já visitados</option><option value="pending">Ainda não visitei</option></select></label><p className="biker-result" role="status">{visible.length} pontos · {filter === 'all' ? 'Não visitados primeiro · ' : ''}Nome A–Z</p><div className="biker-list">{visible.map(m => <button key={m.id} className={[selected?.id === m.id ? 'active' : '', visited.includes(m.id) ? 'biker-row-visited' : ''].filter(Boolean).join(' ')} onClick={() => { setSelected(m); map.current?.setView([m.lat, m.lng], 12); if (filtersPanel.current) filtersPanel.current.open = false; }}><span className={visited.includes(m.id) ? 'biker-dot visited' : 'biker-dot'} /><span>{visited.includes(m.id) && <span className="biker-visited-check" aria-label="Visitado">✅ </span>}{m.name}<small>#{m.number} · {m.city} · {m.stateCode || m.country} — {visited.includes(m.id) ? 'Já visitei' : 'Quero conhecer'}</small></span><span>↗</span></button>)}{!visible.length && <p>Nenhum ponto encontrado.</p>}</div></div>
         </details>
       </div>
       <div className="biker-map-wrap"><div ref={container} className="biker-map" aria-label="Mapa interativo dos pontos da Rota Biker" /><button className="biker-locate" disabled={locating} onClick={() => locate()}>◎ {locating ? 'Localizando…' : 'Minha localização'}</button><div className="biker-legend">● Pendente <span>● Visitado</span>{plan.stopIds.length > 0 && <span className="biker-route-legend">① Paradas do roteiro</span>}{origin && <span className="biker-user-location">● Você</span>}</div></div>

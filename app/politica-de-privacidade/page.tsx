@@ -111,7 +111,7 @@ export default function PoliticaPrivacidade() {
               Sem login, as marcações ficam no armazenamento local do navegador. Ao aceitar o aviso e entrar com
               Google, você autoriza o uso do nome, e-mail, foto de perfil (se disponível) e identificador da conta
               fornecidos pelo Google para autenticação. As marcações são associadas ao identificador da conta no
-              Firebase para permitir acesso privado e sincronização entre dispositivos. As visitas marcadas sem login permanecem neste navegador e não são importadas automaticamente para a conta. O cartão para Stories é gerado no seu dispositivo; baixar a imagem não a publica nas redes sociais.
+              Firebase para permitir acesso privado e sincronização entre dispositivos. As visitas marcadas sem login permanecem neste navegador e não são importadas automaticamente para a conta.
             </p>
             <p>
               Utilizamos Google Authentication/Firebase Authentication e Cloud Firestore para essas finalidades.
