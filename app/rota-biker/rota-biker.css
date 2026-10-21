@@ -80,13 +80,28 @@
 .biker-map-popup a.leaflet-popup-close-button{top:5px;right:5px;width:30px;height:30px;font-size:24px;color:#403939}
 .biker-map .leaflet-interactive:focus-visible{outline:3px solid #6554c0;outline-offset:4px}
 
-.biker-install{margin:-8px 0 22px;font-size:12px;color:#55594a}
-.biker-install>summary{display:flex;align-items:center;gap:8px;cursor:pointer;width:fit-content;min-height:44px;font-weight:600;list-style:none;text-decoration:underline;text-underline-offset:3px}
-.biker-install>summary::-webkit-details-marker{display:none}
-.biker-install>summary:focus-visible{outline:3px solid #6554c0;outline-offset:3px}
-.biker-install-content{background:#fff;border:1px solid #d8d5cb;border-radius:12px;padding:16px 20px;max-width:620px;font-size:13px;line-height:1.7}
-.biker-install-content p{margin:0 0 12px}
-.biker-install-content ul{padding-left:20px;list-style:disc;margin:12px 0}
-.biker-install-content li{margin:8px 0}
-.biker-install-content small{font-size:12px;color:#68665e}
-.biker .biker-install-content button{background:#edf6ce;border-color:#c3d980;min-height:44px}
+.biker-install-mobile{display:none}
+@media(max-width:720px){
+ .biker-install-mobile{display:block;margin:0 0 22px}
+ .biker-install-banner{display:grid;gap:14px;padding:18px;background:#edf6ce;border:1px solid #c3d980;border-radius:14px}
+ .biker-install-banner strong{display:block;font-size:16px;line-height:1.4;color:#34392a}
+ .biker-install-banner span{display:block;font-size:12px;line-height:1.6;margin-top:4px;color:#55594a}
+ .biker .biker-install-banner button{display:flex;justify-content:center;align-items:center;gap:10px;width:100%;min-height:48px;background:#B6D200;border-color:#a3bd00;font-size:15px}
+ .biker-install-banner button span{font-size:18px;margin:0;color:inherit}
+ .biker-install-status{font-size:12px;color:#55594a}
+}
+.biker-install-dialog{position:fixed;inset:0;margin:auto;width:min(420px,calc(100% - 28px));max-height:calc(100dvh - 40px);overflow:auto;overscroll-behavior:contain;border:1px solid #d8d5cb;border-radius:22px;background:#fff;padding:30px 24px 22px;color:#242323;text-align:center;box-shadow:0 20px 70px #0004}
+.biker-install-dialog::backdrop{background:#13170bb3}
+.biker .biker-install-close{position:absolute;right:10px;top:8px;border:0;background:transparent;font-size:26px;padding:0;min-width:44px;min-height:44px}
+.biker-install-symbol{display:grid;place-items:center;width:72px;height:72px;border-radius:22px;background:#edf6ce;color:#627200;margin:6px auto 22px}
+.biker-install-dialog .biker-eyebrow{font-size:10px;letter-spacing:1.4px}
+.biker .biker-install-dialog h2{font-size:26px;line-height:1.15;letter-spacing:-.6px;margin:12px 0 16px}
+.biker .biker-install-dialog p{font-size:14px;line-height:1.7;color:#68665e;margin:0 0 22px}
+.biker .biker-install-confirm{width:100%;min-height:48px;font-size:15px}
+.biker .biker-install-later{display:block;width:100%;min-height:44px;border:0;background:transparent;margin-top:8px;font-size:13px;color:#68665e}
+.biker-install-detail{display:block;font-size:11px;line-height:1.6;color:#77766e;margin-top:8px}
+.biker-install-steps{background:#f6f5f0;border:1px solid #dddacf;border-radius:12px;padding:16px;text-align:left;font-size:13px;line-height:1.6}
+.biker-install-steps ol{padding-left:18px;list-style:decimal;margin:12px 0}
+.biker-install-steps li{margin:8px 0}
+.biker-install-steps small{display:block;color:#68665e;font-size:11px}
+@media(min-width:721px){.biker-install-dialog{display:none!important}}
