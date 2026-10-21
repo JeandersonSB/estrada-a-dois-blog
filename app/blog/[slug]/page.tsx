@@ -9,6 +9,7 @@ import {
   slugifyCategory,
 } from '@/lib/posts';
 import { SmartImage } from '@/components/SmartImage';
+import { TravelSocialCTA } from '@/components/TravelSocialCTA';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
@@ -210,6 +211,10 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           className="prose prose-lg md:prose-xl mx-auto text-[#444444] prose-headings:font-black prose-headings:text-[#0F0F0F] prose-a:text-[#B6D200] prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl prose-img:shadow-lg prose-blockquote:border-l-4 prose-blockquote:border-[#B6D200] prose-blockquote:bg-white prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:shadow-sm prose-blockquote:not-italic prose-blockquote:font-medium prose-strong:text-[#0F0F0F]"
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
         />
+
+        {slug === 'nossa-primeira-viagem-com-a-versys-650-tourer-rota-513-450-km-e-um-por-do-sol-incrivel' && (
+          <TravelSocialCTA articleSlug={slug} />
+        )}
 
         {/* SEÇÃO ARTIGOS RELACIONADOS / LEIA TAMBÉM (Internal Linking Automático para SEO) */}
         {relatedPosts.length > 0 && (
