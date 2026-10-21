@@ -1,6 +1,6 @@
 ---
 title: 'Nossa primeira viagem com a Versys 650 Tourer: Rota 513, 450 km e um pôr do sol incrível!'
-status: ⏳ Rascunho
+status: 🟢 Publicado
 date: 2026-10-21T18:00:00
 category: Roteiros
 image: /images/blog/capa.webp
