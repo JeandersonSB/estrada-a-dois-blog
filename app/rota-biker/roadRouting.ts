@@ -17,7 +17,8 @@ export function roadDistance(matrix: RoadMatrix | null, from: Coordinates | null
   return source < 0 || destination < 0 ? null : matrix.distances[source][destination];
 }
 
-// Preview uses the public OSRM demo. Configure a dedicated OSRM endpoint for production.
+// Free public tool: the community OSRM endpoint has no availability guarantee.
+// Use NEXT_PUBLIC_BIKER_ROUTER_URL for a dedicated provider as usage grows.
 export async function fetchRoadMatrix(points: readonly Coordinates[], signal: AbortSignal): Promise<RoadMatrix> {
   if (points.length < 2 || points.length > 100 || points.some(p => !Number.isFinite(p.lat) || !Number.isFinite(p.lng) || Math.abs(p.lat) > 90 || Math.abs(p.lng) > 180)) throw new Error('Pontos inválidos para calcular a rota.');
   const keys = points.map(coordinateKey);

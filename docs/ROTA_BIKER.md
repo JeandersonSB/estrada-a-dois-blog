@@ -66,7 +66,7 @@ O cabeçalho global `Permissions-Policy: geolocation=()` bloqueava a API antes d
 
 ## Testes de múltiplas paradas
 
-`node --experimental-strip-types --test tests/biker-route.test.mjs` verifica 10 locais, retorno à origem, sequência e limites das etapas móveis, compatibilidade de um destino, codificação de endereços e rejeição de excesso/coordenadas inválidas. Verificar na prévia: adicionar pelos detalhes e seletor; impedir duplicação; reordenar/remover; limite de 9 monumentos (8 com volta); GPS recusado e alternativa por endereço; marcas de visita independentes; abrir rota completa e etapas em dispositivos reais. Esta alteração é somente para teste, sem merge na main nem publicação em produção.
+`node --experimental-strip-types --test tests/biker-route.test.mjs` verifica 10 locais, retorno à origem, sequência e limites das etapas móveis, compatibilidade de um destino, codificação de endereços e rejeição de excesso/coordenadas inválidas. Verificar na prévia: adicionar pelos detalhes e seletor; impedir duplicação; reordenar/remover; limite de 9 monumentos (8 com volta); GPS recusado e alternativa por endereço; marcas de visita independentes; abrir rota completa e etapas em dispositivos reais. O proprietário autorizou a publicação desta versão em 21/10/2026.
 
 ## Distâncias rodoviárias na prévia
 
@@ -74,7 +74,7 @@ O planejador usa a tabela OSRM (`driving`, `annotations=distance`), em km do per
 
 A tabela direcional inclui catálogo e origem confirmada. Adicionar, remover e reordenar usa a linha da última parada; os trechos exibidos usam a linha do ponto anterior. Não se reutiliza a distância inversa. Não visitados primeiro, por distância crescente, depois visitados com fundo verde e ✅, também por distância. O cache de até quatro tabelas fica na memória, deduplica requisições, limita novos inícios a 1,1 s e expira com o fechamento da página. Respostas de origens antigas não substituem a atual.
 
-Somente para esta prévia de baixo tráfego, o endpoint padrão é o demo público `https://router.project-osrm.org`. Antes de promover para produção, configurar serviço OSRM dedicado em `NEXT_PUBLIC_BIKER_ROUTER_URL` e verificar capacidade e política do provedor. Nenhum segredo ou serviço pago foi configurado. A interface atribui OSRM/OpenStreetMap e oferece link para corrigir o mapa. A política de privacidade explica a consulta externa. A explicação técnica do geocodificador foi removida do formulário a pedido do proprietário, mantendo os detalhes na política.
+O endpoint padrão é o serviço comunitário `https://router.project-osrm.org`, mantido para esta ferramenta gratuita e de baixo tráfego, sem garantia de disponibilidade, latência ou atualização. Mantém atribuição, cache/deduplicação e espaçamento entre consultas. Ele não foi substituído por servidor dedicado nesta publicação; reavaliar capacidade e política e configurar serviço dedicado em `NEXT_PUBLIC_BIKER_ROUTER_URL` antes de ampliar o tráfego. Nenhum segredo ou serviço pago foi configurado. A interface atribui OSRM/OpenStreetMap e oferece link para corrigir o mapa. A política de privacidade explica a consulta externa. A explicação técnica do geocodificador foi removida do formulário a pedido do proprietário, mantendo os detalhes na política.
 
 ## Detalhes no mapa
 
@@ -91,3 +91,7 @@ Validar instalação em dispositivos reais após publicar: Android/Chrome e iPho
 ## Convite de instalação mobile
 
 Substitui o controle recolhido por card e botão verde “Instalar Rota Biker”, apenas no layout mobile (até 720 px). Desktop não renderiza a opção. Convite modal com benefícios reais, CTA, “Agora não”, X, Escape e fechamento pelo fundo. Pode abrir automaticamente 15 s após interação por toque/teclado, somente na aba visível, em mobile, fora do modo instalado e sem outro diálogo aberto (incluindo cookies/login). Registra somente timestamp local de exibição; não convida novamente por 7 dias. Botão manual permanece disponível. Falha do armazenamento limita o convite à sessão do componente. Não dispara instalação nativa automaticamente: ela exige clique no CTA. Sem beforeinstallprompt, mostra instruções específicas para iPhone/iPad ou Android, incluindo navegadores internos. Redimensionar para desktop ou entrar no modo instalado fecha o modal e oculta a opção. Nenhum pedido de notificação ou rastreamento.
+
+## Publicação definitiva
+
+Publicação no domínio www.estradaadois.com autorizada pelo proprietário em 21/10/2026 após os testes. As restrições anteriores de somente prévia não se aplicam à versão aprovada. O erro preexistente de lint em TravelSocialCTA foi corrigido extraindo o handler de clique para função de módulo, sem mudar os parâmetros dos eventos. Lint completo sem erros (avisos anteriores mantidos), oito testes do planejador, teste de privacidade e build passaram. A instalação física e a medição específica de instalações/acessos pelo ícone não foram acrescentadas como testes/eventos desta publicação.
