@@ -41,13 +41,13 @@ E mesmo sendo um trajeto conhecido, a sensação era de estar descobrindo a estr
 
 A Rota 513 tem uma história curiosa para nós.
 
-Ela foi o **primeiro monumento da Rota Biker que conhecemos**, lá no começo dessa nossa história de visitar os monumentos espalhados pelas estradas.
+Ela foi o **[primeiro monumento da Rota Biker que conhecemos](/blog/r15-em-ponta-grossa)**, lá no começo dessa nossa história de visitar os monumentos espalhados pelas estradas.
 
 Só tinha um detalhe...
 
 Naquela época ainda não tínhamos o carimbo no passaporte! Kkkkk.
 
-Desde então visitamos outros lugares, começamos a colecionar os registros e sempre ficava aquela pendência de voltar até Ponta Grossa para completar essa parte da nossa história.
+Desde então [visitamos outros lugares](/blog/paraguai-de-moto-nossa-viagem-de-3-dias-pela-rota-biker), começamos a colecionar os registros e sempre ficava aquela pendência de voltar até Ponta Grossa para completar essa parte da nossa história.
 
 Finalmente conseguimos!
 
@@ -135,7 +135,7 @@ E a diferença é enorme!
 
 A primeira coisa que chama atenção é o conforto.
 
-A posição de pilotagem da Versys é muito mais ereta e relaxada quando comparada à R15. Isso faz bastante diferença, principalmente quando passamos várias horas na estrada.
+A [posição de pilotagem](/blog/ergonomia-na-moto-como-viajar-a-dois-sem-cansaco) da Versys é muito mais ereta e relaxada quando comparada à R15. Isso faz bastante diferença, principalmente quando passamos várias horas na estrada.
 
 Ainda estamos nos adaptando à ciclística, ao peso, à potência e à posição de pilotagem.
 
@@ -181,7 +181,7 @@ Foram muitos quilômetros viajando na R15, então é natural que leve algum temp
 
 Outra vantagem que já estamos aproveitando bastante são os baús da versão Tourer.
 
-Antes, precisávamos pensar muito bem no que levar e em como organizar nossas coisas.
+Antes, precisávamos pensar muito bem [no que levar e em como organizar nossas coisas](/blog/bagagem-para-viagem-de-moto-casal).
 
 Agora temos mais espaço para transportar equipamentos, roupas e outros objetos, além da praticidade de conseguir guardar os capacetes quando paramos em algum lugar.
 
@@ -281,7 +281,7 @@ No total, foram aproximadamente 450 km percorridos em uma tarde e começo de noi
 
 Uma coisa que sempre gostamos de compartilhar no Estrada a Dois é quanto gastamos nas nossas viagens.
 
-Afinal, essas informações ajudam bastante quem também está planejando pegar a estrada.
+Afinal, essas informações ajudam bastante quem também está [planejando pegar a estrada](/blog/combustivel-em-viagem-de-moto-7-passos-para-planejar).
 
 Nesse passeio, nossos gastos foram relativamente baixos.
 
