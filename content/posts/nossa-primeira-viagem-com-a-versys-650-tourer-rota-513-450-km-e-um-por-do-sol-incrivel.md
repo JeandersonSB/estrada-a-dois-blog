@@ -336,4 +336,9 @@ Agora estamos começando uma nova fase com a nossa Kawasaki Versys 650 Tourer, a
 
 Mas uma coisa já podemos dizer: estamos muito animados com os próximos quilômetros!
 
+> 💡 **Leia também nossos outros roteiros autorais:**
+> - [Nossa primeira visita à Rota 513 de Yamaha R15](/blog/r15-em-ponta-grossa)
+> - [Paraguai de moto: nossa viagem de 3 dias pela Rota Biker](/blog/paraguai-de-moto-nossa-viagem-de-3-dias-pela-rota-biker)
+> - [De R15 à Serra do Rio do Rastro: um sonho em duas rodas](/blog/r15-na-serra-do-rio-do-rastro)
+
 Que venham novas estradas, novos monumentos da Rota Biker e muitas outras histórias para compartilhar por aqui. 🏍️💚
