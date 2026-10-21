@@ -126,7 +126,7 @@ export function CookieBanner() {
                   aceitar, rejeitar ou ajustar sua preferência. Consulte nossa{' '}
                   <a href="/politica-de-privacidade" className="text-[#B6D200] hover:underline">
                     Política de Privacidade
-                  </a>. Rejeitar a medição não impede usar o mapa, entrar com Google ou salvar suas visitas.
+                  </a>. Rejeitar cookies opcionais não impede usar o mapa, entrar com Google ou salvar suas visitas.
                 </p>
               </div>
 
@@ -134,9 +134,9 @@ export function CookieBanner() {
                 <div className="rounded-xl border border-white/10 bg-white/5 p-4">
                   <div className="flex items-start justify-between gap-5">
                     <div>
-                      <p className="font-bold text-white">Cookies e medição analítica</p>
+                      <p className="font-bold text-white">Cookies de análise</p>
                       <p className="text-xs md:text-sm text-gray-400 mt-1">
-                        Permite carregar o Google Analytics 4 para medir audiência, páginas acessadas e desempenho
+                        Permite carregar o Google Analytics 4 para entender a audiência, as páginas acessadas e o desempenho
                         do portal. Não é necessário para navegar no site.
                       </p>
                     </div>
@@ -169,7 +169,7 @@ export function CookieBanner() {
                   onClick={() => saveConsent(true)}
                   className="px-6 py-3 bg-[#B6D200] hover:bg-[#8ac200] text-[#0F0F0F] font-black uppercase tracking-wider rounded-lg transition-colors text-sm"
                 >
-                  Aceitar medição
+                  Aceitar cookies
                 </button>
 
                 <button

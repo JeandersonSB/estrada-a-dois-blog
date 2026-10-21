@@ -1,0 +1,16 @@
+{
+  "id": "/rota-biker",
+  "name": "Rota Biker — Estrada a Dois",
+  "short_name": "Rota Biker",
+  "description": "Seus monumentos visitados e suas próximas paradas, a um toque.",
+  "lang": "pt-BR",
+  "start_url": "/rota-biker",
+  "scope": "/rota-biker",
+  "display": "standalone",
+  "background_color": "#f6f5f0",
+  "theme_color": "#B6D200",
+  "icons": [
+    { "src": "/images/rota-biker-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/images/logo-publisher-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

@@ -111,7 +111,7 @@ export default function PoliticaPrivacidade() {
               Sem login, as marcações ficam no armazenamento local do navegador. Ao aceitar o aviso e entrar com
               Google, você autoriza o uso do nome, e-mail, foto de perfil (se disponível) e identificador da conta
               fornecidos pelo Google para autenticação. As marcações são associadas ao identificador da conta no
-              Firebase para permitir acesso privado e sincronização entre dispositivos. As visitas marcadas sem login permanecem neste navegador e não são importadas automaticamente para a conta. O cartão para Stories é gerado no seu dispositivo; baixar a imagem não a publica nas redes sociais.
+              Firebase para permitir acesso privado e sincronização entre dispositivos. As visitas marcadas sem login permanecem neste navegador e não são importadas automaticamente para a conta.
             </p>
             <p>
               Utilizamos Google Authentication/Firebase Authentication e Cloud Firestore para essas finalidades.
@@ -122,6 +122,12 @@ export default function PoliticaPrivacidade() {
               A localização depende de uma permissão separada do navegador e é utilizada para encontrar destinos
               próximos e planejar o trajeto. Suas coordenadas não são gravadas no histórico da conta. Ao abrir o
               Google Maps ou Waze, as informações necessárias ao trajeto são encaminhadas ao serviço escolhido.
+              Você também pode digitar a cidade ou endereço de partida. Esse endereço e a sequência do roteiro
+              ficam na memória desta página e não são salvos no histórico da conta; são enviados ao Google Maps
+              quando você escolhe abrir o roteiro. Ao clicar em “Localizar ponto de partida”, o texto digitado
+              também é enviado ao serviço Photon/Komoot, baseado em dados do OpenStreetMap, para encontrar
+              a posição e ordenar a primeira parada. A busca só ocorre por sua ação, e os resultados ficam
+              temporariamente na memória da página. Fechar ou recarregar a página limpa esse planejamento.
               O mapa utiliza o OpenStreetMap, que pode receber dados técnicos necessários ao carregamento.
             </p>
             <p>
@@ -133,6 +139,9 @@ export default function PoliticaPrivacidade() {
               desmarque os monumentos ou limpe os dados deste site no navegador.
             </p>
 
+            <p>
+              Para calcular distâncias pelas estradas no planejador, as coordenadas da partida localizada ou autorizada por GPS e dos monumentos são enviadas ao serviço OSRM, com dados do OpenStreetMap. O provedor recebe também os dados técnicos da requisição, conforme sua política. As estimativas não incluem trânsito em tempo real e podem diferir das rotas escolhidas pelo Google Maps. O cache das distâncias fica somente na memória da página.
+            </p>
             <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">11. Finalidades, escolhas e conservação</h2>
             <p>
               A medição de audiência e o uso dos dados autorizados no login se baseiam no seu consentimento.

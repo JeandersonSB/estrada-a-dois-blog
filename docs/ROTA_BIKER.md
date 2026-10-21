@@ -21,7 +21,13 @@ Sem configuração, marcações funcionam apenas no navegador. Ao entrar, o hist
 
 ## Planejamento e busca
 
-Origem obrigatória por geolocalização do navegador (sem campo editável), com posição sem cache, alta precisão e timeout de 15 segundos. A pessoa escolhe um monumento em um select ordenado por distância crescente. A distância é Haversine (linha reta), explicitamente identificada na tela, sem representar distância rodoviária. Google Maps recebe origem e destino; Waze recebe o destino e usa a posição atual do próprio aplicativo. Não há múltiplas paradas nesta versão. Não grava a geolocalização em banco, analytics ou cartão.
+Prévia de múltiplas paradas: origem pela geolocalização do navegador (posição sem cache, alta precisão e timeout de 15 segundos) ou cidade/endereço digitado. Para ordenar a primeira parada de uma origem digitada, o botão Localizar ponto de partida consulta Photon/Komoot e oferece até três resultados para confirmação. Não há busca automática ao digitar. O endereço é enviado somente ao clicar, os resultados são mantidos em cache de memória e cada requisição tem timeout de 10 segundos. O endpoint é configurável por NEXT_PUBLIC_BIKER_GEOCODER_URL; o padrão é o serviço público Photon, para uso moderado. A Política de Privacidade explica o envio. Sem confirmar um resultado, o texto ainda pode ser enviado diretamente ao Google Maps para navegação. O GPS é solicitado apenas pelo botão de localização, não ao abrir o planejador.
+
+O roteiro comporta 10 locais no total: origem e até 9 monumentos, ou origem, até 8 monumentos e volta à origem. O usuário pode adicionar pelo seletor ou pelos detalhes do monumento, remover, subir/descer a ordem e limpar as paradas. Não há otimização automática da sequência. Escolher uma parada não altera as visitas nem o Firestore. A origem e a sequência ficam apenas no estado da página; fechar/recarregar limpa o planejamento.
+
+As paradas são numeradas no mapa e permanecem visíveis mesmo quando a busca/filtro oculta outros pontos. A cor de visitado permanece independente. O seletor ordena os monumentos restantes pela distância rodoviária crescente a partir da última parada da sequência. Para a primeira parada, usa o GPS ou o endereço confirmado. Sem coordenadas de origem e sem paradas, usa ordem alfabética e explica como localizar a partida. Adicionar, remover ou reordenar recalcula a referência e as distâncias; a ordem das paradas já escolhidas permanece sob controle do usuário. Cada linha do roteiro também mostra a distância desde o ponto anterior. A volta à origem não substitui a última parada como referência para novas sugestões. O cálculo usa a tabela de percursos OSRM, com OpenStreetMap, sem fallback geométrico.
+
+Google Maps recebe origem, paradas intermediárias na ordem escolhida e destino final (ou origem no circuito). O botão principal abre o roteiro completo. A alternativa por etapas usa até três paradas intermediárias por link para navegadores móveis; a última posição de uma etapa é a primeira da próxima, preservando toda a sequência. Waze recebe somente o monumento escolhido no botão individual de cada parada e utiliza a própria localização para navegar. URLs só são geradas no clique, sem expor a origem em hrefs/Analytics. Não grava geolocalização em banco ou analytics.
 
 Cidades, UF, nomes dos estados e números enriquecidos a partir da lista oficial https://monumentobikers.com.br/ em 19/10/2026; coordenadas preservadas do mapa original. IDs não mudaram, preservando marcações anteriores. Busca por nome, apelidos, cidade, estado, sigla, região, país e número, sem exigir acentos. Siglas e números usam palavras inteiras para evitar, por exemplo, PR corresponder a Prado ou número 1 corresponder a 12. Cajá é exibida como localidade conforme a lista oficial.
 
@@ -56,3 +62,36 @@ Para o lançamento, `/rota-biker` também está no menu principal (desktop e cel
 ## Correção da permissão de localização
 
 O cabeçalho global `Permissions-Policy: geolocation=()` bloqueava a API antes de solicitar permissão. A configuração agora mantém o bloqueio global e aplica uma exceção apenas a `/rota-biker`: `camera=(), microphone=(), geolocation=(self)`. A autorização do navegador e do sistema operacional continua obrigatória. O bloco “Como testar minha localização” foi removido a pedido do usuário.
+
+
+## Testes de múltiplas paradas
+
+`node --experimental-strip-types --test tests/biker-route.test.mjs` verifica 10 locais, retorno à origem, sequência e limites das etapas móveis, compatibilidade de um destino, codificação de endereços e rejeição de excesso/coordenadas inválidas. Verificar na prévia: adicionar pelos detalhes e seletor; impedir duplicação; reordenar/remover; limite de 9 monumentos (8 com volta); GPS recusado e alternativa por endereço; marcas de visita independentes; abrir rota completa e etapas em dispositivos reais. O proprietário autorizou a publicação desta versão em 21/10/2026.
+
+## Distâncias rodoviárias na prévia
+
+O planejador usa a tabela OSRM (`driving`, `annotations=distance`), em km do percurso rodoviário mais rápido, sem trânsito em tempo real. Não são distâncias mínimas absolutas nem garantias de coincidência com o Google Maps. Não há fallback em linha reta. Rotas nulas ficam no fim de cada grupo e mostram “rota indisponível”; falhas permitem tentar novamente.
+
+A tabela direcional inclui catálogo e origem confirmada. Adicionar, remover e reordenar usa a linha da última parada; os trechos exibidos usam a linha do ponto anterior. Não se reutiliza a distância inversa. Não visitados primeiro, por distância crescente, depois visitados com fundo verde e ✅, também por distância. O cache de até quatro tabelas fica na memória, deduplica requisições, limita novos inícios a 1,1 s e expira com o fechamento da página. Respostas de origens antigas não substituem a atual.
+
+O endpoint padrão é o serviço comunitário `https://router.project-osrm.org`, mantido para esta ferramenta gratuita e de baixo tráfego, sem garantia de disponibilidade, latência ou atualização. Mantém atribuição, cache/deduplicação e espaçamento entre consultas. Ele não foi substituído por servidor dedicado nesta publicação; reavaliar capacidade e política e configurar serviço dedicado em `NEXT_PUBLIC_BIKER_ROUTER_URL` antes de ampliar o tráfego. Nenhum segredo ou serviço pago foi configurado. A interface atribui OSRM/OpenStreetMap e oferece link para corrigir o mapa. A política de privacidade explica a consulta externa. A explicação técnica do geocodificador foi removida do formulário a pedido do proprietário, mantendo os detalhes na política.
+
+## Detalhes no mapa
+
+Clicar/tocar em um ponto abre um pop-up Leaflet ancorado no próprio local, com conteúdo React via portal: nome, cidade/estado, número, status, adicionar ao roteiro, marcar/desmarcar e como chegar. Seleção pelos filtros ou pelo roteiro abre o mesmo pop-up. Marcar atualiza o conteúdo sem fechá-lo; desmarcar usa #FF2C2C. Fechar pelo X, Escape ou clique no mapa limpa a seleção. Marcadores aceitam Enter/Espaço e têm nome acessível. O nome aparece no hover mesmo com a numeração permanente de roteiro, mantida em camada separada. O aviso de cookies usa “Aceitar cookies” e “Cookies de análise”, preservando a lógica de consentimento.
+
+## Filtros e atalho na tela inicial
+
+Removida a geração de cartão para Stories. O filtro antes seguia a ordem numérica do catálogo. Agora ordena por nome A–Z (`pt-BR`, sem distinguir acentos/maiúsculas, comparação numérica), com não visitados primeiro e visitados ao final. Empates usam cidade e número. A ordem aparece no cabeçalho da lista, e cada item mostra seu número de monumento. Os filtros de pendentes/visitados mantêm A–Z dentro do grupo. O planejador continua usando distância rodoviária.
+
+Somente `/rota-biker` referencia `/rota-biker.webmanifest`, com identificação e início `/rota-biker`, escopo `/rota-biker`, modo standalone e ícones da marca de 192/512 px. O atalho não é um app das lojas e exige internet para o mapa e sincronização. Não usa service worker nem promete navegação offline. O controle “Adicionar à tela inicial” começa recolhido. Nenhum prompt de instalação, notificação ou permissão é disparado automaticamente. Chromium: captura `beforeinstallprompt`, oferece botão somente quando disponível e consome o evento ao clicar. Outros casos: instruções manuais Android, iPhone/iPad e computador. `appinstalled`, modo standalone e Safari standalone ocultam a opção. Cancelar deixa a página utilizável, sem insistência automática.
+
+Validar instalação em dispositivos reais após publicar: Android/Chrome e iPhone/Safari, abertura pelo ícone, escopo e login Google. A prévia Vercel protegida pode limitar instalação/abertura após expirar o link. O manifesto não inclui tokens de compartilhamento nem coordenadas na URL de início.
+
+## Convite de instalação mobile
+
+Substitui o controle recolhido por card e botão verde “Instalar Rota Biker”, apenas no layout mobile (até 720 px). Desktop não renderiza a opção. Convite modal com benefícios reais, CTA, “Agora não”, X, Escape e fechamento pelo fundo. Pode abrir automaticamente 15 s após interação por toque/teclado, somente na aba visível, em mobile, fora do modo instalado e sem outro diálogo aberto (incluindo cookies/login). Registra somente timestamp local de exibição; não convida novamente por 7 dias. Botão manual permanece disponível. Falha do armazenamento limita o convite à sessão do componente. Não dispara instalação nativa automaticamente: ela exige clique no CTA. Sem beforeinstallprompt, mostra instruções específicas para iPhone/iPad ou Android, incluindo navegadores internos. Redimensionar para desktop ou entrar no modo instalado fecha o modal e oculta a opção. Nenhum pedido de notificação ou rastreamento.
+
+## Publicação definitiva
+
+Publicação no domínio www.estradaadois.com autorizada pelo proprietário em 21/10/2026 após os testes. As restrições anteriores de somente prévia não se aplicam à versão aprovada. O erro preexistente de lint em TravelSocialCTA foi corrigido extraindo o handler de clique para função de módulo, sem mudar os parâmetros dos eventos. Lint completo sem erros (avisos anteriores mantidos), oito testes do planejador, teste de privacidade e build passaram. A instalação física e a medição específica de instalações/acessos pelo ícone não foram acrescentadas como testes/eventos desta publicação.

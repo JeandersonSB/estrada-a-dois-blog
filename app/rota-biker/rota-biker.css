@@ -8,3 +8,100 @@
 .biker-privacy-dialog{position:fixed;inset:0;margin:auto;width:min(520px,calc(100% - 32px));max-height:calc(100dvh - 32px);overflow-y:auto;overscroll-behavior:contain;padding:28px;border:1px solid #d8d5cb;border-radius:16px;background:#fff;color:#242323;box-shadow:0 20px 70px #0004;font-size:14px}.biker-privacy-dialog::backdrop{background:#0009}.biker-privacy-dialog p{margin:14px 0}.biker .biker-privacy-detail{font-size:12px;color:#68665e}.biker-privacy-detail a{text-decoration:underline}.biker-privacy-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.biker-privacy-actions button{flex:1;min-height:44px}.biker-note p{margin:0 0 12px}@media(max-width:480px){.biker-privacy-dialog{padding:22px}.biker-privacy-actions{flex-direction:column}}
 .biker-independent-notice{display:flex;align-items:center;gap:22px;margin-top:18px;padding:24px 28px;background:#edf6ce;border:1px solid #B6D200;border-radius:22px;color:#34392a}.biker-notice-icon{width:68px;height:64px;flex-shrink:0}.biker-independent-notice p{margin:0;line-height:1.8;font-size:13px}.biker-privacy-dialog strong{color:#435000}@media(max-width:600px){.biker-independent-notice{align-items:flex-start;gap:14px;padding:20px 16px;border-radius:16px}.biker-notice-icon{width:38px;height:36px}.biker-independent-notice p{font-size:12px;line-height:1.7}}
 .biker-navigation button{font-size:inherit}@media(max-width:720px){.biker-navigation button{width:100%;text-align:center}}
+
+.biker-plan-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+#biker-plan-title{scroll-margin-top:110px}
+.biker-route-count{padding:9px 12px;border:1px solid #c3d980;border-radius:20px;background:#edf6ce;font-size:13px;font-weight:700;white-space:nowrap}
+.biker-route-origin{display:grid;grid-template-columns:1fr 1.4fr;gap:16px;margin:20px 0}
+.biker-route-origin>label,.biker-add-stop>label{min-width:0}
+.biker-route-origin small{display:block;font-size:12px;font-weight:400;color:#68665e;margin-top:8px;line-height:1.5}
+.biker-add-stop{display:flex;align-items:flex-end;gap:12px}
+.biker-add-stop>label{flex:1}
+.biker-add-stop>button{flex-shrink:0;min-height:46px}
+.biker .biker-route-help{font-size:12px;color:#68665e;line-height:1.6;margin:12px 0}
+.biker .biker-route-stops{padding:0;display:grid;gap:10px;margin:20px 0}
+.biker .biker-route-stops>li{display:grid;grid-template-columns:32px minmax(0,1fr) auto;align-items:center;gap:12px;border:1px solid #d8d5cb;background:#fafaf7;padding:12px;border-radius:12px;margin:0}
+.biker-route-badge{width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:#242323;color:white;font-weight:700;font-size:14px}
+.biker .biker-route-place{border:0;background:transparent;text-align:left;min-width:0;overflow-wrap:anywhere;padding:4px;line-height:1.5}
+.biker-route-place strong{display:block;font-size:14px}
+.biker-route-place small{display:block;font-size:12px;font-weight:400;color:#68665e}
+.biker-route-actions{display:flex;gap:6px;flex-wrap:wrap}
+.biker .biker-route-actions button{min-width:44px;min-height:44px;padding:8px;font-size:13px}
+.biker .biker-plan button:disabled{cursor:not-allowed}
+.biker-route-empty{padding:24px;border:1px dashed #ccc9bf;background:#fafaf7;border-radius:12px;margin:20px 0;font-size:14px;line-height:1.6;color:#68665e}
+.biker .biker-return{display:flex;align-items:center;gap:10px;min-height:44px;cursor:pointer;font-size:14px;font-weight:400;line-height:1.5}
+.biker .biker-return input{display:inline-block;width:18px;height:18px;margin:0;flex-shrink:0;accent-color:#627200}
+.biker-route-end{font-size:13px;color:#435000;overflow-wrap:anywhere}
+.biker-route-legs{border-top:1px solid #dddacf;margin-top:20px;padding-top:18px;font-size:13px}
+.biker-route-legs>summary{cursor:pointer;font-weight:700;min-height:44px;line-height:1.6}
+.biker-route-legs>summary:focus-visible{outline:3px solid #6554c0;outline-offset:3px}
+.biker .biker-route-legs ol{padding:0;margin:12px 0}
+.biker .biker-route-legs li{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;line-height:1.6}
+.biker .biker-route-legs li button{padding:10px 14px;min-height:44px;flex-shrink:0}
+.biker-route-error{color:#9a251a;font-size:13px}
+.biker-address-search{min-width:0}
+.biker-address-search>button{margin-top:10px}
+.biker-address-search small a{text-decoration:underline}
+.biker-origin-results{list-style:none;padding:0;margin:12px 0;display:grid;gap:8px}
+.biker .biker-origin-results li{margin:0}
+.biker .biker-origin-results button{width:100%;padding:12px;text-align:left;font-size:13px;line-height:1.5;overflow-wrap:anywhere}
+.biker .biker-next-reference{background:#edf6ce;border-left:3px solid #B6D200;padding:12px 14px;font-size:13px;line-height:1.6;margin:14px 0 8px}
+.biker .biker-origin-confirmed{color:#435000;font-size:13px;line-height:1.5;margin-top:10px}
+.biker-route-place .biker-stop-distance{color:#435000;margin-top:4px}
+.biker .biker-route-marker{background:transparent;border:0;box-shadow:none;color:#fff;font:bold 13px Arial,sans-serif;pointer-events:none;padding:0}
+.biker .biker-route-marker::before{display:none}
+.biker-legend .biker-route-legend{color:#242323}
+@media(max-width:720px){
+  .biker-plan{padding:18px 14px}
+  .biker-route-origin{grid-template-columns:1fr}
+  .biker-add-stop{align-items:stretch;flex-direction:column}
+  .biker-route-origin input,.biker-route-origin select,.biker-add-stop select{font-size:16px}
+  .biker .biker-route-stops>li{grid-template-columns:30px minmax(0,1fr);gap:8px}
+  .biker-route-actions{grid-column:2;gap:8px}
+  .biker .biker-route-legs li{align-items:stretch;flex-direction:column}
+  .biker-plan-heading{gap:10px}
+  .biker-route-count{font-size:12px}
+  .biker-legend{font-size:11px;padding:8px;max-width:calc(100% - 24px)}
+  .biker-legend span{margin-left:8px}
+}
+
+.biker-map-popup .leaflet-popup-content-wrapper{border-radius:16px;padding:0;overflow:hidden;box-shadow:0 8px 30px #0003}
+.biker-map-popup .leaflet-popup-content{margin:0;line-height:1.5}
+.biker .biker-popup-card{padding:24px 20px 18px;background:white;border-radius:16px;color:#242323;font-family:Arial,sans-serif}
+.biker .biker-popup-card-visited{background:#edf6ce}
+.biker .biker-popup-card h2{font-size:19px;line-height:1.25;margin:10px 0 8px;overflow-wrap:anywhere;padding-right:10px}
+.biker .biker-popup-card p{font-size:13px;margin:8px 0}
+.biker-popup-status{display:block;font-size:12px;color:#68665e;margin-bottom:16px}
+.biker-popup-actions{display:grid;gap:9px}
+.biker .biker-popup-actions button{min-height:44px;padding:11px 12px;font-size:13px;width:100%}
+.biker .biker-popup-actions a{font-size:12px;text-align:center;text-decoration:underline;color:#435000;padding:5px}
+.biker .biker-unmark,.biker .biker-unmark:hover{background:#FF2C2C;border-color:#FF2C2C;color:#171717}
+.biker .biker-unmark:hover{filter:brightness(.94)}
+.biker-map-popup a.leaflet-popup-close-button{top:5px;right:5px;width:30px;height:30px;font-size:24px;color:#403939}
+.biker-map .leaflet-interactive:focus-visible{outline:3px solid #6554c0;outline-offset:4px}
+
+.biker-install-mobile{display:none}
+@media(max-width:720px){
+ .biker-install-mobile{display:block;margin:0 0 22px}
+ .biker-install-banner{display:grid;gap:14px;padding:18px;background:#edf6ce;border:1px solid #c3d980;border-radius:14px}
+ .biker-install-banner strong{display:block;font-size:16px;line-height:1.4;color:#34392a}
+ .biker-install-banner span{display:block;font-size:12px;line-height:1.6;margin-top:4px;color:#55594a}
+ .biker .biker-install-banner button{display:flex;justify-content:center;align-items:center;gap:10px;width:100%;min-height:48px;background:#B6D200;border-color:#a3bd00;font-size:15px}
+ .biker-install-banner button span{font-size:18px;margin:0;color:inherit}
+ .biker-install-status{font-size:12px;color:#55594a}
+}
+.biker-install-dialog{position:fixed;inset:0;margin:auto;width:min(420px,calc(100% - 28px));max-height:calc(100dvh - 40px);overflow:auto;overscroll-behavior:contain;border:1px solid #d8d5cb;border-radius:22px;background:#fff;padding:30px 24px 22px;color:#242323;text-align:center;box-shadow:0 20px 70px #0004}
+.biker-install-dialog::backdrop{background:#13170bb3}
+.biker .biker-install-close{position:absolute;right:10px;top:8px;border:0;background:transparent;font-size:26px;padding:0;min-width:44px;min-height:44px}
+.biker-install-symbol{display:grid;place-items:center;width:72px;height:72px;border-radius:22px;background:#edf6ce;color:#627200;margin:6px auto 22px}
+.biker-install-dialog .biker-eyebrow{font-size:10px;letter-spacing:1.4px}
+.biker .biker-install-dialog h2{font-size:26px;line-height:1.15;letter-spacing:-.6px;margin:12px 0 16px}
+.biker .biker-install-dialog p{font-size:14px;line-height:1.7;color:#68665e;margin:0 0 22px}
+.biker .biker-install-confirm{width:100%;min-height:48px;font-size:15px}
+.biker .biker-install-later{display:block;width:100%;min-height:44px;border:0;background:transparent;margin-top:8px;font-size:13px;color:#68665e}
+.biker-install-detail{display:block;font-size:11px;line-height:1.6;color:#77766e;margin-top:8px}
+.biker-install-steps{background:#f6f5f0;border:1px solid #dddacf;border-radius:12px;padding:16px;text-align:left;font-size:13px;line-height:1.6}
+.biker-install-steps ol{padding-left:18px;list-style:decimal;margin:12px 0}
+.biker-install-steps li{margin:8px 0}
+.biker-install-steps small{display:block;color:#68665e;font-size:11px}
+@media(min-width:721px){.biker-install-dialog{display:none!important}}
