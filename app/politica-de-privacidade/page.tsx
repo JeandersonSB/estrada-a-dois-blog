@@ -139,6 +139,9 @@ export default function PoliticaPrivacidade() {
               desmarque os monumentos ou limpe os dados deste site no navegador.
             </p>
 
+            <p>
+              Para calcular distâncias pelas estradas no planejador, as coordenadas da partida localizada ou autorizada por GPS e dos monumentos são enviadas ao serviço OSRM, com dados do OpenStreetMap. O provedor recebe também os dados técnicos da requisição, conforme sua política. As estimativas não incluem trânsito em tempo real e podem diferir das rotas escolhidas pelo Google Maps. O cache das distâncias fica somente na memória da página.
+            </p>
             <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">11. Finalidades, escolhas e conservação</h2>
             <p>
               A medição de audiência e o uso dos dados autorizados no login se baseiam no seu consentimento.

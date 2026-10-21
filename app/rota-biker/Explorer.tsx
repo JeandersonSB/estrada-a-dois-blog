@@ -195,7 +195,7 @@ export default function Explorer() {
       <div className="biker-privacy-actions"><button autoFocus onClick={() => privacyDialog.current?.close()}>Recusar</button><button className="biker-primary" onClick={login}>Aceitar e continuar</button></div>
     </dialog>
     <div className="biker-toolbar"><div><strong>{visited.length} / {monuments.length}</strong> pontos visitados <progress value={visited.length} max={monuments.length} /></div><button onClick={openPlanner} aria-expanded={planning}>Planejar viagem</button><button onClick={story}>Cartão para Stories ↓</button></div>
-    <p className="biker-storage">{user ? (syncReady ? 'Marcações privadas sincronizadas com sua conta.' : 'Sincronizando sua conta…') : 'Sem login: marcações salvas apenas neste navegador. Ao entrar, será exibido o histórico da sua conta.'}</p>
+    <p className="biker-storage">{user ? (syncReady ? 'Marcações privadas sincronizadas com sua conta.' : 'Sincronizando sua conta…') : 'Entre com Google e leve suas conquistas com você: acesse seus pontos salvos em qualquer dispositivo.'}</p>
     {message && <div className="biker-message" role="status">{message}<button aria-label="Fechar aviso" onClick={() => setMessage('')}>×</button></div>}
     {planning && <RoutePlanner plan={plan} setPlan={setPlan} origin={origin} locating={locating} locationError={locationError} locationAccuracy={locationAccuracy} visited={visited} onLocate={() => locate(true)} onSelect={selectRouteStop} onAdd={addRouteStop} />}
     <div className="biker-workspace">

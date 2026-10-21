@@ -48,12 +48,12 @@ export function distanceKm(a: Coordinates, b: Coordinates) {
   const h = Math.sin(dLat / 2) ** 2 + Math.cos(radians(a.lat)) * Math.cos(radians(b.lat)) * Math.sin(dLng / 2) ** 2;
   return 6371.0088 * 2 * Math.asin(Math.sqrt(Math.max(0, Math.min(1, h))));
 }
-export function rankNextStops<T extends Coordinates & { id: string; name: string }>(catalog: readonly T[], stopIds: readonly string[], origin: Coordinates | null) {
-  const lastStop = catalog.find(m => m.id === stopIds.at(-1));
-  const reference = lastStop || origin;
+export function rankNextStops<T extends Coordinates & { id: string; name: string }>(catalog: readonly T[], stopIds: readonly string[], distances: Readonly<Record<string, number | null>>, visited: readonly string[]) {
   return catalog.filter(m => !stopIds.includes(m.id))
-    .map(m => ({ ...m, distance: reference ? distanceKm(reference, m) : null }))
-    .sort((a, b) => a.distance !== null && b.distance !== null ? a.distance - b.distance || a.name.localeCompare(b.name) : a.name.localeCompare(b.name));
+    .map(m => ({ ...m, distance: distances[m.id] ?? null }))
+    .sort((a, b) => Number(visited.includes(a.id)) - Number(visited.includes(b.id))
+      || (a.distance === null ? Infinity : a.distance) - (b.distance === null ? Infinity : b.distance)
+      || a.name.localeCompare(b.name));
 }
 export function mapsUrl(origin: Coordinates, destination: Coordinates) {
   return mapsRouteUrl([origin, destination]);
