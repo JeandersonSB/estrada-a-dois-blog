@@ -8,3 +8,50 @@
 .biker-privacy-dialog{position:fixed;inset:0;margin:auto;width:min(520px,calc(100% - 32px));max-height:calc(100dvh - 32px);overflow-y:auto;overscroll-behavior:contain;padding:28px;border:1px solid #d8d5cb;border-radius:16px;background:#fff;color:#242323;box-shadow:0 20px 70px #0004;font-size:14px}.biker-privacy-dialog::backdrop{background:#0009}.biker-privacy-dialog p{margin:14px 0}.biker .biker-privacy-detail{font-size:12px;color:#68665e}.biker-privacy-detail a{text-decoration:underline}.biker-privacy-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.biker-privacy-actions button{flex:1;min-height:44px}.biker-note p{margin:0 0 12px}@media(max-width:480px){.biker-privacy-dialog{padding:22px}.biker-privacy-actions{flex-direction:column}}
 .biker-independent-notice{display:flex;align-items:center;gap:22px;margin-top:18px;padding:24px 28px;background:#edf6ce;border:1px solid #B6D200;border-radius:22px;color:#34392a}.biker-notice-icon{width:68px;height:64px;flex-shrink:0}.biker-independent-notice p{margin:0;line-height:1.8;font-size:13px}.biker-privacy-dialog strong{color:#435000}@media(max-width:600px){.biker-independent-notice{align-items:flex-start;gap:14px;padding:20px 16px;border-radius:16px}.biker-notice-icon{width:38px;height:36px}.biker-independent-notice p{font-size:12px;line-height:1.7}}
 .biker-navigation button{font-size:inherit}@media(max-width:720px){.biker-navigation button{width:100%;text-align:center}}
+
+.biker-plan-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+#biker-plan-title{scroll-margin-top:110px}
+.biker-route-count{padding:9px 12px;border:1px solid #c3d980;border-radius:20px;background:#edf6ce;font-size:13px;font-weight:700;white-space:nowrap}
+.biker-route-origin{display:grid;grid-template-columns:1fr 1.4fr;gap:16px;margin:20px 0}
+.biker-route-origin>label,.biker-add-stop>label{min-width:0}
+.biker-route-origin small{display:block;font-size:12px;font-weight:400;color:#68665e;margin-top:8px;line-height:1.5}
+.biker-add-stop{display:flex;align-items:flex-end;gap:12px}
+.biker-add-stop>label{flex:1}
+.biker-add-stop>button{flex-shrink:0;min-height:46px}
+.biker .biker-route-help{font-size:12px;color:#68665e;line-height:1.6;margin:12px 0}
+.biker .biker-route-stops{padding:0;display:grid;gap:10px;margin:20px 0}
+.biker .biker-route-stops>li{display:grid;grid-template-columns:32px minmax(0,1fr) auto;align-items:center;gap:12px;border:1px solid #d8d5cb;background:#fafaf7;padding:12px;border-radius:12px;margin:0}
+.biker-route-badge{width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:#242323;color:white;font-weight:700;font-size:14px}
+.biker .biker-route-place{border:0;background:transparent;text-align:left;min-width:0;overflow-wrap:anywhere;padding:4px;line-height:1.5}
+.biker-route-place strong{display:block;font-size:14px}
+.biker-route-place small{display:block;font-size:12px;font-weight:400;color:#68665e}
+.biker-route-actions{display:flex;gap:6px;flex-wrap:wrap}
+.biker .biker-route-actions button{min-width:44px;min-height:44px;padding:8px;font-size:13px}
+.biker .biker-plan button:disabled{cursor:not-allowed}
+.biker-route-empty{padding:24px;border:1px dashed #ccc9bf;background:#fafaf7;border-radius:12px;margin:20px 0;font-size:14px;line-height:1.6;color:#68665e}
+.biker .biker-return{display:flex;align-items:center;gap:10px;min-height:44px;cursor:pointer;font-size:14px;font-weight:400;line-height:1.5}
+.biker .biker-return input{display:inline-block;width:18px;height:18px;margin:0;flex-shrink:0;accent-color:#627200}
+.biker-route-end{font-size:13px;color:#435000;overflow-wrap:anywhere}
+.biker-route-legs{border-top:1px solid #dddacf;margin-top:20px;padding-top:18px;font-size:13px}
+.biker-route-legs>summary{cursor:pointer;font-weight:700;min-height:44px;line-height:1.6}
+.biker-route-legs>summary:focus-visible{outline:3px solid #6554c0;outline-offset:3px}
+.biker .biker-route-legs ol{padding:0;margin:12px 0}
+.biker .biker-route-legs li{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;line-height:1.6}
+.biker .biker-route-legs li button{padding:10px 14px;min-height:44px;flex-shrink:0}
+.biker-route-error{color:#9a251a;font-size:13px}
+.biker .biker-route-marker{background:transparent;border:0;box-shadow:none;color:#fff;font:bold 13px Arial,sans-serif;pointer-events:none;padding:0}
+.biker .biker-route-marker::before{display:none}
+.biker-legend .biker-route-legend{color:#242323}
+@media(max-width:720px){
+  .biker-plan{padding:18px 14px}
+  .biker-route-origin{grid-template-columns:1fr}
+  .biker-add-stop{align-items:stretch;flex-direction:column}
+  .biker-route-origin input,.biker-route-origin select,.biker-add-stop select{font-size:16px}
+  .biker .biker-route-stops>li{grid-template-columns:30px minmax(0,1fr);gap:8px}
+  .biker-route-actions{grid-column:2;gap:8px}
+  .biker .biker-route-legs li{align-items:stretch;flex-direction:column}
+  .biker-plan-heading{gap:10px}
+  .biker-route-count{font-size:12px}
+  .biker-legend{font-size:11px;padding:8px;max-width:calc(100% - 24px)}
+  .biker-legend span{margin-left:8px}
+}

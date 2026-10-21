@@ -1,11 +1,12 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Map as LeafletMap, LayerGroup, CircleMarker } from 'leaflet';
 import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut, type User } from 'firebase/auth';
 import { doc, onSnapshot, setDoc, deleteField } from 'firebase/firestore';
 import { services } from './firebase';
 import monuments from './monuments.json';
-import { matchesSearch, distanceKm, mapsUrl, wazeUrl, type Coordinates } from './helpers';
+import { matchesSearch, MAX_ROUTE_LOCATIONS, type Coordinates } from './helpers';
+import RoutePlanner, { emptyTripPlan, type TripPlan } from './RoutePlanner';
 import 'leaflet/dist/leaflet.css';
 import './rota-biker.css';
 type Monument = typeof monuments[number];
@@ -31,7 +32,7 @@ export default function Explorer() {
   const [locationAccuracy, setLocationAccuracy] = useState<number | null>(null);
   const filtersPanel = useRef<HTMLDetailsElement>(null);
   const privacyDialog = useRef<HTMLDialogElement>(null);
-  const [destination, setDestination] = useState('');
+  const [plan, setPlan] = useState<TripPlan>(emptyTripPlan);
   const [message, setMessage] = useState('');
   useEffect(() => {
     const s = services();
@@ -69,30 +70,34 @@ export default function Explorer() {
     }).catch(() => setMessage('Não foi possível carregar o mapa. Abra Filtros para consultar a lista de monumentos.'));
     return () => { cancelled = true; map.current?.remove(); map.current = null; markerById.current = {}; locationMarker.current = null; };
   }, []);
-  const visible = monuments.filter(m => matchesSearch(query, [m.name, m.city, m.state, m.stateCode, m.country, ...m.keywords]) && (filter === 'all' || (filter === 'visited' ? visited.includes(m.id) : !visited.includes(m.id))));
-  const nearby = origin ? monuments.map(m => ({ ...m, distance: distanceKm(origin, m) })).sort((a, b) => a.distance - b.distance || a.name.localeCompare(b.name)) : [];
-  const routeDestination = monuments.find(m => m.id === destination) || null;
+  const visible = useMemo(() => monuments.filter(m => matchesSearch(query, [m.name, m.city, m.state, m.stateCode, m.country, ...m.keywords]) && (filter === 'all' || (filter === 'visited' ? visited.includes(m.id) : !visited.includes(m.id)))), [query, filter, visited]);
+  const routeStops = useMemo(() => plan.stopIds.map(id => monuments.find(m => m.id === id)).filter((m): m is Monument => !!m), [plan.stopIds]);
+  const mapPoints = useMemo(() => [...visible, ...routeStops.filter(m => !visible.some(point => point.id === m.id))], [visible, routeStops]);
   useEffect(() => {
     if (!ready) return;
     let cancelled = false;
     import('leaflet').then(L => {
       if (cancelled || !markers.current) return;
-      const shown = new Set(visible.map(m => m.id));
+      const shown = new Set(mapPoints.map(m => m.id));
       for (const [id, marker] of Object.entries(markerById.current)) {
         if (!shown.has(id)) { markers.current.removeLayer(marker); delete markerById.current[id]; }
       }
-      visible.forEach(m => {
-        const style = { radius: selected?.id === m.id ? 11 : 8, color: '#fff', weight: 2, fillColor: visited.includes(m.id) ? '#B6D200' : '#555', fillOpacity: 1 };
-        const marker = markerById.current[m.id];
+      mapPoints.forEach(m => {
+        const order = plan.stopIds.indexOf(m.id);
+        const inRoute = order >= 0;
+        const style = { radius: selected?.id === m.id ? 14 : inRoute ? 12 : 8, color: inRoute ? '#627200' : '#fff', weight: inRoute ? 4 : 2, fillColor: visited.includes(m.id) ? '#B6D200' : '#555', fillOpacity: 1 };
+        let marker = markerById.current[m.id];
         if (marker) marker.setStyle(style).setRadius(style.radius);
-        else markerById.current[m.id] = L.circleMarker([m.lat, m.lng], style).bindTooltip(`${m.name} — ${m.city}, ${m.stateCode || m.country}`).on('click', () => setSelected(m)).addTo(markers.current!);
+        else marker = markerById.current[m.id] = L.circleMarker([m.lat, m.lng], style).on('click', () => setSelected(m)).addTo(markers.current!);
+        marker.unbindTooltip().bindTooltip(inRoute ? String(order + 1) : `${m.name} — ${m.city}, ${m.stateCode || m.country}`, inRoute ? { permanent: true, direction: 'center', className: 'biker-route-marker' } : {});
       });
     });
     return () => { cancelled = true; };
-  }, [ready, query, filter, visited, selected]); // visible is derived from these values
+  }, [ready, mapPoints, visited, selected, plan.stopIds]);
   useEffect(() => {
-    if (!ready || !map.current || !query.trim() || !visible.length) return;
-    const bounds = visible.map(m => [m.lat, m.lng] as [number, number]);
+    if (!ready || !map.current || !query.trim()) return;
+    const bounds = monuments.filter(m => matchesSearch(query, [m.name, m.city, m.state, m.stateCode, m.country, ...m.keywords])).map(m => [m.lat, m.lng] as [number, number]);
+    if (!bounds.length) return;
     map.current.fitBounds(bounds, { padding: [35, 35], maxZoom: 11 });
   }, [query, ready]);
   function keepMarkedVisible(next: boolean) {
@@ -164,8 +169,18 @@ export default function Explorer() {
     }, { enableHighAccuracy: true, maximumAge: 0, timeout: 15000 });
   }
   function openPlanner() {
-    setPlanning(!planning);
-    if (!planning) locate(true);
+    setPlanning(current => !current);
+  }
+  function selectRouteStop(m: Monument) {
+    setSelected(m);
+    map.current?.setView([m.lat, m.lng], 10);
+  }
+  function addRouteStop(m: Monument) {
+    const limit = MAX_ROUTE_LOCATIONS - 1 - Number(plan.returnToStart);
+    if (plan.stopIds.includes(m.id)) return;
+    if (plan.stopIds.length >= limit) { setMessage('Seu roteiro já tem 10 locais, contando a origem e o destino. Remova uma parada para adicionar outra.'); return; }
+    setPlan(current => current.stopIds.includes(m.id) || current.stopIds.length >= MAX_ROUTE_LOCATIONS - 1 - Number(current.returnToStart) ? current : { ...current, stopIds: [...current.stopIds, m.id] });
+    setPlanning(true);
   }
   return <div className="biker">
     <header className="biker-intro"><div><span className="biker-eyebrow">SEU PRÓXIMO DESTINO COMEÇA AQUI</span><h1>Minha Rota Biker<span>.</span></h1><p>Marque suas visitas. Escolha as próximas paradas. Viva a estrada.</p></div><div className="biker-account">{user ? <><span>{user.displayName || 'Minha conta'}</span><button onClick={() => { const s = services(); if (s) signOut(s.auth).catch(() => setMessage('Não foi possível sair.')); }}>Sair</button></> : <button onClick={() => privacyDialog.current?.showModal()}>Entrar com Google</button>}</div></header>
@@ -182,7 +197,7 @@ export default function Explorer() {
     <div className="biker-toolbar"><div><strong>{visited.length} / {monuments.length}</strong> pontos visitados <progress value={visited.length} max={monuments.length} /></div><button onClick={openPlanner} aria-expanded={planning}>Planejar viagem</button><button onClick={story}>Cartão para Stories ↓</button></div>
     <p className="biker-storage">{user ? (syncReady ? 'Marcações privadas sincronizadas com sua conta.' : 'Sincronizando sua conta…') : 'Sem login: marcações salvas apenas neste navegador. Ao entrar, será exibido o histórico da sua conta.'}</p>
     {message && <div className="biker-message" role="status">{message}<button aria-label="Fechar aviso" onClick={() => setMessage('')}>×</button></div>}
-    {planning && <section className="biker-plan"><h2>Monte seu roteiro</h2><p>Saia da sua localização atual e escolha um monumento. Os destinos aparecem do mais próximo ao mais distante.</p><div className="biker-fields"><div className="biker-origin"><strong>Origem: minha localização atual</strong><p role="status">{locating ? 'Obtendo sua posição…' : locationError || (origin ? `Localização obtida${locationAccuracy ? ` (precisão aproximada de ${Math.round(locationAccuracy)} m)` : ''}. Escolha seu próximo destino!` : 'Permita o acesso à localização para continuar.')}</p><button disabled={locating} onClick={() => locate(true)}>{locating ? 'Localizando…' : 'Atualizar localização'}</button></div><label>Destino<select className={visited.includes(destination) ? 'biker-destination-visited' : ''} value={destination} disabled={!origin || locating} onChange={e => { setDestination(e.target.value); const m = monuments.find(m => m.id === e.target.value); if (m) { setSelected(m); map.current?.setView([m.lat, m.lng], 10); } }}><option value="">{origin ? 'Escolha um monumento próximo' : 'Aguardando sua localização…'}</option>{nearby.map(m => <option key={m.id} value={m.id} className={visited.includes(m.id) ? 'biker-option-visited' : ''}>{visited.includes(m.id) ? '✅ ' : ''}{m.name} — {m.city}/{m.stateCode || m.country} — {m.distance.toLocaleString('pt-BR', { maximumFractionDigits: 1 })} km</option>)}</select><small className="biker-distance-note">Distâncias aproximadas em linha reta. O aplicativo calcula a distância e o percurso pelas estradas.</small></label></div>{!locating && origin && routeDestination ? <div className="biker-navigation"><button type="button" className="biker-primary" onClick={() => window.open(mapsUrl(origin, routeDestination), '_blank', 'noopener,noreferrer')}>Abrir no Google Maps ↗</button><button type="button" className="biker-primary" onClick={() => window.open(wazeUrl(routeDestination), '_blank', 'noopener,noreferrer')}>Abrir no Waze ↗</button></div> : <p>Autorize sua localização e selecione um destino para navegar.</p>}</section>}
+    {planning && <RoutePlanner plan={plan} setPlan={setPlan} origin={origin} locating={locating} locationError={locationError} locationAccuracy={locationAccuracy} visited={visited} onLocate={() => locate(true)} onSelect={selectRouteStop} onAdd={addRouteStop} />}
     <div className="biker-workspace">
       <div className="biker-map-tools">
         <label className="biker-search">Buscar monumento<input type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Nome, cidade, estado ou número…" /></label>
@@ -191,9 +206,9 @@ export default function Explorer() {
           <div className="biker-filter-panel"><div className="biker-filter-heading"><strong>Filtrar monumentos</strong><button onClick={() => { if (filtersPanel.current) filtersPanel.current.open = false; }} aria-label="Fechar filtros">×</button></div><label className="biker-search">Mostrar<select value={filter} onChange={e => setFilter(e.target.value)}><option value="all">Todos os pontos</option><option value="visited">Já visitados</option><option value="pending">Ainda não visitei</option></select></label><p className="biker-result" role="status">{visible.length} pontos encontrados</p><div className="biker-list">{visible.map(m => <button key={m.id} className={[selected?.id === m.id ? 'active' : '', visited.includes(m.id) ? 'biker-row-visited' : ''].filter(Boolean).join(' ')} onClick={() => { setSelected(m); map.current?.setView([m.lat, m.lng], 12); if (filtersPanel.current) filtersPanel.current.open = false; }}><span className={visited.includes(m.id) ? 'biker-dot visited' : 'biker-dot'} /><span>{visited.includes(m.id) && <span className="biker-visited-check" aria-label="Visitado">✅ </span>}{m.name}<small>{m.city} · {m.stateCode || m.country} — {visited.includes(m.id) ? 'Já visitei' : 'Quero conhecer'}</small></span><span>↗</span></button>)}{!visible.length && <p>Nenhum ponto encontrado.</p>}</div></div>
         </details>
       </div>
-      <div className="biker-map-wrap"><div ref={container} className="biker-map" aria-label="Mapa interativo dos pontos da Rota Biker" /><button className="biker-locate" disabled={locating} onClick={() => locate()}>◎ {locating ? 'Localizando…' : 'Minha localização'}</button><div className="biker-legend">● Pendente <span>● Visitado</span>{origin && <span className="biker-user-location">● Você</span>}</div></div>
+      <div className="biker-map-wrap"><div ref={container} className="biker-map" aria-label="Mapa interativo dos pontos da Rota Biker" /><button className="biker-locate" disabled={locating} onClick={() => locate()}>◎ {locating ? 'Localizando…' : 'Minha localização'}</button><div className="biker-legend">● Pendente <span>● Visitado</span>{plan.stopIds.length > 0 && <span className="biker-route-legend">① Paradas do roteiro</span>}{origin && <span className="biker-user-location">● Você</span>}</div></div>
     </div>
-    {selected && <section className={`biker-selected${visited.includes(selected.id) ? ' biker-selected-visited' : ''}`}><div><span className="biker-eyebrow">PONTO SELECIONADO</span><h2>{visited.includes(selected.id) && <span className="biker-visited-check" aria-label="Visitado">✅ </span>}{selected.name}</h2><p>{selected.city} · {selected.state || selected.country} · Monumento {selected.number}</p></div><button className="biker-primary" disabled={!loaded || (!!user && !syncReady)} onClick={() => toggle(selected)}>{visited.includes(selected.id) ? '✓ Visitado — desmarcar' : 'Marcar como visitado'}</button><a href={`https://www.google.com/maps/search/?api=1&query=${selected.lat},${selected.lng}`} target="_blank" rel="noopener noreferrer">Como chegar ↗</a></section>}
+    {selected && <section className={`biker-selected${visited.includes(selected.id) ? ' biker-selected-visited' : ''}`}><div><span className="biker-eyebrow">PONTO SELECIONADO</span><h2>{visited.includes(selected.id) && <span className="biker-visited-check" aria-label="Visitado">✅ </span>}{selected.name}</h2><p>{selected.city} · {selected.state || selected.country} · Monumento {selected.number}</p></div><button type="button" disabled={plan.stopIds.includes(selected.id) || plan.stopIds.length >= MAX_ROUTE_LOCATIONS - 1 - Number(plan.returnToStart)} onClick={() => { addRouteStop(selected); requestAnimationFrame(() => document.getElementById('biker-plan-title')?.scrollIntoView({ behavior: 'smooth', block: 'start' })); }}>{plan.stopIds.includes(selected.id) ? '✓ No roteiro' : 'Adicionar ao roteiro'}</button><button className="biker-primary" disabled={!loaded || (!!user && !syncReady)} onClick={() => toggle(selected)}>{visited.includes(selected.id) ? '✓ Visitado — desmarcar' : 'Marcar como visitado'}</button><a href={`https://www.google.com/maps/search/?api=1&query=${selected.lat},${selected.lng}`} target="_blank" rel="noopener noreferrer">Como chegar ↗</a></section>}
     <footer className="biker-note"><p>Pontos importados do <a href="https://www.google.com/maps/d/viewer?mid=1ZHPck3Yykbhc8M1GYPrCcKf5pajiTvk" target="_blank" rel="noopener noreferrer">mapa de referência Rota Bikers</a> em 19/10/2026. Confira acesso e funcionamento antes de viajar.</p><div className="biker-independent-notice"><svg className="biker-notice-icon" viewBox="0 0 64 60" fill="none" aria-hidden="true"><path d="M27 7c2.2-4 7.8-4 10 0l24 43c2.2 4-0.7 8-5 8H8c-4.3 0-7.2-4-5-8L27 7Z" fill="#B6D200" stroke="#627200" strokeWidth="3" strokeLinejoin="round"/><path d="M32 21v15" stroke="#242323" strokeWidth="6" strokeLinecap="round"/><circle cx="32" cy="46" r="3.5" fill="#242323"/></svg><p>Este mapa é uma ferramenta independente do Estrada a Dois, criada para ajudar cada viajante a manter seu controle online dos monumentos que já visitou. Os direitos sobre a Rota Biker, sua marca e identidade pertencem aos seus respectivos idealizadores e titulares. Como participante e divulgador do movimento, o Estrada a Dois quer contribuir, somar e facilitar a vida de quem vive a estrada. Esta página não é um serviço oficial da Rota Biker e suas marcações não substituem o passaporte físico nem validam carimbos ou conquistas oficiais.</p></div></footer>
   </div>;
 }

@@ -106,9 +106,11 @@ export default function TermosDeUso() {
               A imagem de progresso para Stories só é publicada se você decidir compartilhá-la.
             </p>
             <p>
-              Nesta versão, o planejamento parte da localização atual, mediante permissão do navegador. A lista de
-              destinos usa distância aproximada em linha reta, que não corresponde à distância rodoviária nem ao
-              tempo de viagem. Google Maps e Waze calculam o trajeto em seus próprios serviços. Confira acessos,
+              O planejamento permite escolher a localização atual, mediante permissão do navegador, ou digitar
+              uma cidade ou endereço de partida, e organizar várias paradas. A distância exibida com a localização
+              atual é aproximada e em linha reta; não corresponde à distância rodoviária nem ao tempo de viagem.
+              Google Maps e Waze calculam o trajeto em seus próprios serviços. Dependendo do aplicativo ou navegador,
+              pode ser necessário abrir o roteiro por etapas; o Waze recebe uma parada por vez. Confira acessos,
               condições das vias e funcionamento dos monumentos antes de sair e opere o celular com a moto parada.
             </p>
             <p>

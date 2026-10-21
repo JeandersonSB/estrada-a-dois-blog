@@ -122,6 +122,9 @@ export default function PoliticaPrivacidade() {
               A localização depende de uma permissão separada do navegador e é utilizada para encontrar destinos
               próximos e planejar o trajeto. Suas coordenadas não são gravadas no histórico da conta. Ao abrir o
               Google Maps ou Waze, as informações necessárias ao trajeto são encaminhadas ao serviço escolhido.
+              Você também pode digitar a cidade ou endereço de partida. Esse endereço e a sequência do roteiro
+              ficam na memória desta página e não são salvos no histórico da conta; são enviados ao Google Maps
+              quando você escolhe abrir o roteiro. Fechar ou recarregar a página limpa esse planejamento.
               O mapa utiliza o OpenStreetMap, que pode receber dados técnicos necessários ao carregamento.
             </p>
             <p>

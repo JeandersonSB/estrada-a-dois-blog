@@ -21,7 +21,13 @@ Sem configuração, marcações funcionam apenas no navegador. Ao entrar, o hist
 
 ## Planejamento e busca
 
-Origem obrigatória por geolocalização do navegador (sem campo editável), com posição sem cache, alta precisão e timeout de 15 segundos. A pessoa escolhe um monumento em um select ordenado por distância crescente. A distância é Haversine (linha reta), explicitamente identificada na tela, sem representar distância rodoviária. Google Maps recebe origem e destino; Waze recebe o destino e usa a posição atual do próprio aplicativo. Não há múltiplas paradas nesta versão. Não grava a geolocalização em banco, analytics ou cartão.
+Prévia de múltiplas paradas: origem pela geolocalização do navegador (posição sem cache, alta precisão e timeout de 15 segundos) ou cidade/endereço digitado. O endereço só é resolvido pelo Google Maps quando o usuário abre a navegação; não há serviço adicional de busca de endereços. O GPS é solicitado apenas pelo botão de localização, não ao abrir o planejador.
+
+O roteiro comporta 10 locais no total: origem e até 9 monumentos, ou origem, até 8 monumentos e volta à origem. O usuário pode adicionar pelo seletor ou pelos detalhes do monumento, remover, subir/descer a ordem e limpar as paradas. Não há otimização automática da sequência. Escolher uma parada não altera as visitas nem o Firestore. A origem e a sequência ficam apenas no estado da página; fechar/recarregar limpa o planejamento.
+
+As paradas são numeradas no mapa e permanecem visíveis mesmo quando a busca/filtro oculta outros pontos. A cor de visitado permanece independente. O seletor usa a distância crescente em linha reta apenas quando há localização atual; com endereço digitado, usa ordem alfabética. A distância é Haversine, explicitamente identificada, sem representar distância rodoviária.
+
+Google Maps recebe origem, paradas intermediárias na ordem escolhida e destino final (ou origem no circuito). O botão principal abre o roteiro completo. A alternativa por etapas usa até três paradas intermediárias por link para navegadores móveis; a última posição de uma etapa é a primeira da próxima, preservando toda a sequência. Waze recebe somente o monumento escolhido no botão individual de cada parada e utiliza a própria localização para navegar. URLs só são geradas no clique, sem expor a origem em hrefs/Analytics. Não grava geolocalização em banco, analytics ou cartão.
 
 Cidades, UF, nomes dos estados e números enriquecidos a partir da lista oficial https://monumentobikers.com.br/ em 19/10/2026; coordenadas preservadas do mapa original. IDs não mudaram, preservando marcações anteriores. Busca por nome, apelidos, cidade, estado, sigla, região, país e número, sem exigir acentos. Siglas e números usam palavras inteiras para evitar, por exemplo, PR corresponder a Prado ou número 1 corresponder a 12. Cajá é exibida como localidade conforme a lista oficial.
 
@@ -56,3 +62,8 @@ Para o lançamento, `/rota-biker` também está no menu principal (desktop e cel
 ## Correção da permissão de localização
 
 O cabeçalho global `Permissions-Policy: geolocation=()` bloqueava a API antes de solicitar permissão. A configuração agora mantém o bloqueio global e aplica uma exceção apenas a `/rota-biker`: `camera=(), microphone=(), geolocation=(self)`. A autorização do navegador e do sistema operacional continua obrigatória. O bloco “Como testar minha localização” foi removido a pedido do usuário.
+
+
+## Testes de múltiplas paradas
+
+`node --experimental-strip-types --test tests/biker-route.test.mjs` verifica 10 locais, retorno à origem, sequência e limites das etapas móveis, compatibilidade de um destino, codificação de endereços e rejeição de excesso/coordenadas inválidas. Verificar na prévia: adicionar pelos detalhes e seletor; impedir duplicação; reordenar/remover; limite de 9 monumentos (8 com volta); GPS recusado e alternativa por endereço; marcas de visita independentes; abrir rota completa e etapas em dispositivos reais. Esta alteração é somente para teste, sem merge na main nem publicação em produção.
