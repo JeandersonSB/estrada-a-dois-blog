@@ -35,9 +35,6 @@ Agora estamos começando uma nova etapa com a Kawasaki Versys 650 Tourer, uma mo
 
 E mesmo sendo um trajeto conhecido, a sensação era de estar descobrindo a estrada novamente.
 
-> 💡 **Leia também nossos outros roteiros autorais:**
-> - [Nossa primeira visita à Rota 513 de Yamaha R15](/blog/r15-em-ponta-grossa)
-
 ## Rota 513: voltamos para buscar o carimbo que faltava!
 
 ![](/images/blog/casal-rota513.webp)
@@ -59,6 +56,9 @@ Chegando à Rota 513, encontramos um movimento razoável de motociclistas. Havia
 Uma coisa que chamou bastante nossa atenção foi como o lugar mudou desde a última vez que estivemos lá.
 
 A estrutura está maior, mais organizada e com novidades no cardápio. Foi interessante perceber essa evolução, principalmente por ser um lugar que já conhecíamos há algum tempo.
+
+> 💡 **Leia também nossos outros roteiros autorais:**
+> - [Nossa primeira visita à Rota 513 de Yamaha R15](/blog/r15-em-ponta-grossa)
 
 ### Onde carimbar o Passaporte Rota Biker na Rota 513?
 
