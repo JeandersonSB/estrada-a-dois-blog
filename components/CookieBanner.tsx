@@ -51,11 +51,10 @@ export function CookieBanner() {
   useEffect(() => {
     const stored = readStoredConsent();
     applyAnalyticsConsent(stored?.analytics === true);
-    if (stored?.analytics === true) {
-      // Queue the GA4 config and initial pageview before the async tag downloads.
-      initializeAnalytics();
-      trackPageView();
-    }
+    // GA4 is always loaded in advanced consent mode. With analytics_storage denied,
+    // these page views use cookieless pings rather than tracking cookies.
+    initializeAnalytics();
+    trackPageView();
 
     if (stored) {
       // Hydrate the browser-only preference after SSR, before loading Analytics.
@@ -78,10 +77,8 @@ export function CookieBanner() {
       if (event.key !== STORAGE_KEY && event.key !== null) return;
       const current = readStoredConsent();
       applyAnalyticsConsent(current?.analytics === true);
-      if (current?.analytics === true) {
-        initializeAnalytics();
-        trackPageView();
-      }
+      initializeAnalytics();
+      trackPageView();
       setAnalyticsEnabled(current?.analytics === true);
       setAnalyticsChoice(current?.analytics === true);
       if (!current) setShowBanner(true);
@@ -101,10 +98,8 @@ export function CookieBanner() {
 
   const saveConsent = (analytics: boolean) => {
     applyAnalyticsConsent(analytics);
-    if (analytics) {
-      initializeAnalytics();
-      trackPageView();
-    }
+    initializeAnalytics();
+    trackPageView();
     const consent: ConsentState = {
       analytics,
       updatedAt: new Date().toISOString(),
@@ -122,17 +117,15 @@ export function CookieBanner() {
 
   return (
     <>
-      {analyticsEnabled && (
-        <Script
-          id="google-analytics-loader"
-          src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_ID}`}
-          strategy="afterInteractive"
-          onReady={() => {
-            initializeAnalytics();
-            trackPageView();
-          }}
-        />
-      )}
+      <Script
+        id="google-analytics-loader"
+        src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_ID}`}
+        strategy="afterInteractive"
+        onReady={() => {
+          initializeAnalytics();
+          trackPageView();
+        }}
+      />
 
       {showBanner && (
         <div
@@ -145,9 +138,10 @@ export function CookieBanner() {
               <div>
                 <p className="font-bold text-white mb-1">Sua privacidade e suas escolhas</p>
                 <p className="text-sm text-gray-400 leading-relaxed">
-                  Usamos recursos essenciais para o funcionamento do site. O Google Analytics só é carregado
-                  com sua autorização para entendermos, de forma agregada, como o portal é utilizado. Você pode
-                  aceitar, rejeitar ou ajustar sua preferência. Consulte nossa{' '}
+                  Contabilizamos visualizações de páginas com sinais de medição sem cookies analíticos.
+                  Se você aceitar cookies opcionais, o Google Analytics poderá utilizar cookies para análises
+                  mais detalhadas. Rejeitar impede esses cookies, mas não a contagem básica sem cookies.
+                  Consulte nossa{' '}
                   <a href="/politica-de-privacidade" className="text-[#B6D200] hover:underline">
                     Política de Privacidade
                   </a>. Rejeitar cookies opcionais não impede usar o mapa, entrar com Google ou salvar suas visitas.
@@ -158,16 +152,17 @@ export function CookieBanner() {
                 <div className="rounded-xl border border-white/10 bg-white/5 p-4">
                   <div className="flex items-start justify-between gap-5">
                     <div>
-                      <p className="font-bold text-white">Cookies de análise</p>
+                      <p className="font-bold text-white">Cookies de análise (opcionais)</p>
                       <p className="text-xs md:text-sm text-gray-400 mt-1">
-                        Permite carregar o Google Analytics 4 para entender a audiência, as páginas acessadas e o desempenho
-                        do portal. Não é necessário para navegar no site.
+                        Permite ao Google Analytics usar cookies para estatísticas mais detalhadas.
+                        Sem autorização, a medição básica envia sinais sem cookies analíticos.
+                        Esta escolha não é necessária para navegar no site.
                       </p>
                     </div>
                     <button
                       type="button"
                       role="switch"
-                      aria-label="Permitir Google Analytics 4"
+                      aria-label="Permitir cookies analíticos do Google Analytics"
                       aria-checked={analyticsChoice}
                       onClick={() => setAnalyticsChoice((value) => !value)}
                       className={'relative mt-1 h-7 w-12 shrink-0 rounded-full transition-colors ' + (analyticsChoice ? 'bg-[#B6D200]' : 'bg-gray-600')}
