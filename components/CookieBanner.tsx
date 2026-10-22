@@ -45,7 +45,6 @@ export function CookieBanner() {
   const pathname = usePathname();
   const [showBanner, setShowBanner] = useState(false);
   const [showPreferences, setShowPreferences] = useState(false);
-  const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
   const [analyticsChoice, setAnalyticsChoice] = useState(false);
 
   useEffect(() => {
@@ -59,7 +58,6 @@ export function CookieBanner() {
     if (stored) {
       // Hydrate the browser-only preference after SSR, before loading Analytics.
       // eslint-disable-next-line react-hooks/set-state-in-effect
-      setAnalyticsEnabled(stored.analytics);
       setAnalyticsChoice(stored.analytics);
     } else {
       setShowBanner(true);
@@ -79,7 +77,6 @@ export function CookieBanner() {
       applyAnalyticsConsent(current?.analytics === true);
       initializeAnalytics();
       trackPageView();
-      setAnalyticsEnabled(current?.analytics === true);
       setAnalyticsChoice(current?.analytics === true);
       if (!current) setShowBanner(true);
     };
@@ -109,7 +106,6 @@ export function CookieBanner() {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
       localStorage.removeItem('cookie-consent');
     } catch { /* The choice still applies to this page when storage is blocked. */ }
-    setAnalyticsEnabled(analytics);
     setAnalyticsChoice(analytics);
     setShowBanner(false);
     setShowPreferences(false);
