@@ -14,9 +14,11 @@ test('per-instance contact rate limiting stops repetitive sends and resets after
   assert.deepEqual(checkContactRateLimit(ip, now+600001), { allowed: true, retryAfterSeconds: 0 });
 });
 
-test('the limit distinguishes clients and does not group browsers when IP is unknown', () => {
+test('the limit distinguishes clients and limits missing or malformed addresses', () => {
   assert.equal(checkContactRateLimit('203.0.113.1').allowed, true);
   assert.equal(checkContactRateLimit('203.0.113.2').allowed, true);
-  assert.equal(checkContactRateLimit(null).allowed, true);
-  assert.equal(checkContactRateLimit('spoofed-client-ip').allowed, true);
+  const now = 2000000;
+  for (let i = 0; i < 5; i++) assert.equal(checkContactRateLimit(i % 2 ? null : 'bad-ip', now).allowed, true);
+  assert.equal(checkContactRateLimit(null, now).allowed, false);
+  assert.equal(checkContactRateLimit('spoofed-client-ip', now).allowed, false);
 });

@@ -12,6 +12,7 @@ import { SmartImage } from '@/components/SmartImage';
 import { TravelSocialCTA } from '@/components/TravelSocialCTA';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { safeJsonForInlineScript } from '@/lib/oauth-security';
 
 export const revalidate = 60;
 
@@ -176,7 +177,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       {/* Schema.org Structured Data for Google Rich Snippets */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonForInlineScript(jsonLd) }}
       />
 
       <article className="max-w-4xl mx-auto px-4 py-12">
