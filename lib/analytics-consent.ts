@@ -42,22 +42,22 @@ function clearAnalyticsCookies() {
 export function applyAnalyticsConsent(allowed: boolean) {
   if (typeof window === 'undefined') return;
   const target = analyticsWindow();
-  // Consent Mode alone can allow cookieless pings. Also disable this property.
-  target[DISABLED_KEY] = !allowed;
+  // Advanced Consent Mode: denial prevents analytics cookies, not aggregate cookieless pings.
+  // Clear a legacy ga-disable flag left by the previous basic-consent implementation.
+  target[DISABLED_KEY] = false;
   target.gtag!('consent', 'update', {
     analytics_storage: allowed ? 'granted' : 'denied', ad_storage: 'denied',
     ad_user_data: 'denied', ad_personalization: 'denied',
   });
   if (!allowed) {
-    lastPageViewUrl = null;
     clearAnalyticsCookies();
   }
 }
 
 export function initializeAnalytics() {
   const target = analyticsWindow();
-  // A script can finish loading after the visitor has withdrawn consent.
-  if (target[DISABLED_KEY] !== false || initialized) return;
+  // The GA4 tag is configured for every visitor, with analytics_storage denied by default.
+  if (initialized) return;
   target.gtag!('js', new Date());
   target.gtag!('config', ANALYTICS_ID, {
     send_page_view: false,
@@ -67,12 +67,13 @@ export function initializeAnalytics() {
   initialized = true;
 }
 
-// Register page views explicitly for the Next.js App Router and after consent.
-// Never send an event without permission; skip duplicate callbacks for the same URL.
+// Page views are sent for every visitor. Under denied consent, GA4 receives
+// cookieless pings instead of writing/reading analytics cookies.
+// Deduplicate callbacks for the same URL, including consent transitions.
 export function trackPageView() {
   if (typeof window === 'undefined' || !initialized) return false;
   const target = window as AnalyticsWindow;
-  if (target[DISABLED_KEY] !== false || typeof target.gtag !== 'function') return false;
+  if (typeof target.gtag !== 'function') return false;
   const url = window.location.href.split('#')[0];
   if (url === lastPageViewUrl) return false;
   target.gtag('event', 'page_view', {
