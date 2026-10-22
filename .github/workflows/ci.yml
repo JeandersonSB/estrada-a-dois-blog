@@ -213,6 +213,12 @@ jobs:
       - name: Testar proteção do login GitHub
         run: node --experimental-strip-types --test tests/oauth-security.test.mjs
 
+      - name: Testar proteção dos caminhos de artigos
+        run: node --experimental-strip-types --test tests/post-slug-security.test.mjs
+
+      - name: Testar limite de envios do formulário
+        run: node --experimental-strip-types --test tests/contact-rate-limit.test.mjs
+
       - name: ESLint
         run: npm run lint
 
