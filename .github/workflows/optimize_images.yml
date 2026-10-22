@@ -40,4 +40,6 @@ jobs:
         run: node scripts/optimize_images.mjs
 
       - name: Salvar Imagens Otimizadas no Repositório
-        run: bash scripts/git_commit_retry.sh "perf(images): otimização inteligente de imagens do blog [skip vercel]" public/images
+        # Use a YAML block: the colon in the commit title must not be interpreted as a YAML key.
+        run: |
+          bash scripts/git_commit_retry.sh "perf(images): otimização inteligente de imagens do blog [skip vercel]" public/images
