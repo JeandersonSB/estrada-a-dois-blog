@@ -2,7 +2,8 @@
 
 import Script from 'next/script';
 import { useEffect, useState } from 'react';
-import { ANALYTICS_ID, applyAnalyticsConsent, initializeAnalytics } from '@/lib/analytics-consent';
+import { usePathname } from 'next/navigation';
+import { ANALYTICS_ID, applyAnalyticsConsent, initializeAnalytics, trackPageView } from '@/lib/analytics-consent';
 
 const STORAGE_KEY = 'cookie-consent-v2';
 
@@ -41,6 +42,7 @@ function readStoredConsent(): ConsentState | null {
 }
 
 export function CookieBanner() {
+  const pathname = usePathname();
   const [showBanner, setShowBanner] = useState(false);
   const [showPreferences, setShowPreferences] = useState(false);
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
@@ -49,6 +51,11 @@ export function CookieBanner() {
   useEffect(() => {
     const stored = readStoredConsent();
     applyAnalyticsConsent(stored?.analytics === true);
+    if (stored?.analytics === true) {
+      // Queue the GA4 config and initial pageview before the async tag downloads.
+      initializeAnalytics();
+      trackPageView();
+    }
 
     if (stored) {
       // Hydrate the browser-only preference after SSR, before loading Analytics.
@@ -71,6 +78,10 @@ export function CookieBanner() {
       if (event.key !== STORAGE_KEY && event.key !== null) return;
       const current = readStoredConsent();
       applyAnalyticsConsent(current?.analytics === true);
+      if (current?.analytics === true) {
+        initializeAnalytics();
+        trackPageView();
+      }
       setAnalyticsEnabled(current?.analytics === true);
       setAnalyticsChoice(current?.analytics === true);
       if (!current) setShowBanner(true);
@@ -82,8 +93,18 @@ export function CookieBanner() {
     };
   }, []);
 
+  useEffect(() => {
+    // Track App Router navigations after React updates the page.
+    const frame = window.requestAnimationFrame(() => trackPageView());
+    return () => window.cancelAnimationFrame(frame);
+  }, [pathname]);
+
   const saveConsent = (analytics: boolean) => {
     applyAnalyticsConsent(analytics);
+    if (analytics) {
+      initializeAnalytics();
+      trackPageView();
+    }
     const consent: ConsentState = {
       analytics,
       updatedAt: new Date().toISOString(),
@@ -106,7 +127,10 @@ export function CookieBanner() {
           id="google-analytics-loader"
           src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_ID}`}
           strategy="afterInteractive"
-          onReady={initializeAnalytics}
+          onReady={() => {
+            initializeAnalytics();
+            trackPageView();
+          }}
         />
       )}
 

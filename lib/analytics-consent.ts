@@ -8,6 +8,7 @@ type AnalyticsWindow = Window & {
 };
 
 let initialized = false;
+let lastPageViewUrl: string | null = null;
 
 function analyticsWindow() {
   const target = window as AnalyticsWindow;
@@ -47,7 +48,10 @@ export function applyAnalyticsConsent(allowed: boolean) {
     analytics_storage: allowed ? 'granted' : 'denied', ad_storage: 'denied',
     ad_user_data: 'denied', ad_personalization: 'denied',
   });
-  if (!allowed) clearAnalyticsCookies();
+  if (!allowed) {
+    lastPageViewUrl = null;
+    clearAnalyticsCookies();
+  }
 }
 
 export function initializeAnalytics() {
@@ -56,7 +60,26 @@ export function initializeAnalytics() {
   if (target[DISABLED_KEY] !== false || initialized) return;
   target.gtag!('js', new Date());
   target.gtag!('config', ANALYTICS_ID, {
-    allow_google_signals: false, allow_ad_personalization_signals: false,
+    send_page_view: false,
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false,
   });
   initialized = true;
+}
+
+// Register page views explicitly for the Next.js App Router and after consent.
+// Never send an event without permission; skip duplicate callbacks for the same URL.
+export function trackPageView() {
+  if (typeof window === 'undefined' || !initialized) return false;
+  const target = window as AnalyticsWindow;
+  if (target[DISABLED_KEY] !== false || typeof target.gtag !== 'function') return false;
+  const url = window.location.href.split('#')[0];
+  if (url === lastPageViewUrl) return false;
+  target.gtag('event', 'page_view', {
+    send_to: ANALYTICS_ID,
+    page_location: url,
+    page_title: document.title,
+  });
+  lastPageViewUrl = url;
+  return true;
 }
