@@ -78,6 +78,10 @@ export function CookieBanner() {
       if (event.key !== STORAGE_KEY && event.key !== null) return;
       const current = readStoredConsent();
       applyAnalyticsConsent(current?.analytics === true);
+      if (current?.analytics === true) {
+        initializeAnalytics();
+        trackPageView();
+      }
       setAnalyticsEnabled(current?.analytics === true);
       setAnalyticsChoice(current?.analytics === true);
       if (!current) setShowBanner(true);
