@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Inter } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
@@ -71,6 +72,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <head>
+        <Script id="ga4-consent-default" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
+            window.gtag('consent', 'default', {
+              analytics_storage: 'denied',
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied'
+            });
+            window.gtag('set', 'ads_data_redaction', true);
+          `}
+        </Script>
+      </head>
       <body className={`${inter.className} ${queraBrand.variable} min-h-screen flex flex-col`}>
         <Header />
         <main className="flex-grow">
