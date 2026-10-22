@@ -52,16 +52,25 @@ export default function PoliticaPrivacidade() {
               precise ser informada a cada visita.
             </p>
             <p>
-              Recursos não essenciais de medição só são carregados depois de uma escolha positiva do visitante.
-              Você pode alterar sua decisão a qualquer momento pelo link <strong>Preferências de Cookies</strong> no
-              rodapé do site.
+              O site realiza uma contagem básica de páginas acessadas por meio de sinais do Google Analytics
+              sem cookies analíticos, mesmo quando você rejeita os cookies opcionais. Essa medição é destinada
+              a estatísticas agregadas, sem criação de perfis de publicidade. A autorização positiva ativa
+              o uso de cookies analíticos para métricas mais detalhadas. Você pode alterar sua decisão
+              sobre esses cookies pelo link <strong>Preferências de Cookies</strong> no rodapé do site.
             </p>
 
             <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">4. Google Analytics 4</h2>
             <p>
-              Com sua autorização, utilizamos o <strong>Google Analytics 4</strong> para compreender, de forma agregada,
-              como o portal é utilizado, quais páginas recebem mais visitas e como podemos melhorar conteúdo e
-              desempenho. Se você rejeitar, o Google Analytics não será carregado. Se já tiver aceitado e depois retirar a autorização, desativamos a medição futura e tentamos remover os cookies analíticos acessíveis neste domínio. Isso não apaga automaticamente dados já recebidos pelo Google.
+              Utilizamos o <strong>Google Analytics 4</strong>, com o Modo de Consentimento Avançado,
+              para compreender quais páginas são acessadas e melhorar o conteúdo e o desempenho.
+              Se você rejeitar os cookies de análise, o Google Analytics ainda poderá enviar sinais
+              de visualização de páginas sem cookies analíticos e sem identificador persistente de cookies.
+              O Google utiliza esses sinais limitados para contagem e modelagem estatística; isso não garante
+              uma contagem exata de pessoas. Esses pedidos de rede podem conter informações técnicas
+              habituais do navegador, tratadas segundo as políticas do Google.
+              Ao aceitar, você autoriza o uso de cookies analíticos para métricas mais detalhadas.
+              Ao retirar a autorização, a medição com cookies deixa de ser permitida e tentamos
+              remover os cookies analíticos acessíveis neste domínio. Isso não apaga dados já recebidos.
             </p>
             <p>
               O tratamento realizado pelo Google segue os próprios termos e políticas de privacidade da empresa.
@@ -144,7 +153,10 @@ export default function PoliticaPrivacidade() {
             </p>
             <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">11. Finalidades, escolhas e conservação</h2>
             <p>
-              A medição de audiência e o uso dos dados autorizados no login se baseiam no seu consentimento.
+              A contagem básica e agregada de visualizações sem cookies analíticos se fundamenta no legítimo
+              interesse de compreender o uso do site e aprimorar o conteúdo, sem segmentação ou publicidade
+              personalizada, respeitados os direitos dos visitantes. O uso opcional de cookies analíticos
+              e os dados autorizados no login se baseiam no consentimento.
               O atendimento de solicitações usa os dados necessários ao contato e, conforme o caso, a procedimentos
               solicitados por você. Registros técnicos são tratados para funcionamento e segurança, com base no
               legítimo interesse, respeitados seus direitos, ou no cumprimento de obrigações legais aplicáveis.
@@ -167,7 +179,7 @@ export default function PoliticaPrivacidade() {
               <a href="https://osmfoundation.org/wiki/Privacy_Policy" className="text-[#8ac200] hover:underline">OpenStreetMap</a>.
             </p>
 
-            <p className="font-bold text-[#0F0F0F]">Última atualização: 20 de outubro de 2026.</p>
+            <p className="font-bold text-[#0F0F0F]">Última atualização: 22 de outubro de 2026.</p>
           </div>
         </div>
       </div>
