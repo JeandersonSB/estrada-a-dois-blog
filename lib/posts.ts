@@ -5,6 +5,8 @@ import { remark } from 'remark';
 import remarkGfm from 'remark-gfm';
 import html from 'remark-html';
 import { cache } from 'react';
+import { notFound } from 'next/navigation';
+import { normalizePostSlug } from './post-slug';
 
 const postsDirectory = path.join(process.cwd(), 'content/posts');
 const PUBLIC_CATEGORY_SLUGS = new Set([
@@ -186,11 +188,11 @@ async function _getPostDataInternal(slug: string): Promise<PostDataWithContent> 
     return cached.data;
   }
 
-  const decodedSlug = decodeURIComponent(slug);
-  let fullPath = path.join(postsDirectory, `${decodedSlug}.md`);
-  if (!fs.existsSync(fullPath)) {
-    fullPath = path.join(postsDirectory, `${slug}.md`);
-  }
+  // Only canonical article IDs may be resolved as local files.
+  const decodedSlug = normalizePostSlug(slug);
+  if (!decodedSlug) notFound();
+  const fullPath = path.join(postsDirectory, decodedSlug + '.md');
+  if (!fs.existsSync(fullPath)) notFound();
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const matterResult = matter(fileContents);
 
