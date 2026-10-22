@@ -1,7 +1,12 @@
 import { NextResponse } from 'next/server';
+import { checkContactRateLimit } from '@/lib/contact-rate-limit';
 
 export async function POST(req: Request) {
   try {
+    const size = Number(req.headers.get('content-length') || 0);
+    if (Number.isFinite(size) && size > 8192) {
+      return NextResponse.json({ error: 'Mensagem muito grande.' }, { status: 413 });
+    }
     const { name, whatsapp, email, subject, message, _bot_honey } = await req.json();
 
     // 1. Anti-spam Honeypot: se preenchido, é um bot automático
@@ -23,6 +28,16 @@ export async function POST(req: Request) {
       return NextResponse.json(
         { error: 'O tamanho da mensagem ou do nome excede o limite suportado.' },
         { status: 400 }
+      );
+    }
+
+    // Rate-limit after validation, before external Telegram usage. Vercel sets
+    // x-vercel-forwarded-for; never accept a browser-supplied IP in the JSON.
+    const limit = checkContactRateLimit(req.headers.get('x-vercel-forwarded-for'));
+    if (!limit.allowed) {
+      return NextResponse.json(
+        { error: 'Muitas mensagens em pouco tempo. Tente novamente mais tarde.' },
+        { status: 429, headers: { 'Retry-After': String(limit.retryAfterSeconds) } }
       );
     }
 
