@@ -11,6 +11,7 @@ on:
       - 'app/**'
       - 'components/**'
       - 'lib/**'
+      - 'tests/**'
       - 'scripts/**'
       - 'package.json'
       - 'package-lock.json'
@@ -208,6 +209,9 @@ jobs:
 
           console.log('Tabela GFM renderizada corretamente.');
           NODE
+
+      - name: Testar proteção do login GitHub
+        run: node --experimental-strip-types --test tests/oauth-security.test.mjs
 
       - name: ESLint
         run: npm run lint
