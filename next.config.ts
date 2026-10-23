@@ -25,6 +25,12 @@ const securityHeaders = [
     key: "Permissions-Policy",
     value: "camera=(), microphone=(), geolocation=()",
   },
+  {
+    key: "Content-Security-Policy",
+    // Compatible with static Next.js pages, Firebase login, maps and analytics.
+    // The OAuth callback sets its own stricter nonce-based policy.
+    value: "base-uri 'self'; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests",
+  },
 ];
 
 const nextConfig: NextConfig = {
@@ -61,6 +67,14 @@ const nextConfig: NextConfig = {
       {
         source: "/:path*",
         headers: securityHeaders,
+      },
+      {
+        source: "/admin/:path*",
+        headers: [
+          { key: "Cache-Control", value: "no-store" },
+          { key: "Referrer-Policy", value: "no-referrer" },
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+        ],
       },
       {
         source: "/rota-biker",

@@ -34,10 +34,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
 
       - name: Node.js
-        uses: actions/setup-node@v7
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
           node-version: '24'
           cache: 'npm'
@@ -218,6 +220,9 @@ jobs:
 
       - name: Testar limite de envios do formulário
         run: node --experimental-strip-types --test tests/contact-rate-limit.test.mjs
+
+      - name: Testar validação e limite real de leitura do formulário
+        run: node --experimental-strip-types --test tests/contact-request.test.mjs
 
       - name: ESLint
         run: npm run lint

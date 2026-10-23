@@ -1,6 +1,8 @@
 import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
+import { normalizePostSlug } from './post-slug';
+import { notFound } from 'next/navigation';
 
 const postsDirectory = join(process.cwd(), 'content/posts');
 
@@ -9,7 +11,8 @@ export function getPostSlugs() {
 }
 
 export function getPostBySlug(slug: string, fields: string[] = []) {
-  const realSlug = slug.replace(/\.md$/, '');
+  const realSlug = normalizePostSlug(slug.replace(/\.md$/, ''));
+  if (!realSlug) notFound();
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);

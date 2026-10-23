@@ -2,6 +2,7 @@ backend:
   name: github
   repo: JeandersonSB/estrada-a-dois-blog
   branch: main
+  auth_scope: public_repo
   base_url: https://estrada-a-dois-blog.vercel.app/api
   commit_messages:
     create: 'content(cms): criar {{collection}} "{{slug}}" [skip vercel]'

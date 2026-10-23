@@ -1,74 +1,43 @@
 import { NextResponse } from 'next/server';
 import { checkContactRateLimit } from '@/lib/contact-rate-limit';
+import { ContactRequestError, readContactRequest } from '@/lib/contact-request';
+
+function json(body: object, status = 200, headers: Record<string, string> = {}) {
+  return NextResponse.json(body, { status, headers: { 'Cache-Control': 'no-store', ...headers } });
+}
 
 export async function POST(req: Request) {
   try {
-    const size = Number(req.headers.get('content-length') || 0);
-    if (Number.isFinite(size) && size > 8192) {
-      return NextResponse.json({ error: 'Mensagem muito grande.' }, { status: 413 });
-    }
-    const { name, whatsapp, email, subject, message, _bot_honey } = await req.json();
-
-    // 1. Anti-spam Honeypot: se preenchido, é um bot automático
-    if (_bot_honey) {
-      // Retorna sucesso falso sem incomodar o Telegram
-      return NextResponse.json({ success: true });
-    }
-
-    // 2. Validação de campos obrigatórios e tipos
-    if (!name || !message || typeof name !== 'string' || typeof message !== 'string') {
-      return NextResponse.json(
-        { error: 'Nome e mensagem são campos obrigatórios.' },
-        { status: 400 }
-      );
-    }
-
-    // 3. Limites de tamanho para prevenir sobrecarga e erro de tamanho da API do Telegram (max 4096 chars)
-    if (name.length > 100 || message.length > 2500) {
-      return NextResponse.json(
-        { error: 'O tamanho da mensagem ou do nome excede o limite suportado.' },
-        { status: 400 }
-      );
-    }
-
-    // Rate-limit after validation, before external Telegram usage. Vercel sets
-    // x-vercel-forwarded-for; never accept a browser-supplied IP in the JSON.
+    // Apply the limit before reading the body or calling an external service.
     const limit = checkContactRateLimit(req.headers.get('x-vercel-forwarded-for'));
     if (!limit.allowed) {
-      return NextResponse.json(
+      return json(
         { error: 'Muitas mensagens em pouco tempo. Tente novamente mais tarde.' },
-        { status: 429, headers: { 'Retry-After': String(limit.retryAfterSeconds) } }
+        429, { 'Retry-After': String(limit.retryAfterSeconds) }
       );
     }
-
-    const cleanWhatsapp = typeof whatsapp === 'string' ? whatsapp.slice(0, 35) : '';
-    const cleanEmail = typeof email === 'string' ? email.slice(0, 150) : '';
-    const cleanSubject = typeof subject === 'string' ? subject.slice(0, 150) : 'Dúvida sobre roteiro / viagem';
+    const { name, message, whatsapp, email, subject, honeypot } = await readContactRequest(req);
+    if (honeypot) return json({ success: true });
 
     const token = process.env.TELEGRAM_BOT_TOKEN;
     const chatId = process.env.TELEGRAM_CHAT_ID;
 
     if (!token || !chatId) {
-      console.error('TELEGRAM_BOT_TOKEN ou TELEGRAM_CHAT_ID não definidos nas variáveis de ambiente.');
-      return NextResponse.json(
+      console.error('Serviço de contato não configurado.');
+      return json(
         { error: 'Serviço de notificação temporariamente indisponível no servidor.' },
-        { status: 500 }
+        503
       );
     }
-
-    const escapeHtml = (str: string) =>
-      String(str || '')
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;');
-
+    // Plain text prevents HTML injection and entity expansion past Telegram's
+    // 4096-character limit. The validated fields fit within that limit.
     const texto =
-      `📬 <b>NOVA MENSAGEM DO FORMULÁRIO DO BLOG!</b>\n\n` +
-      `👤 <b>Nome:</b> ${escapeHtml(name)}\n` +
-      (cleanWhatsapp ? `📱 <b>WhatsApp:</b> ${escapeHtml(cleanWhatsapp)}\n` : '') +
-      (cleanEmail ? `📧 <b>E-mail:</b> ${escapeHtml(cleanEmail)}\n` : '') +
-      `📌 <b>Assunto:</b> ${escapeHtml(cleanSubject)}\n\n` +
-      `💬 <b>Mensagem:</b>\n${escapeHtml(message)}`;
+      `📬 NOVA MENSAGEM DO FORMULÁRIO DO BLOG!\n\n` +
+      `👤 Nome: ${name}\n` +
+      (whatsapp ? `📱 WhatsApp: ${whatsapp}\n` : '') +
+      (email ? `📧 E-mail: ${email}\n` : '') +
+      `📌 Assunto: ${subject}\n\n` +
+      `💬 Mensagem:\n${message}`;
 
     const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
       method: 'POST',
@@ -76,26 +45,30 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         chat_id: chatId,
         text: texto,
-        parse_mode: 'HTML',
         disable_web_page_preview: true,
       }),
+      cache: 'no-store',
+      signal: AbortSignal.timeout(10000),
     });
 
     const data = await res.json();
-    if (!data.ok) {
-      console.error('Erro retornado pela API do Telegram:', data);
-      return NextResponse.json(
+    if (!res.ok || !data.ok) {
+      console.error('Falha do provedor de contato.', { status: res.status });
+      return json(
         { error: 'Falha ao entregar mensagem no Telegram.' },
-        { status: 502 }
+        502
       );
     }
 
-    return NextResponse.json({ success: true });
+    return json({ success: true });
   } catch (err: unknown) {
-    console.error('Erro na rota /api/contato:', err);
-    return NextResponse.json(
+    if (err instanceof ContactRequestError) return json({ error: err.message }, err.status);
+    // Fetch errors can include the Telegram URL containing the bot token.
+    // Do not log the error object, request body or provider response.
+    console.error('Falha ao processar solicitação de contato.');
+    return json(
       { error: 'Ocorreu um erro interno ao enviar sua mensagem.' },
-      { status: 500 }
+      502
     );
   }
 }

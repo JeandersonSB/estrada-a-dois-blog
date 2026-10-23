@@ -12,13 +12,10 @@ const windows = new Map<string, Window>();
 // Best-effort protection within each serverless instance.
 // Strong distributed limits should additionally be configured in the Vercel WAF.
 export function checkContactRateLimit(ip: string | null, now = Date.now()): ContactLimit {
-  // Vercel supplies this header. In local development, don't share one anonymous
-  // rate-limit counter between unrelated testers.
-  if (!ip || ip.length > 120 || !/^[0-9a-fA-F.:]+$/.test(ip)) {
-    return { allowed: true, retryAfterSeconds: 0 };
-  }
-
-  const key = createHash('sha256').update(sessionSalt + ':' + ip).digest('hex');
+  // A missing or malformed header must not turn off abuse protection. Vercel
+  // supplies the real client address; unknown callers share a bounded bucket.
+  const identity = ip && ip.length <= 120 && /^[0-9a-fA-F.:]+$/.test(ip) ? ip : 'unknown';
+  const key = createHash('sha256').update(sessionSalt + ':' + identity).digest('hex');
   const existing = windows.get(key);
   if (!existing || existing.expiresAt <= now) {
     // Keep instance memory bounded during traffic floods.

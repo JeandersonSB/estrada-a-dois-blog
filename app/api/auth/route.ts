@@ -15,7 +15,9 @@ export async function GET() {
   const state = newOauthState();
   const githubAuthUrl = new URL('https://github.com/login/oauth/authorize');
   githubAuthUrl.searchParams.set('client_id', clientId);
-  githubAuthUrl.searchParams.set('scope', 'repo,user');
+  // This CMS writes to a public repository and does not need private repos
+  // or the user's private profile data.
+  githubAuthUrl.searchParams.set('scope', 'public_repo');
   githubAuthUrl.searchParams.set('state', state);
 
   const response = NextResponse.redirect(githubAuthUrl.toString(), 302);
