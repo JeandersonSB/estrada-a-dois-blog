@@ -8,6 +8,7 @@ import { APPROVED, CATEGORIES, DRAFT, PUBLISHED, addDays, isDueForPublication, l
 import { isPrimaryUrl, verifySource } from '../scripts/editorial/gemini.mjs';
 import { generateBatch } from '../scripts/expert_bot.mjs';
 import { publishApproved } from '../scripts/publish_editorial.mjs';
+import { importPrepared } from '../scripts/import_editorial.mjs';
 
 const week = '2026-10-26';
 const sources = [
@@ -59,6 +60,10 @@ test('somente aprovação humana dupla e vencimento permitem publicação', () =
   const data = { ...slotsForWeek(week)[0], editorial_id: slotsForWeek(week)[0].id, status: APPROVED, editorial_reviewed: true, image_reviewed: true };
   const now = new Date('2026-10-26T13:47:00Z');
   assert.equal(isDueForPublication(data, now), true);
+  assert.equal(isDueForPublication({ ...data, planned_for: new Date(data.planned_for) }, now), true);
+  assert.equal(isDueForPublication({ ...data, planned_for: '2026-10-26T13:47:00+00:00' }, now), true);
+  assert.equal(isDueForPublication({ ...data, planned_for: '2026-10-26T10:47:00' }, now), false);
+  assert.equal(isDueForPublication({ ...data, planned_for: new Date('invalid') }, now), false);
   assert.equal(isDueForPublication(data, new Date('2026-10-26T13:46:59Z')), false);
   for (const overrides of [{ status: DRAFT }, { status: PUBLISHED }, { editorial_reviewed: false }, { image_reviewed: false }, { category: 'Notícias' }, { editorial_id: '' }, { planned_for: 'not-a-date' }]) {
     assert.equal(isDueForPublication({ ...data, ...overrides }, now), false);
@@ -70,6 +75,8 @@ test('fontes rejeitam URLs externas, subdomínio impostor e evidência inventada
   assert.equal(isPrimaryUrl(sources[0].url), true);
   const fetcher = async () => new Response(`<html><body>${sources[0].claims[0].quote}</body></html>`, { headers: { 'content-type': 'text/html' } });
   assert.equal((await verifySource(sources[0], {}, fetcher)).verification, 'html-quote-match');
+  const accented = { ...sources[0], claims: [{ fact: 'Pausa e planejamento.', quote: 'Conferir alimentação, condições e organização da próxima etapa.' }] };
+  assert.equal((await verifySource(accented, {}, async () => new Response('<p>Conferir alimenta&ccedil;&atilde;o, condi&#231;&#245;es e organiza&#xE7;&#xE3;o da pr&oacute;xima etapa.</p>'))).verification, 'html-quote-match');
   await assert.rejects(() => verifySource({ ...sources[0], claims: [{ fact: 'Unsupported', quote: 'This invented sentence was never present in the official source page.' }] }, {}, fetcher));
   await assert.rejects(() => verifySource(sources[0], {}, async () => new Response('', { status: 302, headers: { location: 'https://evil.test/page' } })));
   await assert.rejects(() => verifySource(sources[0], {}, async () => new Response('not a pdf', { headers: { 'content-type': 'application/pdf' } })));
@@ -133,4 +140,16 @@ test('publicador preserva rascunhos, espera data e capa revisada e não republic
   const blocked = await publishApproved({ root, now: new Date('2026-10-28T13:47:00Z') });
   assert.equal(blocked.blocked.length, 1);
   assert.equal(matter(fs.readFileSync(equipment.file, 'utf8')).data.status, APPROVED);
+});
+
+test('entrada editorial do ChatGPT usa o mesmo fluxo, sem chamada ou chave Gemini', async t => {
+  const root = fixtureRoot(t);
+  const result = await importPrepared({ root,
+    input: { week, articles: CATEGORIES.map(category => ({ category, article: fixtureArticle(category), sources })) },
+    verifier: async source => ({ ...source, verified_at: new Date().toISOString(), verification: 'fixture' }),
+  });
+  assert.equal(result.errors.length, 0);
+  assert.equal(result.articles.length, 3);
+  assert.ok(readPosts(root).filter(post => post.data.editorial_id).every(post => post.data.status === DRAFT && post.data.editorial_reviewed === false && post.data.image_reviewed === false));
+  for (const post of readPosts(root).filter(post => post.data.editorial_id)) assert.match(fs.readFileSync(post.file, 'utf8'), /^image: ['"]?\/images\/blog\/.+\.webp['"]?$/m);
 });

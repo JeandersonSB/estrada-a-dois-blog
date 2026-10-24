@@ -1,22 +1,142 @@
 {
   "week": "2026-10-26",
-  "checked_at": "2026-10-24T20:46:26.321Z",
-  "articles": [],
-  "errors": [
+  "checked_at": "2026-10-24T20:58:39.051Z",
+  "articles": [
     {
       "id": "ead-2026-10-26-dicas",
+      "title": "Distância por dia na viagem de moto: como planejar",
       "category": "Dicas",
-      "message": "Nenhum modelo concluiu a geração. Consulte disponibilidade e cota do Gemini."
+      "slug": "distancia-por-dia-na-viagem-de-moto-como-planejar-2026-10-26",
+      "planned_for": "2026-10-26T10:47:00-03:00",
+      "status": "⏳ Rascunho",
+      "words": 981,
+      "sources": [
+        {
+          "url": "https://www.honda.com.br/motos/blog/dicas-para-uma-viagem-de-moto",
+          "title": "Honda — Dicas para uma viagem de moto",
+          "claims": [
+            {
+              "fact": "O planejamento deve localizar paradas para descanso, alimentação e abastecimento.",
+              "quote": "locais para fazer paradas seguras de descanso, alimentação ou reabastecimento"
+            }
+          ],
+          "verified_at": "2026-10-24T20:58:44.039Z",
+          "verification": "html-quote-match"
+        },
+        {
+          "url": "https://www.honda.com.br/motos/blog/planejamento-o-segredo-de-uma-viagem-de-sucesso",
+          "title": "Honda — Planejamento de uma viagem de moto",
+          "claims": [
+            {
+              "fact": "A frequência das paradas deve respeitar a necessidade do corpo, sem metas prefixadas de horas ou quilômetros.",
+              "quote": "estabeleça paradas com a frequência que seu organismo pede"
+            }
+          ],
+          "verified_at": "2026-10-24T20:58:44.138Z",
+          "verification": "html-quote-match"
+        }
+      ],
+      "research_model": "pesquisa web editorial",
+      "writing_model": "redação editorial com ChatGPT",
+      "review_notes": [
+        "Acrescentar, se desejar, a avaliação real de conforto das etapas de uma viagem do casal; os exemplos do texto são hipotéticos."
+      ],
+      "reused": false
     },
     {
       "id": "ead-2026-10-26-equipamentos",
+      "title": "Capa de chuva para moto: uma ou duas peças para viajar?",
       "category": "Equipamentos",
-      "message": "Nenhum modelo concluiu a geração. Consulte disponibilidade e cota do Gemini."
+      "slug": "capa-de-chuva-para-moto-uma-ou-duas-pecas-para-viajar-2026-10-26",
+      "planned_for": "2026-10-28T10:47:00-03:00",
+      "status": "⏳ Rascunho",
+      "words": 1044,
+      "sources": [
+        {
+          "url": "https://revitsport.com/en-us/collections/motorcycle-rain-gear",
+          "title": "REV'IT! — Características da linha de chuva",
+          "claims": [
+            {
+              "fact": "A fabricante descreve foco em facilidade de acesso e transporte compacto de sua linha.",
+              "quote": "easy access and both compact and lightweight in design"
+            }
+          ],
+          "verified_at": "2026-10-24T20:56:34.572Z",
+          "verification": "html-quote-match"
+        },
+        {
+          "url": "https://revitsport.com/pages/dirt-series-layering-modularity",
+          "title": "REV'IT! — Organização em camadas",
+          "claims": [
+            {
+              "fact": "O sistema distingue camadas de proteção de impacto, abrasão e cobertura impermeável.",
+              "quote": "separates impact protection, abrasion-resistant ventilation layers, and waterproof outer shells"
+            }
+          ],
+          "verified_at": "2026-10-24T20:56:36.221Z",
+          "verification": "html-quote-match"
+        },
+        {
+          "url": "https://www.oxfordproducts.com/oxford-rainseal-fluo-orange-over-suit-m-rm211004s.html",
+          "title": "Oxford — Rainseal Over Suit",
+          "claims": [
+            {
+              "fact": "Este produto declara dimensionamento para vestir sobre equipamento de pilotagem.",
+              "quote": "Intelligently sized to fit over riding gear"
+            }
+          ],
+          "verified_at": "2026-10-24T20:56:44.502Z",
+          "verification": "html-quote-match"
+        }
+      ],
+      "research_model": "pesquisa web editorial",
+      "writing_model": "redação editorial com ChatGPT",
+      "review_notes": [
+        "Guia de critérios, sem teste prático de produtos. Conferir a capa ilustrativa e evitar atribuir impermeabilidade ou certificações a qualquer peça não identificada."
+      ],
+      "reused": true
     },
     {
       "id": "ead-2026-10-26-manutencao",
+      "title": "Bateria da moto parada: cuidados antes de viajar",
       "category": "Manutenção",
-      "message": "Nenhum modelo concluiu a geração. Consulte disponibilidade e cota do Gemini."
+      "slug": "bateria-da-moto-parada-cuidados-antes-de-viajar-2026-10-26",
+      "planned_for": "2026-10-30T10:47:00-03:00",
+      "status": "⏳ Rascunho",
+      "words": 972,
+      "sources": [
+        {
+          "url": "https://www.honda.com.br/motos/blog/5-dicas-para-cuidar-bem-da-bateria-de-sua-moto",
+          "title": "Honda — Cuidados com a bateria",
+          "claims": [
+            {
+              "fact": "A Honda menciona dispositivos específicos para manutenção da carga em uso esporádico.",
+              "quote": "especificamente projetados para manter a carga da bateria"
+            }
+          ],
+          "verified_at": "2026-10-24T20:56:50.165Z",
+          "verification": "html-quote-match"
+        },
+        {
+          "url": "https://www.yuasa.com/en-se/info-hub/motorcycle-battery-care-and-maintenance",
+          "title": "Yuasa — Cuidados e manutenção de baterias de motocicletas",
+          "claims": [
+            {
+              "fact": "A bateria perde carga naturalmente; o acompanhamento deve respeitar as instruções do fabricante.",
+              "quote": "naturally lose charge over time, a process known as self discharge"
+            }
+          ],
+          "verified_at": "2026-10-24T20:56:56.364Z",
+          "verification": "html-quote-match"
+        }
+      ],
+      "research_model": "pesquisa web editorial",
+      "writing_model": "redação editorial com ChatGPT",
+      "review_notes": [
+        "Sem parâmetros elétricos universais, instruções de reparo ou alegação de testes. Confirmar eventuais adaptações ao modelo real com o manual e profissional qualificado."
+      ],
+      "reused": true
     }
-  ]
+  ],
+  "errors": []
 }

@@ -52,6 +52,8 @@ jobs:
           node --check scripts/normalize_published_images.mjs
           node --check scripts/expert_bot.mjs
           node --check scripts/publish_editorial.mjs
+          node --check scripts/import_editorial.mjs
+          node --check scripts/notify_editorial.mjs
           bash -n scripts/git_commit_retry.sh
 
       - name: Testar geração editorial e aprovação antes de publicar

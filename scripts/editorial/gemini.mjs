@@ -7,7 +7,7 @@ export const PRIMARY_DOMAINS = [
   'kawasaki.com.br', 'kawasaki.com', 'michelin.com.br', 'michelinman.com',
   'bridgestone.com.br', 'bridgestone.com', 'pirelli.com', 'metzeler.com',
   'givi.com.br', 'givi.it', 'givimoto.com.br', 'giviusa.com', 'motul.com',
-  'yuasa.co.uk', 'gs-yuasa.com', 'yuasabatteries.com', 'dideu.eu', 'didchain.com',
+  'yuasa.co.uk', 'yuasa.com', 'gs-yuasa.com', 'yuasabatteries.com', 'dideu.eu', 'didchain.com',
   'sena.com', 'cardosystems.com', 'garmin.com', '3m.com.br', '3m.com',
   'shad.es', 'oxfordproducts.com', 'revitsport.com', 'alpinestars.com', 'dainese.com',
 ];
@@ -22,7 +22,15 @@ export function isPrimaryUrl(value) {
 
 export function normalizeText(text) {
   return text.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ')
-    .replace(/<[^>]+>/g, ' ').replace(/&(?:nbsp|amp|quot|#\d+);/g, ' ')
+    .replace(/<[^>]+>/g, ' ').replace(/&#(x[0-9a-f]+|\d+);/gi, (_, value) => {
+      const code = value[0].toLowerCase() === 'x' ? parseInt(value.slice(1), 16) : Number(value);
+      return code > 0 && code <= 0x10ffff ? String.fromCodePoint(code) : ' ';
+    })
+    .replace(/&([a-z]+);/gi, (_, value) => {
+      const entity = value.toLowerCase();
+      const latin = { aacute: 'a', agrave: 'a', acirc: 'a', atilde: 'a', auml: 'a', aring: 'a', eacute: 'e', egrave: 'e', ecirc: 'e', euml: 'e', iacute: 'i', igrave: 'i', icirc: 'i', iuml: 'i', oacute: 'o', ograve: 'o', ocirc: 'o', otilde: 'o', ouml: 'o', uacute: 'u', ugrave: 'u', ucirc: 'u', uuml: 'u', ccedil: 'c', ntilde: 'n' };
+      return latin[entity] || ' ';
+    })
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
 }
 

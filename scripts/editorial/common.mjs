@@ -116,11 +116,16 @@ export function validateArticle(article, category, posts = [], sources = []) {
 }
 
 export function isDueForPublication(data, now = new Date()) {
+  // O CMS pode serializar um timestamp ISO sem aspas; gray-matter então o lê
+  // como Date. Ambos os formatos precisam manter o mesmo instante de aprovação.
+  const planned = data.planned_for instanceof Date
+    ? (Number.isFinite(data.planned_for.getTime()) ? data.planned_for.toISOString() : '')
+    : data.planned_for;
   return CATEGORIES.includes(data.category) && data.status === APPROVED &&
     data.editorial_reviewed === true && data.image_reviewed === true &&
     /^ead-\d{4}-\d{2}-\d{2}-(dicas|equipamentos|manutencao)$/.test(data.editorial_id || '') &&
-    typeof data.planned_for === 'string' && /T\d{2}:\d{2}:\d{2}(?:-03:00|Z)$/.test(data.planned_for) &&
-    Number.isFinite(Date.parse(data.planned_for)) && Date.parse(data.planned_for) <= now.getTime();
+    typeof planned === 'string' && /T\d{2}:\d{2}:\d{2}(?:\.\d{3})?(?:[+-]\d{2}:\d{2}|Z)$/.test(planned) &&
+    Number.isFinite(Date.parse(planned)) && Date.parse(planned) <= now.getTime();
 }
 
 export async function notifyTelegram(message, fetcher = fetch) {
