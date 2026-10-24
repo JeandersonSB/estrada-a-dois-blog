@@ -1,68 +1,43 @@
-# Rotina editorial semanal — Estrada a Dois
+# Rotina semanal de rascunhos — Estrada a Dois
 
-Implementada em 24/10/2026. Substitui o gerador removido em 12/10; não reativa Notícias. A preparação é feita por uma tarefa semanal do ChatGPT e a publicação é executada pelo GitHub Actions após aprovação no painel.
+Correção de escopo em 24/10/2026: o usuário não autorizou alterar o painel CMS. A configuração original de public/admin/config.yml foi restaurada. A automação entrega somente rascunhos; revisão e publicação são manuais, pelo fluxo existente.
 
-## Calendário e aprovação
+Não alterar campos, filtros, layout, versão ou funcionamento do CMS para acomodar a rotina. Não adicionar etapas de aprovação nem agendamento automático de publicação. O workflow de publicação agendada criado durante a implantação foi removido. Não reativá-lo sem solicitação explícita do usuário.
 
-| Etapa | Quando, em Brasília | Resultado |
-| --- | --- | --- |
-| Preparar lote no ChatGPT | Domingo, 09h17 | Três rascunhos no painel e aviso no Telegram após salvar |
-| Dicas | Segunda, a partir das 10h47 | Publicação somente após revisão humana |
-| Equipamentos | Quarta, a partir das 10h47 | Publicação somente após revisão humana |
-| Manutenção | Sexta, a partir das 10h47 | Publicação somente após revisão humana |
+## Preparação e calendário sugerido
 
-O GitHub Actions pode atrasar tarefas agendadas. Uma aprovação atrasada é recuperada na próxima janela de publicação; nenhum artigo é publicado para cumprir frequência sem aprovação. A execução de publicação pode também ser acionada manualmente no GitHub, respeitando a data planejada.
+A tarefa **Artigos semanais Estrada a Dois** do ChatGPT começa aos domingos, às 09h17 de Brasília, e prepara três artigos. A distribuição sugerida é segunda para Dicas, quarta para Equipamentos e sexta para Manutenção. Datas sugeridas no relatório não são agendamentos de publicação.
 
-No `/admin`, abra o rascunho, confira texto, links/fontes, imagem e crédito. Acrescente vivências reais quando tiver, sem exigir relato pessoal para toda pauta técnica. Marque **Texto e fontes revisados por mim** e **Capa e crédito conferidos por mim**, confira a **Publicação planejada (Brasília)** e selecione **✅ Aprovado para agendar**. Salve. Para adiar, altere a data ou volte para **⏳ Rascunho**. A opção **🟢 Publicado** continua sendo publicação manual imediata, fora desse agendamento.
+Os arquivos são salvos em content/posts com status **⏳ Rascunho**. O workflow notify_editorial.yml envia aviso no Telegram depois do commit do relatório na main. O usuário abre o /admin, revisa e publica como já fazia, usando os estados originais **⏳ Rascunho** e **🟢 Publicado**.
 
-## Pesquisa, conteúdo e capas
+A rotina mantém pesquisa, pautas, capas e prevenção de duplicação. O teste da API Gemini em 24/10/2026 retornou HTTP 429 em todos os modelos. A geração ativa usa a tarefa do ChatGPT; Gemini é apenas uma alternativa manual, dependendo da cota.
 
-- A tarefa do ChatGPT pesquisa fontes primárias atuais, redige o lote e o salva no repositório. Não depende da chave/cota da API Gemini. A conexão GitHub da tarefa precisa continuar disponível.
-- Pelo menos duas páginas oficiais devem passar na conferência de evidência: trechos curtos literais presentes no HTML obtido. A entrada da tarefa usa `scripts/import_editorial.mjs`; prefira páginas HTML. Isso comprova a consulta, **não substitui revisão técnica humana** da interpretação, atualidade, aplicação ao modelo e legislação. No gerador manual Gemini, PDF também exige leitura confirmada pelo URL Context.
-- O relatório semanal conserva fontes, evidências curtas, modelos, pendências e contagem de palavras. Não guarda credenciais nem prompts com dados privados.
-- Cada categoria respeita o manual; exemplos de especificações do manual não são tratados como fatos universais. Não são inventados testes, experiências do casal, preços ou parâmetros mecânicos.
-- Links “Leia também” ficam junto às seções pertinentes, apontando a roteiros autorais já publicados. As redes sociais usam botões verdes com evento `social_cta_click` e categoria/slug.
-- Capas são ilustrações vetoriais próprias renderizadas em WebP, representando o assunto; não são fotos de produtos, testes nem desenhos de reparo. Crédito e descrição aparecem no painel e no artigo. O editor pode substituir a capa e deve atualizar os créditos.
-- Ao faltar fonte, formato ou limite de palavras, a geração registra falha; não transforma conteúdo incompleto em artigo público.
+## Pesquisa e redação
 
-## Planejamento e recuperação
+- Seguir docs/MANUAL_EDITORIAL_SEO_ADSENSE.md. Exemplos do manual não são evidência de especificações universais.
+- Conferir pelo menos duas páginas oficiais específicas por artigo, com trechos curtos literais presentes no HTML. Isso comprova a consulta, sem substituir revisão humana da interpretação e da aplicação ao modelo.
+- Não inventar experiências do casal, testes, preços, certificações ou parâmetros mecânicos. Manutenção separa inspeção simples de serviço em oficina.
+- Dicas: 700–1.200 palavras, checklist e erro comum. Equipamentos: 800–1.400, tabela e veredito por perfil. Manutenção: 700–1.300, linguagem responsável e indicação de oficina quando necessário.
+- Título: 45–65 caracteres. Resumo: 140–160. Corpo sem H1, com H2/H3 e parágrafos curtos.
+- Inserir “💡 **Leia também nossos outros roteiros autorais:**” em pelo menos duas seções pertinentes, com roteiros publicados. Fontes no final. O template já inclui os botões das redes.
+- Capas são ilustrações conceituais próprias em WebP, sem alegar registro real ou teste de produto.
 
-`content/editorial/plan.json` contém as 12 pautas de 26/10 a 20/11/2026. Ao precisar de uma semana ainda não planejada, a tarefa do ChatGPT cria outro ciclo de quatro semanas, confrontando títulos/intenção com todo o acervo e pautas reservadas. A comparação automática é uma triagem; a revisão humana também deve verificar sobreposição de intenção.
+## Planejamento e preservação
 
-Cada categoria/semana tem identidade própria (`editorial_id`). Reexecuções completam somente o que falta e preservam edições, aprovações e artigos já publicados. Falhas parciais mantêm os rascunhos concluídos e deixam a execução com erro visível. O aviso de novos rascunhos só é enviado depois do commit ser confirmado.
+content/editorial/plan.json contém as 12 pautas de 26/10 a 20/11/2026. Quando faltar uma semana, a tarefa amplia o plano em ciclos de quatro semanas, confrontando intenção de busca com o acervo e as pautas reservadas.
 
-O primeiro lote foi preparado diretamente durante a implantação. Reexecuções da tarefa completam somente categorias ausentes. Para a entrada local, prepare um JSON com `week` e `articles` (formato abaixo) e execute `node scripts/import_editorial.mjs /tmp/semana-editorial.json`.
+Cada categoria/semana tem editorial_id. Reexecuções completam apenas categorias ausentes e preservam integralmente conteúdo, status e edições do usuário. O relatório registra títulos, fontes, evidências, contagem de palavras e datas sugeridas. Nunca sobrescrever conteúdo revisado para cumprir frequência.
 
-O teste real da API Gemini em 24/10/2026 retornou **HTTP 429 em todos os modelos alternativos**. Por isso, o workflow Gemini ficou disponível somente para execução manual; seu agendamento e disparo por push foram retirados para não haver dois geradores automáticos. O erro original fica registrado no Actions e no histórico Git. A preparação semanal ativa é a tarefa **Artigos semanais Estrada a Dois** do ChatGPT.
+## Entrada e salvamento da tarefa
 
-### Contrato da entrada da tarefa
+Preparar JSON temporário com week (segunda-feira em YYYY-MM-DD) e articles. Cada artigo contém category, article (title, excerpt, body), sources (title, url e claims com fact e quote literal de 35–180 caracteres), e review_notes. Incluir pelo menos duas fontes por artigo; usar os domínios oficiais permitidos em scripts/editorial/gemini.mjs.
 
-```json
-{
-  "week": "2026-10-26",
-  "articles": [{
-    "category": "Dicas",
-    "article": { "title": "Título de 45 a 65 caracteres", "excerpt": "Resumo de 140 a 160 caracteres", "body": "Markdown integral, sem H1" },
-    "sources": [{ "title": "Fonte oficial", "url": "https://dominio-oficial/pagina", "claims": [{ "fact": "Fato sustentado", "quote": "Trecho literal curto, de 35 a 180 caracteres, presente no HTML" }] }],
-    "review_notes": ["Pendência que o editor deve revisar"]
-  }]
-}
-```
+Executar npm ci e node scripts/import_editorial.mjs /tmp/semana-editorial.json. O importador confere fontes, formato, links e extensão, cria capas e salva em Rascunho. Corrigir os erros de conteúdo ou fontes sem afrouxar os validadores. Não chamar scripts de publicação.
 
-Inclua um item de cada categoria ausente e pelo menos duas fontes por artigo. O importador confere domínios, trechos de evidência, links, extensão e formato, gera capas e força o estado **Rascunho**, com ambas as revisões falsas. Use os domínios oficiais autorizados em `scripts/editorial/gemini.mjs`; não amplie a lista para aceitar fonte inadequada. Não execute a API Gemini como fallback automático.
+Salvar em um único commit na main os novos Markdown, suas capas, o relatório e eventual plano atualizado, com [skip vercel]. Preservar o head mais recente e usar lease em update_ref; não forçar nem sobrescrever mudanças concorrentes. Para capas binárias, usar blobs base64 pelo conector GitHub.
 
-Depois da validação, salve **em um único commit na main** os Markdown novos, suas capas, o relatório semanal e eventual plano atualizado, com `[skip vercel]`. A tarefa pode usar o conector GitHub para blobs binários e uma árvore/commit com lease do head. Nunca sobrescreva alterações concorrentes; releia o head se mudar. O workflow `notify_editorial.yml` só envia Telegram depois de esse commit existir. A tarefa não precisa acessar tokens ou enviar mensagens diretamente.
+Ler de volta os arquivos e conferir a execução do aviso. A tarefa não precisa de tokens do Telegram e não deve enviar mensagens diretamente. Esses Secrets continuam somente no workflow de aviso.
 
-## Configuração técnica e limites
+Validação: node --test tests/editorial.test.mjs. Prévia do calendário: node scripts/expert_bot.mjs plan.
 
-- Secrets existentes usados pelo aviso de lote e pela publicação: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`. `GEMINI_API_KEY` é usado apenas no gerador manual alternativo.
-- Opcional: variável `EDITORIAL_MODELS`, lista de modelos Gemini compatíveis com Search/URL Context. Padrão: `gemini-3.8-flash,gemini-3.6-flash,gemini-3.5-flash-lite`.
-- A geração semanal utiliza a tarefa do ChatGPT, sujeita aos limites e disponibilidade do serviço e da conexão GitHub. Não há contratação ou ativação de plano pago de API nesta alteração. O Gemini manual depende da cota específica da sua API.
-- O conector GitHub da tarefa salva rascunhos na `main`. O workflow de publicação usa `contents: write`; o workflow de aviso usa somente leitura do repositório.
-- Geração usa `[skip vercel]`; rascunhos são lidos diretamente do GitHub pelo painel. Publicação aprovada cria commit com `[force vercel]`, e o conteúdo só fica online após o deploy concluir.
-- A limpeza de deploys da Vercel não é alterada por esta implementação.
-- Após oito semanas, avaliar no Search Console os artigos/categorias com impressões, cliques e intenção atendida antes de aumentar a frequência. Não há integração de leitura do Search Console nesta rotina.
-
-Validação local: `node --test tests/editorial.test.mjs`. Prévia do próximo lote, sem API, envio ou criação de artigos: `node scripts/expert_bot.mjs plan`.
-
-Referências da API: [Grounding com Google Search](https://ai.google.dev/gemini-api/docs/generate-content/google-search) e [URL Context](https://ai.google.dev/gemini-api/docs/generate-content/url-context).
+A limpeza de deploys da Vercel não muda. A avaliação após oito semanas é uma revisão dos resultados editoriais; não há leitura automática do Search Console.
