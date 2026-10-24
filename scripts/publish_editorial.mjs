@@ -20,7 +20,7 @@ export async function publishApproved({ root = process.cwd(), now = new Date() }
       // A data pública é a publicação efetiva, inclusive quando a aprovação atrasar.
       post.data.date = now.toISOString();
       post.data.published_at = now.toISOString();
-      fs.writeFileSync(post.file, matter.stringify(post.content, post.data));
+      fs.writeFileSync(post.file, matter.stringify(post.content, post.data, { lineWidth: -1 }));
       result.published.push({ title: post.data.title, slug: post.slug, category: post.data.category });
     } catch (error) {
       result.blocked.push({ title: post.data.title, message: error.message });

@@ -1,9 +1,9 @@
-name: Robô Especialista — Lote Semanal com Revisão
+name: Robô Especialista — Gemini Manual (Alternativa)
 
 on:
-  schedule:
-    # Domingo, 09h17 em Brasília: preparar a segunda/quarta/sexta seguintes.
-    - cron: '17 12 * * 0'
+  # A geração automática ocorre na tarefa semanal do ChatGPT. A API Gemini
+  # retornou HTTP 429 em todos os modelos em 24/10; mantida somente como opção
+  # manual para quando houver cota. Não executar dois geradores automáticos.
   workflow_dispatch:
     inputs:
       week:
@@ -11,13 +11,6 @@ on:
         required: false
         default: ''
         type: string
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/expert_bot.yml'
-      - 'scripts/expert_bot.mjs'
-      - 'scripts/editorial/**'
-      - 'content/editorial/plan.json'
 
 permissions:
   contents: write

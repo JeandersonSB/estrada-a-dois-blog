@@ -98,7 +98,7 @@ ${errors.length ? `A tentativa anterior foi recusada por: ${errors.join(' ')}. C
         editorial_reviewed: false, image_reviewed: false,
       };
       fs.mkdirSync(path.dirname(postFile), { recursive: true });
-      fs.writeFileSync(postFile, matter.stringify(`${article.body.trim()}\n`, frontmatter));
+      fs.writeFileSync(postFile, matter.stringify(`${article.body.trim()}\n`, frontmatter, { lineWidth: -1 }));
       report.articles.push({ id: slot.id, title: article.title, category: slot.category, slug, planned_for: slot.planned_for, status: DRAFT, words: countWords(article.body), sources: dossier.sources, research_model: dossier.model, writing_model: dossier.writing_model, review_notes: dossier.review_notes, reused: false });
       posts = readPosts(root);
       console.log(`${slot.category}: rascunho salvo (${countWords(article.body)} palavras).`);
@@ -117,7 +117,7 @@ async function notifyBatch(root, week) {
   // Reexecução sem novidades não repete o mesmo aviso.
   if (report.articles.every(item => item.reused) && !report.errors.length) return;
   const lines = report.articles.map(item => `${item.category}: ${item.title}\nSugestão: ${item.planned_for?.slice(0, 10)} às 10h47`);
-  await notifyTelegram(`📝 Estrada a Dois — semana de ${week}\n\n${lines.join('\n\n')}\n\n${report.errors.length ? `⚠️ ${report.errors.length} categoria(s) com falha; veja a execução no GitHub.\n\n` : ''}Os artigos estão em Rascunho. Revise texto, fontes e capa no painel, marque as duas confirmações e escolha “${APPROVED}”.\nhttps://www.estradaadois.com/admin/`);
+  await notifyTelegram(`📝 Estrada a Dois — semana de ${week}\n\n${lines.join('\n\n')}\n\n${report.errors.length ? `⚠️ ${report.errors.length} categoria(s) com falha; veja a execução no GitHub.\n\n` : ''}${report.articles.length ? `Os artigos estão em Rascunho. Revise texto, fontes e capa no painel, marque as duas confirmações e escolha “${APPROVED}”.` : 'Não foram criados rascunhos nesta execução.'}\nhttps://www.estradaadois.com/admin/`);
 }
 
 async function main() {
