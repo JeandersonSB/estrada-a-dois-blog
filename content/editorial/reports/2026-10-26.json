@@ -1,0 +1,22 @@
+{
+  "week": "2026-10-26",
+  "checked_at": "2026-10-24T20:46:26.321Z",
+  "articles": [],
+  "errors": [
+    {
+      "id": "ead-2026-10-26-dicas",
+      "category": "Dicas",
+      "message": "Nenhum modelo concluiu a geração. Consulte disponibilidade e cota do Gemini."
+    },
+    {
+      "id": "ead-2026-10-26-equipamentos",
+      "category": "Equipamentos",
+      "message": "Nenhum modelo concluiu a geração. Consulte disponibilidade e cota do Gemini."
+    },
+    {
+      "id": "ead-2026-10-26-manutencao",
+      "category": "Manutenção",
+      "message": "Nenhum modelo concluiu a geração. Consulte disponibilidade e cota do Gemini."
+    }
+  ]
+}
