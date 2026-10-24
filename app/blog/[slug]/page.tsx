@@ -200,12 +200,16 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         <div className="relative w-full aspect-[16/9] md:h-[500px] mb-12 rounded-2xl overflow-hidden shadow-2xl">
           <SmartImage
             src={postData.image}
-            alt={postData.title}
+            alt={postData.image_alt || postData.title}
             priority
             sizes="(min-width: 896px) 896px, 100vw"
             className="object-cover"
           />
         </div>
+
+        {postData.image_credit && (
+          <p className="-mt-9 mb-10 text-sm text-gray-600 text-center">{postData.image_credit}</p>
+        )}
 
         {/* Post Content (Markdown Rendered) */}
         <div
@@ -213,8 +217,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
         />
 
-        {slug === 'nossa-primeira-viagem-com-a-versys-650-tourer-rota-513-450-km-e-um-por-do-sol-incrivel' && (
-          <TravelSocialCTA articleSlug={slug} />
+        {['roteiros', 'dicas', 'equipamentos', 'manutencao'].includes(categorySlug) && (
+          <TravelSocialCTA articleSlug={slug} category={postData.category} />
         )}
 
         {/* SEÇÃO ARTIGOS RELACIONADOS / LEIA TAMBÉM (Internal Linking Automático para SEO) */}

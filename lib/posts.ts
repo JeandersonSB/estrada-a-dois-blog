@@ -33,6 +33,8 @@ export interface PostData {
   category: string;
   excerpt: string;
   image: string;
+  image_alt?: string;
+  image_credit?: string;
   status?: string;
   draft?: boolean;
 }

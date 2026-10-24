@@ -50,7 +50,12 @@ jobs:
       - name: Validar scripts de automação
         run: |
           node --check scripts/normalize_published_images.mjs
+          node --check scripts/expert_bot.mjs
+          node --check scripts/publish_editorial.mjs
           bash -n scripts/git_commit_retry.sh
+
+      - name: Testar geração editorial e aprovação antes de publicar
+        run: node --test tests/editorial.test.mjs
 
       - name: Testar normalização de imagem na publicação
         run: |
