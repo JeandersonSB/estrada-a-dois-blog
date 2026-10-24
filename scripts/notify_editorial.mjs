@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
-import { APPROVED, notifyTelegram, validateWeek } from './editorial/common.mjs';
+import { notifyTelegram, validateWeek } from './editorial/common.mjs';
 
 const before = process.env.BEFORE_SHA;
 const head = process.env.HEAD_SHA;
@@ -14,5 +14,5 @@ for (const file of changed) {
   if (!Array.isArray(report.articles) || !Array.isArray(report.errors)) throw new Error('Relatório editorial inválido.');
   if (report.articles.every(item => item.reused) && !report.errors.length) continue;
   const lines = report.articles.map(item => `${item.category}: ${item.title}\nSugestão: ${item.planned_for.slice(0, 10)} às 10h47`);
-  await notifyTelegram(`📝 Estrada a Dois — semana de ${week}\n\n${lines.join('\n\n')}\n\n${report.errors.length ? `⚠️ ${report.errors.length} categoria(s) com falha de preparação.\n\n` : ''}${report.articles.length ? `Revise os rascunhos, fontes e capas no painel. Marque as duas confirmações e escolha “${APPROVED}”.` : 'Não foram criados rascunhos nesta execução.'}\nhttps://www.estradaadois.com/admin/`);
+  await notifyTelegram(`📝 Estrada a Dois — semana de ${week}\n\n${lines.join('\n\n')}\n\n${report.errors.length ? `⚠️ ${report.errors.length} categoria(s) com falha de preparação.\n\n` : ''}${report.articles.length ? 'Os artigos estão em Rascunho. Revise texto, fontes e capa e publique manualmente pelo painel, como de costume. As datas são sugestões de calendário.' : 'Não foram criados rascunhos nesta execução.'}\nhttps://www.estradaadois.com/admin/`);
 }

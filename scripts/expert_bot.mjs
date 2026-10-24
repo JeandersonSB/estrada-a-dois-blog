@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import matter from 'gray-matter';
-import { APPROVED, CATEGORIES, DRAFT, LIMITS, PLAN, POSTS, PUBLISHED, REPORTS, addDays, countWords, localDate, nextMonday, notifyTelegram, readPosts, slotsForWeek, slugify, topicOverlap, validateArticle, validateWeek, writeJson } from './editorial/common.mjs';
+import { CATEGORIES, DRAFT, LIMITS, PLAN, POSTS, PUBLISHED, REPORTS, addDays, countWords, localDate, nextMonday, notifyTelegram, readPosts, slotsForWeek, slugify, topicOverlap, validateArticle, validateWeek, writeJson } from './editorial/common.mjs';
 import { generate, research } from './editorial/gemini.mjs';
 import { createCover, SUBJECTS } from './editorial/cover.mjs';
 
@@ -95,7 +95,6 @@ ${errors.length ? `A tentativa anterior foi recusada por: ${errors.join(' ')}. C
         image, image_alt: `Ilustração conceitual sobre ${topic.title.toLowerCase()}`,
         image_credit: 'Ilustração editorial própria do Estrada a Dois; representação conceitual, sem teste de produto.',
         excerpt: article.excerpt, editorial_id: slot.id, planned_for: slot.planned_for,
-        editorial_reviewed: false, image_reviewed: false,
       };
       fs.mkdirSync(path.dirname(postFile), { recursive: true });
       fs.writeFileSync(postFile, matter.stringify(`${article.body.trim()}\n`, frontmatter, { lineWidth: -1 }));
@@ -117,7 +116,7 @@ async function notifyBatch(root, week) {
   // Reexecução sem novidades não repete o mesmo aviso.
   if (report.articles.every(item => item.reused) && !report.errors.length) return;
   const lines = report.articles.map(item => `${item.category}: ${item.title}\nSugestão: ${item.planned_for?.slice(0, 10)} às 10h47`);
-  await notifyTelegram(`📝 Estrada a Dois — semana de ${week}\n\n${lines.join('\n\n')}\n\n${report.errors.length ? `⚠️ ${report.errors.length} categoria(s) com falha; veja a execução no GitHub.\n\n` : ''}${report.articles.length ? `Os artigos estão em Rascunho. Revise texto, fontes e capa no painel, marque as duas confirmações e escolha “${APPROVED}”.` : 'Não foram criados rascunhos nesta execução.'}\nhttps://www.estradaadois.com/admin/`);
+  await notifyTelegram(`📝 Estrada a Dois — semana de ${week}\n\n${lines.join('\n\n')}\n\n${report.errors.length ? `⚠️ ${report.errors.length} categoria(s) com falha; veja a execução no GitHub.\n\n` : ''}${report.articles.length ? 'Os artigos estão em Rascunho. Revise texto, fontes e capa e publique manualmente pelo painel, como de costume. As datas são sugestões de calendário.' : 'Não foram criados rascunhos nesta execução.'}\nhttps://www.estradaadois.com/admin/`);
 }
 
 async function main() {

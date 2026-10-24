@@ -150,6 +150,6 @@ test('entrada editorial do ChatGPT usa o mesmo fluxo, sem chamada ou chave Gemin
   });
   assert.equal(result.errors.length, 0);
   assert.equal(result.articles.length, 3);
-  assert.ok(readPosts(root).filter(post => post.data.editorial_id).every(post => post.data.status === DRAFT && post.data.editorial_reviewed === false && post.data.image_reviewed === false));
+  assert.ok(readPosts(root).filter(post => post.data.editorial_id).every(post => post.data.status === DRAFT));
   for (const post of readPosts(root).filter(post => post.data.editorial_id)) assert.match(fs.readFileSync(post.file, 'utf8'), /^image: ['"]?\/images\/blog\/.+\.webp['"]?$/m);
 });
