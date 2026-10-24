@@ -56,6 +56,9 @@ collections:
       - label: "Apenas Publicados"
         field: status
         pattern: "Publicado"
+      - label: "Aprovados para agendar"
+        field: status
+        pattern: "Aprovado para agendar"
     view_groups:
       - label: "Status (Rascunho / Publicado)"
         field: status
@@ -63,9 +66,16 @@ collections:
         field: category
     fields:
       - { label: "Título do Artigo", name: "title", widget: "string" }
-      - { label: "Status de Publicação", name: "status", widget: "select", options: ["⏳ Rascunho", "🟢 Publicado"], default: "⏳ Rascunho" }
+      - { label: "Status de Publicação", name: "status", widget: "select", options: ["⏳ Rascunho", "✅ Aprovado para agendar", "🟢 Publicado"], default: "⏳ Rascunho", hint: "Para a rotina semanal, revise texto e capa, marque as duas confirmações abaixo e escolha Aprovado para agendar. Publicado libera a publicação manual imediata." }
       - { label: "Data e Hora de Publicação", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ss", date_format: "YYYY-MM-DD", time_format: "HH:mm" }
+      - { label: "Publicação planejada (Brasília)", name: "planned_for", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ", date_format: "DD/MM/YYYY", time_format: "HH:mm", required: false, hint: "Os artigos da rotina semanal são liberados às segundas, quartas e sextas, a partir das 10h47, depois da aprovação. O GitHub pode atrasar a execução." }
+      - { label: "Texto e fontes revisados por mim", name: "editorial_reviewed", widget: "boolean", default: false, required: false }
+      - { label: "Capa e crédito conferidos por mim", name: "image_reviewed", widget: "boolean", default: false, required: false }
+      - { name: "editorial_id", widget: "hidden", required: false }
+      - { name: "published_at", widget: "hidden", required: false }
       - { label: "Categoria", name: "category", widget: "select", options: ["Roteiros", "Dicas", "Manutenção", "Equipamentos"] }
       - { label: "Imagem de Capa (Horizontal)", name: "image", widget: "image" }
+      - { label: "Descrição da imagem (acessibilidade)", name: "image_alt", widget: "string", required: false }
+      - { label: "Crédito e contexto da imagem", name: "image_credit", widget: "string", required: false, hint: "Ao substituir a ilustração, atualize este crédito e a descrição." }
       - { label: "Resumo para a Home (Até 3 linhas)", name: "excerpt", widget: "text" }
       - { label: "Conteúdo do Artigo", name: "body", widget: "markdown" }

@@ -1,0 +1,26 @@
+{
+  "timezone": "America/Sao_Paulo",
+  "policy": "3 rascunhos por semana; aprovação humana obrigatória; novos ciclos de 4 semanas sem repetir intenções do acervo",
+  "weeks": {
+    "2026-10-26": [
+      { "category": "Dicas", "title": "Distância por dia na viagem de moto: como planejar", "keyword": "distância por dia na viagem de moto", "angle": "Estimar o dia pelo tempo disponível, paradas, luz natural e conforto da dupla, sem impor uma quilometragem universal.", "subject": "map" },
+      { "category": "Equipamentos", "title": "Capa de chuva para moto: uma ou duas peças para viajar?", "keyword": "capa de chuva para moto", "angle": "Comparar conjuntos externos de chuva e macacão de uma peça: ajuste sobre proteção, mobilidade, armazenamento e instruções do fabricante; não repetir comparativo de jaquetas.", "subject": "rain" },
+      { "category": "Manutenção", "title": "Bateria da moto parada: cuidados antes de viajar", "keyword": "bateria da moto parada", "angle": "Consultar manual, reconhecer sinais de carga insuficiente e entender carregadores compatíveis; não ensinar ligação direta, abertura ou diagnóstico elétrico doméstico.", "subject": "battery" }
+    ],
+    "2026-11-02": [
+      { "category": "Dicas", "title": "Hospedagem na viagem de moto: o que conferir na reserva", "keyword": "hospedagem na viagem de moto", "angle": "Checklist de acesso, tipo de piso, horário de chegada, estacionamento, política de bagagem e condições de cancelamento, sem recomendar estabelecimentos não visitados.", "subject": "checklist" },
+      { "category": "Equipamentos", "title": "Bolsa de tanque na moto: como conferir a compatibilidade", "keyword": "bolsa de tanque na moto", "angle": "Fixação por anel, tiras ou ímãs: espaço para guidão, acesso ao bocal, material do tanque e limites do fabricante; não repetir guia geral de bagagem.", "subject": "bag" },
+      { "category": "Manutenção", "title": "Desgaste dos pneus da moto: sinais para buscar uma oficina", "keyword": "desgaste dos pneus da moto", "angle": "Inspeção visual de indicadores de desgaste, irregularidades e danos, limites legais apenas com fonte oficial vigente; sem repetir calibragem nem prescrever troca por idade universal.", "subject": "tyre" }
+    ],
+    "2026-11-09": [
+      { "category": "Dicas", "title": "Previsão do tempo na viagem de moto: como acompanhar", "keyword": "previsão do tempo na viagem de moto", "angle": "Distinguir previsão pontual, alertas oficiais e condições em diferentes trechos e altitudes; critérios conservadores para adiar etapas, sem ensinar pilotagem na chuva.", "subject": "map" },
+      { "category": "Equipamentos", "title": "Carregador USB na moto: o que avaliar antes de escolher", "keyword": "carregador USB na moto", "angle": "Compatibilidade de potência, conectores, resistência declarada à água, fusível e instalação por profissional; sem tutorial de alterações na fiação.", "subject": "phone" },
+      { "category": "Manutenção", "title": "Lavagem da moto: cuidados para preservar os componentes", "keyword": "lavagem da moto", "angle": "Orientações do manual sobre moto fria, pressão de água, produtos compatíveis e secagem; não repetir limpeza e lubrificação de corrente.", "subject": "wash" }
+    ],
+    "2026-11-16": [
+      { "category": "Dicas", "title": "Orçamento da viagem de moto: como prever uma reserva", "keyword": "orçamento da viagem de moto", "angle": "Categorias de despesas, valores obtidos em cotações reais e reserva ajustada ao roteiro, sem inventar custos do casal nem repetir planejamento de combustível.", "subject": "checklist" },
+      { "category": "Equipamentos", "title": "Saco estanque na moto: como escolher e proteger a bagagem", "keyword": "saco estanque na moto", "angle": "Bolsa interna impermeável versus saco externo: fechamento, volume e fixação segundo fabricante; sem alegar impermeabilidade não testada.", "subject": "bag" },
+      { "category": "Manutenção", "title": "Revisão da moto: como organizar o histórico de serviços", "keyword": "revisão da moto", "angle": "Registrar datas, quilometragem, notas, itens inspecionados e próximo vencimento por tempo ou uso conforme manual; não inventar intervalos universais.", "subject": "checklist" }
+    ]
+  }
+}

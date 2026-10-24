@@ -1,0 +1,85 @@
+name: Robô Especialista — Lote Semanal com Revisão
+
+on:
+  schedule:
+    # Domingo, 09h17 em Brasília: preparar a segunda/quarta/sexta seguintes.
+    - cron: '17 12 * * 0'
+  workflow_dispatch:
+    inputs:
+      week:
+        description: 'Segunda-feira da semana (YYYY-MM-DD; vazio = próxima segunda)'
+        required: false
+        default: ''
+        type: string
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/expert_bot.yml'
+      - 'scripts/expert_bot.mjs'
+      - 'scripts/editorial/**'
+      - 'content/editorial/plan.json'
+
+permissions:
+  contents: write
+
+concurrency:
+  # Mesmo grupo da publicação: geração e mudança de status não disputam commits.
+  group: editorial-content
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Instalar dependências
+        run: npm ci --no-audit --no-fund
+      - name: Fixar semana da execução
+        env:
+          REQUESTED_WEEK: ${{ inputs.week }}
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import { nextMonday, validateWeek } from './scripts/editorial/common.mjs';
+          const week = validateWeek(process.env.REQUESTED_WEEK || nextMonday());
+          fs.appendFileSync(process.env.GITHUB_ENV, `EDITORIAL_WEEK=${week}\n`);
+          NODE
+      - name: Pesquisar e preparar três rascunhos
+        id: generate
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          EDITORIAL_MODELS: ${{ vars.EDITORIAL_MODELS }}
+        run: node scripts/expert_bot.mjs generate
+      - name: Salvar rascunhos e relatório antes de avisar
+        id: save
+        if: always() && steps.generate.outcome != 'skipped'
+        run: |
+          bash scripts/git_commit_retry.sh \
+            "content(editorial): preparar lote semanal para revisão [skip vercel]" \
+            content/posts public/images/blog content/editorial
+      - name: Avisar no Telegram após salvar
+        id: notify
+        if: always() && steps.save.outcome == 'success'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node scripts/expert_bot.mjs notify
+      - name: Sinalizar falha de geração
+        if: always() && steps.generate.outcome == 'failure'
+        run: exit 1
+      - name: Alertar falha da rotina
+        if: failure() && steps.notify.outcome != 'success'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node scripts/expert_bot.mjs failure
