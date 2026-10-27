@@ -3,7 +3,7 @@ title: 'Mapa dos monumentos da Rota Biker: locais, endereços e horários'
 status: 🟢 Publicado
 date: 2026-10-27T13:14:00
 category: Dicas
-image: /images/blog/capa-monumento.webp
+image: "/images/blog/monumentos-rota-biker-locais-enderecos-horarios.webp"
 excerpt: Consulte os monumentos da Rota Biker por estado, com números, locais, endereços disponíveis, horários e orientações para carimbar e planejar sua viagem.
 author: Jeanderson e Ana Paula | Estrada a Dois
 editorial_notes:
