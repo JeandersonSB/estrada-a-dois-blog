@@ -201,7 +201,7 @@ export default function Explorer() {
     setPlanning(true);
   }
   return <div className="biker">
-    <header className="biker-intro"><div><span className="biker-eyebrow">SEU PRÓXIMO DESTINO COMEÇA AQUI</span><h1>Minha Rota Biker<span>.</span></h1><p>Marque suas visitas. Escolha as próximas paradas. Viva a estrada.</p></div><div className="biker-account">{user ? <><span>{user.displayName || 'Minha conta'}</span><button onClick={() => { const s = services(); if (s) signOut(s.auth).catch(() => setMessage('Não foi possível sair.')); }}>Sair</button></> : <button onClick={() => privacyDialog.current?.showModal()}>Entrar com Google</button>}</div></header>
+    <header className="biker-intro"><div><span className="biker-eyebrow">SEU PRÓXIMO DESTINO COMEÇA AQUI</span><h1>Mapa Rota Biker: encontre monumentos e planeje sua viagem</h1><p>Marque suas visitas. Escolha as próximas paradas. Viva a estrada.</p></div><div className="biker-account">{user ? <><span>{user.displayName || 'Minha conta'}</span><button onClick={() => { const s = services(); if (s) signOut(s.auth).catch(() => setMessage('Não foi possível sair.')); }}>Sair</button></> : <button onClick={() => privacyDialog.current?.showModal()}>Entrar com Google</button>}</div></header>
     <dialog ref={privacyDialog} className="biker-privacy-dialog" aria-labelledby="biker-privacy-title" aria-describedby="biker-privacy-description">
       <h2 id="biker-privacy-title">Suas viagens, sua privacidade</h2>
       <div id="biker-privacy-description">
