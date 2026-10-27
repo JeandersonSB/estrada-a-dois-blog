@@ -50,7 +50,7 @@ O mapa do Estrada a Dois consultado nesta edição tinha 43 pontos. O nº 45 já
 
 ## Como consultar este guia
 
-Os locais estão agrupados por estado e país, mantendo a numeração original. Use a busca do navegador para procurar uma cidade, um estabelecimento ou o número do monumento.
+Os locais estão apresentados em ordem crescente, mantendo a numeração original. Use a busca do navegador para procurar uma cidade, um estabelecimento ou o número do monumento.
 
 | Estado ou país | Números apresentados | Locais identificados |
 | --- | --- | ---: |
@@ -76,9 +76,11 @@ Uma loja pode estar fechada mesmo com o monumento acessível para foto. Um hotel
 
 **Sobre os endereços:** referências de rodovia, bairro e coordenadas ajudam a localizar os pontos, mas não substituem a confirmação da entrada correta. Os links de localização usam os pinos do mapa de referência; não representam uma vistoria de acessos. Onde não foi possível confirmar o endereço detalhado, essa ausência permanece explícita.
 
-## Monumentos da Rota Biker no Paraná
-
 Para nós, que saímos de Guarapuava, os pontos paranaenses ajudam a pensar tanto em passeios curtos quanto em etapas de viagens maiores. A escolha depende do caminho real, das paradas e da disposição do casal; a numeração do monumento não define a sequência do roteiro.
+
+O monumento nº 30 coloca uma etapa internacional no planejamento. Separe a visita turística das exigências de entrada no país e confirme o atendimento do restaurante antes de definir a passagem por Katueté.
+
+## Monumentos da Rota Biker em ordem crescente
 
 ### Monumento 01 — Serpenteando Café
 
@@ -96,89 +98,11 @@ Uma parada para combinar com o Rastro da Serpente. Confirme o dia de abertura an
 💡 **Leia também nossos outros roteiros autorais:**
 - [Nosso passeio pelo Rastro da Serpente, Graciosa e Morretes](/blog/rastro-da-serpente-de-moto)
 
-### Monumento 05 — Parada Rota 218
+### E o monumento nº 02?
 
-- **Cidade:** Carlópolis – PR.
-- **Endereço ou referência de acesso:** Rodovia Jayme Canet / PR-218, Carlópolis – PR. Número e quilômetro não confirmados.
-- **Horário publicado:** Não confirmado em fonte direta acessível. Consulte o guardião.
-- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
+Na lista oficial consultada, o **monumento nº 2 aparece “em atualização”**, sem destino atual identificado. Por isso, não atribuímos a ele endereço, estabelecimento ou horário a partir de listas antigas.
 
-A numeração 05 identifica o monumento; não significa que ele deva ser a quinta parada de uma viagem.
-
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-23.4197284,-49.7087751).
-
-**Fontes e confirmação:** [Referência cartográfica](https://mapcarta.com/pt/N13364025247) · [Canal indicado pelos organizadores](https://www.instagram.com/rotapr218).
-
-### Monumento 09 — Posto Rota 090
-
-- **Cidade:** Piraí do Sul – PR.
-- **Endereço ou referência de acesso:** PR-090, km 147, Piraí do Sul – PR.
-- **Horário publicado:** O portal regional Campos Gerais informa atendimento todos os dias, das 6h às 22h. O horário específico do carimbo precisa ser confirmado.
-- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
-
-Posto, hotel e serviços associados podem ter atendimentos diferentes. Para carimbar, pergunte qual equipe estará disponível.
-
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-24.5377613,-49.9592831).
-
-**Fontes e confirmação:** [Portal Campos Gerais](https://camposgerais.bntonline.com.br/atrativos/rota-090/) · [Canal indicado pelos organizadores](https://www.instagram.com/rota090).
-
-### Monumento 13 — Rota 513
-
-- **Cidade:** Ponta Grossa – PR.
-- **Endereço ou referência de acesso:** Estrada Pery Pereira Costa, Itaiacoca, Ponta Grossa – PR, na região do Portal dos Campos / Rota 513.
-- **Horário publicado:** O site do Portal dos Campos divulga café rural às sextas, das 12h às 17h30; sábados, domingos e feriados, das 8h às 14h. Essa é a grade do café, não uma confirmação do horário da loja do carimbo.
-- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
-
-Na nossa visita de 18/10/2026, carimbamos na loja instalada em um contêiner, junto à área do passeio. O site também divulga uma unidade “Rota 513 Centro”, na Rua Coronel Dulcídio; não a confunda com o destino rural do monumento.
-
-**Acesso e confirmação:** utilize as orientações do Portal dos Campos e confirme a entrada para a Rota 513 rural. O pino do catálogo e a coordenada divulgada no site do complexo não coincidem exatamente.
-
-**Fontes e confirmação:** [Site do Portal dos Campos](https://www.portaldoscampos.com.br/) · [Nosso relato e local do carimbo](/blog/nossa-primeira-viagem-com-a-versys-650-tourer-rota-513-450-km-e-um-por-do-sol-incrivel) · [Canal indicado pelos organizadores](https://www.instagram.com/portal.dos.campos).
-
-💡 **Leia também nossos outros roteiros autorais:**
-- [Nossa primeira visita à Rota 513 de Yamaha R15](/blog/r15-em-ponta-grossa)
-- [Nossa primeira viagem com a Versys 650 Tourer: Rota 513 e 450 km de estrada](/blog/nossa-primeira-viagem-com-a-versys-650-tourer-rota-513-450-km-e-um-por-do-sol-incrivel)
-
-### Monumento 31 — Pro Tork
-
-- **Cidade:** Siqueira Campos – PR.
-- **Endereço ou referência de acesso:** Siqueira Campos – PR, no ponto identificado como Pro Tork no mapa de referência. Endereço viário exato do monumento não confirmado.
-- **Horário publicado:** Atendimento de visita e carimbo não confirmado.
-- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
-
-Não use automaticamente o endereço de uma fábrica, revenda ou setor administrativo da marca como destino do monumento. Confirme o acesso específico com o canal indicado no catálogo.
-
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-23.6704833,-49.836561).
-
-**Fontes e confirmação:** [Canal indicado pelos organizadores](https://www.instagram.com/protork_oficial/).
-
-### Monumento 32 — Hell's Dogs Motorcycle Bar
-
-- **Cidade:** Foz do Iguaçu – PR.
-- **Endereço ou referência de acesso:** Avenida Paraná, 3.555, Foz do Iguaçu – PR.
-- **Horário publicado:** Há divergência entre os cadastros públicos consultados. O perfil comercial reivindicado no Tripadvisor lista quarta e quinta, das 18h à meia-noite, e sexta e sábado, das 18h às 2h; outros diretórios mostram horários diferentes. **Confirme pelo canal direto antes de programar a visita.**
-- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
-
-A visita ao monumento e o atendimento do bar podem ocorrer em condições diferentes. Não presuma carimbo disponível durante o dia por se tratar de um ponto urbano.
-
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-25.5159988,-54.5751596).
-
-**Fontes e confirmação:** [Perfil comercial consultado](https://www.tripadvisor.com.br/Restaurant_Review-g303444-d12440880-Reviews-Hell_s_Dogs_Motorcycle_Bar-Foz_do_Iguacu_State_of_Parana.html) · [Cadastro com grade divergente](https://www.findglocal.com/BR/Foz-do-Igua%C3%A7u/1711950979097379/Hell%27s-Dogs-Motorcycle-Bar) · [Canal indicado pelos organizadores](https://www.instagram.com/hellsdogsfoz).
-
-### Monumento 38 — MAPY — Restaurante e Café
-
-- **Cidade:** Mauá da Serra – PR.
-- **Endereço ou referência de acesso:** BR-376, região da Serra do Cadeado, Mauá da Serra – PR. Há divergência de referência quilométrica: cadastros comerciais apontam km 296 e a página da concessionária Motiva informa km 292. Confirme o acesso pelo pino e pelo estabelecimento.
-- **Horário publicado:** A Motiva informa domingo a sexta, das 6h às 21h30; sábado, das 6h às 19h. Confirme se essa faixa também atende ao carimbo.
-- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
-
-Não use o quilômetro isolado como única orientação enquanto a divergência não for esclarecida.
-
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-23.9122125,-51.1844918).
-
-**Fontes e confirmação:** [Horários divulgados pela concessionária](https://aem.grupoccr.com.br/content/ccrcanaisdigitais/roads-empty-page/rodovias-grupoccr-empty/language-master-empty/pt/home-page/parana/pedagio-eletronico.html) · [Cadastro com referência ao km 296](https://restaurantguru.com.br/Rota-Cafe-Restaurante-e-Lanchonete-Brazil).
-
-## Monumentos da Rota Biker em Santa Catarina
+A ausência de uma ficha de destino é intencional: consulte os organizadores antes de incluir esse número no roteiro.
 
 ### Monumento 03 — Mirante do 12
 
@@ -209,6 +133,19 @@ Confirme a unidade e o atendimento para carimbo pelo perfil indicado pelos organ
 
 **Fontes e confirmação:** [Portal de Turismo de Urubici](https://turismo.urubici.sc.gov.br/post-20054/) · [Canal indicado pelos organizadores](https://www.instagram.com/rota370urubici).
 
+### Monumento 05 — Parada Rota 218
+
+- **Cidade:** Carlópolis – PR.
+- **Endereço ou referência de acesso:** Rodovia Jayme Canet / PR-218, Carlópolis – PR. Número e quilômetro não confirmados.
+- **Horário publicado:** Não confirmado em fonte direta acessível. Consulte o guardião.
+- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
+
+A numeração 05 identifica o monumento; não significa que ele deva ser a quinta parada de uma viagem.
+
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-23.4197284,-49.7087751).
+
+**Fontes e confirmação:** [Referência cartográfica](https://mapcarta.com/pt/N13364025247) · [Canal indicado pelos organizadores](https://www.instagram.com/rotapr218).
+
 ### Monumento 06 — Parada Rota Bike Café
 
 - **Cidade:** Rio dos Cedros – SC.
@@ -235,47 +172,6 @@ Ao combinar este ponto com Rio dos Cedros, observe os dias de fechamento dos doi
 
 **Fontes e confirmação:** [Cadastro consultado](https://restaurantguru.com.br/Container-da-Serra-Brazil) · [Canal indicado pelos organizadores](https://www.instagram.com/containerdaserra).
 
-### Monumento 21 — Parada Penhasco
-
-- **Cidade:** Penha – SC.
-- **Endereço ou referência de acesso:** Rodovia João Batista Sérgio Murad, 1.683, São Cristóvão, Penha – SC.
-- **Horário publicado:** Grade atual não confirmada no cadastro municipal consultado.
-- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
-
-O ponto é identificado no portal de turismo como Cervejaria Penhasco e no catálogo como Parada Penhasco. Confirme o atendimento antes de incluir na passagem pelo litoral.
-
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-26.8112913,-48.6664038).
-
-**Fontes e confirmação:** [Portal de Turismo de Penha](https://turismo.penha.sc.gov.br/post-21602/) · [Canal indicado pelos organizadores](https://www.instagram.com/penhascocervejaria).
-
-### Monumento 24 — Pousada e Camping Poço do Caixão
-
-- **Cidade:** Timbé do Sul – SC.
-- **Endereço ou referência de acesso:** Localidade de Rocinha, Timbé do Sul – SC, conforme relação de hospedagens do turismo municipal. Endereço detalhado e acesso final a confirmar.
-- **Horário publicado:** Atendimento para visita, carimbo, camping e hospedagem sob consulta; não foi confirmada uma grade única.
-- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
-
-Uma recepção de hospedagem não significa acesso livre ao monumento a qualquer hora. Combine a chegada e pergunte sobre as condições do caminho.
-
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-28.8141693,-49.8813927).
-
-**Fontes e confirmação:** [Relação municipal de hospedagens](https://turismo.timbedosul.sc.gov.br/uploads/sites/233/2023/07/hospedagem-atualizada-junho-2025.pdf) · [Canal indicado pelos organizadores](https://www.instagram.com/campingpocodocaixao).
-
-### Monumento 26 — Restaurante Portal Grill
-
-- **Cidade:** Porto União – SC.
-- **Endereço ou referência de acesso:** Rua Expedicionário Edmundo Arrabar, 4.601, Porto União – SC, conforme endereço divulgado no cadastro do restaurante.
-- **Horário publicado:** O cadastro do Restaurant Guru informa atendimento diário, das 7h30 às 16h. Confirme o atendimento para carimbo pelo perfil direto.
-- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
-
-Confirme Porto União, em Santa Catarina: alguns diretórios misturam o município com União da Vitória, no Paraná.
-
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-26.2742813,-51.0541948).
-
-**Fontes e confirmação:** [Cadastro com endereço divulgado](https://www.findglocal.com/BR/P%C3%B4rto-Uni%C3%A3o/308054175925215/Restaurante-Portal-Grill) · [Horários consultados](https://restaurantguru.com.br/Restaurante-Portal-das-Palmeiras-Porto-Uniao) · [Canal indicado pelos organizadores](https://www.instagram.com/restaurante.portalgrilloficial).
-
-## Monumentos da Rota Biker em São Paulo
-
 ### Monumento 08 — Parada 261
 
 - **Cidade:** Guapiara – SP.
@@ -288,6 +184,45 @@ Não deduza a rodovia apenas pelo nome “261”: isso pode levar a uma pesquisa
 **Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-24.1898018,-48.5367075).
 
 **Fontes e confirmação:** [Canal indicado pelos organizadores](https://www.instagram.com/parada_261).
+
+### Monumento 09 — Posto Rota 090
+
+- **Cidade:** Piraí do Sul – PR.
+- **Endereço ou referência de acesso:** PR-090, km 147, Piraí do Sul – PR.
+- **Horário publicado:** O portal regional Campos Gerais informa atendimento todos os dias, das 6h às 22h. O horário específico do carimbo precisa ser confirmado.
+- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
+
+Posto, hotel e serviços associados podem ter atendimentos diferentes. Para carimbar, pergunte qual equipe estará disponível.
+
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-24.5377613,-49.9592831).
+
+**Fontes e confirmação:** [Portal Campos Gerais](https://camposgerais.bntonline.com.br/atrativos/rota-090/) · [Canal indicado pelos organizadores](https://www.instagram.com/rota090).
+
+### Monumento 10 — Terrasul Motos
+
+- **Cidade:** Jaguarão – RS.
+- **Endereço ou referência de acesso:** Monumento em Jaguarão – RS, no pino do mapa de referência. **Local do carimbo:** loja Terra Sul Motos, Avenida Vinte e Sete de Janeiro, 494, Centro.
+- **Horário publicado:** O site da loja informa segunda a sexta, das 8h às 12h e das 13h30 às 19h; sábado, das 8h às 12h e das 13h30 às 18h. Atendimento aos domingos não informado nessa página.
+- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
+
+O monumento e o balcão onde se carimba não ficam necessariamente no mesmo endereço. Reserve tempo para visitar os dois.
+
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-32.5522043,-53.3838142).
+
+**Fontes e confirmação:** [Contato oficial da loja](https://terrasulmotos.com.br/contato/) · [Canal indicado pelos organizadores](https://www.google.com/maps).
+
+### Monumento 11 — Pad Bier Cervejaria
+
+- **Cidade:** Paranoá – DF.
+- **Endereço ou referência de acesso:** BR-251, região do PAD-DF, Paranoá / Brasília – DF. O site próprio antigo informa km 7; confirme o acesso atual com o estabelecimento.
+- **Horário publicado:** Grade atual não confirmada.
+- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
+
+A referência rodoviária é mais útil do que pesquisar apenas “Paranoá”. Confirme o ponto de chegada antes do deslocamento.
+
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-15.9990196,-47.5603231).
+
+**Fontes e confirmação:** [Página própria com referência de endereço](https://pamonhariacaminhodaroca.webnode.pt/a-cervejaria/) · [Canal indicado pelos organizadores](https://www.instagram.com/padbiercervejaria).
 
 ### Monumento 12 — Centro Cultural Movimento
 
@@ -302,6 +237,49 @@ A visita ao museu pode envolver ingresso. Não confunda o horário da exposiçã
 
 **Fontes e confirmação:** [Site do Centro Cultural Movimento](https://www.centroculturalmovimento.com.br/) · [Canal indicado pelos organizadores](https://www.instagram.com/centroculturalmovimento).
 
+### Monumento 13 — Rota 513
+
+- **Cidade:** Ponta Grossa – PR.
+- **Endereço ou referência de acesso:** Estrada Pery Pereira Costa, Itaiacoca, Ponta Grossa – PR, na região do Portal dos Campos / Rota 513.
+- **Horário publicado:** O site do Portal dos Campos divulga café rural às sextas, das 12h às 17h30; sábados, domingos e feriados, das 8h às 14h. Essa é a grade do café, não uma confirmação do horário da loja do carimbo.
+- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
+
+Na nossa visita de 18/10/2026, carimbamos na loja instalada em um contêiner, junto à área do passeio. O site também divulga uma unidade “Rota 513 Centro”, na Rua Coronel Dulcídio; não a confunda com o destino rural do monumento.
+
+**Acesso e confirmação:** utilize as orientações do Portal dos Campos e confirme a entrada para a Rota 513 rural. O pino do catálogo e a coordenada divulgada no site do complexo não coincidem exatamente.
+
+**Fontes e confirmação:** [Site do Portal dos Campos](https://www.portaldoscampos.com.br/) · [Nosso relato e local do carimbo](/blog/nossa-primeira-viagem-com-a-versys-650-tourer-rota-513-450-km-e-um-por-do-sol-incrivel) · [Canal indicado pelos organizadores](https://www.instagram.com/portal.dos.campos).
+
+💡 **Leia também nossos outros roteiros autorais:**
+- [Nossa primeira visita à Rota 513 de Yamaha R15](/blog/r15-em-ponta-grossa)
+- [Nossa primeira viagem com a Versys 650 Tourer: Rota 513 e 450 km de estrada](/blog/nossa-primeira-viagem-com-a-versys-650-tourer-rota-513-450-km-e-um-por-do-sol-incrivel)
+
+### Monumento 14 — Parador 158
+
+- **Cidade:** Itaara – RS.
+- **Endereço ou referência de acesso:** BR-158, km 308, nº 11.310, Itaara – RS, conforme cadastro da prefeitura.
+- **Horário publicado:** A Prefeitura de Itaara informa quinta a domingo, das 11h às 23h. Confirme alterações com o Parador.
+- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
+
+Há cadastros na internet com numerações diferentes. Use a referência da rodovia e confirme a entrada com o estabelecimento.
+
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-29.6010665,-53.7677307).
+
+**Fontes e confirmação:** [Prefeitura de Itaara](https://itaara.rs.gov.br/hospedagem/parador-158/) · [Canal indicado pelos organizadores](https://www.instagram.com/parador158).
+
+### Monumento 15 — Garimpo em Atividade
+
+- **Cidade:** Ametista do Sul – RS.
+- **Endereço ou referência de acesso:** Avenida Bento Gonçalves, 736, Ametista do Sul – RS.
+- **Horário publicado:** O site informa passeios às 9h15, 10h15, 13h15 e 14h15, todos os dias, inclusive feriados. São horários dos passeios, não uma grade específica de carimbo.
+- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
+
+Pergunte sobre disponibilidade, valor e necessidade de agendamento da atividade subterrânea. A parada para o monumento e a experiência turística precisam ser planejadas separadamente.
+
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-27.3577814,-53.1916744).
+
+**Fontes e confirmação:** [Site do Garimpo em Atividade](https://www.garimpoematividade.com.br/) · [Canal indicado pelos organizadores](https://www.instagram.com/garimpoematividade).
+
 ### Monumento 16 — Bar Original – Pier SP-270
 
 - **Cidade:** Piraju – SP.
@@ -314,6 +292,19 @@ O local também aparece como Bar Original Piraju ou Parador SP-270. Use a refer�
 **Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-23.184275,-49.3906025).
 
 **Fontes e confirmação:** [Referência de endereço do parque](https://mapcarta.com/pt/N13685238931) · [Guia de Mototurismo de São Paulo](https://www.caragua.tur.br/wp-content/uploads/2025/10/Guia-de-Mototurismo.pdf) · [Canal indicado pelos organizadores](https://www.instagram.com/baroriginalpiraju).
+
+### Monumento 17 — Armazém Canastra
+
+- **Cidade:** Piumhi – MG.
+- **Endereço ou referência de acesso:** Avenida Francisco Machado, 1.020, bairro Aeroporto, Piumhi – MG.
+- **Horário publicado:** Horário regular de visita e carimbo não confirmado. A agenda de um evento ou de retirada de kits não deve ser usada como horário permanente.
+- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
+
+Há estabelecimentos com nomes semelhantes em outras cidades. Para este monumento, confira se o destino é a unidade de Piumhi.
+
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-20.4576587,-45.9784098).
+
+**Fontes e confirmação:** [Cardápio e endereço divulgados pelo estabelecimento](https://armazemcanastra-bra.ola.click/products) · [Canal indicado pelos organizadores](https://www.instagram.com/armazem_canastra/).
 
 ### Monumento 18 — Box 1200 Concept
 
@@ -341,6 +332,45 @@ Peça orientações sobre o trecho final e sobre o atendimento para grupos antes
 
 **Fontes e confirmação:** [Guia de Mototurismo de São Paulo](https://www.caragua.tur.br/wp-content/uploads/2025/10/Guia-de-Mototurismo.pdf) · [Canal indicado pelos organizadores](https://www.instagram.com/rancho.terracrua).
 
+### Monumento 20 — Casa Rural Pastelaria
+
+- **Cidade:** Barra do Ribeiro – RS.
+- **Endereço ou referência de acesso:** BR-116, km 334, Douradilho, Barra do Ribeiro – RS.
+- **Horário publicado:** O cadastro do Restaurant Guru informa atendimento diário, das 6h às 23h. Confirme separadamente a disponibilidade de carimbo.
+- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
+
+Uma parada de alimentação pode ter uma janela maior de funcionamento do que o atendimento específico da Rota Biker.
+
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-30.4075303,-51.4541004).
+
+**Fontes e confirmação:** [Cadastro consultado](https://restaurantguru.com.br/Casa-Rural-Brazil) · [Canal indicado pelos organizadores](https://www.instagram.com/casa_rural_barra_do_ribeiro).
+
+### Monumento 21 — Parada Penhasco
+
+- **Cidade:** Penha – SC.
+- **Endereço ou referência de acesso:** Rodovia João Batista Sérgio Murad, 1.683, São Cristóvão, Penha – SC.
+- **Horário publicado:** Grade atual não confirmada no cadastro municipal consultado.
+- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
+
+O ponto é identificado no portal de turismo como Cervejaria Penhasco e no catálogo como Parada Penhasco. Confirme o atendimento antes de incluir na passagem pelo litoral.
+
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-26.8112913,-48.6664038).
+
+**Fontes e confirmação:** [Portal de Turismo de Penha](https://turismo.penha.sc.gov.br/post-21602/) · [Canal indicado pelos organizadores](https://www.instagram.com/penhascocervejaria).
+
+### Monumento 22 — Restaurante Mata Virgem
+
+- **Cidade:** Três Corações – MG.
+- **Endereço ou referência de acesso:** Rodovia Fernão Dias, km 746, pista sul, Três Corações – MG.
+- **Horário publicado:** O site do restaurante informa atendimento de segunda a domingo, das 7h30 às 18h30. Outras atividades do complexo podem ter reserva e horário próprios.
+- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
+
+Observe o sentido da rodovia. Estar na pista contrária pode exigir um retorno permitido; não conte apenas com a distância entre os pontos no mapa.
+
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-21.6144094,-45.2614054).
+
+**Fontes e confirmação:** [Site do Restaurante Mata Virgem](https://restaurantematavirgem.com.br/) · [Canal indicado pelos organizadores](https://www.instagram.com/matavirgemrestaurante).
+
 ### Monumento 23 — Bar do Hélio
 
 - **Cidade:** Santo Antônio da Alegria – SP.
@@ -354,6 +384,19 @@ O acesso rodoviário ajuda a distinguir o estabelecimento de bares com o mesmo n
 
 **Fontes e confirmação:** [Cadastro turístico municipal](https://santoantoniodaalegria.portyx.com.br/turismo/bar-do-helio) · [Referência do acesso](https://motociclistasunidos.com.br/event-location/bar-do-helio/) · [Canal indicado pelos organizadores](https://www.instagram.com/bardoheliosaa).
 
+### Monumento 24 — Pousada e Camping Poço do Caixão
+
+- **Cidade:** Timbé do Sul – SC.
+- **Endereço ou referência de acesso:** Localidade de Rocinha, Timbé do Sul – SC, conforme relação de hospedagens do turismo municipal. Endereço detalhado e acesso final a confirmar.
+- **Horário publicado:** Atendimento para visita, carimbo, camping e hospedagem sob consulta; não foi confirmada uma grade única.
+- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
+
+Uma recepção de hospedagem não significa acesso livre ao monumento a qualquer hora. Combine a chegada e pergunte sobre as condições do caminho.
+
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-28.8141693,-49.8813927).
+
+**Fontes e confirmação:** [Relação municipal de hospedagens](https://turismo.timbedosul.sc.gov.br/uploads/sites/233/2023/07/hospedagem-atualizada-junho-2025.pdf) · [Canal indicado pelos organizadores](https://www.instagram.com/campingpocodocaixao).
+
 ### Monumento 25 — Os Independentes
 
 - **Cidade:** Barretos – SP.
@@ -366,6 +409,19 @@ Não confunda o Monumento Rota Biker com os outros monumentos existentes no Parq
 **Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-20.5095141,-48.5976393).
 
 **Fontes e confirmação:** [Divulgação de Os Independentes](https://www.independentes.com.br/motorcycles/noticia/3146/barretos-ganha-monumento-rota-biker-no-primeiro-dia-do-motorcycles-) · [Canal indicado pelos organizadores](https://www.instagram.com/barretosmotorcycles_oficial).
+
+### Monumento 26 — Restaurante Portal Grill
+
+- **Cidade:** Porto União – SC.
+- **Endereço ou referência de acesso:** Rua Expedicionário Edmundo Arrabar, 4.601, Porto União – SC, conforme endereço divulgado no cadastro do restaurante.
+- **Horário publicado:** O cadastro do Restaurant Guru informa atendimento diário, das 7h30 às 16h. Confirme o atendimento para carimbo pelo perfil direto.
+- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
+
+Confirme Porto União, em Santa Catarina: alguns diretórios misturam o município com União da Vitória, no Paraná.
+
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-26.2742813,-51.0541948).
+
+**Fontes e confirmação:** [Cadastro com endereço divulgado](https://www.findglocal.com/BR/P%C3%B4rto-Uni%C3%A3o/308054175925215/Restaurante-Portal-Grill) · [Horários consultados](https://restaurantguru.com.br/Restaurante-Portal-das-Palmeiras-Porto-Uniao) · [Canal indicado pelos organizadores](https://www.instagram.com/restaurante.portalgrilloficial).
 
 ### Monumento 27 — Restaurante Pedra do Baú
 
@@ -406,6 +462,48 @@ A parada pode entrar em uma viagem pela região da Bocaina. Reserve tempo de vis
 
 **Fontes e confirmação:** [Referência de endereço](https://www.ducatidocfriendly.com.br/restaurante-rancho-gastronomia-e-cultura-rota-68/) · [Horários consultados](https://restaurantguru.com.br/Rancho-Sao-Jose-do-Barreiro) · [Canal indicado pelos organizadores](https://www.instagram.com/canalrancho/).
 
+### Monumento 30 — Drei Schritte Restô Bar
+
+- **Cidade:** Katueté – Paraguai.
+- **Endereço ou referência de acesso:** Las Residentas / Ruta PY03, Katueté, departamento de Canindeyú, Paraguai. Número não confirmado.
+- **Horário publicado:** O cadastro do Restaurant Guru informa almoço diário das 11h às 14h; atendimento a partir das 17h, até meia-noite de domingo a quarta e até as 3h de quinta a sábado. Confirme a grade vigente e o carimbo com o restaurante.
+- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
+
+Visitamos Katueté na nossa viagem de setembro de 2026. Planeje a etapa internacional com antecedência e confira os requisitos de entrada aplicáveis ao seu caso; não trate o carimbo turístico como registro migratório.
+
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-24.253942,-54.7702719).
+
+**Fontes e confirmação:** [Cadastro de endereço e horários](https://restaurantguru.com/Drei-Schritte-Katuete-Katuete) · [Canal indicado pelos organizadores](https://www.instagram.com/dreischrittekatuete/).
+
+💡 **Leia também nossos outros roteiros autorais:**
+- [Paraguai de moto: nossa viagem de 3 dias pela Rota Biker](/blog/paraguai-de-moto-nossa-viagem-de-3-dias-pela-rota-biker)
+
+### Monumento 31 — Pro Tork
+
+- **Cidade:** Siqueira Campos – PR.
+- **Endereço ou referência de acesso:** Siqueira Campos – PR, no ponto identificado como Pro Tork no mapa de referência. Endereço viário exato do monumento não confirmado.
+- **Horário publicado:** Atendimento de visita e carimbo não confirmado.
+- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
+
+Não use automaticamente o endereço de uma fábrica, revenda ou setor administrativo da marca como destino do monumento. Confirme o acesso específico com o canal indicado no catálogo.
+
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-23.6704833,-49.836561).
+
+**Fontes e confirmação:** [Canal indicado pelos organizadores](https://www.instagram.com/protork_oficial/).
+
+### Monumento 32 — Hell's Dogs Motorcycle Bar
+
+- **Cidade:** Foz do Iguaçu – PR.
+- **Endereço ou referência de acesso:** Avenida Paraná, 3.555, Foz do Iguaçu – PR.
+- **Horário publicado:** Há divergência entre os cadastros públicos consultados. O perfil comercial reivindicado no Tripadvisor lista quarta e quinta, das 18h à meia-noite, e sexta e sábado, das 18h às 2h; outros diretórios mostram horários diferentes. **Confirme pelo canal direto antes de programar a visita.**
+- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
+
+A visita ao monumento e o atendimento do bar podem ocorrer em condições diferentes. Não presuma carimbo disponível durante o dia por se tratar de um ponto urbano.
+
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-25.5159988,-54.5751596).
+
+**Fontes e confirmação:** [Perfil comercial consultado](https://www.tripadvisor.com.br/Restaurant_Review-g303444-d12440880-Reviews-Hell_s_Dogs_Motorcycle_Bar-Foz_do_Iguacu_State_of_Parana.html) · [Cadastro com grade divergente](https://www.findglocal.com/BR/Foz-do-Igua%C3%A7u/1711950979097379/Hell%27s-Dogs-Motorcycle-Bar) · [Canal indicado pelos organizadores](https://www.instagram.com/hellsdogsfoz).
+
 ### Monumento 33 — Zapata Garage
 
 - **Cidade:** Garça – SP.
@@ -432,85 +530,70 @@ O guia descreve uma coleção de motocicletas em um espaço ligado à residênci
 
 **Fontes e confirmação:** [Pontos da Serra da Macaca / Rota 139](https://serradamacaca.com.br/Rota139/?page_id=8) · [Canal indicado pelos organizadores](https://www.instagram.com/parada.dabufala).
 
-### Monumento 44 — Laranja Doce — Pão com Linguiça
+### Monumento 35 — Portal de São Lourenço
 
-- **Cidade:** Martinópolis – SP.
-- **Endereço ou referência de acesso:** Rodovia Prefeito Homero Severo Lins, referência de km 553, Martinópolis – SP, conforme cadastro do restaurante.
-- **Horário publicado:** O canal próprio no Linktree informa segunda a sábado, das 6h às 17h45; domingo, das 9h às 16h. Isso se refere ao restaurante.
+- **Cidade:** São Lourenço – MG.
+- **Endereço ou referência de acesso:** Portal de entrada de São Lourenço – MG. O carimbo é disponibilizado no Centro de Atendimento ao Turista localizado no Portal, segundo o Convention & Visitors Bureau.
+- **Horário publicado:** Horário atual do Centro de Atendimento ao Turista não confirmado na página consultada.
+- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
+
+Ver o monumento no Portal não garante que o balcão de atendimento esteja aberto. Pergunte pelo horário do CAT antes de definir a chegada.
+
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-22.1270713,-45.0392427).
+
+**Fontes e confirmação:** [Guia local do São Lourenço CVB](https://saolourencocvb.com.br/guia-rota-biker/).
+
+### Monumento 36 — Route 60
+
+- **Cidade:** Abadiânia – GO.
+- **Endereço ou referência de acesso:** BR-060, km 58, zona rural, Abadiânia – GO.
+- **Horário publicado:** O cadastro da Goiás Turismo consultado não apresenta grade preenchida. Confirme pelo perfil direto.
+- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
+
+Algumas fontes resumem o endereço apenas como Goiás. Para a navegação, a cidade de referência é Abadiânia.
+
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-16.1849568,-48.688318).
+
+**Fontes e confirmação:** [Goiás Turismo](https://goiasturismo.go.gov.br/pt/apoio/abadiania/restaurante-e-lanchonete-route-60) · [Canal indicado pelos organizadores](https://www.instagram.com/route_60/).
+
+### Monumento 37 — Bela Vista Mall
+
+- **Cidade:** Conceição do Mato Dentro – MG.
+- **Endereço ou referência de acesso:** Rodovia MG-010, 598, Conceição do Mato Dentro – MG.
+- **Horário publicado:** O site informa atendimento de segunda a sábado, das 8h às 18h. A disponibilidade de cada operação e do carimbo deve ser confirmada com a administração.
+- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
+
+A grade de um shopping ou centro comercial não precisa ser igual à do posto, da alimentação ou do responsável pelo monumento.
+
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-19.0441262,-43.4223614).
+
+**Fontes e confirmação:** [Contato do Bela Vista Mall](https://belavistamall.com.br/contato/).
+
+### Monumento 38 — MAPY — Restaurante e Café
+
+- **Cidade:** Mauá da Serra – PR.
+- **Endereço ou referência de acesso:** BR-376, região da Serra do Cadeado, Mauá da Serra – PR. Há divergência de referência quilométrica: cadastros comerciais apontam km 296 e a página da concessionária Motiva informa km 292. Confirme o acesso pelo pino e pelo estabelecimento.
+- **Horário publicado:** A Motiva informa domingo a sexta, das 6h às 21h30; sábado, das 6h às 19h. Confirme se essa faixa também atende ao carimbo.
+- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
+
+Não use o quilômetro isolado como única orientação enquanto a divergência não for esclarecida.
+
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-23.9122125,-51.1844918).
+
+**Fontes e confirmação:** [Horários divulgados pela concessionária](https://aem.grupoccr.com.br/content/ccrcanaisdigitais/roads-empty-page/rodovias-grupoccr-empty/language-master-empty/pt/home-page/parana/pedagio-eletronico.html) · [Cadastro com referência ao km 296](https://restaurantguru.com.br/Rota-Cafe-Restaurante-e-Lanchonete-Brazil).
+
+### Monumento 39 — Mar & Sol Praia Hotel
+
+- **Cidade:** Prado – BA.
+- **Endereço ou referência de acesso:** Rua Dom Pedro II, 330, Prado – BA, conforme cadastro do hotel.
+- **Horário publicado:** Horário de visita ao monumento e atendimento de carimbo não confirmados. Combine com a recepção.
 - **Situação do monumento:** Em construção; inauguração e carimbo não confirmados.
 
-O funcionamento do restaurante não altera, por si só, a situação de construção do monumento. Confirme inauguração e carimbo antes da visita.
+O hotel estar em funcionamento não confirma a conclusão do monumento; o catálogo oficial ainda o apresenta em construção.
 
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-22.131556,-51.1689638).
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-17.340253,-39.2181944).
 
-**Fontes e confirmação:** [Canal próprio de atendimento](https://linktr.ee/paocomlinguica.martinopolis) · [Referência de endereço](https://www.tripadvisor.com.br/Restaurant_Review-g2350220-d11933114-Reviews-Laranja_Doce_Pao_Com_Linguica-Martinopolis_State_of_Sao_Paulo.html).
-
-### Monumento 45 — Empório Caconde
-
-- **Cidade:** Caconde – SP.
-- **Endereço ou referência de acesso:** Caconde – SP. Endereço detalhado da implantação não confirmado. O mapa oficial já apresenta um pino para Empório Caconde.
-- **Horário publicado:** Não confirmado para o ponto do monumento.
-- **Situação do monumento:** Em construção; inauguração e carimbo não confirmados.
-
-Existem cadastros de empórios com endereços diferentes em Caconde; não foi confirmada a correspondência deles com a implantação nº 45. Por isso, não atribuímos ao monumento o endereço ou o horário de um estabelecimento apenas pela semelhança do nome.
-
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-21.5996867,-46.6383175).
-
-**Fontes e confirmação:** [Catálogo dos organizadores](https://monumentobikers.com.br/monumentos/).
-
-## Monumentos da Rota Biker no Rio Grande do Sul
-
-### Monumento 10 — Terrasul Motos
-
-- **Cidade:** Jaguarão – RS.
-- **Endereço ou referência de acesso:** Monumento em Jaguarão – RS, no pino do mapa de referência. **Local do carimbo:** loja Terra Sul Motos, Avenida Vinte e Sete de Janeiro, 494, Centro.
-- **Horário publicado:** O site da loja informa segunda a sexta, das 8h às 12h e das 13h30 às 19h; sábado, das 8h às 12h e das 13h30 às 18h. Atendimento aos domingos não informado nessa página.
-- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
-
-O monumento e o balcão onde se carimba não ficam necessariamente no mesmo endereço. Reserve tempo para visitar os dois.
-
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-32.5522043,-53.3838142).
-
-**Fontes e confirmação:** [Contato oficial da loja](https://terrasulmotos.com.br/contato/) · [Canal indicado pelos organizadores](https://www.google.com/maps).
-
-### Monumento 14 — Parador 158
-
-- **Cidade:** Itaara – RS.
-- **Endereço ou referência de acesso:** BR-158, km 308, nº 11.310, Itaara – RS, conforme cadastro da prefeitura.
-- **Horário publicado:** A Prefeitura de Itaara informa quinta a domingo, das 11h às 23h. Confirme alterações com o Parador.
-- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
-
-Há cadastros na internet com numerações diferentes. Use a referência da rodovia e confirme a entrada com o estabelecimento.
-
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-29.6010665,-53.7677307).
-
-**Fontes e confirmação:** [Prefeitura de Itaara](https://itaara.rs.gov.br/hospedagem/parador-158/) · [Canal indicado pelos organizadores](https://www.instagram.com/parador158).
-
-### Monumento 15 — Garimpo em Atividade
-
-- **Cidade:** Ametista do Sul – RS.
-- **Endereço ou referência de acesso:** Avenida Bento Gonçalves, 736, Ametista do Sul – RS.
-- **Horário publicado:** O site informa passeios às 9h15, 10h15, 13h15 e 14h15, todos os dias, inclusive feriados. São horários dos passeios, não uma grade específica de carimbo.
-- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
-
-Pergunte sobre disponibilidade, valor e necessidade de agendamento da atividade subterrânea. A parada para o monumento e a experiência turística precisam ser planejadas separadamente.
-
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-27.3577814,-53.1916744).
-
-**Fontes e confirmação:** [Site do Garimpo em Atividade](https://www.garimpoematividade.com.br/) · [Canal indicado pelos organizadores](https://www.instagram.com/garimpoematividade).
-
-### Monumento 20 — Casa Rural Pastelaria
-
-- **Cidade:** Barra do Ribeiro – RS.
-- **Endereço ou referência de acesso:** BR-116, km 334, Douradilho, Barra do Ribeiro – RS.
-- **Horário publicado:** O cadastro do Restaurant Guru informa atendimento diário, das 6h às 23h. Confirme separadamente a disponibilidade de carimbo.
-- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
-
-Uma parada de alimentação pode ter uma janela maior de funcionamento do que o atendimento específico da Rota Biker.
-
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-30.4075303,-51.4541004).
-
-**Fontes e confirmação:** [Cadastro consultado](https://restaurantguru.com.br/Casa-Rural-Brazil) · [Canal indicado pelos organizadores](https://www.instagram.com/casa_rural_barra_do_ribeiro).
+**Fontes e confirmação:** [Cadastro do hotel](https://www.tripadvisor.com.br/Hotel_Review-g1989036-d12100188-Reviews-Mar_Sol_Praia_Hotel-Prado_State_of_Bahia.html).
 
 ### Monumento 40 — Quiosque Romano
 
@@ -538,74 +621,18 @@ O monumento consta em construção. Não planeje a obtenção de carimbo sem con
 
 **Fontes e confirmação:** [Catálogo dos organizadores](https://monumentobikers.com.br/monumentos/).
 
-## Monumentos da Rota Biker em Minas Gerais
+### Monumento 42 — Tapioca do Irmão Firmino
 
-### Monumento 17 — Armazém Canastra
+- **Cidade:** Cajá – PB.
+- **Endereço ou referência de acesso:** BR-230 / Rodovia Governador Antônio Mariz, região de Cajá, Caldas Brandão – PB, conforme referência cartográfica. Número não confirmado.
+- **Horário publicado:** Horário para visita ao monumento e carimbo não confirmado.
+- **Situação do monumento:** Em construção; inauguração e carimbo não confirmados.
 
-- **Cidade:** Piumhi – MG.
-- **Endereço ou referência de acesso:** Avenida Francisco Machado, 1.020, bairro Aeroporto, Piumhi – MG.
-- **Horário publicado:** Horário regular de visita e carimbo não confirmado. A agenda de um evento ou de retirada de kits não deve ser usada como horário permanente.
-- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
+Há mais de uma referência comercial da Tapioca do Irmão Firmino na região. Confirme a unidade do monumento nº 42; não use automaticamente o horário de outro ponto.
 
-Há estabelecimentos com nomes semelhantes em outras cidades. Para este monumento, confira se o destino é a unidade de Piumhi.
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-7.1684174,-35.3509599).
 
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-20.4576587,-45.9784098).
-
-**Fontes e confirmação:** [Cardápio e endereço divulgados pelo estabelecimento](https://armazemcanastra-bra.ola.click/products) · [Canal indicado pelos organizadores](https://www.instagram.com/armazem_canastra/).
-
-### Monumento 22 — Restaurante Mata Virgem
-
-- **Cidade:** Três Corações – MG.
-- **Endereço ou referência de acesso:** Rodovia Fernão Dias, km 746, pista sul, Três Corações – MG.
-- **Horário publicado:** O site do restaurante informa atendimento de segunda a domingo, das 7h30 às 18h30. Outras atividades do complexo podem ter reserva e horário próprios.
-- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
-
-Observe o sentido da rodovia. Estar na pista contrária pode exigir um retorno permitido; não conte apenas com a distância entre os pontos no mapa.
-
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-21.6144094,-45.2614054).
-
-**Fontes e confirmação:** [Site do Restaurante Mata Virgem](https://restaurantematavirgem.com.br/) · [Canal indicado pelos organizadores](https://www.instagram.com/matavirgemrestaurante).
-
-### Monumento 35 — Portal de São Lourenço
-
-- **Cidade:** São Lourenço – MG.
-- **Endereço ou referência de acesso:** Portal de entrada de São Lourenço – MG. O carimbo é disponibilizado no Centro de Atendimento ao Turista localizado no Portal, segundo o Convention & Visitors Bureau.
-- **Horário publicado:** Horário atual do Centro de Atendimento ao Turista não confirmado na página consultada.
-- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
-
-Ver o monumento no Portal não garante que o balcão de atendimento esteja aberto. Pergunte pelo horário do CAT antes de definir a chegada.
-
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-22.1270713,-45.0392427).
-
-**Fontes e confirmação:** [Guia local do São Lourenço CVB](https://saolourencocvb.com.br/guia-rota-biker/).
-
-### Monumento 37 — Bela Vista Mall
-
-- **Cidade:** Conceição do Mato Dentro – MG.
-- **Endereço ou referência de acesso:** Rodovia MG-010, 598, Conceição do Mato Dentro – MG.
-- **Horário publicado:** O site informa atendimento de segunda a sábado, das 8h às 18h. A disponibilidade de cada operação e do carimbo deve ser confirmada com a administração.
-- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
-
-A grade de um shopping ou centro comercial não precisa ser igual à do posto, da alimentação ou do responsável pelo monumento.
-
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-19.0441262,-43.4223614).
-
-**Fontes e confirmação:** [Contato do Bela Vista Mall](https://belavistamall.com.br/contato/).
-
-## Monumentos da Rota Biker em Goiás
-
-### Monumento 36 — Route 60
-
-- **Cidade:** Abadiânia – GO.
-- **Endereço ou referência de acesso:** BR-060, km 58, zona rural, Abadiânia – GO.
-- **Horário publicado:** O cadastro da Goiás Turismo consultado não apresenta grade preenchida. Confirme pelo perfil direto.
-- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
-
-Algumas fontes resumem o endereço apenas como Goiás. Para a navegação, a cidade de referência é Abadiânia.
-
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-16.1849568,-48.688318).
-
-**Fontes e confirmação:** [Goiás Turismo](https://goiasturismo.go.gov.br/pt/apoio/abadiania/restaurante-e-lanchonete-route-60) · [Canal indicado pelos organizadores](https://www.instagram.com/route_60/).
+**Fontes e confirmação:** [Referência cartográfica da unidade em Cajá](https://www.waze.com/pt-BR/live-map/directions/tapioca-do-irmao-firmino-br-230-rod.-gov.-antonio-mariz-caja-%28caldas-brandao%29?to=place.w.212731584.2127643523.5781429).
 
 ### Monumento 43 — Parada Route
 
@@ -620,76 +647,31 @@ O ponto aparece no mapa, mas a descrição consultada não confirma a situação
 
 **Fontes e confirmação:** [Cadastro de endereço](https://www.solutudo.com.br/empresas/go/s-miguel-p-quatro/mercados/parada-route-ltda-10569189).
 
-## Monumento da Rota Biker no Distrito Federal
+### Monumento 44 — Laranja Doce — Pão com Linguiça
 
-### Monumento 11 — Pad Bier Cervejaria
-
-- **Cidade:** Paranoá – DF.
-- **Endereço ou referência de acesso:** BR-251, região do PAD-DF, Paranoá / Brasília – DF. O site próprio antigo informa km 7; confirme o acesso atual com o estabelecimento.
-- **Horário publicado:** Grade atual não confirmada.
-- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
-
-A referência rodoviária é mais útil do que pesquisar apenas “Paranoá”. Confirme o ponto de chegada antes do deslocamento.
-
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-15.9990196,-47.5603231).
-
-**Fontes e confirmação:** [Página própria com referência de endereço](https://pamonhariacaminhodaroca.webnode.pt/a-cervejaria/) · [Canal indicado pelos organizadores](https://www.instagram.com/padbiercervejaria).
-
-## Monumentos da Rota Biker na Bahia
-
-### Monumento 39 — Mar & Sol Praia Hotel
-
-- **Cidade:** Prado – BA.
-- **Endereço ou referência de acesso:** Rua Dom Pedro II, 330, Prado – BA, conforme cadastro do hotel.
-- **Horário publicado:** Horário de visita ao monumento e atendimento de carimbo não confirmados. Combine com a recepção.
+- **Cidade:** Martinópolis – SP.
+- **Endereço ou referência de acesso:** Rodovia Prefeito Homero Severo Lins, referência de km 553, Martinópolis – SP, conforme cadastro do restaurante.
+- **Horário publicado:** O canal próprio no Linktree informa segunda a sábado, das 6h às 17h45; domingo, das 9h às 16h. Isso se refere ao restaurante.
 - **Situação do monumento:** Em construção; inauguração e carimbo não confirmados.
 
-O hotel estar em funcionamento não confirma a conclusão do monumento; o catálogo oficial ainda o apresenta em construção.
+O funcionamento do restaurante não altera, por si só, a situação de construção do monumento. Confirme inauguração e carimbo antes da visita.
 
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-17.340253,-39.2181944).
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-22.131556,-51.1689638).
 
-**Fontes e confirmação:** [Cadastro do hotel](https://www.tripadvisor.com.br/Hotel_Review-g1989036-d12100188-Reviews-Mar_Sol_Praia_Hotel-Prado_State_of_Bahia.html).
+**Fontes e confirmação:** [Canal próprio de atendimento](https://linktr.ee/paocomlinguica.martinopolis) · [Referência de endereço](https://www.tripadvisor.com.br/Restaurant_Review-g2350220-d11933114-Reviews-Laranja_Doce_Pao_Com_Linguica-Martinopolis_State_of_Sao_Paulo.html).
 
-## Monumentos da Rota Biker na Paraíba
+### Monumento 45 — Empório Caconde
 
-### Monumento 42 — Tapioca do Irmão Firmino
-
-- **Cidade:** Cajá – PB.
-- **Endereço ou referência de acesso:** BR-230 / Rodovia Governador Antônio Mariz, região de Cajá, Caldas Brandão – PB, conforme referência cartográfica. Número não confirmado.
-- **Horário publicado:** Horário para visita ao monumento e carimbo não confirmado.
+- **Cidade:** Caconde – SP.
+- **Endereço ou referência de acesso:** Caconde – SP. Endereço detalhado da implantação não confirmado. O mapa oficial já apresenta um pino para Empório Caconde.
+- **Horário publicado:** Não confirmado para o ponto do monumento.
 - **Situação do monumento:** Em construção; inauguração e carimbo não confirmados.
 
-Há mais de uma referência comercial da Tapioca do Irmão Firmino na região. Confirme a unidade do monumento nº 42; não use automaticamente o horário de outro ponto.
+Existem cadastros de empórios com endereços diferentes em Caconde; não foi confirmada a correspondência deles com a implantação nº 45. Por isso, não atribuímos ao monumento o endereço ou o horário de um estabelecimento apenas pela semelhança do nome.
 
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-7.1684174,-35.3509599).
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-21.5996867,-46.6383175).
 
-**Fontes e confirmação:** [Referência cartográfica da unidade em Cajá](https://www.waze.com/pt-BR/live-map/directions/tapioca-do-irmao-firmino-br-230-rod.-gov.-antonio-mariz-caja-%28caldas-brandao%29?to=place.w.212731584.2127643523.5781429).
-
-## Monumento da Rota Biker no Paraguai
-
-O monumento nº 30 coloca uma etapa internacional no planejamento. Separe a visita turística das exigências de entrada no país e confirme o atendimento do restaurante antes de definir a passagem por Katueté.
-
-### Monumento 30 — Drei Schritte Restô Bar
-
-- **Cidade:** Katueté – Paraguai.
-- **Endereço ou referência de acesso:** Las Residentas / Ruta PY03, Katueté, departamento de Canindeyú, Paraguai. Número não confirmado.
-- **Horário publicado:** O cadastro do Restaurant Guru informa almoço diário das 11h às 14h; atendimento a partir das 17h, até meia-noite de domingo a quarta e até as 3h de quinta a sábado. Confirme a grade vigente e o carimbo com o restaurante.
-- **Situação do monumento:** Pronto e carimbando no mapa de referência consultado.
-
-Visitamos Katueté na nossa viagem de setembro de 2026. Planeje a etapa internacional com antecedência e confira os requisitos de entrada aplicáveis ao seu caso; não trate o carimbo turístico como registro migratório.
-
-**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-24.253942,-54.7702719).
-
-**Fontes e confirmação:** [Cadastro de endereço e horários](https://restaurantguru.com/Drei-Schritte-Katuete-Katuete) · [Canal indicado pelos organizadores](https://www.instagram.com/dreischrittekatuete/).
-
-💡 **Leia também nossos outros roteiros autorais:**
-- [Paraguai de moto: nossa viagem de 3 dias pela Rota Biker](/blog/paraguai-de-moto-nossa-viagem-de-3-dias-pela-rota-biker)
-
-## E o monumento nº 02?
-
-Na lista oficial consultada, o **monumento nº 2 aparece “em atualização”**, sem destino atual identificado. Por isso, não atribuímos a ele endereço, estabelecimento ou horário a partir de listas antigas.
-
-A ausência de uma ficha de destino é intencional: consulte os organizadores antes de incluir esse número no roteiro.
+**Fontes e confirmação:** [Catálogo dos organizadores](https://monumentobikers.com.br/monumentos/).
 
 ## Como montar uma viagem pelos monumentos
 
