@@ -1,12 +1,18 @@
 ---
-title: 'Monumentos da Rota Biker: locais, endereços e horários'
-status: '⏳ Rascunho'
-date: '2026-10-27T12:17:25-03:00'
-category: Roteiros
-image: ''
-excerpt: 'Consulte os monumentos da Rota Biker por estado, com números, locais, endereços disponíveis, horários e orientações para carimbar e planejar sua viagem.'
-author: 'Jeanderson e Ana Paula | Estrada a Dois'
-last_fact_check: '2026-10-27'
+title: 'Mapa dos monumentos da Rota Biker: locais, endereços e horários'
+status: 🟢 Publicado
+date: 2026-10-27T13:14:00
+category: Dicas
+image: /images/blog/capa-monumento.webp
+excerpt: Consulte os monumentos da Rota Biker por estado, com números, locais, endereços disponíveis, horários e orientações para carimbar e planejar sua viagem.
+author: Jeanderson e Ana Paula | Estrada a Dois
+editorial_notes:
+  - Salvo apenas como rascunho, sem imagens inseridas ou vinculadas.
+  - Pesquisa documental online em 27/10/2026; não houve contato por telefone, e-mail ou mensagem com estabelecimentos.
+  - 44 locais identificados, números 01 e 03 a 45. O nº 02 está em atualização.
+  - Endereço detalhado ainda não confirmado para os números 08, 31, 41 e 45. Algumas outras fichas têm apenas referência de via ou acesso.
+  - Conferir divergências dos números 03, 13, 14, 32, 38 e 45 antes de tratar coordenadas ou horários como informação confirmada em campo.
+  - Não vincular publicamente este rascunho a partir do mapa antes de aprovar e publicar o artigo.
 editorial_reviewed: false
 image_reviewed: false
 image_suggestions:
@@ -15,13 +21,7 @@ image_suggestions:
   - 'Seção Paraguai: foto autoral do monumento nº 30 em Katueté.'
   - 'Seção de passaporte: detalhe dos carimbos, ocultando dados pessoais e números identificadores.'
   - 'Seção de planejamento: captura do mapa Estrada a Dois com três paradas numeradas, sem dados da conta nem localização residencial.'
-editorial_notes:
-  - 'Salvo apenas como rascunho, sem imagens inseridas ou vinculadas.'
-  - 'Pesquisa documental online em 27/10/2026; não houve contato por telefone, e-mail ou mensagem com estabelecimentos.'
-  - '44 locais identificados, números 01 e 03 a 45. O nº 02 está em atualização.'
-  - 'Endereço detalhado ainda não confirmado para os números 08, 31, 41 e 45. Algumas outras fichas têm apenas referência de via ou acesso.'
-  - 'Conferir divergências dos números 03, 13, 14, 32, 38 e 45 antes de tratar coordenadas ou horários como informação confirmada em campo.'
-  - 'Não vincular publicamente este rascunho a partir do mapa antes de aprovar e publicar o artigo.'
+last_fact_check: 2026-10-27
 ---
 
 A próxima parada da Rota Biker pode estar em um café de estrada, em uma cidade que você ainda não conhece ou no caminho de uma viagem maior. Para aproveitar o passeio, porém, não basta encontrar um pino: é preciso saber **qual é o monumento, onde ele fica e quando haverá alguém para atender e carimbar o passaporte**.
