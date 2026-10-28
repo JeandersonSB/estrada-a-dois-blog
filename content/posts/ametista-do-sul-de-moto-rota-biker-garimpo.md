@@ -1,19 +1,19 @@
 ---
-title: "Ametista do Sul de moto: 1.100 km, garimpo e Rota Biker"
-status: "⏳ Rascunho"
-date: "2026-10-28T15:20:00"
-category: "Roteiros"
-image: ""
-excerpt: "De Yamaha R15, rodamos cerca de 1.100 km até Ametista do Sul: Garimpo em Atividade, monumento 15 da Rota Biker, atrações e custos de 3 dias."
+title: 'Ametista do Sul de moto: 1.100 km, garimpo e Rota Biker'
+status: ⏳ Rascunho
+date: 2026-10-28T15:20:00
+category: Roteiros
+image: /images/blog/capa-frente-monumento.webp
+excerpt: 'De Yamaha R15, rodamos cerca de 1.100 km até Ametista do Sul: Garimpo em Atividade, monumento 15 da Rota Biker, atrações e custos de 3 dias.'
 ---
 
-Fala, estrada! Aqui é o Jeanderson, junto com a Ana Paula, do **Estrada a Dois**. Desta vez, nossa Yamaha R15 nos levou para conhecer um lugar que estava na nossa lista havia algum tempo: **Ametista do Sul, no Rio Grande do Sul**.
+Desta vez, nossa Yamaha R15 nos levou para conhecer um lugar que estava na nossa lista havia algum tempo: **Ametista do Sul, no Rio Grande do Sul**.
 
 O motivo principal era visitar o **Garimpo em Atividade**, sede do **monumento nº 15 da Rota Biker**. Queríamos carimbar nosso passaporte, conhecer de perto a extração das ametistas e viver uma experiência que não aparece em qualquer roteiro: **percorrer de moto as galerias de um garimpo**, eu pilotando e a Paula na garupa.
 
 Saímos de Guarapuava (PR) na sexta-feira, **17 de julho de 2026**, e voltamos no domingo, dia 19. Foram **três dias, duas noites e aproximadamente 1.100 km**, contando a viagem, os deslocamentos pela cidade e um pequeno desvio na volta. Encontramos muito mais do que imaginávamos: lugares curiosos, um restaurante subterrâneo, uma igreja revestida de pedras e um pôr do sol na vinícola que virou uma das nossas melhores lembranças.
 
-[Sugestão de foto de capa: nós dois com a Yamaha R15 em Ametista do Sul, preferencialmente diante do monumento 15 da Rota Biker ou da entrada do Garimpo em Atividade.]
+![](/images/blog/foto-pousada.webp)
 
 ## Ficha técnica: nossa viagem de moto a Ametista do Sul
 
@@ -38,7 +38,7 @@ Saímos de **Guarapuava às 9h da manhã**, com o destino definido e a expectati
 
 Seguimos pela região de Candói e fizemos a primeira parada no **Alagado**, na [Lanchonete e Pousada da Preta](https://maps.app.goo.gl/NQ64WdEGaBM2TZyC8). Foi uma daquelas pausas necessárias para seguir bem o restante do dia.
 
-[Sugestão de foto: Yamaha R15 estacionada na primeira parada, na região do Alagado, com a paisagem ao fundo.]
+![](/images/blog/lanchonete-alagado.webp)
 
 Depois, paramos em **Pato Branco (PR)**, no [Posto Doval](https://maps.app.goo.gl/wyYDgg7GddSmEnac7), para comer e abastecer. Mais adiante, já em Santa Catarina, fizemos outra parada no [Posto Diamante, em Maravilha](https://maps.app.goo.gl/Z2vUcntifMjFRk7g6).
 
@@ -62,7 +62,7 @@ Depois de nos instalarmos, saímos para jantar no [Parrilha Restaurante](https:/
 
 Essa conversa foi uma boa maneira de começar a conhecer a cidade. Nem sempre o melhor roteiro nasce somente das pesquisas na internet; muitas dicas surgem quando a gente conversa com quem vive ali.
 
-[Sugestão de foto: fachada ou ambiente da Pousada Coqueiros; alternativamente, registro do jantar no Parrilha Restaurante.]
+![](/images/blog/parrilha.webp)
 
 ## Dia 2 — Garimpo em Atividade: nossa principal experiência em Ametista do Sul
 
@@ -76,9 +76,9 @@ O **Garimpo em Atividade abriga o monumento nº 15 da Rota Biker**, em Ametista 
 
 Já o **carimbo do Passaporte Rota Biker** fica **dentro de uma loja de artigos de ametista e outras peças de pedra**. Nós carimbamos nosso passaporte e aproveitamos para comprar souvenirs e adesivos como lembrança da viagem.
 
-[Sugestão de foto: Yamaha R15 com nós dois diante do monumento nº 15 da Rota Biker.]
+![](/images/blog/paula-monumento.webp)
 
-[Sugestão de foto: passaporte aberto mostrando o carimbo do monumento 15, ao lado dos adesivos e souvenirs comprados.]
+![](/images/blog/passaport.webp)
 
 Se você está começando a visitar os monumentos, criamos uma ferramenta gratuita para ajudar a organizar os próximos destinos: o **[Mapa Rota Biker do Estrada a Dois](https://www.estradaadois.com/rota-biker)**. Nele, é possível **buscar os monumentos por nome, número ou cidade, marcar os já visitados e planejar um roteiro com várias paradas**.
 
@@ -110,7 +110,7 @@ Outro momento que ficou na memória foi a **experiência de escuridão total** d
 
 A gente está tão acostumado a ambientes iluminados que só percebe a diferença quando a luz desaparece. Para nós, aquele momento ajudou a imaginar parte das dificuldades de quem precisava trabalhar nas galerias em outras épocas.
 
-[Sugestão de foto: apresentação guiada no garimpo, com as formações rochosas ou ametistas visíveis; outra opção é um registro da demonstração feito a uma distância segura.]
+![](/images/blog/garimpo.webp)
 
 ### De Yamaha R15 dentro das cavernas: como foi o passeio de moto?
 
@@ -214,7 +214,7 @@ Uma das perguntas que sempre aparece quando contamos uma viagem é: **quanto voc
 Estes foram os nossos gastos **aproximados para duas pessoas**, na viagem de **17 a 19 de julho de 2026**, saindo de Guarapuava e utilizando a Yamaha R15:
 
 | Despesa | Valor aproximado do casal |
-| --- | ---: |
+| --- | --- |
 | Hospedagem — Pousada Coqueiros, 2 noites | R$ 480 |
 | Alimentação durante a viagem | R$ 350 |
 | Combustível — até | R$ 300 |
@@ -255,8 +255,8 @@ Se voltaríamos? Com certeza. Não mudaríamos o nosso planejamento: ele nos deu
 
 **Nos vemos na próxima estrada!**
 
-*Jeanderson e Ana Paula — Estrada a Dois.*
+_Jeanderson e Ana Paula — Estrada a Dois._
 
----
+***
 
 **Informações úteis para planejar sua visita:** os valores citados são referentes à nossa viagem em julho de 2026. Para consultar atrações e eventuais mudanças de funcionamento, confira o [portal de turismo de Ametista do Sul](https://ametistadosul.tur.br/pontos), as informações do [Garimpo em Atividade](https://turismoemametista.com.br/atracoes/garimpo-em-atividade) e a [relação oficial de monumentos da Rota Biker](https://monumentobikers.com.br/).
