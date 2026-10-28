@@ -126,7 +126,7 @@ Quando gravamos nossas impressões ali mesmo, no fim da visita, os dois concorda
 
 Se você pensa em repetir essa experiência, **confirme previamente as condições de acesso, as regras de segurança e a possibilidade de usar a própria motocicleta**. Nossa participação foi acompanhada e seguiu o procedimento oferecido pelo local; não é um trajeto para explorar por conta própria.
 
-[Sugestão de foto: Jeanderson pilotando a Yamaha R15 com Ana Paula na garupa, dentro das galerias do Garimpo em Atividade. Esta é uma das imagens prioritárias do artigo.]
+![](/images/blog/dentro-garimpo.webp)
 
 ## Onde comer em Ametista do Sul: nosso almoço subterrâneo
 
@@ -136,7 +136,7 @@ Só o fato de almoçar em um **restaurante subterrâneo**, instalado em um ambie
 
 Não fomos em busca de um prato típico específico. Nossa intenção era conhecer os ambientes, conversar com as pessoas e viver algo diferente do que encontramos nas paradas de estrada habituais.
 
-[Sugestão de foto: interior do Restaurante Belvedere mostrando o ambiente subterrâneo e, se possível, a mesa do nosso almoço.]
+![](/images/blog/restaurante.webp)
 
 ## O que fazer em Ametista do Sul além do garimpo?
 
@@ -148,7 +148,7 @@ Passamos pelo **Shopping das Pedras**, onde encontramos diferentes artigos feito
 
 Para quem gosta de levar uma lembrança do destino, vale reservar um tempo para conhecer as lojas. Nós também aproveitamos a viagem para comprar souvenirs e adesivos.
 
-[Sugestão de foto: vitrines e peças de ametista no Shopping das Pedras, sem destacar preços que possam mudar.]
+![](/images/blog/shoppin-das-pedras.webp)
 
 ### Praça Central, Pirâmide Mística e Igreja São Gabriel
 
@@ -158,9 +158,9 @@ Visitamos a **[Pirâmide Mística](https://maps.app.goo.gl/12o4D3V5B1vySbyp7)** 
 
 Nos locais que visitamos nessa parte do roteiro, não tivemos cobrança de entrada. Isso não significa que todas as atrações de Ametista do Sul sejam gratuitas: havia museus com ingresso pago e, desta vez, preferimos não incluí-los no nosso passeio.
 
-[Sugestão de foto: interior da Igreja São Gabriel destacando as pedras nas paredes, com enquadramento que valorize os detalhes.]
+![](/images/blog/praca-igreja.webp)
 
-[Sugestão de foto: Pirâmide Mística ou foto do casal caminhando pela Praça Central.]
+![](/images/blog/igreja.webp)
 
 ### Pôr do sol na Vinícola Ametista: o outro grande momento da viagem
 
@@ -174,7 +174,7 @@ Para nós, os dois melhores momentos de Ametista do Sul foram justamente esses: 
 
 Vale lembrar: se você estiver viajando de moto, planeje o transporte e o horário da visita de forma que **ninguém pilote após consumir bebida alcoólica**.
 
-[Sugestão de foto: pôr do sol visto da Vinícola Ametista, com o horizonte em destaque; se houver, uma foto de nós dois apreciando a paisagem.]
+![](/images/blog/vinicula.webp)
 
 Naquela noite, preferimos descansar na pousada. No dia seguinte ainda teríamos a viagem de volta para Guarapuava.
 
@@ -186,7 +186,7 @@ Chegamos a **Guarapuava por volta das 15h**, totalizando **5h45 entre a saída e
 
 No geral, a viagem de volta também foi tranquila, sem chuva e sem imprevistos. Houve, porém, um trecho de **pavimento de concreto** que chamou nossa atenção. Quando chegamos em casa, percebi um desgaste maior nos pneus, principalmente no traseiro.
 
-Não dá para afirmar que aquele trecho foi a causa do desgaste — isso depende de vários fatores, como o estado anterior do pneu, a carga, a calibragem e o piso. Mas foi uma observação importante que fiz depois dessa viagem e que vale acompanhar nas inspeções da moto.
+Não dá para afirmar que aquele trecho foi a causa do desgaste, isso depende de vários fatores, como o estado anterior do pneu, a carga, a calibragem e o piso. Mas foi uma observação importante que fiz depois dessa viagem e que vale acompanhar nas inspeções da moto.
 
 > 💡 **Leia também nossas dicas de manutenção:**
 > - [Calibragem de pneus de moto: confira a pressão a frio](/blog/calibragem-de-pneus-de-moto-confira-a-pressao-a-frio)
@@ -217,12 +217,12 @@ Estes foram os nossos gastos **aproximados para duas pessoas**, na viagem de **1
 | --- | --- |
 | Hospedagem — Pousada Coqueiros, 2 noites | R$ 480 |
 | Alimentação durante a viagem | R$ 350 |
-| Combustível — até | R$ 300 |
+| Combustível — até | R$ 200 |
 | Garimpo em Atividade — R$ 80 por pessoa | R$ 160 |
 | Lembranças, souvenirs e adesivos | R$ 200 |
-| **Total estimado** | **Até R$ 1.490** |
+| **Total estimado** | **Até R$ 1.390** |
 
-Esse valor inclui compras de lembranças, portanto não representa apenas o custo de deslocamento e estadia. **Sem souvenirs e adesivos, o orçamento fica em até R$ 1.290**. Como parte dos valores é aproximada — especialmente o combustível, que estimamos em no máximo R$ 300 —, não se trata de uma prestação de contas centavo a centavo.
+Esse valor inclui compras de lembranças, portanto não representa apenas o custo de deslocamento e estadia. **Sem souvenirs e adesivos, o orçamento fica em até R$ 1.190**. Como parte dos valores é aproximada, especialmente o combustível, que estimamos em no máximo R$ 200, não se trata de uma prestação de contas centavo a centavo.
 
 Nossa experiência mostra que dá para programar uma viagem de três dias com atrações diferentes sem transformar cada parada em um grande gasto. Os valores de hospedagem, alimentação e passeios podem mudar conforme a época, as escolhas de cada casal e a disponibilidade.
 
