@@ -1,0 +1,130 @@
+{
+  "week": "2026-11-02",
+  "checked_at": "2026-11-01T12:18:53.470Z",
+  "articles": [
+    {
+      "id": "ead-2026-11-02-dicas",
+      "title": "Hospedagem na viagem de moto: 7 itens para conferir",
+      "category": "Dicas",
+      "slug": "hospedagem-na-viagem-de-moto-7-itens-para-conferir-2026-11-02",
+      "planned_for": "2026-11-02T10:47:00-03:00",
+      "status": "⏳ Rascunho",
+      "words": 871,
+      "sources": [
+        {
+          "url": "https://www.honda.com.br/motos/blog/dicas-para-uma-viagem-de-moto",
+          "title": "Honda — Dicas para uma viagem de moto",
+          "claims": [
+            {
+              "fact": "O planejamento deve localizar pontos seguros de parada ao longo do roteiro.",
+              "quote": "verificar onde há locais para fazer paradas seguras de descanso, alimentação ou reabastecimento"
+            }
+          ],
+          "verified_at": "2026-11-01T12:18:57.235Z",
+          "verification": "html-quote-match"
+        },
+        {
+          "url": "https://www.honda.com.br/motos/blog/planejamento-o-segredo-de-uma-viagem-de-sucesso",
+          "title": "Honda — Planejamento de uma viagem de moto",
+          "claims": [
+            {
+              "fact": "O planejamento do roteiro deve identificar possibilidades de pernoite.",
+              "quote": "se há lugares para abastecer, descansar ou eventualmente pernoitar"
+            }
+          ],
+          "verified_at": "2026-11-01T12:18:58.237Z",
+          "verification": "html-quote-match"
+        }
+      ],
+      "research_model": "pesquisa web editorial",
+      "writing_model": "redação editorial com ChatGPT",
+      "review_notes": [
+        "Guia de critérios, sem recomendação de hospedagem não visitada. Confirmar manualmente qualquer exemplo que seja adaptado a um destino real."
+      ],
+      "reused": false
+    },
+    {
+      "id": "ead-2026-11-02-equipamentos",
+      "title": "Bolsa de tanque na moto: como conferir compatibilidade",
+      "category": "Equipamentos",
+      "slug": "bolsa-de-tanque-na-moto-como-conferir-compatibilidade-2026-11-02",
+      "planned_for": "2026-11-04T10:47:00-03:00",
+      "status": "⏳ Rascunho",
+      "words": 957,
+      "sources": [
+        {
+          "url": "https://www.shad.es/en/shad-launches-the-only-tank-bag-with-integrated-dual-security-system-e091cl-click-system/",
+          "title": "SHAD — Click System para bolsas de tanque",
+          "claims": [
+            {
+              "fact": "O sistema usa um encaixe instalado ao redor da tampa do tanque.",
+              "quote": "a discreet horseshoe-shaped fitting that is installed on the motorcycle’s tank cap"
+            }
+          ],
+          "verified_at": "2026-11-01T12:19:01.446Z",
+          "verification": "html-quote-match"
+        },
+        {
+          "url": "https://www.oxfordproducts.com/oxford-aqua-m8-tank-bag-m-ol404.html",
+          "title": "Oxford — Aqua M8 Tank Bag",
+          "claims": [
+            {
+              "fact": "A bolsa magnética indicada depende de tanque metálico compatível.",
+              "quote": "Suitable for use on motorcycles with metal fuel tank"
+            }
+          ],
+          "verified_at": "2026-11-01T12:19:04.707Z",
+          "verification": "html-quote-match"
+        }
+      ],
+      "research_model": "pesquisa web editorial",
+      "writing_model": "redação editorial com ChatGPT",
+      "review_notes": [
+        "Comparativo de sistemas, sem teste prático ou alegação universal. Confirmar compatibilidade no fabricante da bolsa e da motocicleta."
+      ],
+      "reused": false
+    },
+    {
+      "id": "ead-2026-11-02-manutencao",
+      "title": "Desgaste dos pneus da moto: sinais para revisar",
+      "category": "Manutenção",
+      "slug": "desgaste-dos-pneus-da-moto-sinais-para-revisar-2026-11-02",
+      "planned_for": "2026-11-06T10:47:00-03:00",
+      "status": "⏳ Rascunho",
+      "words": 887,
+      "sources": [
+        {
+          "url": "https://www.michelin.com.br/motorbike/conselhos-moto/escolher-pneus/desgaste-pneus-moto-quando-mudar-pneus",
+          "title": "Michelin — Desgaste de pneus da moto",
+          "claims": [
+            {
+              "fact": "A inspeção deve observar desgaste irregular e sinais de dano na banda e nos flancos.",
+              "quote": "Procure qualquer desgaste do piso invulgar, excessivo ou irregular"
+            }
+          ],
+          "verified_at": "2026-11-01T12:19:07.156Z",
+          "verification": "html-quote-match"
+        },
+        {
+          "url": "https://tires.bridgestone.com.br/pt-br/recursos/cuidado-de-pneus/quando-devo-trocar-meus-pneus",
+          "title": "Bridgestone — Indicador de desgaste TWI",
+          "claims": [
+            {
+              "fact": "O TWI é identificado por uma marca na lateral do pneu.",
+              "quote": "Localize o símbolo TWI que vem marcado na lateral dos seus pneus"
+            }
+          ],
+          "verified_at": "2026-11-01T12:19:09.660Z",
+          "verification": "html-quote-match"
+        }
+      ],
+      "research_model": "pesquisa web editorial",
+      "writing_model": "redação editorial com ChatGPT",
+      "review_notes": [
+        "Inspeção externa separada de serviço de oficina. Sem parâmetros universais, reparo ou desmontagem."
+      ],
+      "reused": false
+    }
+  ],
+  "errors": []
+}
