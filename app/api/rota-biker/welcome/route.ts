@@ -37,7 +37,7 @@ Criamos essa ferramenta para facilitar a vida de quem ama viajar de moto, descob
 
 Com o mapa, você pode encontrar os monumentos da Rota Biker, planejar trajetos e registrar os lugares que já visitou.
 
-E você está entre os primeiros a utilizar essa ferramenta! 🏍️💚
+Agora você faz parte da comunidade que usa essa ferramenta! 🏍️💚
 
 Estamos sempre buscando melhorar. Se tiver uma sugestão ou encontrar algum problema, basta responder a este e-mail.
 
@@ -52,7 +52,7 @@ Estrada a Dois
 https://www.estradaadois.com
 
 Este é um e-mail único de boas-vindas ao cadastro no Mapa Rota Biker.`,
-    html: `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;background:#f5f6f3;color:#242424;font-family:Arial,Helvetica,sans-serif"><div style="max-width:600px;margin:24px auto;background:#fff;border-radius:12px;overflow:hidden"><div style="background:#242424;padding:27px 30px;font-size:23px;font-weight:800;color:#b6d200">ESTRADA A DOIS</div><div style="padding:30px;line-height:1.65"><h1 style="font-size:23px;margin:0 0 20px">Olá, ${greeting}! 🏍️</h1><p>Aqui é o <strong>Jeanderson e a Ana Paula</strong>, do Estrada a Dois!</p><p>Vimos que você se cadastrou no nosso <strong>Mapa Rota Biker</strong> e queremos agradecer por fazer parte desse projeto.</p><p>Criamos essa ferramenta para facilitar a vida de quem ama viajar de moto, descobrir novos destinos e colecionar histórias pela estrada.</p><p>Com o mapa, você pode encontrar os monumentos da Rota Biker, planejar trajetos e registrar os lugares que já visitou.</p><p><strong>E você está entre os primeiros a utilizar essa ferramenta!</strong> 🏍️💚</p><p>Estamos sempre buscando melhorar. Se tiver alguma sugestão ou encontrar um problema, basta responder a este e-mail.</p><p style="margin:28px 0"><a href="https://www.estradaadois.com/rota-biker" style="display:inline-block;background:#b6d200;color:#242424;font-weight:bold;text-decoration:none;padding:13px 22px;border-radius:6px">Acessar o Mapa Rota Biker</a></p><p>Acompanhe também <a style="color:#487000" href="https://www.instagram.com/estrada.a.dois/">nossas viagens no Instagram</a>.</p><p>Muito obrigado pela confiança e por fazer parte dessa jornada!</p><p><strong>Nos vemos na estrada!</strong></p><p>Jeanderson e Ana Paula<br><strong>Estrada a Dois</strong></p></div><div style="padding:16px 30px;background:#f0f2ec;color:#555;font-size:12px">Mensagem única de boas-vindas ao seu cadastro no Mapa Rota Biker.<br><a href="https://www.estradaadois.com/politica-de-privacidade#rota-biker" style="color:#487000">Política de Privacidade</a></div></div></body></html>`,
+    html: `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;background:#f5f6f3;color:#242424;font-family:Arial,Helvetica,sans-serif"><div style="max-width:600px;margin:24px auto;background:#fff;border-radius:12px;overflow:hidden"><div style="background:#242424;padding:27px 30px;font-size:23px;font-weight:800;color:#b6d200">ESTRADA A DOIS</div><div style="padding:30px;line-height:1.65"><h1 style="font-size:23px;margin:0 0 20px">Olá, ${greeting}! 🏍️</h1><p>Aqui é o <strong>Jeanderson e a Ana Paula</strong>, do Estrada a Dois!</p><p>Vimos que você se cadastrou no nosso <strong>Mapa Rota Biker</strong> e queremos agradecer por fazer parte desse projeto.</p><p>Criamos essa ferramenta para facilitar a vida de quem ama viajar de moto, descobrir novos destinos e colecionar histórias pela estrada.</p><p>Com o mapa, você pode encontrar os monumentos da Rota Biker, planejar trajetos e registrar os lugares que já visitou.</p><p><strong>Agora você faz parte da comunidade que usa essa ferramenta!</strong> 🏍️💚</p><p>Estamos sempre buscando melhorar. Se tiver alguma sugestão ou encontrar um problema, basta responder a este e-mail.</p><p style="margin:28px 0"><a href="https://www.estradaadois.com/rota-biker" style="display:inline-block;background:#b6d200;color:#242424;font-weight:bold;text-decoration:none;padding:13px 22px;border-radius:6px">Acessar o Mapa Rota Biker</a></p><p>Acompanhe também <a style="color:#487000" href="https://www.instagram.com/estrada.a.dois/">nossas viagens no Instagram</a>.</p><p>Muito obrigado pela confiança e por fazer parte dessa jornada!</p><p><strong>Nos vemos na estrada!</strong></p><p>Jeanderson e Ana Paula<br><strong>Estrada a Dois</strong></p></div><div style="padding:16px 30px;background:#f0f2ec;color:#555;font-size:12px">Mensagem única de boas-vindas ao seu cadastro no Mapa Rota Biker.<br><a href="https://www.estradaadois.com/politica-de-privacidade#rota-biker" style="color:#487000">Política de Privacidade</a></div></div></body></html>`,
   };
 }
 
@@ -116,12 +116,12 @@ export async function POST(request: NextRequest) {
       cache: 'no-store',
     });
 
-    if (!sendResponse.ok && sendResponse.status !== 409) {
+    if (!sendResponse.ok) {
       console.error('[rota-biker/welcome] Resend status:', sendResponse.status);
       return NextResponse.json({ error: 'Falha temporária no envio' }, { status: 503 });
     }
 
-    // Resend returns 409 for concurrent same-key requests; the first request wins.
+    // Resend stores this stable idempotency key for 24h, longer than the signup window.
     return new NextResponse(null, { status: 204 });
   } catch {
     console.error('[rota-biker/welcome] Falha ao processar cadastro');
