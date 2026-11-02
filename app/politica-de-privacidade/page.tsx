@@ -85,7 +85,7 @@ export default function PoliticaPrivacidade() {
             <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">6. Serviços de terceiros</h2>
             <p>
               Para operar o portal, podemos utilizar serviços de terceiros, como infraestrutura de hospedagem e
-              distribuição de conteúdo da Vercel, serviços do Google e a API do Telegram. Esses fornecedores podem
+              distribuição de conteúdo da Vercel, serviços do Google a API do Telegram e o Resend para envio de boas-vindas. Esses fornecedores podem
               processar dados técnicos estritamente necessários à prestação de seus serviços, segundo seus próprios
               termos e políticas.
             </p>
@@ -126,6 +126,13 @@ export default function PoliticaPrivacidade() {
               Utilizamos Google Authentication/Firebase Authentication e Cloud Firestore para essas finalidades.
               Esses serviços processam os dados segundo seus próprios termos e políticas, podendo envolver
               infraestrutura fora do Brasil. Esta autorização não abrange envio de publicidade. As marcações não são publicadas, vendidas nem repassadas aos organizadores da Rota Biker ou a anunciantes. A equipe responsável pode acessar os dados pelos painéis administrativos para suporte, segurança e atendimento aos seus direitos; os fornecedores envolvidos também os processam para operar o serviço.
+            </p>
+            <p>
+              Após o primeiro cadastro com Google no Mapa Rota Biker, enviamos uma única mensagem
+              de boas-vindas ao endereço de e-mail associado à conta, utilizando o serviço Resend.
+              O nome e o e-mail são encaminhados a esse fornecedor exclusivamente para efetuar
+              o envio. O Resend mantém registros técnicos de entrega e utiliza uma chave de idempotência
+              para evitar mensagens duplicadas. Esse contato não autoriza newsletters nem publicidade.
             </p>
             <p>
               A localização depende de uma permissão separada do navegador e é utilizada para encontrar destinos
@@ -179,7 +186,7 @@ export default function PoliticaPrivacidade() {
               <a href="https://osmfoundation.org/wiki/Privacy_Policy" className="text-[#8ac200] hover:underline">OpenStreetMap</a>.
             </p>
 
-            <p className="font-bold text-[#0F0F0F]">Última atualização: 22 de outubro de 2026.</p>
+            <p className="font-bold text-[#0F0F0F]">Última atualização: 2 de novembro de 2026.</p>
           </div>
         </div>
       </div>
