@@ -131,8 +131,8 @@ export default function PoliticaPrivacidade() {
               Após o primeiro cadastro com Google no Mapa Rota Biker, enviamos uma única mensagem
               de boas-vindas ao endereço de e-mail associado à conta, utilizando o serviço Resend.
               O nome e o e-mail são encaminhados a esse fornecedor exclusivamente para efetuar
-              o envio. Guardamos no Firestore o identificador da conta, a data e o status do envio,
-              para prevenir duplicações. Esse contato não autoriza newsletters nem publicidade.
+              o envio. O Resend mantém registros técnicos de entrega e utiliza uma chave de idempotência
+              para evitar mensagens duplicadas. Esse contato não autoriza newsletters nem publicidade.
             </p>
             <p>
               A localização depende de uma permissão separada do navegador e é utilizada para encontrar destinos
