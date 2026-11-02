@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Map as LeafletMap, LayerGroup, CircleMarker, Popup, Tooltip } from 'leaflet';
 import { createPortal } from 'react-dom';
-import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut, type User } from 'firebase/auth';
+import { getAdditionalUserInfo, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut, type User } from 'firebase/auth';
 import { doc, onSnapshot, setDoc, deleteField } from 'firebase/firestore';
 import { services } from './firebase';
 import monuments from './monuments.json';
@@ -168,8 +168,18 @@ export default function Explorer() {
     privacyDialog.current?.close();
     const s = services();
     if (!s) { setMessage('O login Google ainda está em configuração. Suas marcações ficam salvas neste navegador.'); return; }
-    try { await signInWithPopup(s.auth, new GoogleAuthProvider()); }
-    catch { setMessage('Login não concluído. Você pode tentar novamente.'); }
+    try {
+      const result = await signInWithPopup(s.auth, new GoogleAuthProvider());
+      if (getAdditionalUserInfo(result)?.isNewUser) {
+        // O envio é opcional para a navegação: falhas não bloqueiam o login.
+        void result.user.getIdToken()
+          .then(idToken => fetch('/api/rota-biker/welcome', {
+            method: 'POST',
+            headers: { Authorization: `Bearer ${idToken}` },
+          }))
+          .catch(() => {});
+      }
+    } catch { setMessage('Login não concluído. Você pode tentar novamente.'); }
   }
   function locate(forRoute = false) {
     if (forRoute) { setOrigin(null); setLocationError(''); }
@@ -207,7 +217,7 @@ export default function Explorer() {
       <div id="biker-privacy-description">
         <p>Entre com Google para guardar os monumentos que você já visitou e acessar suas marcações em outros dispositivos.</p>
         <p><strong>Suas marcações são privadas.</strong> Não publicamos seu histórico, não vendemos seus dados nem os repassamos aos organizadores da Rota Biker ou a anunciantes. Usamos os serviços do Google para fazer o login e guardar suas marcações.</p>
-        <p>Ao aceitar, você permite o uso dos dados básicos da sua conta Google (nome, e-mail, foto, se houver, e identificação da conta) e das suas marcações para isso, conforme a LGPD. Se preferir, recuse e continue usando o mapa sem login.</p>
+        <p>Ao aceitar, você permite o uso dos dados básicos da sua conta Google (nome, e-mail, foto, se houver, e identificação da conta) e das suas marcações para isso, conforme a LGPD. No primeiro cadastro, enviamos um único e-mail de boas-vindas pelo Resend, sem inscrição em campanhas de marketing. Se preferir, recuse e continue usando o mapa sem login.</p>
       </div>
       <p className="biker-privacy-detail">Mudou de ideia? Você pode pedir a exclusão dos seus dados ou retirar essa permissão. Veja como na <a href="/politica-de-privacidade#rota-biker" target="_blank" rel="noopener noreferrer">Política de Privacidade ↗</a>.</p>
       <div className="biker-privacy-actions"><button autoFocus onClick={() => privacyDialog.current?.close()}>Recusar</button><button className="biker-primary" onClick={login}>Aceitar e continuar</button></div>
