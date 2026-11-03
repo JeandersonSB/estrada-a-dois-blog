@@ -1,3 +1,13 @@
+# Rotina editorial desativada em 03/11/2026
+
+Por solicitação do usuário, a tarefa **Artigos semanais Estrada a Dois** do ChatGPT foi desativada e os workflows `expert_bot.yml` (Gemini) e `notify_editorial.yml` (Telegram) foram removidos. Não reativar a geração ou os avisos sem nova solicitação explícita.
+
+Os artigos, rascunhos e relatórios existentes permanecem preservados. A edição e publicação manual no CMS continuam disponíveis. Limpeza da Vercel, otimização de imagens e testes do site permanecem independentes.
+
+O conteúdo abaixo é apenas um registro histórico da rotina anterior; não representa instruções de execução vigentes.
+
+---
+
 # Rotina semanal de rascunhos — Estrada a Dois
 
 Correção de escopo em 24/10/2026: o usuário não autorizou alterar o painel CMS. A configuração original de public/admin/config.yml foi restaurada. A automação entrega somente rascunhos; revisão e publicação são manuais, pelo fluxo existente.
