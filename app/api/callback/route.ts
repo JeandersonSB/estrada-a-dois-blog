@@ -1,5 +1,4 @@
 import { randomBytes } from 'node:crypto';
-import { encryptEditorSession, PREVIEW_SESSION_COOKIE, PREVIEW_SESSION_SECONDS } from '@/lib/draft-preview';
 import { NextRequest, NextResponse } from 'next/server';
 import {
   hasValidOauthState,
@@ -134,7 +133,7 @@ export async function GET(request: NextRequest) {
       '</body></html>',
     ].join('\n');
 
-    const authResponse = new NextResponse(html, {
+    return clearStateCookie(new NextResponse(html, {
       headers: {
         'Content-Type': 'text/html; charset=utf-8',
         'Cache-Control': 'no-store, max-age=0',
@@ -144,17 +143,7 @@ export async function GET(request: NextRequest) {
           "default-src 'none'; script-src 'nonce-" + nonce +
           "'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'",
       },
-    });
-    // A second, HttpOnly session allows the existing GitHub author to share draft previews.
-    // The regular Sveltia CMS OAuth popup and its postMessage protocol remain unchanged.
-    authResponse.cookies.set(PREVIEW_SESSION_COOKIE, encryptEditorSession(accessToken), {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
-      path: '/',
-      maxAge: PREVIEW_SESSION_SECONDS,
-    });
-    return clearStateCookie(authResponse);
+    }));
   } catch {
     // Never log the exchanged token, GitHub code or browser auth state.
     return authError('Ocorreu um erro ao autenticar. Tente novamente.', 502);
