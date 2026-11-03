@@ -3,7 +3,7 @@ title: 'Ametista do Sul de moto: 1.100 km, garimpo e Rota Biker'
 status: 🟢 Publicado
 date: 2026-11-03T18:33:00
 category: Roteiros
-image: /images/blog/capa-frente-monumento.webp
+image: "/images/blog/ametista-do-sul-de-moto-rota-biker-garimpo.webp"
 excerpt: 'De Yamaha R15, rodamos cerca de 1.100 km até Ametista do Sul: Garimpo em Atividade, monumento 15 da Rota Biker, atrações e custos de 3 dias.'
 ---
 
