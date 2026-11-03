@@ -7,6 +7,32 @@
   <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url">
 </head>
 <body>
+  <!-- O editor permanece intacto; o recurso de prévia fica fora da aplicação CMS. -->
+  <style>
+    #nc-root { min-height: 100vh; }
+    #ead-preview-share {
+      position: fixed; right: 20px; bottom: 20px; z-index: 1000;
+      padding: 11px 17px; border-radius: 12px; background: #403939;
+      color: white; text-decoration: none; font: 700 13px Arial, sans-serif;
+      border: 2px solid #B6D200; box-shadow: 0 5px 18px rgba(0,0,0,.22);
+    }
+    #ead-preview-share:focus-visible { outline: 3px solid #B6D200; outline-offset: 4px; }
+  </style>
+  <div id="nc-root"></div>
+  <a id="ead-preview-share" href="https://estrada-a-dois-blog.vercel.app/admin/previas" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar um rascunho para revisão">🔗 Compartilhar prévia</a>
+  <script>
+    (function () {
+      const link = document.getElementById('ead-preview-share');
+      const base = 'https://estrada-a-dois-blog.vercel.app/admin/previas';
+      function updateLink() {
+        const match = window.location.hash.match(/\\/(?:entries|entry)\\/([a-z0-9-]+)(?:[/?#]|$)/i);
+        const slug = match && match[1];
+        link.href = slug ? base + '?slug=' + encodeURIComponent(slug) : base;
+      }
+      window.addEventListener('hashchange', updateLink);
+      updateLink();
+    })();
+  </script>
   <!-- Sveltia CMS (Compatível com Decap, mas funciona sem servidor na Vercel) -->
   <script src="https://unpkg.com/@sveltia/cms@0.250.2/dist/sveltia-cms.js" integrity="sha384-C1+1L3qphgbrAxO2FdF1IFZO8lu9vKwl/r2HKwNT23T2pUQZzDzyXYRAm08skZ3Y" crossorigin="anonymous"></script>
 </body>
