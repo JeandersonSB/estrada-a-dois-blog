@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 
 const cmsAuthOrigin = 'https://estrada-a-dois-blog.vercel.app';
 
@@ -50,7 +50,7 @@ export function PreviewLinks({
     window.addEventListener('message', onMessage);
   }
 
-  async function generateLink(event: React.FormEvent<HTMLFormElement>) {
+  async function generateLink(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setMessage('');
     setResult(null);
