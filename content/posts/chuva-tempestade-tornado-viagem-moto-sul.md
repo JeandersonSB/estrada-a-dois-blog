@@ -1,36 +1,35 @@
 ---
+title: 'Chuva, tempestades e tornados em viagens de moto no Sul: quando parar e como se proteger'
+status: ⏳ Rascunho
+date: 2026-11-05T10:00:00
 category: Dicas
-status: "⏳ Rascunho"
-date: "2026-11-05T10:00:00"
-image: ""
-title: "Chuva, tempestades e tornados em viagens de moto no Sul: quando parar e como se proteger"
-seo_title: "Tempestade em viagem de moto no Sul: chuva e tornados"
-slug: chuva-tempestade-tornado-viagem-moto-sul
-meta_description: "Vai viajar de moto pelo Paraná, Santa Catarina ou Rio Grande do Sul? Saiba quando parar e como agir com chuva forte, raios, vento e risco de tornado."
-primary_keyword: "tempestade em viagem de moto"
+image: /images/blog/capa-chuva.webp
+excerpt: Chuva forte, raios, granizo e vento exigem mais que uma boa capa. Entenda o cenário de temporais no Sul e saiba quando adiar, interromper ou retomar uma viagem de moto.
+author: Estrada a Dois
+meta_description: Vai viajar de moto pelo Paraná, Santa Catarina ou Rio Grande do Sul? Saiba quando parar e como agir com chuva forte, raios, vento e risco de tornado.
+primary_keyword: tempestade em viagem de moto
 secondary_keywords:
   - chuva em viagem de moto no Sul
   - viajar de moto no Paraná com chuva
   - tempestades em Santa Catarina
   - tornado na estrada de moto
   - El Niño no Sul do Brasil
-author: Estrada a Dois
-updated_at: "2026-11-05"
-excerpt: "Chuva forte, raios, granizo e vento exigem mais que uma boa capa. Entenda o cenário de temporais no Sul e saiba quando adiar, interromper ou retomar uma viagem de moto."
+seo_title: 'Tempestade em viagem de moto no Sul: chuva e tornados'
+slug: chuva-tempestade-tornado-viagem-moto-sul
+updated_at: 2026-11-05
 ---
-
 
 **Informações verificadas em 5 de novembro de 2026.** Os episódios e boletins citados têm datas específicas. Consulte as atualizações oficiais antes de viajar.
 
 Uma **tempestade em viagem de moto** exige uma decisão antes de qualquer técnica de pilotagem: continuar ainda é seguro? Com chuva intensa, raios, granizo, vento que compromete o controle ou alerta de tornado, a prioridade é interromper o deslocamento e buscar abrigo adequado.
 
-Fala, estrada! Aqui é o Jeanderson, junto com a Ana Paula, do Estrada a Dois. Para quem gosta de viajar de moto pelo **Paraná, Santa Catarina e Rio Grande do Sul**, acompanhar a previsão faz parte do roteiro tanto quanto escolher as paradas e reservar a hospedagem.
+Fala, estrada! Para quem gosta de viajar de moto pelo **Paraná, Santa Catarina e Rio Grande do Sul**, acompanhar a previsão faz parte do roteiro tanto quanto escolher as paradas e reservar a hospedagem.
 
 Neste guia, reunimos o contexto recente das fortes chuvas e do El Niño, os cuidados na estrada e os sinais de que chegou a hora de mudar os planos. A paisagem pode esperar. Piloto e garupa precisam chegar bem.
 
-<!-- IMAGEM SUGERIDA: capa horizontal de estrada do Sul com nuvens carregadas, fotografada de local protegido. Alt: Estrada no Sul do Brasil sob nuvens de tempestade. -->
+![](/images/blog/chuva-1.webp)
 
-## Chuvas e tornados no Sul: o que está acontecendo em novembro de 2026?
+## Chuvas e tornados no Sul: o que está acontecendo em 2026?
 
 Os acontecimentos recentes ajudam a entender por que o tema merece atenção:
 
@@ -82,7 +81,7 @@ O aplicativo de navegação ajuda a encontrar caminhos, mas uma rota sugerida pr
 
 - [5 serras e 831 km de moto em um fim de semana: nosso roteiro pelo Rastro da Serpente, Graciosa e Morretes](https://www.estradaadois.com/blog/rastro-da-serpente-de-moto).
 
-<!-- IMAGEM SUGERIDA: moto estacionada fora do fluxo, em estabelecimento com área fechada para abrigo. Alt: Parada segura durante chuva em viagem de moto. -->
+![](/images/blog/chuva-2.webp)
 
 ## Peguei chuva forte na estrada de moto. O que fazer?
 
@@ -122,7 +121,7 @@ O Serviço Nacional de Meteorologia dos Estados Unidos orienta especificamente m
 
 Essa espera se refere ao risco de raios. Antes de sair, ainda é necessário verificar vento, alagamentos, visibilidade e condições da pista.
 
-<!-- IMAGEM SUGERIDA: ilustração claramente identificada mostrando cômodo interno de construção resistente como abrigo. Não apresentar imagem ilustrativa como registro do tornado de Maringá. Alt: Local interno de abrigo durante alerta de tornado. -->
+![](/images/blog/chuva-3.webp)
 
 ## O que fazer diante de risco de tornado na estrada?
 
@@ -152,7 +151,7 @@ Em áreas de encosta, observe sinais como terra ou rochas em movimento, árvores
 
 Para retomar a viagem, confirme as condições do trecho com os responsáveis pela rodovia. A chuva ter parado no ponto onde você está não significa que todo o caminho esteja liberado.
 
-<!-- IMAGEM SUGERIDA: capa impermeável, luvas, botas e capacete com viseira, organizados sobre superfície seca. Alt: Equipamentos de piloto e garupa para viagem de moto com chuva. -->
+![](/images/blog/chuva-4.webp)
 
 ## O que preparar na moto e na bagagem?
 
@@ -213,4 +212,4 @@ Não. A tendência climática ajuda a planejar a temporada. A decisão sobre a s
 
 Viajar de moto pelo Sul rende roteiros que dão vontade de repetir. Para aproveitar essas estradas, inclua no planejamento a possibilidade de esperar, mudar o caminho ou deixar uma serra para outra data.
 
-**Gostou deste guia? Compartilhe com quem vai pegar a estrada com você e acompanhe o [@estrada.a.dois no Instagram](https://www.instagram.com/estrada.a.dois/)** para ver nossos roteiros, experiências e dicas de viagem em casal.
+**Gostou deste guia? Compartilhe com quem vai pegar a estrada com você e acompanhe o** **[@estrada.a.dois no Instagram](https://www.instagram.com/estrada.a.dois/)** para ver nossos roteiros, experiências e dicas de viagem em casal.
