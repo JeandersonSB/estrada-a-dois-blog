@@ -1317,5 +1317,27 @@
     "state": "São Paulo",
     "country": "Brasil",
     "number": 44
+  },
+  {
+    "id": "5e5db9d468dc4653",
+    "name": "Empório Caconde — em construção",
+    "lat": -21.5996867,
+    "lng": -46.6383175,
+    "keywords": [
+      "emporio caconde",
+      "45",
+      "monumento 45",
+      "em construção",
+      "rota biker",
+      "Caconde",
+      "SP",
+      "São Paulo",
+      "Brasil"
+    ],
+    "city": "Caconde",
+    "stateCode": "SP",
+    "state": "São Paulo",
+    "country": "Brasil",
+    "number": 45
   }
 ]
