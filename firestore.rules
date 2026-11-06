@@ -50,7 +50,8 @@ service cloud.firestore {
         '67da1e3f40594cc2',
         '580a27b995614c83',
         '3327d5a2feda033c',
-        '9ea8b501fe4159e6'
+        '9ea8b501fe4159e6',
+        '5e5db9d468dc4653'
       ];
     }
 
@@ -59,7 +60,7 @@ service cloud.firestore {
       return data.keys().hasOnly(['visits'])
         && data.keys().hasAll(['visits'])
         && data.visits is map
-        && data.visits.size() <= 43
+        && data.visits.size() <= 44
         && data.visits.keys().hasOnly(monumentIds())
         && data.visits.values().hasOnly([true]);
     }

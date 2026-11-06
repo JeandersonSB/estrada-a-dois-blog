@@ -42,15 +42,69 @@ A referência de identificação deste artigo é o [catálogo dos organizadores 
 
 ## Quantos monumentos da Rota Biker existem?
 
-Na consulta de **27/10/2026**, a lista oficial apresentava numeração até **45**, com o **nº 2 em atualização**. Este guia reúne **44 locais identificados**, do nº 01 e do nº 03 ao nº 45, incluindo os que ainda aparecem em construção ou sem situação de atendimento confirmada.
+Na reconferência de **06/11/2026**, a lista oficial continua apresentando numeração até **45**, com o **nº 2 em atualização**. Este guia reúne **44 locais identificados**, do nº 01 e do nº 03 ao nº 45, incluindo os que ainda aparecem em construção ou sem situação de atendimento confirmada.
 
 Isso **não significa que existam 45 monumentos concluídos e carimbando**. A lista mistura etapas de implantação, e a situação de cada ficha precisa ser observada antes de montar o roteiro.
 
-O mapa do Estrada a Dois consultado nesta edição tinha 43 pontos. O nº 45 já está relacionado neste artigo a partir da referência oficial, mas ainda não estava no catálogo da ferramenta. Guia, mapa e canais oficiais podem receber atualizações em momentos diferentes.
+O guia e o mapa do Estrada a Dois passam a reunir os mesmos **44 locais identificados**, incluindo o **nº 45 — Empório Caconde**, em construção. O nº 02 continua sem destino identificado e, por isso, não recebe um pino. A contagem inclui locais em implantação e não representa 44 monumentos inaugurados.
+
+## Consulta rápida dos monumentos
+
+Confira o número, o local, a cidade e a situação de referência antes de consultar a ficha completa. Os números seguem a identificação dos organizadores, não uma sequência obrigatória de viagem.
+
+| Nº | Local | Cidade / UF ou país | Situação de referência |
+| --- | --- | --- | --- |
+| 01 | Serpenteando Café | Bocaiúva do Sul – PR | Pronto e carimbando¹ |
+| 02 | Em atualização | Local não informado | Em atualização |
+| 03 | Mirante do 12 | Lauro Müller – SC | Pronto e carimbando¹ |
+| 04 | Rota 370 | Urubici – SC | Pronto e carimbando¹ |
+| 05 | Parada Rota 218 | Carlópolis – PR | Pronto e carimbando¹ |
+| 06 | Parada Rota Bike Café | Rio dos Cedros – SC | Pronto e carimbando¹ |
+| 07 | Container da Serra | Doutor Pedrinho – SC | Pronto e carimbando¹ |
+| 08 | Parada 261 | Guapiara – SP | Pronto e carimbando¹ |
+| 09 | Posto Rota 090 | Piraí do Sul – PR | Pronto e carimbando¹ |
+| 10 | Terrasul Motos | Jaguarão – RS | Pronto e carimbando¹ |
+| 11 | Pad Bier Cervejaria | Paranoá – DF | Pronto e carimbando¹ |
+| 12 | Centro Cultural Movimento | Socorro – SP | Pronto e carimbando¹ |
+| 13 | Rota 513 | Ponta Grossa – PR | Pronto e carimbando¹ |
+| 14 | Parador 158 | Itaara – RS | Pronto e carimbando¹ |
+| 15 | Garimpo em Atividade | Ametista do Sul – RS | Pronto e carimbando¹ |
+| 16 | Bar Original – Pier SP-270 | Piraju – SP | Pronto e carimbando¹ |
+| 17 | Armazém Canastra | Piumhi – MG | Pronto e carimbando¹ |
+| 18 | Box 1200 Concept | Jundiaí – SP | Pronto e carimbando¹ |
+| 19 | Rancho Terra Crua | Salesópolis – SP | Pronto e carimbando¹ |
+| 20 | Casa Rural Pastelaria | Barra do Ribeiro – RS | Pronto e carimbando¹ |
+| 21 | Parada Penhasco | Penha – SC | Pronto e carimbando¹ |
+| 22 | Restaurante Mata Virgem | Três Corações – MG | Pronto e carimbando¹ |
+| 23 | Bar do Hélio | Santo Antônio da Alegria – SP | Pronto e carimbando¹ |
+| 24 | Pousada e Camping Poço do Caixão | Timbé do Sul – SC | Pronto e carimbando¹ |
+| 25 | Os Independentes | Barretos – SP | Pronto e carimbando¹ |
+| 26 | Restaurante Portal Grill | Porto União – SC | Pronto e carimbando¹ |
+| 27 | Restaurante Pedra do Baú | São Bento do Sapucaí – SP | Pronto e carimbando¹ |
+| 28 | Hotel Barra Bonita | Barra Bonita – SP | Pronto e carimbando¹ |
+| 29 | Rancho Gastronomia e Cultura | São José do Barreiro – SP | Pronto e carimbando¹ |
+| 30 | Drei Schritte Restô Bar | Katueté – Paraguai | Pronto e carimbando¹ |
+| 31 | Pro Tork | Siqueira Campos – PR | Pronto e carimbando¹ |
+| 32 | Hell's Dogs Motorcycle Bar | Foz do Iguaçu – PR | Pronto e carimbando¹ |
+| 33 | Zapata Garage | Garça – SP | Pronto e carimbando¹ |
+| 34 | Parada da Búfala | Sete Barras – SP | Pronto e carimbando¹ |
+| 35 | Portal de São Lourenço | São Lourenço – MG | Pronto e carimbando¹ |
+| 36 | Route 60 | Abadiânia – GO | Pronto e carimbando¹ |
+| 37 | Bela Vista Mall | Conceição do Mato Dentro – MG | Pronto e carimbando¹ |
+| 38 | MAPY — Restaurante e Café | Mauá da Serra – PR | Pronto e carimbando¹ |
+| 39 | Mar & Sol Praia Hotel | Prado – BA | Em construção¹ |
+| 40 | Quiosque Romano | Morro Redondo – RS | Em construção¹ |
+| 41 | Rota 15 | Casca – RS | Em construção¹ |
+| 42 | Tapioca do Irmão Firmino | Cajá – PB | Em construção¹ |
+| 43 | Parada Route | São Miguel do Passa Quatro – GO | A confirmar¹ |
+| 44 | Laranja Doce — Pão com Linguiça | Martinópolis – SP | Em construção¹ |
+| 45 | Empório Caconde | Caconde – SP | Em construção¹ |
+
+¹ Situações das fichas documentadas em 27/10/2026; inclusão, numeração e localização do nº 45 reconferidas em 06/11/2026 no catálogo e no mapa dos organizadores. A listagem atual continua até o nº 45, com o nº 02 em atualização. Estar listado não garante inauguração ou carimbo disponível. Confirme com o responsável antes de viajar.
 
 ## Como consultar este guia
 
-Os locais estão apresentados em ordem crescente, mantendo a numeração original. Use a busca do navegador para procurar uma cidade, um estabelecimento ou o número do monumento.
+Os locais estão apresentados em ordem crescente, mantendo a numeração original. Use o campo de busca deste guia para procurar uma cidade, um estabelecimento ou o número do monumento.
 
 | Estado ou país | Números apresentados | Locais identificados |
 | --- | --- | ---: |
@@ -741,6 +795,8 @@ Não. É uma ferramenta independente para apoiar o planejamento e o controle pes
 Use nossa [página de contato](/contato) e informe o número do monumento, a cidade e o que mudou. Se possível, envie uma fonte do estabelecimento ou dos organizadores e a data da informação. Uma atualização de horário deve indicar os dias da semana e se vale para o estabelecimento ou para o carimbo.
 
 ## Fontes, atualização e limites deste guia
+
+**Reconferência do catálogo em 06/11/2026:** numeração até 45, nº 02 em atualização e nº 45 em construção, com localização conferida no mapa dos organizadores. Esta revisão não equivale a uma nova confirmação de todos os endereços, horários ou atendimentos de carimbo.
 
 A identificação dos pontos foi cruzada com o catálogo e o mapa de referência da Rota Biker. Para endereços, horários e condições específicas, consultamos sites dos estabelecimentos, portais de turismo, canais próprios e cadastros públicos, identificados nas fichas.
 

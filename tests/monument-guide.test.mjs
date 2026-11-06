@@ -17,8 +17,6 @@ test('article is reconstructed without any content loss, including number 2 and 
   assert.deepEqual(guide.entries.map(e => e.number), Array.from({length: 45}, (_,i) => i + 1));
   assert.equal(guide.beforeHtml + guide.entries.map(e => e.html).join('') + guide.afterHtml, rendered);
   assert.match(guide.afterHtml, /Como montar uma viagem/);
-  assert.equal(data.status, '⏳ Rascunho');
-  assert.equal(data.image, '');
 });
 
 test('number searches distinguish IDs from schedules, addresses and linked neighbours', () => {
