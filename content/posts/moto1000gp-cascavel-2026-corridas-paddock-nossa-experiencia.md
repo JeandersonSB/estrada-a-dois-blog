@@ -1,10 +1,10 @@
 ---
-title: "MOTO1000GP Cascavel 2026: corridas, paddock e nossa experiência"
-status: "⏳ Rascunho"
-date: "2026-11-09T15:00:00"
-category: "Roteiros"
-image: ""
-excerpt: "Visitamos o MOTO1000GP Cascavel 2026: corridas, pilotos, GP1000, paddock, preços dos ingressos e nossos gastos de R$ 260 para duas pessoas."
+title: 'MOTO1000GP Cascavel 2026: corridas, paddock e nossa experiência'
+status: ⏳ Rascunho
+date: 2026-11-09T15:00:00
+category: Roteiros
+image: /images/blog/20261108_123740-edit.webp
+excerpt: 'Visitamos o MOTO1000GP Cascavel 2026: corridas, pilotos, GP1000, paddock, preços dos ingressos e nossos gastos de R$ 260 para duas pessoas.'
 ---
 
 **Como é assistir ao MOTO1000GP em Cascavel? Vale a pena passar um domingo no autódromo para acompanhar as corridas de moto de perto?** Nós já tínhamos ido outras vezes, mas a **7ª etapa do MOTO1000GP 2026, em 8 de novembro**, trouxe novas experiências: acompanhamos cinco categorias, circulamos pelo paddock, conhecemos pilotos, ganhamos um boné autografado e vimos uma disputa emocionante na GP1000.
@@ -71,7 +71,7 @@ Seguimos pela **BR-277**, em direção a Cascavel. Nossa parada para café foi n
 
 O tempo colaborou: **céu limpo, sol e boas condições de viagem**. Não tivemos dificuldades na estrada com a nossa moto, tanto na ida quanto na volta. A maior surpresa do dia acabaria acontecendo com a Twister, já no retorno — mas contamos essa parte mais adiante.
 
-[Sugestão de foto: as quatro motos do grupo reunidas na saída ou na parada para café em Laranjeiras do Sul.]
+![](/images/blog/img_0766.webp)
 
 ### Chegada ao Autódromo Internacional Zilmar Beux
 
@@ -83,7 +83,7 @@ Como já tínhamos visitado o MOTO1000GP em outras oportunidades, aquele ambient
 
 De manhã, tudo ainda estava relativamente calmo. Com o passar das horas, o público foi chegando e o lugar ficou bastante movimentado.
 
-[Sugestão de foto: entrada do Autódromo Zilmar Beux com a identificação do MOTO1000GP ou nosso grupo estacionando dentro do local.]
+![](/images/blog/20261108_101515-edit.webp)
 
 ## Como é o paddock do MOTO1000GP? Vale a pena o acesso aos boxes?
 
@@ -99,7 +99,7 @@ Você percebe que uma corrida começa muito antes da largada. Enquanto o públic
 
 Vale esclarecer que **acesso ao paddock não significa acesso irrestrito a qualquer box ou área técnica**. Os setores e os horários de visitação dependem do tipo de ingresso e das regras do organizador. Antes de comprar, confira exatamente o que a credencial inclui.
 
-[Sugestão de foto: movimentação no paddock, mostrando motos de competição, equipes e pessoas circulando, sem atrapalhar o trabalho dos mecânicos.]
+![](/images/blog/20261108_145859-edit.webp)
 
 ## Conhecemos Kaká Fumaça, Danilo Lewis e César Barros
 
@@ -111,11 +111,9 @@ Para quem acompanha o motociclismo, encontrar pessoalmente as pessoas que estão
 
 A Honda identifica **Kayan Alves, o Kaká Fumaça**, como um dos pilotos da divisão GP1000 Evo. Na etapa de Cascavel, **Danilo Lewis** participou do grid da GP1000 pela equipe satélite. Veja os detalhes na [apresentação da equipe Honda para o MOTO1000GP](https://www.honda.com.br/racing/noticia/honda-racing-inicia-disputa-pelo-titulo-inedito-do-moto1000gp) e na [prévia oficial da etapa de Cascavel](https://www.honda.com.br/racing/noticia/na-reta-decisiva-do-moto1000gp-honda-racing-retorna-cascavel-pr).
 
-[Sugestão de foto: nosso encontro com Kaká Fumaça e Danilo Lewis, valorizando os pilotos, o casal e o boné autografado.]
+![](/images/blog/20261108_123549-edit.webp)
 
-### César Barros é irmão de Alexandre Barros?
-
-Sim! E esse foi um dos encontros que mais me marcaram.
+### César Barros piloto de respeito
 
 Durante nossa visita, conheci **César Barros**, ex-piloto de motovelocidade e responsável pela equipe que leva seu nome. Ele é **irmão de Alexandre Barros**, um dos maiores nomes brasileiros na história do Mundial de Motovelocidade.
 
@@ -125,7 +123,7 @@ Eu já tinha achado os dois muito parecidos, e descobrir mais sobre a história 
 
 É por isso que sempre falamos que vale a pena visitar os boxes: **a cada etapa, a gente conhece uma pessoa nova e descobre um pouco mais sobre o universo das corridas**.
 
-[Sugestão de foto: Jeanderson ao lado de César Barros, se houver um registro do encontro.]
+![](/images/blog/20261108_123740-edit.webp)
 
 ## Onde assistir às corridas no Autódromo de Cascavel?
 
@@ -272,7 +270,7 @@ Nós utilizamos **credenciais de cortesia**, que permitiram nossa entrada no pad
 Para ajudar no planejamento, consultamos os valores anunciados oficialmente para a **7ª etapa de Cascavel, em novembro de 2026**:
 
 | Tipo de ingresso | Preço anunciado na edição de 2026 |
-| --- | ---: |
+| --- | --- |
 | Arquibancada — inteira | R$ 30 por pessoa |
 | Arquibancada — meia-entrada | R$ 15 por pessoa |
 | Club GP Paddock Promo | R$ 60 por pessoa |
@@ -298,7 +296,7 @@ Além das informações sobre ingressos, aqui está **quanto a nossa viagem cust
 Fizemos um bate-volta de Guarapuava a Cascavel em **8 de novembro de 2026**, com aproximadamente **510 km no total**.
 
 | Despesa do casal | Gasto aproximado |
-| --- | ---: |
+| --- | --- |
 | Combustível, abastecendo em Guarapuava e Cascavel | R$ 180 |
 | Dois espetinhos no autódromo | R$ 30 |
 | Água, energéticos e alimentos levados de casa | R$ 50 |
@@ -405,10 +403,10 @@ Não precisa ser especialista para aproveitar. Nós mesmos fomos aprendendo mais
 
 **O MOTO1000GP em Cascavel vale a viagem — não apenas pela velocidade, mas pelas pessoas, pelos bastidores e por tudo o que acontece entre uma corrida e outra.**
 
-*Jeanderson e Ana Paula — Estrada a Dois.*
+_Jeanderson e Ana Paula — Estrada a Dois._
 
 [Sugestão de foto final: retrato nosso juntos no autódromo, de preferência com o pôr do sol ou as motos de competição ao fundo.]
 
----
+***
 
-*Nota editorial: este é um relato autoral da visita realizada em 8 de novembro de 2026. Os gastos, horários e experiências são nossos; preços de ingressos, programação, resultados e identificação de equipes foram conferidos nas publicações oficiais citadas ao longo do artigo. Para futuras edições, consulte sempre o [MOTO1000GP](https://m1gp.com.br/).*
+_Nota editorial: este é um relato autoral da visita realizada em 8 de novembro de 2026. Os gastos, horários e experiências são nossos; preços de ingressos, programação, resultados e identificação de equipes foram conferidos nas publicações oficiais citadas ao longo do artigo. Para futuras edições, consulte sempre o_ [_MOTO1000GP_](https://m1gp.com.br/)*.*
