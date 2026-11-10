@@ -1,9 +1,9 @@
 ---
 title: 'MOTO1000GP Cascavel 2026: corridas, paddock e nossa experiência'
-status: ⏳ Rascunho
-date: 2026-11-09T15:00:00
+status: 🟢 Publicado
+date: 2026-11-09T21:04:00
 category: Roteiros
-image: /images/blog/20261108_123740-edit.webp
+image: /images/blog/gp1000_cascavel_1_eric_-e1794004171293.webp
 excerpt: 'Visitamos o MOTO1000GP Cascavel 2026: corridas, pilotos, GP1000, paddock, preços dos ingressos e nossos gastos de R$ 260 para duas pessoas.'
 ---
 
@@ -15,15 +15,11 @@ O evento foi o centro de tudo. Além de contar nosso passeio, reunimos aqui info
 
 E já adiantamos a resposta: **para quem gosta de motociclismo, ver uma corrida dessas presencialmente é uma experiência que vale a viagem.** A televisão mostra a disputa, mas não consegue transmitir completamente a velocidade das motos na reta, o som dos motores e a movimentação das equipes.
 
-[Sugestão de foto de capa: foto autoral nossa no Autódromo Zilmar Beux, com motocicletas de competição ou o paddock ao fundo. Preferir fotografia horizontal 16:9, sem texto sobreposto.]
-
 ## MOTO1000GP Cascavel 2026: quando e onde aconteceu a 7ª etapa?
 
 A **7ª etapa do MOTO1000GP 2026**, também chamada de **GP Cascavel**, aconteceu no fim de semana de **6 a 8 de novembro de 2026**, com as principais corridas que acompanhamos no domingo, dia **8**. Foi a penúltima etapa da temporada do **Campeonato Brasileiro de Motovelocidade**.
 
 O palco foi o **Autódromo Internacional Zilmar Beux**, em Cascavel, no oeste do Paraná, um circuito conhecido pela velocidade e pela famosa **Curva do Bacião**.
-
-De acordo com a [programação divulgada pelo MOTO1000GP](https://m1gp.com.br/confira-a-programacao-do-moto1000gp-para-a-semifinal-em-cascavel-neste-fim-de-semana/), a etapa reuniu corridas de categorias de formação e de motos de maior cilindrada. Para o público, isso significa passar o dia acompanhando provas com ritmos, motos e disputas bem diferentes.
 
 ### Ficha da nossa visita
 
@@ -69,7 +65,7 @@ Estávamos eu e a Paula, na Versys 650; **Wesley e Vera**, na **Twister 250**; *
 
 Seguimos pela **BR-277**, em direção a Cascavel. Nossa parada para café foi no **Restaurante Palmeiras, em Laranjeiras do Sul**. Depois de comer alguma coisa, voltamos para a estrada e seguimos direto para o autódromo.
 
-O tempo colaborou: **céu limpo, sol e boas condições de viagem**. Não tivemos dificuldades na estrada com a nossa moto, tanto na ida quanto na volta. A maior surpresa do dia acabaria acontecendo com a Twister, já no retorno — mas contamos essa parte mais adiante.
+O tempo colaborou: **céu limpo, sol e boas condições de viagem**. Não tivemos dificuldades na estrada com a nossa moto, tanto na ida quanto na volta. A maior surpresa do dia acabaria acontecendo com a Twister, já no retorno, mas contamos essa parte mais adiante.
 
 ![](/images/blog/img_0766.webp)
 
@@ -135,7 +131,7 @@ Acompanhamos algumas largadas **na parte de cima dos boxes**. Dali, é interessa
 
 Quando todos partem, o som e a velocidade são muito diferentes daquilo que a gente percebe em um vídeo.
 
-[Sugestão de foto: largada de uma categoria vista da parte superior dos boxes, mostrando a concentração de motos na pista.]
+![](/images/blog/20261108_142718-1.webp)
 
 ### Arquibancada: onde acompanhamos a GP600
 
@@ -143,13 +139,13 @@ Para assistir à **GP600**, escolhemos a arquibancada. O ponto de vista é difer
 
 Na prova daquele domingo, o vencedor foi **Mario Salles**, que também conquistou antecipadamente o título brasileiro da GP600. O resultado foi divulgado pela [organização do MOTO1000GP](https://m1gp.com.br/mario-salles-vence-gp600-em-cascavel-e-conquista-titulo-brasileiro-por-antecipacao/).
 
-[Sugestão de foto: motos da GP600 passando em frente à arquibancada, fotografadas durante a prova.]
+![](/images/blog/20261108_132812.webp)
 
 ### Nossa curva favorita: pertinho do alambrado para ver a GP1000
 
 Para a última e principal corrida do dia, voltamos ao **lugar onde costumamos assistir ao MOTO1000GP em Cascavel**: sentados diante do alambrado, em uma curva.
 
-Não sabemos o nome exato daquele ponto — e preferimos não arriscar. Mas é o nosso cantinho habitual nas visitas ao autódromo.
+Não sabemos o nome exato daquele ponto, e preferimos não arriscar. Mas é o nosso cantinho habitual nas visitas ao autódromo.
 
 De lá, a passagem das motos é impressionante. Você sente a mudança de direção, escuta a aceleração e percebe a diferença de ritmo entre os pilotos.
 
@@ -157,7 +153,7 @@ Essa é uma das coisas mais difíceis de explicar para quem nunca assistiu à mo
 
 É o tipo de experiência que nenhuma transmissão consegue reproduzir completamente.
 
-[Sugestão de foto: motocicletas da GP1000 passando pela curva vista do nosso ponto habitual junto ao alambrado.]
+![](/images/blog/20261108_143248.webp)
 
 ## Quais categorias acompanhamos no MOTO1000GP Cascavel 2026?
 
@@ -207,12 +203,6 @@ O vencedor foi **Eric Granado, da Honda Racing**. Na corrida principal de doming
 | 2º | Maxi Scheib | JD43 Liquimoly |
 | 3º | Theo Manna | Ipiranga Lubrificantes |
 
-Segundo o [relato e o resultado extraoficial publicados pelo MOTO1000GP](https://m1gp.com.br/no-moto1000gp-eric-granado-vence-gp1000-by-motul-novamente-em-cascavel-e-reduz-diferenca-para-maxi-scheib/), Granado perdeu posições na largada, recuperou terreno e ultrapassou Scheib na **18ª volta, na Curva do Bacião**. A prova terminou após **21 voltas**, com Scheib a **1,385 segundo** do vencedor e Manna a **1,463 segundo**.
-
-Granado já havia vencido a corrida Sprint no sábado. Com os resultados do fim de semana, reduziu a diferença para Scheib na classificação da GP1000, mantendo a disputa do campeonato aberta para a última etapa.
-
-[Sugestão de foto: Eric Granado #51 durante a corrida ou registro autoral da disputa entre as motos dos três primeiros colocados.]
-
 ### Por que assistir à GP1000 pessoalmente impressiona tanto?
 
 Para mim, **a velocidade das motos é o que mais impressiona**. Principalmente nas retas, a sensação presencial é muito diferente da transmissão.
@@ -245,21 +235,17 @@ No autódromo, acabamos comprando apenas **dois espetinhos de carne, por R$ 15 c
 
 Só um cuidado para quem pretende repetir essa ideia: **as regras de entrada de alimentos e bebidas variam por setor e por edição**. O MOTO1000GP divulgou regras específicas para arquibancadas, áreas externas e setores de paddock. Consulte as orientações antes de levar qualquer produto ao evento; o fato de termos transportado itens no baú não significa que todas as áreas autorizam sua entrada.
 
-[Sugestão de foto: movimento na área de alimentação ou um dos nossos espetinhos, caso tenhamos esse registro.]
-
 ## Calor e sol: um cuidado importante para quem passa o dia no autódromo
 
 Quando chegamos, o clima ainda estava um pouco frio por causa do horário. Mas, conforme a manhã avançou, o vento diminuiu e **o calor começou a aparecer**.
 
-O domingo foi de **céu limpo e sol forte**. Eu estava com boné e uma segunda pele com proteção UV, o que ajudou bastante, mas acabei queimando o pescoço — justamente uma região que ficou exposta.
+O domingo foi de **céu limpo e sol forte**. Eu estava com boné e uma segunda pele com proteção UV, o que ajudou bastante, mas acabei queimando o pescoço, justamente uma região que ficou exposta.
 
 A Paula, sempre mais preparada, já tinha passado protetor solar.
 
 Pode parecer um detalhe, mas passamos muitas horas andando pelo autódromo, assistindo às corridas e acompanhando a movimentação do paddock. Em um ambiente com pouca sombra em determinados pontos, isso pesa.
 
 Nossa recomendação para quem vai ao MOTO1000GP é simples: **protetor solar, boné, água, roupa leve e proteção para nuca e braços**. Também vale verificar o que seu tipo de ingresso oferece em termos de áreas cobertas.
-
-[Sugestão de foto: dia de céu azul no autódromo, mostrando o movimento do público e as áreas expostas ao sol.]
 
 ## Quanto custa ir ao MOTO1000GP? Ingressos, paddock e estacionamento
 
@@ -313,31 +299,7 @@ Para quem vive na região de Guarapuava, essa é uma possibilidade de passeio de
 > 💡 **Leia também nossas dicas de viagens de moto:**
 > - [Bagagem para viagem de moto: 7 passos para o casal](/blog/bagagem-para-viagem-de-moto-casal)
 
-## Voltando para Guarapuava: a Twister precisou de guincho
-
-A última corrida que assistimos foi a **GP1000**, que terminou por volta de **14h40**. Depois disso, começamos a viagem de volta para casa.
-
-Seguimos pela BR-277 e fizemos uma parada em **Nova Laranjeiras**, para beber alguma coisa e descansar um pouco.
-
-Nesse ponto, avisei ao pessoal que eu precisaria **apertar um pouco o passo**, porque queria tentar chegar a Guarapuava antes de escurecer. Então, eu e a Paula seguimos na frente, enquanto os demais permaneceram juntos.
-
-Nós chegamos em casa **por volta das 19h**, encerrando nossa parte da viagem sem problemas com a moto.
-
-Mas o passeio terminou de uma forma diferente para dois dos nossos amigos.
-
-### Problema na Twister 250: o imprevisto do grupo
-
-Pouco depois da parada em Nova Laranjeiras, **a Honda Twister 250 do Wesley e da Vera apresentou um problema no motor**.
-
-A moto não conseguiu completar o retorno rodando e precisou ser transportada **por guincho**. Eles chegaram em casa **perto das 23h**.
-
-Não temos um diagnóstico mecânico confirmado, então não vamos especular sobre a causa do problema. O que sabemos é que, mesmo com o dia muito bem aproveitado no autódromo, a viagem deles terminou mais tarde do que o planejado.
-
-Esse acontecimento também faz parte da estrada: podemos preparar um roteiro, calcular horários e viajar com calma, mas **imprevistos ainda podem acontecer**.
-
-O importante é ter alternativas para voltar com segurança, principalmente quando se está longe de casa.
-
-[Sugestão de foto: registro da estrada no retorno ou das motos reunidas na parada de Nova Laranjeiras. Não utilizar foto do guincho caso não exista registro autorizado.]
+## 
 
 ## Vale a pena assistir ao MOTO1000GP presencialmente?
 
@@ -401,7 +363,7 @@ Se você gosta de motos, de velocidade ou simplesmente tem curiosidade sobre **c
 
 Não precisa ser especialista para aproveitar. Nós mesmos fomos aprendendo mais a cada visita, e isso só tornou a experiência melhor.
 
-**O MOTO1000GP em Cascavel vale a viagem — não apenas pela velocidade, mas pelas pessoas, pelos bastidores e por tudo o que acontece entre uma corrida e outra.**
+**O MOTO1000GP em Cascavel vale a viagem, não apenas pela velocidade, mas pelas pessoas, pelos bastidores e por tudo o que acontece entre uma corrida e outra.**
 
 _Jeanderson e Ana Paula — Estrada a Dois._
 
