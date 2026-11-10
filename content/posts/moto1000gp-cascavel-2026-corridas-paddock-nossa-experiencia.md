@@ -3,7 +3,7 @@ title: 'MOTO1000GP Cascavel 2026: corridas, paddock e nossa experiência'
 status: 🟢 Publicado
 date: 2026-11-09T21:04:00
 category: Roteiros
-image: /images/blog/moto1000gp-cascavel-2026-corridas-paddock-nossa-experiencia.webp
+image: "/images/blog/moto1000gp-cascavel-2026-corridas-paddock-nossa-experiencia.webp"
 excerpt: 'Visitamos o MOTO1000GP Cascavel 2026: corridas, pilotos, GP1000, paddock, preços dos ingressos e nossos gastos de R$ 260 para duas pessoas.'
 ---
 
