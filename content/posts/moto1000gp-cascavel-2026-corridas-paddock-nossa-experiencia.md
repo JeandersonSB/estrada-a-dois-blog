@@ -3,7 +3,7 @@ title: 'MOTO1000GP Cascavel 2026: corridas, paddock e nossa experiência'
 status: 🟢 Publicado
 date: 2026-11-09T21:04:00
 category: Roteiros
-image: "/images/blog/moto1000gp-cascavel-2026-corridas-paddock-nossa-experiencia.webp"
+image: /images/blog/20261108_145859-edit-1.webp
 excerpt: 'Visitamos o MOTO1000GP Cascavel 2026: corridas, pilotos, GP1000, paddock, preços dos ingressos e nossos gastos de R$ 260 para duas pessoas.'
 ---
 
@@ -67,7 +67,7 @@ Seguimos pela **BR-277**, em direção a Cascavel. Nossa parada para café foi n
 
 O tempo colaborou: **céu limpo, sol e boas condições de viagem**. Não tivemos dificuldades na estrada com a nossa moto, tanto na ida quanto na volta. A maior surpresa do dia acabaria acontecendo com a Twister, já no retorno, mas contamos essa parte mais adiante.
 
-![](/images/blog/img_0766.webp)
+
 
 ### Chegada ao Autódromo Internacional Zilmar Beux
 
@@ -79,7 +79,7 @@ Como já tínhamos visitado o MOTO1000GP em outras oportunidades, aquele ambient
 
 De manhã, tudo ainda estava relativamente calmo. Com o passar das horas, o público foi chegando e o lugar ficou bastante movimentado.
 
-![](/images/blog/20261108_101515-edit.webp)
+
 
 ## Como é o paddock do MOTO1000GP? Vale a pena o acesso aos boxes?
 
@@ -95,7 +95,7 @@ Você percebe que uma corrida começa muito antes da largada. Enquanto o públic
 
 Vale esclarecer que **acesso ao paddock não significa acesso irrestrito a qualquer box ou área técnica**. Os setores e os horários de visitação dependem do tipo de ingresso e das regras do organizador. Antes de comprar, confira exatamente o que a credencial inclui.
 
-![](/images/blog/20261108_145859-edit.webp)
+
 
 ## Conhecemos Kaká Fumaça, Danilo Lewis e César Barros
 
@@ -107,7 +107,7 @@ Para quem acompanha o motociclismo, encontrar pessoalmente as pessoas que estão
 
 A Honda identifica **Kayan Alves, o Kaká Fumaça**, como um dos pilotos da divisão GP1000 Evo. Na etapa de Cascavel, **Danilo Lewis** participou do grid da GP1000 pela equipe satélite. Veja os detalhes na [apresentação da equipe Honda para o MOTO1000GP](https://www.honda.com.br/racing/noticia/honda-racing-inicia-disputa-pelo-titulo-inedito-do-moto1000gp) e na [prévia oficial da etapa de Cascavel](https://www.honda.com.br/racing/noticia/na-reta-decisiva-do-moto1000gp-honda-racing-retorna-cascavel-pr).
 
-![](/images/blog/20261108_123549-edit.webp)
+
 
 ### César Barros piloto de respeito
 
@@ -119,7 +119,7 @@ Eu já tinha achado os dois muito parecidos, e descobrir mais sobre a história 
 
 É por isso que sempre falamos que vale a pena visitar os boxes: **a cada etapa, a gente conhece uma pessoa nova e descobre um pouco mais sobre o universo das corridas**.
 
-![](/images/blog/20261108_123740-edit.webp)
+
 
 ## Onde assistir às corridas no Autódromo de Cascavel?
 
@@ -131,7 +131,7 @@ Acompanhamos algumas largadas **na parte de cima dos boxes**. Dali, é interessa
 
 Quando todos partem, o som e a velocidade são muito diferentes daquilo que a gente percebe em um vídeo.
 
-![](/images/blog/20261108_142718-1.webp)
+
 
 ### Arquibancada: onde acompanhamos a GP600
 
@@ -139,7 +139,7 @@ Para assistir à **GP600**, escolhemos a arquibancada. O ponto de vista é difer
 
 Na prova daquele domingo, o vencedor foi **Mario Salles**, que também conquistou antecipadamente o título brasileiro da GP600. O resultado foi divulgado pela [organização do MOTO1000GP](https://m1gp.com.br/mario-salles-vence-gp600-em-cascavel-e-conquista-titulo-brasileiro-por-antecipacao/).
 
-![](/images/blog/20261108_132812.webp)
+
 
 ### Nossa curva favorita: pertinho do alambrado para ver a GP1000
 
@@ -153,7 +153,7 @@ Essa é uma das coisas mais difíceis de explicar para quem nunca assistiu à mo
 
 É o tipo de experiência que nenhuma transmissão consegue reproduzir completamente.
 
-![](/images/blog/20261108_143248.webp)
+
 
 ## Quais categorias acompanhamos no MOTO1000GP Cascavel 2026?
 
