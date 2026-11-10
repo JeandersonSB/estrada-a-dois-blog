@@ -47,6 +47,13 @@ export async function generateMetadata({
       imageUrl = `${baseUrl}${imageUrl}`;
     }
 
+    // Share a small, correctly dimensioned JPEG instead of the original WebP.
+    // The original article cover and all in-article photos remain untouched.
+    const hasLocalCover = Boolean(postData.image?.startsWith('/images/blog/'));
+    const shareImageUrl = hasLocalCover
+      ? `${baseUrl}/og/${encodeURIComponent(slug)}/image.jpg`
+      : imageUrl;
+
     let mimeType = 'image/jpeg';
     if (imageUrl) {
       const cleanUrl = imageUrl.split('?')[0].toLowerCase();
@@ -81,14 +88,14 @@ export async function generateMetadata({
         type: 'article',
         publishedTime: postData.date,
         authors: ['Estrada a Dois'],
-        images: imageUrl
+        images: shareImageUrl
           ? [
               {
-                url: imageUrl,
-                secureUrl: imageUrl,
-                width: 1200,
-                height: 630,
-                type: mimeType,
+                url: shareImageUrl,
+                secureUrl: shareImageUrl,
+                ...(hasLocalCover
+                  ? { width: 1200, height: 630, type: 'image/jpeg' }
+                  : { type: mimeType }),
                 alt: postData.title || 'Estrada a Dois',
               },
             ]
@@ -98,7 +105,7 @@ export async function generateMetadata({
         card: 'summary_large_image',
         title: postData.title || 'Artigo | Estrada a Dois',
         description: excerpt,
-        images: imageUrl ? [imageUrl] : [],
+        images: shareImageUrl ? [shareImageUrl] : [],
       },
     };
   } catch {
