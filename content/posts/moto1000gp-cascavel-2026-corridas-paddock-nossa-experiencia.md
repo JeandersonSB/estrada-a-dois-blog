@@ -3,7 +3,7 @@ title: 'MOTO1000GP Cascavel 2026: corridas, paddock e nossa experiência'
 status: 🟢 Publicado
 date: 2026-11-09T21:04:00
 category: Roteiros
-image: "/images/blog/moto1000gp-cascavel-2026-corridas-paddock-nossa-experiencia.webp"
+image: /images/blog/moto1000gp-cascavel-2026-corridas-paddock-nossa-experiencia.webp
 excerpt: 'Visitamos o MOTO1000GP Cascavel 2026: corridas, pilotos, GP1000, paddock, preços dos ingressos e nossos gastos de R$ 260 para duas pessoas.'
 ---
 
@@ -155,33 +155,7 @@ Essa é uma das coisas mais difíceis de explicar para quem nunca assistiu à mo
 
 ![](/images/blog/20261108_143248.webp)
 
-## Quais categorias acompanhamos no MOTO1000GP Cascavel 2026?
-
-Uma das maiores vantagens do evento é a variedade da programação. Em um único domingo, é possível acompanhar motos e disputas bastante diferentes.
-
-Na nossa visita, assistimos a provas das seguintes categorias:
-
-| Categoria | O que acompanhamos |
-| --- | --- |
-| Yamalube R3 BLU CRU LA Talent | Corrida da categoria de formação |
-| Yamalube R3 BLU CRU LA Cup | Outra disputa envolvendo a família R3 |
-| Daytona 660 Cup | Corrida das motocicletas Triumph Daytona 660 |
-| GP600 | Categoria intermediária de alto desempenho, que vimos da arquibancada |
-| GP1000 by Motul | Categoria principal e nossa favorita do dia |
-
-A etapa também contava com outras categorias no programa, como a **Yamaha R15 BLU CRU América Latina** e a **GP Light**, mas **não estamos dizendo que assistimos a todas as corridas do evento**.
-
-A organização anunciou para Cascavel uma programação de **dez corridas distribuídas em sete categorias**. Para conhecer a lista e o formato adotado naquele fim de semana, consulte a [programação oficial da 7ª etapa](https://m1gp.com.br/confira-a-programacao-do-moto1000gp-para-a-semifinal-em-cascavel-neste-fim-de-semana/).
-
-No nosso relato em vídeo, comentamos justamente como a existência de várias categorias torna as provas dinâmicas. O público consegue acompanhar desde as competições de formação até as motos de 1000 cc.
-
-E foi por causa da **Yamaha R15**, anos atrás, que começamos a conhecer esse universo de perto.
-
-### Daytona 660 Cup: uma categoria que acompanhamos no domingo
-
-Também vimos a **Daytona 660 Cup**. Na etapa de Cascavel, **João Carneiro**, da Cajuru Racing, venceu a prova, seguido por **Agustin Donatti** e **Cauã Buzo**, conforme o [resultado publicado pelo campeonato](https://m1gp.com.br/joao-carneiro-vence-prova-da-daytona-660-cup-no-moto1000gp-e-amplia-vantagem-na-lideranca/).
-
-Não vou transformar este artigo em uma lista de resultados de todas as categorias. Nosso objetivo principal é contar **como foi assistir às corridas**, mas essas informações ajudam a situar quem procura notícias sobre a etapa de 2026.
+## 
 
 ## GP1000 em Cascavel: Eric Granado, Maxi Scheib e Theo Manna fizeram a corrida mais emocionante do dia
 
@@ -366,8 +340,6 @@ Não precisa ser especialista para aproveitar. Nós mesmos fomos aprendendo mais
 **O MOTO1000GP em Cascavel vale a viagem, não apenas pela velocidade, mas pelas pessoas, pelos bastidores e por tudo o que acontece entre uma corrida e outra.**
 
 _Jeanderson e Ana Paula — Estrada a Dois._
-
-[Sugestão de foto final: retrato nosso juntos no autódromo, de preferência com o pôr do sol ou as motos de competição ao fundo.]
 
 ***
 
