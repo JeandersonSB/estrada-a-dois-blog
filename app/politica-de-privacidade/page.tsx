@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Política de Privacidade | Estrada a Dois',
+  title: 'Política de Privacidade',
   description: 'Saiba como o Estrada a Dois trata dados pessoais, cookies, métricas de audiência e mensagens de contato.',
+  alternates: { canonical: '/politica-de-privacidade' },
 };
 
 export default function PoliticaPrivacidade() {

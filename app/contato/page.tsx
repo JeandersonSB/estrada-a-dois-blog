@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import { ContactForm } from '@/components/ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contato | Estrada a Dois',
+  title: 'Contato',
   description: 'Fale com a gente! Dúvidas, parcerias ou apenas para trocar uma ideia sobre viagens de moto.',
+  alternates: { canonical: '/contato' },
 };
 
 const InstagramIcon = ({ className }: { className?: string }) => (

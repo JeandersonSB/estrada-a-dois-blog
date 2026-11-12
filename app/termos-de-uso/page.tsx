@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Termos de Uso | Estrada a Dois',
+  title: 'Termos de Uso',
   description: 'Termos e condições de uso do portal Estrada a Dois.',
+  alternates: { canonical: '/termos-de-uso' },
 };
 
 export default function TermosDeUso() {

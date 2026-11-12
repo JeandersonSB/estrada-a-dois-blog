@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Política Editorial | Estrada a Dois',
+  title: 'Política Editorial',
   description: 'Conheça os critérios de experiência prática, revisão, correções e independência usados pelo Estrada a Dois.',
+  alternates: { canonical: '/politica-editorial' },
 };
 
 export default function PoliticaEditorial() {

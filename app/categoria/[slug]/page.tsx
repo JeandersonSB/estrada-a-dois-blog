@@ -33,7 +33,7 @@ export async function generateMetadata({
 
   if (posts.length === 0) {
     return {
-      title: 'Página não encontrada | Estrada a Dois',
+      title: 'Página não encontrada',
       robots: {
         index: false,
         follow: true,
@@ -44,7 +44,7 @@ export async function generateMetadata({
   const title = posts[0].category;
 
   return {
-    title: `${title} | Estrada a Dois`,
+    title,
     description: `Guias e experiências do Estrada a Dois sobre ${title.toLowerCase()}, com foco em viagens de moto e mototurismo.`,
     alternates: {
       canonical: `https://www.estradaadois.com/categoria/${slug}`,

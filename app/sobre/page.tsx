@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Sobre Nós | Estrada a Dois',
+  title: 'Sobre Nós',
   description: 'Conheça o casal Jeanderson e Ana Paula, criadores do Estrada a Dois. Uma paixão por mototurismo, planejamento e vida na estrada.',
+  alternates: { canonical: '/sobre' },
 };
 
 export default function SobreNos() {

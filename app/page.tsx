@@ -1,6 +1,11 @@
 import { formatDateBR, getSortedPostsData, slugifyCategory } from '@/lib/posts';
 import { SmartImage } from '@/components/SmartImage';
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+};
 
 // O conteúdo da home só muda quando um novo deploy é publicado.
 // Mantê-la totalmente estática evita revalidação em tempo de requisição.
