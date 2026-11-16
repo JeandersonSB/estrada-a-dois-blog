@@ -44,8 +44,8 @@ export function TravelSocialCTA({ articleSlug, category = 'Roteiros' }: { articl
             rel="noopener noreferrer"
             onClick={() => trackClick(articleSlug, category, network, href)}
             className={network === 'instagram'
-              ? 'inline-flex items-center justify-center rounded-xl bg-[#B6D200] px-6 py-3 font-extrabold text-[#403939] hover:bg-white transition-colors'
-              : 'inline-flex items-center justify-center rounded-xl border-2 border-[#B6D200] px-6 py-3 font-extrabold text-white hover:bg-[#B6D200] hover:text-[#403939] transition-colors'}
+              ? 'inline-flex items-center justify-center rounded-xl bg-[#9FD131] px-6 py-3 font-extrabold text-[#403939] hover:bg-white transition-colors'
+              : 'inline-flex items-center justify-center rounded-xl border-2 border-[#9FD131] px-6 py-3 font-extrabold text-white hover:bg-[#9FD131] hover:text-[#403939] transition-colors'}
           >
             {label} ↗
           </a>

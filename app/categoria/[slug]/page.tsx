@@ -75,12 +75,12 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
   const title = posts[0].category;
 
   return (
-    <div className="min-h-screen bg-[#f8f9fa] text-[#0F0F0F] font-sans flex flex-col pb-20">
-      <section className="bg-[#0F0F0F] text-white pt-16 pb-20 px-4 border-b-[8px] border-[#B6D200]">
+    <div className="min-h-screen bg-[#f8f9fa] text-[#1C1C1C] font-sans flex flex-col pb-20">
+      <section className="bg-[#1C1C1C] text-white pt-16 pb-20 px-4 border-b-[8px] border-[#9FD131]">
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-black uppercase italic tracking-tight mb-4">
             <span className="text-gray-400 font-normal italic text-3xl">Categoria: </span>
-            <span className="text-[#B6D200]">{title}</span>
+            <span className="text-[#9FD131]">{title}</span>
           </h1>
           <p className="text-gray-400 text-lg">Conteúdos para quem vive ou está planejando a próxima viagem de moto.</p>
         </div>
@@ -98,17 +98,17 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                   className="object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
-                <span className="absolute top-4 left-4 bg-[#B6D200] text-[#0F0F0F] text-[11px] font-black uppercase px-3 py-1 tracking-widest z-20 shadow-md">
+                <span className="absolute top-4 left-4 bg-[#9FD131] text-[#1C1C1C] text-[11px] font-black uppercase px-3 py-1 tracking-widest z-20 shadow-md">
                   {post.category}
                 </span>
               </Link>
               <div className="p-6 flex flex-col flex-grow">
                 <div className="text-[12px] text-gray-600 font-bold uppercase tracking-wider mb-2 flex items-center">
-                  <span className="w-2 h-2 rounded-full bg-[#B6D200] mr-2"></span>
+                  <span className="w-2 h-2 rounded-full bg-[#9FD131] mr-2"></span>
                   <time dateTime={post.date}>{formatDateBR(post.date)}</time>
                 </div>
                 <Link href={`/blog/${post.slug}`} className="block">
-                  <h2 className="text-xl font-bold text-[#0F0F0F] mb-3 leading-snug group-hover:text-[#B6D200] transition-colors line-clamp-2">
+                  <h2 className="text-xl font-bold text-[#1C1C1C] mb-3 leading-snug group-hover:text-[#4A7310] transition-colors line-clamp-2">
                     {post.title}
                   </h2>
                 </Link>
@@ -118,7 +118,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
                 <Link
                   href={`/blog/${post.slug}`}
                   aria-label={`Ler artigo completo: ${post.title}`}
-                  className="inline-flex items-center text-[13px] font-black uppercase tracking-widest text-[#0F0F0F] group-hover:text-[#B6D200] transition-colors mt-auto"
+                  className="inline-flex items-center text-[13px] font-black uppercase tracking-widest text-[#1C1C1C] group-hover:text-[#4A7310] transition-colors mt-auto"
                 >
                   Ler artigo
                   <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>

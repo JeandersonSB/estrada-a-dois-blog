@@ -12,7 +12,7 @@ export default function SobreNos() {
     <div className="bg-[#f8f9fa] min-h-screen pb-20">
       
       {/* HEADER BANNER WITH IMAGE */}
-      <section className="w-full bg-[#0F0F0F] flex flex-col items-center pt-8 border-b-[8px] border-[#B6D200]">
+      <section className="w-full bg-[#1C1C1C] flex flex-col items-center pt-8 border-b-[8px] border-[#9FD131]">
         <div className="max-w-4xl w-full px-4 mb-[-2rem] relative z-10">
           <img 
             src="/images/sobre/capa-sobre-nos.webp" 
@@ -24,8 +24,8 @@ export default function SobreNos() {
 
       {/* TEXT: ORIGIN & PURPOSE */}
       <section className="max-w-4xl mx-auto px-4 mt-16 pt-8 text-center">
-        <h1 className="text-4xl md:text-5xl font-black italic uppercase text-[#0F0F0F] mb-6">
-          A <span className="text-[#B6D200] drop-shadow-sm">Nossa</span> História
+        <h1 className="text-4xl md:text-5xl font-black italic uppercase text-[#1C1C1C] mb-6">
+          A <span className="text-[#9FD131] drop-shadow-sm">Nossa</span> História
         </h1>
         <div className="prose prose-lg mx-auto text-[#555555] font-medium leading-relaxed space-y-6">
           <p>
@@ -52,8 +52,8 @@ export default function SobreNos() {
               className="w-full aspect-[4/5] object-cover bg-gray-200 rounded-2xl shadow-xl mb-6 border-2 border-gray-200 text-transparent"
             />
             <div className="text-center px-4">
-              <h2 className="text-2xl font-black text-[#0F0F0F] uppercase">Jeanderson Batista</h2>
-              <p className="text-[#8ac200] font-bold text-sm uppercase tracking-widest mb-3">Publicitário • Produtor • Piloto</p>
+              <h2 className="text-2xl font-black text-[#1C1C1C] uppercase">Jeanderson Batista</h2>
+              <p className="text-[#4A7310] font-bold text-sm uppercase tracking-widest mb-3">Publicitário • Produtor • Piloto</p>
               <p className="text-gray-600 text-sm">
                 A paixão pelas motos veio do meu pai. Estimo já ter percorrido mais de 200 mil km. Nas viagens, cuido da pilotagem, das rotas, da manutenção e do famoso &quot;Tetris&quot; da bagagem.
               </p>
@@ -68,8 +68,8 @@ export default function SobreNos() {
               className="w-full aspect-[4/5] object-cover bg-gray-200 rounded-2xl shadow-xl mb-6 border-2 border-gray-200 text-transparent"
             />
             <div className="text-center px-4">
-              <h2 className="text-2xl font-black text-[#0F0F0F] uppercase">Ana Paula</h2>
-              <p className="text-[#8ac200] font-bold text-sm uppercase tracking-widest mb-3">Psicóloga • Futura Piloto</p>
+              <h2 className="text-2xl font-black text-[#1C1C1C] uppercase">Ana Paula</h2>
+              <p className="text-[#4A7310] font-bold text-sm uppercase tracking-widest mb-3">Psicóloga • Futura Piloto</p>
               <p className="text-gray-600 text-sm">
                 Foi com o Jeanderson que descobri as viagens de moto e me apaixonei mais pelo caminho do que pelo destino. Na estrada, ajudo nas hospedagens e registro as fotos e vídeos.
               </p>
@@ -81,15 +81,15 @@ export default function SobreNos() {
 
       {/* MISSION BANNER */}
       <section className="max-w-5xl mx-auto px-4 mt-24">
-        <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-[#0F0F0F] flex flex-col md:flex-row items-center border-l-[12px] border-[#B6D200] min-h-[400px]">
+        <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-[#1C1C1C] flex flex-col md:flex-row items-center border-l-[12px] border-[#9FD131] min-h-[400px]">
           <div className="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center z-10 relative">
             <h2 className="text-3xl md:text-4xl font-black text-white italic mb-6 leading-tight">
-              Uma moto, <br/><span className="text-[#B6D200]">dois capacetes</span> <br/>e muita estrada.
+              Uma moto, <br/><span className="text-[#9FD131]">dois capacetes</span> <br/>e muita estrada.
             </h2>
             <p className="text-gray-400 text-lg mb-8 leading-relaxed">
               Compartilhamos rotas, custos, experiências e mostramos que grandes viagens não dependem apenas da moto, mas da sua vontade de viver o momento.
             </p>
-            <Link href="/categoria/roteiros" className="inline-flex items-center justify-center bg-[#B6D200] hover:bg-[#8ac200] text-black font-black uppercase tracking-wider py-4 px-8 rounded-lg transition-colors w-max">
+            <Link href="/categoria/roteiros" className="inline-flex items-center justify-center bg-[#9FD131] hover:bg-[#8FBC2C] text-black font-black uppercase tracking-wider py-4 px-8 rounded-lg transition-colors w-max">
               Explorar Roteiros
             </Link>
           </div>
@@ -105,18 +105,18 @@ export default function SobreNos() {
 
       {/* VALUES */}
       <section className="max-w-4xl mx-auto px-4 mt-24 mb-10 text-center">
-        <h3 className="text-2xl font-black text-[#0F0F0F] uppercase mb-10">O que nos move</h3>
+        <h3 className="text-2xl font-black text-[#1C1C1C] uppercase mb-10">O que nos move</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
           <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-            <h4 className="text-[#8ac200] font-black text-xl mb-3">Autenticidade</h4>
+            <h4 className="text-[#4A7310] font-black text-xl mb-3">Autenticidade</h4>
             <p className="text-gray-600 text-sm">Mostramos viagens reais, com nossos acertos, erros, perrengues, bastidores e aprendizados na estrada.</p>
           </div>
           <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-            <h4 className="text-[#8ac200] font-black text-xl mb-3">Parceria</h4>
+            <h4 className="text-[#4A7310] font-black text-xl mb-3">Parceria</h4>
             <p className="text-gray-600 text-sm">Reforçamos sempre a ideia de que viajar a dois exige cumplicidade, respeito, paciência e união.</p>
           </div>
           <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-            <h4 className="text-[#8ac200] font-black text-xl mb-3">Planejamento</h4>
+            <h4 className="text-[#4A7310] font-black text-xl mb-3">Planejamento</h4>
             <p className="text-gray-600 text-sm">Valorizamos a aventura e a liberdade, mas sempre com muita responsabilidade, segurança e consciência.</p>
           </div>
         </div>

@@ -47,16 +47,16 @@ export default async function DraftPreviewPage({
   return (
     <main className="bg-[#f8f9fa] min-h-screen" style={{ color: '#444' }}>
       <article className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-9 rounded-xl border-2 border-[#B6D200] bg-white px-5 py-4 text-center">
+        <div className="mb-9 rounded-xl border-2 border-[#9FD131] bg-white px-5 py-4 text-center">
           <p className="font-black text-[#403939] text-lg">Pré-visualização · Artigo não publicado</p>
           <p className="text-sm text-gray-600 mt-1">Link de revisão temporário. Esta página não aparece no blog público.</p>
         </div>
         <header className="mb-10 text-center">
-          <span className="inline-block bg-[#B6D200] text-[#0F0F0F] text-xs font-black uppercase px-4 py-1.5 tracking-widest mb-6">{draft.category}</span>
-          <h1 className="text-4xl md:text-5xl font-black text-[#0F0F0F] mb-6 leading-tight">{draft.title}</h1>
+          <span className="inline-block bg-[#9FD131] text-[#1C1C1C] text-xs font-black uppercase px-4 py-1.5 tracking-widest mb-6">{draft.category}</span>
+          <h1 className="text-4xl md:text-5xl font-black text-[#1C1C1C] mb-6 leading-tight">{draft.title}</h1>
           <div className="text-gray-500 font-bold uppercase tracking-widest text-sm flex items-center justify-center">
             <span>Por Estrada a Dois</span>
-            {draft.date && <><span className="w-1.5 h-1.5 rounded-full bg-[#B6D200] mx-3" /><time dateTime={draft.date}>{formatDateBR(draft.date)}</time></>}
+            {draft.date && <><span className="w-1.5 h-1.5 rounded-full bg-[#9FD131] mx-3" /><time dateTime={draft.date}>{formatDateBR(draft.date)}</time></>}
           </div>
         </header>
         {cover && (
@@ -64,7 +64,7 @@ export default async function DraftPreviewPage({
             <img src={cover} alt={draft.image_alt || draft.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
           </div>
         )}
-        <div className="prose prose-lg md:prose-xl mx-auto text-[#444444] prose-headings:font-black prose-headings:text-[#0F0F0F] prose-a:text-[#B6D200] prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl prose-img:shadow-lg prose-blockquote:border-l-4 prose-blockquote:border-[#B6D200] prose-blockquote:bg-white prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:shadow-sm prose-blockquote:not-italic prose-blockquote:font-medium prose-strong:text-[#0F0F0F]"
+        <div className="prose prose-lg md:prose-xl mx-auto text-[#444444] prose-headings:font-black prose-headings:text-[#1C1C1C] prose-a:text-[#4A7310] prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl prose-img:shadow-lg prose-blockquote:border-l-4 prose-blockquote:border-[#9FD131] prose-blockquote:bg-white prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:shadow-sm prose-blockquote:not-italic prose-blockquote:font-medium prose-strong:text-[#1C1C1C]"
           dangerouslySetInnerHTML={{ __html: html }} />
         {['Roteiros', 'Dicas', 'Equipamentos', 'Manutenção'].includes(draft.category) && (
           <TravelSocialCTA articleSlug={slug} category={draft.category} />

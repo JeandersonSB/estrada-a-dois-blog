@@ -11,7 +11,7 @@ export default function PoliticaPrivacidade() {
     <div className="bg-[#f8f9fa] min-h-screen py-20">
       <div className="max-w-4xl mx-auto px-4">
         <div className="bg-white p-8 md:p-16 rounded-2xl shadow-sm border border-gray-100">
-          <h1 className="text-3xl md:text-4xl font-black text-[#0F0F0F] uppercase mb-8 border-b-4 border-[#B6D200] pb-4 inline-block">
+          <h1 className="text-3xl md:text-4xl font-black text-[#1C1C1C] uppercase mb-8 border-b-4 border-[#9FD131] pb-4 inline-block">
             Política de Privacidade
           </h1>
 
@@ -22,7 +22,7 @@ export default function PoliticaPrivacidade() {
               (LGPD — Lei nº 13.709/2018).
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">1. Dados que podemos coletar</h2>
+            <h2 className="text-xl font-bold text-[#1C1C1C] uppercase mt-8">1. Dados que podemos coletar</h2>
             <p>
               Ao navegar pelo site, alguns dados técnicos podem ser processados pela infraestrutura de hospedagem,
               como endereço IP, data e hora de acesso, navegador, dispositivo e registros necessários para segurança
@@ -34,7 +34,7 @@ export default function PoliticaPrivacidade() {
               receber, analisar e responder ao contato enviado.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">2. Formulário de contato e Telegram</h2>
+            <h2 className="text-xl font-bold text-[#1C1C1C] uppercase mt-8">2. Formulário de contato e Telegram</h2>
             <p>
               As mensagens enviadas pelo formulário do site são encaminhadas para um canal privado da equipe por meio
               da API do <strong>Telegram</strong>. Dessa forma, os dados informados no formulário podem ser processados
@@ -46,7 +46,7 @@ export default function PoliticaPrivacidade() {
               aplicáveis.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">3. Cookies e armazenamento local</h2>
+            <h2 className="text-xl font-bold text-[#1C1C1C] uppercase mt-8">3. Cookies e armazenamento local</h2>
             <p>
               O site utiliza armazenamento local do navegador para registrar sua escolha de privacidade. Esse recurso
               é necessário para lembrar se você aceitou ou rejeitou recursos analíticos e evitar que a preferência
@@ -60,7 +60,7 @@ export default function PoliticaPrivacidade() {
               sobre esses cookies pelo link <strong>Preferências de Cookies</strong> no rodapé do site.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">4. Google Analytics 4</h2>
+            <h2 className="text-xl font-bold text-[#1C1C1C] uppercase mt-8">4. Google Analytics 4</h2>
             <p>
               Utilizamos o <strong>Google Analytics 4</strong>, com o Modo de Consentimento Avançado,
               para compreender quais páginas são acessadas e melhorar o conteúdo e o desempenho.
@@ -78,12 +78,12 @@ export default function PoliticaPrivacidade() {
               Você pode manter os recursos analíticos desativados sem impedir a navegação pelo Estrada a Dois.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">5. Publicidade e Google AdSense</h2>
+            <h2 className="text-xl font-bold text-[#1C1C1C] uppercase mt-8">5. Publicidade e Google AdSense</h2>
             <p>
               O site está cadastrado no Google AdSense, mas esta versão não exibe anúncios nem utiliza cookies publicitários. Caso a exibição de anúncios seja ativada, esta política e os controles de privacidade serão atualizados antes da utilização de tecnologias publicitárias.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">6. Serviços de terceiros</h2>
+            <h2 className="text-xl font-bold text-[#1C1C1C] uppercase mt-8">6. Serviços de terceiros</h2>
             <p>
               Para operar o portal, podemos utilizar serviços de terceiros, como infraestrutura de hospedagem e
               distribuição de conteúdo da Vercel, serviços do Google a API do Telegram e o Resend para envio de boas-vindas. Esses fornecedores podem
@@ -91,31 +91,31 @@ export default function PoliticaPrivacidade() {
               termos e políticas.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">7. Links externos</h2>
+            <h2 className="text-xl font-bold text-[#1C1C1C] uppercase mt-8">7. Links externos</h2>
             <p>
               Nossos artigos podem conter links para sites de terceiros. Não controlamos as práticas de privacidade,
               segurança ou conteúdo desses endereços. Recomendamos consultar as políticas do site de destino.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">8. Direitos do titular</h2>
+            <h2 className="text-xl font-bold text-[#1C1C1C] uppercase mt-8">8. Direitos do titular</h2>
             <p>
               Nos termos da LGPD, você pode solicitar, quando aplicável, confirmação de tratamento, acesso, correção,
               atualização, anonimização, bloqueio ou exclusão de dados, informações sobre compartilhamento e portabilidade nos termos da regulamentação aplicável, além de revogar consentimentos concedidos e apresentar reclamação à ANPD. Podemos solicitar informações mínimas para confirmar sua identidade e proteger seus dados.
             </p>
             <p>
               Solicitações podem ser encaminhadas para{' '}
-              <a href="mailto:contato@estradaadois.com" className="text-[#8ac200] hover:underline font-bold">
+              <a href="mailto:contato@estradaadois.com" className="text-[#4A7310] hover:underline font-bold">
                 contato@estradaadois.com
               </a>.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">9. Segurança e alterações</h2>
+            <h2 className="text-xl font-bold text-[#1C1C1C] uppercase mt-8">9. Segurança e alterações</h2>
             <p>
               Adotamos medidas razoáveis de segurança e minimização de dados. Esta política poderá ser atualizada
               quando houver alterações relevantes nos serviços, tecnologias utilizadas ou requisitos legais.
             </p>
 
-            <h2 id="rota-biker" className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">10. Mapa de monumentos — Rota Biker</h2>
+            <h2 id="rota-biker" className="text-xl font-bold text-[#1C1C1C] uppercase mt-8">10. Mapa de monumentos — Rota Biker</h2>
             <p>
               O Estrada a Dois é responsável por esta ferramenta independente de controle pessoal de visitas.
               Sem login, as marcações ficam no armazenamento local do navegador. Ao aceitar o aviso e entrar com
@@ -151,7 +151,7 @@ export default function PoliticaPrivacidade() {
               Você pode recusar o aviso e continuar usando o mapa sem login. Os dados da conta são mantidos
               enquanto necessários à sincronização e até solicitação de exclusão, ressalvadas obrigações legais
               aplicáveis. Para exercer seus direitos, solicitar exclusão ou revogar o consentimento, escreva para{' '}
-              <a href="mailto:contato@estradaadois.com" className="text-[#8ac200] hover:underline font-bold">contato@estradaadois.com</a>.
+              <a href="mailto:contato@estradaadois.com" className="text-[#4A7310] hover:underline font-bold">contato@estradaadois.com</a>.
               Sair da conta interrompe a sessão, mas não exclui o histórico já salvo. Para remover marcações locais,
               desmarque os monumentos ou limpe os dados deste site no navegador.
             </p>
@@ -159,7 +159,7 @@ export default function PoliticaPrivacidade() {
             <p>
               Para calcular distâncias pelas estradas no planejador, as coordenadas da partida localizada ou autorizada por GPS e dos monumentos são enviadas ao serviço OSRM, com dados do OpenStreetMap. O provedor recebe também os dados técnicos da requisição, conforme sua política. As estimativas não incluem trânsito em tempo real e podem diferir das rotas escolhidas pelo Google Maps. O cache das distâncias fica somente na memória da página.
             </p>
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">11. Finalidades, escolhas e conservação</h2>
+            <h2 className="text-xl font-bold text-[#1C1C1C] uppercase mt-8">11. Finalidades, escolhas e conservação</h2>
             <p>
               A contagem básica e agregada de visualizações sem cookies analíticos se fundamenta no legítimo
               interesse de compreender o uso do site e aprimorar o conteúdo, sem segmentação ou publicidade
@@ -181,13 +181,13 @@ export default function PoliticaPrivacidade() {
             <p>
               Fornecedores de hospedagem, autenticação, mapas, métricas e mensagens podem processar dados fora do
               Brasil. Consulte também as políticas de{' '}
-              <a href="https://policies.google.com/privacy" className="text-[#8ac200] hover:underline">Google</a>,{' '}
-              <a href="https://vercel.com/legal/privacy-policy" className="text-[#8ac200] hover:underline">Vercel</a>,{' '}
-              <a href="https://telegram.org/privacy" className="text-[#8ac200] hover:underline">Telegram</a> e{' '}
-              <a href="https://osmfoundation.org/wiki/Privacy_Policy" className="text-[#8ac200] hover:underline">OpenStreetMap</a>.
+              <a href="https://policies.google.com/privacy" className="text-[#4A7310] hover:underline">Google</a>,{' '}
+              <a href="https://vercel.com/legal/privacy-policy" className="text-[#4A7310] hover:underline">Vercel</a>,{' '}
+              <a href="https://telegram.org/privacy" className="text-[#4A7310] hover:underline">Telegram</a> e{' '}
+              <a href="https://osmfoundation.org/wiki/Privacy_Policy" className="text-[#4A7310] hover:underline">OpenStreetMap</a>.
             </p>
 
-            <p className="font-bold text-[#0F0F0F]">Última atualização: 2 de novembro de 2026.</p>
+            <p className="font-bold text-[#1C1C1C]">Última atualização: 2 de novembro de 2026.</p>
           </div>
         </div>
       </div>

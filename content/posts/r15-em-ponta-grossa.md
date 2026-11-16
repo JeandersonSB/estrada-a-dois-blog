@@ -5,6 +5,8 @@ date: 2025-10-20
 category: Roteiros
 image: /images/blog/r15-em-ponta-grossa/20250209_104535-2.jpg
 excerpt: Roteiro de 1 dia de moto (Guarapuava → Ponta Grossa) com Rota 513, Letts Road e Túnel de Árvores Entrelaçadas. Dicas, fotos e comparação R15 vs Teneré 250.
+trip_distance: "420 km"
+trip_duration: "1 dia"
 ---
 
 Eu, Jeanderson, minha esposa Ana Paula, meu primo Alex com a esposa Keila e meu cunhado Rhafael com a Patricia. Dia 09 de fevereiro de 2025 foi dia de viagem de moto. Saímos de Guarapuava às 09:15 e chegamos em Ponta Grossa por volta das 11:30. Eu e o Alex na R15, o Rhafael na Teneré 250, já vou adiantando, na estrada a R15 se mostrou superior à Teneré 250 no quesito aerodinâmica e desempenho.

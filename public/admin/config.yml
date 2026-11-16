@@ -69,4 +69,7 @@ collections:
       - { label: "Imagem de Capa (Horizontal)", name: "image", widget: "image" }
       - { label: "Resumo para a Home (Até 3 linhas)", name: "excerpt", widget: "text" }
       - { label: "Vídeo do YouTube (link, opcional)", name: "youtube", widget: "string", required: false, hint: "Cole o link do vídeo (ex.: https://youtu.be/...). O player aparece no fim do artigo. Para colocar o vídeo no meio do texto, cole o link sozinho em uma linha do conteúdo." }
+      - { label: "Viagem: distância (opcional)", name: "trip_distance", widget: "string", required: false, hint: "Aparece no destaque da página inicial. Ex.: 510 km" }
+      - { label: "Viagem: duração (opcional)", name: "trip_duration", widget: "string", required: false, hint: "Ex.: 1 dia, 3 dias, Fim de semana" }
+      - { label: "Viagem: gasto do casal (opcional)", name: "trip_cost", widget: "string", required: false, hint: "Ex.: R$ 260. Deve bater com a tabela de custos do artigo." }
       - { label: "Conteúdo do Artigo", name: "body", widget: "markdown" }

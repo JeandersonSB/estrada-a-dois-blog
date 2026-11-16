@@ -23,18 +23,18 @@ const YouTubeIcon = () => (
 
 export function Footer() {
   return (
-    <footer className="bg-[#0F0F0F] text-[#D9D9D9] py-10 mt-auto border-t border-[#2B2B2B]">
+    <footer className="bg-[#1C1C1C] text-[#D9D9D9] py-10 mt-auto border-t border-[#2B2B2B]">
       <div className="max-w-5xl mx-auto px-4 flex flex-col items-center">
         
         {/* Square Logo 600x600 */}
-        <img 
-          src="/images/logo-estrada-a-dois-principal.png" 
-          alt="Estrada a Dois Logo" 
-          width={128}
-          height={128}
+        <img
+          src="/images/marca/logo-negativa.svg"
+          alt="Estrada a Dois"
+          width={240}
+          height={107}
           loading="lazy"
           decoding="async"
-          className="h-32 w-32 mb-6 object-contain drop-shadow-lg"
+          className="w-[220px] h-auto mb-8"
         />
         
         {/* Social Buttons - Horizontal */}
@@ -72,7 +72,7 @@ export function Footer() {
         <div className="flex flex-col items-center gap-2 mt-4 text-center">
           <p className="text-xs text-[#AAAAAA]">
             Contato & Parcerias:{' '}
-            <a href="mailto:contato@estradaadois.com" className="text-[#B6D200] hover:underline font-medium">
+            <a href="mailto:contato@estradaadois.com" className="text-[#9FD131] hover:underline font-medium">
               contato@estradaadois.com
             </a>
           </p>

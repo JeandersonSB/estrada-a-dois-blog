@@ -5,6 +5,8 @@ date: 2026-11-03T18:33:00
 category: Roteiros
 image: "/images/blog/ametista-do-sul-de-moto-rota-biker-garimpo.webp"
 excerpt: 'De Yamaha R15, rodamos cerca de 1.100 km até Ametista do Sul: Garimpo em Atividade, monumento 15 da Rota Biker, atrações e custos de 3 dias.'
+trip_distance: "1.100 km"
+trip_duration: "3 dias"
 ---
 
 Desta vez, nossa Yamaha R15 nos levou para conhecer um lugar que estava na nossa lista havia algum tempo: **Ametista do Sul, no Rio Grande do Sul**.

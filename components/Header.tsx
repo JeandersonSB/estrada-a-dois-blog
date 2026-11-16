@@ -17,16 +17,21 @@ export function Header() {
 
   return (
     <header className="bg-[#ffffff] shadow-sm sticky top-0 z-50 relative">
-      <div className="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center relative">
+      <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center relative">
 
         {/* Logo Text */}
         <Link
           href="/"
-          className="font-brand text-[30px] md:text-[36px] hover:opacity-80 transition-opacity z-10 relative flex gap-[6px] md:gap-[8px] md:ml-6"
-          style={{ letterSpacing: '0.01em', lineHeight: 1 }}
+          aria-label="Estrada a Dois - página inicial"
+          className="hover:opacity-80 transition-opacity z-10 relative md:ml-6 shrink-0"
         >
-          <span className="text-[#0F0F0F] font-black italic">Estrada</span>
-          <span className="text-[#B6D200] font-black italic">a Dois</span>
+          <img
+            src="/images/marca/logo-principal.svg"
+            alt="Estrada a Dois"
+            width={135}
+            height={60}
+            className="h-[56px] md:h-[60px] w-auto"
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -35,7 +40,7 @@ export function Header() {
             <a
               key={link.id}
               href={link.href}
-              className="hover:text-[#8ac200] transition-colors relative z-10 pl-2 whitespace-nowrap"
+              className="hover:text-[#4A7310] transition-colors relative z-10 pl-2 whitespace-nowrap"
             >
               {link.name}
             </a>
@@ -44,7 +49,7 @@ export function Header() {
 
         {/* Mobile Hamburger Button */}
         <button
-          className="lg:hidden text-[#0F0F0F] p-2 focus:outline-none z-10"
+          className="lg:hidden text-[#1C1C1C] p-2 focus:outline-none z-10"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Abrir Menu"
         >
@@ -66,7 +71,7 @@ export function Header() {
               key={link.id}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="px-6 py-4 text-[#555555] font-bold hover:text-[#8ac200] hover:bg-gray-50 transition-colors border-b border-gray-50 last:border-0"
+              className="px-6 py-4 text-[#555555] font-bold hover:text-[#4A7310] hover:bg-gray-50 transition-colors border-b border-gray-50 last:border-0"
             >
               {link.name}
             </a>

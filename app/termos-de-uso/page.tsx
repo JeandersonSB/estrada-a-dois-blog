@@ -11,24 +11,24 @@ export default function TermosDeUso() {
     <div className="bg-[#f8f9fa] min-h-screen py-20">
       <div className="max-w-4xl mx-auto px-4">
         <div className="bg-white p-8 md:p-16 rounded-2xl shadow-sm border border-gray-100">
-          <h1 className="text-3xl md:text-4xl font-black text-[#0F0F0F] uppercase mb-8 border-b-4 border-[#B6D200] pb-4 inline-block">
+          <h1 className="text-3xl md:text-4xl font-black text-[#1C1C1C] uppercase mb-8 border-b-4 border-[#9FD131] pb-4 inline-block">
             Termos de Uso
           </h1>
 
           <div className="prose prose-gray max-w-none text-[#555555] font-medium leading-relaxed space-y-6">
             <p>
               Seja bem-vindo ao <strong>Estrada a Dois</strong>. Ao acessar e utilizar o site
-              <a href="https://www.estradaadois.com" className="text-[#8ac200] hover:underline font-bold"> estradaadois.com</a>,
+              <a href="https://www.estradaadois.com" className="text-[#4A7310] hover:underline font-bold"> estradaadois.com</a>,
               você concorda com estes Termos de Uso.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">1. Finalidade do portal</h2>
+            <h2 className="text-xl font-bold text-[#1C1C1C] uppercase mt-8">1. Finalidade do portal</h2>
             <p>
               O Estrada a Dois é um portal editorial sobre mototurismo, viagens a dois, roteiros, planejamento,
               equipamentos, manutenção preventiva e notícias do universo motociclístico. Nosso conteúdo tem finalidade informativa, editorial e de entretenimento. Também oferecemos uma ferramenta de controle pessoal de visitas a monumentos e planejamento de deslocamentos.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">2. Roteiros, pilotagem e mecânica</h2>
+            <h2 className="text-xl font-bold text-[#1C1C1C] uppercase mt-8">2. Roteiros, pilotagem e mecânica</h2>
             <p>
               Relatos de viagem, condições de vias, estimativas de tempo, custos e orientações de manutenção ou
               pilotagem refletem experiências, pesquisas e informações disponíveis no momento da publicação.
@@ -48,7 +48,7 @@ export default function TermosDeUso() {
               </li>
             </ul>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">3. Conteúdo editorial e fontes</h2>
+            <h2 className="text-xl font-bold text-[#1C1C1C] uppercase mt-8">3. Conteúdo editorial e fontes</h2>
             <p>
               Notícias e informações técnicas podem utilizar dados de fabricantes, órgãos públicos, veículos
               especializados, documentos técnicos e outras fontes identificadas. A produção pode contar com ferramentas digitais e inteligência artificial, sob responsabilidade editorial do Estrada a Dois, buscando acrescentar contexto relevante para o motociclista brasileiro.
@@ -56,10 +56,10 @@ export default function TermosDeUso() {
             <p>
               Informações podem ser corrigidas ou atualizadas quando surgirem dados novos ou quando identificarmos
               alguma imprecisão. Saiba mais em nossa{' '}
-              <a href="/politica-editorial" className="text-[#8ac200] hover:underline font-bold">Política Editorial</a>.
+              <a href="/politica-editorial" className="text-[#4A7310] hover:underline font-bold">Política Editorial</a>.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">4. Propriedade intelectual</h2>
+            <h2 className="text-xl font-bold text-[#1C1C1C] uppercase mt-8">4. Propriedade intelectual</h2>
             <p>
               Textos autorais, relatos, identidade visual, fotografias próprias, vídeos e demais materiais produzidos
               pelo Estrada a Dois são protegidos pela legislação aplicável. Citações devem respeitar os limites previstos em lei, com identificação da autoria e da fonte. A reprodução integral ou exploração comercial de materiais próprios depende de autorização, ressalvadas as hipóteses legais.
@@ -69,7 +69,7 @@ export default function TermosDeUso() {
               editorialmente, permanecem sujeitos às regras de uso e direitos correspondentes.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">5. Publicidade e parcerias</h2>
+            <h2 className="text-xl font-bold text-[#1C1C1C] uppercase mt-8">5. Publicidade e parcerias</h2>
             <p>
               O site <strong>poderá exibir</strong> publicidade de terceiros, inclusive por plataformas como Google
               AdSense, além de realizar parcerias comerciais identificadas de forma apropriada. A existência de
@@ -77,23 +77,23 @@ export default function TermosDeUso() {
               conformidade de produtos e serviços oferecidos por terceiros, sem afastar responsabilidades e direitos que a legislação aplicável assegure.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">6. Links externos</h2>
+            <h2 className="text-xl font-bold text-[#1C1C1C] uppercase mt-8">6. Links externos</h2>
             <p>
               Links para fabricantes, órgãos oficiais, fontes jornalísticas, mapas, hotéis, restaurantes ou outros
               serviços externos são fornecidos como referência. O Estrada a Dois não controla conteúdo, disponibilidade,
               políticas ou práticas dos sites de destino.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">7. Formulário e conduta do usuário</h2>
+            <h2 className="text-xl font-bold text-[#1C1C1C] uppercase mt-8">7. Formulário e conduta do usuário</h2>
             <p>
               Ao utilizar nossos canais de contato, o usuário concorda em não enviar spam, conteúdo ilícito, ofensivo,
               fraudulento ou destinado a comprometer a segurança do portal. O tratamento dos dados enviados está
-              descrito na nossa <a href="/politica-de-privacidade" className="text-[#8ac200] hover:underline font-bold">
+              descrito na nossa <a href="/politica-de-privacidade" className="text-[#4A7310] hover:underline font-bold">
                 Política de Privacidade
               </a>.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">8. Mapa e controle de visitas — Rota Biker</h2>
+            <h2 className="text-xl font-bold text-[#1C1C1C] uppercase mt-8">8. Mapa e controle de visitas — Rota Biker</h2>
             <p>
               O mapa é uma iniciativa independente do Estrada a Dois, participante e divulgador do movimento.
               Os direitos da Rota Biker, de sua marca e identidade pertencem aos respectivos idealizadores e titulares.
@@ -121,21 +121,21 @@ export default function TermosDeUso() {
               Essas condições não afastam os direitos assegurados por lei.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">9. Alterações destes termos</h2>
+            <h2 className="text-xl font-bold text-[#1C1C1C] uppercase mt-8">9. Alterações destes termos</h2>
             <p>
               Estes termos poderão ser atualizados para refletir mudanças editoriais, técnicas ou legais. A versão
               vigente estará sempre disponível nesta página.
             </p>
 
-            <h2 className="text-xl font-bold text-[#0F0F0F] uppercase mt-8">10. Contato</h2>
+            <h2 className="text-xl font-bold text-[#1C1C1C] uppercase mt-8">10. Contato</h2>
             <p>
               Dúvidas podem ser enviadas para{' '}
-              <a href="mailto:contato@estradaadois.com" className="text-[#8ac200] hover:underline font-bold">
+              <a href="mailto:contato@estradaadois.com" className="text-[#4A7310] hover:underline font-bold">
                 contato@estradaadois.com
               </a>.
             </p>
 
-            <p className="font-bold text-[#0F0F0F]">Última atualização: 20 de outubro de 2026.</p>
+            <p className="font-bold text-[#1C1C1C]">Última atualização: 20 de outubro de 2026.</p>
           </div>
         </div>
       </div>

@@ -95,7 +95,7 @@ export function PreviewLinks({
   return (
     <div>
       {!hasSession && (
-        <div className="rounded-xl border border-[#B6D200] bg-[#f7f9e7] px-5 py-5 mb-7">
+        <div className="rounded-xl border border-[#9FD131] bg-[#f7f9e7] px-5 py-5 mb-7">
           <p className="text-[#282828] font-bold mb-2">É necessário entrar com seu GitHub para gerar links.</p>
           <p className="text-sm text-gray-600 mb-4">A Paula não precisa de conta. Apenas quem gera a prévia precisa ter permissão de edição no blog.</p>
           <button type="button" onClick={connectGitHub}
@@ -109,16 +109,16 @@ export function PreviewLinks({
         <input id="article-slug" type="text" value={slug} onChange={event => setSlug(event.target.value)}
           autoComplete="off" spellCheck={false}
           placeholder="Ex.: vale-a-pena-viajar-de-moto-para-o-litoral..."
-          className="w-full border border-gray-300 rounded-lg px-4 py-3 text-[#282828] outline-none focus:border-[#B6D200]" />
+          className="w-full border border-gray-300 rounded-lg px-4 py-3 text-[#282828] outline-none focus:border-[#9FD131]" />
         <p className="text-xs text-gray-500">Cole o nome do arquivo .md, o identificador (slug) ou o endereço do artigo. Salve o rascunho no Admin antes.</p>
         <button type="submit" disabled={!hasSession || working}
-          className="w-full rounded-lg bg-[#B6D200] text-[#282828] px-5 py-3 font-black disabled:opacity-50">
+          className="w-full rounded-lg bg-[#9FD131] text-[#282828] px-5 py-3 font-black disabled:opacity-50">
           {working ? 'Gerando link…' : 'Gerar link de prévia'}
         </button>
       </form>
       {message && <p role="alert" className="text-sm text-red-700 mt-4">{message}</p>}
       {result && (
-        <div className="mt-6 rounded-xl bg-[#f7f9e7] border border-[#B6D200] p-5">
+        <div className="mt-6 rounded-xl bg-[#f7f9e7] border border-[#9FD131] p-5">
           <p className="text-[#282828] font-bold mb-1">Link criado para: {result.title}</p>
           <p className="text-xs text-gray-600 mb-3">Válido por sete dias. Se o artigo for publicado antes, a prévia deixa de funcionar.</p>
           <input aria-label="Link de prévia" readOnly value={result.url}

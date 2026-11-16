@@ -207,20 +207,20 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       <article className="max-w-4xl mx-auto px-4 py-12">
         {/* Post Header */}
         <header className="mb-10 text-center">
-          <span className="inline-block bg-[#B6D200] text-[#0F0F0F] text-[12px] font-black uppercase px-4 py-1.5 tracking-widest mb-6">
+          <span className="inline-block bg-[#9FD131] text-[#1C1C1C] text-[12px] font-black uppercase px-4 py-1.5 tracking-widest mb-6">
             {postData.category}
           </span>
-          <h1 className="text-4xl md:text-5xl font-black text-[#0F0F0F] mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-black text-[#1C1C1C] mb-6 leading-tight">
             {postData.title}
           </h1>
           <div className="text-gray-500 font-bold uppercase tracking-widest text-sm flex items-center justify-center">
             <span className="mr-3">
               Por{' '}
-              <Link href="/sobre" className="text-[#0F0F0F] hover:text-[#6f9a00] transition-colors">
+              <Link href="/sobre" className="text-[#1C1C1C] hover:text-[#4A7310] transition-colors">
                 {AUTHOR.name}
               </Link>
             </span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#B6D200] mx-3"></span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#9FD131] mx-3"></span>
             <time dateTime={postData.date}>{formatDateBR(postData.date)}</time>
           </div>
         </header>
@@ -241,16 +241,16 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         )}
 
         {/* Post Content (Markdown Rendered) */}
-        {monumentGuide ? <MonumentGuideSearch sections={monumentGuide} className="prose prose-lg md:prose-xl mx-auto text-[#444444] prose-headings:font-black prose-headings:text-[#0F0F0F] prose-a:text-[#B6D200] prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl prose-img:shadow-lg prose-blockquote:border-l-4 prose-blockquote:border-[#B6D200] prose-blockquote:bg-white prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:shadow-sm prose-blockquote:not-italic prose-blockquote:font-medium prose-strong:text-[#0F0F0F]" /> : (
+        {monumentGuide ? <MonumentGuideSearch sections={monumentGuide} className="prose prose-lg md:prose-xl mx-auto text-[#444444] prose-headings:font-black prose-headings:text-[#1C1C1C] prose-a:text-[#4A7310] prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl prose-img:shadow-lg prose-blockquote:border-l-4 prose-blockquote:border-[#9FD131] prose-blockquote:bg-white prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:shadow-sm prose-blockquote:not-italic prose-blockquote:font-medium prose-strong:text-[#1C1C1C]" /> : (
         <div
-          className="prose prose-lg md:prose-xl mx-auto text-[#444444] prose-headings:font-black prose-headings:text-[#0F0F0F] prose-a:text-[#B6D200] prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl prose-img:shadow-lg prose-blockquote:border-l-4 prose-blockquote:border-[#B6D200] prose-blockquote:bg-white prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:shadow-sm prose-blockquote:not-italic prose-blockquote:font-medium prose-strong:text-[#0F0F0F]"
+          className="prose prose-lg md:prose-xl mx-auto text-[#444444] prose-headings:font-black prose-headings:text-[#1C1C1C] prose-a:text-[#4A7310] prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl prose-img:shadow-lg prose-blockquote:border-l-4 prose-blockquote:border-[#9FD131] prose-blockquote:bg-white prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:shadow-sm prose-blockquote:not-italic prose-blockquote:font-medium prose-strong:text-[#1C1C1C]"
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
         />
         )}
 
         {videoId && (
           <section className="mt-12">
-            <h2 className="text-2xl md:text-3xl font-black text-[#0F0F0F] mb-2">🎬 Assista ao vídeo desta viagem</h2>
+            <h2 className="text-2xl md:text-3xl font-black text-[#1C1C1C] mb-2">🎬 Assista ao vídeo desta viagem</h2>
             <YouTubeEmbed id={videoId} title={postData.title} />
           </section>
         )}
@@ -268,17 +268,17 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           <section className="mt-16 pt-10 border-t border-gray-200">
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#B6D200] animate-pulse"></span>
-                <h3 className="text-xl md:text-2xl font-black text-[#0F0F0F] uppercase tracking-tight">
-                  Leia Também &bull; <span className="text-[#8ac200]">Artigos Recomendados</span>
+                <span className="w-2.5 h-2.5 rounded-full bg-[#9FD131] animate-pulse"></span>
+                <h3 className="text-xl md:text-2xl font-black text-[#1C1C1C] uppercase tracking-tight">
+                  Leia Também &bull; <span className="text-[#4A7310]">Artigos Recomendados</span>
                 </h3>
               </div>
               <Link
                 href="/"
-                className="text-xs md:text-sm font-bold text-gray-500 hover:text-[#0F0F0F] uppercase tracking-wider hidden sm:inline-flex items-center gap-1 transition-colors"
+                className="text-xs md:text-sm font-bold text-gray-500 hover:text-[#1C1C1C] uppercase tracking-wider hidden sm:inline-flex items-center gap-1 transition-colors"
               >
                 Ver todos
-                <svg className="w-4 h-4 text-[#B6D200]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-[#9FD131]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
@@ -289,7 +289,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                 <a
                   key={related.slug}
                   href={`/blog/${related.slug}`}
-                  className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 hover:border-[#B6D200]/70 transition-all duration-300 flex flex-col h-full"
+                  className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 hover:border-[#9FD131]/70 transition-all duration-300 flex flex-col h-full"
                 >
                   <div className="aspect-[16/10] w-full overflow-hidden relative bg-black/10">
                     <SmartImage
@@ -298,7 +298,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                       sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <span className="absolute top-3 left-3 bg-[#B6D200] text-[#0F0F0F] text-[10px] font-black uppercase px-2.5 py-1 tracking-wider rounded shadow-md z-10">
+                    <span className="absolute top-3 left-3 bg-[#9FD131] text-[#1C1C1C] text-[10px] font-black uppercase px-2.5 py-1 tracking-wider rounded shadow-md z-10">
                       {related.category}
                     </span>
                   </div>
@@ -306,7 +306,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                     <time dateTime={related.date} className="text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-2">
                       {formatDateBR(related.date)}
                     </time>
-                    <h4 className="text-base font-bold text-[#0F0F0F] leading-snug line-clamp-2 group-hover:text-[#8ac200] transition-colors mb-2">
+                    <h4 className="text-base font-bold text-[#1C1C1C] leading-snug line-clamp-2 group-hover:text-[#4A7310] transition-colors mb-2">
                       {related.title}
                     </h4>
                     <p className="text-xs text-gray-500 line-clamp-2 mt-auto">
@@ -322,7 +322,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         {/* Tags / Footer */}
         <footer className="mt-12 pt-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <Link href="/" className="inline-flex items-center text-[#0F0F0F] font-black uppercase tracking-widest hover:text-[#B6D200] transition-colors">
+            <Link href="/" className="inline-flex items-center text-[#1C1C1C] font-black uppercase tracking-widest hover:text-[#4A7310] transition-colors">
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
               Voltar para Home
             </Link>

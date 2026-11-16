@@ -35,8 +35,8 @@ export function RotaBikerCTA({ articleSlug, variant = 'article' }: { articleSlug
       aria-label="Mapa gratuito da Rota Biker"
       className={
         isHome
-          ? 'relative overflow-hidden rounded-3xl bg-[#B6D200] px-6 py-8 md:px-12 md:py-10 text-[#0F0F0F] shadow-xl'
-          : 'mt-12 relative overflow-hidden rounded-2xl bg-[#B6D200] px-6 py-8 md:px-9 md:py-9 text-[#0F0F0F] shadow-lg'
+          ? 'relative overflow-hidden rounded-3xl bg-[#9FD131] px-6 py-8 md:px-12 md:py-10 text-[#1C1C1C] shadow-xl'
+          : 'mt-12 relative overflow-hidden rounded-2xl bg-[#9FD131] px-6 py-8 md:px-9 md:py-9 text-[#1C1C1C] shadow-lg'
       }
     >
       <div className={isHome ? 'md:flex md:items-center md:justify-between md:gap-10' : ''}>
@@ -51,7 +51,7 @@ export function RotaBikerCTA({ articleSlug, variant = 'article' }: { articleSlug
           </p>
           <ul className="flex flex-wrap gap-2 mb-6 md:mb-0">
             {features.map((feature) => (
-              <li key={feature} className="rounded-full bg-[#0F0F0F]/10 px-3 py-1 text-sm font-bold">
+              <li key={feature} className="rounded-full bg-[#1C1C1C]/10 px-3 py-1 text-sm font-bold">
                 ✓ {feature}
               </li>
             ))}
@@ -62,7 +62,7 @@ export function RotaBikerCTA({ articleSlug, variant = 'article' }: { articleSlug
           onClick={() => trackClick(source)}
           className={
             (isHome ? 'md:mt-0 md:shrink-0 ' : 'mt-6 ') +
-            'inline-flex items-center justify-center rounded-xl bg-[#0F0F0F] px-7 py-4 font-extrabold text-white hover:bg-white hover:text-[#0F0F0F] transition-colors'
+            'inline-flex items-center justify-center rounded-xl bg-[#1C1C1C] px-7 py-4 font-extrabold text-white hover:bg-white hover:text-[#1C1C1C] transition-colors'
           }
         >
           Abrir o mapa grátis →

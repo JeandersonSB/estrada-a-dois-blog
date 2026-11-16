@@ -11,6 +11,6 @@
   "theme_color": "#B6D200",
   "icons": [
     { "src": "/images/rota-biker-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "/images/logo-publisher-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+    { "src": "/images/marca/avatar-escuro-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
   ]
 }

@@ -64,7 +64,7 @@ export function ContactForm() {
 
   return (
     <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-gray-100">
-      <h2 className="text-2xl font-black text-[#0F0F0F] uppercase mb-2">Envie uma mensagem</h2>
+      <h2 className="text-2xl font-black text-[#1C1C1C] uppercase mb-2">Envie uma mensagem</h2>
       <p className="text-sm text-gray-500 mb-6">
         Fale conosco sobre dúvidas, dicas ou parcerias. Notificamos nossa equipe na hora!
       </p>
@@ -120,7 +120,7 @@ export function ContactForm() {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#0F0F0F] bg-white placeholder:text-gray-400 font-medium focus:border-[#B6D200] focus:ring-2 focus:ring-[#B6D200] focus:outline-none transition-colors"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1C1C1C] bg-white placeholder:text-gray-400 font-medium focus:border-[#9FD131] focus:ring-2 focus:ring-[#9FD131] focus:outline-none transition-colors"
             placeholder="Como você se chama?"
           />
         </div>
@@ -136,7 +136,7 @@ export function ContactForm() {
               name="whatsapp"
               value={formData.whatsapp}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#0F0F0F] bg-white placeholder:text-gray-400 font-medium focus:border-[#B6D200] focus:ring-2 focus:ring-[#B6D200] focus:outline-none transition-colors"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1C1C1C] bg-white placeholder:text-gray-400 font-medium focus:border-[#9FD131] focus:ring-2 focus:ring-[#9FD131] focus:outline-none transition-colors"
               placeholder="(00) 00000-0000"
             />
           </div>
@@ -151,7 +151,7 @@ export function ContactForm() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#0F0F0F] bg-white placeholder:text-gray-400 font-medium focus:border-[#B6D200] focus:ring-2 focus:ring-[#B6D200] focus:outline-none transition-colors"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1C1C1C] bg-white placeholder:text-gray-400 font-medium focus:border-[#9FD131] focus:ring-2 focus:ring-[#9FD131] focus:outline-none transition-colors"
               placeholder="seuemail@exemplo.com"
             />
           </div>
@@ -166,7 +166,7 @@ export function ContactForm() {
             name="subject"
             value={formData.subject}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#0F0F0F] bg-white font-medium focus:border-[#B6D200] focus:ring-2 focus:ring-[#B6D200] focus:outline-none transition-colors"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1C1C1C] bg-white font-medium focus:border-[#9FD131] focus:ring-2 focus:ring-[#9FD131] focus:outline-none transition-colors"
           >
             <option>Dúvida sobre roteiro / viagem</option>
             <option>Parceria Comercial (Marcas)</option>
@@ -186,7 +186,7 @@ export function ContactForm() {
             rows={5}
             value={formData.message}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#0F0F0F] bg-white placeholder:text-gray-400 font-medium focus:border-[#B6D200] focus:ring-2 focus:ring-[#B6D200] focus:outline-none transition-colors resize-none"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1C1C1C] bg-white placeholder:text-gray-400 font-medium focus:border-[#9FD131] focus:ring-2 focus:ring-[#9FD131] focus:outline-none transition-colors resize-none"
             placeholder="Escreva sua mensagem aqui..."
           ></textarea>
         </div>
@@ -194,7 +194,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="w-full bg-[#0F0F0F] hover:bg-[#B6D200] hover:text-black text-white font-black uppercase tracking-widest py-4 rounded-lg transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-[#1C1C1C] hover:bg-[#9FD131] hover:text-black text-white font-black uppercase tracking-widest py-4 rounded-lg transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {status === 'loading' ? (
             <span className="inline-flex items-center">

@@ -125,7 +125,7 @@ export function CookieBanner() {
 
       {showBanner && (
         <div
-          className="fixed inset-x-0 bottom-0 z-[100] border-t-4 border-[#B6D200] bg-[#0F0F0F] text-[#D9D9D9] shadow-[0_-10px_30px_rgba(0,0,0,0.3)]"
+          className="fixed inset-x-0 bottom-0 z-[100] border-t-4 border-[#9FD131] bg-[#1C1C1C] text-[#D9D9D9] shadow-[0_-10px_30px_rgba(0,0,0,0.3)]"
           role="dialog"
           aria-label="Preferências de privacidade"
         >
@@ -138,7 +138,7 @@ export function CookieBanner() {
                   Se você aceitar cookies opcionais, o Google Analytics poderá utilizar cookies para análises
                   mais detalhadas. Rejeitar impede esses cookies, mas não a contagem básica sem cookies.
                   Consulte nossa{' '}
-                  <a href="/politica-de-privacidade" className="text-[#B6D200] hover:underline">
+                  <a href="/politica-de-privacidade" className="text-[#9FD131] hover:underline">
                     Política de Privacidade
                   </a>. Rejeitar cookies opcionais não impede usar o mapa, entrar com Google ou salvar suas visitas.
                 </p>
@@ -161,7 +161,7 @@ export function CookieBanner() {
                       aria-label="Permitir cookies analíticos do Google Analytics"
                       aria-checked={analyticsChoice}
                       onClick={() => setAnalyticsChoice((value) => !value)}
-                      className={'relative mt-1 h-7 w-12 shrink-0 rounded-full transition-colors ' + (analyticsChoice ? 'bg-[#B6D200]' : 'bg-gray-600')}
+                      className={'relative mt-1 h-7 w-12 shrink-0 rounded-full transition-colors ' + (analyticsChoice ? 'bg-[#9FD131]' : 'bg-gray-600')}
                     >
                       <span
                         className={'absolute top-1 h-5 w-5 rounded-full bg-white transition-transform ' + (analyticsChoice ? 'translate-x-6' : 'translate-x-1')}
@@ -182,7 +182,7 @@ export function CookieBanner() {
                 <button
                   type="button"
                   onClick={() => saveConsent(true)}
-                  className="px-6 py-3 bg-[#B6D200] hover:bg-[#8ac200] text-[#0F0F0F] font-black uppercase tracking-wider rounded-lg transition-colors text-sm"
+                  className="px-6 py-3 bg-[#9FD131] hover:bg-[#8FBC2C] text-[#1C1C1C] font-black uppercase tracking-wider rounded-lg transition-colors text-sm"
                 >
                   Aceitar cookies
                 </button>
@@ -190,7 +190,7 @@ export function CookieBanner() {
                 <button
                   type="button"
                   onClick={() => saveConsent(false)}
-                  className="px-6 py-3 bg-[#B6D200] hover:bg-[#8ac200] text-[#0F0F0F] font-black uppercase tracking-wider rounded-lg transition-colors text-sm"
+                  className="px-6 py-3 bg-[#9FD131] hover:bg-[#8FBC2C] text-[#1C1C1C] font-black uppercase tracking-wider rounded-lg transition-colors text-sm"
                 >
                   Rejeitar não essenciais
                 </button>
@@ -199,7 +199,7 @@ export function CookieBanner() {
                   <button
                     type="button"
                     onClick={() => saveConsent(analyticsChoice)}
-                    className="px-6 py-3 border border-[#B6D200]/60 text-[#B6D200] hover:bg-[#B6D200]/10 font-bold uppercase tracking-wider rounded-lg transition-colors text-sm"
+                    className="px-6 py-3 border border-[#9FD131]/60 text-[#9FD131] hover:bg-[#9FD131]/10 font-bold uppercase tracking-wider rounded-lg transition-colors text-sm"
                   >
                     Salvar preferências
                   </button>

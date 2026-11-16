@@ -26,3 +26,21 @@ body {
 }
 @plugin "@tailwindcss/typography";
 .font-brand { font-family: var(--font-brand); }
+
+/* Destaque da home (HomeHero) */
+@keyframes ead-kenburns { from { transform: scale(1.02); } to { transform: scale(1.12) translate(-1.5%, -1%); } }
+@keyframes ead-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes ead-road { to { transform: translateX(-50%); } }
+.ead-kenburns { animation: ead-kenburns 7.5s ease-out forwards; }
+.ead-stagger > * { animation: ead-up 0.6s ease-out both; }
+.ead-stagger > *:nth-child(2) { animation-delay: 0.08s; }
+.ead-stagger > *:nth-child(3) { animation-delay: 0.16s; }
+.ead-stagger > *:nth-child(4) { animation-delay: 0.24s; }
+.ead-stagger > *:nth-child(5) { animation-delay: 0.32s; }
+.ead-road-track { animation: ead-road 55s linear infinite; }
+.ead-road:hover .ead-road-track, .ead-road:focus-within .ead-road-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .ead-kenburns, .ead-stagger > * { animation: none; }
+  .ead-road-track { animation: none; }
+  .ead-road { overflow-x: auto; }
+}

@@ -37,6 +37,9 @@ export interface PostData {
   image_alt?: string;
   image_credit?: string;
   youtube?: string;
+  trip_distance?: string;
+  trip_duration?: string;
+  trip_cost?: string;
   status?: string;
   draft?: boolean;
 }

@@ -33,10 +33,10 @@ export default function Contato() {
     <div className="bg-[#f8f9fa] min-h-screen pb-20">
       
       {/* HEADER BANNER */}
-      <section className="w-full bg-[#0F0F0F] pt-16 pb-24 border-b-[8px] border-[#B6D200]">
+      <section className="w-full bg-[#1C1C1C] pt-16 pb-24 border-b-[8px] border-[#9FD131]">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-black italic uppercase text-white mb-4">
-            Vamos <span className="text-[#B6D200]">Conversar?</span>
+            Vamos <span className="text-[#9FD131]">Conversar?</span>
           </h1>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Seja para parcerias comerciais, dúvidas sobre rotas, ou apenas para trocar ideia sobre motos e viagens. A estrada é de todos nós!
@@ -55,13 +55,13 @@ export default function Contato() {
           <div className="flex flex-col space-y-8">
             
             {/* Direct Contact Card */}
-            <div className="bg-[#0F0F0F] p-8 md:p-12 rounded-2xl shadow-xl text-white">
-              <h3 className="text-2xl font-black italic uppercase text-[#B6D200] mb-6">Contato Direto</h3>
+            <div className="bg-[#1C1C1C] p-8 md:p-12 rounded-2xl shadow-xl text-white">
+              <h3 className="text-2xl font-black italic uppercase text-[#9FD131] mb-6">Contato Direto</h3>
               
               <div className="space-y-6">
                 <div>
                   <p className="text-sm text-gray-400 uppercase tracking-wider mb-1">E-mail Comercial</p>
-                  <a href="mailto:contato@estradaadois.com" className="text-lg font-bold hover:text-[#B6D200] transition-colors">
+                  <a href="mailto:contato@estradaadois.com" className="text-lg font-bold hover:text-[#9FD131] transition-colors">
                     contato@estradaadois.com
                   </a>
                 </div>
@@ -87,7 +87,7 @@ export default function Contato() {
             </div>
 
             {/* Partnerships Banner */}
-            <div className="bg-[#B6D200] p-8 md:p-12 rounded-2xl shadow-xl text-black">
+            <div className="bg-[#9FD131] p-8 md:p-12 rounded-2xl shadow-xl text-black">
               <h3 className="text-2xl font-black italic uppercase mb-4">Para Marcas</h3>
               <p className="font-medium mb-6">
                 Temos forte potencial multimídia e trabalhamos com parcerias, reviews de equipamentos de motociclismo, roteiros patrocinados e divulgações.
