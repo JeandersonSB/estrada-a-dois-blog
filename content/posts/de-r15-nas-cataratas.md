@@ -3,7 +3,7 @@ title: 'De R15 para as Cataratas: Roteiro de 2 Dias em Foz do Iguaçu'
 status: 🟢 Publicado
 date: 2025-10-17
 category: Roteiros
-image: /images/blog/de-r15-nas-cataratas/20250110_063932.jpg
+image: "/images/blog/de-r15-nas-cataratas.jpg"
 excerpt: Descubra nosso roteiro completo de 2 dias em Foz do Iguaçu! Uma viagem de moto para comemorar nosso aniversário de namoro, com dicas sobre o que fazer, custos e a dica de ouro para visitar as Cataratas do Iguaçu sem multidão. Clique e veja nosso guia para uma escapada perfeita!
 trip_duration: "2 dias"
 ---

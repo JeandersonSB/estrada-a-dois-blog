@@ -3,7 +3,7 @@ title: Rota 513, Letts Road e o Túnel de Bambus, um dia de moto com a galera
 status: 🟢 Publicado
 date: 2025-10-20
 category: Roteiros
-image: /images/blog/r15-em-ponta-grossa/20250209_104535-2.jpg
+image: "/images/blog/r15-em-ponta-grossa.jpg"
 excerpt: Roteiro de 1 dia de moto (Guarapuava → Ponta Grossa) com Rota 513, Letts Road e Túnel de Árvores Entrelaçadas. Dicas, fotos e comparação R15 vs Teneré 250.
 trip_distance: "420 km"
 trip_duration: "1 dia"

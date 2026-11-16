@@ -3,7 +3,7 @@ title: '5 serras e 831 km de moto em um fim de semana: nosso roteiro pelo Rastro
 status: 🟢 Publicado
 date: 2026-03-24
 category: Roteiros
-image: /images/blog/rastro-da-serpente-de-moto/05.webp
+image: "/images/blog/rastro-da-serpente-de-moto.webp"
 excerpt: Roteiro de moto pelo Rastro da Serpente e Serra da Graciosa. Veja como rodamos 831 km em um fim de semana saindo de Guarapuava.
 trip_distance: "831 km"
 trip_duration: "Fim de semana"
