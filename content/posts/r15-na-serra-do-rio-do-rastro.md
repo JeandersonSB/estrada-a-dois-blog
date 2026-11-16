@@ -5,6 +5,7 @@ date: 2025-10-02
 category: Roteiros
 image: /images/blog/r15-na-serra-do-rio-do-rastro/Ferias-33.jpg
 excerpt: Acompanhe a aventura de um casal que rodou 1.773 km em uma Yamaha R15 para realizar o sonho de conhecer a Serra do Rio do Rastro e o litoral de SC. Descubra o roteiro completo, com custos, dicas e as emoções dessa jornada inesquecível. Um guia completo para inspirar sua próxima viagem de moto!
+youtube: "https://youtu.be/csN7bTyDQ3g"
 ---
 
 Toda grande viagem começa com um sonho, uma semente plantada em conversas e planos a dois. O nosso, meu (Jeanderson) e da minha esposa, Ana Paula, tinha um nome em nossas mentes como um chamado: Santa Catarina e a tão famosa Serra do Rio do Rastro. Esse desejo se transformou em um objetivo concreto quando conseguimos alinhar nossas férias para setembro de 2025. Com a data marcada, a aventura realmente começou. Mergulhamos de cabeça na fase da organização: traçar a rota no mapa, planejar as finanças, fazer a revisão da moto e claro, encarar o maior desafio de todos: **como fazer uma viagem de uma semana em uma moto esportiva.**

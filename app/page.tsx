@@ -1,5 +1,6 @@
 import { formatDateBR, getSortedPostsData, slugifyCategory } from '@/lib/posts';
 import { SmartImage } from '@/components/SmartImage';
+import { RotaBikerCTA } from '@/components/RotaBikerCTA';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -171,6 +172,8 @@ export default function Home() {
       )}
 
       <main className="max-w-6xl mx-auto px-4 py-16 space-y-20">
+        <RotaBikerCTA variant="home" />
+
         {categories.map((cat) => {
           const categoryPosts = posts
             .filter((post) => post.category && slugifyCategory(post.category) === cat.slug)

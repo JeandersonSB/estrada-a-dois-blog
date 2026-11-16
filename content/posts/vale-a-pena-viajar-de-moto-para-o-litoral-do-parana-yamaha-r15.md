@@ -5,6 +5,7 @@ date: "2026-10-29T16:36:00"
 category: "Roteiros"
 image: ""
 excerpt: "De Yamaha R15, viajamos de Guarapuava a Matinhos na alta temporada. Veja consumo com gasolina Podium, pedágios, custos e o retorno pela Graciosa."
+youtube: "https://youtu.be/utqtEObfN3A"
 ---
 
 **Vale a pena viajar de moto para o litoral do Paraná em plena temporada de verão?** Foi essa a pergunta que decidimos colocar à prova em nossa última viagem de 2025. Saímos de Guarapuava com a nossa **Yamaha R15**, eu pilotando e a Ana Paula na garupa, para passar alguns dias em Matinhos, rever familiares e aproveitar o fim de ano.

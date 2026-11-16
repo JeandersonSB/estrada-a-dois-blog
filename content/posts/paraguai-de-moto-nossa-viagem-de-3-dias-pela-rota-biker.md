@@ -33,16 +33,7 @@ Somos Jeanderson e Ana Paula, do Estrada a Dois. Este é o nosso relato de **Par
 
 Se você prefere viver a emoção dessa aventura em vídeo, assista ao nosso episódio completo no YouTube documentando cada detalhe da rota, da chuva, da fronteira e da chegada aos monumentos:
 
-<div class="my-8 aspect-video w-full rounded-2xl overflow-hidden shadow-2xl bg-black">
-  <iframe 
-    class="w-full h-full" 
-    src="https://www.youtube.com/embed/_Jr7UGNnztc" 
-    title="Fomos de Moto ao Paraguai | Nossa primeira viagem internacional de Yamaha R15 | Estrada a Dois" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    allowfullscreen>
-  </iframe>
-</div>
+https://youtu.be/_Jr7UGNnztc
 
 👉 **Assista também direto no nosso canal:** [Fomos de Moto ao Paraguai | Nossa primeira viagem internacional de Yamaha R15 (YouTube)](https://youtu.be/_Jr7UGNnztc?si=XI05sjdQglVjXAgF)
 

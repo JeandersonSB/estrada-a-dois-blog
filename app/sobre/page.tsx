@@ -52,7 +52,7 @@ export default function SobreNos() {
               className="w-full aspect-[4/5] object-cover bg-gray-200 rounded-2xl shadow-xl mb-6 border-2 border-gray-200 text-transparent"
             />
             <div className="text-center px-4">
-              <h2 className="text-2xl font-black text-[#0F0F0F] uppercase">Jeanderson</h2>
+              <h2 className="text-2xl font-black text-[#0F0F0F] uppercase">Jeanderson Batista</h2>
               <p className="text-[#8ac200] font-bold text-sm uppercase tracking-widest mb-3">Publicitário • Produtor • Piloto</p>
               <p className="text-gray-600 text-sm">
                 A paixão pelas motos veio do meu pai. Estimo já ter percorrido mais de 200 mil km. Nas viagens, cuido da pilotagem, das rotas, da manutenção e do famoso &quot;Tetris&quot; da bagagem.

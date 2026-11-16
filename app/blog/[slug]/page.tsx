@@ -12,6 +12,10 @@ import {
 } from '@/lib/posts';
 import { SmartImage } from '@/components/SmartImage';
 import { TravelSocialCTA } from '@/components/TravelSocialCTA';
+import { AuthorBox, AUTHOR } from '@/components/AuthorBox';
+import { RotaBikerCTA } from '@/components/RotaBikerCTA';
+import { YouTubeEmbed } from '@/components/YouTubeEmbed';
+import { extractYouTubeId } from '@/lib/youtube';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { safeJsonForInlineScript } from '@/lib/oauth-security';
@@ -87,7 +91,7 @@ export async function generateMetadata({
         locale: 'pt_BR',
         type: 'article',
         publishedTime: postData.date,
-        authors: ['Estrada a Dois'],
+        authors: [AUTHOR.name],
         images: shareImageUrl
           ? [
               {
@@ -165,9 +169,10 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       '@id': `https://www.estradaadois.com/blog/${slug}`,
     },
     author: {
-      '@type': 'Organization',
-      name: 'Estrada a Dois',
-      url: 'https://www.estradaadois.com',
+      '@type': 'Person',
+      name: AUTHOR.name,
+      url: AUTHOR.url,
+      image: AUTHOR.image,
     },
     publisher: {
       '@type': 'Organization',
@@ -179,6 +184,13 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       },
     },
   };
+
+  // Vídeo informado no campo "Vídeo do YouTube" do painel. Não repete o
+  // player se o mesmo vídeo já estiver dentro do texto do artigo.
+  const frontmatterVideoId = extractYouTubeId(postData.youtube);
+  const videoId = frontmatterVideoId && !postData.contentHtml.includes(`/embed/${frontmatterVideoId}`)
+    ? frontmatterVideoId
+    : null;
 
   const monumentGuide = slug === 'monumentos-rota-biker-locais-enderecos-horarios'
     ? splitMonumentGuide(postData.contentHtml)
@@ -202,7 +214,12 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             {postData.title}
           </h1>
           <div className="text-gray-500 font-bold uppercase tracking-widest text-sm flex items-center justify-center">
-            <span className="mr-3">Por Estrada a Dois</span>
+            <span className="mr-3">
+              Por{' '}
+              <Link href="/sobre" className="text-[#0F0F0F] hover:text-[#6f9a00] transition-colors">
+                {AUTHOR.name}
+              </Link>
+            </span>
             <span className="w-1.5 h-1.5 rounded-full bg-[#B6D200] mx-3"></span>
             <time dateTime={postData.date}>{formatDateBR(postData.date)}</time>
           </div>
@@ -230,6 +247,17 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
         />
         )}
+
+        {videoId && (
+          <section className="mt-12">
+            <h2 className="text-2xl md:text-3xl font-black text-[#0F0F0F] mb-2">🎬 Assista ao vídeo desta viagem</h2>
+            <YouTubeEmbed id={videoId} title={postData.title} />
+          </section>
+        )}
+
+        <AuthorBox />
+
+        {slug !== 'monumentos-rota-biker-locais-enderecos-horarios' && <RotaBikerCTA articleSlug={slug} />}
 
         {['roteiros', 'dicas', 'equipamentos', 'manutencao'].includes(categorySlug) && (
           <TravelSocialCTA articleSlug={slug} category={postData.category} />

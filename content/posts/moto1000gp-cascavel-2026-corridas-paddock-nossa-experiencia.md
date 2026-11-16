@@ -5,6 +5,7 @@ date: 2026-11-09T21:04:00
 category: Roteiros
 image: "/images/blog/moto1000gp-cascavel-2026-corridas-paddock-nossa-experiencia.webp"
 excerpt: 'Visitamos o MOTO1000GP Cascavel 2026: corridas, pilotos, GP1000, paddock, preços dos ingressos e nossos gastos de R$ 260 para duas pessoas.'
+youtube: "https://youtu.be/dketr7oTMcw"
 ---
 
 **Como é assistir ao MOTO1000GP em Cascavel? Vale a pena passar um domingo no autódromo para acompanhar as corridas de moto de perto?** Nós já tínhamos ido outras vezes, mas a **7ª etapa do MOTO1000GP 2026, em 8 de novembro**, trouxe novas experiências: acompanhamos cinco categorias, circulamos pelo paddock, conhecemos pilotos, ganhamos um boné autografado e vimos uma disputa emocionante na GP1000.

@@ -68,4 +68,5 @@ collections:
       - { label: "Categoria", name: "category", widget: "select", options: ["Roteiros", "Dicas", "Manutenção", "Equipamentos"] }
       - { label: "Imagem de Capa (Horizontal)", name: "image", widget: "image" }
       - { label: "Resumo para a Home (Até 3 linhas)", name: "excerpt", widget: "text" }
+      - { label: "Vídeo do YouTube (link, opcional)", name: "youtube", widget: "string", required: false, hint: "Cole o link do vídeo (ex.: https://youtu.be/...). O player aparece no fim do artigo. Para colocar o vídeo no meio do texto, cole o link sozinho em uma linha do conteúdo." }
       - { label: "Conteúdo do Artigo", name: "body", widget: "markdown" }

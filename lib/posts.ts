@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import remarkGfm from 'remark-gfm';
 import html from 'remark-html';
+import { embedYouTubeLinks } from './youtube';
 import { cache } from 'react';
 import { notFound } from 'next/navigation';
 import { normalizePostSlug } from './post-slug';
@@ -35,6 +36,7 @@ export interface PostData {
   image: string;
   image_alt?: string;
   image_credit?: string;
+  youtube?: string;
   status?: string;
   draft?: boolean;
 }
@@ -207,7 +209,7 @@ async function _getPostDataInternal(slug: string): Promise<PostDataWithContent> 
     .use(html)
     .process(articleBody);
   const rawContentHtml = processedContent.toString();
-  const contentHtml = addTargetBlankToExternalLinks(rawContentHtml);
+  const contentHtml = embedYouTubeLinks(addTargetBlankToExternalLinks(rawContentHtml));
 
   const dateStr = matterResult.data.date instanceof Date
     ? matterResult.data.date.toISOString().split('T')[0]

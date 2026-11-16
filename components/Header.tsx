@@ -60,7 +60,7 @@ export function Header() {
 
   const navLinks = [
     { name: 'ROTEIROS', href: '/categoria/roteiros', id: 'roteiros' },
-    { name: 'ROTA BIKER', href: '/rota-biker', id: 'rota-biker' },
+    { name: '🗺️ ROTA BIKER', href: '/rota-biker', id: 'rota-biker' },
     { name: 'DICAS', href: '/categoria/dicas', id: 'dicas' },
     { name: 'EQUIPAMENTOS', href: '/categoria/equipamentos', id: 'equipamentos' },
     { name: 'MANUTENÇÃO', href: '/categoria/manutencao', id: 'manutencao' },
@@ -109,7 +109,9 @@ export function Header() {
             <a 
               key={link.id}
               href={link.href}
-              className="hover:text-[#0F0F0F] transition-colors relative z-10 pl-2 whitespace-nowrap"
+              className={link.id === 'rota-biker'
+                ? 'relative z-10 ml-2 whitespace-nowrap rounded-full bg-[#B6D200] px-3 py-1 text-[#0F0F0F] hover:bg-[#0F0F0F] hover:text-[#B6D200] transition-colors'
+                : 'hover:text-[#0F0F0F] transition-colors relative z-10 pl-2 whitespace-nowrap'}
               ref={(el) => { targetsRef.current[link.id] = el; }}
               onMouseEnter={() => setHoveredTarget(link.id)}
             >
@@ -142,7 +144,9 @@ export function Header() {
               key={link.id}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="px-6 py-4 text-[#555555] font-bold hover:text-[#0F0F0F] hover:bg-gray-50 transition-colors border-b border-gray-50 last:border-0"
+              className={link.id === 'rota-biker'
+                ? 'px-6 py-4 bg-[#B6D200]/15 text-[#0F0F0F] font-black border-l-4 border-[#B6D200] border-b border-gray-50'
+                : 'px-6 py-4 text-[#555555] font-bold hover:text-[#0F0F0F] hover:bg-gray-50 transition-colors border-b border-gray-50 last:border-0'}
             >
               {link.name}
             </a>
