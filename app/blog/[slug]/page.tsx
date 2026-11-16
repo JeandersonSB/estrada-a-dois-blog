@@ -124,15 +124,14 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const postData = await getPostData(slug);
   const categorySlug = postData.category ? slugifyCategory(postData.category) : '';
-  const isLegacyNews = categorySlug === 'noticias';
   const isPublished = isPostPublished(postData);
 
-  // Notícias que já foram publicadas continuam acessíveis temporariamente com
-  // noindex para preservar URLs durante a auditoria. Rascunhos, arquivos
-  // malformados e categorias fora da proposta atual não ficam públicos.
-  // Artigos em revisão editorial permanecem acessíveis por URL e recebem
-  // noindex via generateMetadata, mas não aparecem nas superfícies públicas.
-  if (!isPublished || (!isLegacyNews && !isPublicCategory(postData.category))) {
+  // Rascunhos, arquivos malformados e categorias fora da proposta atual
+  // (inclusive as antigas notícias automáticas, removidas em nov/2026)
+  // não ficam públicos. Artigos em revisão editorial permanecem acessíveis
+  // por URL e recebem noindex via generateMetadata, mas não aparecem nas
+  // superfícies públicas.
+  if (!isPublished || !isPublicCategory(postData.category)) {
     notFound();
   }
 
