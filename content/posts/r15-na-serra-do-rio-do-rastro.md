@@ -3,7 +3,7 @@ title: 'De R15 à Serra do Rio do Rastro: Um Sonho em Duas Rodas e 1.773 km'
 status: 🟢 Publicado
 date: 2025-10-02
 category: Roteiros
-image: /images/blog/r15-na-serra-do-rio-do-rastro/Ferias-33.jpg
+image: "/images/blog/r15-na-serra-do-rio-do-rastro.jpg"
 excerpt: Acompanhe a aventura de um casal que rodou 1.773 km em uma Yamaha R15 para realizar o sonho de conhecer a Serra do Rio do Rastro e o litoral de SC. Descubra o roteiro completo, com custos, dicas e as emoções dessa jornada inesquecível. Um guia completo para inspirar sua próxima viagem de moto!
 youtube: "https://youtu.be/csN7bTyDQ3g"
 ---
