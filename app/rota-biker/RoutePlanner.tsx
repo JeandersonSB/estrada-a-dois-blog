@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, type Dispatch, type SetStateAction } from 'react';
 import monuments from './monuments.json';
+import { canStamp } from './status';
 import { rankNextStops, mapsRouteUrl, MAX_ROUTE_LOCATIONS, splitRoute, wazeUrl, type Coordinates, type RoutePoint } from './helpers';
 import { findOriginPlaces, type OriginPlace } from './geocoder';
 import { roadDistance } from './roadRouting';
@@ -50,7 +51,8 @@ export default function RoutePlanner({ plan, setPlan, origin, locating, location
   const reference = stops.at(-1) || originCoordinates;
   const roads = useRoadDistances(originCoordinates, !!reference);
   const distances = Object.fromEntries(monuments.map(m => [m.id, roadDistance(roads.matrix, reference, m)]));
-  const places = rankNextStops(monuments, plan.stopIds, distances, visited);
+  // Monumentos em construção (que ainda não carimbam) não entram no roteiro.
+  const places = rankNextStops(monuments.filter(canStamp), plan.stopIds, distances, visited);
   const referenceLabel = stops.at(-1)?.name || (plan.originMode === 'location' ? 'sua localização de partida' : confirmedOrigin?.label || 'o ponto de partida');
   const points: { label: string; value: RoutePoint }[] = routeOrigin ? [
     { label: plan.originMode === 'address' ? plan.originAddress.trim() : 'Minha localização', value: routeOrigin },

@@ -33,7 +33,8 @@
     "stateCode": "PR",
     "state": "Paraná",
     "country": "Brasil",
-    "number": 1
+    "number": 1,
+    "status": "carimbando"
   },
   {
     "id": "bb34785bb71c9ffd",
@@ -68,7 +69,8 @@
     "stateCode": "SC",
     "state": "Santa Catarina",
     "country": "Brasil",
-    "number": 3
+    "number": 3,
+    "status": "carimbando"
   },
   {
     "id": "4017e9cf25b05570",
@@ -97,7 +99,8 @@
     "stateCode": "SC",
     "state": "Santa Catarina",
     "country": "Brasil",
-    "number": 4
+    "number": 4,
+    "status": "carimbando"
   },
   {
     "id": "e8a6a5efa0fa4650",
@@ -126,7 +129,8 @@
     "stateCode": "PR",
     "state": "Paraná",
     "country": "Brasil",
-    "number": 5
+    "number": 5,
+    "status": "carimbando"
   },
   {
     "id": "702b9255802d1133",
@@ -160,7 +164,8 @@
     "stateCode": "SC",
     "state": "Santa Catarina",
     "country": "Brasil",
-    "number": 6
+    "number": 6,
+    "status": "carimbando"
   },
   {
     "id": "d0b075141239afda",
@@ -189,7 +194,8 @@
     "stateCode": "SC",
     "state": "Santa Catarina",
     "country": "Brasil",
-    "number": 7
+    "number": 7,
+    "status": "carimbando"
   },
   {
     "id": "782988960100ca0f",
@@ -218,7 +224,8 @@
     "stateCode": "SP",
     "state": "São Paulo",
     "country": "Brasil",
-    "number": 8
+    "number": 8,
+    "status": "carimbando"
   },
   {
     "id": "f33d43c1306116cc",
@@ -247,7 +254,8 @@
     "stateCode": "PR",
     "state": "Paraná",
     "country": "Brasil",
-    "number": 9
+    "number": 9,
+    "status": "carimbando"
   },
   {
     "id": "5ba377c8848471a4",
@@ -276,7 +284,8 @@
     "stateCode": "RS",
     "state": "Rio Grande do Sul",
     "country": "Brasil",
-    "number": 10
+    "number": 10,
+    "status": "carimbando"
   },
   {
     "id": "202bb30d3c56b455",
@@ -310,7 +319,8 @@
     "stateCode": "DF",
     "state": "Distrito Federal",
     "country": "Brasil",
-    "number": 11
+    "number": 11,
+    "status": "carimbando"
   },
   {
     "id": "dab413a7c161119d",
@@ -339,7 +349,8 @@
     "stateCode": "SP",
     "state": "São Paulo",
     "country": "Brasil",
-    "number": 12
+    "number": 12,
+    "status": "carimbando"
   },
   {
     "id": "20341b3aa76e7e78",
@@ -368,7 +379,8 @@
     "stateCode": "PR",
     "state": "Paraná",
     "country": "Brasil",
-    "number": 13
+    "number": 13,
+    "status": "carimbando"
   },
   {
     "id": "cd53a5303d9228c8",
@@ -397,7 +409,8 @@
     "stateCode": "RS",
     "state": "Rio Grande do Sul",
     "country": "Brasil",
-    "number": 14
+    "number": 14,
+    "status": "carimbando"
   },
   {
     "id": "c9a71d0b208a032d",
@@ -426,7 +439,8 @@
     "stateCode": "RS",
     "state": "Rio Grande do Sul",
     "country": "Brasil",
-    "number": 15
+    "number": 15,
+    "status": "carimbando"
   },
   {
     "id": "9db2645299bf7578",
@@ -457,7 +471,8 @@
     "stateCode": "SP",
     "state": "São Paulo",
     "country": "Brasil",
-    "number": 16
+    "number": 16,
+    "status": "carimbando"
   },
   {
     "id": "28d8a52e73deea39",
@@ -486,7 +501,8 @@
     "stateCode": "MG",
     "state": "Minas Gerais",
     "country": "Brasil",
-    "number": 17
+    "number": 17,
+    "status": "carimbando"
   },
   {
     "id": "2e99c22af02667da",
@@ -516,7 +532,8 @@
     "stateCode": "SP",
     "state": "São Paulo",
     "country": "Brasil",
-    "number": 18
+    "number": 18,
+    "status": "carimbando"
   },
   {
     "id": "1bd4bbd09dd4326d",
@@ -545,7 +562,8 @@
     "stateCode": "SP",
     "state": "São Paulo",
     "country": "Brasil",
-    "number": 19
+    "number": 19,
+    "status": "carimbando"
   },
   {
     "id": "0b1113915d605464",
@@ -578,7 +596,8 @@
     "stateCode": "RS",
     "state": "Rio Grande do Sul",
     "country": "Brasil",
-    "number": 20
+    "number": 20,
+    "status": "carimbando"
   },
   {
     "id": "aca06531bd0b8301",
@@ -607,7 +626,8 @@
     "stateCode": "SC",
     "state": "Santa Catarina",
     "country": "Brasil",
-    "number": 21
+    "number": 21,
+    "status": "carimbando"
   },
   {
     "id": "9ecd3efe6428f177",
@@ -639,7 +659,8 @@
     "stateCode": "MG",
     "state": "Minas Gerais",
     "country": "Brasil",
-    "number": 22
+    "number": 22,
+    "status": "carimbando"
   },
   {
     "id": "46e37a95c26bf4a5",
@@ -670,7 +691,8 @@
     "stateCode": "SP",
     "state": "São Paulo",
     "country": "Brasil",
-    "number": 23
+    "number": 23,
+    "status": "carimbando"
   },
   {
     "id": "89e91836dbbc072b",
@@ -702,7 +724,8 @@
     "stateCode": "SC",
     "state": "Santa Catarina",
     "country": "Brasil",
-    "number": 24
+    "number": 24,
+    "status": "carimbando"
   },
   {
     "id": "009f82c4714dcaa6",
@@ -731,7 +754,8 @@
     "stateCode": "SP",
     "state": "São Paulo",
     "country": "Brasil",
-    "number": 25
+    "number": 25,
+    "status": "carimbando"
   },
   {
     "id": "1c5d33a2b166674b",
@@ -763,7 +787,8 @@
     "stateCode": "SC",
     "state": "Santa Catarina",
     "country": "Brasil",
-    "number": 26
+    "number": 26,
+    "status": "carimbando"
   },
   {
     "id": "f2ee27c40490db95",
@@ -795,7 +820,8 @@
     "stateCode": "SP",
     "state": "São Paulo",
     "country": "Brasil",
-    "number": 27
+    "number": 27,
+    "status": "carimbando"
   },
   {
     "id": "90860b85f7a73459",
@@ -827,7 +853,8 @@
     "stateCode": "SP",
     "state": "São Paulo",
     "country": "Brasil",
-    "number": 28
+    "number": 28,
+    "status": "carimbando"
   },
   {
     "id": "a73234f7fdf065da",
@@ -859,7 +886,8 @@
     "stateCode": "SP",
     "state": "São Paulo",
     "country": "Brasil",
-    "number": 29
+    "number": 29,
+    "status": "carimbando"
   },
   {
     "id": "fb6fa4f1b1d81ec5",
@@ -892,7 +920,8 @@
     "stateCode": "",
     "state": "",
     "country": "Paraguai",
-    "number": 30
+    "number": 30,
+    "status": "carimbando"
   },
   {
     "id": "8b52e305510f7f4d",
@@ -922,7 +951,8 @@
     "stateCode": "PR",
     "state": "Paraná",
     "country": "Brasil",
-    "number": 31
+    "number": 31,
+    "status": "carimbando"
   },
   {
     "id": "fac98efe5cd32da5",
@@ -955,7 +985,8 @@
     "stateCode": "PR",
     "state": "Paraná",
     "country": "Brasil",
-    "number": 32
+    "number": 32,
+    "status": "carimbando"
   },
   {
     "id": "962d09dcc44eb506",
@@ -984,7 +1015,8 @@
     "stateCode": "SP",
     "state": "São Paulo",
     "country": "Brasil",
-    "number": 33
+    "number": 33,
+    "status": "carimbando"
   },
   {
     "id": "673377fbe5d433db",
@@ -1017,7 +1049,8 @@
     "stateCode": "SP",
     "state": "São Paulo",
     "country": "Brasil",
-    "number": 34
+    "number": 34,
+    "status": "carimbando"
   },
   {
     "id": "972d03a782639e15",
@@ -1046,7 +1079,8 @@
     "stateCode": "MG",
     "state": "Minas Gerais",
     "country": "Brasil",
-    "number": 35
+    "number": 35,
+    "status": "carimbando"
   },
   {
     "id": "32cf04e5b0b6dc52",
@@ -1075,7 +1109,8 @@
     "stateCode": "GO",
     "state": "Goiás",
     "country": "Brasil",
-    "number": 36
+    "number": 36,
+    "status": "carimbando"
   },
   {
     "id": "78661860d36eee58",
@@ -1104,7 +1139,8 @@
     "stateCode": "MG",
     "state": "Minas Gerais",
     "country": "Brasil",
-    "number": 37
+    "number": 37,
+    "status": "carimbando"
   },
   {
     "id": "978ab71cd51d889e",
@@ -1139,11 +1175,12 @@
     "stateCode": "PR",
     "state": "Paraná",
     "country": "Brasil",
-    "number": 38
+    "number": 38,
+    "status": "carimbando"
   },
   {
     "id": "20ba538ba68a6c69",
-    "name": "Mar & Sol Praia Hotel — em construção",
+    "name": "Mar & Sol Praia Hotel",
     "lat": -17.340253,
     "lng": -39.2181944,
     "keywords": [
@@ -1157,7 +1194,6 @@
       "hospedagem",
       "39",
       "monumento 39",
-      "em construção",
       "monumentos",
       "bikers",
       "Prado",
@@ -1166,17 +1202,19 @@
       "Brasil",
       "Nordeste",
       "BR",
-      "Brazil"
+      "Brazil",
+      "fase final"
     ],
     "city": "Prado",
     "stateCode": "BA",
     "state": "Bahia",
     "country": "Brasil",
-    "number": 39
+    "number": 39,
+    "status": "fase_final"
   },
   {
     "id": "b0aeee019ac7828a",
-    "name": "Quiosque Romano — em construção",
+    "name": "Quiosque Romano",
     "lat": -31.5159801,
     "lng": -52.599415,
     "keywords": [
@@ -1187,7 +1225,6 @@
       "passaporte",
       "40",
       "monumento 40",
-      "em construção",
       "monumentos",
       "bikers",
       "Morro Redondo",
@@ -1196,17 +1233,19 @@
       "Brasil",
       "Sul",
       "BR",
-      "Brazil"
+      "Brazil",
+      "em construção"
     ],
     "city": "Morro Redondo",
     "stateCode": "RS",
     "state": "Rio Grande do Sul",
     "country": "Brasil",
-    "number": 40
+    "number": 40,
+    "status": "em_construcao"
   },
   {
     "id": "67da1e3f40594cc2",
-    "name": "ROTA 15 — em construção",
+    "name": "ROTA 15",
     "lat": -28.6400737,
     "lng": -51.9385666,
     "keywords": [
@@ -1217,7 +1256,6 @@
       "passaporte",
       "41",
       "monumento 41",
-      "em construção",
       "monumentos",
       "bikers",
       "Casca",
@@ -1226,17 +1264,19 @@
       "Brasil",
       "Sul",
       "BR",
-      "Brazil"
+      "Brazil",
+      "em construção"
     ],
     "city": "Casca",
     "stateCode": "RS",
     "state": "Rio Grande do Sul",
     "country": "Brasil",
-    "number": 41
+    "number": 41,
+    "status": "em_construcao"
   },
   {
     "id": "580a27b995614c83",
-    "name": "Tapioca do Irmão Firmino — em construção",
+    "name": "Tapioca do Irmão Firmino",
     "lat": -7.1684174,
     "lng": -35.3509599,
     "keywords": [
@@ -1247,7 +1287,6 @@
       "passaporte",
       "42",
       "monumento 42",
-      "em construção",
       "monumentos",
       "bikers",
       "Cajá",
@@ -1256,13 +1295,15 @@
       "Brasil",
       "Nordeste",
       "BR",
-      "Brazil"
+      "Brazil",
+      "em construção"
     ],
     "city": "Cajá",
     "stateCode": "PB",
     "state": "Paraíba",
     "country": "Brasil",
-    "number": 42
+    "number": 42,
+    "status": "em_construcao"
   },
   {
     "id": "3327d5a2feda033c",
@@ -1291,7 +1332,8 @@
     "stateCode": "GO",
     "state": "Goiás",
     "country": "Brasil",
-    "number": 43
+    "number": 43,
+    "status": "carimbando"
   },
   {
     "id": "9ea8b501fe4159e6",
@@ -1320,33 +1362,35 @@
     "stateCode": "SP",
     "state": "São Paulo",
     "country": "Brasil",
-    "number": 44
+    "number": 44,
+    "status": "carimbando"
   },
   {
     "id": "5e5db9d468dc4653",
-    "name": "Empório Caconde — em construção",
+    "name": "Empório Caconde",
     "lat": -21.5996867,
     "lng": -46.6383175,
     "keywords": [
       "emporio caconde",
       "45",
       "monumento 45",
-      "em construção",
       "rota biker",
       "Caconde",
       "SP",
       "São Paulo",
-      "Brasil"
+      "Brasil",
+      "em construção"
     ],
     "city": "Caconde",
     "stateCode": "SP",
     "state": "São Paulo",
     "country": "Brasil",
-    "number": 45
+    "number": 45,
+    "status": "em_construcao"
   },
   {
     "id": "e64b23e3627b3ad7",
-    "name": "Cervejaria Dolomitas — em construção",
+    "name": "Cervejaria Dolomitas",
     "lat": -23.7434204,
     "lng": -52.8564705,
     "keywords": [
@@ -1360,7 +1404,6 @@
       "bar",
       "46",
       "monumento 46",
-      "em construção",
       "monumentos",
       "bikers",
       "Tapejara",
@@ -1369,12 +1412,14 @@
       "Brasil",
       "Sul",
       "BR",
-      "Brazil"
+      "Brazil",
+      "em construção"
     ],
     "city": "Tapejara",
     "stateCode": "PR",
     "state": "Paraná",
     "country": "Brasil",
-    "number": 46
+    "number": 46,
+    "status": "em_construcao"
   }
 ]

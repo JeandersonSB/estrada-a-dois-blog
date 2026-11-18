@@ -17,7 +17,11 @@ export const META_DESCRIPTION = 'Mapa gratuito dos monumentos da Rota Biker no B
 export const ROTA_BIKER_FAQ: { q: string; a: string }[] = [
   {
     q: 'Quantos monumentos tem a Rota Biker?',
-    a: 'Em 18/11/2026, a lista oficial da Rota Biker tinha 46 monumentos numerados, no Brasil e no Paraguai. Seis aparecem como em construção (nº 39, 40, 41, 42, 45 e 46) e o nº 02 está em atualização. A rota cresce o tempo todo, então confira a lista oficial antes de viajar.',
+    a: 'Em 18/11/2026, a lista oficial da Rota Biker tinha 46 monumentos numerados, no Brasil e no Paraguai. Cinco ainda estão em construção e não carimbam o passaporte (nº 40, 41, 42, 45 e 46), e o nº 02 está em atualização. A rota cresce o tempo todo, então confira a lista oficial antes de viajar.',
+  },
+  {
+    q: 'Posso marcar um monumento em construção como visitado?',
+    a: 'Não. No mapa, os monumentos que ainda não carimbam o passaporte aparecem com o pino branco tracejado e não podem ser marcados como visitados nem incluídos no roteiro. Eles são liberados assim que a lista oficial indicar que já carimbam.',
   },
   {
     q: 'Qual é o site oficial da Rota Biker?',
