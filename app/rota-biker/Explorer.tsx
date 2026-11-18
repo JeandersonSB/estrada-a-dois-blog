@@ -81,7 +81,7 @@ export default function Explorer() {
       const host = document.createElement('div');
       L.DomEvent.disableClickPropagation(host);
       L.DomEvent.disableScrollPropagation(host);
-      popup.current = L.popup({ offset: [0, -30], maxWidth: 290, minWidth: 220, autoPanPaddingTopLeft: [20, 70], autoPanPaddingBottomRight: [20, 45], className: 'biker-map-popup' }).setContent(host).on('remove', () => setSelected(null));
+      popup.current = L.popup({ offset: [0, -12], maxWidth: 290, minWidth: 220, autoPanPaddingTopLeft: [20, 70], autoPanPaddingBottomRight: [20, 45], className: 'biker-map-popup' }).setContent(host).on('remove', () => setSelected(null));
       setPopupHost(host);
       setReady(true);
     }).catch(() => setMessage('Não foi possível carregar o mapa. Abra Filtros para consultar a lista de monumentos.'));
@@ -104,7 +104,7 @@ export default function Explorer() {
         const inRoute = order >= 0;
         const state: PinState = !canStamp(m) ? 'indisponivel' : visited.includes(m.id) ? 'visitado' : 'disponivel';
         const classes = ['biker-pin', `biker-pin-${state}`, selected?.id === m.id ? 'biker-pin-selected' : '', inRoute ? 'biker-pin-route' : ''].filter(Boolean).join(' ');
-        const icon = L.divIcon({ html: pinSvg(state), className: classes, iconSize: [30, 36], iconAnchor: [15, 35], tooltipAnchor: [0, -34] });
+        const icon = L.divIcon({ html: pinSvg(state), className: classes, iconSize: [32, 32], iconAnchor: [16, 16], tooltipAnchor: [0, -16] });
         let marker = markerById.current[m.id];
         if (marker) marker.setIcon(icon).setZIndexOffset(selected?.id === m.id ? 1000 : inRoute ? 500 : 0);
         else marker = markerById.current[m.id] = L.marker([m.lat, m.lng], { icon, bubblingMouseEvents: false, keyboard: false, riseOnHover: true }).on('click', () => setSelected(m)).addTo(markers.current!);
@@ -112,7 +112,7 @@ export default function Explorer() {
         label.textContent = `${m.name} — ${m.city}, ${m.stateCode || m.country}${canStamp(m) ? '' : ' (em construção)'}`;
         marker.unbindTooltip().bindTooltip(label, { direction: 'top' });
         if (inRoute) {
-          if (!routeLabels.current[m.id]) routeLabels.current[m.id] = L.tooltip({ permanent: true, direction: 'center', offset: [0, -40], className: 'biker-route-marker' }).setLatLng([m.lat, m.lng]).addTo(markers.current!);
+          if (!routeLabels.current[m.id]) routeLabels.current[m.id] = L.tooltip({ permanent: true, direction: 'center', offset: [0, -26], className: 'biker-route-marker' }).setLatLng([m.lat, m.lng]).addTo(markers.current!);
           routeLabels.current[m.id].setContent(String(order + 1));
         } else { routeLabels.current[m.id]?.remove(); delete routeLabels.current[m.id]; }
         const element = marker.getElement();
@@ -259,6 +259,6 @@ export default function Explorer() {
         <a href={`https://www.google.com/maps/search/?api=1&query=${selected.lat},${selected.lng}`} target="_blank" rel="noopener noreferrer">Como chegar ↗</a>
       </div>}
     </section>, popupHost)}
-    <footer className="biker-note"><p>Pontos conferidos na <a href={OFFICIAL_LIST_URL} target="_blank" rel="noopener">lista oficial da Rota Biker</a> e no <a href={REFERENCE_MAP_URL} target="_blank" rel="noopener noreferrer">mapa de referência</a> em {UPDATED_LABEL}. A lista tem 46 números: 5 ainda estão em construção e não carimbam (nº 40, 41, 42, 45 e 46), o nº 39 está em fase final e já carimba (entre em contato antes de visitar) e o nº 02 permanece em atualização, sem pino. Monumentos em construção aparecem com o pino branco tracejado e só podem ser marcados como visitados e incluídos no roteiro quando passarem a carimbar. Confira acesso e funcionamento antes de viajar.</p><div className="biker-independent-notice"><svg className="biker-notice-icon" viewBox="0 0 64 60" fill="none" aria-hidden="true"><path d="M27 7c2.2-4 7.8-4 10 0l24 43c2.2 4-0.7 8-5 8H8c-4.3 0-7.2-4-5-8L27 7Z" fill="#9FD131" stroke="#4A7310" strokeWidth="3" strokeLinejoin="round"/><path d="M32 21v15" stroke="#242323" strokeWidth="6" strokeLinecap="round"/><circle cx="32" cy="46" r="3.5" fill="#242323"/></svg><p>Este mapa é uma ferramenta independente do Estrada a Dois, criada para ajudar cada viajante a manter seu controle online dos monumentos que já visitou. Os direitos sobre a Rota Biker, sua marca e identidade pertencem aos seus respectivos idealizadores e titulares. Como participante e divulgador do movimento, o Estrada a Dois quer contribuir, somar e facilitar a vida de quem vive a estrada. Esta página não é um serviço oficial da Rota Biker e suas marcações não substituem o passaporte físico nem validam carimbos ou conquistas oficiais.</p></div></footer>
+    <footer className="biker-note"><p>Pontos conferidos na <a href={OFFICIAL_LIST_URL} target="_blank" rel="noopener">lista oficial da Rota Biker</a> e no <a href={REFERENCE_MAP_URL} target="_blank" rel="noopener noreferrer">mapa de referência</a> em {UPDATED_LABEL}. A lista tem 46 números: 5 ainda estão em construção e não carimbam (nº 40, 41, 42, 45 e 46), o nº 39 está em fase final e já carimba (entre em contato antes de visitar) e o nº 02 permanece em atualização, sem pino. Monumentos em construção aparecem com o ícone ✌️ branco tracejado e só podem ser marcados como visitados e incluídos no roteiro quando passarem a carimbar. Confira acesso e funcionamento antes de viajar.</p><div className="biker-independent-notice"><svg className="biker-notice-icon" viewBox="0 0 64 60" fill="none" aria-hidden="true"><path d="M27 7c2.2-4 7.8-4 10 0l24 43c2.2 4-0.7 8-5 8H8c-4.3 0-7.2-4-5-8L27 7Z" fill="#9FD131" stroke="#4A7310" strokeWidth="3" strokeLinejoin="round"/><path d="M32 21v15" stroke="#242323" strokeWidth="6" strokeLinecap="round"/><circle cx="32" cy="46" r="3.5" fill="#242323"/></svg><p>Este mapa é uma ferramenta independente do Estrada a Dois, criada para ajudar cada viajante a manter seu controle online dos monumentos que já visitou. Os direitos sobre a Rota Biker, sua marca e identidade pertencem aos seus respectivos idealizadores e titulares. Como participante e divulgador do movimento, o Estrada a Dois quer contribuir, somar e facilitar a vida de quem vive a estrada. Esta página não é um serviço oficial da Rota Biker e suas marcações não substituem o passaporte físico nem validam carimbos ou conquistas oficiais.</p></div></footer>
   </div>;
 }

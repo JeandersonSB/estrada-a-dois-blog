@@ -104,6 +104,6 @@ Textos de SEO centralizados em `app/rota-biker/seo.ts`: bloco de resposta no top
 
 ## Pino ✌️ e situação dos monumentos (18/11/2026)
 
-Pino próprio em `pinIcon.ts`, seguindo o manual de identidade (p. 18): gota com contorno asfalto; verde #9FD131 = a visitar; asfalto com ✓ = visitado; branco tracejado em Pedra #5E5E5A = em construção. O ✌️ é desenho próprio, não o ícone oficial da Rota Biker. Marcadores agora são `L.marker` com `divIcon`.
+Ícone ✌️ próprio em `pinIcon.ts` (sem pino, escolhido pelo proprietário em 18/11/2026): mão com contorno asfalto; verde #9FD131 = a visitar; asfalto com selo ✓ = visitado; branco com contorno tracejado em Pedra #5E5E5A = em construção. Desenho próprio do gesto, não o ícone oficial da Rota Biker. Ancorado no centro do ponto. Marcadores agora são `L.marker` com `divIcon`.
 
 `monuments.json` ganhou `status` (`carimbando`, `fase_final`, `em_construcao`), conferido pela cor dos cards da lista oficial (rosa = na fila, não carimba). A situação saiu do nome. `status.ts/canStamp`: só `carimbando` e `fase_final` podem ser marcados como visitados e entrar no roteiro; o contador usa só esses (40). Marcações antigas de monumentos em construção são ignoradas na tela, sem apagar dados. As regras do Firestore continuam aceitando todo o catálogo de propósito: restringir quebraria a gravação de quem já marcou um desses pontos. `tests/biker-status.test.mjs` cobre status, regra e formas do pino.

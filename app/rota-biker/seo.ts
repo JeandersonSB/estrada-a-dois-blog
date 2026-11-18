@@ -21,7 +21,7 @@ export const ROTA_BIKER_FAQ: { q: string; a: string }[] = [
   },
   {
     q: 'Posso marcar um monumento em construção como visitado?',
-    a: 'Não. No mapa, os monumentos que ainda não carimbam o passaporte aparecem com o pino branco tracejado e não podem ser marcados como visitados nem incluídos no roteiro. Eles são liberados assim que a lista oficial indicar que já carimbam.',
+    a: 'Não. No mapa, os monumentos que ainda não carimbam o passaporte aparecem com o ícone ✌️ branco tracejado e não podem ser marcados como visitados nem incluídos no roteiro. Eles são liberados assim que a lista oficial indicar que já carimbam.',
   },
   {
     q: 'Qual é o site oficial da Rota Biker?',
