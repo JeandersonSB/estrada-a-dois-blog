@@ -18,13 +18,8 @@ type Monument = typeof monuments[number];
 // Só monumentos que carimbam o passaporte contam como visitáveis. Marcações
 // antigas de monumentos em construção ficam guardadas, mas não aparecem.
 const ids = new Set(monuments.filter(canStamp).map(m => m.id));
-const stampableTotal = ids.size;
-// Total da lista oficial = maior número. Números sem pino (ex.: nº 02) estão em atualização.
+// Total da lista oficial = maior número (inclui em construção e o nº 02, sem pino).
 const officialTotal = Math.max(...monuments.map(m => m.number));
-const inConstruction = monuments.filter(m => !canStamp(m)).length;
-const numbers = new Set(monuments.map(m => m.number));
-const updating = Array.from({ length: officialTotal }, (_, i) => i + 1).filter(n => !numbers.has(n));
-const totalSummary = [`${officialTotal} monumentos no total`, `${stampableTotal} carimbando`, `${inConstruction} em construção`, ...(updating.length ? [`nº ${updating.map(n => String(n).padStart(2, '0')).join(', ')} em atualização`] : [])].join(' · ');
 const legendPins: [PinState, string][] = [['disponivel', 'A visitar'], ['visitado', 'Visitado'], ['indisponivel', 'Em construção']];
 export default function Explorer() {
   const container = useRef<HTMLDivElement>(null);
@@ -239,7 +234,7 @@ export default function Explorer() {
       <p className="biker-privacy-detail">Mudou de ideia? Você pode pedir a exclusão dos seus dados ou retirar essa permissão. Veja como na <a href="/politica-de-privacidade#rota-biker" target="_blank" rel="noopener noreferrer">Política de Privacidade ↗</a>.</p>
       <div className="biker-privacy-actions"><button autoFocus onClick={() => privacyDialog.current?.close()}>Recusar</button><button className="biker-primary" onClick={login}>Aceitar e continuar</button></div>
     </dialog>
-    <div className="biker-toolbar"><div><strong>{visited.length} / {stampableTotal}</strong> pontos visitados <progress value={visited.length} max={stampableTotal} /><small className="biker-toolbar-total">{totalSummary}</small></div><button onClick={openPlanner} aria-expanded={planning}>Planejar viagem</button></div>
+    <div className="biker-toolbar"><div><strong>{visited.length} / {officialTotal}</strong> pontos visitados <progress value={visited.length} max={officialTotal} /></div><button onClick={openPlanner} aria-expanded={planning}>Planejar viagem</button></div>
     <p className="biker-storage">{user ? (syncReady ? 'Marcações privadas sincronizadas com sua conta.' : 'Sincronizando sua conta…') : 'Entre com Google e leve suas conquistas com você: acesse seus pontos salvos em qualquer dispositivo.'}</p>
     <InstallShortcut />
     {message && <div className="biker-message" role="status">{message}<button aria-label="Fechar aviso" onClick={() => setMessage('')}>×</button></div>}
