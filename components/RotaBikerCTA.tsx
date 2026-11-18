@@ -17,7 +17,7 @@ function trackClick(source: string) {
 }
 
 const features = [
-  '44 monumentos no mapa',
+  '45 monumentos no mapa',
   'Marque os que já visitou',
   'Monte rotas com até 10 paradas',
 ];

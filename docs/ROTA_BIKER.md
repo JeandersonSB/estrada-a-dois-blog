@@ -95,3 +95,9 @@ Substitui o controle recolhido por card e botão verde “Instalar Rota Biker”
 ## Publicação definitiva
 
 Publicação no domínio www.estradaadois.com autorizada pelo proprietário em 21/10/2026 após os testes. As restrições anteriores de somente prévia não se aplicam à versão aprovada. O erro preexistente de lint em TravelSocialCTA foi corrigido extraindo o handler de clique para função de módulo, sem mudar os parâmetros dos eventos. Lint completo sem erros (avisos anteriores mantidos), oito testes do planejador, teste de privacidade e build passaram. A instalação física e a medição específica de instalações/acessos pelo ícone não foram acrescentadas como testes/eventos desta publicação.
+
+## SEO e IA do Google (18/11/2026)
+
+Conferência com a lista oficial (https://monumentobikers.com.br/monumentos/) e o KML do mapa de referência em 18/11/2026. Adicionado o nº 46 (Cervejaria Dolomitas, Tapejara–PR, em construção), com coordenadas do KML e ID no padrão sha256("lng,lat") (16 primeiros hex). Nº 39 a 42 marcados como em construção no nome, seguindo o padrão do nº 45. O nº 41 continua "ROTA 15", como no mapa oficial (o site oficial escreve "ROTA 41"). `firestore.rules` regenerado (45 IDs): **publicar no console do Firebase**, senão contas logadas não conseguem marcar o nº 46.
+
+Textos de SEO centralizados em `app/rota-biker/seo.ts`: bloco de resposta no topo, linha "Atualizado em" com `<time>`, nota do mapa, meta description e FAQ (11 perguntas). `RotaBikerJsonLd.tsx` gera WebPage, WebApplication, ItemList (TouristAttraction com coordenadas, a partir de monuments.json) e FAQPage com o mesmo texto do FAQ visível. Nunca descrever o mapa como oficial. Ao reconferir a lista, atualizar data, contagens e respostas em `seo.ts`.

@@ -1143,7 +1143,7 @@
   },
   {
     "id": "20ba538ba68a6c69",
-    "name": "Mar & Sol Praia Hotel",
+    "name": "Mar & Sol Praia Hotel — em construção",
     "lat": -17.340253,
     "lng": -39.2181944,
     "keywords": [
@@ -1157,6 +1157,7 @@
       "hospedagem",
       "39",
       "monumento 39",
+      "em construção",
       "monumentos",
       "bikers",
       "Prado",
@@ -1175,7 +1176,7 @@
   },
   {
     "id": "b0aeee019ac7828a",
-    "name": "Quiosque Romano",
+    "name": "Quiosque Romano — em construção",
     "lat": -31.5159801,
     "lng": -52.599415,
     "keywords": [
@@ -1186,6 +1187,7 @@
       "passaporte",
       "40",
       "monumento 40",
+      "em construção",
       "monumentos",
       "bikers",
       "Morro Redondo",
@@ -1204,7 +1206,7 @@
   },
   {
     "id": "67da1e3f40594cc2",
-    "name": "ROTA 15",
+    "name": "ROTA 15 — em construção",
     "lat": -28.6400737,
     "lng": -51.9385666,
     "keywords": [
@@ -1215,6 +1217,7 @@
       "passaporte",
       "41",
       "monumento 41",
+      "em construção",
       "monumentos",
       "bikers",
       "Casca",
@@ -1233,7 +1236,7 @@
   },
   {
     "id": "580a27b995614c83",
-    "name": "Tapioca do Irmão Firmino",
+    "name": "Tapioca do Irmão Firmino — em construção",
     "lat": -7.1684174,
     "lng": -35.3509599,
     "keywords": [
@@ -1244,6 +1247,7 @@
       "passaporte",
       "42",
       "monumento 42",
+      "em construção",
       "monumentos",
       "bikers",
       "Cajá",
@@ -1339,5 +1343,38 @@
     "state": "São Paulo",
     "country": "Brasil",
     "number": 45
+  },
+  {
+    "id": "e64b23e3627b3ad7",
+    "name": "Cervejaria Dolomitas — em construção",
+    "lat": -23.7434204,
+    "lng": -52.8564705,
+    "keywords": [
+      "cervejaria dolomitas",
+      "monumento",
+      "rota biker",
+      "rota bikers",
+      "passaporte",
+      "cervejaria",
+      "cerveja",
+      "bar",
+      "46",
+      "monumento 46",
+      "em construção",
+      "monumentos",
+      "bikers",
+      "Tapejara",
+      "PR",
+      "Paraná",
+      "Brasil",
+      "Sul",
+      "BR",
+      "Brazil"
+    ],
+    "city": "Tapejara",
+    "stateCode": "PR",
+    "state": "Paraná",
+    "country": "Brasil",
+    "number": 46
   }
 ]

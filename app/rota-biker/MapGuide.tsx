@@ -1,3 +1,5 @@
+import { OFFICIAL_LIST_URL, OFFICIAL_RULES_URL, ROTA_BIKER_FAQ } from './seo';
+
 export default function MapGuide() {
   return <section className="biker-guide" aria-labelledby="biker-guide-title">
     <span className="biker-eyebrow">PLANEJE SUA PRÓXIMA VIAGEM</span>
@@ -14,9 +16,8 @@ export default function MapGuide() {
     </div>
     <section className="biker-guide-video" aria-labelledby="biker-video-title"><span className="biker-eyebrow">EM BREVE</span><h3 id="biker-video-title">Tutorial em vídeo: veja o mapa na prática</h3><p>Estamos preparando uma demonstração de como escolher a origem, adicionar paradas, abrir a navegação e salvar seus monumentos visitados. O vídeo será disponibilizado aqui.</p></section>
     <h2>Dúvidas frequentes</h2>
-    <details><summary>O mapa da Rota Biker é grátis?</summary><p>Sim. Você pode consultar os pontos, planejar viagens e marcar visitas gratuitamente. O login é opcional e permite acessar as marcações da sua conta em outros dispositivos.</p></details>
-    <details><summary>Posso instalar no Android e no iPhone?</summary><p>Sim. No celular, toque em “Instalar Rota Biker” e siga as orientações. No Android, a opção também pode aparecer no menu do navegador. No iPhone, abra no Safari e use Compartilhar → Adicionar à Tela de Início.</p></details>
-    <details><summary>Preciso de internet para usar?</summary><p>Sim. O mapa, o cálculo das distâncias e a sincronização das visitas precisam de conexão. Adicionar o ícone à tela inicial facilita o acesso, mas não torna o mapa disponível offline.</p></details>
-    <details><summary>As marcações substituem o passaporte físico?</summary><p>Não. Esta é uma ferramenta independente do Estrada a Dois. As marcações servem para seu controle pessoal, não validam carimbos e não substituem o passaporte ou as conquistas oficiais da Rota Biker.</p></details>
+    {/* Mesmo texto do FAQPage no JSON-LD (RotaBikerJsonLd). */}
+    {ROTA_BIKER_FAQ.map(({ q, a }) => <details key={q}><summary>{q}</summary><p>{a}</p></details>)}
+    <p className="biker-guide-sources">Fontes: <a href={OFFICIAL_LIST_URL} target="_blank" rel="noopener">lista oficial de monumentos</a> e <a href={OFFICIAL_RULES_URL} target="_blank" rel="noopener">regras do passaporte e dos Conquistadores</a>, no site da Rota Biker.</p>
   </section>;
 }
