@@ -30,6 +30,7 @@ const EDITORIAL_HOLD_SLUGS = new Set([
 export interface PostData {
   slug: string;
   date: string;
+  updated?: string;
   title: string;
   category: string;
   excerpt: string;

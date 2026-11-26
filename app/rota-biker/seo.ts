@@ -9,15 +9,15 @@ export const OFFICIAL_LIST_URL = 'https://monumentobikers.com.br/monumentos/';
 export const OFFICIAL_RULES_URL = 'https://monumentobikers.com.br/conquistadores/';
 export const REFERENCE_MAP_URL = 'https://www.google.com/maps/d/viewer?mid=1ZHPck3Yykbhc8M1GYPrCcKf5pajiTvk';
 
-export const UPDATED_ISO = '2026-11-18';
-export const UPDATED_LABEL = '18/11/2026';
+export const UPDATED_ISO = '2026-11-25';
+export const UPDATED_LABEL = '25/11/2026';
 
 export const META_DESCRIPTION = 'Mapa gratuito dos monumentos da Rota Biker no Brasil e no Paraguai. Planeje rotas com várias paradas, marque os locais visitados e use no celular.';
 
 export const ROTA_BIKER_FAQ: { q: string; a: string }[] = [
   {
     q: 'Quantos monumentos tem a Rota Biker?',
-    a: 'Em 18/11/2026, a lista oficial da Rota Biker tinha 46 monumentos numerados, no Brasil e no Paraguai. Cinco ainda estão em construção e não carimbam o passaporte (nº 40, 41, 42, 45 e 46), e o nº 02 está em atualização. A rota cresce o tempo todo, então confira a lista oficial antes de viajar.',
+    a: 'Em 25/11/2026, a lista oficial da Rota Biker tinha 47 monumentos numerados, no Brasil e no Paraguai. Seis ainda estão em construção e não carimbam o passaporte (nº 40, 41, 42, 45, 46 e 47), e o nº 02 está em atualização. A rota cresce o tempo todo, então confira a lista oficial antes de viajar.',
   },
   {
     q: 'Posso marcar um monumento em construção como visitado?',

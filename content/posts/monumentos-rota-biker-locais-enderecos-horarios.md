@@ -2,6 +2,7 @@
 title: 'Monumentos da Rota Biker: lista, endereços e mapa'
 status: 🟢 Publicado
 date: 2026-10-27T13:14:00
+updated: "2026-11-25"
 category: Dicas
 image: "/images/blog/monumentos-rota-biker-locais-enderecos-horarios.webp"
 excerpt: Consulte os monumentos da Rota Biker por estado, com números, locais, endereços disponíveis, horários e orientações para carimbar e planejar sua viagem.
@@ -9,7 +10,7 @@ author: Jeanderson e Ana Paula | Estrada a Dois
 editorial_notes:
   - Salvo apenas como rascunho, sem imagens inseridas ou vinculadas.
   - Pesquisa documental online em 27/10/2026; não houve contato por telefone, e-mail ou mensagem com estabelecimentos.
-  - 44 locais identificados, números 01 e 03 a 45. O nº 02 está em atualização.
+  - 47 monumentos na lista, números 01 a 47. O nº 02 está em atualização, sem local divulgado.
   - Endereço detalhado ainda não confirmado para os números 08, 31, 41 e 45. Algumas outras fichas têm apenas referência de via ou acesso.
   - Conferir divergências dos números 03, 13, 14, 32, 38 e 45 antes de tratar coordenadas ou horários como informação confirmada em campo.
   - Não vincular publicamente este rascunho a partir do mapa antes de aprovar e publicar o artigo.
@@ -21,7 +22,7 @@ image_suggestions:
   - 'Seção Paraguai: foto autoral do monumento nº 30 em Katueté.'
   - 'Seção de passaporte: detalhe dos carimbos, ocultando dados pessoais e números identificadores.'
   - 'Seção de planejamento: captura do mapa Estrada a Dois com três paradas numeradas, sem dados da conta nem localização residencial.'
-last_fact_check: 2026-10-27
+last_fact_check: 2026-11-25
 ---
 
 A próxima parada da Rota Biker pode estar em um café de estrada, em uma cidade que você ainda não conhece ou no caminho de uma viagem maior. Para aproveitar o passeio, porém, não basta encontrar um pino: é preciso saber **qual é o monumento, onde ele fica e quando haverá alguém para atender e carimbar o passaporte**.
@@ -42,11 +43,11 @@ A referência de identificação deste artigo é o [catálogo dos organizadores 
 
 ## Quantos monumentos da Rota Biker existem?
 
-Na reconferência de **06/11/2026**, a lista oficial continua apresentando numeração até **45**, com o **nº 2 em atualização**. Este guia reúne **44 locais identificados**, do nº 01 e do nº 03 ao nº 45, incluindo os que ainda aparecem em construção ou sem situação de atendimento confirmada.
+Na reconferência de **25/11/2026**, a lista oficial apresenta numeração até **47**, com o **nº 2 em atualização**. Este guia reúne os **47 monumentos**, do nº 01 ao nº 47, incluindo o nº 02, que ainda está em atualização, além dos que ainda aparecem em construção ou sem situação de atendimento confirmada.
 
-Isso **não significa que existam 45 monumentos concluídos e carimbando**. A lista mistura etapas de implantação, e a situação de cada ficha precisa ser observada antes de montar o roteiro.
+Isso **não significa que existam 47 monumentos concluídos e carimbando**. A lista mistura etapas de implantação, e a situação de cada ficha precisa ser observada antes de montar o roteiro.
 
-O guia e o mapa do Estrada a Dois passam a reunir os mesmos **44 locais identificados**, incluindo o **nº 45 — Empório Caconde**, em construção. O nº 02 continua sem destino identificado e, por isso, não recebe um pino. A contagem inclui locais em implantação e não representa 44 monumentos inaugurados.
+O guia e o mapa do Estrada a Dois reúnem os mesmos **47 monumentos**, incluindo os mais recentes, **nº 46 — Cervejaria Dolomitas** e **nº 47 — Restaurante & Cafeteria Área 73**, ambos em construção. O nº 02 aparece na lista, mas ainda não tem local divulgado pelos organizadores e, por isso, não tem pino no mapa. A contagem inclui locais em implantação e não representa 47 monumentos inaugurados.
 
 ## Consulta rápida dos monumentos
 
@@ -99,26 +100,30 @@ Confira o número, o local, a cidade e a situação de referência antes de cons
 | 43 | Parada Route | São Miguel do Passa Quatro – GO | A confirmar¹ |
 | 44 | Laranja Doce — Pão com Linguiça | Martinópolis – SP | Em construção¹ |
 | 45 | Empório Caconde | Caconde – SP | Em construção¹ |
+| 46 | Cervejaria Dolomitas | Tapejara – PR | Em construção¹ |
+| 47 | Restaurante & Cafeteria Área 73 | Nova Friburgo – RJ | Em construção¹ |
 
-¹ Situações das fichas documentadas em 27/10/2026; inclusão, numeração e localização do nº 45 reconferidas em 06/11/2026 no catálogo e no mapa dos organizadores. A listagem atual continua até o nº 45, com o nº 02 em atualização. Estar listado não garante inauguração ou carimbo disponível. Confirme com o responsável antes de viajar.
+¹ Situações das fichas documentadas em 27/10/2026; inclusão, numeração e localização do nº 45 reconferidas em 06/11/2026; nº 46 e nº 47 incluídos em 25/11/2026, conforme o catálogo e o mapa dos organizadores. A listagem atual vai até o nº 47, com o nº 02 em atualização. Estar listado não garante inauguração ou carimbo disponível. Confirme com o responsável antes de viajar.
 
 ## Como consultar este guia
 
 Os locais estão apresentados em ordem crescente, mantendo a numeração original. Use o campo de busca deste guia para procurar uma cidade, um estabelecimento ou o número do monumento.
 
-| Estado ou país | Números apresentados | Locais identificados |
+| Estado ou país | Números apresentados | Monumentos |
 | --- | --- | ---: |
-| Paraná | 01, 05, 09, 13, 31, 32 e 38 | 7 |
+| Paraná | 01, 05, 09, 13, 31, 32, 38 e 46 | 8 |
 | Santa Catarina | 03, 04, 06, 07, 21, 24 e 26 | 7 |
 | São Paulo | 08, 12, 16, 18, 19, 23, 25, 27, 28, 29, 33, 34, 44 e 45 | 14 |
 | Rio Grande do Sul | 10, 14, 15, 20, 40 e 41 | 6 |
 | Minas Gerais | 17, 22, 35 e 37 | 4 |
 | Goiás | 36 e 43 | 2 |
+| Rio de Janeiro | 47 | 1 |
 | Distrito Federal | 11 | 1 |
 | Bahia | 39 | 1 |
 | Paraíba | 42 | 1 |
 | Paraguai | 30 | 1 |
-| **Total de locais identificados** | **Nº 2 em atualização, sem ficha de destino** | **44** |
+| Em atualização (sem local divulgado) | 02 | 1 |
+| **Total de monumentos** | **01 a 47** | **47** |
 
 **Três informações diferentes merecem sua atenção:**
 
@@ -727,6 +732,32 @@ Existem cadastros de empórios com endereços diferentes em Caconde; não foi co
 
 **Fontes e confirmação:** [Catálogo dos organizadores](https://monumentobikers.com.br/monumentos/).
 
+### Monumento 46 — Cervejaria Dolomitas
+
+- **Cidade:** Tapejara – PR.
+- **Endereço ou referência de acesso:** Tapejara – PR. Endereço detalhado não confirmado; a localização de referência está no mapa dos organizadores.
+- **Horário publicado:** Não confirmado para o ponto do monumento.
+- **Situação do monumento:** Em construção; inauguração e carimbo não confirmados.
+
+O monumento consta em construção. Não planeje a obtenção de carimbo sem confirmação de inauguração pelo responsável.
+
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-23.7434204,-52.8564705).
+
+**Fontes e confirmação:** [Catálogo dos organizadores](https://monumentobikers.com.br/monumentos/).
+
+### Monumento 47 — Restaurante & Cafeteria Área 73
+
+- **Cidade:** Nova Friburgo – RJ.
+- **Endereço ou referência de acesso:** Rodovia Presidente João Goulart, 156, Debossan, Nova Friburgo – RJ, conforme o mapa dos organizadores.
+- **Horário publicado:** Horário de visita ao monumento e atendimento de carimbo não confirmados.
+- **Situação do monumento:** Em construção; inauguração e carimbo não confirmados.
+
+É o primeiro monumento da lista no Rio de Janeiro. O restaurante funcionar não confirma a conclusão do monumento; confirme inauguração e carimbo antes da visita.
+
+**Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-22.3424413,-42.5125229).
+
+**Fontes e confirmação:** [Catálogo dos organizadores](https://monumentobikers.com.br/monumentos/) · [Mapa de referência](https://www.google.com/maps/d/viewer?mid=1ZHPck3Yykbhc8M1GYPrCcKf5pajiTvk).
+
 ## Como montar uma viagem pelos monumentos
 
 Uma lista grande não precisa virar uma viagem grande. Comece pela sua origem e pelo tempo que você realmente tem para passear.
@@ -796,7 +827,7 @@ Use nossa [página de contato](/contato) e informe o número do monumento, a cid
 
 ## Fontes, atualização e limites deste guia
 
-**Reconferência do catálogo em 06/11/2026:** numeração até 45, nº 02 em atualização e nº 45 em construção, com localização conferida no mapa dos organizadores. Esta revisão não equivale a uma nova confirmação de todos os endereços, horários ou atendimentos de carimbo.
+**Reconferência do catálogo em 25/11/2026:** numeração até 47, nº 02 em atualização e nº 46 e nº 47 em construção, com localização conferida no mapa dos organizadores. Esta revisão não equivale a uma nova confirmação de todos os endereços, horários ou atendimentos de carimbo.
 
 A identificação dos pontos foi cruzada com o catálogo e o mapa de referência da Rota Biker. Para endereços, horários e condições específicas, consultamos sites dos estabelecimentos, portais de turismo, canais próprios e cadastros públicos, identificados nas fichas.
 

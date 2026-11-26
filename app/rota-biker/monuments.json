@@ -1421,5 +1421,33 @@
     "country": "Brasil",
     "number": 46,
     "status": "em_construcao"
+  },
+  {
+    "id": "eba5668a5bdde9c1",
+    "name": "Restaurante & Cafeteria Área 73",
+    "lat": -22.3424413,
+    "lng": -42.5125229,
+    "keywords": [
+      "area 73",
+      "área 73",
+      "restaurante",
+      "cafeteria",
+      "monumento",
+      "rota biker",
+      "47",
+      "monumento 47",
+      "Nova Friburgo",
+      "Debossan",
+      "RJ",
+      "Rio de Janeiro",
+      "Brasil",
+      "em construção"
+    ],
+    "city": "Nova Friburgo",
+    "stateCode": "RJ",
+    "state": "Rio de Janeiro",
+    "country": "Brasil",
+    "number": 47,
+    "status": "em_construcao"
   }
 ]

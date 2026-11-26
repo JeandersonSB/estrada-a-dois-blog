@@ -91,6 +91,7 @@ export async function generateMetadata({
         locale: 'pt_BR',
         type: 'article',
         publishedTime: postData.date,
+        modifiedTime: postData.updated || postData.date,
         authors: [AUTHOR.name],
         images: shareImageUrl
           ? [
@@ -163,7 +164,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     description: postData.excerpt || postData.title,
     image: schemaImage ? [schemaImage] : [],
     datePublished: postData.date,
-    dateModified: postData.date,
+    dateModified: postData.updated || postData.date,
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': `https://www.estradaadois.com/blog/${slug}`,
@@ -222,6 +223,12 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             </span>
             <span className="w-1.5 h-1.5 rounded-full bg-[#9FD131] mx-3"></span>
             <time dateTime={postData.date}>{formatDateBR(postData.date)}</time>
+            {postData.updated && postData.updated !== postData.date && (
+              <>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#9FD131] mx-3"></span>
+                <span>Atualizado em <time dateTime={postData.updated}>{formatDateBR(postData.updated)}</time></span>
+              </>
+            )}
           </div>
         </header>
 
