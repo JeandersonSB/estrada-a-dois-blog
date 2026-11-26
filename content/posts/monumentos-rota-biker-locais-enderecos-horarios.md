@@ -47,7 +47,7 @@ Na reconferência de **25/11/2026**, a lista oficial apresenta numeração até 
 
 Isso **não significa que existam 47 monumentos concluídos e carimbando**. A lista mistura etapas de implantação, e a situação de cada ficha precisa ser observada antes de montar o roteiro.
 
-O guia e o mapa do Estrada a Dois reúnem os mesmos **47 monumentos**, incluindo os mais recentes, **nº 46 — Cervejaria Dolomitas** e **nº 47 — Restaurante & Cafeteria Área 73**, ambos em construção. O nº 02 aparece na lista, mas ainda não tem local divulgado pelos organizadores e, por isso, não tem pino no mapa. A contagem inclui locais em implantação e não representa 47 monumentos inaugurados.
+O guia e o mapa do Estrada a Dois reúnem os mesmos **47 monumentos**, incluindo os mais recentes, **nº 46 — Cervejaria Dolomitas** e **nº 47 — Área 73**, ambos em construção. O nº 02 aparece na lista, mas ainda não tem local divulgado pelos organizadores e, por isso, não tem pino no mapa. A contagem inclui locais em implantação e não representa 47 monumentos inaugurados.
 
 ## Consulta rápida dos monumentos
 
@@ -72,9 +72,9 @@ Confira o número, o local, a cidade e a situação de referência antes de cons
 | 15 | Garimpo em Atividade | Ametista do Sul – RS | Pronto e carimbando¹ |
 | 16 | Bar Original – Pier SP-270 | Piraju – SP | Pronto e carimbando¹ |
 | 17 | Armazém Canastra | Piumhi – MG | Pronto e carimbando¹ |
-| 18 | Box 1200 Concept | Jundiaí – SP | Pronto e carimbando¹ |
+| 18 | Box 1200 | Jundiaí – SP | Pronto e carimbando¹ |
 | 19 | Rancho Terra Crua | Salesópolis – SP | Pronto e carimbando¹ |
-| 20 | Casa Rural Pastelaria | Barra do Ribeiro – RS | Pronto e carimbando¹ |
+| 20 | Casa Rural | Barra do Ribeiro – RS | Pronto e carimbando¹ |
 | 21 | Parada Penhasco | Penha – SC | Pronto e carimbando¹ |
 | 22 | Restaurante Mata Virgem | Três Corações – MG | Pronto e carimbando¹ |
 | 23 | Bar do Hélio | Santo Antônio da Alegria – SP | Pronto e carimbando¹ |
@@ -92,18 +92,18 @@ Confira o número, o local, a cidade e a situação de referência antes de cons
 | 35 | Portal de São Lourenço | São Lourenço – MG | Pronto e carimbando¹ |
 | 36 | Route 60 | Abadiânia – GO | Pronto e carimbando¹ |
 | 37 | Bela Vista Mall | Conceição do Mato Dentro – MG | Pronto e carimbando¹ |
-| 38 | MAPY — Restaurante e Café | Mauá da Serra – PR | Pronto e carimbando¹ |
+| 38 | MAPY | Mauá da Serra – PR | Pronto e carimbando¹ |
 | 39 | Mar & Sol Praia Hotel | Prado – BA | Em construção¹ |
 | 40 | Quiosque Romano | Morro Redondo – RS | Em construção¹ |
-| 41 | Rota 15 | Casca – RS | Em construção¹ |
+| 41 | Rota 41 | Casca – RS | Em construção¹ |
 | 42 | Tapioca do Irmão Firmino | Cajá – PB | Em construção¹ |
-| 43 | Parada Route | São Miguel do Passa Quatro – GO | A confirmar¹ |
-| 44 | Laranja Doce — Pão com Linguiça | Martinópolis – SP | Em construção¹ |
+| 43 | Parada Route | São Miguel do Passa Quatro – GO | Pronto e carimbando¹ |
+| 44 | Laranja Doce — Pão com Linguiça | Martinópolis – SP | Pronto e carimbando¹ |
 | 45 | Empório Caconde | Caconde – SP | Em construção¹ |
 | 46 | Cervejaria Dolomitas | Tapejara – PR | Em construção¹ |
-| 47 | Restaurante & Cafeteria Área 73 | Nova Friburgo – RJ | Em construção¹ |
+| 47 | Área 73 | Nova Friburgo – RJ | Em construção¹ |
 
-¹ Situações das fichas documentadas em 27/10/2026; inclusão, numeração e localização do nº 45 reconferidas em 06/11/2026; nº 46 e nº 47 incluídos em 25/11/2026, conforme o catálogo e o mapa dos organizadores. A listagem atual vai até o nº 47, com o nº 02 em atualização. Estar listado não garante inauguração ou carimbo disponível. Confirme com o responsável antes de viajar.
+¹ Situações conferidas na lista oficial em 25/11/2026 (fichas documentadas em 27/10/2026); inclusão, numeração e localização do nº 45 reconferidas em 06/11/2026; nº 46 e nº 47 incluídos em 25/11/2026, conforme o catálogo e o mapa dos organizadores. A listagem atual vai até o nº 47, com o nº 02 em atualização. Estar listado não garante inauguração ou carimbo disponível. Confirme com o responsável antes de viajar.
 
 ## Como consultar este guia
 
@@ -365,7 +365,7 @@ Há estabelecimentos com nomes semelhantes em outras cidades. Para este monument
 
 **Fontes e confirmação:** [Cardápio e endereço divulgados pelo estabelecimento](https://armazemcanastra-bra.ola.click/products) · [Canal indicado pelos organizadores](https://www.instagram.com/armazem_canastra/).
 
-### Monumento 18 — Box 1200 Concept
+### Monumento 18 — Box 1200
 
 - **Cidade:** Jundiaí – SP.
 - **Endereço ou referência de acesso:** Avenida Luiz José Sereno, 1.200, Jardim Ermida II, Jundiaí – SP.
@@ -391,7 +391,7 @@ Peça orientações sobre o trecho final e sobre o atendimento para grupos antes
 
 **Fontes e confirmação:** [Guia de Mototurismo de São Paulo](https://www.caragua.tur.br/wp-content/uploads/2025/10/Guia-de-Mototurismo.pdf) · [Canal indicado pelos organizadores](https://www.instagram.com/rancho.terracrua).
 
-### Monumento 20 — Casa Rural Pastelaria
+### Monumento 20 — Casa Rural
 
 - **Cidade:** Barra do Ribeiro – RS.
 - **Endereço ou referência de acesso:** BR-116, km 334, Douradilho, Barra do Ribeiro – RS.
@@ -628,7 +628,7 @@ A grade de um shopping ou centro comercial não precisa ser igual à do posto, d
 
 **Fontes e confirmação:** [Contato do Bela Vista Mall](https://belavistamall.com.br/contato/).
 
-### Monumento 38 — MAPY — Restaurante e Café
+### Monumento 38 — MAPY
 
 - **Cidade:** Mauá da Serra – PR.
 - **Endereço ou referência de acesso:** BR-376, região da Serra do Cadeado, Mauá da Serra – PR. Há divergência de referência quilométrica: cadastros comerciais apontam km 296 e a página da concessionária Motiva informa km 292. Confirme o acesso pelo pino e pelo estabelecimento.
@@ -667,7 +667,7 @@ O nome pode aparecer como Quiosque Romano ou Romanno. Consulte a situação da i
 
 **Fontes e confirmação:** [Referência do roteiro Serra dos Tapes](https://www.serradostapes.com.br/lugares/quiosque-romano/).
 
-### Monumento 41 — Rota 15
+### Monumento 41 — Rota 41
 
 - **Cidade:** Casca – RS.
 - **Endereço ou referência de acesso:** Casca – RS. Endereço detalhado não confirmado; a localização de referência está no mapa dos organizadores.
@@ -698,9 +698,9 @@ Há mais de uma referência comercial da Tapioca do Irmão Firmino na região. C
 - **Cidade:** São Miguel do Passa Quatro – GO.
 - **Endereço ou referência de acesso:** GO-139, km 166, zona rural, São Miguel do Passa Quatro – GO, conforme cadastro comercial.
 - **Horário publicado:** Horário específico de visita e carimbo não confirmado.
-- **Situação do monumento:** Situação de implantação e carimbo não confirmada no catálogo consultado.
+- **Situação do monumento:** Pronto e carimbando, conforme a lista oficial em 25/11/2026.
 
-O ponto aparece no mapa, mas a descrição consultada não confirma a situação de carimbo. Pergunte pela inauguração e pelo atendimento, sem presumir que um pino significa monumento concluído.
+A lista oficial não marca o nº 43 como em construção. Mesmo assim, confirme o horário de atendimento para o carimbo antes de viajar.
 
 **Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-17.0708946,-48.6570364).
 
@@ -711,9 +711,9 @@ O ponto aparece no mapa, mas a descrição consultada não confirma a situação
 - **Cidade:** Martinópolis – SP.
 - **Endereço ou referência de acesso:** Rodovia Prefeito Homero Severo Lins, referência de km 553, Martinópolis – SP, conforme cadastro do restaurante.
 - **Horário publicado:** O canal próprio no Linktree informa segunda a sábado, das 6h às 17h45; domingo, das 9h às 16h. Isso se refere ao restaurante.
-- **Situação do monumento:** Em construção; inauguração e carimbo não confirmados.
+- **Situação do monumento:** Pronto e carimbando, conforme a lista oficial e o mapa dos organizadores em 25/11/2026.
 
-O funcionamento do restaurante não altera, por si só, a situação de construção do monumento. Confirme inauguração e carimbo antes da visita.
+O horário publicado é do restaurante. Confirme se o carimbo está disponível no horário da sua visita.
 
 **Localização de referência:** [Consultar o pino no Google Maps](https://www.google.com/maps/search/?api=1&query=-22.131556,-51.1689638).
 
@@ -745,7 +745,7 @@ O monumento consta em construção. Não planeje a obtenção de carimbo sem con
 
 **Fontes e confirmação:** [Catálogo dos organizadores](https://monumentobikers.com.br/monumentos/).
 
-### Monumento 47 — Restaurante & Cafeteria Área 73
+### Monumento 47 — Área 73
 
 - **Cidade:** Nova Friburgo – RJ.
 - **Endereço ou referência de acesso:** Rodovia Presidente João Goulart, 156, Debossan, Nova Friburgo – RJ, conforme o mapa dos organizadores.

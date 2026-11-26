@@ -14,7 +14,7 @@ test('every monument has a known status and no status text in its name', () => {
 });
 
 test('only stamping monuments can be visited or routed', () => {
-  assert.deepEqual(monuments.filter(m => !canStamp(m)).map(m => m.number).sort((a, b) => a - b), [40, 41, 42, 45, 46, 47]);
+  assert.deepEqual(monuments.filter(m => !canStamp(m)).map(m => m.number).sort((a, b) => a - b), [39, 40, 41, 42, 45, 46, 47]);
   assert.equal(canStamp({ status: 'fase_final' }), true);
   assert.equal(canStamp({ status: 'em_construcao' }), false);
   assert.equal(canStamp({ status: 'qualquer' }), false);

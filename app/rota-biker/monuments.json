@@ -38,7 +38,7 @@
   },
   {
     "id": "bb34785bb71c9ffd",
-    "name": "Mirante 12 Lanchonete e Entretenimento-LTDA",
+    "name": "Mirante do 12",
     "lat": -28.3848397,
     "lng": -49.4850811,
     "keywords": [
@@ -289,7 +289,7 @@
   },
   {
     "id": "202bb30d3c56b455",
-    "name": "Pad Bier Restaurante e Cervejaria",
+    "name": "Pad Bier Cervejaria",
     "lat": -15.9990196,
     "lng": -47.5603231,
     "keywords": [
@@ -506,7 +506,7 @@
   },
   {
     "id": "2e99c22af02667da",
-    "name": "Box 1200 Concept",
+    "name": "Box 1200",
     "lat": -23.1918773,
     "lng": -46.9628832,
     "keywords": [
@@ -567,7 +567,7 @@
   },
   {
     "id": "0b1113915d605464",
-    "name": "Casa Rural Pastelaria",
+    "name": "Casa Rural",
     "lat": -30.4075303,
     "lng": -51.4541004,
     "keywords": [
@@ -664,11 +664,12 @@
   },
   {
     "id": "46e37a95c26bf4a5",
-    "name": "Bar Do Hélio",
+    "name": "Bar do Hélio",
     "lat": -21.0256805,
     "lng": -47.1669616,
     "keywords": [
       "bar do helio",
+      "bar do hélio",
       "monumento",
       "rota biker",
       "rota bikers",
@@ -696,11 +697,12 @@
   },
   {
     "id": "89e91836dbbc072b",
-    "name": "Pousada e Camping Poço Do Caixão",
+    "name": "Pousada e Camping Poço do Caixão",
     "lat": -28.8141693,
     "lng": -49.8813927,
     "keywords": [
       "pousada e camping poco do caixao",
+      "pousada e camping poço do caixão",
       "monumento",
       "rota biker",
       "rota bikers",
@@ -858,11 +860,12 @@
   },
   {
     "id": "a73234f7fdf065da",
-    "name": "Rancho Gastronomia e Cultura - Restaurante, Pizzaria e Armazém.",
+    "name": "Rancho Gastronomia e Cultura",
     "lat": -22.6452812,
     "lng": -44.5767615,
     "keywords": [
       "rancho gastronomia e cultura - restaurante, pizzaria e armazem.",
+      "rancho gastronomia e cultura - restaurante, pizzaria e armazém.",
       "monumento",
       "rota biker",
       "rota bikers",
@@ -891,7 +894,7 @@
   },
   {
     "id": "fb6fa4f1b1d81ec5",
-    "name": "Drei Schritte Katuete",
+    "name": "Drei Schritte Restô Bar",
     "lat": -24.253942,
     "lng": -54.7702719,
     "keywords": [
@@ -1020,11 +1023,12 @@
   },
   {
     "id": "673377fbe5d433db",
-    "name": "Lanchonete Parada da Búfala",
+    "name": "Parada da Búfala",
     "lat": -24.2769151,
     "lng": -47.9479979,
     "keywords": [
       "lanchonete parada da bufala",
+      "lanchonete parada da búfala",
       "monumento",
       "rota biker",
       "rota bikers",
@@ -1144,7 +1148,7 @@
   },
   {
     "id": "978ab71cd51d889e",
-    "name": "MAPY - Restaurante e Cafe",
+    "name": "MAPY",
     "lat": -23.9122125,
     "lng": -51.1844918,
     "keywords": [
@@ -1203,14 +1207,15 @@
       "Nordeste",
       "BR",
       "Brazil",
-      "fase final"
+      "fase final",
+      "em construção"
     ],
     "city": "Prado",
     "stateCode": "BA",
     "state": "Bahia",
     "country": "Brasil",
     "number": 39,
-    "status": "fase_final"
+    "status": "em_construcao"
   },
   {
     "id": "b0aeee019ac7828a",
@@ -1245,10 +1250,11 @@
   },
   {
     "id": "67da1e3f40594cc2",
-    "name": "ROTA 15",
+    "name": "Rota 41",
     "lat": -28.6400737,
     "lng": -51.9385666,
     "keywords": [
+      "rota 41",
       "rota 15",
       "monumento",
       "rota biker",
@@ -1424,11 +1430,12 @@
   },
   {
     "id": "eba5668a5bdde9c1",
-    "name": "Restaurante & Cafeteria Área 73",
+    "name": "Área 73",
     "lat": -22.3424413,
     "lng": -42.5125229,
     "keywords": [
       "area 73",
+      "restaurante & cafeteria área 73",
       "área 73",
       "restaurante",
       "cafeteria",
